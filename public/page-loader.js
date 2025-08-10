@@ -3,9 +3,9 @@
     'use strict';
 
     // Configuration
-    const LOADING_DELAY_MIN = 300; // Minimum loading time for smooth UX
-    const PROGRESS_SPEED = 50; // Progress bar animation speed
-    const TRANSITION_DURATION = 400; // Page transition duration
+    const LOADING_DELAY_MIN = 400; // Minimum loading time for smooth UX
+    const PROGRESS_SPEED = 30; // Progress bar animation speed
+    const TRANSITION_DURATION = 500; // Page transition duration
 
     // State management
     let isLoading = false;
@@ -65,8 +65,8 @@
             
             let progress = 0;
             progressInterval = setInterval(() => {
-                progress += Math.random() * 30;
-                if (progress > 85) progress = 85; // Stop at 85% until page loads
+                progress += Math.random() * 15 + 5; // Smoother, more consistent progress
+                if (progress > 80) progress = 80; // Stop at 80% until page loads
                 progressBar.style.width = progress + '%';
             }, PROGRESS_SPEED);
         }
@@ -112,10 +112,12 @@
             // Add content fade-in animation
             const mainContent = document.querySelector('main, .sl-markdown-content');
             if (mainContent) {
+                // Add page transition classes for smooth entry
+                mainContent.classList.add('page-transition', 'page-transition-in');
                 mainContent.classList.add('content-fade-in');
                 setTimeout(() => {
-                    mainContent.classList.remove('content-fade-in');
-                }, 600);
+                    mainContent.classList.remove('content-fade-in', 'page-transition-in');
+                }, 800);
             }
         }, remainingTime);
     }
@@ -165,14 +167,20 @@
                 return;
             }
 
+            // Add transition out effect to current content
+            const currentContent = document.querySelector('main, .sl-markdown-content');
+            if (currentContent) {
+                currentContent.classList.add('page-transition', 'page-transition-out');
+            }
+
             // Show loading for internal navigation
             e.preventDefault();
             showLoading('Loading page...');
             
-            // Navigate after brief delay
+            // Navigate after transition delay
             setTimeout(() => {
                 window.location.href = href;
-            }, 100);
+            }, 150);
         });
     }
 

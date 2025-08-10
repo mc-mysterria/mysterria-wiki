@@ -29,7 +29,7 @@ export default defineConfig({
                 en: 'Mysterria - Magic awaits in Minecraft',
                 uk: 'Mysterria - Магія чекає в Minecraft',
             },
-            defaultLocale: 'en',
+            defaultLocale: 'root',
             description: 'Complete documentation for Mysterria Minecraft server inspired by Lord of the Mysteries',
             favicon: 'favicon.png',
             head: [
@@ -73,7 +73,7 @@ export default defineConfig({
                 TwoColumnContent: './src/components/Footer.astro',
             },
             locales: {
-                uk: {
+                root: {
                     label: 'Українська',
                     lang: 'uk',
                 },
