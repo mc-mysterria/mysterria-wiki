@@ -1,0 +1,21 @@
+{
+  "name": "mysterria-wiki",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.4.2",
+    "@astrojs/starlight": "^0.35.2",
+    "@astrojs/vercel": "^8.2.5",
+    "@fontsource/ibm-plex-serif": "^5.1.1",
+    "@vercel/analytics": "^1.4.1",
+    "astro": "^5.12.9",
+    "sharp": "^0.32.5"
+  }
+}
