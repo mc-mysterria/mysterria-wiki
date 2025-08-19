@@ -41,39 +41,34 @@ const translations = t[lang as keyof typeof t] || t.uk;
 
 const navigationLinks = [
     {
-        path: 'https://www.mysterria.net',
+        path: '/home',
         title: translations.home,
         external: true,
         active: false,
-        spaNav: false
     },
     {
-        path: 'https://www.mysterria.net/guide',
+        path: '/guide',
         title: translations.guide,
         external: true,
         active: false,
-        spaNav: false
     },
     {
-        path: 'https://www.mysterria.net/rules',
+        path: '/rules',
         title: translations.rules,
         external: true,
         active: false,
-        spaNav: false
     },
     {
-        path: 'https://www.mysterria.net/store',
+        path: '/store',
         title: translations.shop,
         external: true,
         active: false,
-        spaNav: false
     },
     {
         path: '#',
         title: translations.wiki,
         external: false,
         active: true, // Always active since we're in the docs site
-        spaNav: false
     },
 ];
 ---
