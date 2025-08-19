@@ -1,5 +1,6 @@
 ---
 import LanguageSelector from './LanguageSelector.astro';
+import logoImage from '../assets/logo.webp';
 
 export interface Props {
     currentLanguage?: string;
@@ -40,27 +41,27 @@ const translations = t[lang as keyof typeof t] || t.uk;
 
 const navigationLinks = [
     {
-        path: '/',
+        path: 'https://www.mysterria.net',
         title: translations.home,
-        external: false,
+        external: true,
         active: false
     },
     {
-        path: '/guides',
+        path: 'https://www.mysterria.net/guide',
         title: translations.guide,
-        external: false,
+        external: true,
         active: false
     },
     {
-        path: '/rules',
+        path: 'https://www.mysterria.net/rules',
         title: translations.rules,
-        external: false,
+        external: true,
         active: false
     },
     {
-        path: '/store',
+        path: 'https://www.mysterria.net/store',
         title: translations.shop,
-        external: false,
+        external: true,
         active: false
     },
     {
@@ -72,15 +73,15 @@ const navigationLinks = [
 ];
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <header class="main-header" data-main-header>
     <div class="header-content">
         <!-- Logo -->
-        <a href="/" class="header-logo-link">
-            <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
-                <path d="M12 4.5L4.5 8.25v8.5c0 4.28 2.97 7.44 7.5 8.75 4.53-1.31 7.5-4.47 7.5-8.75v-8.5L12 4.5z"
-                      fill="var(--myst-bg)"/>
-            </svg>
+        <a href="https://www.mysterria.net" class="header-logo-link" data-spa-nav="true">
+            <img src={logoImage.src} alt="Mysterria" class="logo-icon" width="44" height="46" />
             <span class="logo-text">Mysterria</span>
         </a>
 
@@ -91,6 +92,8 @@ const navigationLinks = [
                             href={link.path}
                             class={`nav-link ${link.active ? 'active' : ''}`}
                             data-path={link.path}
+                            data-external={link.external}
+                            data-spa-nav={link.external}
                     >
                         {link.title}
                     </a>
@@ -99,6 +102,14 @@ const navigationLinks = [
 
         <!-- Header Actions -->
         <div class="header-actions">
+            <!-- Custom Theme Toggle -->
+            <button class="theme-toggle-button nav-separator" aria-label="Toggle theme" data-theme-toggle>
+                <span class="theme-emoji" data-theme-icon>🌙</span>
+            </button>
+
+            <!-- Language Selector -->
+            <LanguageSelector currentLanguage={lang}/>
+
             <!-- Search Button -->
             <button
                     class="search-button"
@@ -113,21 +124,6 @@ const navigationLinks = [
                 <span class="search-text hide-mobile">{translations.search}</span>
                 <kbd class="search-shortcut hide-mobile">⌘K</kbd>
             </button>
-
-            <!-- Language Selector -->
-            <LanguageSelector currentLanguage={lang}/>
-
-            <!-- Theme Toggle Placeholder (Starlight will inject its theme selector here) -->
-            <div class="theme-toggle-wrapper">
-                <!-- Fallback theme selector in case Starlight's doesn't load -->
-                <div class="fallback-theme-selector" style="display: none;">
-                    <select class="theme-select" aria-label="Select theme">
-                        <option value="auto">Auto</option>
-                        <option value="dark">Dark</option>
-                        <option value="light">Light</option>
-                    </select>
-                </div>
-            </div>
 
             <!-- Mobile Navigation Toggle -->
             <button
@@ -164,6 +160,8 @@ const navigationLinks = [
                                 href={link.path}
                                 class={`mobile-nav-link ${link.active ? 'active' : ''}`}
                                 data-mobile-link
+                                data-external={link.external}
+                                data-spa-nav={link.external}
                         >
                             {link.title}
                         </a>
@@ -183,6 +181,12 @@ const navigationLinks = [
                             <path d="m21 21-4.35-4.35"></path>
                         </svg>
                         <span>{translations.search}</span>
+                    </button>
+
+                    <!-- Mobile Theme Toggle -->
+                    <button class="mobile-theme-toggle" aria-label="Toggle theme" data-mobile-theme-toggle>
+                        <span class="theme-emoji" data-mobile-theme-icon>🌙</span>
+                        <span>Theme</span>
                     </button>
 
                     <div class="mobile-language-selector">
@@ -220,14 +224,14 @@ const navigationLinks = [
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
-        gap: 24px;
+        gap: 32px;
     }
 
     .header-logo-link {
         flex-shrink: 0;
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 12px;
         text-decoration: none;
         color: var(--myst-ink);
         transition: all 0.3s ease;
@@ -238,11 +242,12 @@ const navigationLinks = [
     }
 
     .logo-icon {
-        color: var(--myst-gold);
+        border-radius: 4px;
+        object-fit: contain;
     }
 
     .logo-text {
-        font-family: "Inter", serif;
+        font-family: "Inter", sans-serif;
         font-size: 18px;
         font-weight: 600;
     }
@@ -251,6 +256,7 @@ const navigationLinks = [
         display: flex;
         align-items: center;
         gap: 8px;
+        margin-left: 40px;
     }
 
     .nav-link {
@@ -258,6 +264,7 @@ const navigationLinks = [
         border-radius: 6px;
         color: #a1a1aa;
         text-decoration: none;
+        font-family: "Inter", sans-serif;
         font-size: 14px;
         font-weight: 500;
         transition: all 0.3s ease;
@@ -283,7 +290,8 @@ const navigationLinks = [
         display: flex;
         align-items: center;
         gap: 12px;
-        flex-shrink: 0;
+        flex: 1;
+        min-width: 0;
     }
 
     .mobile-nav-toggle {
@@ -404,6 +412,7 @@ const navigationLinks = [
         gap: 8px;
         padding: 8px 12px;
         height: 40px;
+        flex: 1;
         min-width: 200px;
         background: color-mix(in srgb, var(--myst-bg) 60%, transparent);
         border: 1px solid color-mix(in srgb, white 15%, transparent);
@@ -411,10 +420,11 @@ const navigationLinks = [
         color: var(--myst-ink);
         cursor: pointer;
         transition: all 0.3s ease;
+        font-family: "Inter", sans-serif;
         font-size: 14px;
         font-weight: 500;
         backdrop-filter: blur(8px);
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     .search-button:hover {
@@ -436,35 +446,42 @@ const navigationLinks = [
         font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
     }
 
-    .theme-toggle-wrapper {
+    .theme-toggle-button {
         display: flex;
         align-items: center;
-        min-width: 80px;
+        justify-content: center;
+        width: 40px;
         height: 40px;
-    }
-
-    .fallback-theme-selector .theme-select {
-        height: 40px;
-        min-width: 80px;
+        min-width: 40px;
+        min-height: 40px;
         background: color-mix(in srgb, var(--myst-bg) 60%, transparent);
         border: 1px solid color-mix(in srgb, white 15%, transparent);
         border-radius: 6px;
-        color: var(--myst-ink);
-        font-size: 14px;
-        padding: 8px 32px 8px 12px;
+        cursor: pointer;
         transition: all 0.3s ease;
         backdrop-filter: blur(8px);
-        cursor: pointer;
-        appearance: none;
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-        background-position: right 8px center;
-        background-repeat: no-repeat;
-        background-size: 16px;
+        padding: 0;
+        flex-shrink: 0;
     }
 
-    .fallback-theme-selector .theme-select:hover {
-        background-color: color-mix(in srgb, white 5%, transparent);
+    .theme-toggle-button:hover {
+        background: color-mix(in srgb, white 5%, transparent);
         border-color: color-mix(in srgb, white 30%, transparent);
+    }
+
+    .theme-emoji {
+        font-size: 14px;
+        line-height: 1;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    .theme-toggle-button:hover .theme-emoji {
+        transform: scale(1.1);
+    }
+
+    .nav-separator {
+        margin-left: 150px;
     }
 
     .mobile-nav-actions {
@@ -500,6 +517,29 @@ const navigationLinks = [
         border-color: color-mix(in srgb, white 30%, transparent);
     }
 
+    .mobile-theme-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        padding: 16px 24px;
+        background: color-mix(in srgb, var(--myst-bg) 60%, transparent);
+        border: 1px solid color-mix(in srgb, white 15%, transparent);
+        border-radius: 12px;
+        color: var(--myst-ink);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1.1rem;
+        font-weight: 600;
+        backdrop-filter: blur(8px);
+    }
+
+    .mobile-theme-toggle:hover {
+        background: color-mix(in srgb, white 5%, transparent);
+        border-color: color-mix(in srgb, white 30%, transparent);
+    }
+
     .mobile-language-selector {
         margin: 8px 0;
     }
@@ -513,20 +553,20 @@ const navigationLinks = [
 
     :root[data-theme="light"] .search-button,
     :root[data-theme="light"] .mobile-search-button,
-    :root[data-theme="light"] .fallback-theme-selector .theme-select,
+    :root[data-theme="light"] .theme-toggle-button,
     :root[data-theme="parchment"] .search-button,
     :root[data-theme="parchment"] .mobile-search-button,
-    :root[data-theme="parchment"] .fallback-theme-selector .theme-select {
+    :root[data-theme="parchment"] .theme-toggle-button {
         background: color-mix(in srgb, var(--myst-bg) 80%, white);
         border-color: color-mix(in srgb, var(--myst-gold) 30%, transparent);
     }
 
     :root[data-theme="light"] .search-button:hover,
     :root[data-theme="light"] .mobile-search-button:hover,
-    :root[data-theme="light"] .fallback-theme-selector .theme-select:hover,
+    :root[data-theme="light"] .theme-toggle-button:hover,
     :root[data-theme="parchment"] .search-button:hover,
     :root[data-theme="parchment"] .mobile-search-button:hover,
-    :root[data-theme="parchment"] .fallback-theme-selector .theme-select:hover {
+    :root[data-theme="parchment"] .theme-toggle-button:hover {
         background: color-mix(in srgb, var(--myst-gold) 10%, var(--myst-bg));
         border-color: var(--myst-gold);
     }
@@ -575,6 +615,7 @@ const navigationLinks = [
             padding: 8px;
             min-width: 40px;
             max-width: 40px;
+            flex: 0 0 40px;
         }
 
         .search-text,
@@ -584,12 +625,17 @@ const navigationLinks = [
 
         .header-actions {
             gap: 8px;
+            flex: 0 0 auto;
+        }
+
+        .nav-separator {
+            margin-left: 16px;
         }
     }
 
     @media (min-width: 1200px) {
         .search-button {
-            min-width: 280px;
+            min-width: 320px;
         }
     }
 
@@ -659,9 +705,47 @@ const navigationLinks = [
             mobileBackdrop.addEventListener('click', closeMobileNav);
         }
 
-        // Close mobile nav when clicking on links
+        // Handle SPA navigation for external links
+        function handleSPANavigation(event, link) {
+            const isExternal = link.getAttribute('data-spa-nav') === 'true';
+            
+            if (isExternal && window.parent !== window) {
+                event.preventDefault();
+                
+                // Close mobile nav if open
+                if (isMobileNavOpen) {
+                    closeMobileNav();
+                }
+                
+                // Extract the path from the full URL
+                const url = new URL(link.href);
+                const targetPath = url.pathname;
+                
+                // Send message to parent SPA to navigate
+                window.parent.postMessage({
+                    type: 'spa-navigate',
+                    path: targetPath,
+                    url: link.href
+                }, '*');
+                
+                console.log('SPA navigation requested:', targetPath);
+            }
+        }
+
+        // Close mobile nav when clicking on links and handle SPA navigation
         mobileLinks.forEach(link => {
-            link.addEventListener('click', closeMobileNav);
+            link.addEventListener('click', function(event) {
+                handleSPANavigation(event, link);
+                closeMobileNav();
+            });
+        });
+
+        // Handle SPA navigation for desktop nav links and logo
+        const spaNavLinks = header.querySelectorAll('[data-spa-nav="true"]');
+        spaNavLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                handleSPANavigation(event, link);
+            });
         });
 
         // Close mobile nav on escape key
@@ -752,27 +836,22 @@ const navigationLinks = [
             const currentLang = isEnglish ? 'en' : 'uk';
             const t = translations[currentLang];
 
-            // Update navigation links
+            // Update navigation links text only (URLs are set in the component)
             const navLinks = header.querySelectorAll('.nav-link, .mobile-nav-link');
             navLinks.forEach((link, index) => {
                 // Map links by their position in the navigation array
                 switch (index) {
                     case 0: // Home
                         link.textContent = t.home;
-                        // Update the link to point to the correct language version using @ format
-                        link.href = `@${currentLang === 'en' ? '/en' : ''}`;
                         break;
                     case 1: // Guides
                         link.textContent = t.guide;
-                        link.href = `@${currentLang === 'en' ? '/en' : ''}/guides`;
                         break;
                     case 2: // Rules
                         link.textContent = t.rules;
-                        link.href = `@${currentLang === 'en' ? '/en' : ''}/rules`;
                         break;
                     case 3: // Shop
                         link.textContent = t.shop;
-                        link.href = '@/store';
                         break;
                     case 4: // Wiki (current site)
                         link.textContent = t.wiki;
@@ -841,44 +920,132 @@ const navigationLinks = [
         // Initialize language selector on load
         setTimeout(updateLanguageSelector, 100);
 
-        // Theme selector fallback and integration
-        function initializeThemeSelector() {
-            const themeWrapper = header.querySelector('.theme-toggle-wrapper');
-            const fallbackSelector = header.querySelector('.fallback-theme-selector');
+        // Theme toggle functionality
+        function initializeThemeToggle() {
+            const themeToggle = header.querySelector('[data-theme-toggle]');
+            const mobileThemeToggle = header.querySelector('[data-mobile-theme-toggle]');
+            const themeIcon = header.querySelector('[data-theme-icon]');
+            const mobileThemeIcon = header.querySelector('[data-mobile-theme-icon]');
 
-            if (!themeWrapper) return;
+            if (!themeToggle || !themeIcon) return;
 
-            // Check if Starlight's theme selector exists
-            let starlightSelector = document.querySelector('starlight-theme-select');
+            let isToggling = false;
 
-            // If no Starlight selector found, show fallback
-            if (!starlightSelector && fallbackSelector) {
-                console.log('No Starlight theme selector found, showing fallback');
-                fallbackSelector.style.display = 'block';
-
-                // Add functionality to fallback selector
-                const select = fallbackSelector.querySelector('.theme-select');
-                if (select) {
-                    // Set current theme
-                    const currentTheme = document.documentElement.getAttribute('data-theme') || 'auto';
-                    select.value = currentTheme;
-
-                    select.addEventListener('change', function () {
-                        const newTheme = this.value;
-                        if (newTheme === 'auto') {
-                            document.documentElement.removeAttribute('data-theme');
-                            localStorage.removeItem('starlight-theme');
-                        } else {
-                            document.documentElement.setAttribute('data-theme', newTheme);
-                            localStorage.setItem('starlight-theme', newTheme);
-                        }
-                    });
-                }
+            // Get current theme
+            function getCurrentTheme() {
+                return document.documentElement.getAttribute('data-theme') || 'dark';
             }
+
+            // Update theme icons
+            function updateThemeIcons(theme) {
+                const emoji = theme === 'dark' ? '☀️' : '🌙';
+                
+                if (themeIcon) themeIcon.textContent = emoji;
+                if (mobileThemeIcon) mobileThemeIcon.textContent = emoji;
+            }
+
+            // Toggle theme
+            function toggleTheme(event) {
+                if (isToggling) return;
+                
+                event.preventDefault();
+                event.stopPropagation();
+                
+                isToggling = true;
+                
+                const currentTheme = getCurrentTheme();
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('starlight-theme', newTheme);
+                
+                updateThemeIcons(newTheme);
+                
+                console.log('Theme toggled from', currentTheme, 'to', newTheme);
+                
+                setTimeout(() => {
+                    isToggling = false;
+                }, 300);
+            }
+
+            // Initialize theme icons
+            const initialTheme = getCurrentTheme();
+            updateThemeIcons(initialTheme);
+
+            // Remove any existing listeners to prevent duplicates
+            const newThemeToggle = themeToggle.cloneNode(true);
+            const newThemeIcon = newThemeToggle.querySelector('[data-theme-icon]');
+            themeToggle.parentNode.replaceChild(newThemeToggle, themeToggle);
+            
+            let newMobileThemeToggle, newMobileThemeIcon;
+            if (mobileThemeToggle) {
+                newMobileThemeToggle = mobileThemeToggle.cloneNode(true);
+                newMobileThemeIcon = newMobileThemeToggle.querySelector('[data-mobile-theme-icon]');
+                mobileThemeToggle.parentNode.replaceChild(newMobileThemeToggle, mobileThemeToggle);
+            }
+
+            // Update references to use the new elements
+            const finalThemeIcon = newThemeIcon;
+            const finalMobileThemeIcon = newMobileThemeIcon;
+
+            // Update icons function with new references
+            function updateThemeIconsFinal(theme) {
+                const emoji = theme === 'dark' ? '☀️' : '🌙';
+                
+                if (finalThemeIcon) finalThemeIcon.textContent = emoji;
+                if (finalMobileThemeIcon) finalMobileThemeIcon.textContent = emoji;
+            }
+
+            // Updated toggle function
+            function toggleThemeFinal(event) {
+                if (isToggling) return;
+                
+                event.preventDefault();
+                event.stopPropagation();
+                
+                isToggling = true;
+                
+                const currentTheme = getCurrentTheme();
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('starlight-theme', newTheme);
+                
+                updateThemeIconsFinal(newTheme);
+                
+                console.log('Theme toggled from', currentTheme, 'to', newTheme);
+                
+                setTimeout(() => {
+                    isToggling = false;
+                }, 300);
+            }
+
+            // Initialize with correct icons
+            updateThemeIconsFinal(initialTheme);
+
+            // Add fresh event listeners
+            newThemeToggle.addEventListener('click', toggleThemeFinal, { passive: false });
+            if (newMobileThemeToggle) {
+                newMobileThemeToggle.addEventListener('click', toggleThemeFinal, { passive: false });
+            }
+
+            // Update icons when theme changes
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme' && !isToggling) {
+                        const newTheme = getCurrentTheme();
+                        updateThemeIcons(newTheme);
+                    }
+                });
+            });
+
+            observer.observe(document.documentElement, {
+                attributes: true,
+                attributeFilter: ['data-theme']
+            });
         }
 
-        // Initialize theme selector after a delay
-        setTimeout(initializeThemeSelector, 200);
-        setTimeout(initializeThemeSelector, 1000);
+        // Initialize theme toggle with a single call
+        setTimeout(initializeThemeToggle, 500);
     });
 </script>
