@@ -45,30 +45,51 @@ const navigationLinks = [
         title: translations.home,
         external: true,
         active: false,
+        spaMessage: {
+            type: 'spa-navigate',
+            path: '/home',
+            url: 'https://www.mysterria.net/home'
+        }
     },
     {
         path: '/guide',
         title: translations.guide,
         external: true,
         active: false,
+        spaMessage: {
+            type: 'spa-navigate',
+            path: '/guide',
+            url: 'https://www.mysterria.net/guide'
+        }
     },
     {
         path: '/rules',
         title: translations.rules,
         external: true,
         active: false,
+        spaMessage: {
+            type: 'spa-navigate',
+            path: '/rules',
+            url: 'https://www.mysterria.net/rules'
+        }
     },
     {
         path: '/store',
         title: translations.shop,
         external: true,
         active: false,
+        spaMessage: {
+            type: 'spa-navigate',
+            path: '/store',
+            url: 'https://www.mysterria.net/store'
+        }
     },
     {
         path: '#',
         title: translations.wiki,
         external: false,
         active: true, // Always active since we're in the docs site
+        spaMessage: null
     },
 ];
 ---
