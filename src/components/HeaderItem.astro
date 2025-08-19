@@ -41,14 +41,14 @@ const translations = t[lang as keyof typeof t] || t.uk;
 
 const navigationLinks = [
     {
-        path: '/home',
+        path: '/',
         title: translations.home,
         external: true,
         active: false,
         spaMessage: {
             type: 'spa-navigate',
-            path: '/home',
-            url: 'https://www.mysterria.net/home'
+            path: '/',
+            url: 'https://www.mysterria.net/'
         }
     },
     {
@@ -831,19 +831,18 @@ const navigationLinks = [
             }
         });
 
-        // Language switching functionality
         const translations = {
             uk: {
                 home: 'Головна',
-                guide: 'Гайди',
+                guide: 'Почати гру',
                 rules: 'Правила',
-                shop: 'Магазин',
-                wiki: 'Вікі',
+                shop: 'Крамниця',
+                wiki: 'Вікіпедія',
                 search: 'Пошук...'
             },
             en: {
                 home: 'Home',
-                guide: 'Guide',
+                guide: 'Game Guide',
                 rules: 'Rules',
                 shop: 'Shop',
                 wiki: 'Wiki',
