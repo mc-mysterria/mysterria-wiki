@@ -20,15 +20,15 @@ const lang = currentLanguage || (isEnglish ? 'en' : 'uk');
 const t = {
     uk: {
         home: 'Головна',
-        guide: 'Гайди',
+        guide: 'Почати гру',
         rules: 'Правила',
-        shop: 'Магазин',
-        wiki: 'Вікі',
+        shop: 'Крамниця',
+        wiki: 'Вікіпедія',
         search: 'Пошук...'
     },
     en: {
         home: 'Home',
-        guide: 'Guide',
+        guide: 'Game Guide',
         rules: 'Rules',
         shop: 'Shop',
         wiki: 'Wiki',
@@ -38,35 +38,33 @@ const t = {
 
 const translations = t[lang as keyof typeof t] || t.uk;
 
-// Since this is a docs site, Wiki should always be active
-// Other links should redirect to the main SPA site
 const navigationLinks = [
     {
-        path: `https://mysterria.net${lang === 'en' ? '/en' : ''}`,
+        path: '/',
         title: translations.home,
-        external: true,
+        external: false,
         active: false
     },
     {
-        path: `https://mysterria.net${lang === 'en' ? '/en' : ''}/guides`,
+        path: '/guides',
         title: translations.guide,
-        external: true,
+        external: false,
         active: false
     },
     {
-        path: `https://mysterria.net${lang === 'en' ? '/en' : ''}/rules`,
+        path: '/rules',
         title: translations.rules,
-        external: true,
+        external: false,
         active: false
     },
     {
-        path: 'https://mysterria.net/store',
+        path: '/store',
         title: translations.shop,
-        external: true,
+        external: false,
         active: false
     },
     {
-        path: '#', // Placeholder since we're in the docs
+        path: '#',
         title: translations.wiki,
         external: false,
         active: true // Always active since we're in the docs site
@@ -761,20 +759,20 @@ const navigationLinks = [
                 switch (index) {
                     case 0: // Home
                         link.textContent = t.home;
-                        // Update the link to point to the correct language version of main site
-                        link.href = `https://mysterria.net${currentLang === 'en' ? '/en' : ''}`;
+                        // Update the link to point to the correct language version using @ format
+                        link.href = `@${currentLang === 'en' ? '/en' : ''}`;
                         break;
                     case 1: // Guides
                         link.textContent = t.guide;
-                        link.href = `https://mysterria.net${currentLang === 'en' ? '/en' : ''}/guides`;
+                        link.href = `@${currentLang === 'en' ? '/en' : ''}/guides`;
                         break;
                     case 2: // Rules
                         link.textContent = t.rules;
-                        link.href = `https://mysterria.net${currentLang === 'en' ? '/en' : ''}/rules`;
+                        link.href = `@${currentLang === 'en' ? '/en' : ''}/rules`;
                         break;
                     case 3: // Shop
                         link.textContent = t.shop;
-                        // Shop link stays the same
+                        link.href = '@/store';
                         break;
                     case 4: // Wiki (current site)
                         link.textContent = t.wiki;
