@@ -68,9 +68,25 @@ export default defineConfig({
                         defer: true,
                     },
                 },
+                {
+                    tag: 'link',
+                    attrs: {
+                        rel: 'stylesheet',
+                        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css',
+                        crossorigin: 'anonymous',
+                    },
+                },
+                {
+                    tag: 'script',
+                    attrs: {
+                        src: '/header-integration.js',
+                        defer: true,
+                    },
+                },
             ],
             components: {
                 TwoColumnContent: './src/components/Footer.astro',
+                Header: './src/components/HeaderItem.astro',
             },
             locales: {
                 root: {
@@ -91,6 +107,43 @@ export default defineConfig({
             customCss: [
                 './src/fonts/font-face.css',
                 './src/styles/custom.css',
+            ],
+            sidebar: [
+                {
+                    label: '🎮 Загальне',
+                    translations: {
+                        en: '🎮 General',
+                    },
+                    autogenerate: { directory: 'general' },
+                },
+                {
+                    label: '📔 Посібники',
+                    translations: {
+                        en: '📔 Guides',
+                    },
+                    autogenerate: { directory: 'guides' },
+                },
+                {
+                    label: '☔ Магія',
+                    translations: {
+                        en: '☔ Magic',
+                    },
+                    autogenerate: { directory: 'magic' },
+                },
+                {
+                    label: '🪄 Шляхи',
+                    translations: {
+                        en: '🪄 Pathways',
+                    },
+                    autogenerate: { directory: 'pathways' },
+                },
+                {
+                    label: '✨ Підтримка',
+                    translations: {
+                        en: '✨ Support',
+                    },
+                    autogenerate: { directory: 'support' },
+                },
             ],
         }),
     ],

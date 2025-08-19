@@ -31,7 +31,7 @@
                 <div class="mystical-loader">
                     <div class="loader-orb"></div>
                     <div class="loader-core"></div>
-                    <div class="loading-text">Loading...</div>
+                    <div class="loading-text">Loading</div>
                 </div>
             `;
             document.body.appendChild(overlay);
@@ -39,7 +39,7 @@
     }
 
     // Show loading animation
-    function showLoading(text = 'Loading...') {
+    function showLoading(text = 'Loading') {
         if (isLoading) return;
         
         isLoading = true;
@@ -135,7 +135,7 @@
                 container.classList.add('language-switching');
                 
                 // Show loading with language-specific text
-                showLoading(`Switching to ${selectedLang}...`);
+                showLoading(`Switching to ${selectedLang}`);
                 
                 // Navigate to new language
                 window.location.pathname = this.value;
@@ -175,7 +175,7 @@
 
             // Show loading for internal navigation
             e.preventDefault();
-            showLoading('Loading page...');
+            showLoading('');
             
             // Navigate after transition delay
             setTimeout(() => {
@@ -188,7 +188,7 @@
     function handlePageLoad() {
         // Handle initial page load
         if (document.readyState === 'loading') {
-            showLoading('Loading page...');
+            showLoading('');
         }
 
         // Hide loading when page is fully loaded
@@ -203,7 +203,7 @@
     // Handle browser back/forward navigation
     function handlePopState() {
         window.addEventListener('popstate', () => {
-            showLoading('Loading page...');
+            showLoading('');
         });
     }
 
@@ -226,7 +226,7 @@
             
             // Skip if it's a search form that stays on same page
             if (form.method?.toLowerCase() === 'get') {
-                showLoading('Searching...');
+                showLoading('Searching');
             }
         });
     }

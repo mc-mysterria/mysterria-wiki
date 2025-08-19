@@ -1,0 +1,886 @@
+---
+import LanguageSelector from './LanguageSelector.astro';
+
+export interface Props {
+    currentLanguage?: string;
+    isAuthenticated?: boolean;
+    username?: string;
+    balance?: number;
+    showBalance?: boolean;
+}
+
+const {
+    currentLanguage = 'uk',
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const isEnglish = currentPath.startsWith('/en/') || currentPath === '/en';
+const lang = currentLanguage || (isEnglish ? 'en' : 'uk');
+
+const t = {
+    uk: {
+        home: 'Головна',
+        guide: 'Гайди',
+        rules: 'Правила',
+        shop: 'Магазин',
+        wiki: 'Вікі',
+        search: 'Пошук...'
+    },
+    en: {
+        home: 'Home',
+        guide: 'Guide',
+        rules: 'Rules',
+        shop: 'Shop',
+        wiki: 'Wiki',
+        search: 'Search...'
+    }
+};
+
+const translations = t[lang as keyof typeof t] || t.uk;
+
+// Since this is a docs site, Wiki should always be active
+// Other links should redirect to the main SPA site
+const navigationLinks = [
+    {
+        path: `https://mysterria.net${lang === 'en' ? '/en' : ''}`,
+        title: translations.home,
+        external: true,
+        active: false
+    },
+    {
+        path: `https://mysterria.net${lang === 'en' ? '/en' : ''}/guides`,
+        title: translations.guide,
+        external: true,
+        active: false
+    },
+    {
+        path: `https://mysterria.net${lang === 'en' ? '/en' : ''}/rules`,
+        title: translations.rules,
+        external: true,
+        active: false
+    },
+    {
+        path: 'https://mysterria.net/store',
+        title: translations.shop,
+        external: true,
+        active: false
+    },
+    {
+        path: '#', // Placeholder since we're in the docs
+        title: translations.wiki,
+        external: false,
+        active: true // Always active since we're in the docs site
+    },
+];
+---
+
+<header class="main-header" data-main-header>
+    <div class="header-content">
+        <!-- Logo -->
+        <a href="/" class="header-logo-link">
+            <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                <path d="M12 4.5L4.5 8.25v8.5c0 4.28 2.97 7.44 7.5 8.75 4.53-1.31 7.5-4.47 7.5-8.75v-8.5L12 4.5z"
+                      fill="var(--myst-bg)"/>
+            </svg>
+            <span class="logo-text">Mysterria</span>
+        </a>
+
+        <!-- Main Navigation -->
+        <nav class="navigation">
+            {navigationLinks.map(link => (
+                    <a
+                            href={link.path}
+                            class={`nav-link ${link.active ? 'active' : ''}`}
+                            data-path={link.path}
+                    >
+                        {link.title}
+                    </a>
+            ))}
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+            <!-- Search Button -->
+            <button
+                    class="search-button"
+                    aria-label={translations.search}
+                    data-open-modal
+                    data-search-modal
+            >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <span class="search-text hide-mobile">{translations.search}</span>
+                <kbd class="search-shortcut hide-mobile">⌘K</kbd>
+            </button>
+
+            <!-- Language Selector -->
+            <LanguageSelector currentLanguage={lang}/>
+
+            <!-- Theme Toggle Placeholder (Starlight will inject its theme selector here) -->
+            <div class="theme-toggle-wrapper">
+                <!-- Fallback theme selector in case Starlight's doesn't load -->
+                <div class="fallback-theme-selector" style="display: none;">
+                    <select class="theme-select" aria-label="Select theme">
+                        <option value="auto">Auto</option>
+                        <option value="dark">Dark</option>
+                        <option value="light">Light</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Toggle -->
+            <button
+                    class="mobile-nav-toggle"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    data-mobile-toggle
+            >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" data-mobile-overlay style="display: none;">
+        <div class="mobile-nav-backdrop" data-mobile-backdrop></div>
+        <nav class="mobile-nav">
+            <div class="mobile-nav-header">
+                <button class="mobile-nav-close" data-mobile-close aria-label="Close navigation">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="mobile-nav-content">
+                {navigationLinks.map(link => (
+                        <a
+                                href={link.path}
+                                class={`mobile-nav-link ${link.active ? 'active' : ''}`}
+                                data-mobile-link
+                        >
+                            {link.title}
+                        </a>
+                ))}
+
+                <div class="mobile-nav-actions">
+                    <!-- Mobile Search -->
+                    <button
+                            class="mobile-search-button"
+                            aria-label={translations.search}
+                            data-open-modal
+                            data-search-modal
+                    >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                             stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <span>{translations.search}</span>
+                    </button>
+
+                    <div class="mobile-language-selector">
+                        <LanguageSelector currentLanguage={lang}/>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<style>
+    .main-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+        padding: 0 16px;
+        gap: 24px;
+        background: color-mix(in srgb, var(--myst-bg) 80%, transparent);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid color-mix(in srgb, white 15%, transparent);
+        z-index: 1000;
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 24px;
+    }
+
+    .header-logo-link {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: var(--myst-ink);
+        transition: all 0.3s ease;
+    }
+
+    .header-logo-link:hover {
+        color: var(--myst-gold);
+    }
+
+    .logo-icon {
+        color: var(--myst-gold);
+    }
+
+    .logo-text {
+        font-family: "Inter", serif;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .navigation {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .nav-link {
+        padding: 10px 16px;
+        border-radius: 6px;
+        color: #a1a1aa;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        min-width: 60px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+    }
+
+    .nav-link:hover {
+        color: var(--myst-ink-strong);
+    }
+
+    .nav-link.active {
+        color: var(--myst-ink-strong);
+        background: color-mix(in srgb, white 5%, transparent);
+        border: 1px solid color-mix(in srgb, white 10%, transparent);
+    }
+
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+    }
+
+    .mobile-nav-toggle {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: color-mix(in srgb, var(--myst-bg) 60%, transparent);
+        border: 1px solid color-mix(in srgb, white 15%, transparent);
+        color: var(--myst-ink);
+        cursor: pointer;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(8px);
+    }
+
+    .mobile-nav-toggle:hover {
+        background: color-mix(in srgb, white 5%, transparent);
+        border-color: color-mix(in srgb, white 30%, transparent);
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: flex;
+    }
+
+    .mobile-nav-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+    }
+
+    .mobile-nav {
+        position: relative;
+        width: 100%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--myst-bg);
+        border-right: 1px solid color-mix(in srgb, white 10%, transparent);
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-nav-header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 16px;
+        border-bottom: 1px solid color-mix(in srgb, white 10%, transparent);
+    }
+
+    .mobile-nav-close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        background: transparent;
+        border: 1px solid color-mix(in srgb, white 15%, transparent);
+        border-radius: 6px;
+        color: var(--myst-ink);
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-nav-close:hover {
+        background: color-mix(in srgb, white 5%, transparent);
+        border-color: color-mix(in srgb, white 30%, transparent);
+    }
+
+    .mobile-nav-content {
+        flex: 1;
+        padding: 32px 0;
+    }
+
+    .mobile-nav-link {
+        display: flex;
+        align-items: center;
+        padding: 18px 28px;
+        color: #e2e8f0;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-left: 4px solid transparent;
+        letter-spacing: 0.025em;
+    }
+
+    .mobile-nav-link:hover {
+        color: #ffffff;
+        background: linear-gradient(90deg, rgba(16, 185, 129, 0.1), transparent);
+        border-left-color: #10b981;
+        transform: translateX(6px);
+    }
+
+    .mobile-nav-link.active {
+        color: #ffffff;
+        background: linear-gradient(
+                90deg,
+                rgba(16, 185, 129, 0.2),
+                rgba(34, 197, 94, 0.1)
+        );
+        border-left-color: #22c55e;
+        box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.1) inset;
+    }
+
+    .search-button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        height: 40px;
+        min-width: 200px;
+        background: color-mix(in srgb, var(--myst-bg) 60%, transparent);
+        border: 1px solid color-mix(in srgb, white 15%, transparent);
+        border-radius: 6px;
+        color: var(--myst-ink);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 14px;
+        font-weight: 500;
+        backdrop-filter: blur(8px);
+        justify-content: flex-start;
+    }
+
+    .search-button:hover {
+        background: color-mix(in srgb, white 5%, transparent);
+        border-color: color-mix(in srgb, white 30%, transparent);
+    }
+
+    .search-text {
+        color: var(--myst-ink-muted);
+    }
+
+    .search-shortcut {
+        background: color-mix(in srgb, var(--myst-ink) 10%, transparent);
+        color: var(--myst-ink-muted);
+        border: 1px solid color-mix(in srgb, var(--myst-ink) 20%, transparent);
+        border-radius: 4px;
+        padding: 2px 6px;
+        font-size: 11px;
+        font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    }
+
+    .theme-toggle-wrapper {
+        display: flex;
+        align-items: center;
+        min-width: 80px;
+        height: 40px;
+    }
+
+    .fallback-theme-selector .theme-select {
+        height: 40px;
+        min-width: 80px;
+        background: color-mix(in srgb, var(--myst-bg) 60%, transparent);
+        border: 1px solid color-mix(in srgb, white 15%, transparent);
+        border-radius: 6px;
+        color: var(--myst-ink);
+        font-size: 14px;
+        padding: 8px 32px 8px 12px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(8px);
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+        background-position: right 8px center;
+        background-repeat: no-repeat;
+        background-size: 16px;
+    }
+
+    .fallback-theme-selector .theme-select:hover {
+        background-color: color-mix(in srgb, white 5%, transparent);
+        border-color: color-mix(in srgb, white 30%, transparent);
+    }
+
+    .mobile-nav-actions {
+        margin-top: 32px;
+        padding: 0 28px;
+        border-top: 1px solid rgba(148, 163, 184, 0.1);
+        background: rgba(15, 23, 42, 0.5);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .mobile-search-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        padding: 16px 24px;
+        background: color-mix(in srgb, var(--myst-bg) 60%, transparent);
+        border: 1px solid color-mix(in srgb, white 15%, transparent);
+        border-radius: 12px;
+        color: var(--myst-ink);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1.1rem;
+        font-weight: 600;
+        backdrop-filter: blur(8px);
+    }
+
+    .mobile-search-button:hover {
+        background: color-mix(in srgb, white 5%, transparent);
+        border-color: color-mix(in srgb, white 30%, transparent);
+    }
+
+    .mobile-language-selector {
+        margin: 8px 0;
+    }
+
+    /* Light theme adjustments */
+    :root[data-theme="light"] .main-header,
+    :root[data-theme="parchment"] .main-header {
+        background: color-mix(in srgb, var(--myst-bg) 90%, white);
+        border-bottom-color: color-mix(in srgb, var(--myst-gold) 30%, transparent);
+    }
+
+    :root[data-theme="light"] .search-button,
+    :root[data-theme="light"] .mobile-search-button,
+    :root[data-theme="light"] .fallback-theme-selector .theme-select,
+    :root[data-theme="parchment"] .search-button,
+    :root[data-theme="parchment"] .mobile-search-button,
+    :root[data-theme="parchment"] .fallback-theme-selector .theme-select {
+        background: color-mix(in srgb, var(--myst-bg) 80%, white);
+        border-color: color-mix(in srgb, var(--myst-gold) 30%, transparent);
+    }
+
+    :root[data-theme="light"] .search-button:hover,
+    :root[data-theme="light"] .mobile-search-button:hover,
+    :root[data-theme="light"] .fallback-theme-selector .theme-select:hover,
+    :root[data-theme="parchment"] .search-button:hover,
+    :root[data-theme="parchment"] .mobile-search-button:hover,
+    :root[data-theme="parchment"] .fallback-theme-selector .theme-select:hover {
+        background: color-mix(in srgb, var(--myst-gold) 10%, var(--myst-bg));
+        border-color: var(--myst-gold);
+    }
+
+    :root[data-theme="light"] .mobile-nav,
+    :root[data-theme="parchment"] .mobile-nav {
+        background: var(--myst-bg);
+        border-right-color: color-mix(in srgb, var(--myst-gold) 30%, transparent);
+    }
+
+    :root[data-theme="light"] .mobile-nav-close,
+    :root[data-theme="light"] .mobile-nav-toggle,
+    :root[data-theme="parchment"] .mobile-nav-close,
+    :root[data-theme="parchment"] .mobile-nav-toggle {
+        border-color: color-mix(in srgb, var(--myst-gold) 30%, transparent);
+    }
+
+    /* Visibility utilities */
+    .hide-mobile {
+        display: block;
+    }
+
+    .show-mobile {
+        display: none;
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 768px) {
+        .navigation {
+            display: none;
+        }
+
+        .mobile-nav-toggle {
+            display: flex;
+        }
+
+        .hide-mobile {
+            display: none;
+        }
+
+        .show-mobile {
+            display: block;
+        }
+
+        .search-button {
+            padding: 8px;
+            min-width: 40px;
+            max-width: 40px;
+        }
+
+        .search-text,
+        .search-shortcut {
+            display: none;
+        }
+
+        .header-actions {
+            gap: 8px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .search-button {
+            min-width: 280px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .main-header {
+            padding: 0 12px;
+        }
+
+        .header-content {
+            gap: 16px;
+        }
+
+        .logo-text {
+            font-size: 16px;
+        }
+
+        .header-actions {
+            gap: 6px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const header = document.querySelector('[data-main-header]');
+        if (!header) return;
+
+        const mobileToggle = header.querySelector('[data-mobile-toggle]');
+        const mobileOverlay = header.querySelector('[data-mobile-overlay]');
+        const mobileBackdrop = header.querySelector('[data-mobile-backdrop]');
+        const mobileClose = header.querySelector('[data-mobile-close]');
+        const mobileLinks = header.querySelectorAll('[data-mobile-link]');
+
+        let isMobileNavOpen = false;
+
+        function openMobileNav() {
+            isMobileNavOpen = true;
+            mobileOverlay.style.display = 'flex';
+            mobileToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileNav() {
+            isMobileNavOpen = false;
+            mobileOverlay.style.display = 'none';
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        // Toggle mobile navigation
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', function () {
+                if (isMobileNavOpen) {
+                    closeMobileNav();
+                } else {
+                    openMobileNav();
+                }
+            });
+        }
+
+        // Close mobile navigation
+        if (mobileClose) {
+            mobileClose.addEventListener('click', closeMobileNav);
+        }
+
+        if (mobileBackdrop) {
+            mobileBackdrop.addEventListener('click', closeMobileNav);
+        }
+
+        // Close mobile nav when clicking on links
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMobileNav);
+        });
+
+        // Close mobile nav on escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && isMobileNavOpen) {
+                closeMobileNav();
+            }
+        });
+
+        // Handle route changes for active link highlighting
+        function updateActiveLink() {
+            const currentPath = window.location.pathname;
+            const navLinks = header.querySelectorAll('.nav-link, .mobile-nav-link');
+
+            navLinks.forEach(link => {
+                const linkPath = link.getAttribute('data-path') || link.getAttribute('href');
+                if (linkPath === currentPath) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Update active link on page load
+        updateActiveLink();
+
+        // Update active link on navigation (if using client-side routing)
+        window.addEventListener('popstate', updateActiveLink);
+
+        // Handle search modal
+        const searchButtons = header.querySelectorAll('[data-search-modal]');
+        searchButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                // Trigger Starlight's search modal
+                const starlightSearch = document.querySelector('[data-open-modal]') ||
+                    document.querySelector('site-search') ||
+                    document.querySelector('[aria-label*="Search"]');
+
+                if (starlightSearch && starlightSearch.click) {
+                    starlightSearch.click();
+                } else {
+                    // Fallback: try to trigger search with keyboard shortcut
+                    const event = new KeyboardEvent('keydown', {
+                        key: 'k',
+                        metaKey: true,
+                        bubbles: true
+                    });
+                    document.dispatchEvent(event);
+                }
+            });
+        });
+
+        // Handle keyboard shortcut for search
+        document.addEventListener('keydown', function (e) {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+                e.preventDefault();
+                const searchButton = header.querySelector('[data-search-modal]');
+                if (searchButton) {
+                    searchButton.click();
+                }
+            }
+        });
+
+        // Language switching functionality
+        const translations = {
+            uk: {
+                home: 'Головна',
+                guide: 'Гайди',
+                rules: 'Правила',
+                shop: 'Магазин',
+                wiki: 'Вікі',
+                search: 'Пошук...'
+            },
+            en: {
+                home: 'Home',
+                guide: 'Guide',
+                rules: 'Rules',
+                shop: 'Shop',
+                wiki: 'Wiki',
+                search: 'Search...'
+            }
+        };
+
+        function updateHeaderTranslations() {
+            const currentPath = window.location.pathname;
+            const isEnglish = currentPath.startsWith('/en/') || currentPath === '/en';
+            const currentLang = isEnglish ? 'en' : 'uk';
+            const t = translations[currentLang];
+
+            // Update navigation links
+            const navLinks = header.querySelectorAll('.nav-link, .mobile-nav-link');
+            navLinks.forEach((link, index) => {
+                // Map links by their position in the navigation array
+                switch (index) {
+                    case 0: // Home
+                        link.textContent = t.home;
+                        // Update the link to point to the correct language version of main site
+                        link.href = `https://mysterria.net${currentLang === 'en' ? '/en' : ''}`;
+                        break;
+                    case 1: // Guides
+                        link.textContent = t.guide;
+                        link.href = `https://mysterria.net${currentLang === 'en' ? '/en' : ''}/guides`;
+                        break;
+                    case 2: // Rules
+                        link.textContent = t.rules;
+                        link.href = `https://mysterria.net${currentLang === 'en' ? '/en' : ''}/rules`;
+                        break;
+                    case 3: // Shop
+                        link.textContent = t.shop;
+                        // Shop link stays the same
+                        break;
+                    case 4: // Wiki (current site)
+                        link.textContent = t.wiki;
+                        // Ensure Wiki tab is always active
+                        link.classList.add('active');
+                        break;
+                }
+            });
+
+            // Update search buttons
+            const searchButtons = header.querySelectorAll('[data-search-modal]');
+            searchButtons.forEach(button => {
+                const searchText = button.querySelector('.search-text, span');
+                if (searchText) {
+                    searchText.textContent = t.search;
+                }
+                button.setAttribute('aria-label', t.search);
+            });
+
+            console.log('Header translations updated to:', currentLang);
+        }
+
+        // Update translations on page load
+        updateHeaderTranslations();
+
+        // Listen for navigation changes (including language switching)
+        window.addEventListener('popstate', updateHeaderTranslations);
+
+        // Listen for custom language change events
+        window.addEventListener('languageChange', function (e) {
+            console.log('Language change detected:', e.detail);
+            // The page will redirect, so no need to update here
+        });
+
+        // Also watch for URL changes that might happen with client-side routing
+        let lastUrl = window.location.href;
+        const urlChecker = setInterval(() => {
+            if (window.location.href !== lastUrl) {
+                lastUrl = window.location.href;
+                updateHeaderTranslations();
+            }
+        }, 100);
+
+        // Clean up interval after 10 seconds (when navigation is stable)
+        setTimeout(() => clearInterval(urlChecker), 10000);
+
+        // Initialize language selector with correct current language
+        function updateLanguageSelector() {
+            const currentPath = window.location.pathname;
+            const isEnglish = currentPath.startsWith('/en/') || currentPath === '/en';
+            const currentLang = isEnglish ? 'en' : 'uk';
+
+            const languageSelectors = document.querySelectorAll('.language-selector');
+            languageSelectors.forEach(selector => {
+                const trigger = selector.querySelector('.dropdown-trigger');
+                if (trigger) {
+                    const label = currentLang === 'en' ? '🇬🇧 EN' : '🇺🇦 UK';
+                    const textNode = trigger.querySelector('[slot]') || trigger.childNodes[0];
+                    if (textNode && textNode.textContent) {
+                        textNode.textContent = label;
+                    }
+                }
+            });
+        }
+
+        // Initialize language selector on load
+        setTimeout(updateLanguageSelector, 100);
+
+        // Theme selector fallback and integration
+        function initializeThemeSelector() {
+            const themeWrapper = header.querySelector('.theme-toggle-wrapper');
+            const fallbackSelector = header.querySelector('.fallback-theme-selector');
+
+            if (!themeWrapper) return;
+
+            // Check if Starlight's theme selector exists
+            let starlightSelector = document.querySelector('starlight-theme-select');
+
+            // If no Starlight selector found, show fallback
+            if (!starlightSelector && fallbackSelector) {
+                console.log('No Starlight theme selector found, showing fallback');
+                fallbackSelector.style.display = 'block';
+
+                // Add functionality to fallback selector
+                const select = fallbackSelector.querySelector('.theme-select');
+                if (select) {
+                    // Set current theme
+                    const currentTheme = document.documentElement.getAttribute('data-theme') || 'auto';
+                    select.value = currentTheme;
+
+                    select.addEventListener('change', function () {
+                        const newTheme = this.value;
+                        if (newTheme === 'auto') {
+                            document.documentElement.removeAttribute('data-theme');
+                            localStorage.removeItem('starlight-theme');
+                        } else {
+                            document.documentElement.setAttribute('data-theme', newTheme);
+                            localStorage.setItem('starlight-theme', newTheme);
+                        }
+                    });
+                }
+            }
+        }
+
+        // Initialize theme selector after a delay
+        setTimeout(initializeThemeSelector, 200);
+        setTimeout(initializeThemeSelector, 1000);
+    });
+</script>

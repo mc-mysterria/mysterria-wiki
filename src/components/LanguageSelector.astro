@@ -1,0 +1,217 @@
+---
+export interface Props {
+  currentLanguage?: string;
+}
+
+const { currentLanguage = 'uk' } = Astro.props;
+
+const languageOptions = [
+  { label: '🇬🇧 EN', value: 'en' },
+  { label: '🇺🇦 UK', value: 'uk' },
+];
+
+const selectedLanguage = languageOptions.find(lang => lang.value === currentLanguage) || languageOptions[1];
+---
+
+<div class="language-selector">
+  <div class="language-dropdown">
+    <div class="dropdown-trigger">
+      <slot name="selected">
+        {selectedLanguage.label}
+      </slot>
+      <div class="dropdown-arrow">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m6 9 6 6 6-6"></path>
+        </svg>
+      </div>
+    </div>
+    
+    <div class="dropdown-menu" style="display: none;">
+      {languageOptions.map(option => (
+        <div class="dropdown-option" data-value={option.value}>
+          {option.label}
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+.language-selector {
+  position: relative;
+}
+
+.language-dropdown .dropdown-trigger {
+  background: color-mix(in srgb, var(--myst-bg) 60%, transparent);
+  border: 1px solid color-mix(in srgb, white 15%, transparent);
+  border-radius: 6px;
+  color: var(--myst-ink);
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  min-height: 40px;
+  height: 40px;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.language-dropdown .dropdown-trigger:hover:not(.is-disabled) {
+  background: color-mix(in srgb, white 5%, transparent);
+  border-color: color-mix(in srgb, white 30%, transparent);
+}
+
+.language-dropdown .dropdown-trigger.is-open {
+  border-color: var(--myst-gold);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--myst-gold) 20%, transparent);
+}
+
+.dropdown-arrow {
+  color: var(--myst-ink);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-arrow.is-open {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--myst-bg-2);
+  border: 1px solid color-mix(in srgb, var(--myst-gold) 30%, transparent);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.dropdown-option {
+  padding: 12px;
+  cursor: pointer;
+  color: var(--myst-ink);
+  transition: all 0.2s ease;
+}
+
+.dropdown-option:hover {
+  background: color-mix(in srgb, var(--myst-gold) 10%, transparent);
+  color: var(--myst-gold);
+}
+
+:root[data-theme="light"] .language-dropdown .dropdown-trigger,
+:root[data-theme="parchment"] .language-dropdown .dropdown-trigger {
+  background: color-mix(in srgb, var(--myst-bg) 80%, white);
+  color: var(--myst-ink);
+  border-color: color-mix(in srgb, var(--myst-gold) 30%, transparent);
+}
+
+:root[data-theme="light"] .language-dropdown .dropdown-trigger:hover,
+:root[data-theme="parchment"] .language-dropdown .dropdown-trigger:hover {
+  background: color-mix(in srgb, var(--myst-gold) 10%, var(--myst-bg));
+  border-color: var(--myst-gold);
+}
+
+:root[data-theme="light"] .dropdown-menu,
+:root[data-theme="parchment"] .dropdown-menu {
+  background: var(--myst-bg);
+  border-color: color-mix(in srgb, var(--myst-gold) 40%, transparent);
+}
+
+@media (max-width: 768px) {
+  .language-dropdown .dropdown-trigger {
+    padding: 6px 10px;
+    font-size: 13px;
+    min-height: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-dropdown .dropdown-trigger {
+    padding: 5px 8px;
+    font-size: 12px;
+    min-height: 32px;
+    height: 32px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const languageSelector = document.querySelector('.language-selector');
+  if (!languageSelector) return;
+  
+  const trigger = languageSelector.querySelector('.dropdown-trigger');
+  const menu = languageSelector.querySelector('.dropdown-menu');
+  const arrow = languageSelector.querySelector('.dropdown-arrow');
+  
+  if (!trigger || !menu || !arrow) return;
+  
+  let isOpen = false;
+  
+  function toggleDropdown() {
+    isOpen = !isOpen;
+    menu.style.display = isOpen ? 'block' : 'none';
+    arrow.classList.toggle('is-open', isOpen);
+    trigger.classList.toggle('is-open', isOpen);
+  }
+  
+  function closeDropdown() {
+    isOpen = false;
+    menu.style.display = 'none';
+    arrow.classList.remove('is-open');
+    trigger.classList.remove('is-open');
+  }
+  
+  trigger.addEventListener('click', toggleDropdown);
+  
+  document.addEventListener('click', function(e) {
+    if (!languageSelector.contains(e.target)) {
+      closeDropdown();
+    }
+  });
+  
+  // Handle language selection
+  const options = menu.querySelectorAll('.dropdown-option');
+  options.forEach(option => {
+    option.addEventListener('click', function() {
+      const value = this.getAttribute('data-value');
+      const label = this.textContent.trim();
+      
+      // Update the trigger text
+      const selectedSlot = trigger.querySelector('[slot]') || trigger.childNodes[0];
+      if (selectedSlot) {
+        selectedSlot.textContent = label;
+      }
+      
+      let newUrl;
+      if (value === 'en' && !window.location.pathname.startsWith('/en')) {
+        newUrl = '/en' + (window.location.pathname === '/' ? '' : window.location.pathname);
+      } else if (value === 'uk' && window.location.pathname.startsWith('/en')) {
+        newUrl = window.location.pathname.replace('/en', '') || '/';
+      }
+      
+      if (newUrl && newUrl !== window.location.pathname) {
+        window.dispatchEvent(new CustomEvent('languageChange', {
+          detail: { newLang: value, newUrl: newUrl }
+        }));
+        
+        window.location.href = newUrl + window.location.search + window.location.hash;
+      }
+      
+      closeDropdown();
+    });
+  });
+});
+</script>

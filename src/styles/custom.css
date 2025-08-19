@@ -1,6 +1,5 @@
 @font-face {
   font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat-Regular.ttf");
 }
 
 @font-face {
@@ -2049,9 +2048,96 @@ a[href]:not(.uap-footer-link):hover::after {
 }
 
 /* Enhanced print styles */
+/* Custom header integration - hide default Starlight header */
+.sl-nav {
+    display: none !important;
+}
+
+/* Ensure our custom header doesn't conflict */
+.main-header {
+    z-index: 1001 !important;
+}
+
+/* Adjust main content to account for fixed custom header */
+#starlight__main {
+    padding-top: 64px;
+}
+
+/* Ensure sidebar positioning accounts for custom header */
+.sidebar-pane {
+    top: 64px !important;
+    height: calc(100vh - 64px) !important;
+}
+
+/* Position Starlight's theme selector within our header */
+.main-header starlight-theme-select {
+    position: static !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.main-header .theme-toggle-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    height: 40px !important;
+}
+
+.main-header .theme-toggle-wrapper starlight-theme-select {
+    display: flex !important;
+    align-items: center !important;
+    height: 40px !important;
+}
+
+.main-header starlight-theme-select label {
+    margin: 0 !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+.main-header starlight-theme-select select {
+    height: 40px !important;
+    min-width: 80px !important;
+    max-width: 100px !important;
+    background: color-mix(in srgb, var(--myst-bg) 60%, transparent) !important;
+    border: 1px solid color-mix(in srgb, white 15%, transparent) !important;
+    backdrop-filter: blur(8px) !important;
+    border-radius: 6px !important;
+    color: var(--myst-ink) !important;
+    font-size: 14px !important;
+    padding: 8px 32px 8px 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+.main-header starlight-theme-select select:hover {
+    background: color-mix(in srgb, white 5%, transparent) !important;
+    border-color: color-mix(in srgb, white 30%, transparent) !important;
+}
+
+.main-header starlight-theme-select .caret {
+    right: 8px !important;
+    color: var(--myst-ink) !important;
+}
+
+/* Light theme adjustments for theme selector */
+:root[data-theme="light"] .main-header starlight-theme-select select,
+:root[data-theme="parchment"] .main-header starlight-theme-select select {
+    background: color-mix(in srgb, var(--myst-bg) 80%, white) !important;
+    border-color: color-mix(in srgb, var(--myst-gold) 30%, transparent) !important;
+}
+
+:root[data-theme="light"] .main-header starlight-theme-select select:hover,
+:root[data-theme="parchment"] .main-header starlight-theme-select select:hover {
+    background: color-mix(in srgb, var(--myst-gold) 10%, var(--myst-bg)) !important;
+    border-color: var(--myst-gold) !important;
+}
+
 @media print {
     .sidebar-pane,
     .header,
+    .main-header,
     .page-loading-overlay,
     .loading-progress-bar {
         display: none !important;
@@ -2065,6 +2151,10 @@ a[href]:not(.uap-footer-link):hover::after {
     .sl-markdown-content img {
         box-shadow: none !important;
         border: 1px solid #ccc !important;
+    }
+    
+    #starlight__main {
+        padding-top: 0 !important;
     }
 }
 
