@@ -1,0 +1,98 @@
+---
+title: "Caravans"
+description: "What are caravans and how to use them?"
+sidebar:
+    label: 🛣️ Caravans
+    order: 2
+---
+
+## Silk Road
+
+The Silk Road mechanic allows players to create trade routes between large cities using caravans for long distances, without spending time on travel or building subway highways. Here's how it works:
+
+### Creating Caravan Posts
+- Players can build special posts near their city.
+    - The post must be on the territory of a valid city of at least **level 2**
+    - The post must be appropriately designed and have a central block
+    - The post must match the city's theme and look good
+
+- Administrators can convert them into official caravan posts.
+
+### Sending a Caravan
+
+1. Residents open the GUI at the official post `/caravan`
+
+import caravan from "../../../../assets/silkroad/caravan.png";
+
+<p align="center">
+    <img
+        src={caravan.src}
+        width="60%"
+        alt="Caravan Menu"
+    />
+</p>
+
+2. Put items for sending in the caravan
+
+import create from "../../../../assets/silkroad/create-caravan.png";
+import items from "../../../../assets/silkroad/add-items.png";
+
+<p align="center">
+    <img
+        src={create.src}
+        width="60%"
+        alt="Create Menu"
+    />
+</p>
+
+<p align="center">
+    <img
+        src={items.src}
+        width="60%"
+        alt="Items Menu"
+    />
+</p>
+
+3. Choose a destination city from the list of large cities with posts
+
+import send from "../../../../assets/silkroad/send-caravan.png";
+
+<p align="center">
+    <img
+        src={send.src}
+        width="60%"
+        alt="Send Menu"
+    />
+</p>
+
+import destination from "../../../../assets/silkroad/select-destination.png";
+
+<p align="center">
+    <img
+        src={destination.src}
+        width="60%"
+        alt="Destination Menu"
+    />
+</p>
+
+4. Pay the required amount of **Energy Shards**
+
+import sent from "../../../../assets/silkroad/caravan-sent.png";
+
+<p align="center">
+    <img
+        src={sent.src}
+        width="60%"
+        alt="Sent Notification"
+    />
+</p>
+
+5. Send the caravan!
+
+### Arrival
+- After the established travel time, the caravan arrives at the destination post
+- Items become available for collection by members of the destination city
+
+This system encourages trade, cooperation, and strategic planning between cities.
+
+And no more need to dig stone, digging kilometer-long subway branches just to trade!
