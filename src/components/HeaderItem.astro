@@ -16,7 +16,8 @@ const {
 
 const currentPath = Astro.url.pathname;
 const isEnglish = currentPath.startsWith('/en/') || currentPath === '/en';
-const lang = currentLanguage || (isEnglish ? 'en' : 'uk');
+// Prioritize URL-based detection over currentLanguage prop
+const lang = isEnglish ? 'en' : (currentLanguage || 'uk');
 
 const t = {
     uk: {
@@ -41,39 +42,39 @@ const translations = t[lang as keyof typeof t] || t.uk;
 
 const navigationLinks = [
     {
-        path: '/',
+        path: lang === 'en' ? '/en/' : '/',
         title: translations.home,
         external: false,
         active: true,
         spaMessage: {
             type: 'spa-navigate',
-            path: '/',
+            path: lang === 'en' ? '/en/' : '/',
             url: 'https://www.mysterria.net/'
         }
     },
     {
-        path: '/guides/towns/',
+        path: lang === 'en' ? '/en/guides/towns/' : '/guides/towns/',
         title: translations.guides,
         external: false,
         active: false,
         spaMessage: null
     },
     {
-        path: '/magic/potions/',
+        path: lang === 'en' ? '/en/magic/pathways/' : '/magic/pathways/',
         title: translations.magic,
         external: true,
         active: false,
         spaMessage: null
     },
     {
-        path: '/pathways/sun/',
+        path: lang === 'en' ? '/en/pathways/door/' : '/pathways/door/',
         title: translations.pathways,
         external: true,
         active: false,
         spaMessage: null
     },
     {
-        path: '/support/',
+        path: lang === 'en' ? '/en/support/' : '/support/',
         title: translations.support,
         external: false,
         active: false,
