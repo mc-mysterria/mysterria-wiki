@@ -138,6 +138,13 @@ export default defineConfig({
                     autogenerate: { directory: 'pathways' },
                 },
                 {
+                    label: '🎬 Промоутерство',
+                    translations: {
+                        en: '🎬 Promoters',
+                    },
+                    autogenerate: { directory: 'promoters' },
+                },
+                {
                     label: '✨ Підтримка',
                     translations: {
                         en: '✨ Support',

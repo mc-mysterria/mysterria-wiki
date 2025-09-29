@@ -25,6 +25,7 @@ const t = {
         guides: 'Посібники',
         magic: 'Магія',
         pathways: 'Шляхи',
+        promoters: 'Промоутерство',
         support: 'Підтримка',
         search: 'Пошук'
     },
@@ -33,6 +34,7 @@ const t = {
         guides: 'Guides',
         magic: 'Magic',
         pathways: 'Pathways',
+        promoters: 'Promoters',
         support: 'Support',
         search: 'Search'
     }
@@ -70,6 +72,13 @@ const navigationLinks = [
         path: lang === 'en' ? '/en/pathways/door/' : '/pathways/door/',
         title: translations.pathways,
         external: true,
+        active: false,
+        spaMessage: null
+    },
+    {
+        path: lang === 'en' ? '/en/promoters/' : '/promoters/',
+        title: translations.promoters,
+        external: false,
         active: false,
         spaMessage: null
     },
@@ -927,6 +936,7 @@ const navigationLinks = [
                 guides: 'Посібники',
                 magic: 'Магія',
                 pathways: 'Шляхи',
+                promoters: 'Промоутерство',
                 support: 'Підтримка',
                 search: 'Пошук'
             },
@@ -935,6 +945,7 @@ const navigationLinks = [
                 guides: 'Guides',
                 magic: 'Magic',
                 pathways: 'Pathways',
+                promoters: 'Promoters',
                 support: 'Support',
                 search: 'Search'
             }
@@ -963,7 +974,10 @@ const navigationLinks = [
                     case 3: // Pathways
                         link.textContent = t.pathways;
                         break;
-                    case 4: // Support
+                    case 4: // Promoters
+                        link.textContent = t.promoters;
+                        break;
+                    case 5: // Support
                         link.textContent = t.support;
                         break;
                 }
