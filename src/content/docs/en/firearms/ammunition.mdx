@@ -1,0 +1,289 @@
+---
+title: "Ammunition Guide"
+description: "Complete guide to all 13 ammunition types, effects, and crafting recipes"
+sidebar:
+    label: 🎯 Ammunition
+    order: 3
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+## Ammunition System
+
+Every mystical firearm supports **13 different ammunition variants** with unique effects. All ammo types use the same base damage as the weapon, but special rounds have **damage modifiers** and **mystical effects**.
+
+---
+
+## Ammunition Types Overview
+
+### Standard Ammunition
+
+| Ammo Type | Damage | Description |
+|-----------|--------|-------------|
+| **Klein Rounds** | 100% | Standard repeater ammunition |
+| **Deathknell Rounds** | 100% | Standard revolver ammunition |
+| **Rifle Rounds** | 100% | Standard rifle ammunition |
+
+### Special Ammunition Effects
+
+#### 🔥 Fire Rounds
+- **Damage:** 85% of base
+- **Effect:** Ignites target for 5 seconds
+- **Best Against:** Enemies vulnerable to fire, clearing groups
+- **Tactical Use:** Area denial and damage over time
+
+#### ☠️ Poison Rounds
+- **Damage:** 85% of base
+- **Effect:** Poisons target for 8 seconds
+- **Best Against:** High-health enemies, sustained combat
+- **Tactical Use:** Weakening tough opponents over time
+
+#### 🛡️ Armor-Piercing Rounds
+- **Damage:** 90% of base
+- **Effect:** Ignores 10 points of armor
+- **Best Against:** Heavily armored players and mobs
+- **Tactical Use:** Countering diamond/netherite armor
+
+#### ⏳ Aging Rounds
+- **Damage:** 85% of base
+- **Effect:** Slowness I + Wither II (10 seconds)
+- **Best Against:** Fast-moving enemies, kiting strategies
+- **Tactical Use:** Slowing down aggressive opponents
+
+#### 👁️ Spirit Control Rounds
+- **Damage:** 85% of base
+- **Effect:** Slowness IV + Blindness (5 seconds)
+- **Best Against:** Players and intelligent mobs in PvP
+- **Tactical Use:** Disabling enemies for follow-up attacks
+
+#### 🌀 Deceiving Rounds
+- **Damage:** 85% of base
+- **Effect:** Rotates target 180 degrees
+- **Best Against:** Players in PvP, disorienting enemies
+- **Tactical Use:** Causing confusion and positional advantage
+
+#### ⚫ Deprivation Rounds
+- **Damage:** 85% of base
+- **Effect:** Removes all positive status effects
+- **Best Against:** Buffed enemies and potion users
+- **Tactical Use:** Countering enemy buffs in PvP
+
+#### ✨ Exorcist Rounds
+- **Damage:** 100% base, **250% against undead**
+- **Effect:** Massive bonus damage to zombies, skeletons, phantoms, withers
+- **Best Against:** Undead mobs, Nether exploration
+- **Tactical Use:** Specialized undead hunting ammunition
+
+#### 💥 Implosive Rounds
+- **Damage:** **125% of base** (highest damage)
+- **Effect:** Pure devastating damage with no status effects
+- **Best Against:** Bosses, high-priority targets, burst damage
+- **Tactical Use:** Maximum single-shot damage
+
+#### 🦠 Rotten Rounds
+- **Damage:** 85% of base
+- **Effect:** Hunger III + Weakness I (8 seconds)
+- **Best Against:** Players in PvP scenarios
+- **Tactical Use:** Depleting enemy resources and combat effectiveness
+
+#### 💪 Weakening Rounds
+- **Damage:** 85% of base
+- **Effect:** Weakness II + Mining Fatigue II (10 seconds)
+- **Best Against:** Enemies you want to debuff for teammates
+- **Tactical Use:** Support fire in group combat
+
+#### 😈 Demon Hunter Rounds
+- **Damage:** 100% base, **250% against Beyonders**
+- **Effect:** Massive bonus damage to Beyonder mobs (from CircleOfImagination plugin)
+- **Best Against:** Beyonder enemies on the server
+- **Tactical Use:** Specialized anti-Beyonder combat
+
+---
+
+## Crafting Ammunition
+
+Ammunition crafting follows a **multi-tier system** requiring cartridge cases, cartridge cores, and assembly.
+
+### Tier 1: Cartridge Cases
+
+import kleinCartridge from "../../../../assets/mysticalweaponry/kleincartridge.png";
+import deathknellCartridge from "../../../../assets/mysticalweaponry/deathknellcartridge.png";
+import rifleCartridge from "../../../../assets/mysticalweaponry/riflecartridge.png";
+
+<p align="center">
+    <img
+        src={kleinCartridge.src}
+        width="30%"
+        alt="Klein Cartridge Case"
+    />
+    <img
+        src={deathknellCartridge.src}
+        width="30%"
+        alt="Deathknell Cartridge Case"
+    />
+    <img
+        src={rifleCartridge.src}
+        width="30%"
+        alt="Rifle Cartridge Case"
+    />
+</p>
+
+| Cartridge Case | Recipe | Yield |
+|----------------|--------|-------|
+| **Klein Cartridge Case** | 1 Brass | 8 Cases |
+| **Deathknell Cartridge Case** | 1 Brass + 1 Iron Nugget | 6 Cases |
+| **Rifle Cartridge Case** | 2 Brass | 6 Cases |
+
+### Tier 2: Cartridge Cores
+
+import kleinCore from "../../../../assets/mysticalweaponry/kleincore.png";
+import deathknellCore from "../../../../assets/mysticalweaponry/deathknellcore.png";
+import rifleCore from "../../../../assets/mysticalweaponry/riflecore.png";
+
+<p align="center">
+    <img
+        src={kleinCore.src}
+        width="30%"
+        alt="Klein Cartridge Core"
+    />
+    <img
+        src={deathknellCore.src}
+        width="30%"
+        alt="Deathknell Cartridge Core"
+    />
+    <img
+        src={rifleCore.src}
+        width="30%"
+        alt="Rifle Cartridge Core"
+    />
+</p>
+
+| Cartridge Core | Recipe | Yield |
+|----------------|--------|-------|
+| **Klein Cartridge Core** | 4 Iron Nuggets | 8 Cores |
+| **Deathknell Cartridge Core** | 6 Iron Nuggets | 6 Cores |
+| **Rifle Cartridge Core** | 1 Iron Ingot + 1 Brass | 6 Cores |
+
+### Tier 3: Standard Ammunition
+
+import kleinRounds from "../../../../assets/mysticalweaponry/kleinrounds.png";
+import deathknellRounds from "../../../../assets/mysticalweaponry/deathknellrounds.png";
+import rifleRounds from "../../../../assets/mysticalweaponry/riflerounds.png";
+
+<p align="center">
+    <img
+        src={kleinRounds.src}
+        width="30%"
+        alt="Klein Rounds"
+    />
+    <img
+        src={deathknellRounds.src}
+        width="30%"
+        alt="Deathknell Rounds"
+    />
+    <img
+        src={rifleRounds.src}
+        width="30%"
+        alt="Rifle Rounds"
+    />
+</p>
+
+**Standard Rounds Recipe:**
+
+`1 Cartridge Case + 1 Cartridge Core + 1 Gunpowder = 1 Ammunition`
+
+This applies to Klein Rounds, Deathknell Rounds, and Rifle Rounds.
+
+---
+
+## Special Effect Ammunition
+
+import effectAmmo from "../../../../assets/mysticalweaponry/effectammo.png";
+
+<p align="center">
+    <img
+        src={effectAmmo.src}
+        width="80%"
+        alt="Special Effect Ammunition"
+    />
+</p>
+
+Special ammunition is crafted by **surrounding the effect material with 8 standard rounds** (of any weapon type):
+
+### Recipe Pattern
+
+Place the **effect material in the center** of a crafting table and **surround it with 8 standard rounds** to create **8 special effect rounds**.
+
+### Effect Materials
+
+| Effect Material | Special Ammunition | Effect |
+|----------------|-------------------|--------|
+| **Blaze Powder** | 🔥 Fire Rounds | Ignites for 5s |
+| **Spider Eye** | ☠️ Poison Rounds | Poisons for 8s |
+| **Iron Ingot** | 🛡️ Armor-Piercing | Ignores 10 armor |
+| **Clock** | ⏳ Aging Rounds | Slowness I + Wither II (10s) |
+| **Soul Sand** | 👁️ Spirit Control | Slowness IV + Blindness (5s) |
+| **Ender Pearl** | 🌀 Deceiving Rounds | Rotates 180° |
+| **Milk Bucket** | ⚫ Deprivation Rounds | Removes buffs |
+| **Glowstone Dust** | ✨ Exorcist Rounds | 250% vs undead |
+| **TNT** | 💥 Implosive Rounds | 125% damage |
+| **Rotten Flesh** | 🦠 Rotten Rounds | Hunger III + Weakness I (8s) |
+| **Fermented Spider Eye** | 💪 Weakening Rounds | Weakness II + Mining Fatigue II (10s) |
+| **Nether Star** | 😈 Demon Hunter Rounds | 250% vs Beyonders |
+
+<Aside type="tip">
+**Universal Compatibility:** You can use ANY type of standard rounds (Klein, Deathknell, or Rifle) to craft special ammunition. The special effect applies to all weapon types!
+</Aside>
+
+---
+
+## Ammunition Strategy
+
+### Loadout Recommendations
+
+**For General Exploration:**
+- Carry standard rounds for regular combat
+- Pack Exorcist rounds for undead encounters
+- Bring Fire rounds for area control
+
+**For PvP Combat:**
+- Spirit Control rounds for disabling
+- Deceiving rounds for disorientation
+- Deprivation rounds to counter buffs
+- Implosive rounds for burst damage
+
+**For Boss Fights:**
+- Implosive rounds for maximum damage
+- Weakening rounds for debuffing
+- Armor-Piercing for tanky bosses
+
+**For Nether/End:**
+- Exorcist rounds for the Nether (undead)
+- Fire rounds are less effective in the Nether
+- Demon Hunter rounds if Beyonders are present
+
+### Resource Management
+
+<Aside type="caution">
+**Expensive Special Ammo:** Special rounds require 8 standard rounds + rare material = 8 special rounds. Plan accordingly!
+</Aside>
+
+**Cost Breakdown for 8 Special Rounds:**
+- 8 Standard Rounds (each requires: 1 Case + 1 Core + 1 Gunpowder)
+- 1 Effect Material (Nether Star is the rarest)
+
+**Total Materials for 8 Special Rounds:**
+- 8 Cartridge Cases
+- 8 Cartridge Cores
+- 8 Gunpowder
+- 1 Effect Material
+
+---
+
+## Next Steps
+
+Ready to put your ammunition to use? Check out:
+
+- [Overview](/en/firearms/overview/) - Learn combat mechanics
+- [Crafting Guide](/en/firearms/crafting/) - Craft weapons to use your ammo
+- [Weapon Pages](/en/firearms/) - Detailed stats for each firearm

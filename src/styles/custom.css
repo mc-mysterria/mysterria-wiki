@@ -1542,43 +1542,7 @@ main {
     transition: all 0.3s ease;
 }
 
-/* Body loading state */
-body.page-loading {
-    overflow: hidden;
-    pointer-events: none;
-}
-
-body.page-loading * {
-    user-select: none;
-}
-
-/* Smooth page transitions */
-.sl-markdown-content,
-.content-panel,
-main {
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Initial page load fade in */
-body:not(.page-loading) .sl-markdown-content {
-    animation: contentFadeIn 1s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Enhanced page transitions */
-.page-transition {
-    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), 
-                transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.page-transition-out {
-    opacity: 0;
-    transform: translateY(-20px) scale(0.98);
-}
-
-.page-transition-in {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
+/* Page transitions disabled */
 
 /* Card-like content sections - Mysterria themed */
 .sl-markdown-content img {
@@ -1613,11 +1577,30 @@ body:not(.page-loading) .sl-markdown-content {
 
 /* Enhanced tables - Mysterria themed */
 .sl-markdown-content table {
+    width: 100%;
     border-radius: var(--uap-border-radius);
     overflow: hidden;
     box-shadow: var(--uap-shadow-md);
     margin: 1.5rem 0;
     background: var(--myst-bg-2);
+    border-collapse: collapse;
+    table-layout: fixed;
+    display: table;
+}
+
+.sl-markdown-content thead {
+    width: 100%;
+    display: table-header-group;
+}
+
+.sl-markdown-content tbody {
+    width: 100%;
+    display: table-row-group;
+}
+
+.sl-markdown-content tr {
+    width: 100%;
+    display: table-row;
 }
 
 .sl-markdown-content th {
@@ -1625,14 +1608,19 @@ body:not(.page-loading) .sl-markdown-content {
     padding: 1rem;
     background: color-mix(in srgb, var(--myst-gold) 15%, var(--myst-bg-2));
     color: var(--myst-ink);
+    text-align: left;
+    display: table-cell;
+    width: auto;
 }
 
 .sl-markdown-content td {
     padding: 0.75rem 1rem;
     color: var(--myst-ink);
+    display: table-cell;
+    width: auto;
 }
 
-.sl-markdown-content tr:hover {
+.sl-markdown-content tbody tr:hover {
     background: color-mix(in srgb, var(--myst-gold) 10%, transparent);
 }
 
@@ -1705,21 +1693,7 @@ body:not(.page-loading) .sl-markdown-content {
     --sl-color-accent-high: var(--myst-gold-soft);
 }
 
-/* Animation enhancements */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.sl-markdown-content {
-    animation: fadeInUp 0.6s ease-out;
-}
+/* Animation enhancements disabled */
 
 /* Enhanced focus states for accessibility - Mysterria themed */
 .sidebar-content a:focus,
@@ -1758,229 +1732,7 @@ body:not(.page-loading) .sl-markdown-content {
     }
 }
 
-/* Page Loading and Transition Animations */
-.page-loading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: color-mix(in srgb, var(--myst-bg) 85%, transparent);
-    backdrop-filter: blur(6px);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.35s ease, visibility 0.35s ease;
-}
-
-.page-loading-overlay.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-}
-
-/* Simple, accessible spinner */
-.simple-spinner {
-    width: 40px;
-    height: 40px;
-    border: 3px solid color-mix(in srgb, var(--myst-ink) 20%, transparent);
-    border-top-color: var(--myst-gold);
-    border-radius: 50%;
-    animation: simple-spin 0.8s linear infinite;
-}
-
-@keyframes simple-spin {
-    to { transform: rotate(360deg); }
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .simple-spinner { animation-duration: 2s; }
-    .page-loading-overlay { transition: none; }
-}
-
-.loading-text {
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--myst-gold);
-    opacity: 0.8;
-    animation: fade-pulse 2s ease-in-out infinite;
-}
-
-@keyframes fade-pulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
-}
-
-/* Page transition effects */
-.page-transition-enter {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.page-transition-enter-active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.page-transition-exit {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.page-transition-exit-active {
-    opacity: 0;
-    transform: translateY(-10px);
-}
-
-/* Smooth content loading */
-.content-fade-in {
-    animation: contentFadeIn 0.6s ease-out;
-}
-
-@keyframes contentFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px) scale(0.98);
-        filter: blur(2px);
-    }
-    50% {
-        opacity: 0.7;
-        transform: translateY(10px) scale(0.99);
-        filter: blur(1px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0);
-    }
-}
-
-/* Language selector loading state */
-.language-switching {
-    position: relative;
-    pointer-events: none !important;
-    opacity: 0.7 !important;
-}
-
-.language-switching::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 2.5rem;
-    width: 12px;
-    height: 12px;
-    border: 2px solid transparent;
-    border-top: 2px solid var(--myst-gold);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    transform: translateY(-50%);
-}
-
-@keyframes spin {
-    0% { transform: translateY(-50%) rotate(0deg); }
-    100% { transform: translateY(-50%) rotate(360deg); }
-}
-
-/* Enhanced page loading progress bar */
-.loading-progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--myst-gold) 0%, var(--myst-gold-soft) 50%, var(--myst-gold) 100%);
-    z-index: 10000;
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 0 15px color-mix(in srgb, var(--myst-gold) 40%, transparent);
-    border-radius: 0 0 2px 0;
-}
-
-.loading-progress-bar.complete {
-    width: 100%;
-    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease 0.3s;
-    box-shadow: 0 0 25px color-mix(in srgb, var(--myst-gold) 60%, transparent);
-}
-
-.loading-progress-bar.hidden {
-    opacity: 0;
-}
-
-/* Navigation link hover loading preview */
-a[href]:not(.uap-footer-link):hover {
-    position: relative;
-}
-
-a[href]:not(.uap-footer-link):hover::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--myst-gold) 0%, var(--myst-gold-soft) 100%);
-    animation: loadPreview 0.3s ease forwards;
-}
-
-@keyframes loadPreview {
-    to { width: 100%; }
-}
-
-/* Mobile loading optimizations */
-@media (max-width: 768px) {
-    .mystical-loader {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .loader-core {
-        width: 20px;
-        height: 20px;
-    }
-    
-    .loading-text {
-        font-size: 0.8rem;
-        bottom: -35px;
-    }
-    
-    .page-loading-overlay {
-        backdrop-filter: blur(4px);
-    }
-    
-    .loading-progress-bar {
-        height: 2px;
-    }
-}
-
-/* Reduce motion preferences */
-@media (prefers-reduced-motion: reduce) {
-    .mystical-loader * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-    }
-    
-    .page-loading-overlay,
-    .content-fade-in,
-    .page-transition-enter,
-    .page-transition-exit {
-        transition: none !important;
-        animation: none !important;
-    }
-    
-    .loading-progress-bar {
-        transition: width 0.01ms !important;
-    }
-}
+/* Page transitions disabled */
 
 /* Enhanced print styles */
 /* Custom header integration - hide default Starlight header */
@@ -2072,9 +1824,7 @@ a[href]:not(.uap-footer-link):hover::after {
 @media print {
     .sidebar-pane,
     .header,
-    .main-header,
-    .page-loading-overlay,
-    .loading-progress-bar {
+    .main-header {
         display: none !important;
     }
 
@@ -2087,7 +1837,7 @@ a[href]:not(.uap-footer-link):hover::after {
         box-shadow: none !important;
         border: 1px solid #ccc !important;
     }
-    
+
     #starlight__main {
         padding-top: 0 !important;
     }

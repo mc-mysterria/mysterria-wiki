@@ -124,6 +124,13 @@ export default defineConfig({
                     autogenerate: { directory: 'guides' },
                 },
                 {
+                    label: '📔 Вогнепальна зброя',
+                    translations: {
+                        en: '📔 Firearms',
+                    },
+                    autogenerate: { directory: 'firearms' },
+                },
+                {
                     label: '☔ Магія',
                     translations: {
                         en: '☔ Magic',
