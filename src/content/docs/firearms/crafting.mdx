@@ -1,22 +1,22 @@
 ---
-title: "Гід по крафту"
-description: "Повний гід по виготовленню вогнепальної зброї, деталей та верстата зброярника"
+title: "Crafting Guide"
+description: "Complete guide to crafting firearms, parts, and the Weaponsmith Table"
 sidebar:
-    label: 🔨 Крафт
+    label: 🔨 Crafting
     order: 2
 ---
 
 import { Aside } from '@astrojs/starlight/components';
 
-## Система крафту
+## Crafting System
 
-Система крафту містичної вогнепальної зброї - це багаторівневий процес, що вимагає спеціалізованих компонентів та спеціальної станції крафту.
+The mystical firearms crafting system is a multi-tier process that requires specialized components and a dedicated crafting station.
 
 ---
 
-## Верстат зброярника
+## Weaponsmith Table
 
-**Верстат зброярника** - ваша станція зборки зброї, де ви поєднуєте деталі зброї для створення повної вогнепальної зброї.
+The **Weaponsmith Table** is your weapon assembly station where you combine weapon parts to create complete firearms.
 
 import weaponsmithTable from "../../../assets/mysticalweaponry/weaponsmithtable.png";
 
@@ -24,34 +24,34 @@ import weaponsmithTable from "../../../assets/mysticalweaponry/weaponsmithtable.
     <img
         src={weaponsmithTable.src}
         width="60%"
-        alt="Верстат зброярника"
+        alt="Weaponsmith Table"
     />
 </p>
 
-### Рецепт
+### Recipe
 
-📌 **Інгредієнти:**
-- 1 Ковальський стіл
-- 4 Залізні блоки
-- 4 Редстоунові блоки
+📌 **Ingredients:**
+- 1 Smithing Table
+- 4 Iron Blocks
+- 4 Redstone Blocks
 
-### Як використовувати
+### How to Use
 
-1. Розмістіть верстат зброярника у вашому світі
-2. Зберіть всі необхідні деталі зброї у вашому інвентарі
-3. **ПКМ** по столу, щоб переглянути доступну зброю для крафту
-4. **Shift + ПКМ**, щоб зібрати зброю
-5. Готова зброя з'явиться у вашому інвентарі!
+1. Place the Weaponsmith Table in your world
+2. Gather all required weapon parts in your inventory
+3. **Right-click** the table to view craftable weapons
+4. **Shift + Right-Click** to assemble the weapon
+5. The completed weapon appears in your inventory!
 
 <Aside type="tip">
-Верстат зброярника покаже тільки ту зброю, для якої у вас є всі деталі. Не вистачає деталей? Вони не з'являться в меню крафту.
+The Weaponsmith Table will only show weapons you have all the parts for. Missing parts? They won't appear in the crafting menu.
 </Aside>
 
 ---
 
-## Крафт латуні
+## Crafting Brass
 
-Латунь - це фундаментальний матеріал для вогнепальної зброї та боєприпасів. Вам знадобиться багато!
+Brass is the fundamental material for firearms and ammunition. You'll need lots of it!
 
 import brass from "../../../assets/mysticalweaponry/brass.png";
 
@@ -59,25 +59,25 @@ import brass from "../../../assets/mysticalweaponry/brass.png";
     <img
         src={brass.src}
         width="60%"
-        alt="Крафт латуні"
+        alt="Brass Crafting"
     />
 </p>
 
-**Рецепт:** 3 Мідні зливки + 1 Золота зливка = **4 Латунь**
+**Recipe:** 3 Copper Ingots + 1 Gold Ingot = **4 Brass**
 
 <Aside>
-Латунь широко використовується при виготовленні боєприпасів. Подумайте про створення ферми міді для сталого виробництва!
+Brass is used extensively in ammunition crafting. Consider setting up a copper farm for sustainable production!
 </Aside>
 
 ---
 
-## Повторювач Кляйна
+## Klein's Repeater
 
-Повторювач Кляйна - це **єдина зброя, яку можна виготовити з нуля**. Інша зброя вимагає деталей з нагород підземель.
+Klein's Repeater is the **only weapon you can craft from scratch**. Other weapons require parts from dungeon rewards.
 
-### Необхідні деталі
+### Required Parts
 
-Вам потрібно **4 деталі** для збирання Повторювача Кляйна:
+You need **4 parts** to build Klein's Repeater:
 
 import kleinBarrel from "../../../assets/mysticalweaponry/kleinbarrel.png";
 import kleinCylinder from "../../../assets/mysticalweaponry/kleincylinder.png";
@@ -88,12 +88,12 @@ import kleinGrip from "../../../assets/mysticalweaponry/kleingrip.png";
     <img
         src={kleinBarrel.src}
         width="45%"
-        alt="Ствол Кляйна"
+        alt="Klein Barrel"
     />
     <img
         src={kleinCylinder.src}
         width="45%"
-        alt="Циліндр Кляйна"
+        alt="Klein Cylinder"
     />
 </p>
 
@@ -101,100 +101,100 @@ import kleinGrip from "../../../assets/mysticalweaponry/kleingrip.png";
     <img
         src={kleinFrame.src}
         width="45%"
-        alt="Рама Кляйна"
+        alt="Klein Frame"
     />
     <img
         src={kleinGrip.src}
         width="45%"
-        alt="Рукоятка Кляйна"
+        alt="Klein Grip"
     />
 </p>
 
-### Рецепти деталей
+### Part Recipes
 
-| Деталь | Рецепт | Необхідні матеріали |
+| Part | Recipe | Materials Needed |
 |------|--------|------------------|
-| **Ствол повторювача** | 3 Залізні зливки + 1 Лазурит | 3 Залізо, 1 Лазурит |
-| **Циліндр повторювача** | 2 Залізні зливки + 1 Редстоун | 2 Залізо, 1 Редстоун |
-| **Рама повторювача** | 2 Залізні зливки + 1 Лазурит | 2 Залізо, 1 Лазурит |
-| **Рукоятка повторювача** | 1 Темний дуб + 2 Залізні зливки | 1 Темний дуб, 2 Залізо |
+| **Repeater Barrel** | 3 Iron Ingots + 1 Lapis Lazuli | 3 Iron, 1 Lapis |
+| **Repeater Cylinder** | 2 Iron Ingots + 1 Redstone | 2 Iron, 1 Redstone |
+| **Repeater Frame** | 2 Iron Ingots + 1 Lapis Lazuli | 2 Iron, 1 Lapis |
+| **Repeater Grip** | 1 Dark Oak Log + 2 Iron Ingots | 1 Dark Oak, 2 Iron |
 
-### Загальні необхідні матеріали
+### Total Materials Required
 
-Щоб створити один повний Повторювач Кляйна з нуля:
+To craft one complete Klein's Repeater from scratch:
 
-- **9 Залізних зливків**
-- **2 Лазуриту**
-- **1 Редстоун**
-- **1 Темний дуб**
+- **9 Iron Ingots**
+- **2 Lapis Lazuli**
+- **1 Redstone**
+- **1 Dark Oak Log**
 
-### Кроки зборки
+### Assembly Steps
 
-1. Створіть всі 4 деталі за допомогою звичайного верстака
-2. Розмістіть верстат зброярника
-3. Переконайтеся, що всі 4 деталі у вашому інвентарі
-4. ПКМ по верстату зброярника
-5. Shift + ПКМ, щоб зібрати Повторювач Кляйна
+1. Craft all 4 parts using a regular crafting table
+2. Place the Weaponsmith Table
+3. Ensure all 4 parts are in your inventory
+4. Right-click the Weaponsmith Table
+5. Shift + Right-Click to assemble Klein's Repeater
 
 <Aside type="tip">
-**Порада з ефективності ресурсів:** Перед створенням кількох повторювачів переконайтеся, що у вас є стабільне постачання заліза та лазуриту. Подумайте про створення ферми заліза та видобуток на правильних Y-рівнях для лазуриту!
+**Resource Efficiency Tip:** Before crafting multiple repeaters, ensure you have a steady supply of iron and lapis lazuli. Consider setting up an iron farm and mining at the right Y-levels for lapis!
 </Aside>
 
 ---
 
-## Револьвер Смертного Дзвону та Паровий гвинтівка
+## Deathknell Revolver & Steam-Pressured Rifle
 
-Цю просунуту зброю не можна виготовити з нуля. Їхні деталі отримуються як **нагороди з підземель (вузлів)**.
+These advanced weapons cannot be crafted from scratch. Their parts are obtained as **rewards from dungeons (nodes)**.
 
-### Як отримати деталі
+### How to Obtain Parts
 
-1. Проходьте вузли підземель на сервері
-2. Отримуйте деталі зброї як нагороди
-3. Зберіть всі необхідні деталі для бажаної зброї
-4. Зберіть на верстаті зброярника
+1. Complete dungeon nodes on the server
+2. Receive weapon parts as rewards
+3. Collect all required parts for your desired weapon
+4. Assemble at the Weaponsmith Table
 
 <Aside type="caution">
-**Тільки нагороди вузлів:** Деталі револьвера Смертного Дзвону та парового гвинтівки - це ексклюзивні нагороди за проходження підземель. Плануйте свої проходження підземель відповідно!
+**Node Rewards Only:** Deathknell Revolver and Steam-Pressured Rifle parts are exclusive rewards from dungeon completions. Plan your dungeon runs accordingly!
 </Aside>
 
-### Необхідні деталі
+### Required Parts
 
-**Револьвер Смертного Дзвону:**
-- Ствол револьвера
-- Циліндр револьвера
-- Рама револьвера
-- Рукоятка револьвера
+**Deathknell Revolver:**
+- Revolver Barrel
+- Revolver Cylinder
+- Revolver Frame
+- Revolver Grip
 
-**Паровий гвинтівка:**
-- Ствол гвинтівки
-- Ложе гвинтівки
-- Ствольна коробка гвинтівки
-- Спусковий механізм гвинтівки
-
----
-
-## Стратегія крафту
-
-### Для новачків
-
-1. **Почніть з Повторювача Кляйна** - Його можна виготовити і він ефективний
-2. **Збирайте залізо та лазурит** - Налаштуйте базовий збір ресурсів
-3. **Створюйте латунь рано** - Вона знадобиться для боєприпасів
-4. **Збудуйте верстат зброярника** - Центральний елемент для всієї зборки зброї
-
-### Для досвідчених гравців
-
-1. **Фармте підземелля** - Збирайте деталі для просунутої зброї
-2. **Накопичуйте латунь** - Спеціальні боєприпаси вимагають значної кількості латуні
-3. **Тримайте кілька одиниць зброї** - Кожна відмінна в різних ситуаціях
-4. **Оптимізуйте зберігання деталей** - Організуйте деталі зброї для швидкого доступу
+**Steam-Pressured Rifle:**
+- Rifle Barrel
+- Rifle Stock
+- Rifle Receiver
+- Rifle Trigger Assembly
 
 ---
 
-## Наступні кроки
+## Crafting Strategy
 
-Тепер, коли ви знаєте, як створювати зброю, дізнайтеся про:
+### For Beginners
 
-- [Гід по боєприпасах](/firearms/ammunition/) - Створюйте кулі та спеціальні патрони
-- [Повторювач Кляйна](/firearms/kleins-repeater/) - Детальний гід для вашої першої зброї
-- [Огляд](/firearms/overview/) - Механіки бою та поради з використання
+1. **Start with Klein's Repeater** - It's craftable and effective
+2. **Gather iron and lapis** - Set up basic resource collection
+3. **Craft brass early** - You'll need it for ammunition
+4. **Build the Weaponsmith Table** - Central to all weapon assembly
+
+### For Advanced Players
+
+1. **Farm dungeons** - Collect parts for advanced weapons
+2. **Stockpile brass** - Special ammunition requires significant brass
+3. **Maintain multiple weapons** - Each excels in different situations
+4. **Optimize part storage** - Organize weapon parts for quick access
+
+---
+
+## Next Steps
+
+Now that you know how to craft weapons, learn about:
+
+- [Ammunition Guide](/en/firearms/ammunition/) - Craft bullets and special rounds
+- [Klein's Repeater](/en/firearms/kleins-repeater/) - Detailed guide for your first weapon
+- [Overview](/en/firearms/overview/) - Combat mechanics and usage tips
