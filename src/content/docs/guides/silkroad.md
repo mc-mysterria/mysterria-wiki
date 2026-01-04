@@ -6,7 +6,7 @@ sidebar:
   order: 2
 ---
 
-![Helpful image](../../../newassets/caravan/silkroad.jpg)
+![Helpful image](../../../assets/caravan/silkroad.jpg)
 
 ### What is The Silk Road?
 
@@ -28,10 +28,10 @@ Administrators will convert them into official caravan posts upon request.
 1. Residents open the GUI at the official post using `/caravan`
 2. Put items you want to send to another town in a corresponding menu
 
-   ![Helpful image](../../../newassets/caravan/items.png)
+   ![Helpful image](../../../assets/caravan/items.png)
 3. Choose a destination city from the list of large cities with posts
 
-   ![Helpful image](../../../newassets/caravan/send.png)
+   ![Helpful image](../../../assets/caravan/send.png)
 4. Pay the required amount of **Energy Shards** to confirm the delivery
 5. Done. Another post will receive your parcel after some time!
 

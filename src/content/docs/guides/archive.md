@@ -6,7 +6,7 @@ sidebar:
     order: 10
 ---
 
-![Helpful image](../../../newassets/archive/archive.png)
+![Helpful image](../../../assets/archive/archive.png)
 
 ### What is the Archive?
 
@@ -25,7 +25,7 @@ Everything is **very, very** simple. You need to:
 5. Find the ingredient you need, for example, "Phoenix Feather"
 6. View information about it, read comments from others, or leave your own comment
 
-![Helpful image](../../../newassets/archive/discoveries.png)
+![Helpful image](../../../assets/archive/discoveries.png)
 
 ### How can I add something there?
 

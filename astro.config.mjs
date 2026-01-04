@@ -36,7 +36,13 @@ export default defineConfig({
                     label: 'Ukrainian',
                 },
             },
-            plugins: [pagePlugin()],
+            plugins: [pagePlugin({
+                navigation: [
+                    { href: "/general/start/", label: "Quick Start" },
+                    { href: "/magic/introduction/", label: "Introduction to Magic" },
+                    { href: "/guides/towns/", label: "Guides" }
+                ],
+            })],
             description: 'Complete documentation for Mysterria Minecraft server inspired by Lord of the Mysteries',
             favicon: 'favicon.png',
             logo: {
@@ -45,10 +51,10 @@ export default defineConfig({
             social: [
                 {icon: 'discord', label: 'Discord', href: 'https://discord.gg/mysterria'}
             ],
-            // components: {
-            //     TwoColumnContent: './src/components/Footer.astro',
-            //     Header: './src/components/HeaderItem.astro',
-            // },
+
+            components: {
+                Footer: './src/components/Footer.astro',
+            },
 
             sidebar: [
                 {
@@ -59,13 +65,6 @@ export default defineConfig({
                     autogenerate: {directory: 'general'},
                 },
                 {
-                    label: 'Guides',
-                    translations: {
-                        uk: 'Посібники',
-                    },
-                    autogenerate: {directory: 'guides'},
-                },
-                {
                     label: 'Magic',
                     translations: {
                         uk: 'Магія',
@@ -73,18 +72,11 @@ export default defineConfig({
                     autogenerate: {directory: 'magic'},
                 },
                 {
-                    label: 'Pathways',
+                    label: 'Guides',
                     translations: {
-                        uk: ' Шляхи',
+                        uk: 'Посібники',
                     },
-                    autogenerate: {directory: 'pathways'},
-                },
-                {
-                    label: 'Partnership',
-                    translations: {
-                        uk: 'Партнерство',
-                    },
-                    autogenerate: {directory: 'promoters'},
+                    autogenerate: {directory: 'guides'},
                 },
                 {
                     label: 'Firearms',
@@ -92,14 +84,7 @@ export default defineConfig({
                         uk: 'Вогнепал',
                     },
                     autogenerate: {directory: 'firearms'},
-                },
-                {
-                    label: 'Support',
-                    translations: {
-                        uk: 'Підтримка',
-                    },
-                    autogenerate: {directory: 'support'},
-                },
+                }
             ],
         }),
     ],

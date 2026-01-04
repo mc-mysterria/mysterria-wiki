@@ -1,22 +1,17 @@
 ---
-title: 🧪 Introduction to Magic
+title: 🧪 Introduction
 description: Detailed information about magical potions on the server
 sidebar:
-    label: 🧪 Introduction to Magic
+    label: 🧪 Introduction
     order: 1
 ---
 
-:::caution[Disclaimer]
-> 🎭 You always have to pay for what fate gives you, don't you?
 
-🧙‍♂️ The magic system on the server is quite complex and requires knowledge and skill from the player. Be careful! You always risk losing items or even your life. If you are not confident in your abilities, it's better not to risk it! All responsibility for your actions lies with you.
-:::
+![Helpful image](../../../assets/magic/lotm.jpg)
 
 ---
 
 ### Who is a Beyonder?
-
-🔮 Alright, let's start with the basics:
 
 A **Beyonder** is a player who has drunk a magical potion and gained extraordinary abilities. Want to become one of them? Then you'll need a **Magic Altar** and the right ingredients!
 
@@ -26,8 +21,8 @@ A **Beyonder** is a player who has drunk a magical potion and gained extraordina
 
 To brew magical potions, you need to create a **Magical Cauldron**. This is a special structure that you must **build yourself**. Once it is assembled, you will be able to interact with the cauldron!
 
-:::tip[🛠️ Update]
-- 📢 The **Beyonder Cauldron** consists of **several blocks** and has a **new design**. The blueprint for its construction can be found by exploring the world. Press **LMB** on the found blueprint to place the structure and follow the instructions in the chat!
+:::tip[Update]
+The **Beyonder Cauldron** consists of **several blocks** and has a **new design**. The blueprint for its construction can be found by exploring the world. Press **LMB** on the found blueprint to place the structure and follow the instructions in the chat!
 :::
 
 ---
@@ -61,7 +56,7 @@ In the open world, you can find **recipes** — ancient **books** with a complet
 
 Some potions require **performing a ritual** before consumption. Each ritual requirements usually comes as an advancement or several. In order to safely drink the potion you need to have all of them completed.
 
-:::danger[⚠️ Warning]
+:::danger[Warning]
 Drinking a potion without performing the ritual can cause **unpredictable consequences**! (in 99% you will just lose control and any progress you've made towards becoming a Beyonder so far)
 :::
 
@@ -80,10 +75,10 @@ To become a Beyonder, follow these steps:
 - **Supplementary** ingredients - on the **right** 🔵
 - **Recipe** - in the **center** 🟡
 
-![Helpful image](cauldron.png)
+![Helpful image](../../../assets/magic/cauldron.png)
 
-:::tip[🧪 Pay attention]
-🤔 For the cauldron to work, the ingredients must be placed in the same order as they are listed in the recipe.
+:::tip[Pay attention]
+For the cauldron to work, the ingredients must be placed in the same order as they are listed in the recipe.
 :::
 
 

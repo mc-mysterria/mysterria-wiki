@@ -6,7 +6,7 @@ sidebar:
     order: 6
 ---
 
-![Helpful image](../../../newassets/orders/orgs.png)
+![Helpful image](../../../assets/orders/orgs.png)
 
 ### What are Secret Orders?
 
@@ -58,10 +58,10 @@ The first level available upon receiving sponsorship and the only one which can 
 
 > - **Secret Lair**: Teleport to the organization's persistent secret base
 
-![Helpful image](../../../newassets/orders/abilities.png)
+![Helpful image](../../../assets/orders/abilities.png)
 
 ## Level Improvement
 
 Level improvement occurs through **Energy Shards**, which can be obtained by selling magical ingredients. Each organization will have a common treasury where each member can contribute to reach the next level together.
 
-![Helpful image](../../../newassets/orders/levelup.png)
+![Helpful image](../../../assets/orders/levelup.png)

@@ -6,7 +6,7 @@ sidebar:
     order: 1
 ---
 
-![Helpful image](../../../newassets/towns/towns.jpg)
+![Helpful image](../../../assets/towns/towns.jpg)
 
 ### Creating a Town
 ```
@@ -53,16 +53,16 @@ Each town automatically protects its territories from outsiders; only residents 
 
 Permission settings look like this:
 
-![Helpful image](../../../newassets/towns/rules.png)
+![Helpful image](../../../assets/towns/rules.png)
 
 ## Why Develop Large Towns?
 
 Large towns (truly large ones with massive projects) can create a request to implement a special function tied to their city's creation. An example will make it clearer:
 
 > Town **N** built a huge **Dragon** statue. The majesty of the mighty dragon so influences the environment that almost all evil monsters disappear from the town's territory! Without the need for the leader to have a Radiant subscription, too!
-![Helpful image](../../../newassets/towns/dragon.jpeg)
+![Helpful image](../../../assets/towns/dragon.jpeg)
 
 Or another:
 
 > Town **K** built a huge town hall-cathedral in the middle of their city. The sight so positively affects the morale of residents that within their city's borders they recover health, spirituality, or even gain performance faster!
-![Helpful image](../../../newassets/towns/hall.jpg)
+![Helpful image](../../../assets/towns/hall.jpg)

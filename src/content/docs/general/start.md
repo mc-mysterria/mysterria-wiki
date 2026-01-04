@@ -5,7 +5,7 @@ sidebar:
     label: 👋 Quick Start
 ---
 
-![Helpful image](../../../newassets/start/banner.png)
+![Helpful image](../../../assets/start/banner.png)
 
 ## First steps:
 
@@ -14,7 +14,7 @@ sidebar:
 - **Minecraft Version**: 1.21.8
 - **Server Type**: Vanilla with plugins
 
-![Helpful image](../../../newassets/start/ip-preview.png)
+![Helpful image](../../../assets/start/ip-preview.png)
 
 ### 2. Registration
 - Execute the command `/register <password> <password>`
@@ -26,18 +26,18 @@ P.S. If you have official Minecraft account, you don't need to register at all!
 ### 3. Discord Verification
 - Get yourself [a verification code here - https://www.mysterria.net/profile](https://www.mysterria.net/profile)
 
-![Helpful image](../../../newassets/start/generate.png)
+![Helpful image](../../../assets/start/generate.png)
 - Enter it in the pop-up window in Minecraft
 
-![Helpful image](../../../newassets/start/code.png)
+![Helpful image](../../../assets/start/code.png)
 - You will receive the next bonuses after verifying!
 
-![Helpful image](../../../newassets/start/perks.png)
+![Helpful image](../../../assets/start/perks.png)
 
 ### 3. Newbie Bonus
 - You will get a menu with all Pathways in the game
 
-![Helpful image](../../../newassets/start/pathways.png)
+![Helpful image](../../../assets/start/pathways.png)
 - Choose any, confirm bonus, and confirm once again to clarify your intention
 - This will grant you a free Sequence 9 of the pathway! Enjoy it!
 

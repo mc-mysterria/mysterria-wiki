@@ -6,7 +6,7 @@ sidebar:
     order: 4
 ---
 
-![Helpful image](../../../newassets/daily/daily.png)
+![Helpful image](../../../assets/daily/daily.png)
 
 ### What are daily rewards?
 
@@ -19,7 +19,7 @@ There are several types of rewards:
 - For playing 1 hour, while not being AFK
 - For playing 3 hours, while not being AFK
 
-![Helpful image](../../../newassets/daily/hourly.png)
+![Helpful image](../../../assets/daily/hourly.png)
 
 ### Additional Rewards
 
@@ -29,4 +29,4 @@ You can also receive additional points for helping the server, voting on monitor
 - Moderators and Administrators receive many points as a reward for their work, as well as a special boon
 - The same applies to Designers, Authors, Promoters, and others! If you think you can be useful, just ask!
 
-![Helpful image](../../../newassets/daily/application.jpg)
+![Helpful image](../../../assets/daily/application.jpg)

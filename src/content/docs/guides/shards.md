@@ -6,7 +6,7 @@ sidebar:
     order: 5
 ---
 
-![Helpful image](../../../newassets/shards/shard.png)
+![Helpful image](../../../assets/shards/shard.png)
 
 ### What are Energy Shards?
 
@@ -20,11 +20,11 @@ This new currency is needed for many things, such as:
 - Paying for the services of Silk Road caravans
 - Time-limited seasonal events, etc.
 
-## How to get them?
+### How to get them?
 
 For this, we need professionless villagers (nitwits), who previously had no purpose. Make sure you have one and right-click him, which will open the next menu:
 
-![Helpful image](../../../newassets/shards/sell.png)
+![Helpful image](../../../assets/shards/sell.png)
 
 ### What can you sell there?
 

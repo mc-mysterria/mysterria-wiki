@@ -6,10 +6,10 @@ hero:
     - text: Quick Start
       link: /general/start
       variant: primary
-    - text: View Examples
-      link: /examples/
+    - text: More about Magic
+      link: /magic/introduction/
       variant: secondary
-    - text: GitHub
-      link: https://github.com
+    - text: Server Guides
+      link: /guides/towns
       variant: secondary
 ---

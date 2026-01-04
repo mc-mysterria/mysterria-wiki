@@ -6,7 +6,7 @@ sidebar:
     order: 7
 ---
 
-![Helpful image](../../../newassets/dungeons/dungeons.png)
+![Helpful image](../../../assets/dungeons/dungeons.png)
 
 ### What is a Dungeon?
 
@@ -28,7 +28,7 @@ Only the party leader needs to travel to the dungeon entrance; the rest of the p
 
 To enter the Dungeon itself, you need to find an entrance to it, which is located somewhere in the open world. It looks like a pillar of multicolored particles that gather in an interesting pattern, change color, shimmer, and rise above the center. It may look like this:
 
-![Helpful image](../../../newassets/dungeons/entrance.png)
+![Helpful image](../../../assets/dungeons/entrance.png)
 
 Each Rift may also have a sign attached to it with a list of possible rewards, current state, name, and description.
 

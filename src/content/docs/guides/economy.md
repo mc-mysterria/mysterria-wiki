@@ -6,7 +6,7 @@ sidebar:
     order: 9
 ---
 
-![Helpful image](../../../newassets/economy/economy.png)
+![Helpful image](../../../assets/economy/economy.png)
 
 ### Why not diamonds?
 
@@ -54,7 +54,7 @@ You can sell resources through the evaluation mechanic:
 2. Get an evaluation in Coppet
 3. Confirm the sale or cancel it
 
-![Helpful image](../../../newassets/economy/selling.png)
+![Helpful image](../../../assets/economy/selling.png)
 
 **P.S. You can only sell non-renewable ores mined with a pickaxe with "Silk Touch", and not all of them! If you have items in your inventory that can be sold, they will automatically appear in the bottom window of the Wallet.**
 
