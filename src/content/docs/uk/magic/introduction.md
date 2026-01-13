@@ -1,8 +1,8 @@
 ---
-title: 🧪 Introduction
-description: Detailed information about magical potions on the server
+title: 🧪 Вступ
+description: Детальна інформація про магічні зілля на сервері
 sidebar:
-    label: 🧪 Introduction
+    label: 🧪 Вступ
     order: 1
 ---
 
@@ -11,75 +11,74 @@ sidebar:
 
 ---
 
-### Who is a Beyonder?
+### Хто такий Потойбічний?
 
-A **Beyonder** is a player who has drunk a magical potion and gained extraordinary abilities. Want to become one of them? Then you'll need a **Magic Altar** and the right ingredients!
+**Потойбічний** — це гравець, який випив магічне зілля та здобув надзвичайні здібності. Хочете стати одним із них? Тоді вам знадобляться **Магічний вівтар** та правильні інгредієнти!
 
 ---
 
-### What is Magic Altar?
+### Що таке магічний вівтар?
 
-To brew magical potions, you need to create a **Magical Cauldron**. This is a special structure that you must **build yourself**. Once it is assembled, you will be able to interact with the cauldron!
+Щоб варити магічні зілля, вам потрібно створити **Магічний котел**. Це спеціальна конструкція, яку ви повинні **побудувати власноруч**. Щойно вона буде зібрана, ви зможете взаємодіяти з котлом!
 
-:::tip[Update]
-The **Beyonder Cauldron** consists of **several blocks** and has a **new design**. The blueprint for its construction can be found by exploring the world. Press **LMB** on the found blueprint to place the structure and follow the instructions in the chat!
+:::tip[Оновлення]
+**Котел Потойбічного** складається з **кількох блоків** і має **новий дизайн**. Креслення для його побудови можна знайти, досліджуючи світ. Натисніть **ЛКМ** на знайденому кресленні, щоб розмістити конструкцію, і дотримуйтесь інструкцій у чаті!
 :::
 
 ---
 
-### What are Beyonder Ingredients?
+### Що таке інгредієнти потойбіччя?
 
-To create a magical potion, you will need **main** and **supplementary** Beyonder ingredients. Usually, these are **Beyonder items** that can be found or obtained by meeting certain conditions
+Для створення магічного зілля вам знадобляться **основні** та **допоміжні** інгредієнти потойбіччя. Зазвичай це **предмети потойбіччя**, які можна знайти або отримати, виконавши певні умови.
 
-Which ones exactly? You'll have to find that out **on your own!** Different items come from different sources!
+Які саме? Вам доведеться з'ясувати це **самостійно!** Різні предмети походять із різних джерел!
 
-### What are Beyonder characteristics?
+### Що таке характеристики потойбічного?
 
-Sometimes in the world, you may come across **Beyonder Characteristics** — items that look like colored orbs / player heads. They can **replace** one of the main ingredients in a recipe. They also have other uses at higher sequences
+Іноді у світі ви можете натрапити на **Характеристики потойбічного** — предмети, що виглядають як кольорові сфери або голови гравців. Вони можуть **замінити** один із основних інгредієнтів у рецепті. Вони також мають інші способи застосування на вищих послідовностях.
 
-For example, if a potion requires **3 different ingredients**, you can use **3 characteristics**, completely replacing them!
-
----
-
-### What are Beyonder recipes?
-
-To brew a potion, you need to know the correct combination of ingredients.
-
-**Where to find recipes?**
-
-
-In the open world, you can find **recipes** — ancient **books** with a complete list of the necessary ingredients. They are usually found in **chests** that can be discovered during your travels!
+Наприклад, якщо для зілля потрібно **3 різних інгредієнти**, ви можете використовувати **3 характеристики**, повністю замінивши їх!
 
 ---
 
-### What are Beyonder rituals?
+### Що таке рецепти потойбіччя?
 
-Some potions require **performing a ritual** before consumption. Each ritual requirements usually comes as an advancement or several. In order to safely drink the potion you need to have all of them completed.
+Щоб зварити зілля, потрібно знати правильне поєднання інгредієнтів.
 
-:::danger[Warning]
-Drinking a potion without performing the ritual can cause **unpredictable consequences**! (in 99% you will just lose control and any progress you've made towards becoming a Beyonder so far)
+**Де знайти рецепти?**
+
+У відкритому світі ви можете знайти **рецепти** — стародавні **книги** з повним списком необхідних інгредієнтів. Зазвичай їх можна знайти у **скринях**, на які ви натрапите під час своїх подорожей!
+
+---
+
+### Що таке ритуали потойбіччя?
+
+Деякі зілля вимагають **проведення ритуалу** перед вживанням. Вимоги кожного ритуалу зазвичай відображаються як одне або кілька досягнень. Щоб безпечно випити зілля, ви повинні виконати їх усі.
+
+:::danger[Увага]
+Вживання зілля без проведення ритуалу може спричинити **непередбачувані наслідки**! (у 99% випадків ви просто втратите контроль і весь прогрес, якого досягли на шляху Потойбічного до цього часу)
 :::
 
 ---
 
-### How to become a Beyonder?
+### Як стати Потойбічним?
 
-To become a Beyonder, follow these steps:
+Щоб стати Потойбічним, виконайте такі кроки:
 
-1. **Find** a recipe with the description of the required ingredients.
-2. **Build** the Beyonder Cauldron, according to the **blueprint**.
-3. **Gather** all the necessary main and supplementary ingredients.
-4. **Place** the components in the cauldron:
+1. **Знайдіть** рецепт із описом необхідних інгредієнтів.
+2. **Побудуйте** Котел Потойбічного згідно з **кресленням**.
+3. **Зберіть** усі необхідні основні та допоміжні інгредієнти.
+4. **Помістіть** компоненти в котел:
 
-- **Main** ingredients - on the **left** 🔴
-- **Supplementary** ingredients - on the **right** 🔵
-- **Recipe** - in the **center** 🟡
+- **Основні** інгредієнти — **ліворуч** 🔴
+- **Допоміжні** інгредієнти — **праворуч** 🔵
+- **Рецепт** — по **центру** 🟡
 
 ![Helpful image](../../../../assets/magic/cauldron.png)
 
-:::tip[Pay attention]
-For the cauldron to work, the ingredients must be placed in the same order as they are listed in the recipe.
+:::tip[Зверніть увагу]
+Щоб котел запрацюв, інгредієнти повинні бути розміщені в тому ж порядку, в якому вони вказані в рецепті.
 :::
 
 
-If everything is done correctly - a **potion** will appear in your inventory, which you can drink to gain powers. If something goes wrong - the ingredients will remain in place, and the potion **will not be created**!
+Якщо все зроблено правильно — у вашому інвентарі з'явиться **зілля**, випивши яке, ви отримаєте сили. Якщо щось піде не так — інгредієнти залишаться на місці, а зілля **не буде створено**!

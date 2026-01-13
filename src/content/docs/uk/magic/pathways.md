@@ -1,54 +1,54 @@
 ---
-title: "Magic Pathways"
-description: "Detailed information about magic pathways on the server"
+title: "Магічні шляхи"
+description: "Детальна інформація про магічні шляхи на сервері"
 sidebar:
-  label: ✨ Pathway Choice
+  label: ✨ Вибір Шляху
   order: 2
 ---
 
 ![Helpful image](../../../../assets/magic/lotm.jpg)
 
-### What is a magic pathway?
+### Що таке магічний шлях?
 
-The path to becoming a Beyonder begins with choosing the first Sequence 9 potion. You can choose from 22 currently available pathways: Abyss, Black Emperor, Chained, Darkness, Death, Demoness, Door, Error, Fool, Fortune, Hanged Man, Hermit, Justiciar, Moon, Mother, Paragon, Priest, Sun, Tyrant, Visionary, Twilight Giant, Red Priest, White Tower. 
+Шлях до того, щоб стати Потойбічним, починається з вибору першого зілля 9-ї Послідовності. Ви можете обрати серед 22 доступних на даний момент шляхів: Безодня, Чорний Імператор, Скований, Темрява, Смерть, Демонеса, Двері, Помилка, Дурень, Фортуна, Повішений, Відшельник, Юстиціар, Місяць, Мати, Взірець, Жрець, Сонце, Тиран, Глядач, Гігант Сутінків, Червоний Жрець, Біла Вежа.
 
-Each pathway has unique abilities and special conditions for advancement.
+Кожен шлях має унікальні здібності та особливі умови для просування.
 
-### Sequence progression
+### Прогресія Послідовностей
 
-1. **Low Sequences:** 9 → 8 level
-2. **Middle Sequences:** 7 → 5 level
-3. **High Sequences:**
-    - 4 - Demigod
-    - 3 - Saint
-    - 2 - Angel
-    - 1 - King of Angels
+1. **Низькі Послідовності:** 9 → 8 рівень
+2. **Середні Послідовності:** 7 → 5 рівень
+3. **Високі Послідовності:**
+    - 4 — Напівбог
+    - 3 — Святий
+    - 2 — Ангел
+    - 1 — Король Ангелів
 
-### Is there a way to change pathways?
+### Чи можна змінити шлях?
 
-Yes, but it will be a painful and dangerous process:
-- It's safe only among adjacent pathways (e.g. fool <-> error)
-- It's possible only after a certain sequence (after Sequence 7)
-- Some spells can also help you switch your pathway
+Так, але це буде болючий і небезпечний процес:
+- Це безпечно лише між суміжними шляхами (наприклад, Дурень <-> Помилка)
+- Це можливо лише після певної послідовності (після 7-ї Послідовності)
+- Деякі заклинання також можуть допомогти вам змінити шлях
 
-You can learn more on the official wiki of the web novel. If you don't want to go through this, choose your pathway wisely!
+Ви можете дізнатися більше на офіційній вікі веб-новели. Якщо ви не хочете проходити через це, обирайте свій шлях мудро!
 
-### How do different pathways differ?
+### Чим відрізняються різні шляхи?
 
-Each pathway has its strengths and weaknesses:
-- **Sun** - light, purification, support
-- **Door** - teleportation, mobility, spatial tricks
-- **Tyrant** - lightning, water spells, strength and pressure in battle
-- **Fool** - deception, illusions, unpredictable moves
-- **Priest** - crowd influence, glass cannon, fire magic
-- **Demoness** - temptation, curses, mirror magic
-- **Error** - rule breaking, theft, deception
-- **Visionary** - foresight, protection, intimidation
-- **Hanged Man** - souls, blood, corruption
-- **Wheel of Fortune** - luck, crits, random bonuses
-- **Darkness** - dreams, nightmares, control
-- ...etc
+Кожен шлях має свої сильні та слабкі сторони:
+- **Сонце** — світло, очищення, підтримка
+- **Брама** — телепортація, мобільність, просторові трюки
+- **Тиран** — блискавка, водні заклинання, сила та тиск у бою
+- **Блазень** — обман, ілюзії, непередбачувані ходи
+- **Жрець** — вплив на натовп, «скляна гармата», магія вогню
+- **Демонеса** — спокуса, прокляття, магія дзеркал
+- **Помилка** — порушення правил, крадіжка, обман
+- **Провидець** — передбачення, захист, залякування
+- **Повішений** — душі, кров, розкладання
+- **Колесо Фортуни** — удача, критичні удари, випадкові бонуси
+- **Темрява** — сни, кошмари, контроль
+- ...тощо
 
-### Can I immediately advance to a high level?
+### Чи можу я одразу отримати високий рівень?
 
-No. All players start from Sequence 9 and gradually advance further, fulfilling conditions and gathering the necessary resources. 
+Ні. Усі гравці починають із 9-ї Послідовності та поступово просуваються далі, виконуючи умови та збираючи необхідні ресурси.

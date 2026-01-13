@@ -1,43 +1,43 @@
 ---
-title: "Mutation"
-description: "Detailed information about the mechanics of advancing as a Beyonder on the server"
+title: "Мутація"
+description: "Детальна інформація про механіку просування як Потойбічного на сервері"
 sidebar:
-    label: ☠️ Mutation
+    label: ☠️ Мутація
     order: 4
 ---
 
 ![Helpful image](../../../../assets/magic/lotm.jpg)
 
-### What is a mutation?
+### Що таке мутація?
 
-If you exceed the limit of Spirituality usage, this can lead to unpredictable consequences:
-- You will lose all your abilities
-- You will turn into a monster
+Якщо ви перевищите ліміт використання Духовності, це може призвести до непередбачуваних наслідків:
+- Ви втратите всі свої здібності
+- Ви перетворитеся на монстра
 
-Mutation will strip away any Beyonder power you had before, effectively making you a mundane person again. Your stripped power will get a new body, which will be extremely aggressive towards anyone in the vicinity.
+Мутація позбавить вас будь-якої сили Потойбічного, яку ви мали раніше, фактично знову зробивши вас звичайною людиною. Ваша вилучена сила отримає нове тіло, яке буде надзвичайно агресивним до кожного поблизу.
 
-### What are the consequences?
+### Які наслідки?
 
-If this has already begun, you still have a chance to stop and revert the process. But if the mutation is irreversible, prepare for the worst:
-- You will lose everything you had so far (items, pathway & sequence)
-- You will turn into a powerful mutant that will hunt you and anyone in the vicinity
-- If your mutant is killed, it will drop a Beyonder Characteristic of your Sequence
-- You will get a cooldown of **three real days** of becoming a Beyonder again
+Якщо цей процес уже почався, у вас все ще є шанс зупинитися та повернути його назад. Але якщо мутація незворотна, готуйтеся до найгіршого:
+- Ви втратите все, що мали до цього часу (предмети, шлях та послідовність)
+- Ви перетворитеся на могутнього мутанта, який полюватиме на вас і всіх навколо
+- Якщо вашого мутанта вб’ють, з нього випаде Характеристика Потойбічного вашої Послідовності
+- Ви отримаєте обмеження (кулдаун) тривалістю **три реальні дні**, перш ніж знову зможете стати Потойбічним
 
-### What can cause a mutation?
+### Що може викликати мутацію?
 
-There are several ways:
+Є кілька способів:
 
-- Overusing your spirituality without **Safe Mode** on
-- Being driven crazy by your own abilities (Hanged Man pathway)
-- Being driven crazy by other abilities (Visionary pathway)
+- Надмірне використання духовності з вимкненим **Безпечним режимом**
+- Божевілля від власних здібностей (шлях Повішеного)
+- Божевілля від здібностей інших (шлях Глядача)
 
-### What is a safe mode?
+### Що таке безпечний режим?
 
-If you are not confident in your abilities, you can activate **Safe Mode**
+Якщо ви не впевнені у своїх силах, ви можете активувати **Безпечний режим**.
 
-It allows you to:
-- Use all abilities without the risk of losing control
-- Not worry about Spirituality, as it will never be less than 10%
+Він дозволяє вам:
+- Використовувати всі здібності без ризику втрати контролю
+- Не турбуватися про Духовність, оскільки її рівень ніколи не впаде нижче 10%
 
-Instead, you receive less digestion for using abilities, as well as reduced total Spirituality volume (80% of maximum). Safe mode is activated automatically for everyone by default.
+Натомість ви отримуєте менше засвоєння за використання здібностей, а також зменшений загальний обсяг Духовності (80% від максимуму). Безпечний режим активується автоматично для всіх за замовчуванням.

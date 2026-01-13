@@ -1,46 +1,46 @@
 ---
-title: "Acting"
-description: "Detailed information about the mechanics of advancing as a Beyonder on the server"
+title: "Акторська гра"
+description: "Детальна інформація про механіку просування як Потойбічного на сервері"
 sidebar:
-    label: 🎭 Acting Method
+    label: 🎭 Метод Акторської Гри
     order: 5
 ---
 
 ![Helpful image](../../../../assets/magic/lotm.jpg)
 
-### What is acting?
+### Що таке акторська гра?
 
-Imagine the core powers of your potion as a tightly guarded castle. The remnants of the psyche that can cause a backlash resides within that castle. Our goal is to get rid of it and become the true master of the castle.
+Уявіть основні сили вашого зілля як замок, що суворо охороняється. Залишки психіки, які можуть викликати зворотний удар, мешкають у цьому замку. Наша мета — позбутися їх і стати справжнім господарем замку.
 
-There are two ways we can do that. The first is to forcefully invade the castle. There is no guarantee that this will work, and you will most definitely injure yourself unless you can suppress it with absolute power. But of course, we are not equipped to do that.
+Є два способи зробити це. Перший — насильно захопити замок. Немає жодних гарантій, що це спрацює, і ви точно пораните себе, якщо не зможете придушити опір абсолютною силою. Але, звісно, ми до цього не готові.
 
-The second way is to get the owner of the castle to extend an invitation. This invitation can allow us to slide through the scrutiny of the guards and infiltrate the castle. We can then easily finish off the enemies. But the problem lies in the fact that this invitation specifies the facial features and characteristics of the guest. Thus, we have to disguise ourselves and act as a guest
+Другий спосіб — змусити власника замку надіслати запрошення. Це запрошення дозволить нам пройти повз охорону та проникнути всередину. Тоді ми зможемо легко розправитися з ворогами. Проблема лише в тому, що в запрошенні вказані риси обличчя та характеристики гостя. Тому ми маємо замаскуватися та діяти як гість.
 
-### Why do you need it?
+### Навіщо вона потрібна?
 
-Loss of control is possible not only through Spirituality! If you drink a potion that doesn't suit you, or if you cannot fully digest it, you risk losing control.
+Втрата контролю можлива не тільки через Духовність! Якщо ви вип'єте зілля, яке вам не підходить, або якщо ви не зможете повністю засвоїти його, ви ризикуєте втратити контроль.
 
-To drink a potion of the next Sequence (for example, from Sequence 8 to Sequence 7), you **must** fully digest the current potion.
+Щоб випити зілля наступної Послідовності (наприклад, з Послідовності 8 до Послідовності 7), ви **повинні** повністю засвоїти поточне зілля.
 
-Digestion happens **through using abilities**. The more you use the powers of your level, the faster digestion grows.
+Засвоєння відбувається **через використання здібностей**. Чим більше ви використовуєте сили свого рівня, тим швидше зростає рівень засвоєння.
 
-**Additionally:**
-- The higher the ability level, the more digestion you receive
-- If you just play, digestion also accumulates passively
-- You also receive additional digestion by killing Beyonder Creatures
+**Додатково:**
+- Чим вищий рівень здібності, тим більше засвоєння ви отримуєте
+- Якщо ви просто граєте, засвоєння також накопичується пасивно
+- Ви також отримуєте додаткове засвоєння, вбиваючи Істот Потойбіччя
 
-:::tip[Useful fact]
-The digestion level affects your spirituality reserve! The more digestion – the greater your spirituality supply.
+:::tip[Корисний факт]
+Рівень засвоєння впливає на ваш запас духовності! Чим більше засвоєння — тим більший запас вашої духовності.
 :::
 
-### How to act better?
+### Як грати краще?
 
-At first, the mechanics may seem too complex and turn into a grind. But that's not entirely true! Here are some tips that will help you advance more effectively:
+Спочатку механіка може здатися занадто складною і перетворитися на рутину. Але це не зовсім так! Ось кілька порад, які допоможуть вам просуватися ефективніше:
 
-**Don't rush** - Consider the digestion process as part of the game, not as an intrusive limitation. Who knows what secrets are hidden in your abilities?
+**Не поспішайте** — сприймайте процес засвоєння як частину гри, а не як настирливе обмеження. Хто знає, які таємниці приховані у ваших здібностях?
 
-**Use abilities regularly** - The more you use your powers, the faster you can advance. This is especially important for abilities of your current level – they give more digestion!
+**Регулярно використовуйте здібності** — чим частіше ви застосовуєте свої сили, тим швидше зможете просунутися. Це особливо важливо для здібностей вашого поточного рівня — вони дають більше засвоєння!
 
-**Don't take risks** - If you have little Spirituality, don't use abilities mindlessly. Lost control can have fatal consequences!
+**Не ризикуйте** — якщо у вас мало Духовності, не використовуйте здібності бездумно. Втрата контролю може мати фатальні наслідки!
 
-**Don't forget about passive digestion** - Even if you don't use abilities, you still receive additional digestion!
+**Не забувайте про пасивне засвоєння** — навіть якщо ви не використовуєте здібності, ви все одно отримуєте додаткове засвоєння!

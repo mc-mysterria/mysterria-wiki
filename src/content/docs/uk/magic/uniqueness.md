@@ -1,45 +1,45 @@
 ---
-title: "Uniqueness"
-description: "Detailed information about magical potions on the server"
+title: "Унікальність"
+description: "Детальна інформація про магічні зілля на сервері"
 sidebar:
-    label: 🔮 Uniqueness
+    label: 🔮 Унікальність
     order: 9
 ---
 
 ![Helpful image](../../../../assets/magic/lotm.jpg)
 
-### What is a uniqueness?
+### Що таке унікальність?
 
-Uniqueness is the unique characteristic of a Pathway, and is the most important ingredient for promoting to Sequence 0. Uniqueness is also referred to as the symbolism or authority of the corresponding Pathway.
+Унікальність — це єдина у своєму роді характеристика Шляху та найважливіший інгредієнт для просування до Послідовності 0. Унікальність також називають символізмом або авторитетом відповідного Шляху.
 
-Uniquenesses are typically abstract items or concepts. They can Come to Life and exist on their own, exist in the form of an Item or Sealed Artifact with limited or no consciousness, or be Accommodated inside a Beyonder.
+Унікальності зазвичай є абстрактними предметами або концепціями. Вони можуть Ожити та існувати самі по собі, бути у формі Предмета або Запечатаного Артефакту з обмеженою свідомістю чи без неї, або бути Приборканими всередині Потойбічного.
 
-### How to get one?
+### Як її отримати?
 
-There is no and will not be any info about it in the future.
+Інформації про це немає і не буде в майбутньому.
 
-The uniqueness is simply given to one of the players from the pathway if they have unlocked this feature. Other players cannot get it from this player by killing him, taking him hostage, making him agree to transfer it or by any other means.
+Унікальність просто дарується одному з гравців шляху, якщо вони відкрили цю можливість. Інші гравці не можуть відібрати її у цього гравця, вбивши його, взявши в заручники, домовившись про передачу або будь-яким іншим способом.
 
-We can even say that the Uniqueness chooses the player, not the other way around. There have been some rumors that building your own churches, hosting events, staying socially active for a long time, being friendly and positive towards one's own pathway can contribute to getting it. However, in the end no one knows how one gets it.
+Можна навіть сказати, що Унікальність сама обирає гравця, а не навпаки. Ходять чутки, що будівництво власних церков, проведення івентів, тривала соціальна активність, приязність та позитивне ставлення до свого шляху можуть посприяти її отриманню. Проте, зрештою, ніхто точно не знає, як вона дістається гравцеві.
 
-### How to accommodate it?
+### Як її приборкати?
 
-The key to uniqueness's accommodation is time. You cannot forcibly make it yours, you have to wait until it recognizes you as its owner. Using spells, just playing and spending spirituality can help with it.
+Ключ до приборкання унікальності — це час. Ви не можете змусити її стати вашою силою, ви повинні чекати, поки вона визнає вас своїм власником. Використання заклинань, звичайна гра та витрати духовності можуть допомогти у цьому процесі.
 
-Upon dying, the accommodation will always **decrease by 10%**, no matter what was the cause of the death - another player or environment; but it will never go lower than 10%.
+У разі смерті рівень приборкання завжди **зменшується на 10%**, незалежно від причини смерті — чи то інший гравець, чи навколишнє середовище; проте він ніколи не впаде нижче 10%.
 
-### What does it give?
+### Що вона дає?
 
-First, it is a required component for ascending to Sequence 0. You will need a potion **AND** fully accommodated Uniqueness to advance further.
+По-перше, це необхідний компонент для піднесення до Послідовності 0. Для подальшого просування вам знадобиться зілля **ТА** повністю приборкана Унікальність.
 
-Second, it upon accommodating it gives valuable bonuses for its holder:
-- Spiritual Dominance 
-> Increases spirituality regeneration rate based on accommodation level
-- Divine Resilience
-> Increases maximum spirituality based on accommodation level
-- Acting Acceleration
-> Increases acting point gains based on accommodation level
-- Authority Amplification
-> Increases ability power and damage based on accommodation level
+По-друге, після приборкання вона надає власнику цінні бонуси:
+- Духовне Домінування
+> Збільшує швидкість відновлення духовності залежно від рівня приборкання
+- Божественна Стійкість
+> Збільшує максимальний запас духовності залежно від рівня приборкання
+- Прискорення Акторської Гри
+> Збільшує отримання очок акторської гри залежно від рівня приборкання
+- Посилення Авторитету
+> Збільшує силу здібностей та шкоду залежно від рівня приборкання
 
-These will be opened at 25%, 50%, 75% and 100% accommodation percentages. In the future there will also be pathway-specific traits, but for now they are only in development.
+Ці бонуси відкриватимуться на етапах 25%, 50%, 75% та 100% приборкання. У майбутньому також з'являться специфічні риси для кожного окремого шляху, але наразі вони перебувають у розробці.

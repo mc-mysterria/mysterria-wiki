@@ -1,34 +1,34 @@
 ---
-title: "Boons"
-description: "Detailed information about magical potions on the server"
+title: "Благословення"
+description: "Детальна інформація про магічні зілля на сервері"
 sidebar:
-    label: 💊 Boons
+    label: 💊 Благословення
     order: 7
 ---
 
 ![Helpful image](../../../../assets/magic/lotm.jpg)
 
-### What are boons?
+### Що таке благословення?
 
-Unlike the standard potion system, where your power comes from within, this power comes from another entity. We will not name him here.
+На відміну від стандартної системи зілля, де ваша сила походить зсередини, ця сила походить від іншої сутності. Ми не будемо називати її тут.
 
-Boon is effectively a bestowed Sequence, which you can have in parallel to your normal one. It will grant you its own spells, have its own acting progression and will increase your max spirituality
+Благословення — це фактично дарована Послідовність, яку ви можете мати паралельно зі своєю основною. Вона надасть вам власні заклинання, матиме власну прогресію акторської гри та збільшить ваш максимальний запас духовності.
 
-### How to get one?
+### Як його отримати?
 
-Right now the only way to get one is to be **useful** to him.
+На даний момент єдиний спосіб отримати його — бути **корисним** йому.
 
-It can be different things:
-- Helping to test some new features
-- Working as a mod or admin, resolving common issues
-- Spreading the word about the server on TikTok / YouTube
-- Boosting the Discord guild with Nitro
-- ...etc
+Це можуть бути різні речі:
+- Допомога в тестуванні нових функцій
+- Робота модератором або адміністратором, вирішення загальних питань
+- Поширення інформації про сервер у TikTok / YouTube
+- Буст Discord-сервера за допомогою Nitro
+- ...тощо
 
-### How to progress boons?
+### Як розвивати благословення?
 
-You can't progress.
+Ви не можете розвивати їх.
 
-The only way you can get more from it is by using its spells to increase acting - in order to get more spirituality, but that's it. Each boon only gives you one Sequence from pathways of ~~Outer Deities~~, and can't be progressed further.
+Єдиний спосіб отримати від них більше — це використовувати їхні заклинання для покращення акторської гри, щоб збільшити запас духовності, але це все. Кожне благословення дає вам лише одну Послідовність зі шляхів ~~Зовнішніх Божеств~~ і не може бути розвинене далі.
 
-At least, for now.
+Принаймні, поки що.

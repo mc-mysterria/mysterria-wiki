@@ -1,38 +1,38 @@
 ---
-title: "Beyonder Creatures"
-description: "Detailed information about magical potions on the server"
+title: "Потойбічні істоти"
+description: "Детальна інформація про магічні зілля на сервері"
 sidebar:
-    label: 🐲 Creatures
+    label: 🐲 Істоти
     order: 8
 ---
 
 ![Helpful image](../../../../assets/magic/lotm.jpg)
 
-### Who are beyonder creatures?
+### Хто такі потойбічні істоти?
 
-Sometimes Beyonder Creatures appear in the world - they are special creatures endowed with magical power. They have a similar appearance to ordinary mobs but have a number of important differences:
+Іноді у світі з'являються Потойбічні істоти — це особливі створіння, наділені магічною силою. Зовні вони схожі на звичайних мобів, але мають низку важливих відмінностей:
 
-**Differences from Ordinary Mobs:**
-- Colored signature that indicates the creature's name
-- Significantly more health, the health is visible in the actionbar
-- Their attacks are stronger than ordinary mobs, they direct damage to your soul
-- When killed, they always give experience, as well as acting points
-- After death, they can drop beyonder ingredients
+**Відмінності від звичайних мобів:**
+- Кольоровий підпис, який вказує на ім'я істоти
+- Значно більше здоров'я, рівень якого відображається в панелі дій
+- Їхні атаки сильніші за атаки звичайних мобів, вони спрямовують шкоду прямо у вашу душу
+- Після вбивства вони завжди дають досвід, а також очки акторської гри
+- Після смерті з них можуть випасти інгредієнти потойбіччя
 
-### Where do they spawn?
+### Де вони з'являються?
 
-That's a great question, since it is not that obvious!
+Це чудове питання, оскільки відповідь на нього не зовсім очевидна!
 
-Every type of Beyonder Creature has a list of **biomes** it can spawn in. If you have stayed in a certain zone for two weeks and haven't met a single Beyonder Creature so far - it means that this area is not taken by any type; while on the other hand the location to the North with different biome can have several Beyonder Creatures at once!
+Кожен тип Потойбічних істот має список **біомів**, у яких він може з'явитися. Якщо ви перебували в певній зоні протягом двох тижнів і досі не зустріли жодної Потойбічної істоти — це означає, що ця територія не заселена жодним типом; з іншого боку, локація на півночі з іншим біомом може мати кілька Потойбічних істот одночасно!
 
-We will not disclose the list of their biomes, if you are interested, you will have to do it on your own. Maybe in the future some abilities will be able to decypher and confirm your wild guesses!
+Ми не будемо розкривати список їхніх біомів; якщо вам цікаво, вам доведеться дізнатися це самостійно. Можливо, у майбутньому деякі здібності зможуть розшифрувати та підтвердити ваші здогадки!
 
-### Why are they dangerous?
+### Чому вони небезпечні?
 
-:::tip[Tip]
-Always have potions, armor and an escape plan with you — an encounter with a Beyonder Creature can be fatal, especially if you are not a low-sequence Beyonder yourself!
+:::tip[Порада]
+Завжди майте при собі зілля, броню та план відступу — зустріч із Потойбічною істотою може стати фатальною, особливо якщо ви самі не є Потойбічним низької послідовності!
 :::
 
-Beyonder Creatures have custom AI, different from ordinary monsters. They can attack, group, flee when low on health, use special abilities and even call for help!
+Потойбічні істоти мають власний штучний інтелект, що відрізняється від звичайних монстрів. Вони можуть атакувати, гуртуватися, тікати при низькому рівні здоров'я, використовувати спеціальні здібності та навіть кликати на допомогу!
 
-Their AI will be enhanced later on, so stay tuned for updates!
+Їхній інтелект буде вдосконалено згодом, тож стежте за оновленнями!

@@ -1,40 +1,40 @@
 ---
-title: "Health System"
-description: "Detailed information about magical potions on the server"
+title: "Система здоров'я"
+description: "Детальна інформація про магічні зілля на сервері"
 sidebar:
-    label: ❤️ Health System
+    label: ❤️ Система здоров'я
     order: 6
 ---
 
 ![Helpful image](../../../../assets/magic/lotm.jpg)
 
-### What do you mean?
+### Що мається на увазі?
 
-Upon advancing, you may notice - your vanilla HP does not change! Which is supposed to happen, since according to the lore after advancing you become more of a Deity, and less of a Mundane Man, which means you probably should have more health and resistance.
+Під час просування ви можете помітити — ваше стандартне здоров'я не змінюється! Хоча це мало б статися, адже згідно з лором, після просування ви стаєте більше Божеством і менше Звичайною Людиною, а отже, ймовірно, повинні мати більше здоров'я та стійкості.
 
-That's... true, because your real health is hidden from you, and you can only *feel* it while fighting with other Beyonders or Beyonder Creatures. Additionally, Spectator can also tell you your current HP, since they have some special skills for that.
+Це... правда, тому що ваше справжнє здоров'я приховане від вас, і ви можете лише *відчути* його під час бою з іншими Потойбічними або Потойбічними істотами. Крім того, Глядач також може сказати вам ваше поточне здоров'я, оскільки він має для цього спеціальні навички.
 
-### How does it work?
+### Як це працює?
 
-Each Beyonder has a hidden health value attached to him. It is not visible anywhere, and is only used in internal damage calculations when one Beyonder attacks another with some spell.
+Кожен Потойбічний має прив'язане до нього приховане значення здоров'я. Воно ніде не відображається і використовується лише у внутрішніх розрахунках шкоди, коли один Потойбічний атакує іншого якимось заклинанням.
 
-- Let's say Player A is Sequence 4 Sun beyonder - and has 400 HP
-- His enemy is Player B - Sequence 8 Fool - which has 100 HP
+- Припустімо, Гравець А — Потойбічний шляху Сонця 4-ї Послідовності — і має 400 ОЗ (очок здоров'я)
+- Його ворог — Гравець Б — Шлях Дурня 8-ї Послідовності — має 100 ОЗ
 
-What happens when Player A attacks Player B?
+Що станеться, коли Гравець А атакує Гравця Б?
 
-- Powerful sun spell deals 80DMG, which only leaves 20HP for the Player B
-- His vanilla HP goes down by 80%, only leaving two hearts after just one spell!
+- Потужне сонячне заклинання завдає 80 шкоди, що залишає Гравцеві Б лише 20 ОЗ
+- Його стандартне здоров'я зменшується на 80%, залишаючи лише два серця після одного заклинання!
 
-What happens when Player B attacks Player A?
+Що станеться, коли Гравець Б атакує Гравця А?
 
-- Weak fool spell deals 25DMG, which leaves 375 HP for the Player A
-- Player A only loses half of the vanilla heart, effectively tanking it
+- Слабке заклинання дурня завдає 25 шкоди, що залишає Гравцеві А 375 ОЗ
+- Гравець А втрачає лише половину стандартного серця, фактично витримуючи удар без зусиль
 
-### Why not vanilla then?
+### Чому тоді не стандартна система?
 
-In my opinion, no.
+На мою думку — ні.
 
-First, it's arduous to balance skill progressions using vanilla hearts, since the scaled damage will also be mitigated by the full enchanted armor, resistance effects, absorption, etc. 
+По-перше, важко балансувати прогресію навичок, використовуючи стандартні серця, оскільки масштабована шкода також буде пом’якшуватися повною зачарованою бронею, ефектами стійкості, поглинанням тощо.
 
-Which means that magic spells will deal no real damage unless they deal **A LOT OF** damage, which in its wake will break armor almost instantly, one-shot every non-equipped player, and it is generally hard to deal with.
+Це означає, що магічні заклинання не завдаватимуть реальної шкоди, якщо вони не завдають **ВЕЛИЧЕЗНОЇ** кількості шкоди, що, своєю чергою, майже миттєво ламатиме броню, вбиватиме з одного удару будь-якого неспорядженого гравця, і з цим загалом важко впоратися.
