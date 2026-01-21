@@ -40,7 +40,8 @@ export default defineConfig({
                 navigation: [
                     { href: "/general/start/", label: "Quick Start" },
                     { href: "/magic/introduction/", label: "Introduction to Magic" },
-                    { href: "/guides/towns/", label: "Guides" }
+                    { href: "/guides/towns/", label: "Guides" },
+                    { href: "/misc/creator-program/", label: "Content Creator Program" }
                 ],
             })],
             description: 'Complete documentation for Mysterria Minecraft server inspired by Lord of the Mysteries',
@@ -84,6 +85,13 @@ export default defineConfig({
                         uk: 'Вогнепал',
                     },
                     autogenerate: {directory: 'firearms'},
+                },
+                {
+                    label: 'Misc',
+                    translations: {
+                        uk: 'Інше',
+                    },
+                    autogenerate: {directory: 'misc'},
                 }
             ],
         }),
