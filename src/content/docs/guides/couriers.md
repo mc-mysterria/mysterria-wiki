@@ -18,11 +18,7 @@ Couriers are supernatural messengers — Skeletons, Jellyfish, and Incinerated s
 
 **Courier Horn Shards** drop from loot chests found across the Overworld. Collect **3 shards** and craft them into a Horn of Summoning using an **L-shape** in a crafting table:
 
-```
-[Shard] [     ]
-[Shard] [     ]
-[Shard] [Shard]
-```
+![Horn of Summoning crafting recipe](../../../assets/couriers/courier_horn_craft.png)
 
 ---
 
