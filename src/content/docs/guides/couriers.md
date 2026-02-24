@@ -2,7 +2,7 @@
 title: "Couriers"
 description: "How to use couriers to send items to other players"
 sidebar:
-    label: 📦 Undead Postmans
+    label: 📦 Couriers
     order: 1
 ---
 
