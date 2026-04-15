@@ -3,7 +3,7 @@ import {defineConfig} from 'astro/config';
 import starlight from '@astrojs/starlight';
 import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
-import pagePlugin from "@pelagornis/page";
+import starlightThemeGalaxy from 'starlight-theme-galaxy'
 
 export default defineConfig({
     output: 'static',
@@ -36,14 +36,15 @@ export default defineConfig({
                     label: 'Ukrainian',
                 },
             },
-            plugins: [pagePlugin({
-                navigation: [
-                    { href: "/general/start/", label: "Quick Start" },
-                    { href: "/magic/introduction/", label: "Introduction to Magic" },
-                    { href: "/guides/towns/", label: "Guides" },
-                    { href: "/misc/creator-program/", label: "Content Creator Program" }
-                ],
-            })],
+            plugins: [starlightThemeGalaxy()],
+            // plugins: [pagePlugin({
+            //     navigation: [
+            //         { href: "/general/start/", label: "Quick Start" },
+            //         { href: "/magic/introduction/", label: "Introduction to Magic" },
+            //         { href: "/guides/towns/", label: "Guides" },
+            //         { href: "/misc/creator-program/", label: "Content Creator Program" }
+            //     ],
+            // })],
             description: 'Complete documentation for Mysterria Minecraft server inspired by Lord of the Mysteries',
             favicon: 'favicon.png',
             logo: {
