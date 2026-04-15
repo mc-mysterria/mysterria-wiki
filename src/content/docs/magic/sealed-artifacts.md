@@ -15,7 +15,7 @@ sidebar:
 
 ### What is a Sealed Artifact?
 
-A **Sealed Artifact** is a special item that contains a fragment of Beyonder power — specifically, **one ability** from a Beyonder pathway. Unlike potions, Sealed Artifacts can be **used by anyone**, including players who are not Beyonders themselves.
+A **Sealed Artifact** is a special item that contains a fragment of Beyonder power — specifically, **one spell** from a Beyonder pathway. Unlike potions, Sealed Artifacts can be **used by anyone**, including players who are not Beyonders themselves.
 
 However, this power comes at a price. Using a Sealed Artifact always carries **drawbacks and side effects**.
 
@@ -31,13 +31,13 @@ Brewed potions that are not consumed within **2 days** of their creation will au
 
 **2. Crafting with Beyonder Chars**
 
-Certain pathways have the ability to **craft Sealed Artifacts** directly using **Beyonder Chars**. This is a controlled process that allows those pathways to produce artifacts intentionally, though it requires the appropriate Chars and knowledge.
+Certain pathways can **craft Sealed Artifacts** directly using **Beyonder Chars**. This is a controlled process that allows those pathways to produce artifacts intentionally, though it requires the appropriate Chars and knowledge.
 
 ---
 
 ### What do they do?
 
-Each Sealed Artifact contains **one specific ability** from a Beyonder pathway. When used, it activates that ability — granting you its effect even if you are not a Beyonder or do not belong to that pathway.
+Each Sealed Artifact contains **one specific ability** from a Beyonder pathway. When used, it activates that power — granting you its effect even if you are not a Beyonder or do not belong to that pathway.
 
 This makes Sealed Artifacts valuable tools for:
 - Non-Beyonder players who want access to magical effects

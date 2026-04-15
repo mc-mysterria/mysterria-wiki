@@ -15,9 +15,9 @@ sidebar:
 
 ### What is Spirituality?
 
-As soon as you become a Beyonder, you gain the ability to use the abilities of your Pathway. However, unlimited use of magic would be too simple an advantage, so you are limited by Spirituality.
+As soon as you become a Beyonder, you gain the power to use your Pathway's abilities. However, unlimited use of magic would be too simple an advantage, so you are limited by Spirituality.
 
-Spirituality functions as a measure of your character's inner fortitude. Employing any ability depletes a portion of your Spirituality, requiring judicious use. Fortunately, Spirituality regenerates on its own, so there's no need for alarm if it depletes.
+Spirituality functions as a measure of your character's inner fortitude. Using any ability depletes a portion of your Spirituality, requiring judicious use. Fortunately, Spirituality regenerates on its own, so there's no need for alarm if it depletes.
 
 :::danger[Warning]
 If you deplete too much Spirituality, you risk **losing control** over your power, which will lead to **Mutation** and the permanent loss of all abilities! Keep a close eye on your Spirituality bar.
@@ -41,7 +41,7 @@ Mostly depends on your maximum limit, Sequence and conditional passive abilities
 
 **Madness** is the new governing risk factor for Beyonders, replacing the old Safe Mode system.
 
-The higher your Madness level, the **slower your Spirituality regenerates**. At very high Madness levels, regeneration can slow to a crawl, making ability use extremely risky.
+The higher your Madness level, the **slower your Spirituality regenerates**. At very high Madness levels, regeneration can slow to a crawl, making use of your powers extremely risky.
 
 :::tip[Keep your Madness low]
 Managing Madness is just as important as managing Spirituality. See the [Mutation](/magic/mutation) page for full details on the Madness system.

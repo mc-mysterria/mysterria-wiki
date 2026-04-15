@@ -40,10 +40,10 @@ P.S. From certain update and on you can just use command `/wallet`
 Actually, the wallet performs even more functions:
 - Used for trading with villagers
 - Stores funds and allows receiving currency for completing tasks and participating in events
-- Provides the ability to convert resources into currency
+- Allows you to convert resources into currency
 - Used to pay for services that require $
 
-> To improve the Town level, you need $300. What is this, where to get it? Actually, everything is very simple – the price is indicated in Coppets. To be able to make the payment, you need to have a wallet with at least 300 Coppets inside.
+> To improve the Town level, you need $300. What is this, where to get it? Actually, everything is very simple – the price is indicated in Coppets. To make the payment, you must have a wallet containing at least 300 Coppets inside.
 
 ### How can I make money?
 

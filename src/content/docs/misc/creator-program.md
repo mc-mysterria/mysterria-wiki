@@ -1,6 +1,6 @@
 ---
 title: "Content Creator Program"
-description: "Detailed information about the mechanics of advancing as a Beyonder on the server"
+description: "Detailed information about the Content Creator Program on the server"
 sidebar:
     label: ⌚ Creator Program
     order: 5
@@ -14,7 +14,7 @@ We value creators of all sizes who are passionate about our community. Joining t
 
 - **Recognition:** A distinct tag in-game and a special role in our Discord.
 - **Production Tools:** Access to the **beta** server, where you can try all the spells.
-- **Community Reach:** Ability to post your stream/video link in the global chat.
+- **Community Reach:** You can post your stream/video link in the global chat.
 - **Boon**: An **Eternal Edict** pathway Sequence 8 boon, available only to creators.
 - **Support:** Access to a private creators channel in Discord for communication with staff. In case you need personal assistance, we will be there.
 

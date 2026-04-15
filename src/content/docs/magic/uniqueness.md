@@ -23,11 +23,11 @@ Uniquenesses are typically abstract items or concepts. They can Come to Life and
 
 ### How to get one?
 
-There is no and will not be any info about it in the future.
+The Uniqueness is awarded to the most active player of a Pathway, based on several statistical aspects such as **playtime, dedication, and overall contribution** to the server's life.
 
-The uniqueness is simply given to one of the players from the pathway if they have unlocked this feature. Other players cannot get it from this player by killing him, taking him hostage, making him agree to transfer it or by any other means.
+However, there is a catch: the selection only considers the **current month**. This means that to hold or obtain the Uniqueness, you must remain active all the time. If your activity drops, the Uniqueness may choose another, more dedicated candidate.
 
-We can even say that the Uniqueness chooses the player, not the other way around. There have been some rumors that building your own churches, hosting events, staying socially active for a long time, being friendly and positive towards one's own pathway can contribute to getting it. However, in the end no one knows how one gets it.
+The uniqueness is simply given to one of the players from the pathway if they have unlocked this feature. Other players cannot get it from this player by killing them, taking them hostage, or by any other means. We can even say that the Uniqueness chooses the player based on their consistent presence and impact on the world.
 
 ---
 
@@ -67,6 +67,6 @@ Second, upon accommodating it you gain valuable bonuses for its holder:
 - **Acting Acceleration**
 > Increases acting point gains based on accommodation level
 - **Authority Amplification**
-> Increases ability power and damage based on accommodation level
+> Increases spell power and damage based on accommodation level
 
 These bonuses unlock at **25%, 50%, 75%** and **100%** accommodation. In the future there will also be pathway-specific traits, but for now they are only in development.
