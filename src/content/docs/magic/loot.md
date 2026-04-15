@@ -91,12 +91,11 @@ To reduce the frustration of RNG-heavy exploration, the server uses a **reward f
 
 You can choose to **focus** one of the following four categories:
 
-| Focus Category | Description |
-|----------------|-------------|
-| **Potions** | Increases pity towards finding a Beyonder potion |
-| **Beyonder Chars** | Increases pity towards finding Chars |
-| **Recipes & Pages** | Increases pity towards finding recipe books or pages |
-| **Altar Scrolls** | Increases pity towards finding blueprints for Cauldrons or Sacrificial Altars of various tiers |
+| Focus Category      | Description |
+|---------------------|-------------|
+| **Potions**         | Increases pity towards finding a Beyonder potion |
+| **Recipes OR Pages** | Increases pity towards finding recipe books or pages |
+| **Altar Scrolls**   | Increases pity towards finding blueprints for Cauldrons or Sacrificial Altars of various tiers |
 
 :::note[Ingredients cannot be focused]
 The ingredient categories (foundable, droppable, mineable) are excluded from the focusing system. Those must be obtained through their respective methods.

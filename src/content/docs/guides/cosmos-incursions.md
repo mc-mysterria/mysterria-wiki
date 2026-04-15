@@ -27,7 +27,6 @@ When the server concurrent player count rises above a specific threshold (**30 p
 
 - **Massive Scale:** Incursion Zones open in random locations with a radius of 300-500 blocks.
 - **Visibility:** Active zones appear on the Online Map as large, semi-transparent overlays.
-- **No Safe Mode:** Upon entering an Incursion Zone, Safe Mode is automatically disabled. You cannot re-enable it while inside the radius.
 
 #### City vs. City
 The Incursion Zone often centers around a capture point. This is a team effort!
@@ -75,21 +74,6 @@ To mitigate the risk of de-leveling, you'll want to get your hands on a **Paper 
 ### Anti-Combat Logging
 
 There is no escape. If you disconnect inside an Incursion Zone, an NPC “Body” spawns in your place. If the NPC is killed, you suffer all standard consequences, including potential level loss.
-
----
-
-### Demigod Restrictions
-
-To ensure these zones are skill-based battlegrounds and not slaughterhouses for new players, I have implemented strict **Rules of Engagement**:
-
-1. **The Level Gap Protection**
-   If a high-level Beyonder kills a player who is significantly weaker (2-3 levels difference), the killer receives **NO** Loot Chest and the victim does **NOT** lose a Sequence.
-   
-2. **The Tyrant Mark**
-   If a Demigod persists in hunting players significantly below their level (3+ kills on “weak” players), they receive a special mark visible on the Online Map. **The hunter becomes the hunted.**
-
-3. **High-Sequence Instability**
-   Incursion Zones are volatile for powerful entities. If you are Sequence 4 or 5, you emit a visible **Glow Effect** (no stealth for you!) and take **0.5 HP damage** every few seconds.
 
 ---
 
