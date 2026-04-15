@@ -22,7 +22,7 @@ This is an Astro project using the Starlight documentation theme for the Mysterr
 - **Framework**: Astro 5.x with Starlight theme
 - **Content**: Markdown/MDX files in `src/content/docs/`
 - **Deployment**: Static site hosted on Vercel
-- **Site URL**: https://docs.mysterria.net
+- **Site URL**: https://wiki.mysterria.net
 
 ### Key Directories
 - `src/content/docs/` - All documentation content organized by language and category:
@@ -59,7 +59,7 @@ This is an Astro project using the Starlight documentation theme for the Mysterr
 
 ### Deployment
 - **Platform**: Vercel with static output
-- **Domain**: docs.mysterria.net
+- **Domain**: wiki.mysterria.net
 - **Build**: Automatic builds on git push
 - **Performance**: Optimized static site generation with image processing
 

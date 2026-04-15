@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://docs.mysterria.net/sitemap-index.xml
+Sitemap: https://wiki.mysterria.net/sitemap-index.xml
