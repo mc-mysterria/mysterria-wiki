@@ -1,8 +1,13 @@
 ---
 title: "Quick Start"
 description: "How to start playing on the Mysterria server"
+banner:
+  content: |
+    The wiki has been updated! The Great Reset is coming soon!
+    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Check it out</a>
 sidebar:
     label: 👋 Quick Start
+    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/start/banner.png)
@@ -11,7 +16,7 @@ sidebar:
 
 ### 1. Connecting to the server
 - **Server IP**: `mc.mysterria.net`
-- **Minecraft Version**: 1.21.8
+- **Minecraft Version**: 1.21 - 26.1.2
 - **Server Type**: Vanilla with plugins
 
 ![Helpful image](../../../assets/start/ip-preview.png)
@@ -38,7 +43,9 @@ P.S. If you have official Minecraft account, you don't need to register at all!
 - You will get a menu with all Pathways in the game
 
 ![Helpful image](../../../assets/start/pathways.png)
-- Choose any, confirm bonus, and confirm once again to clarify your intention
+- Choose any, make a decision of the path you are going to walk, and confirm once again
+- **Path of Resolve** will grant you a random Recipe from the next chest container
+- **Path of Shortcut** will directly grant you Sequence 9, but also a permanent debuff
 - This will grant you a free Sequence 9 of the pathway! Enjoy it!
 
 ### 4. Basic commands

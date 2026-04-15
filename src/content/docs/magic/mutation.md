@@ -1,43 +1,77 @@
 ---
 title: "Mutation"
 description: "Detailed information about the mechanics of advancing as a Beyonder on the server"
+banner:
+  content: |
+    The wiki has been updated! The Great Reset is coming soon!
+    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Check it out</a>
 sidebar:
     label: ☠️ Mutation
     order: 4
+    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/magic/lotm.jpg)
 
-### What is a mutation?
+### What is Madness?
 
-If you exceed the limit of Spirituality usage, this can lead to unpredictable consequences:
-- You will lose all your abilities
-- You will turn into a monster
+**Madness** is a value from **0% to 100%** that represents how close a Beyonder is to losing their mind — and their powers — entirely.
 
-Mutation will strip away any Beyonder power you had before, effectively making you a mundane person again. Your stripped power will get a new body, which will be extremely aggressive towards anyone in the vicinity.
+It replaces the old Safe Mode system. There is no longer a way to simply "turn on" protection. Instead, every Beyonder must actively manage their Madness level.
 
-### What are the consequences?
+Madness will **gradually decrease on its own over time**, but the recovery is extremely slow. Certain spells can also reduce it.
 
-If this has already begun, you still have a chance to stop and revert the process. But if the mutation is irreversible, prepare for the worst:
-- You will lose everything you had so far (items, pathway & sequence)
-- You will turn into a powerful mutant that will hunt you and anyone in the vicinity
-- If your mutant is killed, it will drop a Beyonder Characteristic of your Sequence
-- You will get a cooldown of **three real days** of becoming a Beyonder again
+:::danger[At 100% Madness]
+If your Madness reaches **100%**, you will **mutate and die**, losing all your Beyonder powers **permanently**. There is no coming back from this.
+:::
 
-### What can cause a mutation?
+---
 
-There are several ways:
+### Two Types of Madness
 
-- Overusing your spirituality without **Safe Mode** on
-- Being driven crazy by your own abilities (Hanged Man pathway)
-- Being driven crazy by other abilities (Visionary pathway)
+There are two distinct types of Madness, and they behave very differently:
 
-### What is a safe mode?
+| Type | Description | Can it be healed? |
+|------|-------------|-------------------|
+| **Temporary Madness** | Standard Madness gained from most sources | Yes — slowly over time, or via certain spells |
+| **Permanent Madness** | Madness gained from specific actions (e.g. non-adjacent pathway switch) | **No** — cannot be treated by any means |
 
-If you are not confident in your abilities, you can activate **Safe Mode**
+Your total Madness is the sum of both types. Even if you heal all your Temporary Madness, your Permanent Madness remains forever.
 
-It allows you to:
-- Use all abilities without the risk of losing control
-- Not worry about Spirituality, as it will never be less than 10%
+---
 
-Instead, you receive less digestion for using abilities, as well as reduced total Spirituality volume (80% of maximum). Safe mode is activated automatically for everyone by default.
+### What can cause Madness?
+
+There are several ways to accumulate Madness:
+
+- Drinking a potion **without completing your ritual**
+- Switching to a **non-adjacent pathway** (grants Permanent Madness)
+- Being driven crazy by your own abilities (e.g. Hanged Man pathway)
+- Being driven crazy by other players' abilities (e.g. Visionary pathway)
+- Overusing Spirituality recklessly
+
+---
+
+### What are the effects of high Madness?
+
+High Madness doesn't just threaten mutation — it actively impairs your abilities:
+
+- **Slower Spirituality regeneration** — the higher your Madness, the slower your spiritual energy recovers
+- **Spell lockout** — at sufficiently high Madness, **random spells may become unavailable** to you until your Madness drops
+
+---
+
+### What is a Mutation?
+
+If your Madness reaches 100%, this triggers a **Mutation** — a catastrophic loss of control:
+
+- You will **lose all your abilities** permanently
+- You will **lose your pathway and sequence**
+- You will **lose all your items**
+- Your stripped power may manifest as a powerful mutant creature that hunts you and nearby players
+- If the mutant is killed, it may drop a Beyonder Characteristic of your Sequence
+- You will receive a cooldown of **three real days** before you can become a Beyonder again
+
+:::tip[Prevention is everything]
+Unlike the old system, there is no Safe Mode to protect you. The only protection is keeping your Madness low — complete your rituals, avoid reckless pathway switches, and use Madness-reducing spells when available.
+:::

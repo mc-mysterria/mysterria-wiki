@@ -1,9 +1,14 @@
 ---
 title: "Spirituality"
 description: "Detailed information about the mechanics of advancing as a Beyonder on the server"
+banner:
+  content: |
+    The wiki has been updated! The Great Reset is coming soon!
+    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Check it out</a>
 sidebar:
     label: 🌀 Spirituality
     order: 3
+    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/magic/lotm.jpg)
@@ -15,7 +20,7 @@ As soon as you become a Beyonder, you gain the ability to use the abilities of y
 Spirituality functions as a measure of your character's inner fortitude. Employing any ability depletes a portion of your Spirituality, requiring judicious use. Fortunately, Spirituality regenerates on its own, so there's no need for alarm if it depletes.
 
 :::danger[Warning]
-If you spend more than 90% of your Spirituality while not in Safe Mode, you may lose control over your power, which will lead to mutation and loss of all abilities!
+If you deplete too much Spirituality, you risk **losing control** over your power, which will lead to **Mutation** and the permanent loss of all abilities! Keep a close eye on your Spirituality bar.
 :::
 
 ### Does it increase later?
@@ -30,4 +35,24 @@ It also gets bigger based on your Sequence. For example, Sequence 9 only has 100
 
 Well, it depends.
 
-Mostly depends on your maximum limit, Sequence and conditional passive abilities you may have. For example, Fool's **Spiritualism** will drastically enhance your spirituality restoration ration, constantly regenerating from 2 to 5 percent of your limit!
+Mostly depends on your maximum limit, Sequence and conditional passive abilities you may have. For example, Fool's **Spiritualism** will drastically enhance your spirituality restoration ratio, constantly regenerating from 2 to 5 percent of your limit!
+
+### How does Madness affect Spirituality?
+
+**Madness** is the new governing risk factor for Beyonders, replacing the old Safe Mode system.
+
+The higher your Madness level, the **slower your Spirituality regenerates**. At very high Madness levels, regeneration can slow to a crawl, making ability use extremely risky.
+
+:::tip[Keep your Madness low]
+Managing Madness is just as important as managing Spirituality. See the [Mutation](/magic/mutation) page for full details on the Madness system.
+:::
+
+### Path of Shortcut penalty
+
+If you chose the **Path of Shortcut** as your starting bonus — which grants you Sequence 9 instantly without brewing — be aware of its hidden cost:
+
+:::caution[Permanent Spirituality Reduction]
+Your maximum Spirituality will **always be 10% lower** than it should be for your Sequence and acting level. This penalty is permanent and cannot be removed.
+:::
+
+This is the price paid for skipping the brewing process entirely.

@@ -1,9 +1,14 @@
 ---
 title: "Boons"
-description: "Detailed information about magical potions on the server"
+description: "Detailed information about magical boons on the server"
+banner:
+  content: |
+    The wiki has been updated! The Great Reset is coming soon!
+    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Check it out</a>
 sidebar:
     label: 💊 Boons
     order: 7
+    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/magic/lotm.jpg)
@@ -12,23 +17,43 @@ sidebar:
 
 Unlike the standard potion system, where your power comes from within, this power comes from another entity. We will not name him here.
 
-Boon is effectively a bestowed Sequence, which you can have in parallel to your normal one. It will grant you its own spells, have its own acting progression and will increase your max spirituality
+A Boon is effectively a **bestowed Sequence** which you can hold in parallel to your normal one. It grants you its own spells, has its own acting progression, and increases your maximum Spirituality.
+
+---
 
 ### How to get one?
 
-Right now the only way to get one is to be **useful** to him.
+To receive your first Boon (Sequence 9 of a boon pathway), you must be **useful** to the entity that grants it.
 
-It can be different things:
-- Helping to test some new features
-- Working as a mod or admin, resolving common issues
+This can happen through various means:
+- Helping to test new features
+- Working as a moderator or admin, resolving common issues
 - Spreading the word about the server on TikTok / YouTube
 - Boosting the Discord guild with Nitro
-- ...etc
+- Receiving it as a **Battlepass** reward
+- Earning it through **server events**
+- ...and other contributions
+
+---
 
 ### How to progress boons?
 
-You can't progress.
+Boons can now be **progressed up to Sequence 5**.
 
-The only way you can get more from it is by using its spells to increase acting - in order to get more spirituality, but that's it. Each boon only gives you one Sequence from pathways of ~~Outer Deities~~, and can't be progressed further.
+To advance your Boon, you must:
 
-At least, for now.
+1. **Build a Sacrificial Altar** — any tier will work, though higher tiers may offer better results.
+2. **Gather Beyonder Ingredients** — specifically, ingredients that correspond to the Sequence you are advancing **towards**, or lower. You cannot skip ahead by offering low-value materials.
+3. **Sacrifice the ingredients** at the altar to advance your Boon.
+
+:::caution[Ingredient requirements]
+The ingredients must be appropriate for the Sequence you want to reach. You cannot sacrifice weak, low-Sequence ingredients to advance to a more powerful Boon level.
+:::
+
+---
+
+### How do boon spells work?
+
+Boon spells function like standard Beyonder abilities — they have acting methods, contribute to Spirituality, and must be used to advance digestion. However, boon acting progression is **separate** from your main pathway's progression.
+
+Each boon only draws from the pathways of ~~Outer Deities~~, and boon spells carry their own identity and flavour distinct from the standard 22 pathways.
