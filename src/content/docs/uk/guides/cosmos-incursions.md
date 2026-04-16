@@ -6,7 +6,7 @@ banner:
     Вікі було оновлено! Новий Початок вже скоро!
     <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Дізнатися більше</a>
 sidebar:
-    label: 🌌 Космічні вторгнення
+    label: 🌌 Вторгнення
     order: 11
     badge: "Нове!"
 ---
