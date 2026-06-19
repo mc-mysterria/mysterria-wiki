@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🌑 Багряний Місяць
     order: 11
-    badge: "Нове!"
 ---
 
 ![Допоміжне зображення](../../../../assets/magic/lotm.jpg)

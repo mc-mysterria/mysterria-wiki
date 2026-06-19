@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🧪 Вступ
     order: 1
-    badge: "Нове!"
 ---
 
 

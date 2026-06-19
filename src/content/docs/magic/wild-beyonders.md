@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🧙 Wild Beyonders
     order: 12
-    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/magic/lotm.jpg)

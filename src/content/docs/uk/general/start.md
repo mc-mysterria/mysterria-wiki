@@ -7,7 +7,6 @@ banner:
     <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Дізнатися більше</a>
 sidebar:
     label: 👋 Швидкий старт
-    badge: "Нове!"
 ---
 
 ![Допоміжне зображення](../../../../assets/start/banner.png)

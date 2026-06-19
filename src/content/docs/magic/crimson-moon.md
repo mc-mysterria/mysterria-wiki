@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🌑 Crimson Moon
     order: 11
-    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/magic/lotm.jpg)

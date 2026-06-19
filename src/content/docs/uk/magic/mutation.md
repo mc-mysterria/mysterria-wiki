@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: ☠️ Мутація
     order: 4
-    badge: "Нове!"
 ---
 
 ![Допоміжне зображення](../../../../assets/magic/lotm.jpg)

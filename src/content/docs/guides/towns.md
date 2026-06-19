@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🌆 Towns
     order: 1
-    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/towns/towns.jpg)

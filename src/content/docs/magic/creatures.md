@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🐲 Creatures
     order: 8
-    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/magic/lotm.jpg)

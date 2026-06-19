@@ -8,7 +8,6 @@ banner:
 sidebar:
   label: ✨ Pathway Choice
   order: 2
-  badge: "New!"
 ---
 
 ![Helpful image](../../../assets/magic/lotm.jpg)

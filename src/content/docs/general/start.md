@@ -7,7 +7,6 @@ banner:
     <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Check it out</a>
 sidebar:
     label: 👋 Quick Start
-    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/start/banner.png)

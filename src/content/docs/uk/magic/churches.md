@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: ⛪ Церкви
     order: 14
-    badge: "Нове!"
 ---
 
 ![Допоміжне зображення](../../../../assets/magic/lotm.jpg)

@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🎭 Acting Method
     order: 5
-    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/magic/lotm.jpg)

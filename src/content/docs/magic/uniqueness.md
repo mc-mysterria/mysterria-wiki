@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🔮 Uniqueness
     order: 9
-    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/magic/lotm.jpg)

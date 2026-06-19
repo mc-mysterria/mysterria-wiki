@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 📦 Beyonder Loot
     order: 11
-    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/magic/lotm.jpg)

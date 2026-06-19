@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🗝️ Sealed Artifacts
     order: 10
-    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/magic/lotm.jpg)

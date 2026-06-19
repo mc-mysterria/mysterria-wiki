@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🌀 Духовність
     order: 3
-    badge: "Нове!"
 ---
 
 ![Допоміжне зображення](../../../../assets/magic/lotm.jpg)

@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🔑 Dungeons
     order: 7
-    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/dungeons/dungeons.png)

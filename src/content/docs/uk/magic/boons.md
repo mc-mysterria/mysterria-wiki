@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 💊 Божі Дари
     order: 7
-    badge: "Нове!"
 ---
 
 ![Допоміжне зображення](../../../../assets/magic/lotm.jpg)

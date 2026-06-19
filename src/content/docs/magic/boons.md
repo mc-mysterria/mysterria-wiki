@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 💊 Boons
     order: 7
-    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/magic/lotm.jpg)

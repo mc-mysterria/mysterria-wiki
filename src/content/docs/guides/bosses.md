@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: ⚔️ Guardians
     order: 8
-    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/bosses/bosses.jpg)

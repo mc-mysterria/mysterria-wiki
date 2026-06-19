@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🐲 Істоти
     order: 8
-    badge: "Нове!"
 ---
 
 ![Допоміжне зображення](../../../../assets/magic/lotm.jpg)

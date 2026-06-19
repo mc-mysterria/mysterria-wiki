@@ -8,7 +8,6 @@ banner:
 sidebar:
   label: ⛪ Churches
   order: 14
-  badge: "New!"
 ---
 
 ![Helpful image](../../../assets/magic/lotm.jpg)

@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🌀 Spirituality
     order: 3
-    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/magic/lotm.jpg)

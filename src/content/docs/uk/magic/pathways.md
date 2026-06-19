@@ -8,7 +8,6 @@ banner:
 sidebar:
   label: ✨ Вибір Шляху
   order: 2
-  badge: "Нове!"
 ---
 
 ![Допоміжне зображення](../../../../assets/magic/lotm.jpg)

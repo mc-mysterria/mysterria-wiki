@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🎭 Метод Відігравання
     order: 5
-    badge: "Нове!"
 ---
 
 ![Допоміжне зображення](../../../../assets/magic/lotm.jpg)

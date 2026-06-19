@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: ⚔️ Вартові
     order: 8
-    badge: "Нове!"
 ---
 
 ![Допоміжне зображення](../../../../assets/bosses/bosses.jpg)

@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🌆 Міста
     order: 1
-    badge: "Нове!"
 ---
 
 ![Допоміжне зображення](../../../../assets/towns/towns.jpg)

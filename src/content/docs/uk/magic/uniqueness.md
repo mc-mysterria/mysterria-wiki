@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🔮 Унікальність
     order: 9
-    badge: "Нове!"
 ---
 
 ![Допоміжне зображення](../../../../assets/magic/lotm.jpg)

@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 📜 Honorific Names
     order: 13
-    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/magic/lotm.jpg)

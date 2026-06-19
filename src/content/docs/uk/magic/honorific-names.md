@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 📜 Почесні Імена
     order: 13
-    badge: "Нове!"
 ---
 
 ![Допоміжне зображення](../../../../assets/magic/lotm.jpg)

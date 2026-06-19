@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🧪 Introduction
     order: 1
-    badge: "New!"
 ---
 
 

@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: ☠️ Mutation
     order: 4
-    badge: "New!"
 ---
 
 ![Helpful image](../../../assets/magic/lotm.jpg)

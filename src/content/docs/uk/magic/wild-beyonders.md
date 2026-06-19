@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🧙 Дикі Потойбічні
     order: 12
-    badge: "Нове!"
 ---
 
 ![Допоміжне зображення](../../../../assets/magic/lotm.jpg)

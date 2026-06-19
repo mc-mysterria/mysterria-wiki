@@ -8,7 +8,6 @@ banner:
 sidebar:
     label: 🔑 Підземелля
     order: 7
-    badge: "Нове!"
 ---
 
 ![Допоміжне зображення](../../../../assets/dungeons/dungeons.png)
