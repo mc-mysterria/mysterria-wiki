@@ -39,20 +39,58 @@ Use these commands to diagnose your Church:
 Every Church starts with a **Church Core**.
 
 Default requirements:
-- You must be a Beyonder.
-- You must be Sequence 4 or stronger.
-- You cannot already be a Church member, leader, or co-owner.
-- If you recently left or were removed from a Church, you must wait 14 days before joining another church.
+| Requirement | Default |
+| --- | --- |
+| Beyonder required | Yes |
+| Minimum strength | Sequence 4 or stronger |
+| Existing Church membership | Not allowed |
+| Existing Church leadership/co-ownership | Not allowed |
+| Cooldown after leaving, being kicked, or disbanding | 7 days |
 
 To found a Church:
 1. Craft or receive a Church Core.
 2. Place the Church Core where the main Church site should be.
 3. Type the Church name when prompted.
-4. Open `/coi church menu` or interract with the core to manage the Church.
+4. Open `/coi church menu` or interact with the core to manage the Church.
 
 :::caution[Core Ownership]
 Fresh Church Cores are bound to the player who crafted or received them. A normal player cannot place someone else's core. Losing a core is not recommended.
 :::
+
+---
+
+### Crafting Recipes
+
+Default Church Core recipe:
+
+![Church Core recipe](https://in.ikeepcalm.me/XFn6K2nShdYw.png)
+
+| Slot symbol | Default item |
+| --- | --- |
+| D | Diamond Block |
+| S | Nether Star |
+| B | Beacon |
+| E | Enchanting Table |
+| O | Obsidian |
+| N | Netherite Block |
+
+Default shape: `DSD / BEB / NON`.
+
+Default Church Vault recipe:
+
+![Church Vault recipe](https://in.ikeepcalm.me/LdA4R48J2Gdg.png)
+
+| Slot symbol | Default item |
+| --- | --- |
+| D | Diamond Block |
+| C | Chest |
+| E | Church Core |
+| O | Obsidian |
+| N | Netherite Block |
+
+Default shape: `DCD / CEC / NON`. By default the center slot requires a real Church Core item, not just a normal beacon.
+
+Staff can edit recipe shape, ingredients, core requirement, and core/vault materials through `/coi church recipe ...` commands.
 
 ---
 
@@ -85,11 +123,14 @@ Step-by-step:
 7. Open `/coi church menu` and manage it under the Church sites/branches section.
 
 Default branch caps by leader sequence:
-- Sequence 4: **0** branches
-- Sequence 3: **1** branch
-- Sequence 2: **3** branches
-- Sequence 1: **5** branches
-- Sequence 0: **8** branches, plus regional HQ expansion
+
+| Leader sequence | Branch cap |
+| --- | ---: |
+| Sequence 4 | 0 |
+| Sequence 3 | 1 |
+| Sequence 2 | 3 |
+| Sequence 1 | 5 |
+| Sequence 0 | 8, plus Regional HQ expansion |
 
 If placing another core fails:
 - You may not have a branch slot at your current sequence.
@@ -126,10 +167,17 @@ Important site roles:
 Site leadership matters. A high-sequence, active, praying site head gives better site coverage than a weak or inactive one.
 
 Default head effectiveness by sequence:
-- Sequence 0-4: strong site leadership
-- Sequence 5: reduced leadership
-- Sequence 6-9: increasingly weaker leadership
-- Non-Beyonder or missing head: very weak coverage
+
+| Head sequence/state | Effectiveness |
+| --- | ---: |
+| Sequence 0-4 | 100% |
+| Sequence 5 | 70% |
+| Sequence 6 | 55% |
+| Sequence 7 | 45% |
+| Sequence 8 | 35% |
+| Sequence 9 | 25% |
+| Non-Beyonder | 15% |
+| Missing head | 65% |
 
 Branches can decay if ignored. By default, branch activity decays after **14 days** without meaningful activity or revival.
 
@@ -164,9 +212,15 @@ New-member perks ramp up over **14 days** by default. Members moved between Chur
 Offline members do not instantly stop counting. Members stop contributing when they become inactive or stop praying recently enough.
 
 Default activity windows:
-- Member inactivity: **14 days** without login
-- Prayer inactivity: **14 days** without prayer
-- Site decay: **14 days** without meaningful branch activity
+
+| Window | Default |
+| --- | ---: |
+| Member inactivity | 14 days without login |
+| Prayer inactivity | 14 days without prayer |
+| Site recent activity window | 7 days |
+| Site decay | 14 days without meaningful branch activity |
+| Weekly site prayer target | 12 prayers |
+| Weekly site attendance target | 8 attendees |
 
 ---
 
@@ -177,22 +231,28 @@ Members contribute **anchor weight** to the Church. Anchor weight is the Church'
 Only active members count properly. A member usually needs to have logged in recently and prayed recently. Offline members do not instantly stop counting, but inactive or non-praying members eventually stop contributing.
 
 Default anchor weights:
-- Sequence 0: **12.0**
-- Sequence 1: **9.0**
-- Sequence 2: **7.0**
-- Sequence 3: **5.0**
-- Sequence 4: **3.0**
-- Sequence 5: **0.75**
-- Sequence 6: **0.60**
-- Sequence 7: **0.45**
-- Sequence 8: **0.35**
-- Sequence 9: **0.25**
-- Non-Beyonder: **0.15**
+
+| Member sequence/state | Base anchor weight |
+| --- | ---: |
+| Sequence 0 | 12.0 |
+| Sequence 1 | 9.0 |
+| Sequence 2 | 7.0 |
+| Sequence 3 | 5.0 |
+| Sequence 4 | 3.0 |
+| Sequence 5 | 0.75 |
+| Sequence 6 | 0.60 |
+| Sequence 7 | 0.45 |
+| Sequence 8 | 0.35 |
+| Sequence 9 | 0.25 |
+| Non-Beyonder | 0.15 |
 
 Pathway relation affects contribution:
-- Same pathway as the leader: strongest contribution, **1.5x** anchor weight
-- Adjacent pathway: strong contribution, **1.25x** anchor weight
-- Other pathway: normal contribution, **1.0x** anchor weight
+
+| Relation to Church pathway | Anchor multiplier |
+| --- | ---: |
+| Same pathway as the leader | 1.5x |
+| Adjacent pathway | 1.25x |
+| Other pathway | 1.0x |
 
 Examples:
 - A Sequence 4 member normally gives **3.0** anchor weight.
@@ -205,11 +265,14 @@ A Sequence 0 member normally gives **12.0** anchor weight, but stacking many hig
 Low-sequence congregants also help in groups. By default, Sequence 5 and weaker members can add group anchor bonuses when enough of them are active. This means weaker members still matter, especially in large active Churches, even though each individual member has a smaller weight.
 
 Default required effective anchor weight for full high-sequence Church support:
-- Sequence 0 leader: **50** effective anchors
-- Sequence 1 leader: **38** effective anchors
-- Sequence 2 leader: **28** effective anchors
-- Sequence 3 leader: **25** effective anchors
-- Sequence 4 leader: **15** effective anchors
+
+| Leader sequence | Required effective anchors |
+| --- | ---: |
+| Sequence 0 | 50 |
+| Sequence 1 | 38 |
+| Sequence 2 | 28 |
+| Sequence 3 | 25 |
+| Sequence 4 | 15 |
 
 These are targets, not member counts. For example, a Sequence 4 leader needs **15 effective anchors** for full support. That could come from many weaker members, fewer stronger members, or a mix of both. Same-pathway and adjacent-pathway members help reach the target faster.
 
@@ -222,10 +285,13 @@ Example for a Sequence 4 leader:
 So a Church with only low-sequence members needs many active/praying followers, while a Church with several high-sequence aligned members reaches higher support much faster.
 
 Church tier is based on progress toward the required anchor target:
-- Tier 2: **25%** progress
-- Tier 3: **45%** progress
-- Tier 4: **70%** progress
-- Tier 5: **95%** progress
+
+| Church tier | Required progress |
+| --- | ---: |
+| Tier 2 | 25% |
+| Tier 3 | 45% |
+| Tier 4 | 70% |
+| Tier 5 | 95% |
 
 Example for a Sequence 4 leader with a **15** anchor target:
 - Tier 2 starts around **3.75** effective anchors
@@ -238,6 +304,13 @@ Higher tiers improve recovery, blessing, and acting scaling. If a Church loses a
 Churches also have a persisted **Church Progress** score. Progress is not a replacement for real members, but it helps a young Church build institutional weight over time. Progress contributes a limited anchor-equivalent bonus toward tier progress and ranking, so a new Church can grow through regular services instead of only waiting for raw member count.
 
 Church progress comes mainly from meaningful Church actions such as sermons, mass, communion, confession, staff events, and future server-side religious activities. It is intentionally capped in its tier impact so that inactive Churches cannot replace active prayer and real congregation support with old progress alone.
+
+Default progress conversion:
+
+| Progress setting | Default |
+| --- | ---: |
+| Points per anchor-equivalent bonus | 100 |
+| Maximum progress anchor bonus | 12 |
 
 ---
 
@@ -282,10 +355,13 @@ Ways to pray:
 Prayer is strongest near an operational Church site. Praying away from a Church site can still count, but it is much weaker by default.
 
 Default prayer details:
-- Main prayer radius: **100 blocks** around an operational site
-- Away prayer effect is much weaker than site prayer
-- Prayer connection lasts **30 minutes** by default
-- Prayer effects have a **12 hour** cooldown by default
+
+| Prayer setting | Default |
+| --- | ---: |
+| Main prayer radius | 100 blocks around an operational site |
+| Away prayer effect factor | 10% |
+| Prayer connection duration | 30 minutes |
+| Prayer effects cooldown | 12 hours |
 
 If perks suddenly feel weak, ask members to pray at the Church site and check `/coi church perks` again.
 
@@ -295,11 +371,16 @@ If perks suddenly feel weak, ask members to pray at the Church site and check `/
 
 Church services now have an institutional purpose beyond short-term effects.
 
-Supported services include:
-- **Sermon**: strengthens prayer connection and gives the best basic Church progress for a young congregation.
-- **Mass**: improves prayer strength, gives Church progress, and applies short tranquility support.
-- **Communion**: improves prayer strength, gives Church progress, and provides small madness relief.
-- **Confession**: gives smaller Church progress and minor madness relief.
+Supported services:
+
+| Service | Cooldown | Spirituality cost | Prayer strength | Extra effect | Base progress |
+| --- | ---: | ---: | ---: | --- | ---: |
+| Sermon | 60 minutes | 12 | +3.5% | None | 6 |
+| Mass | 180 minutes | 16 | +4.5% | 8 seconds tranquility | 8 |
+| Communion | 240 minutes | 18 | +5.0% | 2 recoverable madness relief | 7 |
+| Confession | 120 minutes | 10 | +3.0% | 1 recoverable madness relief | 5 |
+
+Progress formula defaults to `(base progress + capped participants * 0.75) * site activity factor`, with participants capped at 12 and site activity never counting below 25% for this calculation.
 
 Services still require a valid Church site, an authorized officiant, nearby participation, cooldowns, and spirituality support. More participants increase progress up to a capped amount, and healthier sites convert services into progress more efficiently.
 
@@ -341,12 +422,15 @@ If recovery bonus is low, common causes are:
 High-sequence Beyonders can have a minimum madness floor. Church floor relief reduces that floor when the Church is healthy enough.
 
 Default base madness floors:
-- Sequence 0: **90**
-- Sequence 1: **75**
-- Sequence 2: **60**
-- Sequence 3: **40**
-- Sequence 4: **25**
-- Sequence 5-9: **0**
+
+| Sequence | Base madness floor |
+| --- | ---: |
+| 0 | 90% |
+| 1 | 75% |
+| 2 | 60% |
+| 3 | 40% |
+| 4 | 25% |
+| 5-9 | 0% |
 
 Floor relief scales with:
 - Church saturation
@@ -355,27 +439,20 @@ Floor relief scales with:
 
 For leaders and co-leaders, floor relief is based on Church health and their rank share. This means a co-leader should normally track close to the leader's relief when the Church itself is healthy. For regular members, membership age, piousness, and activity still reduce personal relief until they are established and active.
 
-Default floor relief rank share:
-- Leader: **100%**
-- Co-leader: **95%**
-- Angel: **75%**
-- Head deacon: **65%**
-- Bishop: **55%**
-- Senior follower: **45%**
-- Follower: **38%**
-- Junior follower: **30%**
-- New follower: **20%**
+Default floor relief rank share and caps:
 
-Default maximum floor relief caps:
-- Leader: **100%**
-- Co-leader: **100%**
-- Angel: **90%**
-- Head deacon: **80%**
-- Bishop: **70%**
-- Senior follower: **60%**
-- Follower: **55%**
-- Junior follower: **45%**
-- New follower: **35%**
+| Role | Rank share | Maximum relief cap |
+| --- | ---: | ---: |
+| Leader | 100% | 100% |
+| Co-leader | 95% | 100% |
+| Commander fallback | 85% | 85% when fully supported |
+| Angel | 75% | 90% |
+| Head deacon | 65% | 80% |
+| Bishop | 55% | 70% |
+| Senior follower | 45% | 60% |
+| Follower | 38% | 55% |
+| Junior follower | 30% | 45% |
+| New follower | 20% | 35% |
 
 This means a weak Church may barely reduce the floor, while a healthy Church can greatly reduce it for important members.
 
@@ -402,8 +479,11 @@ This means a weak Church may barely reduce the floor, while a healthy Church can
 - Angel-specific effects pause if the Church has more angels than its angel slot cap.
 
 Default angel slots:
-- Base angel slots: **3**
-- Each active branch adds **1** angel slot
+
+| Angel slot source | Slots |
+| --- | ---: |
+| Base angel slots | 3 |
+| Each active branch | +1 |
 
 **Head Deacon**
 - Runs a local site.
@@ -420,9 +500,12 @@ Default angel slots:
 - Becomes more valuable as membership age increases.
 
 Seniority defaults:
-- Junior follower: after **3 days**
-- Follower: after **7 days**
-- Senior follower: after **14 days**
+
+| Seniority | Membership age |
+| --- | ---: |
+| Junior follower | 3 days |
+| Follower | 7 days |
+| Senior follower | 14 days |
 
 ---
 
@@ -458,12 +541,20 @@ Blessings can reduce:
 
 Blessings usually require the target to be near an operational Church site and cannot be used freely as a combat spam tool.
 
-Default blessing cooldown:
-- **10 minutes** per target
+Default blessing values:
 
-Default base blessing values before scaling:
-- Site officers: up to **4 recoverable madness**, **6 tiredness**, and **6 seconds** of support
-- Leaders, co-leaders, and active angels: up to **6 recoverable madness**, **10 tiredness**, and **10 seconds** of support
+| Blessing setting | Default |
+| --- | ---: |
+| Cooldown per target | 10 minutes |
+| Target tracking window | 30 minutes |
+| Target soft cap | 2 uses |
+| Over-cap falloff | 35% |
+| Minimum effect factor | 35% |
+
+| Target tier | Recoverable madness relief | Tiredness relief | Support duration | Spirituality cost |
+| --- | ---: | ---: | ---: | ---: |
+| Site officers | 4 | 6 | 6 seconds | 10 |
+| Leaders, co-leaders, active angels | 6 | 10 | 10 seconds | 18 |
 
 Blessing strength scales with Church health, pathway relation, piousness, saturation, rank, and repeated-use falloff.
 
@@ -481,14 +572,26 @@ Gift types:
 
 Gifts cost the giver spirituality and may add recoverable madness burden to the giver.
 
-Default gift cooldown:
-- **5 minutes** per giver, target, and gift type
+Default gift settings:
+
+| Gift setting | Default |
+| --- | ---: |
+| Cooldown per giver, target, and type | 5 minutes |
+| Self-gifts | Disabled |
+| Target tracking window | 60 minutes |
+| Target soft cap | 1 use |
+| Over-cap falloff | 50% |
+| Minimum effect factor | 40% |
+| Max giver madness after cost | 95% |
 
 Default gift values before repeated-use scaling:
-- Madness Relief: up to **10 recoverable madness**, costs **30 spirituality**, adds **1 recoverable madness** to the giver
-- Spirituality Restore: up to **35 spirituality**, costs **24 spirituality**, adds **0.5 recoverable madness** to the giver
-- Tiredness Recovery: up to **20 tiredness**, costs **28 spirituality**, adds **0.75 recoverable madness** to the giver
-- Sanctuary Renewal: **20 seconds** regeneration and short absorption, costs **36 spirituality**, adds **1.5 recoverable madness** to the giver
+
+| Gift type | Effect | Spirituality cost | Giver madness burden |
+| --- | --- | ---: | ---: |
+| Madness Relief | Up to 10 recoverable madness relief | 30 | 1.0 |
+| Spirituality Restore | Up to 35 spirituality restored | 24 | 0.5 |
+| Tiredness Recovery | Up to 20 tiredness relief | 28 | 0.75 |
+| Sanctuary Renewal | 20 seconds regeneration and 120 seconds absorption | 36 | 1.5 |
 
 Gifts are not meant to be unlimited healing. Repeated gifts on the same target become less effective.
 
@@ -533,16 +636,27 @@ How storage and retrieval works:
 - Approved artifacts must be returned before the borrow timer expires.
 - Expired or manually recalled artifacts are removed from the borrower's inventory and returned to Church storage.
 
-Default access range:
-- Normal vault actions require standing near the physical vault, usually within **10 blocks**.
-- This range is not chunk based.
+Default vault values:
+
+| Vault setting | Default |
+| --- | ---: |
+| Placement distance from Church Core | 16 blocks |
+| Access distance from physical vault | 10 blocks |
+| Base artifact capacity | 0 |
+| Capacity per Church tier | +1 |
+| Capacity per vault | +1 |
+| Capacity per site level | +1 |
+| Capacity per Lands artifact link | +1 |
+| Maximum capacity | 12 |
+| Base borrow duration | 2 hours |
+| Maximum borrow duration | 4 hours |
 
 Remote retrieval:
 - Each site can remember one stored artifact as that site's remote artifact.
 - Leaders, active angels, and that site's head deacon can approve or recall that remembered artifact remotely.
 - Regular members still request artifacts; they do not freely remote-withdraw artifacts.
 
-Default borrow duration is **2 hours**, scaling up with Church tier, active vault network, site levels, stored artifacts, support levers, and approved Lands artifact perks. Default maximum borrow duration is **4 hours**.
+Borrow duration scales up with Church tier, active vault network, site levels, stored artifacts, support levers, and approved Lands artifact perks.
 
 ---
 
@@ -562,9 +676,12 @@ Step-by-step link flow:
 Without a site argument, `/coi church land request` uses your assigned or nearest Church site, then falls back to the main site.
 
 Default Land slot scaling:
-- Each Land starts with **3 Church link slots**.
-- Each **10 claimed chunks** adds **1 extra Church link slot**.
-- A Land with **100 claimed chunks** can support **13 linked Churches**.
+
+| Land slot source | Slots |
+| --- | ---: |
+| Base slots | 3 |
+| Every 10 claimed chunks | +1 |
+| Example: 100 claimed chunks | 13 total |
 
 Land owners can manage enabled link perks after approval:
 - **Treasury**: lets eligible Church treasury flows use the linked Land treasury when server settings allow it.
@@ -630,6 +747,7 @@ Commands to check:
 Staff can manually stabilize Churches when needed for events, recovery, or support tickets.
 
 Common staff commands:
+- `/coi inspect <beyonder>`: shows the player's spirituality as points and %, current/permanent/recoverable madness, church floor, effective minimum, pathway acting progress, condition modifiers, mutation metadata, and personal Church perk summary.
 - `/coi church diag score <leader>`: shows the Church's anchor contribution rows, included/excluded members, last seen time, last prayer time, pathway multiplier, soft caps, tier progress, and religion score.
 - `/coi church diag member <player> [pathway]`: combines player link diagnostics with perk, acting, recovery, and madness floor breakdowns.
 - `/coi church diag perks <player> [pathway]`: explains acting bonus, recovery bonus, blessing effectiveness, floor relief, and the formula factors.
