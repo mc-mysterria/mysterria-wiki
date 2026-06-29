@@ -53,6 +53,10 @@ To found a Church:
 3. Type the Church name when prompted.
 4. Open `/coi church menu` or interact with the core to manage the Church.
 
+Placed Church Core:
+
+![Church Core placed](https://in.ikeepcalm.me/JIY3DZ5BUgyF.png)
+
 :::caution[Core Ownership]
 Fresh Church Cores are bound to the player who crafted or received them. A normal player cannot place someone else's core. Losing a core is not recommended.
 :::
@@ -89,8 +93,6 @@ Default Church Vault recipe:
 | N | Netherite Block |
 
 Default shape: `DCD / CEC / NON`. By default the center slot requires a real Church Core item, not just a normal beacon.
-
-Staff can edit recipe shape, ingredients, core requirement, and core/vault materials through `/coi church recipe ...` commands.
 
 ---
 
@@ -303,7 +305,7 @@ Higher tiers improve recovery, blessing, and acting scaling. If a Church loses a
 
 Churches also have a persisted **Church Progress** score. Progress is not a replacement for real members, but it helps a young Church build institutional weight over time. Progress contributes a limited anchor-equivalent bonus toward tier progress and ranking, so a new Church can grow through regular services instead of only waiting for raw member count.
 
-Church progress comes mainly from meaningful Church actions such as sermons, mass, communion, confession, staff events, and future server-side religious activities. It is intentionally capped in its tier impact so that inactive Churches cannot replace active prayer and real congregation support with old progress alone.
+Church progress comes mainly from meaningful Church actions such as sermons, mass, communion, confession, and future server-side religious activities. It is intentionally capped in its tier impact so that inactive Churches cannot replace active prayer and real congregation support with old progress alone.
 
 Default progress conversion:
 
@@ -364,6 +366,10 @@ Default prayer details:
 | Prayer effects cooldown | 12 hours |
 
 If perks suddenly feel weak, ask members to pray at the Church site and check `/coi church perks` again.
+
+Church status view:
+
+![Church status GUI](https://in.ikeepcalm.me/qCjU60WFVN0J.png)
 
 ---
 
@@ -620,7 +626,6 @@ Default behavior:
 - Church leaders craft vault items.
 - A vault must be placed near an active Church Core.
 - Vault recipes may require a real Church Core ingredient by default.
-- Staff can change recipes and requirements on the live server.
 
 Vaults support:
 - Church artifact storage
@@ -709,6 +714,10 @@ War can affect perks:
 
 During accepted wars, enemy participants may be allowed to break Church objectives such as cores or vaults. Breaking a main core can decide the war.
 
+Core breaking message:
+
+![Church breaking message](https://in.ikeepcalm.me/mTxUFlLZVXbe.png)
+
 Useful war commands:
 - `/coi church war`
 - `/coi church war surrender <leader>`
@@ -739,32 +748,6 @@ Commands to check:
 - `/coi church cooldowns`
 - `/coi church top [pathway]`
 - `/coi church land`
-
----
-
-### Staff Intervention
-
-Staff can manually stabilize Churches when needed for events, recovery, or support tickets.
-
-Common staff commands:
-- `/coi inspect <beyonder>`: shows the player's spirituality as points and %, current/permanent/recoverable madness, church floor, effective minimum, pathway acting progress, condition modifiers, mutation metadata, and personal Church perk summary.
-- `/coi church diag score <leader>`: shows the Church's anchor contribution rows, included/excluded members, last seen time, last prayer time, pathway multiplier, soft caps, tier progress, and religion score.
-- `/coi church diag member <player> [pathway]`: combines player link diagnostics with perk, acting, recovery, and madness floor breakdowns.
-- `/coi church diag perks <player> [pathway]`: explains acting bonus, recovery bonus, blessing effectiveness, floor relief, and the formula factors.
-- `/coi church diag observe <watcher> <target> [remote]`: explains Blessed Observation availability and blockers.
-- `/coi church diag core <leader> [siteId]`: explains Church Core saved state and placed-block PDC state.
-- `/coi church staff support full <leader>`: forces strong saturation, perk multipliers, floor relief, active timestamps, and tier unlocks for one Church.
-- `/coi church staff support clear <leader>`: removes those full-support overrides.
-- `/coi church staff progress set <leader> <amount>`: sets Church progress directly.
-- `/coi church staff progress add <leader> <amount>`: adds Church progress.
-- `/coi church staff age church <leader> <days>`: sets the Church's effective age.
-- `/coi church staff age member <player> <days>`: sets a player's effective membership age.
-- `/coi church staff member active <player>`: marks a participant active/praying.
-- `/coi church staff member inactive <player>`: marks a participant inactive.
-- `/coi church sync-members <leader> [active]`: refreshes stored member/co-leader snapshots; `active` also refreshes prayer/activity timestamps.
-- `/coi church repair-links <leader>`: repairs persisted Beyonder membership links from Church data.
-
-These commands are intended for moderation, event balancing, and data repair. They are not normal player progression.
 
 ---
 
