@@ -27,6 +27,7 @@ Church bonuses are not flat. They scale with Church health: active core, active 
 Use these commands to diagnose your Church:
 - `/coi church status`
 - `/coi church perks`
+- `/coi church acting`
 - `/coi church my-site`
 - `/coi church cooldowns`
 - `/coi church top [pathway]`
@@ -534,6 +535,8 @@ Same-pathway and adjacent-pathway members usually receive better support than un
 
 If acting bonus is weak, improve prayer activity, site health, and anchor saturation.
 
+Use `/coi church acting` or `/coi church perks` to see your current personal Church acting boost and the main factors affecting it.
+
 ---
 
 ### Blessings
@@ -744,6 +747,7 @@ If madness relief, acting bonus, or blessings suddenly feel weak, check these fi
 Commands to check:
 - `/coi church status`
 - `/coi church perks`
+- `/coi church acting`
 - `/coi church my-site`
 - `/coi church cooldowns`
 - `/coi church top [pathway]`
@@ -765,6 +769,7 @@ Player commands:
 - `/coi church my-site`
 - `/coi church cooldowns`
 - `/coi church perks`
+- `/coi church acting`
 - `/coi church top [pathway]`
 - `/coi church land`
 - `/coi church land request [siteId]`
