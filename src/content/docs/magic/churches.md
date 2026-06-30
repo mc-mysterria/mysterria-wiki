@@ -334,6 +334,8 @@ Ranking uses a religion score based on:
 - Operational sites
 - Current Church health
 
+The score is deterministic and uses the Church's persisted leader sequence when the live leader data is unavailable. The leader does not count as a normal member anchor for their own Church, so a ranking should not swing just because the leader is online while members are inactive. Use `/coi inspect church <leader>` or staff diagnostics to see the score breakdown, raw anchor weight, effective anchor weight, progress bonus, operational sites, and excluded members.
+
 For example, if two Sequence 4 Chained leaders both establish Churches, they compete in the Chained ranking. The higher score is considered the dominant Chained religion until another Church surpasses it.
 
 ---
@@ -356,6 +358,8 @@ Ways to pray:
 - Chant the leader's complete Honorific Name line by line in chat.
 
 Prayer is strongest near an operational Church site. Praying away from a Church site can still count, but it is much weaker by default.
+
+The prayer messages now state the exact support that was applied, such as regeneration time, tranquility time, piousness gain, prayer-strength gain, or a reduced away-from-site effect. If the prayer was near no operational site, it should not add local site traffic.
 
 Default prayer details:
 
@@ -390,6 +394,8 @@ Supported services:
 Progress formula defaults to `(base progress + capped participants * 0.75) * site activity factor`, with participants capped at 12 and site activity never counting below 25% for this calculation.
 
 Services still require a valid Church site, an authorized officiant, nearby participation, cooldowns, and spirituality support. More participants increase progress up to a capped amount, and healthier sites convert services into progress more efficiently.
+
+Staff can tune service costs, effects, cooldowns, and progress scaling globally, per Church, or per player with the Church staff override commands. This is intended for balancing live numbers without code changes.
 
 This means a new Church with few members can still grow by consistently holding services, but it still benefits from recruiting active members, keeping the core operational, and maintaining prayer activity.
 
@@ -661,10 +667,31 @@ Default vault values:
 
 Remote retrieval:
 - Each site can remember one stored artifact as that site's remote artifact.
-- Leaders, active angels, and that site's head deacon can approve or recall that remembered artifact remotely.
+- Leaders, active angels, Church authorities, and that site's head deacon can manage normal local artifact requests.
+- High-level managers can approve or recall remembered remote artifacts.
 - Regular members still request artifacts; they do not freely remote-withdraw artifacts.
 
 Borrow duration scales up with Church tier, active vault network, site levels, stored artifacts, support levers, and approved Lands artifact perks.
+
+GUI retrieval:
+- Members request artifacts from the vault GUI.
+- Managers approve, deny, recall, return, or inspect artifacts from the GUI.
+- Borrowed artifacts are tracked as a temporary physical copy. Dropping, container storage, hopper movement, duplicate copies, expired borrows, and manual recalls are reconciled back into Church storage.
+- Owners recalling an artifact they currently hold should clear the borrow state instead of creating another copy.
+
+Staff vault recovery commands exist for broken cases:
+- `/coi church vault artifact list <leader>`
+- `/coi church vault artifact inspect <leader> <artifactId>`
+- `/coi church vault artifact recall <leader> <artifactId>`
+- `/coi church vault artifact borrow <leader> <artifactId> <player> [durationSeconds]`
+- `/coi church vault artifact give <leader> <artifactId> <player> [removeFromStorage]`
+- `/coi church vault artifact drop <leader> <artifactId> [removeFromStorage]`
+- `/coi church vault artifact remove <leader> <artifactId>`
+- `/coi church vault artifact set-site <leader> <artifactId> <siteId>`
+- `/coi church vault artifact request-clear <leader> <artifactId>`
+- `/coi church vault artifact request-clear-all <leader>`
+- `/coi church vault artifact remote set <leader> <siteId> <artifactId>`
+- `/coi church vault artifact remote clear <leader> <siteId>`
 
 ---
 
@@ -702,6 +729,8 @@ Useful commands:
 - `/coi church land deny <churchLeader>`
 - `/coi church land perk <churchLeader> <treasury|artifacts> <true|false>`
 - `/coi church land unlink`
+
+Only operational Church sites can be linked. If a core is missing, inactive, stale, or decayed, the link request should fail until the site is repaired. Core and vault interaction is allowed inside claimed land; only breaking is gated by Lands permissions and accepted Church war objective rules.
 
 ---
 
@@ -776,6 +805,15 @@ Player commands:
 - `/coi church war`
 
 Most advanced actions are in the Church GUI.
+
+Common manager and staff controls:
+- `/coi church ownership handoff <player> confirm` for player-led ownership transfer.
+- `/coi church ownership transfer <oldLeader> <newLeader>` for staff ownership transfer.
+- `/coi church role set <player> <role>` for leader/manager role changes.
+- `/coi church blessing inspect|force|cooldown clear|cooldown clear-church|cooldown clear-all`
+- `/coi church gift inspect|force|cooldown clear|cooldown clear-player|cooldown clear-church|cooldown clear-all`
+- `/coi church cooldown clear <player>`, `/coi church cooldown clear-all <player>`, and `/coi church cooldown clear-global <scope>` for cooldown repair.
+- `/coi church override ...` for global, Church, and player-specific costs, cooldowns, effects, capacities, and scaling.
 
 ---
 

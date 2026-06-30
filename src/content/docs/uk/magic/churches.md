@@ -131,6 +131,26 @@ sidebar:
 - Члени можуть подавати запити на артефакти для схвалення лідером
 - Рецепти сховища захищені — злам має наслідки
 
+**Повернення артефактів через GUI:**
+- Член відкриває церковне сховище через GUI та подає запит на артефакт.
+- Менеджер сховища схвалює, відхиляє, відкликає або перевіряє артефакт у GUI.
+- Позичений артефакт є тимчасовою фізичною копією. Якщо його кинути, сховати в контейнер, перемістити воронкою, прострочити або відкликати вручну, система має повернути стан до церковного сховища.
+- Якщо власник відкликає артефакт, який уже тримає, це має очистити стан позики, а не створити ще одну копію.
+
+**Команди персоналу для ремонту сховищ:**
+- `/coi church vault artifact list <leader>`
+- `/coi church vault artifact inspect <leader> <artifactId>`
+- `/coi church vault artifact recall <leader> <artifactId>`
+- `/coi church vault artifact borrow <leader> <artifactId> <player> [durationSeconds]`
+- `/coi church vault artifact give <leader> <artifactId> <player> [removeFromStorage]`
+- `/coi church vault artifact drop <leader> <artifactId> [removeFromStorage]`
+- `/coi church vault artifact remove <leader> <artifactId>`
+- `/coi church vault artifact set-site <leader> <artifactId> <siteId>`
+- `/coi church vault artifact request-clear <leader> <artifactId>`
+- `/coi church vault artifact request-clear-all <leader>`
+- `/coi church vault artifact remote set <leader> <siteId> <artifactId>`
+- `/coi church vault artifact remote clear <leader> <siteId>`
+
 ---
 
 ### Дипломатія Та Війна
@@ -159,9 +179,34 @@ sidebar:
 Прив'язка скарбниці дозволяє церковним системам інтегруватися з економікою та керуванням територіями Lands. Територія, гроші й релігія тепер тягнуть одну й ту саму нитку.
 
 **Щоб прив'язати:**
-- Розмістіть Ядро Церкви на території, щоб прив'язати їх
-- Або скористайтеся GUI
-- Або використайте команди /coi church та підкоманди, щоб прив'язати/відв'язати вручну
+- Спочатку створіть claim у Lands.
+- Розмістіть робоче Ядро Церкви всередині цієї території.
+- Використайте `/coi church land request` біля місця або `/coi church land request <siteId>` для конкретного місця.
+- Власник Lands має підтвердити прив'язку командою `/coi church land approve <churchLeader>`.
+- Перевірте стан через `/coi church land`.
+
+Прив'язка працює лише для робочих церковних місць. Якщо ядро відсутнє, неактивне або місце занепало, спочатку відремонтуйте місце. Взаємодія з ядрами та сховищами дозволена всередині claimed land; обмеження стосуються саме ламання, permissions Lands і правил цілей у прийнятій церковній війні.
+
+---
+
+### Діагностика Та Команди Персоналу
+
+Рейтинг релігії тепер має детальний розбір: активна вага Якорів, ефективна вага, прогрес Церкви, рівень, робочі місця, здоров'я Церкви та виключені учасники. Лідер не рахується як звичайний якір власної Церкви, а збережена послідовність лідера використовується, коли живі дані недоступні.
+
+Корисні команди:
+- `/coi church status`
+- `/coi church perks`
+- `/coi church acting`
+- `/coi church my-site`
+- `/coi church cooldowns`
+- `/coi church top [pathway]`
+- `/coi inspect church <leader>`
+- `/coi church ownership handoff <player> confirm`
+- `/coi church ownership transfer <oldLeader> <newLeader>`
+- `/coi church role set <player> <role>`
+- `/coi church blessing inspect|force|cooldown clear|cooldown clear-church|cooldown clear-all`
+- `/coi church gift inspect|force|cooldown clear|cooldown clear-player|cooldown clear-all`
+- `/coi church override ...`
 
 ---
 
