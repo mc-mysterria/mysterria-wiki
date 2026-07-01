@@ -27,6 +27,7 @@ Church bonuses are not flat. They scale with Church health: active core, active 
 Use these commands to diagnose your Church:
 - `/coi church status`
 - `/coi church perks`
+- `/coi church progress`
 - `/coi church acting`
 - `/coi church my-site`
 - `/coi church cooldowns`
@@ -205,7 +206,7 @@ Main scaling factors:
 - **Activity**: recent prayer and assigned site activity.
 - **Saturation**: whether the Church has enough effective anchor weight for the leader's sequence.
 - **Site network**: active main site, branches, and regional support.
-- **Leadership coverage**: head deacons, bishops, co-leaders, and active angels.
+- **Leadership coverage**: head deacons and bishops keeping Church sites properly covered. Co-leaders and angels help through their own role/rank systems, but they do not automatically fill site leadership slots.
 - **Pathway relation**: same-pathway members usually help most; adjacent pathways still help; unrelated pathways help less.
 - **Sequence**: higher-sequence members contribute more anchor weight and now give stronger prayer, gift, blessing, acting, recovery, and blessing-effectiveness scaling through bounded factors.
 - **War state**: war can freeze, reduce, or boost perks.
@@ -220,6 +221,8 @@ Two different "saturation" concepts exist:
 - **Site aura saturation** is per-site and depends on the site's anchors, recent activity, leadership, and core state.
 
 Staff diagnostics separate these values. Player commands show applied results and broad readiness bands instead of raw formula internals.
+
+Use `/coi church progress` to check your own pathway support. It shows the Church's official pathway, your pathway, whether you directly match or are adjacent, whether enough active members of your pathway are praying for the cluster bonus, and whether a same-path angel is currently active.
 
 Default activity windows:
 
@@ -329,6 +332,8 @@ Default progress conversion:
 Each pathway can have multiple Churches competing for recognition, but only one is effectively the top religion for that pathway at a time.
 
 A Church has one official pathway. That pathway follows the current leader's primary pathway when the Church is created or transferred. Co-leaders and members can belong to other pathways, but they do not make the Church multi-pathway.
+
+Co-leader pathways can still help, but through the normal member pathway systems: active/praying same-path members can form a pathway cluster, adjacent pathways receive partial support, and same-path active angels can add a small extra boost. A co-leader does not create a second official Church religion by themselves. Use `/coi church progress` to see what is currently active for your own pathway.
 
 Use:
 - `/coi church top` to show the strongest Churches overall.
@@ -789,6 +794,7 @@ If madness relief, acting bonus, or blessings suddenly feel weak, check these fi
 Commands to check:
 - `/coi church status`
 - `/coi church perks`
+- `/coi church progress`
 - `/coi church acting`
 - `/coi church my-site`
 - `/coi church cooldowns`
@@ -822,6 +828,7 @@ Player commands:
 - `/coi church my-site`
 - `/coi church cooldowns`
 - `/coi church perks`
+- `/coi church progress`
 - `/coi church perks church`
 - `/coi church support`
 - `/coi church acting`
