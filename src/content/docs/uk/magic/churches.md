@@ -91,6 +91,14 @@ sidebar:
 
 Переваги можуть впливати на відігравання, відновлення від Безумства, благословення, підтримку молитов, подарунки підтримки та стабільність Церкви. Ці бонуси залежать від стану Церкви: наскільки вона активна, наскільки здорова її священна мережа, наскільки досвідчені її члени та чи належно закриті її ролі.
 
+Послідовність тепер важить у двох місцях: вища Послідовність дає більшу вагу Якоря для сили Церкви, а також сильніше масштабує молитви, подарунки, благословення, відіграш, відновлення та ефективність благословень через обмежені коефіцієнти.
+
+Є два різні типи "насичення":
+- **Насичення Якорів / заповнення рівня Церкви** — загальна готовність Церкви для переваг і рейтингів.
+- **Насичення аури місця** — стан конкретного місця, який залежить від якорів, активності, лідерства та ядра.
+
+Команди гравців показують застосовані результати та короткі стани готовності. Точні формули залишаються в діагностиці персоналу.
+
 Мала Церква все ще може вижити. Доглянута Церква з активними членами та захищеними місцями стає чимось іншим: силою, яку інші фракції мають поважати.
 
 ---
@@ -138,12 +146,14 @@ sidebar:
 - Якщо власник відкликає артефакт, який уже тримає, це має очистити стан позики, а не створити ще одну копію.
 
 **Команди персоналу для ремонту сховищ:**
-- `/coi church vault artifact list <leader>`
+- `/coi church vault artifacts list <leader>`
+- `/coi church vault artifacts site <leader> <siteId>`
 - `/coi church vault artifact inspect <leader> <artifactId>`
+- `/coi church vault artifact requests <leader>`
 - `/coi church vault artifact recall <leader> <artifactId>`
-- `/coi church vault artifact borrow <leader> <artifactId> <player> [durationSeconds]`
-- `/coi church vault artifact give <leader> <artifactId> <player> [removeFromStorage]`
-- `/coi church vault artifact drop <leader> <artifactId> [removeFromStorage]`
+- `/coi church vault artifact borrow <leader> <artifactId> <player> <durationSeconds>`
+- `/coi church vault artifact give <leader> <artifactId> <player> <removeFromStorage>`
+- `/coi church vault artifact drop <leader> <artifactId> <world> <x> <y> <z> <removeFromStorage>`
 - `/coi church vault artifact remove <leader> <artifactId>`
 - `/coi church vault artifact set-site <leader> <artifactId> <siteId>`
 - `/coi church vault artifact request-clear <leader> <artifactId>`
@@ -198,17 +208,39 @@ sidebar:
 Корисні команди:
 - `/coi church status`
 - `/coi church perks`
+- `/coi church perks church`
 - `/coi church acting`
 - `/coi church my-site`
 - `/coi church cooldowns`
 - `/coi church top [pathway]`
-- `/coi inspect church <leader>`
+- `/coi church pray`
+- `/coi church bless <player>`
+- `/coi church gift <player> <madness-relief|spirituality-restore|tiredness-recovery|sanctuary-renewal>`
+- `/coi church ritual <siteId> <sermon|mass|communion|confession>`
+- `/coi church artifacts list`
+- `/coi church artifact inspect|request|cancel <artifactId>`
+- `/coi church artifact return`
+- `/coi church land`
+- `/coi church war`
+- `/coi church inspect <leader>`
 - `/coi church ownership handoff <player> confirm`
-- `/coi church ownership transfer <oldLeader> <newLeader>`
-- `/coi church role set <player> <role>`
-- `/coi church blessing inspect|force|cooldown clear|cooldown clear-church|cooldown clear-all`
-- `/coi church gift inspect|force|cooldown clear|cooldown clear-player|cooldown clear-all`
-- `/coi church override ...`
+- `/coi church ownership transfer <leader> <newOwner>`
+- `/coi church role set <player> <follower|angel>` для лідера
+- `/coi church role set <leader> <player> <follower|angel>` для персоналу
+- `/coi church blessing inspect <blesser> <target>`
+- `/coi church blessing force <blesser> <target>`
+- `/coi church blessing cooldown clear <player>`
+- `/coi church blessing cooldown clear-church <leader>`
+- `/coi church blessing cooldown clear-all`
+- `/coi church gift inspect <giver> <target> <giftType>`
+- `/coi church gift force <giver> <target> <giftType>`
+- `/coi church gift cooldown clear <giver> <target> <giftType>`
+- `/coi church gift cooldown clear-player <player>`
+- `/coi church gift cooldown clear-all`
+- `/coi church override list|set-int|set-long|set-double|clear <leader> ...`
+- `/coi church player override set-int|set-long|set-double|clear <player> ...`
+- `/coi church global get|list|set-int|set-long|set-double|set-bool|set-string|clear ...`
+- `/coi church validate`, `/coi church repair-all`, `/coi church repair-links <leader>`, `/coi church recover-player <player>`
 
 ---
 

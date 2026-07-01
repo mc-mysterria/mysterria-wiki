@@ -207,12 +207,19 @@ Main scaling factors:
 - **Site network**: active main site, branches, and regional support.
 - **Leadership coverage**: head deacons, bishops, co-leaders, and active angels.
 - **Pathway relation**: same-pathway members usually help most; adjacent pathways still help; unrelated pathways help less.
+- **Sequence**: higher-sequence members contribute more anchor weight and now give stronger prayer, gift, blessing, acting, recovery, and blessing-effectiveness scaling through bounded factors.
 - **War state**: war can freeze, reduce, or boost perks.
 - **Main core state**: no active main core sharply reduces Church strength.
 
 New-member perks ramp up over **14 days** by default. Members moved between Churches may also have a longer switch ramp before they give full value.
 
 Offline members do not instantly stop counting. Members stop contributing when they become inactive or stop praying recently enough.
+
+Two different "saturation" concepts exist:
+- **Church anchor saturation / tier fill** is the Church-wide readiness used for perks and rankings.
+- **Site aura saturation** is per-site and depends on the site's anchors, recent activity, leadership, and core state.
+
+Staff diagnostics separate these values. Player commands show applied results and broad readiness bands instead of raw formula internals.
 
 Default activity windows:
 
@@ -334,7 +341,7 @@ Ranking uses a religion score based on:
 - Operational sites
 - Current Church health
 
-The score is deterministic and uses the Church's persisted leader sequence when the live leader data is unavailable. The leader does not count as a normal member anchor for their own Church, so a ranking should not swing just because the leader is online while members are inactive. Use `/coi inspect church <leader>` or staff diagnostics to see the score breakdown, raw anchor weight, effective anchor weight, progress bonus, operational sites, and excluded members.
+The score is deterministic and uses the Church's persisted leader sequence when the live leader data is unavailable. The leader does not count as a normal member anchor for their own Church, so a ranking should not swing just because the leader is online while members are inactive. Use `/coi church diag score <leader>` to see the score breakdown, raw anchor weight, effective anchor weight, progress bonus, operational sites, and excluded members.
 
 For example, if two Sequence 4 Chained leaders both establish Churches, they compete in the Chained ranking. The higher score is considered the dominant Chained religion until another Church surpasses it.
 
@@ -681,12 +688,14 @@ GUI retrieval:
 - Owners recalling an artifact they currently hold should clear the borrow state instead of creating another copy.
 
 Staff vault recovery commands exist for broken cases:
-- `/coi church vault artifact list <leader>`
+- `/coi church vault artifacts list <leader>`
+- `/coi church vault artifacts site <leader> <siteId>`
 - `/coi church vault artifact inspect <leader> <artifactId>`
+- `/coi church vault artifact requests <leader>`
 - `/coi church vault artifact recall <leader> <artifactId>`
-- `/coi church vault artifact borrow <leader> <artifactId> <player> [durationSeconds]`
-- `/coi church vault artifact give <leader> <artifactId> <player> [removeFromStorage]`
-- `/coi church vault artifact drop <leader> <artifactId> [removeFromStorage]`
+- `/coi church vault artifact borrow <leader> <artifactId> <player> <durationSeconds>`
+- `/coi church vault artifact give <leader> <artifactId> <player> <removeFromStorage>`
+- `/coi church vault artifact drop <leader> <artifactId> <world> <x> <y> <z> <removeFromStorage>`
 - `/coi church vault artifact remove <leader> <artifactId>`
 - `/coi church vault artifact set-site <leader> <artifactId> <siteId>`
 - `/coi church vault artifact request-clear <leader> <artifactId>`
@@ -753,6 +762,9 @@ Core breaking message:
 
 Useful war commands:
 - `/coi church war`
+- `/coi church war declare <leader>`
+- `/coi church war accept <leader>`
+- `/coi church war join <attackerLeader> <defenderLeader> <attacker|defender>`
 - `/coi church war surrender <leader>`
 - `/coi church war draw <leader>`
 
@@ -789,32 +801,70 @@ Commands to check:
 
 Player commands:
 - `/coi church menu`
+- `/coi church manage`
 - `/coi church establish <name>`
 - `/coi church add <player>`
 - `/coi church accept`
 - `/coi church remove <player>`
 - `/coi church leave`
+- `/coi church authority grant <player>`
+- `/coi church authority revoke <player>`
+- `/coi church angel promote <player>`
+- `/coi church angel demote <player>`
+- `/coi church role set <player> <follower|angel>`
+- `/coi church ownership handoff <player> confirm`
 - `/coi church pray`
+- `/coi church bless <player>`
+- `/coi church gift <player> <madness-relief|spirituality-restore|tiredness-recovery|sanctuary-renewal>`
+- `/coi church ritual <siteId> <sermon|mass|communion|confession>`
+- `/coi church offering donate <siteId>`
 - `/coi church status`
 - `/coi church my-site`
 - `/coi church cooldowns`
 - `/coi church perks`
+- `/coi church perks church`
+- `/coi church support`
 - `/coi church acting`
+- `/coi church artifacts list`
+- `/coi church artifact inspect|request|cancel <artifactId>`
+- `/coi church artifact return`
+- `/coi church artifact borrow|approve|deny|recall <artifactId>` for eligible managers
+- `/coi church artifact deposit` for eligible managers
 - `/coi church top [pathway]`
+- `/coi church merge request <leader> [leader2...]`
+- `/coi church merge accept|decline|status|cancel`
 - `/coi church land`
 - `/coi church land request [siteId]`
 - `/coi church war`
 
 Most advanced actions are in the Church GUI.
 
-Common manager and staff controls:
+Manager controls:
 - `/coi church ownership handoff <player> confirm` for player-led ownership transfer.
-- `/coi church ownership transfer <oldLeader> <newLeader>` for staff ownership transfer.
-- `/coi church role set <player> <role>` for leader/manager role changes.
-- `/coi church blessing inspect|force|cooldown clear|cooldown clear-church|cooldown clear-all`
-- `/coi church gift inspect|force|cooldown clear|cooldown clear-player|cooldown clear-church|cooldown clear-all`
-- `/coi church cooldown clear <player>`, `/coi church cooldown clear-all <player>`, and `/coi church cooldown clear-global <scope>` for cooldown repair.
-- `/coi church override ...` for global, Church, and player-specific costs, cooldowns, effects, capacities, and scaling.
+- `/coi church role set <player> <follower|angel>` for leader role changes.
+- `/coi church support set <prayer|ritual|blessing> <true|false>`
+- `/coi church land perk <churchLeader> <treasury|artifacts> <true|false>` when you own the linked Land.
+
+Staff diagnostics and repair:
+- `/coi church inspect <leader>`
+- `/coi church effectiveness <leader>`
+- `/coi church diag player|perks|member|score|core ...`
+- `/coi church ownership transfer <leader> <newOwner>`
+- `/coi church role set <leader> <player> <follower|angel>`
+- `/coi church blessing inspect <blesser> <target>`
+- `/coi church blessing force <blesser> <target>`
+- `/coi church blessing cooldown clear <player>`
+- `/coi church blessing cooldown clear-church <leader>`
+- `/coi church blessing cooldown clear-all`
+- `/coi church gift inspect <giver> <target> <giftType>`
+- `/coi church gift force <giver> <target> <giftType>`
+- `/coi church gift cooldown clear <giver> <target> <giftType>`
+- `/coi church gift cooldown clear-player <player>`
+- `/coi church gift cooldown clear-all`
+- `/coi church override list|set-int|set-long|set-double|clear <leader> ...`
+- `/coi church player override set-int|set-long|set-double|clear <player> ...`
+- `/coi church global get|list|set-int|set-long|set-double|set-bool|set-string|clear ...`
+- `/coi church validate`, `/coi church repair-all`, `/coi church repair-links <leader>`, `/coi church recover-player <player>`
 
 ---
 
