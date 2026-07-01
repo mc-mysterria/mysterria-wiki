@@ -483,6 +483,7 @@ This means a weak Church may barely reduce the floor, while a healthy Church can
 - Has leader-like authority for many Church systems.
 - Counts strongly for floor relief and leadership coverage.
 - Can be used as an eligible Regional HQ manager.
+- Does not consume an Angel slot, even if old migrated data previously showed them as an Angel.
 
 **Angel**
 - Requires high sequence by default.
