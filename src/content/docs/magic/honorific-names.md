@@ -14,9 +14,9 @@ sidebar:
 
 ### What is an Honorific Name?
 
-An **Honorific Name** is a sacred title a Beyonder gives themselves upon reaching **Sequence 4**. It consists of **four lines** that together form an invocation — a name that carries weight beyond ordinary words.
+An **Honorific Name** is a sacred invocation a Beyonder can create upon reaching **Sequence 4**. It must describe the existence it calls: a valid name points clearly enough to one Beyonder for the spiritual world to answer.
 
-For example, a particularly powerful Beyonder might declare:
+For example, a Sequence 4 or 3 Beyonder might declare:
 
 > *Lord of Mysteries*
 > 
@@ -25,29 +25,57 @@ For example, a particularly powerful Beyonder might declare:
 > *Beacon of Destiny*
 > 
 > *Embodiment of Sefirah Castle*
+>
+> *The Wanderer Known to Mysterria*
 
-Once set, this name is no longer merely a title — it becomes a **ritual instrument** that other players can chant.
+Once accepted, the name becomes a **ritual instrument** that other players can chant.
 
 ---
 
 ### Setting Your Honorific Name
 
-Starting at **Sequence 4**, you can define your Honorific Name through your **Mystic Arts** menu. You will enter four lines of your choosing. These lines form the full invocation others must speak to invoke your name.
+Starting at **Sequence 4**, you can edit your Honorific Name through your **Mystic Arts** menu. The required length changes as you advance:
+
+| Current Sequence | Required lines |
+| --- | ---: |
+| Sequence 4-3 | 5 |
+| Sequence 2-1 | 4 |
+| Sequence 0 | 3 |
+
+When advancement shortens the invocation, the system preserves the final identifying line where possible. The name is then revalidated and may remain inactive until its other lines describe your new existence correctly.
+
+### What makes a name valid?
+
+An Honorific Name must be complete, unique, and meaningfully connected to its owner. Recognized identity evidence includes:
+
+- Your username or a meaningful part of it
+- Your Pathway or current Sequence title
+- An ability available at your current Sequence
+- Your town, Church, assigned Church site, linked land, or linked nation
+- Recognized Pathway concepts, synonyms, and approved phrases
+- A personal identity descriptor approved by staff
+
+Matching ignores ordinary differences in capitalization, punctuation, spacing, apostrophes, and hyphens. English and Ukrainian Pathway, Sequence, and ability names are recognized.
+
+The system rejects incomplete names, incorrect line counts, blank or repeated lines, ordinary chat phrases, unrecognized one-word filler, forbidden words or lines, vague descriptions, and invocations that already answer to somebody else. A rejected name remains saved as a draft, but chanting it has no effect until it becomes valid.
 
 :::caution[Choose wisely]
-Your Honorific Name reflects your pathway identity and power. Once set, other players will use it to reach you — for good or ill.
+Your Honorific Name does not need to include your username, but it must contain enough genuine identity evidence to distinguish you. Another player cannot claim the same accepted invocation.
 :::
 
 ---
 
 ### Chanting Another Player's Name
 
-Any player who knows your Honorific Name can attempt to **chant it**. To trigger its effect, they must recite **all four lines in correct succession** using the in-game chat command.
+Any player who knows an active Honorific Name can attempt to **chant it**. Each line must be sent as a normal chat message in the correct order. After starting, the chanter has **15 seconds between lines** to continue the invocation.
 
 If the chant is completed successfully:
 
-- You receive an **instant notification** that someone has called your name
-- A **menu opens** presenting you with three choices
+- The chanter completes the prayer and enters a **15-minute chanting cooldown**
+- If you are online, you receive the chanter's location and a response prompt
+- The response request expires after **2 minutes**
+- If the name belongs to a Church participant, the chant also counts as an external Church prayer
+- If the chanter is eligible to join that Church, the chanted participant may offer them an invitation
 
 ---
 
@@ -61,13 +89,13 @@ When your name is chanted, you can choose one of the following:
 | **Strike with Lightning** | Smite the chanting player with a lightning bolt — useful when you did not consent to being named |
 | **Bestow an Item** | Transfer one item from your inventory to the chanting player across any distance |
 
-After any of these actions is taken, your Honorific Name enters a **cooldown period** and cannot be chanted again by anyone until it expires.
+Taking a response action starts a **30-minute response cooldown for the owner**. This does not globally disable the Honorific Name: other players may still chant it, while each chanter has their own chanting cooldown.
 
 ---
 
 ### Sequence 0: Deity Name
 
-Upon reaching **Sequence 0**, a Beyonder transcends into a true Deity. At this rank, you may set a **three-line** Honorific Name — a divine invocation that carries entirely different power.
+Upon reaching **Sequence 0**, a Beyonder transcends into a true Deity and uses a **three-line** Honorific Name.
 
 Chanting a Deity's name still opens the **standard response menu** for the Deity — they are notified and may choose to act just as any Sequence 4 Beyonder would. However, regardless of whether the Deity responds or is even online, the chant **also produces a special effect on the chanter themselves**. The exact effect depends on the pathway of the Deity:
 
@@ -77,3 +105,11 @@ Chanting a Deity's name still opens the **standard response menu** for the Deity
 :::tip[The effect triggers unconditionally]
 The special chanter effect does not require the Deity to respond or be online. The blessing manifests the moment the chant is completed successfully, independently of any action the Deity takes.
 :::
+
+---
+
+### Staff Administration
+
+Staff with the `coi.admin.honorific` permission can show, validate, set, edit, clear, or override saved names, including for offline players. They can also manage personal identity descriptors, Pathway aliases, approved phrases, forbidden words and lines, and safely reload the rule set.
+
+Staff overrides may bypass normal descriptor and shape rules, but must still contain **3 to 5 nonblank lines** and cannot duplicate another accepted invocation. Use `/honorific admin` for the current command summary.

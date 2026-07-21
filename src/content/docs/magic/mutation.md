@@ -26,16 +26,21 @@ If your Madness reaches **100%**, you will **mutate and die**, losing all your B
 
 ---
 
-### Two Types of Madness
+### Temporary, Permanent, and Godhood Madness
 
-There are two distinct types of Madness, and they behave very differently:
+Several components determine how low your Madness can fall:
 
 | Type | Description | Can it be healed? |
 |------|-------------|-------------------|
 | **Temporary Madness** | Standard Madness gained from most sources | Yes — slowly over time, or via certain spells |
-| **Permanent Madness** | Madness gained from specific actions (e.g. non-adjacent pathway switch) | **No** — cannot be treated by any means |
+| **Permanent Madness** | Madness gained from dangerous advancement, pathway switching, and certain powers | **No** — cannot be treated by any means |
+| **Godhood floor** | A minimum caused by your current high Sequence | Only through eligible Church relief |
 
-Your total Madness is the sum of both types. Even if you heal all your Temporary Madness, your Permanent Madness remains forever.
+Your effective minimum is:
+
+`Permanent Madness + Godhood floor after Church relief`
+
+Church support reduces only the Godhood component. It cannot erase Permanent Madness. Healing, passive recovery, gifts, and abilities stop at this combined floor.
 
 ---
 
@@ -43,11 +48,36 @@ Your total Madness is the sum of both types. Even if you heal all your Temporary
 
 There are several ways to accumulate Madness:
 
-- Drinking a potion **without completing your ritual**
-- Switching to a **non-adjacent pathway** (grants Permanent Madness)
+- Advancing with incomplete acting progress or an incomplete ritual where the advancement rules allow it
+- Skipping Sequences
+- Switching pathways before the relevant safe threshold or switching to a non-adjacent Pathway
 - Being driven crazy by your own abilities (e.g. Hanged Man pathway)
 - Being driven crazy by other players' abilities (e.g. Visionary pathway)
 - Overusing Spirituality recklessly
+
+### Advancement risk
+
+Default potion advancement rules:
+
+- At least **95% Acting** is required. Advancing below 100% adds temporary Madness, reaching **30%** at exactly 95% Acting.
+- You may skip at most **3 Sequences** at once. Each skipped Sequence adds **15% temporary** and **5% permanent** Madness.
+- Incomplete rituals for target Sequences **8-6** add a proportional share of up to **40% temporary** and **10% permanent** Madness.
+- Ritual completion is mandatory when advancing to **Sequence 5 or stronger**.
+- Failed or cancelled advancement does not charge these penalties.
+
+The confirmation message shown before drinking is authoritative for the attempt. Server administrators may adjust these default values.
+
+### Pathway switching
+
+A switch must still advance you by exactly one Sequence: the potion must be for the next Sequence after your current one.
+
+| Switch | When safe | Risk before/without safety |
+| --- | --- | --- |
+| Adjacent Pathways | Current Pathway is Sequence 4 or stronger | 25% temporary, 10% permanent, 75% survival |
+| Lord of Mysteries group | Current Pathway is Sequence 3 or stronger | 55% temporary, 20% permanent, 20% survival |
+| Non-adjacent Pathways | Never treated as a safe neighboring switch | 45% temporary, 15% permanent, 35% survival |
+
+A safe neighboring switch still requires complete acting and ritual conditions to avoid their separate penalties. Transfer-token pathway changes are exempt from pathway-switch Madness.
 
 ---
 
@@ -57,6 +87,10 @@ High Madness doesn't just threaten mutation — it actively impairs your abiliti
 
 - **Slower Spirituality regeneration** — the higher your Madness, the slower your spiritual energy recovers
 - **Spell lockout** — at sufficiently high Madness, **random spells may become unavailable** to you until your Madness drops
+
+### Reducing Madness
+
+Ordinary recovery and curing abilities can remove only recoverable Madness above your combined floor. Outside magic combat and PvP areas, **Placate**, **Soul Suture**, and **Requiem** use performance-based minigames: difficulty scales with the target's Madness and recent attempts, and the score controls how effective the cure is. In combat and PvP areas, these abilities retain their normal chance-based behavior.
 
 ---
 

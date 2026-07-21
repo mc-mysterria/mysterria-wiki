@@ -38,6 +38,8 @@ Certain pathways can **craft Sealed Artifacts** directly using **Beyonder Chars*
 
 Each Sealed Artifact contains **one specific ability** from a Beyonder pathway. When used, it activates that power — granting you its effect even if you are not a Beyonder or do not belong to that pathway.
 
+Artifact-granted abilities cannot be used as sources for another copying system. Record, Power Theft, Deprivation, Grazing, Avatars, Marionettes, and possession must copy an eligible original ability, not a power that was itself copied or bestowed by an artifact.
+
 This makes Sealed Artifacts valuable tools for:
 - Non-Beyonder players who want access to magical effects
 - Beyonders who want to use abilities outside their own pathway

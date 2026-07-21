@@ -33,16 +33,18 @@ All pathways progress from **Sequence 9** (weakest) to **Sequence 0** (most powe
 
 ### Is there a way to change pathways?
 
-Yes, but it is a painful and dangerous process:
-- It's possible only after a certain sequence (after Sequence 7)
-- Switching between **adjacent pathways** (e.g. Fool ↔ Error) is the safer option
-- Switching to a **non-adjacent pathway** is also possible, but carries a severe cost:
+Yes, but a pathway switch is also an advancement. The potion must be for exactly one Sequence stronger than your current Pathway; you cannot switch sideways at the same Sequence.
+
+- An **adjacent-pathway** switch becomes safe once your current Pathway reaches **Sequence 4**.
+- A switch involving the **Lord of Mysteries group** becomes safe at **Sequence 3**.
+- Switching before those thresholds is possible but carries temporary Madness, Permanent Madness, and a survival roll.
+- A **non-adjacent** switch never receives the safe neighboring-switch exemption.
 
 :::danger[Permanent Madness]
-Changing to a non-adjacent pathway will **permanently increase your Madness** by a certain amount. This type of Madness **cannot be healed by any means** — not by spells, not by time. Choose wisely!
+Unsafe pathway changes add **Permanent Madness**, which cannot be removed by spells, time, or Church relief. They can also kill you through their survival roll. The game displays the exact cost before you confirm.
 :::
 
-Some spells can also help you switch your pathway under certain conditions.
+Acting and ritual requirements still apply to pathway switches. Transfer-token switches are exempt from the normal pathway-switch Madness cost. See [Mutation](/magic/mutation) for the current default costs and survival chances.
 
 You can learn more on the official wiki of the web novel. If you don't want to go through this, choose your pathway wisely!
 
@@ -64,4 +66,10 @@ Each pathway has its strengths and weaknesses:
 
 ### Can I immediately advance to a high level?
 
-No. All players start from Sequence 9 and gradually advance further, fulfilling conditions and gathering the necessary resources. 
+No. All players start from Sequence 9 and gradually advance further, fulfilling conditions and gathering the necessary resources.
+
+### Can copied abilities be copied again?
+
+No. A power obtained through another copying or transfer system cannot be used as the source for another copy. This prevents recursive chains involving **Record**, **Power Theft**, **Deprivation**, **Grazing**, Avatars, Marionettes, possession, and Sealed Artifacts.
+
+The original source ability must also be eligible for copying. Invalid, conflicting, expired, or already-copied abilities are excluded from selection menus.

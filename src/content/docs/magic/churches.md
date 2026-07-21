@@ -108,7 +108,7 @@ Placing a Church Core does **not** make the Church work only in one chunk. Churc
 Site types:
 - **Main Site**: the Church headquarters and primary anchor.
 - **Branch Site**: expands the Church network and local support.
-- **Regional HQ**: Sequence 0 expansion site used when normal branch expansion needs regional administration.
+- **Regional HQ**: high-sequence expansion site used when normal branch expansion needs regional administration.
 
 Operational sites require an active placed core. A site that exists in data but has no valid placed core does not fully count.
 
@@ -135,7 +135,9 @@ Default branch caps by leader sequence:
 | Sequence 3 | 1 |
 | Sequence 2 | 3 |
 | Sequence 1 | 5 |
-| Sequence 0 | 8, plus Regional HQ expansion |
+| Sequence 0 | 8 |
+
+Regional HQs can extend these normal branch caps at Sequences 3-0. Their separate caps and branch bonus are listed below.
 
 If placing another core fails:
 - You may not have a branch slot at your current sequence.
@@ -147,7 +149,19 @@ If placing another core fails:
 
 ### Regional HQs
 
-Regional HQs are for Sequence 0 expansion beyond the normal branch network.
+Regional HQs extend the branch network for high-sequence Church leaders. They are available before Sequence 0, but their cap increases as the leader advances.
+
+Default Regional HQ caps:
+
+| Leader sequence | Regional HQ cap |
+| --- | ---: |
+| Sequence 4 | 0 |
+| Sequence 3 | 1 |
+| Sequence 2 | 1 |
+| Sequence 1 | 2 |
+| Sequence 0 | 3 |
+
+Each operational Regional HQ adds **5 branch slots** by default.
 
 Default Regional HQ rules:
 - The leader must be at the point where the next expansion requires a Regional HQ.
@@ -372,9 +386,11 @@ Prayer can:
 Ways to pray:
 - Use `/coi church pray`.
 - Use the Church GUI prayer action.
-- Chant the leader's complete Honorific Name line by line in chat.
+- Chant the complete Honorific Name of any Church participant line by line in chat.
 
 Prayer is strongest near an operational Church site. Praying away from a Church site can still count, but it is much weaker by default.
+
+An external prayer made by chanting a participant's Honorific Name scales with the chanter's Sequence and relationship to the Church Pathway. Same-Pathway prayer is strongest, adjacent Pathways receive a smaller bonus, and unrelated Pathways use the normal external rate. If the chanter is eligible to join, the chanted participant can also offer them an invitation to the Church.
 
 The prayer messages now state the exact support that was applied, such as regeneration time, tranquility time, piousness gain, prayer-strength gain, or a reduced away-from-site effect. If the prayer was near no operational site, it should not add local site traffic.
 
@@ -449,7 +465,11 @@ If recovery bonus is low, common causes are:
 
 ### Madness Floor Relief
 
-High-sequence Beyonders can have a minimum madness floor. Church floor relief reduces that floor when the Church is healthy enough.
+High-sequence Beyonders can have a Godhood madness floor. Church relief reduces that component when the Church is healthy enough, but the final minimum also includes Permanent Madness:
+
+`Effective minimum = Permanent Madness + Godhood floor after Church relief`
+
+Churches cannot remove Permanent Madness. Recovery, gifts, blessings, administrative reduction, and curing abilities all stop at the combined floor.
 
 Default base madness floors:
 
@@ -664,6 +684,7 @@ How storage and retrieval works:
 - A manager stores a held sealed artifact at a physical Church Vault.
 - The vault belongs to the Church site where it was placed.
 - Members request a stored artifact instead of taking it directly.
+- The original depositor may withdraw their own artifact when it is not borrowed and has no pending request.
 - A manager approves or denies the request.
 - Approved artifacts must be returned before the borrow timer expires.
 - Expired or manually recalled artifacts are removed from the borrower's inventory and returned to Church storage.
@@ -685,6 +706,9 @@ Default vault values:
 
 Remote retrieval:
 - Each site can remember one stored artifact as that site's remote artifact.
+- Depositing an artifact does **not** automatically make it the site's remote artifact.
+- An artifact becomes eligible for remote selection after **7 days** in storage by default.
+- Eligible managers select the remote artifact through the vault GUI; permissions and physical vault state are checked again when clicked.
 - Leaders, active angels, Church authorities, and that site's head deacon can manage normal local artifact requests.
 - High-level managers can approve or recall remembered remote artifacts.
 - Regular members still request artifacts; they do not freely remote-withdraw artifacts.
@@ -863,6 +887,8 @@ Staff diagnostics and repair:
 - `/coi church inspect <leader>`
 - `/coi church effectiveness <leader>`
 - `/coi church diag player|perks|member|score|core ...`
+- `/coi church rename <leader> <name>`
+- `/coi church site rename <leader> <siteId> <name>`
 - `/coi church ownership transfer <leader> <newOwner>`
 - `/coi church role set <leader> <player> <follower|angel>`
 - `/coi church blessing inspect <blesser> <target>`
