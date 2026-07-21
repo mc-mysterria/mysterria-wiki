@@ -127,7 +127,7 @@ sidebar:
 
 `Ефективний мінімум = Постійне Божевілля + межа божественності після церковного полегшення`
 
-Церква не може прибрати Постійне Божевілля. Відновлення, дари, благословення, адміністративне зменшення та лікувальні здібності зупиняються на сумарній межі.
+Церква не може прибрати Постійне Божевілля. Відновлення, дари, благословення та лікувальні здібності зупиняються на сумарній межі.
 
 ---
 
@@ -182,22 +182,6 @@ sidebar:
 - Позичений артефакт є тимчасовою фізичною копією. Якщо його кинути, сховати в контейнер, перемістити воронкою, прострочити або відкликати вручну, система має повернути стан до церковного сховища.
 - Якщо власник відкликає артефакт, який уже тримає, це має очистити стан позики, а не створити ще одну копію.
 
-**Команди персоналу для ремонту сховищ:**
-- `/coi church vault artifacts list <leader>`
-- `/coi church vault artifacts site <leader> <siteId>`
-- `/coi church vault artifact inspect <leader> <artifactId>`
-- `/coi church vault artifact requests <leader>`
-- `/coi church vault artifact recall <leader> <artifactId>`
-- `/coi church vault artifact borrow <leader> <artifactId> <player> <durationSeconds>`
-- `/coi church vault artifact give <leader> <artifactId> <player> <removeFromStorage>`
-- `/coi church vault artifact drop <leader> <artifactId> <world> <x> <y> <z> <removeFromStorage>`
-- `/coi church vault artifact remove <leader> <artifactId>`
-- `/coi church vault artifact set-site <leader> <artifactId> <siteId>`
-- `/coi church vault artifact request-clear <leader> <artifactId>`
-- `/coi church vault artifact request-clear-all <leader>`
-- `/coi church vault artifact remote set <leader> <siteId> <artifactId>`
-- `/coi church vault artifact remote clear <leader> <siteId>`
-
 ---
 
 ### Дипломатія Та Війна
@@ -236,13 +220,12 @@ sidebar:
 
 ---
 
-### Діагностика Та Команди Персоналу
+### Корисні Команди
 
 Рейтинг релігії тепер має детальний розбір: активна вага Якорів, ефективна вага, прогрес Церкви, рівень, робочі місця, здоров'я Церкви та виключені учасники. Лідер не рахується як звичайний якір власної Церкви, а збережена послідовність лідера використовується, коли живі дані недоступні.
 
 Співвласники не займають слот янгола, навіть якщо старі міграційні дані раніше показували їх як янголів.
 
-Корисні команди:
 - `/coi church status`
 - `/coi church perks`
 - `/coi church pathway progress`
@@ -261,27 +244,8 @@ sidebar:
 - `/coi church artifact return`
 - `/coi church land`
 - `/coi church war`
-- `/coi church inspect <leader>`
-- `/coi church rename <leader> <name>`
-- `/coi church site rename <leader> <siteId> <name>`
 - `/coi church ownership handoff <player> confirm`
-- `/coi church ownership transfer <leader> <newOwner>`
 - `/coi church role set <player> <follower|angel>` для лідера
-- `/coi church role set <leader> <player> <follower|angel>` для персоналу
-- `/coi church blessing inspect <blesser> <target>`
-- `/coi church blessing force <blesser> <target>`
-- `/coi church blessing cooldown clear <player>`
-- `/coi church blessing cooldown clear-church <leader>`
-- `/coi church blessing cooldown clear-all`
-- `/coi church gift inspect <giver> <target> <giftType>`
-- `/coi church gift force <giver> <target> <giftType>`
-- `/coi church gift cooldown clear <giver> <target> <giftType>`
-- `/coi church gift cooldown clear-player <player>`
-- `/coi church gift cooldown clear-all`
-- `/coi church override list|set-int|set-long|set-double|clear <leader> ...`
-- `/coi church player override set-int|set-long|set-double|clear <player> ...`
-- `/coi church global get|list|set-int|set-long|set-double|set-bool|set-string|clear ...`
-- `/coi church validate`, `/coi church repair-all`, `/coi church repair-links <leader>`, `/coi church recover-player <player>`
 
 ---
 

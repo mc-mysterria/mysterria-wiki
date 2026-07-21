@@ -53,7 +53,7 @@ An Honorific Name must be complete, unique, and meaningfully connected to its ow
 - An ability available at your current Sequence
 - Your town, Church, assigned Church site, linked land, or linked nation
 - Recognized Pathway concepts, synonyms, and approved phrases
-- A personal identity descriptor approved by staff
+- An approved personal identity descriptor
 
 Matching ignores ordinary differences in capitalization, punctuation, spacing, apostrophes, and hyphens. English and Ukrainian Pathway, Sequence, and ability names are recognized.
 
@@ -105,11 +105,3 @@ Chanting a Deity's name still opens the **standard response menu** for the Deity
 :::tip[The effect triggers unconditionally]
 The special chanter effect does not require the Deity to respond or be online. The blessing manifests the moment the chant is completed successfully, independently of any action the Deity takes.
 :::
-
----
-
-### Staff Administration
-
-Staff with the `coi.admin.honorific` permission can show, validate, set, edit, clear, or override saved names, including for offline players. They can also manage personal identity descriptors, Pathway aliases, approved phrases, forbidden words and lines, and safely reload the rule set.
-
-Staff overrides may bypass normal descriptor and shape rules, but must still contain **3 to 5 nonblank lines** and cannot duplicate another accepted invocation. Use `/honorific admin` for the current command summary.

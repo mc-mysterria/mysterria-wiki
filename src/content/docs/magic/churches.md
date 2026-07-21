@@ -235,7 +235,7 @@ Two different "saturation" concepts exist:
 - **Church anchor saturation / tier fill** is the Church-wide readiness used for perks and rankings.
 - **Site aura saturation** is per-site and depends on the site's anchors, recent activity, leadership, and core state.
 
-Staff diagnostics separate these values. Player commands show applied results and broad readiness bands instead of raw formula internals.
+Player commands show applied results and broad readiness bands instead of raw formula internals.
 
 Use `/coi church pathway progress` to check your own pathway support. Use `/coi church pathway <pathway> progress` or `/coi church pathway <pathway> perks` to check any pathway currently represented in your Church.
 
@@ -428,8 +428,6 @@ Progress formula defaults to `(base progress + capped participants * 0.75) * sit
 
 Services still require a valid Church site, an authorized officiant, nearby participation, cooldowns, and spirituality support. More participants increase progress up to a capped amount, and healthier sites convert services into progress more efficiently.
 
-Staff can tune service costs, effects, cooldowns, and progress scaling globally, per Church, or per player with the Church staff override commands. This is intended for balancing live numbers without code changes.
-
 This means a new Church with few members can still grow by consistently holding services, but it still benefits from recruiting active members, keeping the core operational, and maintaining prayer activity.
 
 ---
@@ -469,7 +467,7 @@ High-sequence Beyonders can have a Godhood madness floor. Church relief reduces 
 
 `Effective minimum = Permanent Madness + Godhood floor after Church relief`
 
-Churches cannot remove Permanent Madness. Recovery, gifts, blessings, administrative reduction, and curing abilities all stop at the combined floor.
+Churches cannot remove Permanent Madness. Recovery, gifts, blessings, and curing abilities all stop at the combined floor.
 
 Default base madness floors:
 
@@ -721,22 +719,6 @@ GUI retrieval:
 - Borrowed artifacts are tracked as a temporary physical copy. Dropping, container storage, hopper movement, duplicate copies, expired borrows, and manual recalls are reconciled back into Church storage.
 - Owners recalling an artifact they currently hold should clear the borrow state instead of creating another copy.
 
-Staff vault recovery commands exist for broken cases:
-- `/coi church vault artifacts list <leader>`
-- `/coi church vault artifacts site <leader> <siteId>`
-- `/coi church vault artifact inspect <leader> <artifactId>`
-- `/coi church vault artifact requests <leader>`
-- `/coi church vault artifact recall <leader> <artifactId>`
-- `/coi church vault artifact borrow <leader> <artifactId> <player> <durationSeconds>`
-- `/coi church vault artifact give <leader> <artifactId> <player> <removeFromStorage>`
-- `/coi church vault artifact drop <leader> <artifactId> <world> <x> <y> <z> <removeFromStorage>`
-- `/coi church vault artifact remove <leader> <artifactId>`
-- `/coi church vault artifact set-site <leader> <artifactId> <siteId>`
-- `/coi church vault artifact request-clear <leader> <artifactId>`
-- `/coi church vault artifact request-clear-all <leader>`
-- `/coi church vault artifact remote set <leader> <siteId> <artifactId>`
-- `/coi church vault artifact remote clear <leader> <siteId>`
-
 ---
 
 ### Lands Integration
@@ -882,29 +864,6 @@ Manager controls:
 - `/coi church role set <player> <follower|angel>` for leader role changes.
 - `/coi church support set <prayer|ritual|blessing> <true|false>`
 - `/coi church land perk <churchLeader> <treasury|artifacts> <true|false>` when you own the linked Land.
-
-Staff diagnostics and repair:
-- `/coi church inspect <leader>`
-- `/coi church effectiveness <leader>`
-- `/coi church diag player|perks|member|score|core ...`
-- `/coi church rename <leader> <name>`
-- `/coi church site rename <leader> <siteId> <name>`
-- `/coi church ownership transfer <leader> <newOwner>`
-- `/coi church role set <leader> <player> <follower|angel>`
-- `/coi church blessing inspect <blesser> <target>`
-- `/coi church blessing force <blesser> <target>`
-- `/coi church blessing cooldown clear <player>`
-- `/coi church blessing cooldown clear-church <leader>`
-- `/coi church blessing cooldown clear-all`
-- `/coi church gift inspect <giver> <target> <giftType>`
-- `/coi church gift force <giver> <target> <giftType>`
-- `/coi church gift cooldown clear <giver> <target> <giftType>`
-- `/coi church gift cooldown clear-player <player>`
-- `/coi church gift cooldown clear-all`
-- `/coi church override list|set-int|set-long|set-double|clear <leader> ...`
-- `/coi church player override set-int|set-long|set-double|clear <player> ...`
-- `/coi church global get|list|set-int|set-long|set-double|set-bool|set-string|clear ...`
-- `/coi church validate`, `/coi church repair-all`, `/coi church repair-links <leader>`, `/coi church recover-player <player>`
 
 ---
 
