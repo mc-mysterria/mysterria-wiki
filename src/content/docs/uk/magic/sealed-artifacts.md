@@ -1,10 +1,6 @@
 ---
 title: "Запечатані Артефакти"
 description: "Детальна інформація про Запечатані Артефакти на сервері"
-banner:
-  content: |
-    Вікі було оновлено! Новий Початок вже скоро!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Дізнатися більше</a>
 sidebar:
     label: 🗝️ Артефакти
     order: 10

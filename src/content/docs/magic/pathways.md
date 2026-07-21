@@ -1,10 +1,6 @@
 ---
 title: "Magic Pathways"
 description: "Detailed information about magic pathways on the server"
-banner:
-  content: |
-    The wiki has been updated! The Great Reset is coming soon!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Check it out</a>
 sidebar:
   label: ✨ Pathway Choice
   order: 2

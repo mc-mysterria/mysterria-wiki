@@ -1,10 +1,6 @@
 ---
 title: "Beyonder Creatures"
 description: "Detailed information about Beyonder Creatures on the server"
-banner:
-  content: |
-    The wiki has been updated! The Great Reset is coming soon!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Check it out</a>
 sidebar:
     label: 🐲 Creatures
     order: 8

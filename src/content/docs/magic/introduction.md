@@ -1,10 +1,6 @@
 ---
 title: 🧪 Introduction
 description: Detailed information about magical potions on the server
-banner:
-  content: |
-    The wiki has been updated! The Great Reset is coming soon!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Check it out</a>
 sidebar:
     label: 🧪 Introduction
     order: 1

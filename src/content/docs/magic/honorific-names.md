@@ -1,10 +1,6 @@
 ---
 title: "Honorific Names"
 description: "Detailed information about the Honorific Names feature unlocked at Sequence 4"
-banner:
-  content: |
-    The wiki has been updated! The Great Reset is coming soon!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Check it out</a>
 sidebar:
     label: 📜 Honorific Names
     order: 13

@@ -1,10 +1,6 @@
 ---
 title: "Почесні Імена"
 description: "Детальна інформація про механіку Почесних Імен, яка відкривається на Послідовності 4"
-banner:
-  content: |
-    Вікі було оновлено! Новий Початок вже скоро!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Дізнатися більше</a>
 sidebar:
     label: 📜 Почесні Імена
     order: 13

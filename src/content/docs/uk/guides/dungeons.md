@@ -1,10 +1,6 @@
 ---
 title: "Підземелля"
 description: "Підземелля, як їх відкрити та пройти"
-banner:
-  content: |
-    Вікі було оновлено! Новий Початок вже скоро!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Дізнатися більше</a>
 sidebar:
     label: 🔑 Підземелля
     order: 7

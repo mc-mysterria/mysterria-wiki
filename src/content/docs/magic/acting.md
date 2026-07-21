@@ -1,10 +1,6 @@
 ---
 title: "Acting"
 description: "Detailed information about the mechanics of advancing as a Beyonder on the server"
-banner:
-  content: |
-    The wiki has been updated! The Great Reset is coming soon!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Check it out</a>
 sidebar:
     label: 🎭 Acting Method
     order: 5

@@ -1,10 +1,6 @@
 ---
 title: "Beyonder Loot"
 description: "A complete guide to Beyonder loot categories, ingredient types, and the reward focusing system"
-banner:
-  content: |
-    The wiki has been updated! The Great Reset is coming soon!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Check it out</a>
 sidebar:
     label: 📦 Beyonder Loot
     order: 11

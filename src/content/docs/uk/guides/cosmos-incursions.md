@@ -1,10 +1,6 @@
 ---
 title: "Космічні вторгнення"
 description: "Все про динамічні PvP-події та небезпечні зони, що змінюють баланс сил на сервері"
-banner:
-  content: |
-    Вікі було оновлено! Новий Початок вже скоро!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Дізнатися більше</a>
 sidebar:
     label: 🌌 Вторгнення
     order: 11

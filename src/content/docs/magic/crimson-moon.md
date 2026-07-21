@@ -1,10 +1,6 @@
 ---
 title: "Crimson Moon"
 description: "Everything about the Crimson Moon event — what it is, what spawns, and how to fish during it"
-banner:
-  content: |
-    The wiki has been updated! The Great Reset is coming soon!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Check it out</a>
 sidebar:
     label: 🌑 Crimson Moon
     order: 11

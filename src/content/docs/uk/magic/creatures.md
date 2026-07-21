@@ -1,10 +1,6 @@
 ---
 title: "Істоти Потойбіччя"
 description: "Детальна інформація про Істот Потойбіччя на сервері"
-banner:
-  content: |
-    Вікі було оновлено! Новий Початок вже скоро!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Дізнатися більше</a>
 sidebar:
     label: 🐲 Істоти
     order: 8

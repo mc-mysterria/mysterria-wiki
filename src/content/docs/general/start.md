@@ -1,10 +1,6 @@
 ---
 title: "Quick Start"
 description: "How to start playing on the Mysterria server"
-banner:
-  content: |
-    The wiki has been updated! The Great Reset is coming soon!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Check it out</a>
 sidebar:
     label: 👋 Quick Start
 ---

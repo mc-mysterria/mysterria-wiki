@@ -1,10 +1,6 @@
 ---
 title: "Багряний Місяць"
 description: "Усе про подію Багряного Місяця — що це таке, хто з'являється і як рибалити під час неї"
-banner:
-  content: |
-    Вікі було оновлено! Новий Початок вже скоро!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Дізнатися більше</a>
 sidebar:
     label: 🌑 Багряний Місяць
     order: 11

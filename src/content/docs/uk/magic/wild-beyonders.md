@@ -1,10 +1,6 @@
 ---
 title: "Дикі Потойбічні"
 description: "Усе про Диких Потойбічних — де їх знайти, як вони реагують на вас, торгівля та бій"
-banner:
-  content: |
-    Вікі було оновлено! Новий Початок вже скоро!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Дізнатися більше</a>
 sidebar:
     label: 🧙 Дикі Потойбічні
     order: 12

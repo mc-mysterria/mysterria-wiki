@@ -1,10 +1,6 @@
 ---
 title: "Wild Beyonders"
 description: "Everything about Wild Beyonders — where to find them, how they react to you, trading, and combat"
-banner:
-  content: |
-    The wiki has been updated! The Great Reset is coming soon!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Check it out</a>
 sidebar:
     label: 🧙 Wild Beyonders
     order: 12

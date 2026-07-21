@@ -1,10 +1,6 @@
 ---
 title: "Магічні Шляхи"
 description: "Детальна інформація про магічні шляхи на сервері"
-banner:
-  content: |
-    Вікі було оновлено! Новий Початок вже скоро!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Дізнатися більше</a>
 sidebar:
   label: ✨ Вибір Шляху
   order: 2

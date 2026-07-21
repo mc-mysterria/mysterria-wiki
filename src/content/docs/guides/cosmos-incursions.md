@@ -1,10 +1,6 @@
 ---
 title: "Cosmos Incursions"
 description: "Everything about dynamic PvP events and dangerous zones that shake up the server's balance"
-banner:
-  content: |
-    The wiki has been updated! The Great Reset is coming soon!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Check it out</a>
 sidebar:
     label: ☄️ Incursions
     order: 11

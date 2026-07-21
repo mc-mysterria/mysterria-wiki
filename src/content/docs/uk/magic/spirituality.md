@@ -1,10 +1,6 @@
 ---
 title: "Духовність"
 description: "Детальна інформація про механіку Духовності Потойбічного на сервері"
-banner:
-  content: |
-    Вікі було оновлено! Новий Початок вже скоро!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Дізнатися більше</a>
 sidebar:
     label: 🌀 Духовність
     order: 3

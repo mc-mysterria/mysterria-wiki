@@ -1,10 +1,6 @@
 ---
 title: "Вартові"
 description: "Вартові відкритого світу"
-banner:
-  content: |
-    Вікі було оновлено! Новий Початок вже скоро!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Дізнатися більше</a>
 sidebar:
     label: ⚔️ Вартові
     order: 8

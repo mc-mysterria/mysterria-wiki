@@ -1,10 +1,6 @@
 ---
 title: "Божі Дари"
 description: "Детальна інформація про магічні божі дари на сервері"
-banner:
-  content: |
-    Вікі було оновлено! Новий Початок вже скоро!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Дізнатися більше</a>
 sidebar:
     label: 💊 Божі Дари
     order: 7

@@ -1,10 +1,6 @@
 ---
 title: 🧪 Вступ
 description: Детальна інформація про магічні зілля на сервері
-banner:
-  content: |
-    Вікі було оновлено! Новий Початок вже скоро!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Дізнатися більше</a>
 sidebar:
     label: 🧪 Вступ
     order: 1

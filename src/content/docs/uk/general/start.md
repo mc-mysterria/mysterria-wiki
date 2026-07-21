@@ -1,10 +1,6 @@
 ---
 title: "Швидкий старт"
 description: "Як почати грати на сервері Mysterria"
-banner:
-  content: |
-    Вікі було оновлено! Новий Початок вже скоро!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Дізнатися більше</a>
 sidebar:
     label: 👋 Швидкий старт
 ---

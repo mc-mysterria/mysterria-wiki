@@ -1,10 +1,6 @@
 ---
 title: "Міста"
 description: "Як створювати міста та керувати ними"
-banner:
-  content: |
-    Вікі було оновлено! Новий Початок вже скоро!
-    <a href="https://www.mysterria.net/news/22-paths-of-the-divine">Дізнатися більше</a>
 sidebar:
     label: 🌆 Міста
     order: 1
