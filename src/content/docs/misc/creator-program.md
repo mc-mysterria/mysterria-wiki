@@ -1,6 +1,6 @@
 ---
 title: "Creator Program"
-description: "Make short-form content for Mysterria and rewarded"
+description: "Make short-form content for Mysterria and get rewarded"
 sidebar:
   label: ⌚ Creator Program
   order: 5
