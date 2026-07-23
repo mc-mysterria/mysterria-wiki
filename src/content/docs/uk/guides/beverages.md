@@ -4,7 +4,6 @@ description: "Опануйте мистецтво варіння: казани, 
 sidebar:
   label: 🍺 Напої
   order: 12
-  badge: "Нове!"
 ---
 
 ![Допоміжне зображення](../../../../assets/brewery/beverages.png)

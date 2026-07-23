@@ -4,7 +4,6 @@ description: "Master the art of brewing: cauldrons, aging barrels, distillation,
 sidebar:
   label: 🍺 Beverages
   order: 12
-  badge: "New!"
 ---
 
 ![Helpful image](../../../assets/brewery/beverages.png)
