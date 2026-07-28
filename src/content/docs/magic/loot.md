@@ -21,6 +21,16 @@ All Beyonder loot falls into one of four broad categories:
 
 ---
 
+### Where are loot containers?
+
+**Loot containers are ordinary naturally-generated chests.** Villages, mineshafts, temples, shipwrecks, buried treasure, bastions, ruined portals — every chest the world generates on its own is a Beyonder loot container. There is no separate, specially-marked container type to hunt for.
+
+:::tip[Chests refill over time]
+The contents of a looted container **regenerate**. A structure that somebody else has already emptied is still worth visiting, and worth visiting again later. Exploration never runs out.
+:::
+
+---
+
 ### Potions
 
 Potions are fully brewed Beyonder items that can be consumed directly to gain or advance your Sequence. They can occasionally be found in loot containers throughout the world, though they are rare.
@@ -89,8 +99,11 @@ You can choose to **focus** one of the following four categories:
 | Focus Category      | Description |
 |---------------------|-------------|
 | **Potions**         | Increases pity towards finding a Beyonder potion |
-| **Recipes OR Pages** | Increases pity towards finding recipe books or pages |
+| **Recipes**         | Increases pity towards finding complete recipe books |
+| **Pages**           | Increases pity towards finding individual recipe pages |
 | **Altar Scrolls**   | Increases pity towards finding blueprints for Cauldrons or Sacrificial Altars of various tiers |
+
+Note that **Recipes and Pages are separate categories**. If you are assembling a book from fragments, focus Pages; if you want a finished book outright, focus Recipes.
 
 :::note[Ingredients cannot be focused]
 The ingredient categories (foundable, droppable, mineable) are excluded from the focusing system. Those must be obtained through their respective methods.
@@ -103,7 +116,9 @@ Once you select a focus category, the system tracks how many loot containers you
 - If you open **N−1** containers without getting anything from your focused category, the **N-th container is guaranteed** to contain a reward from it.
 - This resets after you receive the focused reward, and the pity counter starts again.
 
-The exact value of **N** is not publicly disclosed, but the system ensures that no focused category can be indefinitely unlucky. Choose your focus based on what you need most right now, and explore consistently to take advantage of the guarantee.
+**The value of N is shown to you in-game**, and it is not a single fixed number — it varies from case to case. Check your current counter rather than assuming. Either way, the system ensures no focused category can be indefinitely unlucky.
+
+Choose your focus based on what you need most right now, and explore consistently to take advantage of the guarantee.
 
 :::tip[Strategy]
 If you are close to advancing your Sequence and just need one more recipe page or a specific Char, focusing the relevant category can significantly cut down the time spent opening fruitless containers.

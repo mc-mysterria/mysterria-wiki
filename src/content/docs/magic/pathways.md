@@ -10,7 +10,7 @@ sidebar:
 
 ### What is a magic pathway?
 
-The path to becoming a Beyonder begins with choosing the first Sequence 9 potion. You can choose from 22 currently available pathways: Abyss, Black Emperor, Chained, Darkness, Death, Demoness, Door, Error, Fool, Fortune, Hanged Man, Hermit, Justiciar, Moon, Mother, Paragon, Priest, Sun, Tyrant, Visionary, Twilight Giant, Red Priest, White Tower. 
+The path to becoming a Beyonder begins with choosing the first Sequence 9 potion. You can choose from 22 currently available pathways: Abyss, Black Emperor, Chained, Darkness, Death, Demoness, Door, Error, Fool, Hanged Man, Hermit, Justiciar, Moon, Mother, Paragon, Red Priest, Sun, Twilight Giant, Tyrant, Visionary, Wheel of Fortune, White Tower.
 
 Each pathway has unique abilities and special conditions for advancement.
 
@@ -44,6 +44,16 @@ Acting and ritual requirements still apply to pathway switches. Transfer-token s
 
 You can learn more on the official wiki of the web novel. If you don't want to go through this, choose your pathway wisely!
 
+### Can I go back down a Sequence?
+
+Yes — through **Purification**, a spell of the **Sun** pathway. It is the only way to move backwards.
+
+A Sun Demigod must stay **close to you for 10 minutes**, after which you regress by **one Sequence** (for example, Sequence 7 back to Sequence 8). It can be applied repeatedly: a second use takes you from 8 to 9, and a further use strips a Sequence 9 Beyonder of their powers entirely, returning them to being an ordinary human.
+
+:::note[It requires cooperation in practice]
+There is no consent prompt, but you have to stay still and close to the Sun Beyonder for the full ten minutes — walking away interrupts it. In practice Purification is a service one player performs for another, not something that can be done to an unwilling target.
+:::
+
 ### How do different pathways differ?
 
 Each pathway has its strengths and weaknesses:
@@ -51,7 +61,7 @@ Each pathway has its strengths and weaknesses:
 - **Door** - teleportation, mobility, spatial tricks
 - **Tyrant** - lightning, water spells, strength and pressure in battle
 - **Fool** - deception, illusions, unpredictable moves
-- **Priest** - crowd influence, glass cannon, fire magic
+- **Red Priest** - crowd influence, glass cannon, fire magic
 - **Demoness** - temptation, curses, mirror magic
 - **Error** - rule breaking, theft, deception
 - **Visionary** - foresight, protection, intimidation

@@ -22,16 +22,49 @@ Loss of control is possible not only through Spirituality! If you drink a potion
 
 To drink a potion of the next Sequence (for example, from Sequence 8 to Sequence 7), you **must** fully digest the current potion.
 
-Digestion happens **through performing acting methods** — specific actions tied to your abilities. The more effectively you act, the faster digestion grows.
+Digestion comes from **six different sources**, described below. The most important of them is performing **acting methods** — specific actions tied to your abilities.
 
-**Additionally:**
-- The higher the ability level, the more digestion you receive
-- If you just play, digestion also accumulates passively
-- You also receive additional digestion by killing Beyonder Creatures
+:::caution[No single source is enough]
+**Every source has its own scaling cap, and none of them can carry you to 100% on its own.** You are meant to combine several. There is no way to grind one activity exclusively and advance.
+:::
 
 :::tip[Useful fact]
 The digestion level affects your spirituality reserve! The more digestion – the greater your spirituality supply.
 :::
+
+---
+
+### The six sources of digestion
+
+**1. Passive**
+
+Digestion accumulates slowly just from playing, with no input required.
+
+**2. Acting Methods**
+
+The main mechanism — see the section below for how it works.
+
+**3. Acting Bottles**
+
+A consumable that grants instant acting progress when used. Obtained from **Battlepass rewards**, **server events**, and **Help Card exchanges** in dungeons.
+
+**4. Bounties**
+
+A formal bounty system opened with the `/bounty` command, covering both PvE and PvP targets.
+
+- Bounties are **personal**, not a shared server pool
+- A **new bounty becomes available every 2 hours**
+- You can hold a **maximum of 2 bounties at once**
+- You receive a chat notification for each new bounty, with an accept / decline choice
+- Completing one typically grants **1–5% acting progress**
+
+**5. Dungeon completion (PvE acting)**
+
+Clearing a [Dungeon](/guides/dungeons) grants PvE acting progress, with a daily cap.
+
+**6. Cosmos Incursions (PvP acting)**
+
+The PvP content of [Cosmos Incursions](/guides/cosmos-incursions) grants PvP acting progress, also daily-capped.
 
 ---
 
@@ -69,3 +102,5 @@ This means you cannot stockpile digestion by grinding old methods before advanci
 **Use the right abilities** — Only the methods tied to your current Sequence count. Using old abilities won't help after you advance.
 
 **Don't forget about passive digestion** — Even without acting, you still receive some digestion passively over time!
+
+**Combine your sources** — Since every source is capped below 100%, mix acting methods with bounties, dungeons, Incursions and bottles. Relying on any single one will stall you.

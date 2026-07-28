@@ -14,6 +14,18 @@ A Dungeon is a separate dimension with its own rules, inhabitants, and challenge
 
 ---
 
+### How to find one?
+
+Use the `/subspace` command. It opens a menu listing **every dungeon in the game**, and for each one it shows you:
+
+- **Where its entrance is** — the coordinates of its Rift
+- **How your power compares** to the dungeon's intended level
+- **Your current cooldowns** for that dungeon
+
+The command is completely free and has no cooldown of its own. Check it whenever you are wondering what to run next.
+
+---
+
 ### How to enter one?
 
 To enter, you need to assemble a party using the `/party` command.
@@ -23,6 +35,19 @@ To enter, you need to assemble a party using the `/party` command.
 - **The Delta Dungeon** requires a party of four players
 
 Only the party leader needs to travel to the dungeon entrance; the rest of the party can do whatever they want until the dungeon starts. Confirm entrance upon request, wait a little bit to be loaded into a generated dungeon instance, choose your class equipment, and you are ready to go!
+
+---
+
+### Can I go in with fewer players?
+
+Yes. Dungeons can be **low-manned** — entered with fewer players than the standard party size — on one condition: **your party's power must be at or below the dungeon's intended power level.**
+
+- If you are **over-powered** for the dungeon, low-manning is blocked. You cannot bring a small group of high-Sequence Beyonders to trivially farm content meant for weaker, larger parties.
+- **Rewards are not reduced** for a low-manned run. A smaller party earns exactly the same loot — it is simply harder to clear the dungeon shorthanded.
+
+:::tip[Why this exists]
+Once most of the active server has progressed past a low-tier dungeon, there is nobody left to fill a full low-tier party. Low-manning keeps that content playable for the newer players it was designed for.
+:::
 
 ---
 
@@ -55,17 +80,24 @@ To activate a Rift and open a passage to the corresponding **Dungeon**, you need
 
 ### How many times can you run a Dungeon?
 
-Each dungeon can be run **up to 3 times per day**. This resets daily.
+There are two separate kinds of run, with separate limits:
 
-:::tip[No more weekly lockout]
-Dungeons are no longer restricted to once per week — you can run them multiple times each day and stack your rewards!
+| Run type | How often | What you get |
+|----------|-----------|--------------|
+| **Reward run** | **Once every 3 days**, per dungeon | Full loot |
+| **Card run** | **2 per day** | No loot — **Help Cards** only |
+
+You can always see your current cooldowns for every dungeon with `/subspace`.
+
+:::tip[Bypassing the cooldown]
+**Dungeon Keys**, available in the Store, let you bypass the 3-day reward cooldown and run a dungeon for full loot again immediately.
 :::
 
 ---
 
 ### Rewards and Help Cards
 
-Unlike before, completing a dungeon past your limit once a week - **does not drop direct loot**. But you can still play it, and instead, you receive **Help Cards** — dungeon-specific currency that can later be exchanged for valuable rewards.
+Card runs **do not drop direct loot**. Instead you receive **Help Cards** — dungeon-specific currency that can later be exchanged for valuable rewards, including **Acting Bottles**.
 
 Help Cards are specific to both the **dungeon** and the **difficulty** you completed:
 

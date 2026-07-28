@@ -79,6 +79,8 @@ As your town grows, it automatically advances through levels based on its member
 
 Levels are assigned **automatically** once all requirements are met. A town that later drops below the requirements will be downgraded.
 
+Levels **above Domain exist** for the largest settlements — they are required by the highest [Town Perks](/guides/tperks) — but their thresholds are not published.
+
 ---
 
 ## Nations

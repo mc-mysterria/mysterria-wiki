@@ -43,6 +43,12 @@ Not all Incursions are equally punishing. We've categorized them into different 
 | **Red** | You lose all of them. |
 | **Black** | You can regress your sequence or lose 50% of your acting progress. |
 
+:::tip[Green and Yellow zones are where you learn]
+**Only Black zones can cost you a Sequence.** In Green, Yellow and Red zones the worst that happens is losing items.
+
+On top of that, **Green and Yellow zones balance damage output between Sequences**, so a freshly-made Sequence 9 Beyonder is not simply deleted on sight by a Demigod. These zones exist specifically so that newer players can get a feel for Incursion PvP without risking their progress. Start there.
+:::
+
 ---
 
 ### Permanent Zones
@@ -55,9 +61,11 @@ Inside them, PvP is **always allowed**. Instead of just fighting, you'll find Po
 
 ### The Stakes are high
 
-This is the most critical mechanic. If you are a Beyonder of Sequence lower than 7 and are killed by another player in a high-risk zone:
-- You **lose one Sequence** (e.g., A Sequence 4 Sun Beyonder degrades to Sequence 5).
+This is the most critical mechanic — and it applies **only inside Black zones**. If you are killed by another player there:
+- You **lose one Sequence** (e.g., a Sequence 4 Sun Beyonder degrades to Sequence 5).
 - You lose the characteristics associated with that higher sequence, which will be dropped upon your defeat.
+
+Everywhere else — Green, Yellow and Red — your Sequence is safe. Only your items are at risk.
 
 #### The Paper Angel
 To mitigate the risk of de-leveling, you'll want to get your hands on a **Paper Angel**.

@@ -17,7 +17,7 @@ Energy Shards are a new currency that looks like this ^
 This new currency is needed for many things, such as:
 - Upgrading the levels of secret organizations
 - Weakening the entrances to dungeons (rifts)
-- Paying for the services of Silk Road caravans
+- Trading with Wild Beyonders, alongside Money
 - Time-limited seasonal events, etc.
 
 ### How to get them?
