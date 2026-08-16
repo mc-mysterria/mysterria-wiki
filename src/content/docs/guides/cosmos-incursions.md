@@ -53,7 +53,7 @@ On top of that, **Green and Yellow zones balance damage output between Sequences
 
 ### Permanent Zones
 
-Unlike temporary incursions, some regions — often whole continents — are permanently affected. 
+Unlike temporary incursions, some regions - often whole continents - are permanently affected. 
 
 Inside them, PvP is **always allowed**. Instead of just fighting, you'll find Points of Interest where you can gather resources. However, you can't just run away with them; you have to go to an **extraction point** and stay there long enough to successfully pull your loot out. These resources can then be exchanged for very valuable rewards.
 
@@ -61,11 +61,11 @@ Inside them, PvP is **always allowed**. Instead of just fighting, you'll find Po
 
 ### The Stakes are high
 
-This is the most critical mechanic — and it applies **only inside Black zones**. If you are killed by another player there:
+This is the most critical mechanic - and it applies **only inside Black zones**. If you are killed by another player there:
 - You **lose one Sequence** (e.g., a Sequence 4 Sun Beyonder degrades to Sequence 5).
 - You lose the characteristics associated with that higher sequence, which will be dropped upon your defeat.
 
-Everywhere else — Green, Yellow and Red — your Sequence is safe. Only your items are at risk.
+Everywhere else - Green, Yellow and Red - your Sequence is safe. Only your items are at risk.
 
 #### The Paper Angel
 To mitigate the risk of de-leveling, you'll want to get your hands on a **Paper Angel**.

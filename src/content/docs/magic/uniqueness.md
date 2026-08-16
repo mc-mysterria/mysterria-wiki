@@ -36,7 +36,7 @@ Opting out removes you from consideration for receiving the Uniqueness, but also
 
 ### Manual bonus from moderators
 
-Players who actively contribute to the server's community — posting their **deeds, achievements, and notable actions** in the dedicated forum channel on Discord — may be eligible for a **manual bonus** assigned by the moderation team.
+Players who actively contribute to the server's community - posting their **deeds, achievements, and notable actions** in the dedicated forum channel on Discord - may be eligible for a **manual bonus** assigned by the moderation team.
 
 This bonus can be worth **up to 20 points** towards Uniqueness accommodation, rewarding players who engage with the world and tell their story publicly.
 
@@ -44,9 +44,9 @@ This bonus can be worth **up to 20 points** towards Uniqueness accommodation, re
 
 ### How to accommodate it?
 
-The key to Uniqueness accommodation is time. You cannot forcibly make it yours — you have to wait until it recognizes you as its owner. Using spells, playing the game, and spending Spirituality can all help with this process.
+The key to Uniqueness accommodation is time. You cannot forcibly make it yours - you have to wait until it recognizes you as its owner. Using spells, playing the game, and spending Spirituality can all help with this process.
 
-Upon dying, the accommodation will always **decrease by 10%**, no matter the cause of death — another player or environment — but it will never drop below 10%.
+Upon dying, the accommodation will always **decrease by 10%**, no matter the cause of death - another player or environment - but it will never drop below 10%.
 
 ---
 

@@ -16,7 +16,7 @@ Secret organizations are a feature available only through donations, which remai
 
 ### Level and Bonus System
 
-### Level 0 — "Whisper of Mist"
+### Level 0 - "Whisper of Mist"
 
 The first level available upon receiving sponsorship and the only one which can be active after sponsorship ends.
 
@@ -28,7 +28,7 @@ The first level available upon receiving sponsorship and the only one which can 
 
 > - Private chat `/oc`; Message format: [Organization Name] Nick > message
 
-### Level 1 — "Shadow of Mist"
+### Level 1 - "Shadow of Mist"
 
 > - Up to four members
 
@@ -36,13 +36,13 @@ The first level available upon receiving sponsorship and the only one which can 
 
 > - **SOS Signal:** `/o sos` - the coordinates of the user are displayed in the organization chat
 
-### Level 2 — "Gaze of Mist"
+### Level 2 - "Gaze of Mist"
 
 > - Up to five members
 
 > - **Pocket Dimension:** access a shared organization meeting space
 
-### Level 3 — "Embrace of Mist"
+### Level 3 - "Embrace of Mist"
 
 > - Up to six members
 
@@ -52,7 +52,7 @@ The first level available upon receiving sponsorship and the only one which can 
 
 > - **Unification Ritual:** pool spirituality among organization members for 10 minutes
 
-### Level 4 — "Heart of Mist"
+### Level 4 - "Heart of Mist"
 
 > - Up to seven members
 

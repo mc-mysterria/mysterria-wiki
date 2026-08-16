@@ -10,7 +10,7 @@ sidebar:
 
 ### What are Couriers?
 
-Couriers are supernatural messengers — Skeletons, Jellyfish, and Incinerated spirits — that carry items directly to other players. Summon one with a **Horn of Summoning**, hand it your delivery, and it handles the rest.
+Couriers are supernatural messengers - Skeletons, Jellyfish, and Incinerated spirits - that carry items directly to other players. Summon one with a **Horn of Summoning**, hand it your delivery, and it handles the rest.
 
 ---
 
@@ -71,6 +71,6 @@ Attempting to summon a courier in any other dimension (such as The End) will fai
 
 ### Tips
 
-1. **Pick up your courier** — left-clicking it opens the GUI. Don't walk away before loading your items, or the courier will despawn.
-2. **One item at a time** — stacked items are rejected. Split your stacks before placing them in the courier.
-3. **Stay accessible** — if the recipient is above Y 320 or in an unsupported dimension at delivery time, the courier will retry every 5 seconds automatically.
+1. **Pick up your courier** - left-clicking it opens the GUI. Don't walk away before loading your items, or the courier will despawn.
+2. **One item at a time** - stacked items are rejected. Split your stacks before placing them in the courier.
+3. **Stay accessible** - if the recipient is above Y 320 or in an unsupported dimension at delivery time, the courier will retry every 5 seconds automatically.

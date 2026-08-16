@@ -10,7 +10,7 @@ sidebar:
 
 ### What is a Sealed Artifact?
 
-A **Sealed Artifact** is a special item that contains a fragment of Beyonder power — specifically, **one spell** from a Beyonder pathway. Unlike potions, Sealed Artifacts can be **used by anyone**, including players who are not Beyonders themselves.
+A **Sealed Artifact** is a special item that contains a fragment of Beyonder power - specifically, **one spell** from a Beyonder pathway. Unlike potions, Sealed Artifacts can be **used by anyone**, including players who are not Beyonders themselves.
 
 However, this power comes at a price. Using a Sealed Artifact always carries **drawbacks and side effects**.
 
@@ -22,7 +22,7 @@ There are two main ways to obtain a Sealed Artifact:
 
 **1. Expired Potions**
 
-Brewed potions that are not consumed within **2 days** of their creation will automatically transform into a **random Sealed Artifact**. This is an uncontrolled process — the resulting artifact is unpredictable.
+Brewed potions that are not consumed within **2 days** of their creation will automatically transform into a **random Sealed Artifact**. This is an uncontrolled process - the resulting artifact is unpredictable.
 
 **2. Crafting with Beyonder Chars**
 
@@ -32,7 +32,7 @@ Certain pathways can **craft Sealed Artifacts** directly using **Beyonder Chars*
 
 ### What do they do?
 
-Each Sealed Artifact contains **one specific ability** from a Beyonder pathway. When used, it activates that power — granting you its effect even if you are not a Beyonder or do not belong to that pathway.
+Each Sealed Artifact contains **one specific ability** from a Beyonder pathway. When used, it activates that power - granting you its effect even if you are not a Beyonder or do not belong to that pathway.
 
 Artifact-granted abilities cannot be used as sources for another copying system. Record, Power Theft, Deprivation, Grazing, Avatars, Marionettes, and possession must copy an eligible original ability, not a power that was itself copied or bestowed by an artifact.
 
@@ -47,9 +47,9 @@ This makes Sealed Artifacts valuable tools for:
 
 Using a Sealed Artifact is not free. Every use comes with **negative side effects**, which may include:
 
-- **Self-damage** — the artifact harms you when activated
-- **Madness gain** — using power you were not meant to wield increases your Madness
-- **Other negative effects** — debuffs, temporary stat reductions, or other penalties depending on the specific artifact
+- **Self-damage** - the artifact harms you when activated
+- **Madness gain** - using power you were not meant to wield increases your Madness
+- **Other negative effects** - debuffs, temporary stat reductions, or other penalties depending on the specific artifact
 
 :::danger[Use with caution]
 The more powerful the ability contained in a Sealed Artifact, the more severe its drawbacks tend to be. Never use one carelessly in a dangerous situation without understanding its side effects first.
@@ -59,4 +59,4 @@ The more powerful the ability contained in a Sealed Artifact, the more severe it
 
 ### Are they tradeable?
 
-Sealed Artifacts are items and can be traded between players. This makes them a potentially valuable commodity — both for those who can craft them and those who need a specific magical effect without committing to a full pathway.
+Sealed Artifacts are items and can be traded between players. This makes them a potentially valuable commodity - both for those who can craft them and those who need a specific magical effect without committing to a full pathway.

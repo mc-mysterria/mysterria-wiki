@@ -12,14 +12,14 @@ sidebar:
 ### 1. Connecting to the server
 - **Server IP**: `mc.mysterria.net`
 - **Minecraft Version**: 1.21 - 26.1.2
-- **Server Type**: Vanilla with plugins — no mods required
+- **Server Type**: Vanilla with plugins - no mods required
 
 ![Helpful image](../../../assets/start/ip-preview.png)
 
 :::caution[Accept the resource pack!]
 When you join, **accept the resource pack prompt**. Without it, none of the custom magic interface will render and the server will look like plain vanilla Minecraft.
 
-If you have accepted it and the game still looks vanilla, **update your Minecraft client** — an outdated Java client can silently fail to load the pack.
+If you have accepted it and the game still looks vanilla, **update your Minecraft client** - an outdated Java client can silently fail to load the pack.
 
 Bedrock Edition players can connect through Geyser, but some custom interface elements will not display correctly. This is a known limitation.
 :::
@@ -47,17 +47,17 @@ P.S. If you have official Minecraft account, you don't need to register at all!
 
 ![Helpful image](../../../assets/start/pathways.png)
 - Choose any, make a decision of the path you are going to walk, and confirm once again
-- **Path of Shortcut** directly grants you **Sequence 9** — but your maximum Spirituality will be permanently **10% lower**, forever
+- **Path of Shortcut** directly grants you **Sequence 9** - but your maximum Spirituality will be permanently **10% lower**, forever
 - **Path of Resolve** grants no Sequence, but **guarantees a Recipe from the very next loot chest you open**. You then brew your first potion yourself, with no penalty
 
 :::note[Your pathway choice is not final]
-Choosing a pathway here only decides your starting bonus. It does **not** make you a Beyonder, and it does **not** lock you in — if you later find and drink a Sequence 9 potion of a different pathway, you become that pathway instead.
+Choosing a pathway here only decides your starting bonus. It does **not** make you a Beyonder, and it does **not** lock you in - if you later find and drink a Sequence 9 potion of a different pathway, you become that pathway instead.
 
 You are a Beyonder once the **pathway icon appears in the top-left corner of your inventory**, which only happens after you actually drink a potion. The starter choice itself **cannot be changed** afterwards, so pick carefully.
 :::
 
 ### 4. Basic commands
-- `/magic` - Next steps on advancing (an optional helper — you can play without it)
+- `/magic` - Next steps on advancing (an optional helper - you can play without it)
 - `/subspace` - List every dungeon, its entrance, and your cooldowns
 - `/emporium` - Open the Brilliant Emporium
 - `/daily` - Daily rewards for playing on the server
@@ -69,7 +69,7 @@ You are a Beyonder once the **pathway icon appears in the top-left corner of you
 - `/lands` - Open town management menu
 
 :::caution[There are no teleport commands]
-`/home`, `/sethome`, `/spawn`, `/tpa`, `/rtp` and `/back` do **not** exist on Mysterria, and will not be added. Travel is meant to matter — that is exactly what mobility pathways like **Door** are for.
+`/home`, `/sethome`, `/spawn`, `/tpa`, `/rtp` and `/back` do **not** exist on Mysterria, and will not be added. Travel is meant to matter - that is exactly what mobility pathways like **Door** are for.
 
 Plan your journeys, and pick where you settle carefully.
 :::
@@ -92,12 +92,12 @@ There you will find your Sequence, acting progress, Spirituality and Madness.
 
 - **The world is a single Overworld, 15,000 × 15,000 blocks.**
 - **The wilderness is safe.** PvP only happens inside dedicated PvP zones and [Cosmos Incursion](/guides/cosmos-incursions) zones, which you have to enter deliberately. Griefing is against the rules.
-- **Every naturally generated chest is a magical loot container** — villages, mineshafts, temples, shipwrecks and so on. Their contents **refill over time**, so already-looted places are still worth visiting.
+- **Every naturally generated chest is a magical loot container** - villages, mineshafts, temples, shipwrecks and so on. Their contents **refill over time**, so already-looted places are still worth visiting.
 - **The world is reset roughly every six months**, progress included. That is why joining mid-season is never hopeless.
 
 ## Useful tips
 
-- Always read the chat — there's lots of useful information there
+- Always read the chat - there's lots of useful information there
 - Don't hesitate to ask questions in chat! If no one's in chat, they'll help you later!
 - Join the Discord community. It has all the latest news, town forums, etc.!
 - Learn the magic system gradually. Watch the anime, try reading the web novel!

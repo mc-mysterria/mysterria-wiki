@@ -82,7 +82,7 @@ When your name is chanted, you can choose one of the following:
 | Action | Effect |
 |--------|--------|
 | **Open Portal** | Teleport directly to the player who chanted your name |
-| **Strike with Lightning** | Smite the chanting player with a lightning bolt — useful when you did not consent to being named |
+| **Strike with Lightning** | Smite the chanting player with a lightning bolt - useful when you did not consent to being named |
 | **Bestow an Item** | Transfer one item from your inventory to the chanting player across any distance |
 
 Taking a response action starts a **30-minute response cooldown for the owner**. This does not globally disable the Honorific Name: other players may still chant it, while each chanter has their own chanting cooldown.
@@ -93,7 +93,7 @@ Taking a response action starts a **30-minute response cooldown for the owner**.
 
 Upon reaching **Sequence 0**, a Beyonder transcends into a true Deity and uses a **three-line** Honorific Name.
 
-Chanting a Deity's name still opens the **standard response menu** for the Deity — they are notified and may choose to act just as any Sequence 4 Beyonder would. However, regardless of whether the Deity responds or is even online, the chant **also produces a special effect on the chanter themselves**. The exact effect depends on the pathway of the Deity:
+Chanting a Deity's name still opens the **standard response menu** for the Deity - they are notified and may choose to act just as any Sequence 4 Beyonder would. However, regardless of whether the Deity responds or is even online, the chant **also produces a special effect on the chanter themselves**. The exact effect depends on the pathway of the Deity:
 
 - Chanting the name of a **Red Priest** Deity may grant a **Strength potion effect** after a special animation
 - Other pathways have their own unique blessings tied to their divine domain

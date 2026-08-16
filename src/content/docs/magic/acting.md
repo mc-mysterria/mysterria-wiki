@@ -22,7 +22,7 @@ Loss of control is possible not only through Spirituality! If you drink a potion
 
 To drink a potion of the next Sequence (for example, from Sequence 8 to Sequence 7), you **must** fully digest the current potion.
 
-Digestion comes from **six different sources**, described below. The most important of them is performing **acting methods** — specific actions tied to your abilities.
+Digestion comes from **six different sources**, described below. The most important of them is performing **acting methods** - specific actions tied to your abilities.
 
 :::caution[No single source is enough]
 **Every source has its own scaling cap, and none of them can carry you to 100% on its own.** You are meant to combine several. There is no way to grind one activity exclusively and advance.
@@ -42,7 +42,7 @@ Digestion accumulates slowly just from playing, with no input required.
 
 **2. Acting Methods**
 
-The main mechanism — see the section below for how it works.
+The main mechanism - see the section below for how it works.
 
 **3. Acting Bottles**
 
@@ -87,7 +87,7 @@ Acting opportunities are time-sensitive. Keep an eye on your action bar so you d
 
 ### Sequence-specific acting methods
 
-Acting methods are **different for each Sequence**. As you advance, the methods for your previous Sequence **stop working** — only the methods tied to your current Sequence count.
+Acting methods are **different for each Sequence**. As you advance, the methods for your previous Sequence **stop working** - only the methods tied to your current Sequence count.
 
 This means you cannot stockpile digestion by grinding old methods before advancing. You must adapt your playstyle to each new Sequence's requirements.
 
@@ -95,12 +95,12 @@ This means you cannot stockpile digestion by grinding old methods before advanci
 
 ### Tips for effective acting
 
-**Don't rush** — Consider the digestion process as part of the game, not as an intrusive limitation. Who knows what secrets are hidden in your abilities?
+**Don't rush** - Consider the digestion process as part of the game, not as an intrusive limitation. Who knows what secrets are hidden in your abilities?
 
-**Pay attention to notifications** — Your action bar will tell you when an acting opportunity is ready. Don't ignore it.
+**Pay attention to notifications** - Your action bar will tell you when an acting opportunity is ready. Don't ignore it.
 
-**Use the right abilities** — Only the methods tied to your current Sequence count. Using old abilities won't help after you advance.
+**Use the right abilities** - Only the methods tied to your current Sequence count. Using old abilities won't help after you advance.
 
-**Don't forget about passive digestion** — Even without acting, you still receive some digestion passively over time!
+**Don't forget about passive digestion** - Even without acting, you still receive some digestion passively over time!
 
-**Combine your sources** — Since every source is capped below 100%, mix acting methods with bounties, dungeons, Incursions and bottles. Relying on any single one will stall you.
+**Combine your sources** - Since every source is capped below 100%, mix acting methods with bounties, dungeons, Incursions and bottles. Relying on any single one will stall you.

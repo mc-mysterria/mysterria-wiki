@@ -10,17 +10,17 @@ sidebar:
 
 ### Who are Beyonder Creatures?
 
-Sometimes Beyonder Creatures appear in the world — they are special creatures endowed with magical power. They come in two distinct varieties:
+Sometimes Beyonder Creatures appear in the world - they are special creatures endowed with magical power. They come in two distinct varieties:
 
 ---
 
 ### Custom Creatures
 
-Some Beyonder Creatures are entirely unique entities with **custom models and AI** — such as dragons, armoured knights, and eldritch monsters. These are far more powerful than ordinary mobs and behave in complex, unpredictable ways.
+Some Beyonder Creatures are entirely unique entities with **custom models and AI** - such as dragons, armoured knights, and eldritch monsters. These are far more powerful than ordinary mobs and behave in complex, unpredictable ways.
 
 **Key traits of custom creatures:**
 - Unique visual appearance with custom models
-- Advanced AI — they can attack, group, flee, use special abilities, and call for help
+- Advanced AI - they can attack, group, flee, use special abilities, and call for help
 - Colored signature indicating the creature's name
 - Health visible in the action bar
 - Their attacks deal damage directly to your soul
@@ -42,7 +42,7 @@ Other Beyonder Creatures are standard vanilla mobs enhanced with a **Beyonder ba
 
 ### Where do they spawn?
 
-Every type of Beyonder Creature has a list of **biomes** it can spawn in. If you have stayed in a certain zone for two weeks and haven't met a single Beyonder Creature — it means that area is not claimed by any type. A location to the north with a different biome might have several Beyonder Creatures at once!
+Every type of Beyonder Creature has a list of **biomes** it can spawn in. If you have stayed in a certain zone for two weeks and haven't met a single Beyonder Creature - it means that area is not claimed by any type. A location to the north with a different biome might have several Beyonder Creatures at once!
 
 We will not disclose the list of their biomes. If you are interested, you will have to discover it on your own. Maybe in the future some abilities will be able to decipher and confirm your wild guesses!
 
@@ -51,7 +51,7 @@ We will not disclose the list of their biomes. If you are interested, you will h
 ### Why are they dangerous?
 
 :::tip[Tip]
-Always have potions, armor, and an escape plan — an encounter with a Beyonder Creature can be fatal, especially if you are not a low-sequence Beyonder yourself!
+Always have potions, armor, and an escape plan - an encounter with a Beyonder Creature can be fatal, especially if you are not a low-sequence Beyonder yourself!
 :::
 
 Custom Beyonder Creatures have sophisticated AI, far beyond ordinary monsters. They can attack, group together, retreat when low on health, use special abilities, and even call for reinforcements.

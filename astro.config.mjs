@@ -37,6 +37,7 @@ export default defineConfig({
                 },
             },
             plugins: [starlightThemeGalaxy()],
+            customCss: ['./src/styles/custom.css'],
             // plugins: [pagePlugin({
             //     navigation: [
             //         { href: "/general/start/", label: "Quick Start" },

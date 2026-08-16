@@ -16,8 +16,8 @@ Town Perks are unique, custom-coded buffs granted to towns that complete massive
 
 1.  **Build** - Create an impressive structure (e.g., a Cathedral, a Great Library).
 2.  **Submit** - Open a support ticket in Discord with coordinates and screenshots.
-3.  **Evaluation** — Admins assess the build quality, town level, and population.
-4.  **Activation** — If approved, a custom AOE buff is applied to your territory.
+3.  **Evaluation** - Admins assess the build quality, town level, and population.
+4.  **Activation** - If approved, a custom AOE buff is applied to your territory.
 
 ---
 
@@ -43,19 +43,19 @@ Not all perks are available to every town. The more advanced your settlement is,
 
 ### Available Buff Types
 
-> **🛡️ Mob Protection** — Prevents hostile mob spawns within the designated area.
+> **🛡️ Mob Protection** - Prevents hostile mob spawns within the designated area.
 
-> **🧪 Potion Effects** — Grants continuous effects like Speed, Haste, or Night Vision.
+> **🧪 Potion Effects** - Grants continuous effects like Speed, Haste, or Night Vision.
 
-> **🌾 Enhanced Agriculture** — Significantly increases the growth speed of crops.
+> **🌾 Enhanced Agriculture** - Significantly increases the growth speed of crops.
 
-> **🛠️ Armor Restoration** — Slowly repairs the durability of worn armor over time.
+> **🛠️ Armor Restoration** - Slowly repairs the durability of worn armor over time.
 
-> **✨ Experience Boost** — Multiplies the XP gained while within town borders.
+> **✨ Experience Boost** - Multiplies the XP gained while within town borders.
 
-> **🎭 Acting Enhancement** — Increases acting points gained from using abilities.
+> **🎭 Acting Enhancement** - Increases acting points gained from using abilities.
 
-> **🌀 Spiritual Regeneration** — Drastically increases the rate of spirituality recovery.
+> **🌀 Spiritual Regeneration** - Drastically increases the rate of spirituality recovery.
 
 ### Territory Customization
 
@@ -68,8 +68,8 @@ Depending on the build, buffs can be applied in different shapes:
 
 ### Tips for Approval
 
-1. **Thematic Consistency** — A giant dragon should grant protection or damage buffs, while a cathedral should grant spirituality or healing.
+1. **Thematic Consistency** - A giant dragon should grant protection or damage buffs, while a cathedral should grant spirituality or healing.
 
-2. **Scale Matters** — Small houses won't qualify. We are looking for "World Wonder" style projects that define the server's landscape.
+2. **Scale Matters** - Small houses won't qualify. We are looking for "World Wonder" style projects that define the server's landscape.
 
-3. **Completion** — Do not submit unfinished builds or "shells" without interiors. Quality is checked both inside and out!
+3. **Completion** - Do not submit unfinished builds or "shells" without interiors. Quality is checked both inside and out!

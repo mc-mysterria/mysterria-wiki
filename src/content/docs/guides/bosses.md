@@ -10,7 +10,7 @@ sidebar:
 
 ### Who is a Guardian?
 
-A Guardian (or "Boss") is a powerful enemy that can be encountered in the open world. Guardians now **spawn completely randomly** — there is no fixed schedule or location. Keep your eyes open and your gear ready at all times!
+A Guardian (or "Boss") is a powerful enemy that can be encountered in the open world. Guardians now **spawn completely randomly** - there is no fixed schedule or location. Keep your eyes open and your gear ready at all times!
 
 ![Helpful image](../../../assets/bosses/example.png)
 
@@ -30,7 +30,7 @@ Right-click, spin the wheel, and win invaluable rewards that are unique to this 
 
 ### Combat mechanics
 
-Guardians are not simple boss fights — they have several phases that change the rules mid-battle:
+Guardians are not simple boss fights - they have several phases that change the rules mid-battle:
 
 **Enrage (30% health)**
 

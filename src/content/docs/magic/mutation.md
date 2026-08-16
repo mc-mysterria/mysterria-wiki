@@ -10,7 +10,7 @@ sidebar:
 
 ### What is Madness?
 
-**Madness** is a value from **0% to 100%** that represents how close a Beyonder is to losing their mind — and their powers — entirely.
+**Madness** is a value from **0% to 100%** that represents how close a Beyonder is to losing their mind - and their powers - entirely.
 
 It replaces the old Safe Mode system. There is no longer a way to simply "turn on" protection. Instead, every Beyonder must actively manage their Madness level.
 
@@ -28,8 +28,8 @@ Several components determine how low your Madness can fall:
 
 | Type | Description | Can it be healed? |
 |------|-------------|-------------------|
-| **Temporary Madness** | Standard Madness gained from most sources | Yes — slowly over time, or via certain spells |
-| **Permanent Madness** | Madness gained from dangerous advancement, pathway switching, and certain powers | **No** — cannot be treated by any means |
+| **Temporary Madness** | Standard Madness gained from most sources | Yes - slowly over time, or via certain spells |
+| **Permanent Madness** | Madness gained from dangerous advancement, pathway switching, and certain powers | **No** - cannot be treated by any means |
 | **Godhood floor** | A minimum caused by your current high Sequence | Only through eligible Church relief |
 
 Your effective minimum is:
@@ -79,10 +79,10 @@ A safe neighboring switch still requires complete acting and ritual conditions t
 
 ### What are the effects of high Madness?
 
-High Madness doesn't just threaten mutation — it actively impairs your abilities:
+High Madness doesn't just threaten mutation - it actively impairs your abilities:
 
-- **Slower Spirituality regeneration** — the higher your Madness, the slower your spiritual energy recovers
-- **Spell lockout** — at sufficiently high Madness, **random spells may become unavailable** to you until your Madness drops
+- **Slower Spirituality regeneration** - the higher your Madness, the slower your spiritual energy recovers
+- **Spell lockout** - at sufficiently high Madness, **random spells may become unavailable** to you until your Madness drops
 
 ### Reducing Madness
 
@@ -92,7 +92,7 @@ Ordinary recovery and curing abilities can remove only recoverable Madness above
 
 ### What is a Mutation?
 
-If your Madness reaches 100%, this triggers a **Mutation** — a catastrophic loss of control:
+If your Madness reaches 100%, this triggers a **Mutation** - a catastrophic loss of control:
 
 - You will **lose all your abilities** permanently
 - You will **lose your pathway and sequence**
@@ -102,5 +102,5 @@ If your Madness reaches 100%, this triggers a **Mutation** — a catastrophic lo
 - You will receive a cooldown of **three real days** before you can become a Beyonder again
 
 :::tip[Prevention is everything]
-Unlike the old system, there is no Safe Mode to protect you. The only protection is keeping your Madness low — complete your rituals, avoid reckless pathway switches, and use Madness-reducing spells when available.
+Unlike the old system, there is no Safe Mode to protect you. The only protection is keeping your Madness low - complete your rituals, avoid reckless pathway switches, and use Madness-reducing spells when available.
 :::

@@ -37,8 +37,8 @@ Boons can now be **progressed up to Sequence 5**.
 
 To advance your Boon, you must:
 
-1. **Build a Sacrificial Altar** — any tier will work, though higher tiers may offer better results.
-2. **Gather Beyonder Ingredients** — specifically, ingredients that correspond to the Sequence you are advancing **towards**, or lower. You cannot skip ahead by offering low-value materials.
+1. **Build a Sacrificial Altar** - any tier will work, though higher tiers may offer better results.
+2. **Gather Beyonder Ingredients** - specifically, ingredients that correspond to the Sequence you are advancing **towards**, or lower. You cannot skip ahead by offering low-value materials.
 3. **Sacrifice the ingredients** at the altar to advance your Boon.
 
 :::caution[Ingredient requirements]
@@ -49,6 +49,6 @@ The ingredients must be appropriate for the Sequence you want to reach. You cann
 
 ### How do boon spells work?
 
-Boon spells function like standard Beyonder abilities — they have acting methods, contribute to Spirituality, and must be used to advance digestion. However, boon acting progression is **separate** from your main pathway's progression.
+Boon spells function like standard Beyonder abilities - they have acting methods, contribute to Spirituality, and must be used to advance digestion. However, boon acting progression is **separate** from your main pathway's progression.
 
 Each boon only draws from the pathways of ~~Outer Deities~~, and boon spells carry their own identity and flavour distinct from the standard 22 pathways.

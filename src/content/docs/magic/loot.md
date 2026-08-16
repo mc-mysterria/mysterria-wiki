@@ -10,20 +10,20 @@ sidebar:
 
 ### Overview
 
-As you explore the world, you will encounter many types of Beyonder loot. Understanding where each category comes from — and how to improve your chances of finding what you need — is essential to progressing as a Beyonder.
+As you explore the world, you will encounter many types of Beyonder loot. Understanding where each category comes from - and how to improve your chances of finding what you need - is essential to progressing as a Beyonder.
 
 All Beyonder loot falls into one of four broad categories:
 
-- **Potions** — ready-to-drink Beyonder potions
-- **Beyonder Chars** — versatile items used in brewing, crafting, and consumption
-- **Recipes & Pages** — knowledge needed to brew potions
-- **Ingredients** — raw materials required for brewing
+- **Potions** - ready-to-drink Beyonder potions
+- **Beyonder Chars** - versatile items used in brewing, crafting, and consumption
+- **Recipes & Pages** - knowledge needed to brew potions
+- **Ingredients** - raw materials required for brewing
 
 ---
 
 ### Where are loot containers?
 
-**Loot containers are ordinary naturally-generated chests.** Villages, mineshafts, temples, shipwrecks, buried treasure, bastions, ruined portals — every chest the world generates on its own is a Beyonder loot container. There is no separate, specially-marked container type to hunt for.
+**Loot containers are ordinary naturally-generated chests.** Villages, mineshafts, temples, shipwrecks, buried treasure, bastions, ruined portals - every chest the world generates on its own is a Beyonder loot container. There is no separate, specially-marked container type to hunt for.
 
 :::tip[Chests refill over time]
 The contents of a looted container **regenerate**. A structure that somebody else has already emptied is still worth visiting, and worth visiting again later. Exploration never runs out.
@@ -36,7 +36,7 @@ The contents of a looted container **regenerate**. A structure that somebody els
 Potions are fully brewed Beyonder items that can be consumed directly to gain or advance your Sequence. They can occasionally be found in loot containers throughout the world, though they are rare.
 
 :::danger[Remember: potions expire]
-Any potion — whether found or brewed — will transform into a random **Sealed Artifact** after **2 real-time days** from when it first appeared. Don't let them sit unused!
+Any potion - whether found or brewed - will transform into a random **Sealed Artifact** after **2 real-time days** from when it first appeared. Don't let them sit unused!
 :::
 
 ---
@@ -60,10 +60,10 @@ To brew a potion, you need to know its recipe. Recipe knowledge comes in two for
 A full recipe book contains the entire ingredient list needed to brew a specific potion. Found in loot containers, these are the straightforward option.
 
 **Separate Recipe Pages**
-You may find individual pages from a recipe — fragments of the full book. Each page can be **read on its own** to give you partial knowledge, but to actually use them for brewing you must **collect all the pages** for that recipe and **combine them at a crafting table** to form the complete recipe book.
+You may find individual pages from a recipe - fragments of the full book. Each page can be **read on its own** to give you partial knowledge, but to actually use them for brewing you must **collect all the pages** for that recipe and **combine them at a crafting table** to form the complete recipe book.
 
 :::tip[Collecting pages]
-Separate pages are generally easier to find than complete books, but require more effort to complete. If you find a page, hold onto it — other pages for the same recipe are out there!
+Separate pages are generally easier to find than complete books, but require more effort to complete. If you find a page, hold onto it - other pages for the same recipe are out there!
 :::
 
 ---
@@ -73,13 +73,13 @@ Separate pages are generally easier to find than complete books, but require mor
 Ingredients are the raw materials used in brewing. Unlike other loot categories, they **cannot be focused** (see below). There are three types, each with a distinct acquisition method:
 
 #### Foundable Ingredients
-These ingredients only appear inside **loot containers** scattered throughout the world. They cannot be farmed from mobs or found in the wild — exploration and chest-hunting is the only way.
+These ingredients only appear inside **loot containers** scattered throughout the world. They cannot be farmed from mobs or found in the wild - exploration and chest-hunting is the only way.
 
 #### Droppable Ingredients
 These ingredients only drop from **Beyonder Creatures** upon death. Hunting the right type of creature in the right biome is the key to obtaining these.
 
 #### Mineable Ingredients
-These ingredients appear in the **open world as resource nodes** — a glowing or distinct object that spawns naturally in certain areas. 
+These ingredients appear in the **open world as resource nodes** - a glowing or distinct object that spawns naturally in certain areas. 
 
 To collect one:
 1. **Approach** the node
@@ -92,7 +92,7 @@ Resource nodes do not respawn immediately, so if you find a spot with them, it m
 
 ### Reward Focusing
 
-To reduce the frustration of RNG-heavy exploration, the server uses a **reward focusing** system — a built-in pity mechanic.
+To reduce the frustration of RNG-heavy exploration, the server uses a **reward focusing** system - a built-in pity mechanic.
 
 You can choose to **focus** one of the following four categories:
 
@@ -116,7 +116,7 @@ Once you select a focus category, the system tracks how many loot containers you
 - If you open **N−1** containers without getting anything from your focused category, the **N-th container is guaranteed** to contain a reward from it.
 - This resets after you receive the focused reward, and the pity counter starts again.
 
-**The value of N is shown to you in-game**, and it is not a single fixed number — it varies from case to case. Check your current counter rather than assuming. Either way, the system ensures no focused category can be indefinitely unlucky.
+**The value of N is shown to you in-game**, and it is not a single fixed number - it varies from case to case. Check your current counter rather than assuming. Either way, the system ensures no focused category can be indefinitely unlucky.
 
 Choose your focus based on what you need most right now, and explore consistently to take advantage of the guarantee.
 

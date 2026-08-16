@@ -44,7 +44,7 @@ Managing Madness is just as important as managing Spirituality. See the [Mutatio
 
 ### Path of Shortcut penalty
 
-If you chose the **Path of Shortcut** as your starting bonus — which grants you Sequence 9 instantly without brewing — be aware of its hidden cost:
+If you chose the **Path of Shortcut** as your starting bonus - which grants you Sequence 9 instantly without brewing - be aware of its hidden cost:
 
 :::caution[Permanent Spirituality Reduction]
 Your maximum Spirituality will **always be 10% lower** than it should be for your Sequence and acting level. This penalty is permanent and cannot be removed.
