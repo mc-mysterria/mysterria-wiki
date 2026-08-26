@@ -102,6 +102,28 @@ import { Aside } from '@astrojs/starlight/components';
 
 **Етап 1: Гільзи**
 
+import kleinCartridge from "../../../../assets/firearms/kleincartridge.png";
+import deathknellCartridge from "../../../../assets/firearms/deathknellcartridge.png";
+import rifleCartridge from "../../../../assets/firearms/riflecartridge.png";
+
+<p align="center">
+    <img
+        src={kleinCartridge.src}
+        width="30%"
+        alt="Гільза Клейна"
+    />
+    <img
+        src={deathknellCartridge.src}
+        width="30%"
+        alt="Гільза Дзвону"
+    />
+    <img
+        src={rifleCartridge.src}
+        width="30%"
+        alt="Гвинтівкова гільза"
+    />
+</p>
+
 | Гільза | Рецепт | Кількість |
 |----------------|--------|-------|
 | **Гільза Клейна** | 1 Латунь | 8 шт |
@@ -109,6 +131,28 @@ import { Aside } from '@astrojs/starlight/components';
 | **Гвинтівкова гільза** | 2 Латуні | 6 шт |
 
 **Етап 2: Осердя**
+
+import kleinCore from "../../../../assets/firearms/kleincore.png";
+import deathknellCore from "../../../../assets/firearms/deathknellcore.png";
+import rifleCore from "../../../../assets/firearms/riflecore.png";
+
+<p align="center">
+    <img
+        src={kleinCore.src}
+        width="30%"
+        alt="Осердя Клейна"
+    />
+    <img
+        src={deathknellCore.src}
+        width="30%"
+        alt="Осердя Дзвону"
+    />
+    <img
+        src={rifleCore.src}
+        width="30%"
+        alt="Гвинтівкове осердя"
+    />
+</p>
 
 | Осердя | Рецепт | Кількість |
 |----------------|--------|-------|
@@ -118,6 +162,28 @@ import { Aside } from '@astrojs/starlight/components';
 
 **Етап 3: Стандартні боєприпаси**
 
+import kleinRounds from "../../../../assets/firearms/kleinrounds.png";
+import deathknellRounds from "../../../../assets/firearms/deathknellrounds.png";
+import rifleRounds from "../../../../assets/firearms/riflerounds.png";
+
+<p align="center">
+    <img
+        src={kleinRounds.src}
+        width="30%"
+        alt="Патрони Клейна"
+    />
+    <img
+        src={deathknellRounds.src}
+        width="30%"
+        alt="Патрони Дзвону"
+    />
+    <img
+        src={rifleRounds.src}
+        width="30%"
+        alt="Гвинтівкові патрони"
+    />
+</p>
+
 **Рецепт стандартних патронів:**
 
 `1 Гільза + 1 Осердя + 1 Порох = 1 Патрон`
@@ -125,6 +191,16 @@ import { Aside } from '@astrojs/starlight/components';
 Це стосується патронів Клейна, Дзвону та Гвинтівкових патронів.
 
 ### Патрони зі спеціальними ефектами
+
+import effectAmmo from "../../../../assets/firearms/effectammo.png";
+
+<p align="center">
+    <img
+        src={effectAmmo.src}
+        width="80%"
+        alt="Патрони зі спеціальними ефектами"
+    />
+</p>
 
 Спеціальні боєприпаси створюються шляхом оточення матеріалу ефекту 8-ма стандартними патронами (будь-якого типу).
 
@@ -172,3 +248,34 @@ import { Aside } from '@astrojs/starlight/components';
 - Імплозивні патрони для максимальної шкоди.
 - Послаблюючі патрони для дебафів.
 - Бронебійні для захищених босів.
+
+**Для Незеру та Енду:**
+- Патрони Екзорциста для Незеру (нежить).
+- Вогняні патрони в Незері менш ефективні.
+- Патрони мисливця на демонів, якщо поблизу є Потойбічні.
+
+**Управління ресурсами:**
+
+<Aside type="caution">
+Спеціальні патрони потребують 8 стандартних патронів + рідкісний матеріал = 8 спеціальних патронів. Плануйте запаси заздалегідь!
+</Aside>
+
+**Із чого складається вартість 8 спеціальних патронів:**
+- 8 стандартних патронів (кожен: 1 Гільза + 1 Осердя + 1 Порох)
+- 1 матеріал ефекту (Зірка Незеру - найрідкісніший)
+
+**Разом матеріалів на 8 спеціальних патронів:**
+- 8 Гільз
+- 8 Осердь
+- 8 Пороху
+- 1 матеріал ефекту
+
+---
+
+### Наступні кроки
+
+Готові застосувати свої боєприпаси? Ознайомтеся з:
+
+- [Огляд](/uk/firearms/) - вивчіть механіку бою
+- [Гайд із крафту](/uk/firearms/crafting/) - зберіть зброю, щоб використати патрони
+- [Сторінки зброї](/uk/firearms/) - детальні характеристики кожного вогнепалу

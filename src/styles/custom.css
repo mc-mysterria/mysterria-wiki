@@ -1,6 +1,138 @@
 /**
  * Mysterria wiki overrides on top of starlight-theme-galaxy.
+ *
+ * The palette and type below are the main site's (mysteria-frontend
+ * src/assets/main.css) so the two properties read as one product. Two things
+ * are deliberately mirrored rather than re-invented:
+ *
+ *   - the `--myst-*` tokens keep their frontend names, so a value can be
+ *     compared against the other repo without translating it first. They were
+ *     already being *used* by src/components/Footer.astro but never defined
+ *     anywhere, so the footer was painting with unresolved colours.
+ *   - the CJK stacks split Simplified from Traditional, because several
+ *     codepoints are drawn differently in mainland and Taiwan/Hong Kong faces.
  */
+
+/* Playfair Display for headings. Inter and JetBrains Mono already arrive as
+ * variable fonts through starlight-theme-galaxy, so only this one is added. */
+@import '@fontsource/playfair-display/600.css';
+@import '@fontsource/playfair-display/700.css';
+
+/* ---------------------
+ * MYSTERRIA TOKENS
+ * Dark only. The main site pins `data-theme="dark"` at runtime; this wiki has
+ * no theme switcher, so there is one palette to define.
+ * --------------------- */
+:root {
+    --myst-bg: #05070a;
+    --myst-bg-2: #13162a;
+    --myst-bg-deep: #080a14;
+    --myst-ink: #f5f5f7;
+    --myst-ink-muted: #a1a1aa;
+    --myst-ink-strong: #f7f5ef;
+    --myst-gold: #c8b273;
+    --myst-gold-soft: #bda76a;
+    --myst-on-gold: #0a0805;
+
+    /* Hairlines - gold at fixed alphas, the redesign's core edge language. */
+    --myst-line-12: rgba(200, 178, 115, 0.12);
+    --myst-line-18: rgba(200, 178, 115, 0.18);
+    --myst-line-28: rgba(200, 178, 115, 0.28);
+    --myst-line-40: rgba(200, 178, 115, 0.4);
+    --myst-wash: rgba(200, 178, 115, 0.06);
+    --myst-wash-strong: rgba(200, 178, 115, 0.12);
+
+    /* Status */
+    --myst-green: #4ade80;
+    --myst-red: #d96a6a;
+    --myst-amber: #e0a04f;
+
+    --myst-font-display: 'Playfair Display', Georgia, serif;
+    --myst-font-body: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --myst-font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace,
+    'Courier New', monospace;
+}
+
+/* ---------------------
+ * STARLIGHT MAPPING
+ * Point the theme's own variables at the tokens above rather than restyling
+ * components one by one, so sidebar, nav, search, asides, code blocks and
+ * pagination all follow from one place.
+ * --------------------- */
+:root,
+:root[data-theme='dark'] {
+    --sl-font: var(--myst-font-body);
+    --sl-font-mono: var(--myst-font-mono);
+
+    --sl-color-accent: var(--myst-gold);
+    --sl-color-accent-low: rgba(200, 178, 115, 0.16);
+    --sl-color-accent-high: #e2d3a4;
+
+    --sl-color-bg: var(--myst-bg);
+    --sl-color-bg-nav: rgba(8, 10, 20, 0.88);
+    --sl-color-bg-sidebar: var(--myst-bg-deep);
+    --sl-color-bg-inline-code: var(--myst-wash-strong);
+
+    --sl-color-text: var(--myst-ink);
+    --sl-color-text-accent: var(--myst-gold);
+    --sl-color-text-invert: var(--myst-on-gold);
+
+    --sl-color-white: var(--myst-ink-strong);
+    --sl-color-gray-1: #e7e6e2;
+    --sl-color-gray-2: #c8c6c0;
+    --sl-color-gray-3: var(--myst-ink-muted);
+    --sl-color-gray-4: #6b6a66;
+    --sl-color-gray-5: #3a3a38;
+    --sl-color-gray-6: #1a1c26;
+    --sl-color-gray-7: #12141c;
+
+    --sl-color-hairline: var(--myst-line-18);
+    --sl-color-hairline-light: var(--myst-line-12);
+    --sl-color-hairline-shade: var(--myst-line-28);
+
+    /* Aside colours reuse the site's status hues so callouts match the
+     * `.myst-callout` variants on the main site. */
+    --sl-color-orange: var(--myst-amber);
+    --sl-color-green: var(--myst-green);
+    --sl-color-red: var(--myst-red);
+}
+
+/* ---------------------
+ * TYPOGRAPHY
+ * Playfair for display type, mono for the small caps-y labels - the same
+ * division of labour the main site uses.
+ * --------------------- */
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6),
+.content-panel h1,
+main h1 {
+    font-family: var(--myst-font-display);
+    letter-spacing: -0.01em;
+}
+
+/* The site title in the header is a wordmark, not body copy. */
+.site-title,
+a.site-title span {
+    font-family: var(--myst-font-display);
+    letter-spacing: 0.01em;
+}
+
+/* Gold hairline under the top-level headings, as on the main site's sections. */
+.sl-markdown-content > h2:not(:where(.not-content *)) {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--myst-line-18);
+}
+
+/* Links pick up the gold rather than the theme's default blue-ish accent. */
+.sl-markdown-content a:not(:where(.not-content *)) {
+    color: var(--myst-gold);
+    text-decoration-color: var(--myst-line-40);
+    text-underline-offset: 0.2em;
+}
+
+.sl-markdown-content a:hover:not(:where(.not-content *)) {
+    color: var(--sl-color-accent-high);
+}
 
 /* ---------------------
  * TABLES
@@ -21,6 +153,16 @@
     overflow-wrap: anywhere;
 }
 
+/* Header row reads as a label strip, matching the main site's table treatment. */
+.sl-markdown-content table th:not(:where(.not-content *)) {
+    background: var(--myst-wash);
+    color: var(--myst-gold);
+    font-family: var(--myst-font-mono);
+    font-size: 0.78em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
 /* Keep cell padding symmetrical now that the edges reach the column bounds —
  * Starlight zeroes the outer padding for shrink-wrapped tables. */
 .sl-markdown-content table :is(th:first-child, td:first-child):not(:where(.not-content *)) {
@@ -39,4 +181,46 @@
     .sl-markdown-content table :is(th:last-child, td:last-child):not(:where(.not-content *)) {
         padding-inline-end: 0.75rem;
     }
+}
+
+/* ---------------------
+ * CJK TYPOGRAPHY
+ * Inter, Playfair Display and JetBrains Mono carry no CJK glyphs, so Chinese
+ * text would otherwise fall through to whatever the browser picks - on Windows
+ * frequently a mismatched serif. Simplified and Traditional get different
+ * stacks on purpose.
+ *
+ * The switch keys off <html lang>, which Starlight sets from each locale's
+ * `lang` - so zh-CN and zh-TW here, where the main site uses zh-Hans/zh-Hant.
+ * --------------------- */
+:root {
+    /* Simplified is the default; Traditional overrides below. */
+    --myst-cjk-sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "Noto Sans SC", "Source Han Sans SC", sans-serif;
+    --myst-cjk-serif: "Songti SC", "Noto Serif SC", "Source Han Serif SC",
+    SimSun, serif;
+}
+
+html[lang="zh-TW"] {
+    --myst-cjk-sans: "PingFang TC", "Hiragino Sans CNS", "Microsoft JhengHei",
+    "Noto Sans TC", "Source Han Sans TC", sans-serif;
+    --myst-cjk-serif: "Songti TC", "Noto Serif TC", "Source Han Serif TC",
+    PMingLiU, serif;
+}
+
+/* Latin faces stay first, so English inside Chinese copy keeps its own type. */
+html[lang^="zh"] {
+    --myst-font-body: "Inter Variable", "Inter", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", var(--myst-cjk-sans);
+    --myst-font-display: "Playfair Display", Georgia, var(--myst-cjk-serif);
+    --myst-font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace,
+    var(--myst-cjk-sans);
+}
+
+html[lang^="zh"] body {
+    /* CJK has no spaces, so lines must be allowed to break between characters. */
+    line-break: strict;
+    overflow-wrap: break-word;
+    /* Denser glyphs need more room between lines than Latin text does. */
+    line-height: 1.75;
 }
