@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is an Astro project using the Starlight documentation theme for the Mysterria Minecraft server documentation website. The site is built as a static site and deployed to Vercel, supporting both Ukrainian and English languages.
+This is an Astro project using the Starlight documentation theme for the Mysterria Minecraft server documentation website. The site is built as a static site and deployed to Vercel, serving the same eight locales as the main site.
 
 ## Development Commands
 
@@ -26,8 +26,12 @@ This is an Astro project using the Starlight documentation theme for the Mysterr
 
 ### Key Directories
 - `src/content/docs/` - All documentation content organized by language and category:
-  - `uk/` - Ukrainian content with subdirectories (general/, guides/, magic/, pathways/, support/)
-  - `en/` - English content with matching structure
+  - English lives at the root (`general/`, `magic/`, `guides/`, `firearms/`, `misc/`) because
+    `defaultLocale` is `root`; there is no `en/` directory
+  - `uk/`, `ro/`, `de/`, `es/`, `fr/`, `zh-tw/`, `zh-cn/` - one directory per locale, mirroring
+    the English structure. A page only needs to exist where it has been translated
+- `src/content/i18n/` - UI strings that are not page content (the custom footer), one JSON file
+  per locale, named after the locale's BCP-47 `lang` (so `zh-CN.json`, not `zh-cn.json`)
 - `src/assets/` - Images and media files organized by content category
 - `src/components/` - Custom Astro components
 - `src/styles/` - Custom CSS and theming
@@ -37,7 +41,14 @@ This is an Astro project using the Starlight documentation theme for the Mysterr
 - **Content Config**: `src/content.config.ts` defines collection schemas
 - **Sidebar Navigation**: Auto-generated from directory structure in `astro.config.mjs`
 - **Frontmatter**: Standard Starlight frontmatter for metadata and page configuration
-- **Languages**: Bilingual support with Ukrainian (`uk`) as default and English (`en`) locales
+- **Languages**: Eight locales - English (root), `uk`, `ro`, `de`, `es`, `fr`, `zh-tw`, `zh-cn` -
+  matching mysteria-frontend's set, labels, and picker order
+- **Fallback**: A page missing from a locale is served from English automatically, with
+  Starlight's translated "content is not available in your language yet" notice. Translating a
+  page means adding the file; nothing needs registering
+- **Chinese casing**: locale keys and directories are lowercase (`zh-cn`) because Astro lowercases
+  collection ids, but `lang` stays `zh-CN`. The main site routes `/zh-CN`, so `Footer.astro` maps
+  between them for cross-site links
 
 ### Styling & Theming
 - **Custom CSS**: `src/styles/custom.css` with extensive Mysterria-specific theming
@@ -66,12 +77,12 @@ This is an Astro project using the Starlight documentation theme for the Mysterr
 ## Content Guidelines
 
 When working with content:
-- Content should be organized by language (uk/ for Ukrainian, en/ for English)
+- Content should be organized by locale directory (English at the root, `uk/`, `de/`, … alongside it)
 - Follow existing frontmatter patterns for consistency
 - Images should be placed in appropriate `src/assets/` subdirectories
 - Use MDX for content requiring React-like components
 - Maintain consistent navigation structure through directory organization
-- Links should include the language prefix (e.g., /uk/general/start/ or /en/general/start/)
+- Links should include the locale prefix (e.g., /uk/general/start/); English has no prefix (/general/start/)
 
 ## Development Notes
 

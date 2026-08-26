@@ -1,8 +1,43 @@
 ---
-import type {Props} from '@astrojs/starlight/props';
 import Default from '@astrojs/starlight/components/TwoColumnContent.astro';
 
-const isHomepage = Astro.props.id === '';
+/*
+ * Starlight 0.38 moved route data off component props and onto
+ * `Astro.locals.starlightRoute`. This override still read `Astro.props.id`,
+ * which is always undefined there - so `isHomepage` was permanently false and
+ * the whole homepage footer below never rendered on any page.
+ */
+const {id, locale} = Astro.locals.starlightRoute;
+
+/* The landing page is `id === ''` at the root and `id === locale` under a
+ * localised prefix (/uk, /de, …). */
+const isHomepage = id === '' || id === locale;
+
+/*
+ * Footer copy used to be hardcoded English, so even the Ukrainian pages had an
+ * English footer. The strings now live in src/content/i18n/<locale>.json and
+ * are resolved through Starlight's translation system.
+ */
+const {t} = Astro.locals;
+
+/*
+ * `locale` is the path segment a language is served under, and is undefined for
+ * the root (English) locale - so both helpers have to special-case it.
+ *
+ * The main site is served under the same eight locale segments as this wiki and
+ * redirects a bare /store to /en/store, so cross-site links carry the reader's
+ * language instead of dropping them back into English.
+ */
+const docsPath = (path: string) => (locale ? `/${locale}${path}` : path);
+
+/*
+ * The two sites disagree on Chinese casing: the main site routes /zh-CN and
+ * /zh-TW, while this wiki must use lowercase segments (see astro.config.mjs).
+ * Only cross-site links need the translation.
+ */
+const SITE_LOCALE: Record<string, string> = {'zh-cn': 'zh-CN', 'zh-tw': 'zh-TW'};
+const siteLocale = SITE_LOCALE[locale ?? ''] ?? locale ?? 'en';
+const sitePath = (path: string) => `https://mysterria.net/${siteLocale}${path}`;
 ---
 
 {
@@ -16,53 +51,53 @@ const isHomepage = Astro.props.id === '';
                             <div class="mysterria-logo-icon">🔮</div>
                             <div class="mysterria-logo-text">
                                 <strong>Mysterria</strong>
-                                <span>Wiki & Documentation</span>
+                                <span>{t('footer.tagline')}</span>
                             </div>
                         </div>
                         <div class="mysterria-footer-description">
-                            <p>Your complete guide to the mystical world of Mysterria Minecraft server, inspired by Lord of the Mysteries.</p>
+                            <p>{t('footer.description')}</p>
                         </div>
                     </div>
 
                     <div class="mysterria-footer-nav">
                         <div class="mysterria-footer-section">
-                            <h4>Server</h4>
+                            <h4>{t('footer.headingServer')}</h4>
                             <div class="mysterria-footer-links">
-                                <a href="https://mysterria.net" class="mysterria-footer-link">
+                                <a href={sitePath('')} class="mysterria-footer-link">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-                                    Homepage
+                                    {t('footer.linkHomepage')}
                                 </a>
-                                <a href="https://mysterria.net/game" class="mysterria-footer-link">
+                                <a href={sitePath('/game')} class="mysterria-footer-link">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                                    Start Playing
+                                    {t('footer.linkPlayStart')}
                                 </a>
                             </div>
                         </div>
 
                         <div class="mysterria-footer-section">
-                            <h4>Resources</h4>
+                            <h4>{t('footer.headingResources')}</h4>
                             <div class="mysterria-footer-links">
-                                <a href="https://wiki.mysterria.net" class="mysterria-footer-link mysterria-footer-link-active">
+                                <a href={docsPath('/')} class="mysterria-footer-link mysterria-footer-link-active">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/></svg>
-                                    Documentation
+                                    {t('footer.linkDocs')}
                                 </a>
-                                <a href="/misc/creator-program/" class="mysterria-footer-link">
+                                <a href={docsPath('/misc/creator-program/')} class="mysterria-footer-link">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15,4V3A1,1 0 0,0 14,2H10A1,1 0 0,0 9,3V4H4A1,1 0 0,0 3,5V6A1,1 0 0,0 4,7H5V19A3,3 0 0,0 8,22H16A3,3 0 0,0 19,19V7H20A1,1 0 0,0 21,6V5A1,1 0 0,0 20,4H15M11,4H13V3H11V4Z"/></svg>
-                                    Promoters
+                                    {t('footer.linkPromoters')}
                                 </a>
-                                <a href="https://mysterria.net/store" class="mysterria-footer-link">
+                                <a href={sitePath('/store')} class="mysterria-footer-link">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.15.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
-                                    Shop
+                                    {t('footer.linkShop')}
                                 </a>
                             </div>
                         </div>
 
                         <div class="mysterria-footer-section">
-                            <h4>Community</h4>
+                            <h4>{t('footer.headingCommunity')}</h4>
                             <div class="mysterria-footer-links">
                                 <a href="https://discord.gg/mysterria" class="mysterria-footer-link mysterria-discord-link">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0189 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/></svg>
-                                    Discord Server
+                                    {t('footer.linkDiscordServer')}
                                 </a>
                             </div>
                         </div>
@@ -71,38 +106,38 @@ const isHomepage = Astro.props.id === '';
 
                 <div class="mysterria-footer-bottom">
                     <div class="mysterria-footer-legal">
-                        <p>© 2025 - 2026 Mysterria. All rights reserved.</p>
-                        <p>Not affiliated with or endorsed by Mojang AB.</p>
+                        <p>© 2025 - 2026 Mysterria. {t('footer.rights')}</p>
+                        <p>{t('footer.mojang')}</p>
                     </div>
                 </div>
             </footer>
         </div>
     ) : (
-    <Default {...Astro.props}>
+    <Default>
         <slot/>
         <slot name="right-sidebar" slot="right-sidebar"/>
         <footer class="mysterria-footer mysterria-footer-compact">
             <div class="mysterria-footer-content">
                 <div class="mysterria-footer-nav mysterria-footer-nav-compact">
-                    <a href="https://mysterria.net" class="mysterria-footer-link">
+                    <a href={sitePath('')} class="mysterria-footer-link">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-                        Home
+                        {t('footer.linkHome')}
                     </a>
-                    <a href="https://wiki.mysterria.net" class="mysterria-footer-link mysterria-footer-link-active">
+                    <a href={docsPath('/')} class="mysterria-footer-link mysterria-footer-link-active">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/></svg>
-                        Docs
+                        {t('footer.linkDocs')}
                     </a>
-                    <a href="/misc/creator-program/" class="mysterria-footer-link">
+                    <a href={docsPath('/misc/creator-program/')} class="mysterria-footer-link">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M15,4V3A1,1 0 0,0 14,2H10A1,1 0 0,0 9,3V4H4A1,1 0 0,0 3,5V6A1,1 0 0,0 4,7H5V19A3,3 0 0,0 8,22H16A3,3 0 0,0 19,19V7H20A1,1 0 0,0 21,6V5A1,1 0 0,0 20,4H15M11,4H13V3H11V4Z"/></svg>
-                        Promoters
+                        {t('footer.linkPromoters')}
                     </a>
-                    <a href="https://mysterria.net/store" class="mysterria-footer-link">
+                    <a href={sitePath('/store')} class="mysterria-footer-link">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.15.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
-                        Shop
+                        {t('footer.linkShop')}
                     </a>
-                    <a href="https://mysterria.net/game" class="mysterria-footer-link">
+                    <a href={sitePath('/game')} class="mysterria-footer-link">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                        Play
+                        {t('footer.linkPlay')}
                     </a>
                     <a href="https://discord.gg/mysterria" class="mysterria-footer-link mysterria-discord-link">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0189 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/></svg>
