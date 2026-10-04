@@ -29,6 +29,12 @@ All Beyonder loot falls into one of four broad categories:
 The contents of a looted container **regenerate**. A structure that somebody else has already emptied is still worth visiting, and worth visiting again later. Exploration never runs out.
 :::
 
+:::tip[Daily Tides move the numbers]
+A server-wide Daily Tide can boost your chance of a chest yielding a recipe, page, potion, or scroll,
+speed up the pity counter below, or favor rarer ingredients and mineable nodes on a given day. See
+[Daily Tides](/guides/tides/) for what's running today.
+:::
+
 ---
 
 ### Potions
@@ -117,6 +123,8 @@ Once you select a focus category, the system tracks how many loot containers you
 - This resets after you receive the focused reward, and the pity counter starts again.
 
 **The value of N is shown to you in-game**, and it is not a single fixed number - it varies from case to case. Check your current counter rather than assuming. Either way, the system ensures no focused category can be indefinitely unlucky.
+
+On top of the category, you can also narrow your focus to a **specific Sequence range** (for example, only Sequence 0-3 rewards). This raises N substantially the rarer the range you pick, but it means your eventual guaranteed reward will actually be worth having rather than a common one.
 
 Choose your focus based on what you need most right now, and explore consistently to take advantage of the guarantee.
 

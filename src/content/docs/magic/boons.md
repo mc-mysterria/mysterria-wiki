@@ -33,7 +33,10 @@ This can happen through various means:
 
 ### How to progress boons?
 
-Boons can now be **progressed up to Sequence 5**.
+Boons can be **progressed down to Sequence 1**. Sequence 0 is a throne, not an ordinary advancement -
+it's claimed only through the same ascension system that crowns a pathway's god, never through sacrifice.
+
+You can also only hold **one Boon at a time**.
 
 To advance your Boon, you must:
 
@@ -43,6 +46,12 @@ To advance your Boon, you must:
 
 :::caution[Ingredient requirements]
 The ingredients must be appropriate for the Sequence you want to reach. You cannot sacrifice weak, low-Sequence ingredients to advance to a more powerful Boon level.
+:::
+
+:::note[Your Boon can't outrun your main pathway]
+If your Boon's sacrifice bar fills but the result would put it **ahead** of your primary pathway's own
+Sequence, the advancement is refused and your sacrifice progress resets to zero. Keep your main pathway
+moving if you want your Boon to keep climbing.
 :::
 
 ---

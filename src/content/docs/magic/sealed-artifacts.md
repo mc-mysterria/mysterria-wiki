@@ -28,6 +28,11 @@ Brewed potions that are not consumed within **2 days** of their creation will au
 
 Certain pathways can **craft Sealed Artifacts** directly using **Beyonder Chars**. This is a controlled process that allows those pathways to produce artifacts intentionally, though it requires the appropriate Chars and knowledge.
 
+:::tip[Daily Tides move the numbers]
+Both routes depend on finding potions or Chars in the first place, and a server-wide Daily Tide can
+boost chest loot chances on a given day. See [Daily Tides](/guides/tides/) for what's running today.
+:::
+
 ---
 
 ### What do they do?

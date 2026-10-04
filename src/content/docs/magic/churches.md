@@ -300,13 +300,19 @@ Default required effective anchor weight for full high-sequence Church support:
 
 | Leader sequence | Required effective anchors |
 | --- | ---: |
-| Sequence 0 | 50 |
+| Sequence 0 | 30 |
 | Sequence 1 | 38 |
 | Sequence 2 | 28 |
 | Sequence 3 | 25 |
 | Sequence 4 | 15 |
 
 These are targets, not member counts. For example, a Sequence 4 leader needs **15 effective anchors** for full support. That could come from many weaker members, fewer stronger members, or a mix of both. Same-pathway and adjacent-pathway members help reach the target faster.
+
+This same required-anchors figure is keyed to the Church leader's sequence, not each member's own sequence - so every member of a Sequence 0 leader's Church has their perks and madness floor relief measured against the Sequence 0 row above, whatever sequence they personally hold.
+
+:::note[Sequence 0 reads this number too]
+Reaching Sequence 0 itself requires your Church's effective anchor weight to reach **20** - and only counts a Church as yours if you are its leader, co-leader, or angel. That is lower than the **30** a seated god's Church needs for full madness floor relief, on purpose: see [Sequence 0](/magic/sequence-zero/) for the full ascension requirements, and the Madness Floor Relief section below for what that gap means for a fresh god.
+:::
 
 Example for a Sequence 4 leader:
 - Required target: **15** effective anchors
@@ -479,6 +485,10 @@ Default base madness floors:
 | 3 | 40% |
 | 4 | 25% |
 | 5-9 | 0% |
+
+:::note[A fresh god sits at a built-in floor]
+A seated god's relief is computed against the Sequence 0 row of the required-anchors table above (**30**), not against whatever anchor weight the [Sequence 0](/magic/sequence-zero/) ascension gate asked for to let them ascend in the first place (**20**). A freshly-ascended god whose Church still sits at that gate minimum only clears about 20/30 of the relief, so their 90% base floor only relieves down to roughly **30%** even with full leadership eligibility. Growing the congregation's effective anchor weight from 20 up to 30 is what clears the rest of it - the floor is not a bug, it is the price of standing above what a human mind is built to hold.
+:::
 
 Floor relief scales with:
 - Church saturation

@@ -6,7 +6,7 @@ sidebar:
   order: 2
 ---
 
-![Helpful image](../../../assets/magic/lotm.jpg)
+![The twenty-two pathways](https://in.ikeepcalm.me/M69IeJ25A0b4.jpg)
 
 ### What is a magic pathway?
 
@@ -26,6 +26,19 @@ All pathways progress from **Sequence 9** (weakest) to **Sequence 0** (most powe
     - 2 - Angel
     - 1 - King of Angels
     - 0 - Beyond
+
+Each of these seats is finite, and the cap is set **per pathway** - your 22 choices don't share a pool:
+
+| Sequence | Seats available (per pathway) |
+|----------|-------------------------------|
+| 3        | 18                             |
+| 2        | 9                               |
+| 1        | 3                               |
+| 0        | 1 - the pathway's single throne |
+
+Sequences 9 through 4 are uncapped. Reaching Sequence 0 isn't a normal potion advancement either -
+it's a full ascension with its own gate, ceremony, and ongoing upkeep. See [Sequence 0](/magic/sequence-zero/)
+for the complete system.
 
 ### Is there a way to change pathways?
 
@@ -48,10 +61,10 @@ You can learn more on the official wiki of the web novel. If you don't want to g
 
 Yes - through **Purification**, a spell of the **Sun** pathway. It is the only way to move backwards.
 
-A Sun Demigod must stay **close to you for 10 minutes**, after which you regress by **one Sequence** (for example, Sequence 7 back to Sequence 8). It can be applied repeatedly: a second use takes you from 8 to 9, and a further use strips a Sequence 9 Beyonder of their powers entirely, returning them to being an ordinary human.
+A Sun Demigod must stay **close to you for roughly 2.5 minutes**, after which you regress by **one Sequence** (for example, Sequence 7 back to Sequence 8). It can be applied repeatedly: a second use takes you from 8 to 9, and a further use strips a Sequence 9 Beyonder of their powers entirely, returning them to being an ordinary human.
 
 :::note[It requires cooperation in practice]
-There is no consent prompt, but you have to stay still and close to the Sun Beyonder for the full ten minutes - walking away interrupts it. In practice Purification is a service one player performs for another, not something that can be done to an unwilling target.
+There is no consent prompt, but you have to stay still and close to the Sun Beyonder for the full channel - walking away interrupts it. In practice Purification is a service one player performs for another, not something that can be done to an unwilling target.
 :::
 
 ### How do different pathways differ?

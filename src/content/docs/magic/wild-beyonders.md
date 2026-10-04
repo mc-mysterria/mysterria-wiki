@@ -6,7 +6,7 @@ sidebar:
     order: 12
 ---
 
-![Helpful image](../../../assets/magic/lotm.jpg)
+![A Wild Beyonder](https://in.ikeepcalm.me/26nikKgnkLJs.webp)
 
 ### What are Wild Beyonders?
 
@@ -21,6 +21,11 @@ They range in power from **Sequence 9** to **Sequence 5** - no Demigods or above
 Wild Beyonders do **not** appear near the world center (0, 0) or in safe zones. They claim the **outer reaches of the world** as their domain, spawning in a large radius away from the center.
 
 If you want to find them - or avoid them - head away from spawn and into the wilderness.
+
+:::tip[Daily Tides move the numbers]
+A server-wide Daily Tide can double both the Wild Beyonder spawn rate and the number that can exist
+at once for 24 hours. See [Daily Tides](/guides/tides/) for what's running today.
+:::
 
 ---
 
@@ -43,7 +48,7 @@ Wild Beyonders are, to put it simply, **pathists**. Know your relationship to th
 
 ### Trading
 
-Peaceful Wild Beyonders can be traded with, but they don't come cheap. They require **both Money and Energy Shards** in exchange for their goods.
+Peaceful Wild Beyonders can be traded with, but they don't come cheap. They require **Money together with every one of the server's custom currencies at once** - currently Energy Shards and VerlDor - not just one or the other.
 
 What can you get from them?
 - **Beyonder Ingredients**
@@ -61,7 +66,7 @@ Wild Beyonders were introduced specifically to address a real problem: many Path
 **Wild Beyonders are fully valid targets for these abilities.** They count as players for the purposes of all pathway mechanics:
 
 - **Hanged Man** - Kill them to Graze their souls and steal abilities
-- **Door / White Tower** - Observe them to Record or Replicate their spells
+- **Door** - Observe them to Record or Replicate their spells
 - **Fool** - Defeat them to convert them into Marionettes with abilities
 - **Abyss** - Slaughter them to gain Acting Points freely
 
@@ -74,13 +79,15 @@ If your Pathway requires you to hunt other Beyonders to advance, Wild Beyonders 
 If you engage a Wild Beyonder in combat - whether by choice or because you are from an opposing Pathway - be prepared for a serious fight.
 
 :::danger[They are stronger than you]
-Wild Beyonders simulate full player combat and use their Pathway abilities against you. Their abilities are **20% more powerful** than yours and have **lower cooldowns**. Do not underestimate them based on their Sequence alone.
+Wild Beyonders simulate full player combat and use their Pathway abilities against you, with **20% shorter cooldowns** than a player using the same spells. Do not underestimate them based on their Sequence alone.
 :::
 
-There is one more critical detail:
+There is one small mercy:
 
-:::danger[They hold grudges]
-If you die during a fight with a Wild Beyonder and return, **they will continue to hunt you**. They do not reset or forget. Think carefully before provoking one - or make sure you can finish the job.
+:::note[They don't hold grudges]
+If you die during a fight with a Wild Beyonder, it loses track of you - dying or disconnecting clears
+its target. It won't come looking for you specifically when you return. The danger resets with you;
+it doesn't carry over.
 :::
 
 **Rewards for defeating them** include acting points, Beyonder drops, and other spoils appropriate to their Sequence and Pathway. Higher-Sequence Wild Beyonders are more dangerous, but their rewards reflect that risk.

@@ -72,6 +72,7 @@ If the chant is completed successfully:
 - The response request expires after **2 minutes**
 - If the name belongs to a Church participant, the chant also counts as an external Church prayer
 - If the chanter is eligible to join that Church, the chanted participant may offer them an invitation
+- The chanted player - the one whose name was just completed, not the chanter - is credited with the legendary deed "Your honorific invoked," one of the deeds that counts toward [Sequence 0](/magic/sequence-zero/)'s legendary-deeds requirement
 
 ---
 
@@ -100,4 +101,10 @@ Chanting a Deity's name still opens the **standard response menu** for the Deity
 
 :::tip[The effect triggers unconditionally]
 The special chanter effect does not require the Deity to respond or be online. The blessing manifests the moment the chant is completed successfully, independently of any action the Deity takes.
+:::
+
+Each pathway's blessing is defined once, as an ambient particle/sound preset plus up to **2 capped potion effects** on the chanter, lasting up to **120 seconds**. A pathway can ship a fully custom blessing in code instead of the configured one, but every throne always has one or the other - no god is ever blessing-less.
+
+:::note[The blessing has its own cooldown - shared by every chanter]
+Each pathway's blessing has its own cooldown, by default **60 minutes** (never configurable below 30). It is **shared across every chanter of that god**, not tracked per player: if someone else chanted that Deity's name within the cooldown window, your completed chant still reaches the Deity through the normal response menu, but the special blessing itself stays silent until the cooldown clears.
 :::

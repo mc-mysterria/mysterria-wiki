@@ -99,7 +99,7 @@ Every player has a **unique, randomly assigned ritual**. Ritual requirements usu
 **Reaching Sequence 9 requires no ritual at all.** You can drink your very first potion freely, with no ritual completed and no Madness gained. Rituals only start to matter when you advance *beyond* Sequence 9.
 :::
 
-When advancing to **Sequence 8 through 6**, the ritual is optional - but skipping it **increases your Madness**, including a permanent component that can never be removed. When advancing to **Sequence 5 or stronger**, completing the ritual is **mandatory**.
+From **Sequence 8 onward**, the ritual is never a hard requirement - you can always advance without it - but skipping it or leaving it incomplete **increases your Madness** in proportion to how much of it you left undone, including a permanent component that can never be removed. A fully-skipped ritual costs the most Madness; a mostly-completed one costs proportionally less. This holds at every Sequence - there is no point where completing the ritual becomes mandatory.
 
 See [Mutation](/magic/mutation) for the exact costs.
 

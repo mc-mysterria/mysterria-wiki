@@ -10,9 +10,15 @@ sidebar:
 
 ### What is the Crimson Moon?
 
-The **Crimson Moon** is a random world event that can occur on any night. It typically appears approximately **once every 7 in-game days**, though the exact timing is never guaranteed - it can strike sooner or later without warning.
+The **Crimson Moon** is a random world event that can occur on any night. Each qualifying night rolls independently with a **20% chance** of becoming a Crimson Moon - so on average you can expect one roughly every 5 nights, though the exact timing is never guaranteed and it can strike sooner or later without warning.
 
 When the Crimson Moon rises, the rules of the night change entirely.
+
+:::tip[The "Crimson" Daily Tide]
+One day in the weekly Daily Tide rotation is named Crimson, and it multiplies tonight's roll chance
+by 5x - effectively guaranteeing a Crimson Moon that night. See [Daily Tides](/guides/tides/) for
+when it's due.
+:::
 
 ---
 
@@ -22,7 +28,7 @@ When the Crimson Moon rises, the rules of the night change entirely.
 Beds will not work for the duration of the event. You must survive until morning.
 
 **Creature spawn rates are significantly increased.**
-Both ordinary mobs and Beyonder Creatures appear far more frequently than usual. Do not underestimate the danger - what would normally be a quiet night can quickly become overwhelming.
+Both ordinary mobs and Beyonder Creatures appear far more frequently than usual - custom Beyonder Creature spawn rates are boosted roughly 2.5x for the duration. Do not underestimate the danger - what would normally be a quiet night can quickly become overwhelming.
 
 :::danger[Stay alert]
 The combination of no sleep and increased spawns makes the Crimson Moon one of the most dangerous times to be outside. Make sure you have armor, potions, and an escape route before nightfall if you plan to take advantage of this event.
@@ -42,16 +48,15 @@ Alongside ingredients, you can also hook **Beyonder mobs** - creatures that will
 
 #### Fishing loot table
 
-Fishing uses a **weighted loot system**. Lower-value ingredients are much more likely to be caught, while rarer and more valuable resources have significantly lower odds. That said, even a lucky low-sequence player can reel in something genuinely useful.
+Every catch during the event rolls independently, in this order:
 
-| Rarity | Examples | Catch chance |
-|--------|----------|-------------|
-| Common | Low-tier ingredients, common materials | High |
-| Uncommon | Mid-tier ingredients | Moderate |
-| Rare | High-value ingredients, Beyonder Chars | Low |
-| Special | Beyonder mobs (hostile!) | Variable |
+| Outcome | Chance | Notes |
+|---------|--------|-------|
+| Hostile Beyonder mob | 10% | Replaces the catch; attacks immediately when reeled in |
+| Beyonder ingredient | 15% | Replaces the catch; weighted toward common, low-Sequence ingredients, but rarer ones are possible |
+| Normal fish | Remainder | An ordinary vanilla catch |
 
-The higher your luck and the deeper into the event the night goes, the better your chances of finding something worthwhile. Fishing during the Crimson Moon is a high-risk, high-reward activity - not recommended for new Beyonders who aren't ready to fight what they catch.
+Fishing during the Crimson Moon is a high-risk, high-reward activity - not recommended for new Beyonders who aren't ready to fight what they catch.
 
 ---
 

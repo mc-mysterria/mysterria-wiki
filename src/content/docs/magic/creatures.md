@@ -25,7 +25,9 @@ Some Beyonder Creatures are entirely unique entities with **custom models and AI
 - Health visible in the action bar
 - Their attacks deal damage directly to your soul
 - Always grant experience and acting points when killed
-- **High drop chance: 50–80% chance of dropping Beyonder ingredients on death**
+- **Much higher ingredient drop chance** - these are MythicMobs-backed, and that multiplies their
+  ingredient drop odds several times over compared to a badge creature of the same strength, up to a
+  guaranteed drop for the most common ingredient tier
 
 ---
 
@@ -36,7 +38,8 @@ Other Beyonder Creatures are standard vanilla mobs enhanced with a **Beyonder ba
 **Key traits of badge creatures:**
 - Appear as normal Minecraft mobs with a badge indicator
 - Still have increased health, stronger attacks, and Beyonder properties
-- Lower drop rates compared to custom creatures
+- Lower drop rates compared to custom creatures, though every kill that drops nothing builds a small
+  pity bonus toward the next one, so a drought can't last forever
 
 ---
 
@@ -45,6 +48,11 @@ Other Beyonder Creatures are standard vanilla mobs enhanced with a **Beyonder ba
 Every type of Beyonder Creature has a list of **biomes** it can spawn in. If you have stayed in a certain zone for two weeks and haven't met a single Beyonder Creature - it means that area is not claimed by any type. A location to the north with a different biome might have several Beyonder Creatures at once!
 
 We will not disclose the list of their biomes. If you are interested, you will have to discover it on your own. Maybe in the future some abilities will be able to decipher and confirm your wild guesses!
+
+:::tip[Daily Tides move the numbers]
+Spawn rates and ingredient drop chances aren't fixed day to day - a server-wide Daily Tide can boost
+both for 24 hours. See [Daily Tides](/guides/tides/) for what's running today.
+:::
 
 ---
 
