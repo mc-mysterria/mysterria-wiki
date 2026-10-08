@@ -15,12 +15,20 @@ export default defineConfig({
             },
         },
     },
-    adapter: vercel({
-        webAnalytics: {
-            enabled: true,
-        },
-        maxDuration: 8,
-    }),
+    /*
+     * DOCKER_BUILD=1 drops the Vercel adapter so `astro build` emits a plain
+     * static dist/ for the self-hosted container. Left unset the adapter still
+     * applies, so the same source keeps building on Vercel - which is what lets
+     * the two run side by side while DNS moves across.
+     */
+    adapter: process.env.DOCKER_BUILD
+        ? undefined
+        : vercel({
+            webAnalytics: {
+                enabled: true,
+            },
+            maxDuration: 8,
+        }),
     site: 'https://wiki.mysterria.net',
     integrations: [
         sitemap(),
