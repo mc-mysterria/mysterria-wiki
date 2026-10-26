@@ -1,20 +1,24 @@
 ---
-title: "Crafting Guide"
-description: "Complete guide to crafting firearms, parts, and the Weaponsmith Table"
+title: "Getting a Gun"
+description: "The Weaponsmith Table, Gunsmith's Notes, blueprints, forging parts and assembling a gun"
 sidebar:
-    label: 🔨 Crafting
+    label: 🔨 Getting a Gun
     order: 2
 ---
 
 import { Aside } from '@astrojs/starlight/components';
 
-### Crafting System
+### The path to a gun
 
-The mystical firearms crafting system is a multi-tier process that requires specialized components and a dedicated crafting station.
+1. **Gunsmith's Notes** from chests, trial vaults, Beyonder creatures and bounties.
+2. **A blueprint** - drafted from Notes at the table, or found whole now and then.
+3. **The parts** - forged at the table from gunsmith materials, with the blueprint in your inventory.
+4. **The gun** - assembled at the table from its parts. This uses up the blueprint.
 
-### Weaponsmith Table
+Nothing on this path is random at its core: every qualifying chest gives Notes, so you always know how far you are
+from your next gun.
 
-The Weaponsmith Table is your weapon assembly station where you combine weapon parts to create complete firearms.
+### The Weaponsmith Table
 
 import weaponsmithTable from "../../../assets/firearms/weaponsmithtable.png";
 
@@ -22,167 +26,139 @@ import weaponsmithTable from "../../../assets/firearms/weaponsmithtable.png";
     <img
         src={weaponsmithTable.src}
         width="60%"
-        alt="Weaponsmith Table"
+        alt="Weaponsmith Table recipe"
     />
 </p>
 
-**Recipe:**
+**Recipe:** 1 Smithing Table in the middle, 4 Iron Blocks and 4 Redstone Blocks around it.
 
-**Ingredients:**
-- 1 Smithing Table
-- 4 Iron Blocks
-- 4 Redstone Blocks
+Right-click a placed table to open it. Its pages:
 
-**How to Use:**
+| Page | What it does |
+|------|--------------|
+| **Blueprints** | Forge a gun's parts (carry its blueprint) |
+| **Draft** | Turn Gunsmith's Notes into a blueprint; salvage blueprints and spare parts |
+| **Assembly** | Build the gun from its parts |
+| **Workshop** | Fit attachments and a Kill Tally |
+| **Upgrade** | Give the gun a Beyonder grade |
+| **Ammunition** | Press rounds, make special rounds, bind Beyonder rounds |
+| **The Vortex** | (Demigod table only) the ritual that makes the Inevitable Gun |
 
-1. Place the Weaponsmith Table in your world
-2. Gather all required weapon parts in your inventory
-3. **Right-click** the table to view craftable weapons
-4. **Shift + Right-Click** to assemble the weapon
-5. The completed weapon appears in your inventory!
+**Demigod Weaponsmith Table.** Right-click a table with a Beyonder potion of **Sequence 4 or stronger** to raise it to a
+Demigod table (the potion is used up). Winter is Coming and the Cannon Gun can only be assembled there, and the
+strongest Beyonder grades (3 to 0) can only be applied there.
 
-<Aside type="tip">
-The Weaponsmith Table will only show weapons you have all the parts for. Missing parts? They won't appear in the crafting menu.
-</Aside>
+### Gunsmith's Notes
 
-### Crafting Brass
+Notes come in three tiers. Every qualifying chest or vault holds Notes of its tier the first time it is opened:
 
-Brass is the fundamental material for firearms and ammunition. You'll need lots of it!
+| Where | Notes |
+|-------|-------|
+| Village chests (houses too), ruined portals, igloos, underwater ruins, shipwrecks, pillager outposts, desert and jungle temples | **Notes I** |
+| Strongholds, woodland mansions, mineshafts, buried treasure, dungeons | **Notes II** |
+| Trial chamber vaults | **Notes II** |
+| Ancient cities, end cities, bastions, Nether fortresses | **Notes III** |
+| Ominous trial vaults | **Notes III** |
+| Beyonder creatures (15% per kill) | **Notes II**, or **Notes III** from Sequence 4 and stronger |
+| Bounties and the weekly challenge | see [Bounties, Mastery & Rewards](/firearms/progression/) |
 
-import brass from "../../../assets/firearms/brass.png";
+On top of the Notes, a chest has a **2.5%** chance of a whole gun blueprint and **2.5%** of an attachment blueprint
+(trial vaults 3% each, ominous vaults twice that). Beyonder creatures sometimes carry an attachment blueprint too.
 
-<p align="center">
-    <img
-        src={brass.src}
-        width="60%"
-        alt="Brass Crafting"
-    />
-</p>
+`/mwblueprints` shows the Notes you carry and what they draft.
 
-**Recipe:** 3 Copper Ingots + 1 Gold Ingot = **4 Brass**
+### Drafting a blueprint
+
+On the **Draft** page, click a blueprint to draft it. It costs Notes of its gun's tier:
+
+| | Tier I | Tier II | Tier III |
+|---|--------|---------|----------|
+| **Gun blueprint** | 12 Notes I | 20 Notes II | 30 Notes III |
+| **Attachment blueprint** | 4 Notes I | 6 Notes II | 10 Notes III |
+
+A **higher-tier Note pays for a lower tier**, and the lowest ones you can use are spent first.
+
+| Tier | Guns |
+|------|------|
+| **I** | Klein's Repeater, Deathknell, Mystical Shotgun |
+| **II** | Steam-Pressured Rifle, Le Mat Carbine, Steam Chatterbox |
+| **III** | Winter is Coming, Cannon Gun (and the Inevitable Gun's attachments) |
+
+**Salvage.** Lay a blueprint you don't need in the salvage tray: it gives back half its draft cost in Notes. Spare
+weapon parts go there too and give back half of the materials they took to forge. A window asks you to confirm
+first, with a slider for how many.
 
 <Aside>
-Brass is used extensively in ammunition crafting. Consider setting up a copper farm for sustainable production!
+A blueprint is used up by what it makes: a gun blueprint when the gun is assembled, an attachment blueprint when
+the attachment is fitted. Forging parts doesn't use it, so you can forge spares.
 </Aside>
 
-### Klein's Repeater
+### Gunsmith materials
 
-Klein's Repeater is the only weapon you can craft from scratch. Other weapons require parts from dungeon rewards.
+Craft these on an ordinary crafting table:
 
-**Required Parts:**
+| Material | Recipe | Makes |
+|----------|--------|-------|
+| **Brass** | 3 Copper Ingots + 1 Gold Ingot | 4 |
+| **Tempered Steel** | 4 Iron Ingots, 2 Coal Blocks, 1 Blaze Powder | 2 |
+| **Precision Gear** | 4 Brass around 1 Tempered Steel | 2 |
+| **Coiled Spring** | 2 String, 1 Tempered Steel | 2 |
+| **Gunsmith Oil** | 2 Slime Balls, 1 Ink Sac, 1 Glass Bottle | 2 |
+| **Aether Filament** | 6 Copper Ingots, 2 Glowstone Dust, 1 Phantom Membrane | 2 |
+| **Resonant Core** | 1 Echo Shard, 2 Volatile Essence, 1 Diamond, 1 Aether Filament | 1 |
+| **Cleaning Kit** | 1 White Wool, 1 Gunsmith Oil, 1 Stick | 2 |
+| **Suppressor** | 2 Tempered Steel, 2 White Wool, 1 Coiled Spring | 1 |
 
-You need 4 parts to build Klein's Repeater:
+**Volatile Essence** can't be crafted. It drops from fights:
 
-import kleinBarrel from "../../../assets/firearms/kleinbarrel.png";
-import kleinCylinder from "../../../assets/firearms/kleincylinder.png";
-import kleinFrame from "../../../assets/firearms/kleinframe.png";
-import kleinGrip from "../../../assets/firearms/kleingrip.png";
+| Mob | Chance |
+|-----|--------|
+| Ghast | 20% |
+| Evoker | 25% |
+| Wither Skeleton | 5% |
+| Beyonder creatures | 12% |
 
-<p align="center">
-    <img
-        src={kleinBarrel.src}
-        width="45%"
-        alt="Klein Barrel"
-    />
-    <img
-        src={kleinCylinder.src}
-        width="45%"
-        alt="Klein Cylinder"
-    />
-</p>
+Ordinary mobs give each player at most **12 Essence a day**, and mobs from spawners give none. Beyonder creatures,
+bounties and the weekly challenge have no limit.
 
-<p align="center">
-    <img
-        src={kleinFrame.src}
-        width="45%"
-        alt="Klein Frame"
-    />
-    <img
-        src={kleinGrip.src}
-        width="45%"
-        alt="Klein Grip"
-    />
-</p>
+### Forging parts
 
-**Part Recipes:**
+On the **Blueprints** page, with the gun's blueprint in your inventory, forge its parts one by one. Each part costs:
 
-| Part | Recipe | Materials Needed |
-|------|--------|------------------|
-| **Repeater Barrel** | 3 Iron Ingots + 1 Lapis Lazuli | 3 Iron, 1 Lapis |
-| **Repeater Cylinder** | 2 Iron Ingots + 1 Redstone | 2 Iron, 1 Redstone |
-| **Repeater Frame** | 2 Iron Ingots + 1 Lapis Lazuli | 2 Iron, 1 Lapis |
-| **Repeater Grip** | 1 Dark Oak Log + 2 Iron Ingots | 1 Dark Oak, 2 Iron |
+| | Tier I | Tier II | Tier III |
+|---|--------|---------|----------|
+| Tempered Steel | 6 | 9 | 16 |
+| Precision Gear | 6 | 9 | 16 |
+| Coiled Spring | 3 | 5 | 8 |
+| Gunsmith Oil | 2 | 3 | 6 |
+| Brass | 9 | 12 | 24 |
+| Aether Filament | - | 3 | 8 |
+| Volatile Essence | - | 4 | 9 |
+| Resonant Core | - | - | 1 |
+| Breeze Rod | 1 | 3 | - |
+| Echo Shard | - | - | 1 |
+| Netherite Ingot | - | - | 2 |
 
-**Total Materials Required:**
+| Gun | Parts |
+|-----|-------|
+| Klein's Repeater | 4 |
+| Deathknell | 5 |
+| Mystical Shotgun | 4 |
+| Steam-Pressured Rifle | 5 |
+| Le Mat Carbine | 5 |
+| Steam Chatterbox | 4 |
+| Winter is Coming | 3 |
+| Cannon Gun | 3 |
 
-To craft one complete Klein's Repeater from scratch:
+### Assembling the gun
 
-- **9 Iron Ingots**
-- **2 Lapis Lazuli**
-- **1 Redstone**
-- **1 Dark Oak Log**
+On the **Assembly** page, with all of a gun's parts and its blueprint in your inventory, build the gun. Winter is Coming
+and the Cannon Gun also take a **Heavy Core**, and they can only be assembled at a **Demigod table**.
 
-**Assembly Steps:**
-
-1. Craft all 4 parts using a regular crafting table
-2. Place the Weaponsmith Table
-3. Ensure all 4 parts are in your inventory
-4. Right-click the Weaponsmith Table
-5. Shift + Right-Click to assemble Klein's Repeater
+The Inevitable Gun is never assembled: it's what a Cannon Gun becomes in the Vortex ritual. See
+[Inevitable Gun](/firearms/inevitable-gun/).
 
 <Aside type="tip">
-**Resource Efficiency Tip:** Before crafting multiple repeaters, ensure you have a steady supply of iron and lapis lazuli. Consider setting up an iron farm and mining at the right Y-levels for lapis!
+Every gun remembers who forged it and when. `/mwinspect` opens the card of the gun in your hand: its history and how
+it's built.
 </Aside>
-
-### Deathknell Revolver & Steam-Pressured Rifle
-
-These advanced weapons cannot be crafted from scratch. Their parts are obtained as rewards from dungeons (nodes).
-
-**How to Obtain Parts:**
-
-1. Complete dungeon nodes on the server
-2. Receive weapon parts as rewards
-3. Collect all required parts for your desired weapon
-4. Assemble at the Weaponsmith Table
-
-<Aside type="caution">
-**Node Rewards Only:** Deathknell Revolver and Steam-Pressured Rifle parts are exclusive rewards from dungeon completions. Plan your dungeon runs accordingly!
-</Aside>
-
-**Required Parts:**
-
-**Deathknell Revolver:**
-- Revolver Barrel
-- Revolver Cylinder
-- Revolver Frame
-- Revolver Grip
-
-**Steam-Pressured Rifle:**
-- Rifle Barrel
-- Rifle Stock
-- Rifle Receiver
-- Rifle Trigger Assembly
-
-### Crafting Strategy
-
-**For Beginners:**
-
-1. **Start with Klein's Repeater** - It's craftable and effective
-2. **Gather iron and lapis** - Set up basic resource collection
-3. **Craft brass early** - You'll need it for ammunition
-4. **Build the Weaponsmith Table** - Central to all weapon assembly
-
-**For Advanced Players:**
-
-1. **Farm dungeons** - Collect parts for advanced weapons
-2. **Stockpile brass** - Special ammunition requires significant brass
-3. **Maintain multiple weapons** - Each excels in different situations
-4. **Optimize part storage** - Organize weapon parts for quick access
-
-### Next Steps
-
-Now that you know how to craft weapons, learn about:
-
-- [Ammunition Guide](/firearms/ammunition/) - Craft bullets and special rounds
-- [Klein's Repeater](/firearms/kleins-repeater/) - Detailed guide for your first weapon
-- [Overview](/firearms/) - Combat mechanics and usage tips

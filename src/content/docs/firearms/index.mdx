@@ -1,6 +1,6 @@
 ---
 title: "Firearms Overview"
-description: "Learn the basics of mystical firearms - controls, HUD, and combat mechanics"
+description: "Mystical firearms on Mysterria: the nine guns, how to use them, and how gun combat works"
 sidebar:
     label: 🔫 Overview
     order: 1
@@ -8,102 +8,87 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-### What is Mystical Weaponry?
+### What are mystical firearms?
 
-Mystical Weaponry brings the legendary firearms from Lord of the Mysteries into Minecraft! Craft powerful weapons, load them with specialized ammunition, and experience a whole new dimension of combat.
+Mysterria has nine firearms from the world of Lord of the Mysteries, from Klein Moretti's revolver to the
+Inevitable Gun. You build them yourself at a **Weaponsmith Table**, feed them ammunition you craft, and grow them
+with attachments, Beyonder grades, skins and mastery.
 
-### What You'll Need
+A gun is a sidearm for everyone: a mortal can carry one, and a Beyonder uses it next to their pathway's abilities.
 
-To get started with mystical firearms:
+### Where to start
 
-1. **A Weaponsmith Table** - Special crafting station for assembling weapons
-2. **Weapon Parts** - Components to build your weapon
-3. **Ammunition** - Bullets to fire your weapon
-
-### How to Use Weapons
-
-**Basic Controls:**
-- **Right-Click:** Fire
-- **Left-Click:** Reload
-
-**Firing Your Weapon:**
-1. Hold the weapon in your hand
-2. Ensure you have ammunition loaded
-3. Aim at your target
-4. Right-click to fire
-5. Watch the action bar for your current ammo count
-
-**Understanding the HUD:**
-
-The action bar (above your hotbar) shows:
-- **Current Ammo / Max Ammo** (e.g., "Klein's Repeater 4/6")
-- **Reload Status** (yellow "Reloading..." during reload)
-- **Ammo Type** (colored text showing your current ammunition effect)
-- **Special Warnings** (red "No ammo!" when empty)
-
-### Weapon Comparison
-
-| Weapon | Type | Damage | Magazine | Range | Reload Time | Fire Rate | Availability |
-|--------|------|--------|----------|-------|-------------|-----------|--------------|
-| **Klein's Repeater** | Repeater | 4.0 | 6 rounds | 40 blocks | 3s (full) | 1/second | Craftable |
-| **Deathknell Revolver** | Revolver | 8.0 | 6 rounds | 60 blocks | 0.8s (each) | 0.9s/shot | Dungeon Reward |
-| **Steam-Pressured Rifle** | Rifle | 14.0 | 5 rounds | 100 blocks | 4s (full) | 1.5s/shot | Dungeon Reward |
+1. **Craft a Weaponsmith Table** - your workshop for everything gun-related. See [Getting a Gun](/firearms/crafting/).
+2. **Collect Gunsmith's Notes** - village chests, temples, strongholds and trial vaults hold them. Notes become
+   blueprints.
+3. **Forge the parts and assemble the gun** at the table.
+4. **Craft ammunition** - see [Ammunition](/firearms/ammunition/).
 
 <Aside type="tip">
-**Klein's Repeater** is the only weapon you can craft from scratch. **Deathknell Revolver** and **Steam-Pressured Rifle** require parts obtained as rewards from dungeons (nodes).
+Start with a **tier I gun** (Klein's Repeater, Deathknell or the Mystical Shotgun): its blueprint costs the fewest Notes
+and its parts only need farmable materials.
 </Aside>
 
-### Combat Mechanics
+### Controls
 
-**Accuracy System:**
+| Action | Key |
+|--------|-----|
+| **Fire** | Right-click (Steam Chatterbox: hold it) |
+| **Reload** | Left-click |
+| **Switch mode** (LeMat barrel, decay modes) | Swap hands (F) |
+| **Scope** (Steam-Pressured Rifle) / **aim down sights** (other guns) | Sneak |
+| **Inspect the gun** | Swap hands (F); sneak + F on guns that switch modes |
+| **Open the Ammo Pouch** | Right-click the pouch |
+| **Raise the Field Tablet** | Right-click the tablet |
 
-Your accuracy varies based on your movement:
+With the [HUD mod](/firearms/hud-mod/) you also get a reload key with an ammo wheel, an ability wheel, aim down sights
+and a proper scope. Without it the server shows damage numbers, hit markers and an ammo dial itself; see
+[Feedback & Settings](/firearms/feedback-settings/).
 
-- **Standing Still:** Perfect accuracy (0° spread)
-- **Moving:** 4° bullet spread
-- **In Air (jumping/falling):** 8° bullet spread
+### The nine guns
 
-<Aside type="tip">**Accuracy Matters:** Stand still for best precision when taking important shots!</Aside>
+| Gun | Tier | Damage | Magazine | Range | Shot every | How you get it |
+|-----|------|--------|----------|-------|------------|----------------|
+| [Klein's Repeater](/firearms/kleins-repeater/) | I | 7 | 6 | 40 | 0.55 s | Blueprint |
+| [Deathknell](/firearms/deathknell-revolver/) | I | 12 | 6 | 60 | 0.6 s | Blueprint |
+| [Mystical Shotgun](/firearms/mystical-shotgun/) | I | 8 pellets × 3 | 6 | 18 | 1.0 s | Blueprint |
+| [Steam-Pressured Rifle](/firearms/steam-rifle/) | II | 20 | 5 | 100 | 1.2 s | Blueprint |
+| [Le Mat Carbine](/firearms/lemat-carbine/) | II | 8 / 40 buckshot | 9 + 1 | 50 / 20 | 0.5 s | Blueprint |
+| [Steam Chatterbox](/firearms/steam-chatterbox/) | II | 3 | 30 | 40 | 0.2 s (automatic) | Blueprint |
+| [Winter is Coming](/firearms/winter-is-coming/) | III | 12 | 6 | 70 | 0.9 s | Blueprint, Demigod table |
+| [Cannon Gun](/firearms/cannon-gun/) | III | 16 | 5 | 45 | 1.1 s | Blueprint, Demigod table |
+| [Inevitable Gun](/firearms/inevitable-gun/) | III | 22 | 5 | 55 | 1.1 s | The Vortex ritual |
 
-**Reload Mechanics:**
+The tier sets what a gun's blueprint and parts cost.
 
-Different weapons have different reload systems:
+<Aside>
+**Against Beyonder players** the damage above doesn't apply: a hit follows the Circle of Imagination's sequence rules
+(your Sequence, the gun's Beyonder grade, the target's defences). See [Upgrades & Upkeep](/firearms/upgrades/).
+</Aside>
 
-**Full Magazine Reload (Klein's Repeater):**
-- Loads all rounds at once
-- 3-second reload time
-- Cannot interrupt - must complete full reload
+### How gun combat works
 
-**Sequential Reload (Deathknell Revolver & Steam-Pressured Rifle):**
-- Loads one round at a time
-- Can interrupt reload to fire
-- Tactical advantage - partial reload possible
+**Accuracy.** Standing still, every shot goes exactly where you aim. Moving adds up to **4°** of spread, and being in
+the air up to **8°**. Attachments, mastery and a clean gun reduce it; a fouled gun adds to it.
 
-### Combat Tips
+**Headshots.** A bullet that lands on the head deals **×1.5** damage (shotgun pellets don't count).
 
-**Ammo Management:**
-- Carry multiple ammo types for different situations
-- Use Exorcist rounds for the Nether and undead mobs
-- Save Implosive rounds for bosses and tough enemies
+**Ammunition.** Every gun has its own rounds, and every kind of round has special variants: armor piercing, exorcist,
+aging and more. You choose what the gun loads.
 
-**Reload Timing:**
-- Klein's Repeater: Find cover and reload during safe moments
-- Deathknell/Rifle: Can interrupt reload to fire when threatened
+**Noise.** Shots are heard by players 28-48 blocks away (depending on the gun) and wake up mobs nearby. A Suppressor
+muffles most guns.
 
-**Visual Feedback:**
-- Colored particle trails show your bullet path
-- Impact effects on entities and blocks
-- Bullet crack sounds for near misses
+**Upkeep.** Every shot fouls the gun. A dirty gun spreads wider and can jam; a Cleaning Kit fixes it.
 
-**Range Management:**
-- Use Klein's Repeater for close to medium range combat
-- Deathknell Revolver excels at medium range
-- Steam-Pressured Rifle dominates at long range
+**Close to walls.** Step up to a wall and your character raises the gun so it doesn't poke through the wall.
 
-### Next Steps
+### What's next
 
-Ready to get your hands on these weapons? Check out:
-
-- [Crafting Guide](/firearms/crafting/) - Learn how to craft weapons and parts
-- [Ammunition Guide](/firearms/ammunition/) - Discover all 13 ammo types
-- [Individual Weapon Pages](/firearms/) - Detailed stats for each weapon
+- [Getting a Gun](/firearms/crafting/) - the Weaponsmith Table, Gunsmith's Notes, blueprints, parts and assembly
+- [Ammunition](/firearms/ammunition/) - rounds, special rounds and Beyonder rounds
+- [Upgrades & Upkeep](/firearms/upgrades/) - attachments, Beyonder grades, cleaning and suppressors
+- [Bounties, Mastery & Rewards](/firearms/progression/) - bounties, the weekly challenge, titles and skins
+- [Field Tablet](/firearms/field-tablet/) - your guns, rounds, mastery and bounties at a glance
+- [Feedback & Settings](/firearms/feedback-settings/) - combat feedback without the mod, `/mwsettings`, holsters
+- [HUD Mod](/firearms/hud-mod/) - the optional client mod

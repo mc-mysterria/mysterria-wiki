@@ -1,0 +1,100 @@
+---
+title: "Bounties, Mastery & Rewards"
+description: "Gun bounties, the weekly challenge, mastery, titles, skins, practice dummies and display stands"
+sidebar:
+    label: 🏆 Bounties & Rewards
+    order: 5
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+### Bounties
+
+Every day you get **3 daily bounties**, and every week **2 weekly bounties**: kill 30 mobs with any gun, land 10
+headshots with a random gun, kill Beyonder creatures, and so on. They pay Gunsmith's Notes and gunsmith materials;
+weekly bounties pay Notes II and III, Volatile Essence and Resonant Cores.
+
+- `/mwbounties` shows your bounties and their progress, and so does the [Field Tablet](/firearms/field-tablet/)'s
+  **Contracts** tab.
+- Claim finished bounties at a **Bounty Board**. Recipe: 3 Paper on top, then a Stick, a Lectern and a Stick.
+- **Swap a bounty** you don't like: shift-click it and confirm to trade it for another one you don't have yet. A daily swap
+  costs **3 Notes I** (twice a day), a weekly swap **3 Notes II** (once a week). The bounty's progress is lost.
+
+### The weekly challenge
+
+Each week one challenge runs for everyone: the most headshots, the most long shots with the Steam Rifle, the most
+kills with the Klein's Repeater, the most Beyonder kills and others. `/mwweekly` shows this week's challenge and the
+leaderboard. When the week ends the top 10 are rewarded:
+
+| Place | Reward |
+|-------|--------|
+| 1st | 10 Notes III, 2 Resonant Cores, 6 Volatile Essence, 6 Aether Filament |
+| 2nd | 6 Notes III, 1 Resonant Core, 4 Volatile Essence, 4 Aether Filament |
+| 3rd | 4 Notes III, 3 Volatile Essence, 3 Aether Filament, 6 Precision Gears |
+| 4th-10th | 3 Notes II, 6 Tempered Steel, 4 Precision Gears |
+
+If you're offline when the week ends, you get your reward the next time you join.
+
+### Mastery
+
+Each gun has its own mastery, 10 levels. A kill with it gives XP: **10** for a mob, **30** for a player, **40** for a
+Beyonder, **+5** for a headshot and **+5** for a shot from 40 blocks or more. Mobs from spawners don't count.
+
+Every level makes the gun a little better in your hands: **−1.5% spread** and **−4% jam chance** per level. `/mwmastery`
+shows your mastery of every gun.
+
+### Titles
+
+44 titles for gun deeds, from **Gunhand** (1,000 kills) and **Sharpshooter** (500 headshots) to **One With Every Gun**
+(every gun mastered). There's a title for mastering each gun, for collecting skins, for winning the weekly challenge,
+for bounties, and one for each mythic skin you raise to its third stage. `/mwtitles` shows your progress; titles
+you earn appear in the server's titles menu.
+
+### Skins
+
+`/mwskin` changes the skin of the gun in your hand. Every gun has four skins:
+
+| Gun | Standard (earn it) | Unlock challenge |
+|-----|--------------------|------------------|
+| Klein's Repeater | Nickel Presentation | 75 headshots |
+| Deathknell | Blued Steel | 200 kills |
+| Mystical Shotgun | Gravedigger | 150 kills within 4 blocks |
+| Steam-Pressured Rifle | Expedition | 50 kills from 40 blocks or more |
+| Le Mat Carbine | Gilded Ivory | 250 kills |
+| Winter is Coming | Copper Rose | 100 headshots |
+| Cannon Gun | Gunmetal | 300 kills |
+| Inevitable Gun | Desert Bone | 40 Beyonder kills |
+| Steam Chatterbox | Soot & Verdigris | 20 bursts that kill 3 or more |
+
+The challenge counts kills with that gun. **Premium**, **elite** and **mythic** skins come from the server store. They
+change how the gun looks in your hands, its tracers, muzzle flash and kill effects.
+
+**Mythic skins ascend.** A gun wearing a mythic skin counts a kill streak (players, hostile mobs, Beyonder creatures):
+at **3 kills** it reaches stage II, at **7** stage III, with new effects and an aura others can see. Dying resets the
+streak of every mythic gun you carry.
+
+The Cannon Gun and the Inevitable Gun share their skins.
+
+### Practice dummy
+
+**Recipe:** a Hay Bale on top, a Stick, an Armor Stand and a Stick in the middle, a Target block at the bottom.
+
+Place it to get a mannequin that takes real hits (armor, headshots, distance and grade all count) but never dies. Its
+name shows your last hit and the line under it your session: hits, headshots, damage per second. Right-click it to
+change its armor. Hits on a dummy don't count for mastery, bounties or titles.
+
+### Display stand
+
+**Recipe:** a Gold Ingot on top of 3 Smooth Stone Slabs.
+
+Right-click it with a gun to show the gun off, floating above the stand with its name, maker and kills. Others can
+right-click it to read the gun's card; you take it back by right-clicking with an empty hand.
+
+### Gun card
+
+`/mwinspect` opens the card of the gun in your hand (so does **Inspect** on the [Field Tablet](/firearms/field-tablet/)): page one its history (engraving, who forged it, kills, your
+mastery), page two how it's built (skin and ascension, Beyonder grade, attachments, condition).
+
+<Aside type="tip">
+Clicking the stand, the board or the dummy with a gun in your hand uses them instead of firing.
+</Aside>

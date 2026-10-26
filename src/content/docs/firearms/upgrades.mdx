@@ -1,0 +1,106 @@
+---
+title: "Upgrades & Upkeep"
+description: "Attachments, the Kill Tally, Beyonder grades, cleaning, suppressors and engraving"
+sidebar:
+    label: ⚙️ Upgrades & Upkeep
+    order: 4
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+### Attachments
+
+Every gun has **three attachments of its own**, each with **three levels**. Fit them on the Weaponsmith Table's
+**Workshop** page: put the gun in, click an attachment.
+
+- **Fitting** an attachment uses up its **attachment blueprint** (draft one from Notes, see
+  [Getting a Gun](/firearms/crafting/)). Raising it to the next level needs no blueprint.
+- A new level replaces the old one. Materials come from your inventory:
+
+| | Level 1 | Level 2 | Level 3 |
+|---|---------|---------|---------|
+| Tempered Steel | 6 | 10 | 16 |
+| Precision Gear | 8 | 14 | 20 |
+| Coiled Spring | 4 | 6 | 8 |
+| Gunsmith Oil | 2 | 4 | 6 |
+| Brass | 12 | 20 | 32 |
+| Aether Filament | - | 4 | 8 |
+| Volatile Essence | - | 4 | 8 |
+| Resonant Core | - | - | 2 |
+| Netherite Ingot | - | - | 2 |
+
+**What they do** (level 1 / 2 / 3):
+
+| Gun | Attachment | Effect |
+|-----|------------|--------|
+| Klein's Repeater | Lever Linkage | fires 7 / 13 / 20% faster |
+| | Tube Magazine | +1 / 2 / 3 rounds; reload 5 / 8 / 10% slower |
+| | Rune-Etched Barrel | +4 / 8 / 12% damage, +5 / 10 / 15% range |
+| Deathknell | Tolling Hammer | +5 / 10 / 15% damage; fires 3 / 5 / 7% slower |
+| | Fluted Cylinder | reloads 10 / 20 / 30% faster |
+| | Funeral Sights | spread −15 / 28 / 40%, range +8 / 15 / 22% |
+| Mystical Shotgun | Full Choke | spread −15 / 28 / 40%, range +5 / 10 / 15% |
+| | Extended Tube | +1 / 2 / 3 shells; reload 3 / 5 / 8% slower |
+| | Rune-Sprung Pump | fires 8 / 15 / 22% faster |
+| Steam-Pressured Rifle | Pressure Accelerator | +4 / 8 / 12% damage, fires 5 / 10 / 15% faster |
+| | Precision Bore | range +10 / 20 / 30%, spread −15 / 30 / 45% |
+| | Stripper Clip Guide | reloads 10 / 20 / 30% faster |
+| Le Mat Carbine | Rifled Choke | range +8 / 15 / 22%, spread −15 / 28 / 40% |
+| | Twin-Bore Linkage | reloads 10 / 18 / 25% faster |
+| | Grapeshot Cylinder | +5 / 10 / 15% damage; fires 3 / 5 / 8% slower |
+| Steam Chatterbox | Pressure Regulator | each shot builds 8 / 15 / 22% less pressure, and the gun climbs that much less |
+| | Extended Drum | +5 / 10 / 15 rounds; reload 5 / 10 / 15% slower |
+| | Cooling Jacket | spread −12 / 22 / 32%, range +5 / 10 / 15% |
+| Winter is Coming | Frost Coil | +4 / 8 / 12% damage |
+| | Rime Sights | spread −15 / 28 / 40%, fires 4 / 8 / 12% faster |
+| | Glacial Speed Cylinder | reloads 10 / 18 / 25% faster (+1 round at level 3) |
+| Cannon Gun | Recoil Dampener | recoil −25 / 45 / 65%, fires 3 / 6 / 10% faster |
+| | Ballast Chamber | +5 / 10 / 15% damage, +15 / 30 / 45% knockback; reload 5 / 8 / 10% slower |
+| | Long Bore Extension | range +15 / 30 / 45%, spread −10 / 20 / 30%; fires a little slower |
+| Inevitable Gun | Vortex Rifling | range +10 / 20 / 30%, spread −15 / 28 / 40% |
+| | Ossuary Chamber | +5 / 10 / 15% damage; recoil +10 / 15 / 20% |
+| | Hungering Breech | reloads 10 / 20 / 30% faster, fires 3 / 6 / 9% faster; recoil +5 / 10 / 15% |
+
+### Kill Tally
+
+Also on the Workshop page: a counter that keeps the gun's kills (shown on the gun and its card). It costs 4 Precision
+Gears, 2 Coiled Springs, 1 Gunsmith Oil, 4 Brass, 1 Clock and 1 Comparator.
+
+### Beyonder grades
+
+On the **Upgrade** page a gun takes a **Beyonder grade**, one sequence at a time: first Sequence 6, then 5, and so on
+down to 0. Each step uses **2 Beyonder ingredients** of that sequence (any pathway). Grades 3 to 0 need a **Demigod
+table**.
+
+**Why it matters:** in a fight between Beyonders, an ordinary gun fires **2 sequences below its wielder**. A graded
+gun carries its wielder's full power, up to its grade. A gun's grade never goes past its wielder; Beyonder rounds are
+the way to hit above your own sequence (see [Ammunition](/firearms/ammunition/)). The Upgrade page shows what each
+grade does in numbers.
+
+### Upkeep: fouling and cleaning
+
+Every shot fouls the gun a little (about 0.35% a shot; the Shotgun, Cannon Gun and Inevitable Gun more, the Steam Chatterbox only 0.05%, special rounds
+×1.5). Rain, water and sand speed it up.
+
+| Fouling | What happens |
+|---------|--------------|
+| **40%+** | Shots spread wider, up to +2.5° |
+| **60%+** | The gun may **jam** (up to 6% a shot); clearing it takes a moment |
+| **Under water** | Wet powder: a third of shots misfire |
+
+**Cleaning Kit:** click it onto the gun in your inventory to clean it fully. Recipe on
+[Getting a Gun](/firearms/crafting/).
+
+**Dying** fouls the guns you carry by 15% and marks them **battered** until cleaned.
+
+### Suppressor
+
+Click a Suppressor onto a gun in your inventory to fit it. A suppressed gun is heard at a quarter of the distance and
+much quieter, but it fouls 50% faster. A suppressor lasts **150 shots**. It doesn't fit the Cannon Gun or the
+Inevitable Gun.
+
+### Engraving
+
+Stand within 4 blocks of a Weaponsmith Table and run `/mwengrave <name>` to engrave a name on the gun in your hand (up to
+24 characters, 5 experience levels). It shows first in the gun's lore and on its card. `/mwengrave clear` removes it
+for free. `/mwengrave` on its own opens a text field to type the name in.

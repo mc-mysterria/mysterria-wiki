@@ -1,0 +1,82 @@
+---
+title: "Feedback & Settings"
+description: "Combat feedback without the HUD mod: damage numbers, hit markers, the ammo dial, tracers and decals, aiming, inspecting, /mwsettings and what others see of your guns"
+sidebar:
+    label: 🎛️ Feedback & Settings
+    order: 7
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+You don't need the [HUD mod](/firearms/hud-mod/) to see how your shots land. Without it, the server draws the
+feedback itself, and every part of it can be turned off for yourself with `/mwsettings`.
+
+### What you see when you shoot
+
+- **Damage numbers** - each hit floats up from the target. Quick hits on the same target (the Steam Chatterbox, Klein's
+  Repeater, shotgun pellets) add up into one number.
+- **Hit markers** - a mark on your crosshair for a hit, a headshot and a kill.
+- **Reload ring** - a ring around the crosshair that fills while the gun reloads.
+- **Ammo dial** - a brass plate at the top of the screen while you hold a gun: its name, its rounds, and a track that
+  fills with the magazine. The action bar still shows your ammo too.
+- **Bullet tracers** - a lit beam from the muzzle to where the bullet lands, seen by the players around you.
+- **Bullet holes and blood** - holes on the blocks you hit (8 seconds) and blood marks on the mobs you hit (3 seconds).
+- **Mythic ascension** - when a mythic skin reaches its next stage, a flash at the edges of your screen and cracks
+  closing in, in the skin's colour (see [Bounties, Mastery & Rewards](/firearms/progression/)).
+
+Numbers, markers, the ring and the dial are shown only to you.
+
+### Aiming and inspecting
+
+**Sneak** to aim down the sights of any gun (the Steam-Pressured Rifle looks through its scope instead).
+
+**Inspect** your gun to turn it over in your hands. The first time you hold a gun, the action bar tells you its key:
+
+| Gun | Inspect |
+|-----|---------|
+| Most guns | Swap hands (F) |
+| Le Mat Carbine, Winter is Coming (F switches mode) | Sneak + F |
+| Inevitable Gun (sneak + F is the Plague Cloud) | Sneak + F twice |
+
+### Your settings
+
+`/mwsettings` opens a list of switches, each only for you:
+
+| Switch | Off means |
+|--------|-----------|
+| Damage numbers | no numbers |
+| Hit and kill markers | no crosshair markers |
+| Reload ring | no ring |
+| Ammo dial at the top of the screen | the action bar only |
+| Lit bullet tracers | the old dust trail instead of the beam |
+| Bullet holes and blood | no decals |
+| Mythic ascension flash and cracks | no screen effect |
+| Aim down the sights while sneaking | sneaking doesn't raise the sights |
+
+Everything starts **on**. Tick what you want and press **Save**.
+
+<Aside>
+With the HUD mod, the mod draws all of this itself: `/mwsettings` points you to its own settings, `/mwhud`.
+</Aside>
+
+### Confirmations
+
+Things you can't undo ask first, in a Yes / Cancel window:
+
+- **Salvaging** a blueprint or spare parts on the Draft page, with a slider for how many.
+- **Swapping a bounty** for Notes.
+- **Letting the Vortex corrupt** your Cannon Gun.
+
+`/mwengrave` with no name opens a text field with the gun's engraving: **Engrave**, **Remove it** or **Cancel**.
+`/mwinspect` and display stands show the gun's card in a window too, with the gun on top.
+
+### What others see
+
+- **Holsters** - the guns in your hotbar that you aren't holding are worn on your body: revolvers on the hips (right
+  first, then left), long guns across your back. Others see them with their skins and attachments; you don't see your
+  own.
+- **Recoil and reloads** - players within 48 blocks see your gun kick when you fire and move when you reload.
+
+| On the hips | Across the back |
+|-------------|-----------------|
+| Klein's Repeater, Deathknell, Winter is Coming, Cannon Gun, Inevitable Gun | Steam-Pressured Rifle, Le Mat Carbine, Mystical Shotgun, Steam Chatterbox |

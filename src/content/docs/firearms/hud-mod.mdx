@@ -1,0 +1,63 @@
+---
+title: "HUD Mod"
+description: "Mystical Weaponry HUD: the optional Fabric mod for gun HUD, ammo and ability wheels, scope and first-person view models"
+sidebar:
+    label: 🧩 HUD Mod
+    order: 8
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+**Mystical Weaponry HUD** is an optional Fabric mod for Mysterria's guns. It replaces the action-bar text with a proper
+HUD and adds controls that a server alone can't give you.
+
+<Aside>
+**Optional.** Every gun works without it, and the server shows its own feedback to players without it (see
+[Feedback & Settings](/firearms/feedback-settings/)). Players running it deal **+10% gun damage**, since the mod's controls are
+part of how the guns are meant to be played.
+</Aside>
+
+### Getting it
+
+The mod is for **Fabric, Minecraft 26.3**, and needs Fabric API.
+
+{/* TODO: the download link (Modrinth / GitHub). */}
+
+### What it adds
+
+- **Weapon HUD** - the gun's ammo, reload progress, loaded rounds and mastery in one brass plate, instead of
+  action-bar text.
+- **Crosshair** - shows your real spread: it opens while you move or jump, and recolours when you lose accuracy. Hit
+  markers, a sound for headshots, damage numbers, an arrow towards whatever hurt you.
+- **Ammo wheel** - hold the reload key to pick which rounds to load from everything you carry.
+- **Ability wheel** - for Winter is Coming and the Inevitable Gun: hold the ability key to pick a decay mode or the
+  Plague Cloud; tap it to switch to the next mode.
+- **Scope** - the Steam-Pressured Rifle's scope with 2×, 4×, 8× and 16× zoom.
+- **Aim down sights** - on every other gun, the scope key raises the sights with a slight zoom.
+- **Pressure gauge** - the Steam Chatterbox's boiler pressure and the vent on the HUD.
+- **Gun info** - stats, attachments and the Kill Tally of the gun in your hand.
+- **Skins menu** - pick a skin for the gun in your hand.
+- **First-person gun on top** - your gun is drawn over the world like the vanilla hand, so it never sinks into a wall,
+  and the arms holding it wear your own skin.
+
+### Keys
+
+| Key | Default |
+|-----|---------|
+| Reload (hold: ammo wheel) | R |
+| Ability (tap: next mode, hold: ability wheel) | V |
+| Scope / aim down sights | Z |
+| Inspect the gun | I |
+| Gun info | K |
+| Weapon skins | J |
+| HUD settings | `/mwhud` (or bind a key) |
+
+Change them in Minecraft's **Controls** menu, under Mystical Weaponry.
+
+### Settings
+
+`/mwhud` opens the settings: crosshair style and colours, HUD position and size, which effects you see, scope
+sensitivity and more.
+
+Zoom levels, the scope's blur and dropping out of the scope when you fire are the same for everyone: they're part of
+the game's balance, not preferences.

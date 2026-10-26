@@ -1,6 +1,6 @@
 ---
-title: "Ammunition Guide"
-description: "Complete guide to all 13 ammunition types, effects, and crafting recipes"
+title: "Ammunition"
+description: "Crafting rounds for every gun, special rounds and their catalysts, Beyonder rounds and the Ammo Pouch"
 sidebar:
     label: 🎯 Ammunition
     order: 3
@@ -8,272 +8,106 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-### Ammunition System
+### Rounds
 
-Every mystical firearm supports 13 different ammunition variants with unique effects. All ammo types use the same base damage as the weapon, but special rounds have damage modifiers and mystical effects.
+Every gun fires its own rounds. They come in three kinds:
 
-### Ammunition Types Overview
+- **Plain rounds** - crafted from cases, cores and gunpowder.
+- **Special rounds** - plain rounds turned into armor piercing, exorcist, aging and other rounds by a catalyst.
+- **Beyonder rounds** - rounds bound to a Beyonder ingredient: they take its sequence and pathway.
 
-**Standard Ammunition:**
+### Crafting plain rounds
 
-| Ammo Type | Damage | Description |
-|-----------|--------|-------------|
-| **Klein Rounds** | 100% | Standard repeater ammunition |
-| **Deathknell Rounds** | 100% | Standard revolver ammunition |
-| **Rifle Rounds** | 100% | Standard rifle ammunition |
+First the cases and cores, on a crafting table:
 
-**Special Ammunition Effects:**
+| Part | Recipe | Makes |
+|------|--------|-------|
+| Klein cartridge case | 1 Brass | 8 |
+| Klein cartridge core | 4 Iron Nuggets | 8 |
+| Deathknell cartridge case | 1 Brass, 1 Iron Nugget | 6 |
+| Deathknell cartridge core | 6 Iron Nuggets | 6 |
+| Rifle cartridge case | 2 Brass | 6 |
+| Rifle cartridge core | 1 Iron Ingot, 1 Brass | 6 |
+| Shotgun shell case | 1 Paper, 1 Brass | 6 |
+| Shotgun pellets | 3 Iron Nuggets | 6 |
+| Le Mat cartridge case | 1 Brass, 1 Copper Ingot | 8 |
+| Le Mat cartridge core | 2 Iron Nuggets, 1 Copper Ingot | 8 |
+| Le Mat buckshot shell | 1 Paper, 1 Brass, 1 Iron Nugget | 4 |
+| Le Mat buckshot load | 1 Iron Ingot, 2 Iron Nuggets | 4 |
 
-**Fire Rounds:**
-- **Damage:** 85% of base
-- **Effect:** Ignites target for 5 seconds
-- **Best Against:** Enemies vulnerable to fire, clearing groups
-- **Tactical Use:** Area denial and damage over time
+Then the rounds (any arrangement in the grid):
 
-**Poison Rounds:**
-- **Damage:** 85% of base
-- **Effect:** Poisons target for 8 seconds
-- **Best Against:** High-health enemies, sustained combat
-- **Tactical Use:** Weakening tough opponents over time
-
-**Armor-Piercing Rounds:**
-- **Damage:** 90% of base
-- **Effect:** Ignores 10 points of armor
-- **Best Against:** Heavily armored players and mobs
-- **Tactical Use:** Countering diamond/netherite armor
-
-**Aging Rounds:**
-- **Damage:** 85% of base
-- **Effect:** Slowness I + Wither II (10 seconds)
-- **Best Against:** Fast-moving enemies, kiting strategies
-- **Tactical Use:** Slowing down aggressive opponents
-
-**Spirit Control Rounds:**
-- **Damage:** 85% of base
-- **Effect:** Slowness IV + Blindness (5 seconds)
-- **Best Against:** Players and intelligent mobs in PvP
-- **Tactical Use:** Disabling enemies for follow-up attacks
-
-**Deceiving Rounds:**
-- **Damage:** 85% of base
-- **Effect:** Rotates target 180 degrees
-- **Best Against:** Players in PvP, disorienting enemies
-- **Tactical Use:** Causing confusion and positional advantage
-
-**Deprivation Rounds:**
-- **Damage:** 85% of base
-- **Effect:** Removes all positive status effects
-- **Best Against:** Buffed enemies and potion users
-- **Tactical Use:** Countering enemy buffs in PvP
-
-**Exorcist Rounds:**
-- **Damage:** 100% base, 250% against undead
-- **Effect:** Massive bonus damage to zombies, skeletons, phantoms, withers
-- **Best Against:** Undead mobs, Nether exploration
-- **Tactical Use:** Specialized undead hunting ammunition
-
-**Implosive Rounds:**
-- **Damage:** 125% of base (highest damage)
-- **Effect:** Pure devastating damage with no status effects
-- **Best Against:** Bosses, high-priority targets, burst damage
-- **Tactical Use:** Maximum single-shot damage
-
-**Rotten Rounds:**
-- **Damage:** 85% of base
-- **Effect:** Hunger III + Weakness I (8 seconds)
-- **Best Against:** Players in PvP scenarios
-- **Tactical Use:** Depleting enemy resources and combat effectiveness
-
-**Weakening Rounds:**
-- **Damage:** 85% of base
-- **Effect:** Weakness II + Mining Fatigue II (10 seconds)
-- **Best Against:** Enemies you want to debuff for teammates
-- **Tactical Use:** Support fire in group combat
-
-**Demon Hunter Rounds:**
-- **Damage:** 100% base, 250% against Beyonders
-- **Effect:** Massive bonus damage to Beyonder mobs (from CircleOfImagination plugin)
-- **Best Against:** Beyonder enemies on the server
-- **Tactical Use:** Specialized anti-Beyonder combat
-
-### Crafting Ammunition
-
-Ammunition crafting follows a multi-tier system requiring cartridge cases, cartridge cores, and assembly.
-
-**Tier 1: Cartridge Cases**
-
-import kleinCartridge from "../../../assets/firearms/kleincartridge.png";
-import deathknellCartridge from "../../../assets/firearms/deathknellcartridge.png";
-import rifleCartridge from "../../../assets/firearms/riflecartridge.png";
-
-<p align="center">
-    <img
-        src={kleinCartridge.src}
-        width="30%"
-        alt="Klein Cartridge Case"
-    />
-    <img
-        src={deathknellCartridge.src}
-        width="30%"
-        alt="Deathknell Cartridge Case"
-    />
-    <img
-        src={rifleCartridge.src}
-        width="30%"
-        alt="Rifle Cartridge Case"
-    />
-</p>
-
-| Cartridge Case | Recipe | Yield |
-|----------------|--------|-------|
-| **Klein Cartridge Case** | 1 Brass | 8 Cases |
-| **Deathknell Cartridge Case** | 1 Brass + 1 Iron Nugget | 6 Cases |
-| **Rifle Cartridge Case** | 2 Brass | 6 Cases |
-
-**Tier 2: Cartridge Cores**
-
-import kleinCore from "../../../assets/firearms/kleincore.png";
-import deathknellCore from "../../../assets/firearms/deathknellcore.png";
-import rifleCore from "../../../assets/firearms/riflecore.png";
-
-<p align="center">
-    <img
-        src={kleinCore.src}
-        width="30%"
-        alt="Klein Cartridge Core"
-    />
-    <img
-        src={deathknellCore.src}
-        width="30%"
-        alt="Deathknell Cartridge Core"
-    />
-    <img
-        src={rifleCore.src}
-        width="30%"
-        alt="Rifle Cartridge Core"
-    />
-</p>
-
-| Cartridge Core | Recipe | Yield |
-|----------------|--------|-------|
-| **Klein Cartridge Core** | 4 Iron Nuggets | 8 Cores |
-| **Deathknell Cartridge Core** | 6 Iron Nuggets | 6 Cores |
-| **Rifle Cartridge Core** | 1 Iron Ingot + 1 Brass | 6 Cores |
-
-**Tier 3: Standard Ammunition**
-
-import kleinRounds from "../../../assets/firearms/kleinrounds.png";
-import deathknellRounds from "../../../assets/firearms/deathknellrounds.png";
-import rifleRounds from "../../../assets/firearms/riflerounds.png";
-
-<p align="center">
-    <img
-        src={kleinRounds.src}
-        width="30%"
-        alt="Klein Rounds"
-    />
-    <img
-        src={deathknellRounds.src}
-        width="30%"
-        alt="Deathknell Rounds"
-    />
-    <img
-        src={rifleRounds.src}
-        width="30%"
-        alt="Rifle Rounds"
-    />
-</p>
-
-**Standard Rounds Recipe:**
-
-`1 Cartridge Case + 1 Cartridge Core + 1 Gunpowder = 1 Ammunition`
-
-This applies to Klein Rounds, Deathknell Rounds, and Rifle Rounds.
-
-### Special Effect Ammunition
-
-import effectAmmo from "../../../assets/firearms/effectammo.png";
-
-<p align="center">
-    <img
-        src={effectAmmo.src}
-        width="80%"
-        alt="Special Effect Ammunition"
-    />
-</p>
-
-Special ammunition is crafted by surrounding the effect material with 8 standard rounds (of any weapon type).
-
-**Recipe Pattern:**
-
-Place the effect material in the center of a crafting table and surround it with 8 standard rounds to create 8 special effect rounds.
-
-**Effect Materials:**
-
-| Effect Material | Special Ammunition | Effect |
-|----------------|-------------------|--------|
-| **Blaze Powder** | Fire Rounds | Ignites for 5s |
-| **Spider Eye** | Poison Rounds | Poisons for 8s |
-| **Iron Ingot** | Armor-Piercing | Ignores 10 armor |
-| **Clock** | Aging Rounds | Slowness I + Wither II (10s) |
-| **Soul Sand** | Spirit Control | Slowness IV + Blindness (5s) |
-| **Ender Pearl** | Deceiving Rounds | Rotates 180° |
-| **Milk Bucket** | Deprivation Rounds | Removes buffs |
-| **Glowstone Dust** | Exorcist Rounds | 250% vs undead |
-| **TNT** | Implosive Rounds | 125% damage |
-| **Rotten Flesh** | Rotten Rounds | Hunger III + Weakness I (8s) |
-| **Fermented Spider Eye** | Weakening Rounds | Weakness II + Mining Fatigue II (10s) |
-| **Nether Star** | Demon Hunter Rounds | 250% vs Beyonders |
+| Rounds | Recipe | Grid | Press |
+|--------|--------|------|-------|
+| Klein Rounds | Klein case + Klein core + 1 Gunpowder | 4 | 6 |
+| Deathknell Rounds | Deathknell case + core + 2 Gunpowder | 3 | 5 |
+| Rifle Rounds | Rifle case + core + 2 Gunpowder | 3 | 5 |
+| Shotgun Shells | Shell case + pellets + 1 Gunpowder | 4 | 6 |
+| Le Mat Rounds | Le Mat case + core + 1 Gunpowder | 4 | 6 |
+| Le Mat Buckshot | Buckshot shell + load + 2 Gunpowder | 2 | 3 |
+| Chatterbox Rounds | Klein case + Klein core + 2 Gunpowder | 12 | 18 |
+| Winter Rounds | Deathknell case + core + 2 Gunpowder + 1 Fermented Spider Eye | 3 | 5 |
+| Cannon Rounds | Deathknell case + core + 3 Gunpowder + 1 Iron Nugget | 2 | 3 |
+| Inevitable Rounds | Deathknell case + core + 3 Gunpowder + 1 Rotten Flesh | 2 | 3 |
 
 <Aside type="tip">
-**Universal Compatibility:** You can use ANY type of standard rounds (Klein, Deathknell, or Rifle) to craft special ammunition. The special effect applies to all weapon types!
+**The cartridge press** on the Weaponsmith Table's **Ammunition** page makes the same rounds from the same materials,
+but gets **50% more** out of them (the "Press" column). Shift-click a recipe to press up to 8 at once.
 </Aside>
 
-### Ammunition Strategy
+### Special rounds
 
-**Loadout Recommendations:**
+A catalyst turns plain rounds into special rounds:
 
-**For General Exploration:**
-- Carry standard rounds for regular combat
-- Pack Exorcist rounds for undead encounters
-- Bring Fire rounds for area control
+- **Crafting grid:** 8 plain rounds around 1 catalyst make **8** special rounds.
+- **Weaponsmith Table** (Ammunition page): lay the rounds and the catalyst in the two slots. One catalyst turns up to
+  **12** rounds.
 
-**For PvP Combat:**
-- Spirit Control rounds for disabling
-- Deceiving rounds for disorientation
-- Deprivation rounds to counter buffs
-- Implosive rounds for burst damage
+Every gun's rounds have all eight special kinds.
 
-**For Boss Fights:**
-- Implosive rounds for maximum damage
-- Weakening rounds for debuffing
-- Armor-Piercing for tanky bosses
+| Special round | Catalyst | Damage | Effect |
+|---------------|----------|--------|--------|
+| **Armor Piercing** | Iron Ingot | 90% | Ignores 10 armor; skips half of a Beyonder's absorption shield |
+| **Exorcist** | Glowstone Dust | 100% | ×2.5 damage to undead monsters |
+| **Aging** | Wither Rose | 80% | Wither III for 5 s, Weakness for 10 s; removes Regeneration and Absorption |
+| **Deceiving** | Eye of Ender | 80% | Turns the target around |
+| **Deprivation** | Phantom Membrane | 85% | Removes every positive effect |
+| **Spirit Control** | Ghast Tear | 70% | Blindness 6 s, Slowness IV 4 s, Nausea 5 s |
+| **Implosive** | Breeze Rod | 100% | Pulls every creature within 5 blocks towards the target |
+| **Demon Hunter** | Volatile Essence | 100% | ×2 damage to Beyonder creatures |
 
-**For Nether/End:**
-- Exorcist rounds for the Nether (undead)
-- Fire rounds are less effective in the Nether
-- Demon Hunter rounds if Beyonders are present
-
-**Resource Management:**
-
-<Aside type="caution">
-Special rounds require 8 standard rounds + rare material = 8 special rounds. Plan accordingly!
+<Aside>
+A shotgun shell's effect lands with one of its pellets. Special rounds foul a gun faster than plain ones
+(see [Upgrades & Upkeep](/firearms/upgrades/)).
 </Aside>
 
-**Cost Breakdown for 8 Special Rounds:**
-- 8 Standard Rounds (each requires: 1 Case + 1 Core + 1 Gunpowder)
-- 1 Effect Material (Nether Star is the rarest)
+### Beyonder rounds
 
-**Total Materials for 8 Special Rounds:**
-- 8 Cartridge Cases
-- 8 Cartridge Cores
-- 8 Gunpowder
-- 1 Effect Material
+On the Ammunition page, lay rounds next to a **Beyonder ingredient** or a **Characteristic** to bind them:
 
-### Next Steps
+- The rounds take the ingredient's **sequence as their grade** (a supplementary ingredient counts one sequence weaker)
+  and its **pathway**.
+- One main or supplementary ingredient binds **16 rounds**. A Characteristic makes **6 silver bullets** that hit
+  **×1.5** harder.
+- A shot fires at the stronger of the gun's grade and the round's, but a round reaches at most **2 sequences above** the
+  one firing it. Mortals count as Sequence 9, so they reach grade 7.
+- Rounds are **attuned** to their pathway: **+25%** damage to Beyonders of that pathway, **+10%** to its neighbouring
+  pathways.
+- Grades 3 to 0 can only be bound at a **Demigod table**.
 
-Ready to put your ammunition to use? Check out:
+Special rounds can be bound too: they keep their effect.
 
-- [Overview](/firearms/) - Learn combat mechanics
-- [Crafting Guide](/firearms/crafting/) - Craft weapons to use your ammo
-- [Weapon Pages](/firearms/) - Detailed stats for each firearm
+### Which rounds the gun loads
+
+On a reload the gun loads the first matching rounds it finds in your inventory (hotbar first), then in your Ammo
+Pouch. To pick a kind, keep those rounds first, or choose it on the [Field Tablet](/firearms/field-tablet/)'s **Ammo**
+tab (**Load**). With the [HUD mod](/firearms/hud-mod/), hold the reload key to choose from a wheel of everything you
+carry for that gun.
+
+### Ammo Pouch
+
+**Recipe:** 2 String and 6 Leather (String in the top corners, Leather in the top middle, both sides and the bottom
+row).
+
+One inventory slot that holds up to **256 rounds** of any kinds. Right-click it to open it: shift-click ammo in, click a
+kind to take a stack out. Guns reload from the pouch too, after loose rounds.
