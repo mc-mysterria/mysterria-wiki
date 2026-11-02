@@ -114,6 +114,21 @@ A maxed order still has things to save up for. In the Treasury, pick an **active
 
 When everything else is bought, a maxed order can perform the **Rite of Legacy** again and again from the Treasury. Each rite adds a star to the order's name in `/oc`, `/o top` and the hall. The first costs 3,000 shards, and each one after that costs 1.5x the one before.
 
+### Small conveniences
+
+Small things the treasury can pay for once the ability they belong to is unlocked, offered as a **shift-click** on the button they belong to. Each one has its own limit, so they can't be repeated endlessly. The leader or a vice pays from the treasury, except the summon reset, which you pay from your own shards.
+
+| What | Where | Cost | Limit |
+|---|---|---|---|
+| Keep the Pocket Dimension open 10 more minutes | Pocket Dimension, start button | 30 | once per session |
+| Open the Pocket Dimension again before the cooldown ends | Pocket Dimension, start button | 150 | once a week |
+| Reset your own Instant Summon cooldown | Abilities, Instant Summon | 25 of your shards | once a day |
+| Lair teleport items without materials | Secret Lair, craft button | 10 each | none |
+| Rename before the 7 days are up | `/o rename`, then `/o confirm` | 100 | once a week |
+| Swap one ingredient of this week's contract (only if nobody has delivered it yet) | Weekly contract | 50 | once a week |
+| Change the chat tag colour (the first pick is free) | `/o settings tag`, then `/o confirm` | 50 | none |
+| **Order feast:** Saturation and Regeneration for 10 minutes, for members within 30 blocks. Only inside your own lair | Secret Lair, status card | 40 | once a day |
+
 ## Commissions
 
 The leader or a vice can pay players for work out of the treasury. Hold an item and type:
