@@ -1,0 +1,131 @@
+---
+title: "Brilliant Emporium and Daily Rewards"
+description: "The Brilliant Emporium on Mysterria: how to earn Emporium points from daily rewards and voting, what the daily shop sells, prices, stock and Mystery Boxes."
+sidebar:
+    label: Emporium and Daily Rewards
+    order: 22
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import dailyLogin from '../../../assets/daily/daily.png';
+import hourly from '../../../assets/daily/hourly.png';
+
+The **Brilliant Emporium** is a shop that sells Beyonder ingredients, potions, recipes, enchanted books and Mystery Boxes for **Emporium points**. Open it with `/emporium`.
+
+Emporium points are their own balance. They are not money, you cannot buy them with Coppets, and they only work in the Emporium. Check your points with `/emporium balance`.
+
+## How do I get Emporium points?
+
+| Source | Points |
+|---|---|
+| [Daily Rewards](#daily-rewards) (`/daily`) | Up to 180 a day |
+| [Voting](#voting) (`/vote`) | 30 a day for voting on both sites |
+| [Battle Pass](/guides/battle-pass/) tiers | 500 to 3,000 per reward tier |
+| **Emporium Points Bundle** item | The amount written on it. Right-click to redeem |
+| A bug you reported gets fixed | Given by staff |
+| Events | Varies |
+
+## Daily Rewards
+
+Open `/daily`, or click **Daily Rewards** in the Emporium main menu. There are three rewards each day:
+
+| Reward | How to unlock it | Points |
+|---|---|---|
+| **Daily Login Reward** | Join the server | 10 + 2 per streak day |
+| **1 Hour Playtime Reward** | Play 1 hour today, not AFK | 10 + 1 per streak day |
+| **3 Hour Playtime Reward** | Play 3 hours today, not AFK | 10 + 1 per streak day |
+
+The streak bonus stops growing at **+50** per reward. So the login reward reaches its maximum of 60 points at a 25-day streak, and each playtime reward reaches 60 at a 50-day streak. With all three at the maximum you get **180 points a day**.
+
+<CardGrid min={280}>
+  <Figure src={dailyLogin} alt="The Daily Login Reward tooltip: 14 points, streak bonus +2 per day, ready to claim" caption="Login reward on a 2-day streak: 10 + 2 x 2 = 14 points." />
+  <Figure src={hourly} alt="The 1 Hour Playtime Reward tooltip: 12 points, streak bonus +1 per day, ready to claim" caption="1 hour reward on a 2-day streak: 10 + 1 x 2 = 12 points." />
+</CardGrid>
+
+### How does the login streak work?
+
+- Your streak goes up by 1 for each calendar day in a row that you join.
+- Miss a day and it starts again at 1.
+- Days follow the server's date.
+
+### Things to know
+
+- **Claim before the day ends.** Rewards you do not claim today are gone tomorrow. They do not carry over.
+- **AFK time does not count** toward the 1 hour and 3 hour rewards.
+- You get a reminder 5 minutes after joining if your login reward is waiting, and a chat line when you have unclaimed rewards.
+
+## Voting
+
+Type `/vote` to see the voting sites. Each site can be voted on once every 24 hours.
+
+| Site | Points per vote |
+|---|---|
+| PlanetMinecraft | 20 |
+| crafty.gg | 10 |
+
+## What does the Emporium sell?
+
+The shop has five categories. Every day at the server's midnight it picks a new set of items from each category's pool, with new prices. Chat announces it: *"The Emporium has refreshed with new items!"*
+
+| Category | Items on sale each day | Stock per item | Daily price change |
+|---|---|---|---|
+| Ingredients | 90 | 5 | up to 15% either way |
+| Potions | 30 | 2 | up to 10% either way |
+| Magic Recipes | 25 | 2 | up to 10% either way |
+| Enchantments | 20 | 2 | up to 20% either way |
+| Mystery Boxes | 4 | 10 | up to 20% either way |
+
+**Stock is shared by everyone.** When an item's stock is gone, it is sold out for all players until the next day. The item shows **Stock: x/y**.
+
+### How much do things cost?
+
+Each item has its own base price. The price you see is the base price moved up or down by that day's change. Ingredients, potions and recipes go up to Sequence 4 and cost more the higher the Sequence:
+
+| Sequence | Ingredient | Magic Recipe | Potion |
+|---|---|---|---|
+| 9 | 100 | 400 | 600 |
+| 8 | 200 | 650 | 1,200 |
+| 7 | 300 | 1,000 | 1,800 |
+| 6 | 380 | 1,800 | 2,600 |
+| 5 | 500 | 2,500 | 3,500 |
+| 4 | 1,000 | 5,000 | 7,000 |
+
+Enchanted books cost 25 to 40 points before the daily change. They include Mending, Protection IV, Sharpness V, Efficiency V, Fortune III, Unbreaking III and others.
+
+Higher Sequence items appear less often in the daily pick, so a Sequence 4 potion is a rare find.
+
+## What are Mystery Boxes?
+
+A Mystery Box gives random Beyonder items from one Sequence range. Right-click it in the air or on a block to open it. Right-click a box in the shop to preview what it can contain.
+
+| Box | Base price | Rewards | Contents |
+|---|---|---|---|
+| Basic Mystery Box | 250 | 1 to 2 | Sequence 9 |
+| Rare Mystery Box | 500 | 1 to 2 | Sequences 8 and 7 |
+| Epic Mystery Box | 1,000 | 1 to 3 | Sequences 6 and 5 |
+| Legendary Mystery Box | 2,000 | 1 to 4 | Sequence 4 |
+
+Each box can drop ingredients, recipes, Beyonder Characteristics and potions of any of the 22 Pathways in its range. Ingredients are the most common result and potions the rarest.
+
+<Notice tone="info" title="Good to know">
+The Mystery Box prices also change daily, by up to 20%.
+</Notice>
+
+## What are Emporium fragments?
+
+Some rewards come in pieces. A **Shard of Boon Token** or **Shard of Acting Bottle** is a fragment that says how many you need. Put that many into a crafting grid to make the full item:
+
+| Fragment | You need | Makes |
+|---|---|---|
+| Shard of Boon Token | 10 | A Boon Token (see [Boons](/magic/boons/)) |
+| Shard of Acting Bottle | 2 | An Acting Bottle (10,000 acting points) |
+
+These fragments were handed out in seasonal Emporium shops and events. They are not Energy Shards.
+
+## Related pages
+
+<CardGrid>
+  <Card title="Battle Pass" text="Tiers that pay up to 3,000 Emporium points at once." icon="scroll" href="/guides/battle-pass/" />
+  <Card title="Money and Wallet" text="Coppets, Licks, Verl Dors and Energy Shards." icon="coin" href="/guides/economy/" />
+  <Card title="Economy on the main site" text="The short version in the player guide." icon="book" href="https://www.mysterria.net/en/guide/economy" />
+</CardGrid>
