@@ -3,7 +3,8 @@ import {defineConfig} from 'astro/config';
 import starlight from '@astrojs/starlight';
 import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
-import starlightThemeGalaxy from 'starlight-theme-galaxy'
+import vue from '@astrojs/vue';
+import rehypeImageSizes from './src/lib/rehype-image-sizes.mjs';
 
 export default defineConfig({
     output: 'static',
@@ -30,10 +31,24 @@ export default defineConfig({
             maxDuration: 8,
         }),
     site: 'https://wiki.mysterria.net',
+    markdown: {
+        // remote images get their width and height, so they keep their room while loading
+        rehypePlugins: [rehypeImageSizes],
+    },
     integrations: [
-        sitemap(),
+        // the main site's std components (src/components/std), rendered to HTML at build time: no client JS
+        vue(),
+        sitemap({
+            // hreflang alternates in the sitemap too, the same eight as the pages' <link rel="alternate">
+            i18n: {
+                defaultLocale: 'en',
+                locales: {
+                    en: 'en', uk: 'uk', ro: 'ro', de: 'de', es: 'es', fr: 'fr', 'zh-tw': 'zh-TW', 'zh-cn': 'zh-CN',
+                },
+            },
+        }),
         starlight({
-            title: 'Wiki',
+            title: 'Mysterria Wiki',
             defaultLocale: 'root',
             /*
              * The same eight locales the main site serves, in the same picker
@@ -89,8 +104,30 @@ export default defineConfig({
                     lang: 'zh-CN',
                 },
             },
-            plugins: [starlightThemeGalaxy()],
-            customCss: ['./src/styles/custom.css'],
+            /*
+             * The main site's design system, then the wiki's mapping of Starlight onto it.
+             * arcana.css and the two std sheets are copies (see their headers); wiki.css is ours.
+             */
+            customCss: [
+                './src/styles/arcana.css',
+                './src/components/std/std.css',
+                './src/components/std/std-gas.css',
+                './src/styles/wiki.css',
+            ],
+            // code blocks follow the main site's theme switch (<html data-theme="dark|parchment">)
+            expressiveCode: {
+                themes: ['github-dark', 'github-light'],
+                useStarlightDarkModeSwitch: false,
+                themeCssSelector: (theme) => (theme.type === 'dark' ? '[data-theme="dark"]' : '[data-theme="parchment"]'),
+                styleOverrides: {
+                    borderRadius: '10px',
+                    borderColor: 'var(--arc-line)',
+                    codeFontFamily: "ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace",
+                    uiFontFamily: 'var(--arc-body)',
+                    codeBackground: 'var(--arc-chip-bg)',
+                    frames: {shadowColor: 'transparent'},
+                },
+            },
             // plugins: [pagePlugin({
             //     navigation: [
             //         { href: "/general/start/", label: "Quick Start" },
@@ -101,15 +138,24 @@ export default defineConfig({
             // })],
             description: 'Complete documentation for Mysterria Minecraft server inspired by Lord of the Mysteries',
             favicon: 'favicon.png',
-            logo: {
-                src: './src/assets/favicon.png'
-            },
             social: [
                 {icon: 'discord', label: 'Discord', href: 'https://discord.gg/mysterria'}
             ],
 
+            /*
+             * The main site's chrome over Starlight's: its header, footer, theme switch and
+             * language menu, the landing page, and the head's SEO additions. Starlight's
+             * sidebar, search, table of contents and pagination stay its own (restyled in wiki.css).
+             */
             components: {
-                Footer: './src/components/Footer.astro',
+                Head: './src/components/starlight/Head.astro',
+                ThemeProvider: './src/components/starlight/ThemeProvider.astro',
+                PageFrame: './src/components/starlight/PageFrame.astro',
+                Header: './src/components/starlight/Header.astro',
+                ThemeSelect: './src/components/starlight/ThemeSelect.astro',
+                LanguageSelect: './src/components/starlight/LanguageSelect.astro',
+                MobileMenuFooter: './src/components/starlight/MobileMenuFooter.astro',
+                Hero: './src/components/starlight/Hero.astro',
             },
 
             sidebar: [

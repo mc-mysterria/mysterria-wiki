@@ -1,0 +1,38 @@
+---
+/*
+ * A notice: the main site's notice slip (its kind in small caps with an icon, an optional
+ * title, the text), in one of the std tones. Starlight's :::note / :::tip / :::caution /
+ * :::danger asides are drawn the same way; use this one in MDX when you want a title or
+ * the accent tone. See src/components/README.md.
+ */
+import StdIcon from '../std/StdIcon.vue';
+import type {IconName} from '../std/icons';
+
+type Tone = 'info' | 'ok' | 'warn' | 'bad' | 'acc';
+
+interface Props {
+	tone?: Tone;
+	/** The small-caps label above (default: Note, Tip, Caution, Danger or Notice by tone). */
+	kind?: string;
+	title?: string;
+	icon?: IconName;
+}
+
+const ICON: Record<Tone, IconName> = {info: 'info', ok: 'check-circle', warn: 'alert', bad: 'alert-circle', acc: 'star'};
+const {tone = 'info', title, icon} = Astro.props;
+/* Starlight already translates its asides' labels: the default kind reuses them */
+const KIND: Record<Tone, string> = {
+	info: Astro.locals.t('aside.note'),
+	ok: Astro.locals.t('aside.tip'),
+	warn: Astro.locals.t('aside.caution'),
+	bad: Astro.locals.t('aside.danger'),
+	acc: Astro.locals.t('aside.note'),
+};
+const kind = Astro.props.kind ?? KIND[tone];
+---
+
+<aside class:list={['wiki-notice', `is-tone-${tone}`]} aria-label={title ?? kind}>
+	<p class="wiki-notice__kind"><StdIcon name={icon ?? ICON[tone]}/>{kind}</p>
+	{title && <p class="wiki-notice__title">{title}</p>}
+	<div class="wiki-notice__body"><slot/></div>
+</aside>

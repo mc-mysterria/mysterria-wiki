@@ -1,0 +1,33 @@
+---
+/*
+ * The drawer for pages without a sidebar (the landing page), below 50rem: the main site's
+ * hamburger chip opening its drawer from the right. Docs pages use Starlight's own menu
+ * button instead, whose panel already ends with the same list (MobileMenuFooter.astro).
+ *
+ * No script: the HTML popover attribute opens and closes it, closes it on Escape and on a
+ * click outside, and keeps it in the top layer.
+ */
+import StdChip from './std/StdChip.vue';
+import SiteNavList from './SiteNavList.astro';
+import logo from '../assets/brand/logo-128.webp';
+import {wikiPath} from '../lib/site';
+
+const {locale} = Astro.locals.starlightRoute;
+const {t} = Astro.locals;
+---
+
+<button type="button" class="std-chip std-chip--icon std-focus mobile-nav-toggle" popovertarget="site-menu" aria-label={t('header.toggleNav')}>
+	<svg viewBox="0 0 22 18" width="18" height="18" aria-hidden="true" focusable="false"><path d="M1 16.5H21M1 9H21M1 1.5H21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+</button>
+<div id="site-menu" popover class="mobile-nav site-menu" aria-label={t('header.navLabel')}>
+	<div class="mobile-nav-header">
+		<a href={wikiPath(locale)} class="brand compact">
+			<img src={logo.src} alt="" class="brand-mark" width="30" height="30" decoding="async"/>
+			<span class="brand-name">Mysterria</span>
+		</a>
+		<StdChip icon="x" iconOnly label={t('header.closeNav')} popovertarget="site-menu" popovertargetaction="hide"/>
+	</div>
+	<div class="mobile-nav-content">
+		<SiteNavList/>
+	</div>
+</div>

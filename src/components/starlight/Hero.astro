@@ -1,0 +1,124 @@
+---
+/*
+ * The landing page (any page with `hero` in its frontmatter: src/content/docs/index.md and
+ * its translations), drawn the main site's way: its homepage hero (a large flared title,
+ * a quiet lede, the bone primary and a tinted secondary over the night art), then the
+ * wiki's sections as std cards, then every page of each section.
+ *
+ * The copy comes from the page itself. The hero is the frontmatter's `title` and `hero`
+ * (tagline, actions), as Starlight reads it. The section cards take their title and line
+ * from the frontmatter's optional `landing.sections` list; a section that is not listed
+ * there falls back to its translated name below and the description of the page it leads
+ * to. The page lists are the sidebar's.
+ */
+import {Image} from 'astro:assets';
+import {getEntry} from 'astro:content';
+import StdButton from '../std/StdButton.vue';
+import StdCard from '../std/StdCard.vue';
+import StdSectionHead from '../std/StdSectionHead.vue';
+import StdTag from '../std/StdTag.vue';
+import type {IconName} from '../std/icons';
+import banner from '../../assets/brand/banner.webp';
+import {entryIds, links, plainLabel, sectionsByFolder, type SidebarLink} from '../../lib/sections';
+
+const route = Astro.locals.starlightRoute;
+const {data} = route.entry;
+const {t} = Astro.locals;
+const {locale} = route;
+const {title = data.title, tagline, actions = []} = data.hero || {};
+
+type Override = {folder: string; title?: string; text?: string; icon?: IconName; link?: string};
+const overrides: Override[] = (data as {landing?: {sections?: Override[]}}).landing?.sections ?? [];
+
+/* The four sections the landing leads with, in order; each starts at one page of its folder. */
+const LEAD: {folder: string; key: string; icon: IconName; start?: string}[] = [
+	{folder: 'general', key: 'landing.start', icon: 'login'},
+	{folder: 'magic', key: 'landing.magic', icon: 'star', start: 'introduction'},
+	{folder: 'guides', key: 'landing.guides', icon: 'scroll'},
+	{folder: 'firearms', key: 'landing.firearms', icon: 'flame'},
+];
+
+const sections = sectionsByFolder(route.sidebar, locale);
+
+async function describe(link: SidebarLink | undefined) {
+	if (!link) return '';
+	for (const id of entryIds(link.href, locale)) {
+		const entry = await getEntry('docs', id);
+		if (entry) return entry.data.description ?? '';
+	}
+	return '';
+}
+
+const cards = await Promise.all(
+	LEAD.map(async lead => {
+		const group = sections.get(lead.folder);
+		const pages = group ? links(group) : [];
+		const start = pages.find(page => lead.start && page.href.replace(/\/$/, '').endsWith(`/${lead.start}`)) ?? pages[0];
+		const own = overrides.find(o => o.folder === lead.folder);
+		const fallbackText =
+			lead.folder === 'guides' ? pages.slice(0, 4).map(page => plainLabel(page.label)).join(', ') : await describe(start);
+		return {
+			title: own?.title ?? t(lead.key as 'landing.start'),
+			text: own?.text ?? fallbackText,
+			icon: own?.icon ?? lead.icon,
+			href: own?.link ?? start?.href ?? '#',
+		};
+	}),
+);
+
+const groups = [...sections.values()];
+---
+
+<div class="landing not-content">
+	<section class="landing-hero" aria-labelledby="_top">
+		<div class="landing-hero__art" aria-hidden="true">
+			<Image src={banner} alt="" widths={[640, 960, 1440]} sizes="(min-width: 800px) 60vw, 100vw" loading="eager" fetchpriority="high" decoding="async"/>
+		</div>
+		<div class="landing-hero__copy">
+			<h1 id="_top" class="landing-hero__title" data-page-title set:html={title}/>
+			{tagline && <p class="landing-hero__lede arc-lede" set:html={tagline}/>}
+			{
+				actions.length > 0 && (
+					<div class="landing-hero__actions">
+						{actions.map(action => (
+							<StdButton
+								href={action.link}
+								variant={action.variant === 'primary' ? 'primary' : 'secondary'}
+								size="lg"
+								iconEnd={action.variant === 'primary' ? 'arrow-right' : undefined}
+								label={action.text}
+							/>
+						))}
+					</div>
+				)
+			}
+		</div>
+	</section>
+
+	<section class="landing-block" aria-labelledby="landing-sections" data-pagefind-ignore="all">
+		<StdSectionHead title={t('landing.sections')} id="landing-sections"/>
+		<div class="card-grid landing-cards">
+			{cards.map(card => <StdCard title={card.title} text={card.text} icon={card.icon} href={card.href} as="h3"/>)}
+		</div>
+	</section>
+
+	<div class="landing-index" data-pagefind-ignore="all">
+		{
+			groups.map((group, i) => (
+				<section class="landing-group" aria-labelledby={`landing-group-${i}`}>
+					<StdSectionHead title={group.label} count={links(group).length} level={3} id={`landing-group-${i}`}/>
+					<ul class="landing-links">
+						{links(group).map(page => (
+							<li>
+								<a href={page.href} class="landing-link">
+									<span>{plainLabel(page.label)}</span>
+									{page.badge && <StdTag tone="acc" label={page.badge.text}/>}
+								</a>
+							</li>
+						))}
+					</ul>
+				</section>
+			))
+		}
+	</div>
+</div>

@@ -1,0 +1,33 @@
+---
+/*
+ * The main site's drawer content (HeaderItem.vue's mobile nav in mysteria-frontend): the
+ * nav as full-width rows, then the services (Discord, the live map) with a line each, then
+ * the languages. Used in the wiki's two drawers: Starlight's sidebar menu on docs pages
+ * (MobileMenuFooter.astro) and SiteMenu.astro on pages without a sidebar.
+ */
+import LanguageSelect from './starlight/LanguageSelect.astro';
+import {DISCORD_URL, MAIN_NAV, MAP_URL, mainUrl, wikiPath} from '../lib/site';
+
+const {locale} = Astro.locals.starlightRoute;
+const {t} = Astro.locals;
+---
+
+<div class="site-nav-list">
+	<nav class="site-nav-list__links" aria-label={t('header.navLabel')}>
+		{MAIN_NAV.map(link => <a class="mobile-nav-link" href={mainUrl(locale, link.path)}>{t(link.key)}</a>)}
+		<a class="mobile-nav-link active" href={wikiPath(locale)} aria-current="true">{t('nav.wiki')}</a>
+	</nav>
+	<div class="mobile-services" role="group" aria-label={t('footer.communityHeading')}>
+		<a class="mobile-service-link" href={DISCORD_URL} rel="noopener noreferrer">
+			<svg class="mobile-service-icon" viewBox="0 0 22 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.03 1.68a.06.06 0 0 0-.03-.02A17.6 17.6 0 0 0 13.89.4a.07.07 0 0 0-.07.03c-.19.34-.36.69-.51 1.04a16.2 16.2 0 0 0-4.62 0A11 11 0 0 0 8.17.43.07.07 0 0 0 8.1.4 17.5 17.5 0 0 0 3.99 1.66a.06.06 0 0 0-.03.02C1.34 5.55.63 9.31.98 13.04a.07.07 0 0 0 .03.05 17.7 17.7 0 0 0 5.04 2.51.07.07 0 0 0 .07-.02c.39-.52.74-1.08 1.03-1.66a.07.07 0 0 0-.04-.09 11.6 11.6 0 0 1-1.58-.74.07.07 0 0 1 0-.11l.31-.24a.07.07 0 0 1 .07-.01c3.31 1.49 6.89 1.49 10.16 0a.07.07 0 0 1 .07.01l.31.24a.07.07 0 0 1 0 .11c-.5.29-1.03.54-1.58.74a.07.07 0 0 0-.04.09c.3.58.65 1.13 1.03 1.66a.07.07 0 0 0 .07.02 17.6 17.6 0 0 0 5.06-2.51.07.07 0 0 0 .03-.05c.42-4.3-.71-8.03-2.99-11.35zM7.65 10.77c-1 0-1.82-.9-1.82-2.01s.8-2.01 1.82-2.01c1.02 0 1.83.91 1.81 2.01 0 1.11-.8 2.01-1.81 2.01zm6.72 0c-1 0-1.82-.9-1.82-2.01s.8-2.01 1.82-2.01c1.02 0 1.83.91 1.81 2.01 0 1.11-.8 2.01-1.81 2.01z"/></svg>
+			<span><strong>{t('services.discord')}</strong><small>{t('services.discordDesc')}</small></span>
+		</a>
+		<a class="mobile-service-link" href={MAP_URL} rel="noopener noreferrer">
+			<svg class="mobile-service-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5V4l-6 2.5L9 4zM9 4v13M15 6.5v13"/></svg>
+			<span><strong>{t('services.map')}</strong><small>{t('services.mapDesc')}</small></span>
+		</a>
+	</div>
+	<div class="site-nav-list__langs">
+		<LanguageSelect block/>
+	</div>
+</div>

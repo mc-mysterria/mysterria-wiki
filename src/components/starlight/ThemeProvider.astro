@@ -1,0 +1,65 @@
+---
+/*
+ * Applies the reader's theme before the first paint, the main site's way (index.html and
+ * src/composables/useTheme.ts in mysteria-frontend): localStorage['myst-theme'] holds
+ * 'parchment' for the light theme, anything else is the dark page, mirrored on
+ * <html data-theme="dark|parchment">.
+ *
+ * localStorage is per origin, so www.mysterria.net and wiki.mysterria.net cannot read each
+ * other's. The wiki also writes the same value to a `myst-theme` cookie on .mysterria.net
+ * and reads that first, so the choice carries over as soon as the main site does the same
+ * (two lines in its useTheme.ts and index.html). Until then each site remembers its own.
+ *
+ * Also marks the accent as plain (std-acc-plain, as std/accents.ts paintAccent does for
+ * Bone): the std set then adds an underline to focus, since Bone is nearly the text colour.
+ */
+---
+
+<script is:inline>
+	window.mystTheme = (() => {
+		const KEY = 'myst-theme';
+		const COLOR = {dark: '#05070a', parchment: '#efede8'};
+		const root = document.documentElement;
+		const read = () => {
+			try {
+				const cookie = document.cookie.match(/(?:^|;\s*)myst-theme=(dark|parchment)/);
+				return (cookie ? cookie[1] : localStorage.getItem(KEY)) === 'parchment' ? 'parchment' : 'dark';
+			} catch (e) {
+				return 'dark';
+			}
+		};
+		const apply = theme => {
+			root.dataset.theme = theme;
+			const meta = document.querySelector('meta[name="theme-color"]');
+			if (meta) meta.setAttribute('content', COLOR[theme]);
+		};
+		const save = theme => {
+			try {
+				localStorage.setItem(KEY, theme);
+			} catch (e) {}
+			const domain = location.hostname.endsWith('mysterria.net') ? '; domain=.mysterria.net' : '';
+			document.cookie = `${KEY}=${theme}; path=/; max-age=31536000; SameSite=Lax${domain}`;
+		};
+		root.classList.add('std-acc-plain');
+		apply(read());
+		return {
+			get: () => root.dataset.theme,
+			set(theme) {
+				if (theme === root.dataset.theme) return Promise.resolve();
+				save(theme);
+				const commit = () => {
+					root.classList.add('theme-switching');
+					apply(theme);
+					requestAnimationFrame(() => requestAnimationFrame(() => root.classList.remove('theme-switching')));
+				};
+				const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+				// resolves once the new colours are applied (a View Transition applies them a moment later)
+				if (document.startViewTransition && !still) return document.startViewTransition(commit).updateCallbackDone;
+				commit();
+				return Promise.resolve();
+			},
+		};
+	})();
+	// Starlight's own theme picker script looks for this; the wiki replaces that picker.
+	window.StarlightThemeProvider = {updatePickers() {}};
+</script>

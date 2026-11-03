@@ -1,0 +1,117 @@
+---
+/*
+ * Starlight's PageFrame, with the main site's footer added at the end of the page.
+ *
+ * The frame is Starlight's own (fixed header, fixed sidebar pane, the main column), so its
+ * mobile menu, sidebar state and search keep working; only the classes the main site's
+ * header styles hang on (site-header) and the footer are new. The footer sits inside the
+ * main column, so on a docs page it starts beside the sidebar instead of under it.
+ */
+import MobileMenuToggle from 'virtual:starlight/components/MobileMenuToggle';
+import SiteFooter from '../SiteFooter.astro';
+
+const {hasSidebar} = Astro.locals.starlightRoute;
+---
+
+<div class="page sl-flex">
+	<header class="header site-header"><slot name="header"/></header>
+	{
+		hasSidebar && (
+			<nav class="sidebar print:hidden" aria-label={Astro.locals.t('sidebarNav.accessibleLabel')}>
+				<MobileMenuToggle/>
+				<div id="starlight__sidebar" class="sidebar-pane">
+					<div class="sidebar-content sl-flex">
+						<slot name="sidebar"/>
+					</div>
+				</div>
+			</nav>
+		)
+	}
+	<div class="main-frame">
+		<slot/>
+		<SiteFooter/>
+	</div>
+</div>
+
+<script>
+	/*
+	 * A table wider than the column scrolls sideways: it takes keyboard focus then, so it can
+	 * be scrolled without a pointer (WCAG 2.1.1). Tables that fit are left out of the tab order.
+	 */
+	const markScrollable = () => {
+		for (const table of document.querySelectorAll<HTMLElement>('.sl-markdown-content table, .sequence-table')) {
+			if (table.scrollWidth > table.clientWidth + 1) table.tabIndex = 0;
+			else if (!table.hasAttribute('aria-label')) table.removeAttribute('tabindex');
+		}
+	};
+	markScrollable();
+	addEventListener('resize', markScrollable, {passive: true});
+</script>
+
+<style>
+	@layer starlight.core {
+		.page {
+			flex-direction: column;
+			min-height: 100vh;
+		}
+
+		.header {
+			z-index: var(--sl-z-index-navbar);
+			position: fixed;
+			inset-inline-start: 0;
+			inset-block-start: 0;
+			width: 100%;
+			height: var(--sl-nav-height);
+		}
+
+		.sidebar-pane {
+			visibility: var(--sl-sidebar-visibility, hidden);
+			position: fixed;
+			z-index: var(--sl-z-index-menu);
+			inset-block: var(--sl-nav-height) 0;
+			inset-inline-start: 0;
+			width: 100%;
+			background-color: var(--sl-color-black);
+			overflow-y: auto;
+		}
+
+		:global([aria-expanded='true']) ~ .sidebar-pane {
+			--sl-sidebar-visibility: visible;
+		}
+
+		.sidebar-content {
+			height: 100%;
+			min-height: max-content;
+			padding: 1rem var(--sl-sidebar-pad-x) 0;
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		@media (min-width: 50rem) {
+			.sidebar-content::after {
+				content: '';
+				padding-bottom: 1px;
+			}
+		}
+
+		.main-frame {
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+			padding-top: calc(var(--sl-nav-height) + var(--sl-mobile-toc-height));
+			padding-inline-start: var(--sl-content-inline-start);
+		}
+
+		.main-frame > :global(:first-child) {
+			flex: 1 0 auto;
+		}
+
+		@media (min-width: 50rem) {
+			.sidebar-pane {
+				--sl-sidebar-visibility: visible;
+				width: var(--sl-sidebar-width);
+				background-color: var(--sl-color-bg-sidebar);
+			}
+		}
+	}
+</style>

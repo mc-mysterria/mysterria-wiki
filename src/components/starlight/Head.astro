@@ -1,0 +1,107 @@
+---
+/*
+ * Starlight's head (title, description, canonical, hreflang alternates, Open Graph and
+ * Twitter basics, sitemap link), plus what the wiki adds:
+ *   - the Commissioner faces preloaded, as on the main site, so text is set in its real face
+ *     from the first paint (Cyrillic too on the Ukrainian pages);
+ *   - theme-color for the browser chrome (ThemeProvider.astro keeps it in step);
+ *   - an x-default alternate (the English page), the Open Graph image and Twitter tags;
+ *   - a link back to the main site, and JSON-LD: the wiki as a WebSite published by the
+ *     main site's Organization (the same @id its own JSON-LD declares), this page as a
+ *     WebPage, and its BreadcrumbList (wiki home > section > page).
+ */
+import Default from '@astrojs/starlight/components/Head.astro';
+import latin from '../../styles/fonts/commissioner/commissioner-latin.woff2?url';
+import latinExt from '../../styles/fonts/commissioner/commissioner-latin-ext.woff2?url';
+import cyrillic from '../../styles/fonts/commissioner/commissioner-cyrillic.woff2?url';
+import {MAIN_SITE, LOCALES, mainUrl, wikiPath} from '../../lib/site';
+import {currentSection, entryIds, links, plainLabel} from '../../lib/sections';
+
+const route = Astro.locals.starlightRoute;
+const {entry, locale, lang, entryMeta, sidebar, id} = route;
+const site = Astro.site ?? new URL('https://wiki.mysterria.net');
+const pageUrl = new URL(Astro.url.pathname, site).href;
+const homeUrl = new URL(wikiPath(locale), site).href;
+const isHome = id === '' || id === locale;
+const isNotFound = id === '404' || id.endsWith('/404');
+
+const pathWithoutLocale = locale ? Astro.url.pathname.replace(new RegExp(`^/${locale}(?=/)`), '') : Astro.url.pathname;
+const xDefault = new URL(pathWithoutLocale, site).href;
+
+const ogImage = new URL('/og-image.jpg', site).href;
+const description = entry.data.description;
+
+const WEBSITE_ID = `${site.origin}/#website`;
+const ORG_ID = `${MAIN_SITE}/#organization`;
+
+/* wiki home > the section (when it has a page of its own, such as Firearms) > this page */
+const crumbs: {name: string; item?: string}[] = [{name: 'Mysterria Wiki', item: homeUrl}];
+const section = currentSection(sidebar);
+if (section) {
+	// a section's own page is its folder's index (/firearms/), when it has one
+	const own = links(section).find(link => !link.isCurrent && !entryIds(link.href, undefined).at(-1)!.replace(locale ? `${locale}/` : '', '').includes('/'));
+	crumbs.push(own ? {name: section.label, item: new URL(own.href, site).href} : {name: section.label});
+}
+if (!isHome) crumbs.push({name: plainLabel(entry.data.title)});
+
+const graph: Record<string, unknown>[] = [
+	{
+		'@type': 'WebSite',
+		'@id': WEBSITE_ID,
+		url: `${site.origin}/`,
+		name: 'Mysterria Wiki',
+		inLanguage: LOCALES.map(l => (l.key ? (l.key === 'zh-cn' ? 'zh-CN' : l.key === 'zh-tw' ? 'zh-TW' : l.key) : 'en')),
+		publisher: {'@id': ORG_ID},
+		isPartOf: {'@id': `${MAIN_SITE}/#website`},
+	},
+	{
+		'@type': 'Organization',
+		'@id': ORG_ID,
+		name: 'Mysterria',
+		url: `${MAIN_SITE}/`,
+		logo: `${MAIN_SITE}/logo.webp`,
+	},
+];
+if (!isNotFound) {
+	graph.push({
+		'@type': 'WebPage',
+		'@id': `${pageUrl}#webpage`,
+		url: pageUrl,
+		name: entry.data.title,
+		...(description ? {description} : {}),
+		inLanguage: entryMeta.lang,
+		isPartOf: {'@id': WEBSITE_ID},
+		primaryImageOfPage: {'@type': 'ImageObject', url: ogImage},
+		...(isHome ? {} : {breadcrumb: {'@id': `${pageUrl}#breadcrumb`}}),
+	});
+	if (!isHome) {
+		graph.push({
+			'@type': 'BreadcrumbList',
+			'@id': `${pageUrl}#breadcrumb`,
+			itemListElement: crumbs.map((crumb, i) => ({
+				'@type': 'ListItem',
+				position: i + 1,
+				name: crumb.name,
+				...(crumb.item ? {item: crumb.item} : {}),
+			})),
+		});
+	}
+}
+const jsonLd = JSON.stringify({'@context': 'https://schema.org', '@graph': graph}).replace(/</g, '\\u003c');
+---
+
+<Default/>
+<meta name="theme-color" content="#05070a"/>
+<link rel="preload" href={latin} as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href={latinExt} as="font" type="font/woff2" crossorigin/>
+{lang === 'uk' && <link rel="preload" href={cyrillic} as="font" type="font/woff2" crossorigin/>}
+<link rel="alternate" hreflang="x-default" href={xDefault}/>
+<link rel="home" href={mainUrl(locale, '')} title="Mysterria"/>
+<meta property="og:image" content={ogImage}/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Mysterria, a Lord of the Mysteries Minecraft server"/>
+<meta name="twitter:title" content={entry.data.title}/>
+{description && <meta name="twitter:description" content={description}/>}
+<meta name="twitter:image" content={ogImage}/>
+<script type="application/ld+json" set:html={jsonLd}/>

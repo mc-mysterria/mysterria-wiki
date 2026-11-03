@@ -1,0 +1,41 @@
+---
+/*
+ * The main site's light/dark switch: one icon chip (StdChip) that flips between the dark
+ * page and parchment. Both chips are rendered, each with its own label, and CSS shows the
+ * one that applies (see wiki.css), so the right icon and accessible name are there on the
+ * first paint without waiting for a script.
+ *
+ * The choice is stored the main site's way (src/composables/useTheme.ts in
+ * mysteria-frontend): localStorage['myst-theme'] = 'dark' | 'parchment', mirrored on
+ * <html data-theme>. ThemeProvider.astro applies it before the first paint.
+ */
+import StdChip from '../std/StdChip.vue';
+
+const {t} = Astro.locals;
+---
+
+<wiki-theme-switch class="theme-switch">
+	<StdChip icon="sun" iconOnly label={t('header.themeLight')} title={t('header.themeLight')} class="theme-toggle theme-toggle--light" data-theme-to="parchment"/>
+	<StdChip icon="moon" iconOnly label={t('header.themeDark')} title={t('header.themeDark')} class="theme-toggle theme-toggle--dark" data-theme-to="dark"/>
+</wiki-theme-switch>
+
+<script>
+	/*
+	 * The switch: write the choice, then repaint every colour in one frame (the main site
+	 * suspends transitions for that frame, and crossfades with a View Transition where it can).
+	 */
+	class WikiThemeSwitch extends HTMLElement {
+		connectedCallback() {
+			this.addEventListener('click', event => {
+				const button = (event.target as Element).closest<HTMLElement>('[data-theme-to]');
+				const next = button?.dataset.themeTo;
+				if (next !== 'dark' && next !== 'parchment') return;
+				const theme = (window as unknown as {mystTheme?: {set(theme: string): Promise<void>}}).mystTheme;
+				// focus moves to the chip that is shown now, so the keyboard stays on the switch
+				const refocus = () => this.querySelector<HTMLElement>(`[data-theme-to="${next === 'dark' ? 'parchment' : 'dark'}"]`)?.focus({preventScroll: true});
+				theme?.set(next).then(refocus, refocus);
+			});
+		}
+	}
+	customElements.define('wiki-theme-switch', WikiThemeSwitch);
+</script>

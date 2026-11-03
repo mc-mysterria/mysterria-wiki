@@ -1,0 +1,51 @@
+---
+/*
+ * The main site's header bar (mysteria-frontend src/components/layout/HeaderItem.vue),
+ * rebuilt for the wiki: the brand, the main site's nav with Wiki as the current item,
+ * then the wiki's own controls (Starlight's search, the language menu, the theme switch).
+ *
+ * Its classes are the main site's (header-stack, header-grid, brand, primary-nav,
+ * nav-link, nav-underline, header-actions), so the bar takes its look from the copied
+ * arcana.css rules and the matching block in src/styles/wiki.css. There is no fit-the-nav
+ * script: the breakpoints in wiki.css step the bar down instead (tagline, search label,
+ * then the drawer below 50rem, which is also where Starlight moves the sidebar into its
+ * menu). Server-rendered; the only script is the theme switch and the language menu.
+ */
+import Search from 'virtual:starlight/components/Search';
+import LanguageSelect from 'virtual:starlight/components/LanguageSelect';
+import ThemeSelect from 'virtual:starlight/components/ThemeSelect';
+import SiteMenu from '../SiteMenu.astro';
+import logo from '../../assets/brand/logo-128.webp';
+import {MAIN_NAV, mainUrl, wikiPath} from '../../lib/site';
+
+const {locale, hasSidebar, id} = Astro.locals.starlightRoute;
+const {t} = Astro.locals;
+const isHome = id === '' || id === locale;
+---
+
+<div class="header-stack">
+	<div class="header-grid">
+		<a href={wikiPath(locale)} class="brand">
+			<img src={logo.src} alt="" class="brand-mark" width="38" height="38" decoding="async"/>
+			<span class="brand-words">
+				<span class="brand-name">Mysterria</span>
+				<span class="brand-tagline">{t('wiki.tagline')}</span>
+			</span>
+		</a>
+
+		<nav class="primary-nav" aria-label={t('header.navLabel')}>
+			{MAIN_NAV.map(link => <a class="nav-link" href={mainUrl(locale, link.path)}>{t(link.key)}</a>)}
+			<a class="nav-link active" href={wikiPath(locale)} aria-current={isHome ? 'page' : 'true'}>
+				{t('nav.wiki')}
+				<span class="nav-underline" aria-hidden="true"></span>
+			</a>
+		</nav>
+
+		<div class="header-actions">
+			<Search class="header-search"/>
+			<span class="header-lang"><LanguageSelect/></span>
+			<ThemeSelect/>
+			{!hasSidebar && <SiteMenu/>}
+		</div>
+	</div>
+</div>

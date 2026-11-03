@@ -1,0 +1,74 @@
+---
+/*
+ * The main site's language menu (src/components/ui/LanguageSelector.vue in
+ * mysteria-frontend): a std chip with the language's short code and a caret, opening the
+ * std menu surface with every language, its code and a tick on the current one.
+ *
+ * Built as a <details> disclosure of plain links instead of the main site's scripted menu,
+ * so it works without JavaScript and every translation is a real link. A few lines of
+ * script close it on Escape and on a click outside. `block` is the drawer's version:
+ * the list laid out in place, no chip.
+ */
+import StdIcon from '../std/StdIcon.vue';
+import {LOCALES, localeInfo, localizedPath} from '../../lib/site';
+
+interface Props {
+	block?: boolean;
+}
+
+const {block = false} = Astro.props;
+const {locale} = Astro.locals.starlightRoute;
+const {t} = Astro.locals;
+const current = localeInfo(locale);
+const label = t('header.languageLabel');
+const items = LOCALES.map(l => ({
+	...l,
+	href: localizedPath(Astro.url.pathname, l.key),
+	lang: l.site,
+	current: l.key === current.key,
+}));
+---
+
+{
+	block ? (
+		<div class="lang-list" role="group" aria-label={label}>
+			{items.map(item => (
+				<a class="lang-list__item std-focus" href={item.href} hreflang={item.lang} lang={item.lang} aria-current={item.current ? 'page' : undefined}>
+					<span class="lang-list__code" aria-hidden="true">{item.short}</span>
+					{item.name}
+				</a>
+			))}
+		</div>
+	) : (
+		<details class="lang-menu">
+			<summary class="std-chip std-focus lang-menu__trigger" aria-label={`${current.short}, ${label}`}>
+				<span aria-hidden="true">{current.short}</span>
+				<StdIcon name="chevron-down" class="std-chip__caret"/>
+			</summary>
+			<div class="std-pop std-pop--menu lang-menu__pop" aria-label={label}>
+				{items.map(item => (
+					<a class:list={['std-pop__item', {'is-checked': item.current}]} href={item.href} hreflang={item.lang} lang={item.lang} aria-current={item.current ? 'page' : undefined}>
+						<span class="std-pop__text">{item.name}</span>
+						<span class="std-pop__hint" aria-hidden="true">{item.short}</span>
+						<span class="std-pop__check" aria-hidden="true">{item.current && <StdIcon name="check"/>}</span>
+					</a>
+				))}
+			</div>
+		</details>
+	)
+}
+
+<script>
+	/* One menu open at a time; Escape and a click elsewhere close it (focus goes back to the chip). */
+	const menus = () => document.querySelectorAll<HTMLDetailsElement>('details.lang-menu[open]');
+	document.addEventListener('click', event => {
+		for (const menu of menus()) if (!menu.contains(event.target as Node)) menu.open = false;
+	});
+	document.addEventListener('keydown', event => {
+		if (event.key !== 'Escape') return;
+		for (const menu of menus()) {
+			menu.open = false;
+			menu.querySelector('summary')?.focus();
+		}
+	});
+</script>

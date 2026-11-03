@@ -1,0 +1,1628 @@
+/*
+ * The wiki on the main site's design system.
+ *
+ * Loaded after the copied arcana.css, std.css and std-gas.css (astro.config.mjs,
+ * customCss), so the tokens below are the main site's: --arc-* (page, ink, lines, type,
+ * radii, rhythm), --std-* and --q-* (controls), in both themes (dark, and parchment on
+ * <html data-theme="parchment">). This file does three things:
+ *   1. sets the accent the main site paints before a Pathway card is drawn (Bone);
+ *   2. points Starlight's own variables at those tokens, so its search, sidebar, table of
+ *      contents and pagination follow them;
+ *   3. draws the pieces Starlight renders (prose, sidebar, contents, asides, tables) with
+ *      the main site's rules, and the wiki's own header, landing and MDX components.
+ * All of it is unlayered, so it wins over Starlight's layered styles without !important.
+ */
+
+/* ---------- 1. the accent: Bone, as std/accents.ts SITE_ACCENT paints it on the main site ---------- */
+:root,
+body {
+    --acc: #e4dccb;
+    /* accentInk.ts inkAccent()/fillAccent() of Bone, read off www.mysterria.net */
+    --acc-deep: #676052;
+    --acc-fill: #676052;
+}
+
+/* the Chinese stacks: Traditional gets its own faces, as the main site does for zh-Hant */
+:root:lang(zh-TW),
+:root:lang(zh-TW) body {
+    --arc-cjk: 'PingFang TC', 'Hiragino Sans CNS', 'Microsoft JhengHei', 'Noto Sans TC', 'Noto Sans CJK TC';
+}
+
+/* main.css tokens the copied pieces still read */
+:root {
+    --myst-header-height: 68px;
+    --myst-shell: 1180px;
+    --myst-overlay: rgba(0, 0, 0, .7);
+    color-scheme: dark;
+}
+
+:root[data-theme="parchment"] {
+    --myst-overlay: rgba(23, 22, 28, .45);
+    color-scheme: light;
+}
+
+/* the theme switch: colours change in one frame (main.css), the crossfade stays short */
+:root.theme-switching *,
+:root.theme-switching *::before,
+:root.theme-switching *::after {
+    transition: none !important;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: .22s;
+}
+
+/* ---------- 2. Starlight's variables on the main site's tokens ---------- */
+:root {
+    /* the layout: the main site's bar height, its edges, a contents column of its width */
+    --wiki-shell: calc(var(--arc-container) + 2 * 64px);
+    --wiki-edge: max(0px, (100vw - var(--wiki-shell)) / 2);
+    --sl-nav-height: 69px;
+    --sl-nav-pad-x: var(--arc-gutter);
+    --sl-nav-pad-y: 0px;
+    --sl-mobile-toc-height: 3.5rem;
+    --sl-content-width: 46rem;
+    --sl-content-pad-x: var(--arc-gutter);
+    --sl-sidebar-pad-x: var(--arc-gutter);
+    --sl-menu-button-size: 44px;
+    --sl-main-pad: 0 0 clamp(48px, 6vw, 96px) 0;
+
+    --sl-font: var(--arc-body);
+    --sl-font-system: var(--arc-body);
+    --sl-font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+    --sl-line-height: 1.7;
+    --sl-line-height-headings: 1.2;
+
+    --sl-text-body: var(--arc-fs-body);
+    --sl-text-body-sm: var(--arc-fs-small);
+    /* the main site's prose sizes (arcana.css .arc-prose), so headings and their anchor wrappers agree */
+    --sl-text-h1: clamp(32px, 3.6vw, 50px);
+    --sl-text-h2: clamp(24px, 2.2vw, 30px);
+    --sl-text-h3: clamp(20px, 1.7vw, 24px);
+    --sl-text-h4: var(--arc-fs-h4);
+    --sl-text-h5: 17px;
+    --sl-text-h6: 16px;
+}
+
+@media (min-width: 50rem) {
+    :root {
+        --sl-sidebar-width: calc(var(--arc-gutter) + 16rem);
+    }
+
+    /* the sidebar starts at the site's left edge, and the page keeps the same edge on the right */
+    :root[data-has-sidebar] {
+        --sl-content-inline-start: calc(var(--wiki-edge) + var(--sl-sidebar-width));
+    }
+}
+
+/* Starlight's palette: white is the strongest ink, black the page (they swap on paper) */
+:root,
+::backdrop {
+    --sl-color-white: var(--arc-ink);
+    --sl-color-gray-1: #dcdbe2;
+    --sl-color-gray-2: #c2c1cb;
+    --sl-color-gray-3: var(--arc-muted);
+    --sl-color-gray-4: #75747f;
+    --sl-color-gray-5: #34333d;
+    --sl-color-gray-6: #1b1b22;
+    --sl-color-gray-7: #131318;
+    --sl-color-black: var(--arc-bg);
+
+    --sl-color-accent-low: color-mix(in oklab, var(--acc) 14%, var(--arc-bg));
+    --sl-color-accent: var(--acc-solid);
+    --sl-color-accent-high: var(--acc-ink);
+    --sl-color-text: color-mix(in oklab, var(--arc-ink) 86%, var(--arc-muted));
+    --sl-color-text-accent: var(--acc-ink);
+    --sl-color-text-invert: var(--arc-on-acc);
+
+    --sl-color-bg: var(--arc-bg);
+    --sl-color-bg-nav: color-mix(in srgb, var(--arc-bg) 78%, transparent);
+    --sl-color-bg-sidebar: var(--arc-bg);
+    --sl-color-bg-inline-code: var(--arc-glass);
+    --sl-color-bg-accent: var(--acc-solid);
+    --sl-color-hairline-light: var(--arc-line);
+    --sl-color-hairline: var(--arc-line);
+    --sl-color-hairline-shade: var(--arc-line);
+    --sl-color-backdrop-overlay: var(--std-backdrop);
+
+    --sl-shadow-sm: 0 1px 2px var(--arc-shadow);
+    --sl-shadow-md: 0 8px 24px var(--arc-shadow);
+    --sl-shadow-lg: 0 14px 36px var(--arc-shadow);
+
+    /* the asides and notices take the std set's state colours */
+    --sl-color-blue: var(--arc-info);
+    --sl-color-blue-high: var(--arc-info);
+    --sl-color-blue-low: color-mix(in oklab, var(--arc-info) 10%, var(--arc-bg));
+    --sl-color-green: var(--arc-ok);
+    --sl-color-green-high: var(--arc-ok);
+    --sl-color-green-low: color-mix(in oklab, var(--arc-ok) 10%, var(--arc-bg));
+    --sl-color-orange: var(--arc-warn);
+    --sl-color-orange-high: var(--arc-warn);
+    --sl-color-orange-low: color-mix(in oklab, var(--arc-warn) 10%, var(--arc-bg));
+    --sl-color-red: var(--arc-error);
+    --sl-color-red-high: var(--arc-error);
+    --sl-color-red-low: color-mix(in oklab, var(--arc-error) 10%, var(--arc-bg));
+    --sl-color-purple: var(--acc-ink);
+    --sl-color-purple-high: var(--acc-ink);
+    --sl-color-purple-low: color-mix(in oklab, var(--acc) 12%, var(--arc-bg));
+}
+
+:root[data-theme="parchment"],
+:root[data-theme="parchment"] ::backdrop {
+    --sl-color-gray-1: #2a2930;
+    --sl-color-gray-2: #3d3c45;
+    --sl-color-gray-4: #6c6a75;
+    --sl-color-gray-5: #c9c6bf;
+    --sl-color-gray-6: #e2dfd8;
+    --sl-color-gray-7: #ebe8e2;
+}
+
+/* ---------- 3a. the page ---------- */
+body {
+    font-size: var(--arc-fs-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--arc-muted) var(--arc-surface);
+}
+
+a {
+    color: var(--arc-ink);
+}
+
+/* the skip link: a std button in the accent */
+.sl-skip-link {
+    border-radius: var(--std-r-ctl);
+    background: var(--acc-solid);
+    color: var(--arc-on-acc);
+    font-weight: 600;
+}
+
+/* the faint warm glow under the bar (std-gas seam d), on every page */
+.main-frame {
+    position: relative;
+    isolation: isolate;
+}
+
+.main-frame::before {
+    position: absolute;
+    z-index: -1;
+    top: var(--sl-nav-height);
+    right: 0;
+    left: var(--sl-content-inline-start, 0);
+    height: min(420px, 60vh);
+    background: var(--arc-top-glow);
+    content: '';
+    pointer-events: none;
+}
+
+/* no rules between the title and the page (Folio: no hairlines) */
+.content-panel + .content-panel {
+    border-top: 0;
+}
+
+.content-panel {
+    padding-block: 0;
+}
+
+main > .content-panel:first-of-type {
+    padding-top: clamp(28px, 4vw, 48px);
+}
+
+main > .content-panel + .content-panel {
+    padding-top: clamp(24px, 3vw, 36px);
+}
+
+/* the page's title: the std page head (std.css .std-head__title) */
+h1#_top:not(.landing-hero__title) {
+    margin: 0;
+    color: var(--arc-ink);
+    font-family: var(--arc-display);
+    font-variation-settings: 'FLAR' 100;
+    font-size: clamp(32px, 3.6vw, 50px);
+    font-weight: 600;
+    line-height: 1.06;
+    letter-spacing: -.025em;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+}
+
+/* "this page is not translated yet": the std notice in the warning tone */
+.content-panel p.sl-flex:has(> svg + span) {
+    gap: 10px;
+    width: auto;
+    padding: 12px 16px;
+    border: 0;
+    border-radius: var(--std-r-card);
+    background: color-mix(in oklab, var(--arc-warn) 8%, transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--arc-warn) 30%, transparent);
+    color: var(--arc-ink);
+    font-size: var(--arc-fs-small);
+    line-height: 1.5;
+}
+
+.content-panel p.sl-flex:has(> svg + span) > svg {
+    width: 20px;
+    height: 20px;
+    color: var(--arc-warn);
+}
+
+/* ---------- 3b. the header bar (HeaderItem.vue's own rules, on Starlight's fixed header) ---------- */
+.site-header {
+    padding: 0;
+    border-bottom: 1px solid transparent;
+    background: color-mix(in srgb, var(--arc-bg) 78%, transparent);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+}
+
+:root[data-theme="parchment"] .site-header {
+    background: color-mix(in srgb, var(--arc-bg) 95%, transparent);
+}
+
+.header-stack {
+    height: 100%;
+}
+
+.header-stack .header-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 18px;
+    height: 100%;
+    max-width: var(--wiki-shell);
+    margin: 0 auto;
+    padding-inline: var(--arc-gutter);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    justify-self: start;
+    color: inherit;
+    text-decoration: none;
+}
+
+.brand:hover {
+    color: inherit;
+}
+
+.brand-mark {
+    display: block;
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.brand.compact .brand-mark {
+    width: 30px;
+    height: 30px;
+}
+
+.brand-words {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.brand-name {
+    color: var(--arc-ink);
+    font-family: var(--arc-display);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: .02em;
+}
+
+.brand-tagline {
+    margin-top: 5px;
+    color: var(--arc-muted);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: .26em;
+    text-transform: uppercase;
+}
+
+/* on paper the gold mark is inked, as on the main site */
+:root[data-theme="parchment"] .brand-mark,
+:root[data-theme="parchment"] .footer-brand img {
+    filter: grayscale(1) brightness(.4) contrast(1.3);
+}
+
+.primary-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-self: center;
+    min-width: 0;
+}
+
+.nav-link {
+    position: relative;
+    padding: 10px 12px;
+    color: var(--arc-muted);
+    font-family: var(--arc-caps);
+    font-size: 11px;
+    line-height: 1.6;
+    letter-spacing: .12em;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color .25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--arc-ink);
+}
+
+.nav-underline {
+    position: absolute;
+    right: 12px;
+    bottom: 2px;
+    left: 12px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    justify-self: end;
+}
+
+/*
+ * Starlight's own buttons in the bar and under it (search, the menu, the mobile contents)
+ * take the std chip's tints (std-gas.css, Lamplight's warm q-t1..q-t3), as the chips do.
+ */
+:is(.header-search > button[data-open-modal], starlight-menu-button button, mobile-starlight-toc .toggle) {
+    --g-warm: #f2dfbd;
+    --q-t1: color-mix(in oklab, var(--g-warm) 5.5%, transparent);
+    --q-t2: color-mix(in oklab, var(--g-warm) 8.5%, transparent);
+    --q-t3: color-mix(in oklab, var(--g-warm) 12%, transparent);
+}
+
+:root[data-theme="parchment"] :is(.header-search > button[data-open-modal], starlight-menu-button button, mobile-starlight-toc .toggle) {
+    --g-warm: #6b4a1e;
+    --q-t1: color-mix(in oklab, var(--g-warm) 5%, transparent);
+    --q-t2: color-mix(in oklab, var(--g-warm) 8%, transparent);
+    --q-t3: color-mix(in oklab, var(--g-warm) 11.5%, transparent);
+}
+
+/* the search button: a std chip with the label and the shortcut */
+.header-search > button[data-open-modal] {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: auto;
+    height: var(--std-h-sm);
+    min-width: var(--std-h-sm);
+    padding: 0 10px 0 12px;
+    border: 0;
+    border-radius: var(--std-r-ctl);
+    background: var(--q-t1);
+    box-shadow: none;
+    color: color-mix(in oklab, var(--arc-ink) 78%, var(--arc-muted));
+    font-family: var(--arc-body);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--q-dur) var(--q-ease), color var(--q-dur) var(--q-ease);
+}
+
+.header-search > button[data-open-modal]:hover {
+    border-color: transparent;
+    background: var(--q-t3);
+    color: var(--arc-ink);
+}
+
+.header-search > button[data-open-modal]:focus-visible {
+    outline: none;
+    background: var(--q-t3);
+    color: var(--arc-ink);
+    text-decoration: underline 1.5px currentColor;
+    text-underline-offset: 4px;
+}
+
+.header-search > button[data-open-modal] > svg {
+    flex: none;
+    width: 17px;
+    height: 17px;
+}
+
+.header-search > button[data-open-modal] > span {
+    min-width: 7.5em;
+    text-align: start;
+}
+
+.header-search > button[data-open-modal] kbd {
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--arc-muted);
+    font-family: var(--arc-body);
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+.header-search > button[data-open-modal] kbd kbd {
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: color-mix(in oklab, var(--arc-ink) 8%, transparent);
+}
+
+/* the theme switch: both chips are drawn, the one that applies is shown (no flash, no script) */
+.theme-switch {
+    display: inline-flex;
+}
+
+:root[data-theme="parchment"] .theme-toggle--light,
+:root:not([data-theme="parchment"]) .theme-toggle--dark {
+    display: none;
+}
+
+/* the language menu: the std menu surface under its chip */
+.lang-menu {
+    position: relative;
+}
+
+.lang-menu > summary {
+    list-style: none;
+}
+
+.lang-menu > summary::-webkit-details-marker {
+    display: none;
+}
+
+.lang-menu[open] .std-chip__caret {
+    transform: rotate(180deg);
+}
+
+.lang-menu .lang-menu__pop {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    left: auto;
+    min-width: 210px;
+}
+
+.lang-menu .std-pop__item:hover,
+.lang-menu .std-pop__item:focus-visible {
+    background: var(--q-t2, color-mix(in oklab, var(--arc-ink) 8%, transparent));
+    color: var(--arc-ink);
+}
+
+.lang-menu .std-pop__item:focus-visible {
+    text-decoration: underline 1.5px currentColor;
+    text-underline-offset: 4px;
+}
+
+/* Starlight's menu button (docs pages, below 50rem): the main site's hamburger chip */
+starlight-menu-button button {
+    top: calc((var(--sl-nav-height) - var(--sl-menu-button-size)) / 2);
+    inset-inline-end: var(--arc-gutter);
+    align-items: center;
+    justify-content: center;
+    width: var(--sl-menu-button-size);
+    height: var(--sl-menu-button-size);
+    padding: 0;
+    border-radius: var(--std-r-ctl);
+    background: var(--q-t1);
+    box-shadow: none;
+    color: var(--arc-ink);
+}
+
+starlight-menu-button button svg {
+    width: 20px;
+    height: 20px;
+}
+
+:root starlight-menu-button button:hover,
+:root starlight-menu-button[aria-expanded="true"] button {
+    background: var(--q-t3);
+    color: var(--arc-ink);
+}
+
+:root starlight-menu-button button:focus-visible {
+    outline: none;
+    background: var(--q-t3);
+    color: var(--acc-ink);
+}
+
+/* the bar steps down as the window narrows (HeaderItem.vue's ladder, in CSS) */
+@media (max-width: 1180px) {
+    .brand-tagline {
+        display: none;
+    }
+
+    .header-search > button[data-open-modal] > span,
+    .header-search > button[data-open-modal] kbd {
+        display: none !important;
+    }
+
+    .header-search > button[data-open-modal] {
+        justify-content: center;
+        width: var(--std-h-sm);
+        padding: 0;
+    }
+}
+
+@media (max-width: 960px) {
+    .nav-link {
+        padding: 8px;
+        font-size: 10.5px;
+        letter-spacing: .06em;
+    }
+
+    .nav-underline {
+        right: 8px;
+        left: 8px;
+    }
+}
+
+@media (max-width: 49.99rem) {
+    .primary-nav {
+        display: none;
+    }
+
+    .header-stack .header-grid {
+        grid-template-columns: auto 1fr;
+    }
+
+    /* room for Starlight's fixed menu button */
+    :root[data-has-sidebar] .header-stack .header-grid {
+        padding-inline-end: calc(var(--arc-gutter) + var(--sl-menu-button-size) + 6px);
+    }
+
+    .header-search > button[data-open-modal] {
+        width: 44px;
+        height: 44px;
+    }
+
+    .lang-menu > summary {
+        height: 44px;
+    }
+}
+
+/* the narrowest phones: the languages move into the menu, and below 360px the wordmark goes too */
+@media (max-width: 440px) {
+    .header-lang {
+        display: none;
+    }
+}
+
+@media (max-width: 359px) {
+    .header-grid .brand:not(.compact) .brand-words {
+        display: none;
+    }
+}
+
+/* ---------- 3c. the drawer (HeaderItem.vue's mobile nav) ---------- */
+.mobile-nav-toggle {
+    display: none;
+}
+
+@media (max-width: 49.99rem) {
+    .mobile-nav-toggle {
+        display: inline-flex;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+.site-menu[popover] {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: min(86vw, 340px);
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 0;
+    border-radius: var(--std-r-card) 0 0 var(--std-r-card);
+    background: color-mix(in oklab, var(--arc-ink) 3%, var(--arc-bg));
+    box-shadow: -24px 0 60px var(--arc-shadow);
+    color: var(--arc-ink);
+    transform: translateX(100%);
+    transition: transform .35s cubic-bezier(.16, 1, .3, 1), overlay .35s allow-discrete, display .35s allow-discrete;
+}
+
+.site-menu[popover]:popover-open {
+    transform: none;
+}
+
+@starting-style {
+    .site-menu[popover]:popover-open {
+        transform: translateX(100%);
+    }
+}
+
+.site-menu[popover]::backdrop {
+    background: var(--myst-overlay);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-menu[popover] {
+        transition: none;
+    }
+}
+
+.mobile-nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 14px 14px 20px;
+}
+
+.mobile-nav-content {
+    padding: 4px 12px 24px;
+}
+
+/* Starlight's sidebar menu ends with the same list */
+.mobile-preferences {
+    margin-top: 8px;
+    padding: 16px 0 24px;
+    border-top: 1px solid var(--arc-line);
+}
+
+.site-nav-list,
+.site-nav-list__links {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 14px;
+    border-radius: var(--std-r-ctl);
+    color: var(--arc-muted);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color var(--q-dur) ease, color var(--q-dur) ease;
+}
+
+.mobile-nav-link:hover {
+    color: var(--arc-ink);
+    background: color-mix(in oklab, var(--arc-ink) 5%, transparent);
+}
+
+.mobile-nav-link:focus-visible,
+.mobile-service-link:focus-visible,
+.lang-list__item:focus-visible {
+    outline: none;
+    color: var(--acc-ink);
+    background: color-mix(in oklab, var(--arc-ink) 11%, transparent);
+    text-decoration: underline 1.5px currentColor;
+    text-underline-offset: 4px;
+}
+
+.mobile-nav-link.active {
+    color: var(--arc-ink);
+    background: color-mix(in oklab, var(--arc-ink) 8%, transparent);
+}
+
+.mobile-services {
+    display: grid;
+    gap: 2px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--arc-line);
+}
+
+.mobile-service-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 14px;
+    border-radius: var(--std-r-ctl);
+    color: inherit;
+    text-decoration: none;
+}
+
+.mobile-service-link:hover {
+    background: color-mix(in oklab, var(--arc-ink) 5%, transparent);
+    color: inherit;
+}
+
+.mobile-service-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: var(--arc-muted);
+}
+
+.mobile-service-link span {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    line-height: 1.3;
+}
+
+.mobile-service-link strong {
+    color: var(--arc-ink);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.mobile-service-link small {
+    color: var(--arc-muted);
+    font-size: 12.5px;
+}
+
+.site-nav-list__langs {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--arc-line);
+}
+
+.lang-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2px;
+}
+
+.lang-list__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 0 12px;
+    border-radius: var(--std-r-ctl);
+    color: var(--arc-muted);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.lang-list__item:hover {
+    color: var(--arc-ink);
+    background: color-mix(in oklab, var(--arc-ink) 5%, transparent);
+}
+
+.lang-list__item[aria-current="page"] {
+    color: var(--arc-ink);
+    background: color-mix(in oklab, var(--arc-ink) 8%, transparent);
+    font-weight: 600;
+}
+
+.lang-list__code {
+    min-width: 2ch;
+    color: var(--arc-muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* ---------- 3d. the sidebar: the main site's contents column (ArcToc) ---------- */
+@media (min-width: 50rem) {
+    .sidebar-pane {
+        inset-inline-start: var(--wiki-edge);
+        border-inline-end: 0;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+    }
+
+    .sidebar-pane:hover {
+        scrollbar-color: var(--arc-line) transparent;
+    }
+
+    .sidebar-content {
+        padding: clamp(28px, 4vw, 48px) 12px 32px var(--arc-gutter);
+    }
+}
+
+.sidebar-content {
+    gap: 0;
+}
+
+.sidebar-content ul.top-level {
+    display: grid;
+    gap: 22px;
+}
+
+.sidebar-content ul.top-level > li + li {
+    margin-top: 0;
+}
+
+.sidebar-content summary {
+    padding: 0 0 6px;
+    border-radius: var(--std-r-sm);
+}
+
+.sidebar-content summary .large {
+    color: var(--arc-ink);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.sidebar-content summary .caret {
+    width: 16px;
+    height: 16px;
+    color: var(--arc-muted);
+}
+
+.sidebar-content ul ul li {
+    margin-inline-start: 0;
+    padding-inline-start: 0;
+    border-inline-start: 0;
+}
+
+.sidebar-content ul ul {
+    display: grid;
+    gap: 2px;
+}
+
+.sidebar-content a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 36px;
+    padding: 6px 12px;
+    border-radius: var(--std-r-ctl);
+    color: var(--arc-muted);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.35;
+    text-decoration: none;
+    transition: background-color var(--q-dur) var(--q-ease), color var(--q-dur) var(--q-ease);
+}
+
+.sidebar-content a:hover {
+    color: var(--arc-ink);
+    background: color-mix(in oklab, var(--arc-ink) 4%, transparent);
+}
+
+.sidebar-content a:focus-visible {
+    outline: none;
+    color: var(--acc-ink);
+    background: color-mix(in oklab, var(--arc-ink) 8%, transparent);
+    text-decoration: underline 1.5px currentColor;
+    text-underline-offset: 4px;
+}
+
+.sidebar-content a[aria-current="page"],
+.sidebar-content a[aria-current="page"]:hover,
+.sidebar-content a[aria-current="page"]:focus {
+    color: var(--arc-ink);
+    background: color-mix(in oklab, #f2dfbd 8.5%, transparent);
+    font-weight: 600;
+}
+
+:root[data-theme="parchment"] .sidebar-content a[aria-current="page"] {
+    background: color-mix(in oklab, #6b4a1e 8%, transparent);
+}
+
+@media (min-width: 50rem) {
+    .sidebar-content a {
+        font-size: 14.5px;
+    }
+}
+
+/* the "New!" marks: std tags in the accent */
+.sl-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    padding: 1px 7px;
+    border: 0;
+    border-radius: var(--std-r-tag);
+    background: color-mix(in oklab, var(--acc-ink) 11%, transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--acc-ink) 36%, transparent);
+    color: var(--acc-ink);
+    font-family: var(--arc-body);
+    font-size: 11.5px;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+/* on the current page's tinted row the accent is too light on paper: the badge takes the ink */
+.sidebar-content a[aria-current="page"] .sl-badge {
+    color: var(--arc-ink);
+}
+
+/* ---------- 3e. the contents on the right, and the mobile contents bar ---------- */
+@media (min-width: 72rem) {
+    :root {
+        --sl-mobile-toc-height: 0rem;
+    }
+
+    .right-sidebar {
+        border-inline-start: 0;
+    }
+
+    /*
+     * Starlight puts the contents column first in the HTML and moves it to the right with
+     * `order`, so while a slow connection has delivered only the top of the page it is drawn
+     * on the left, then jumps right when the article arrives (a 0.4 layout shift on a
+     * throttled load). Laying the row out from the right puts it in its place from the start.
+     */
+    .main-frame > .lg\:sl-flex {
+        flex-direction: row-reverse;
+    }
+
+    .main-frame > .lg\:sl-flex > .right-sidebar-container {
+        order: 0;
+    }
+
+    .right-sidebar-panel {
+        padding: clamp(28px, 4vw, 48px) var(--arc-gutter) 32px 16px;
+    }
+
+    :root[data-has-sidebar] {
+        --wiki-frame-end: var(--wiki-edge);
+    }
+
+    :root[data-has-sidebar] .main-frame {
+        padding-inline-end: var(--wiki-frame-end);
+    }
+}
+
+starlight-toc h2,
+#starlight__on-this-page {
+    margin: 0 0 8px;
+    color: var(--arc-ink);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+starlight-toc ul {
+    display: grid;
+    gap: 2px;
+}
+
+starlight-toc a {
+    padding-block: 6px;
+    border-radius: var(--std-r-ctl);
+    color: var(--arc-muted);
+    font-size: 14px;
+    line-height: 1.35;
+    text-decoration: none;
+}
+
+starlight-toc a:hover {
+    color: var(--arc-ink);
+}
+
+starlight-toc a:focus-visible {
+    outline: none;
+    color: var(--acc-ink);
+    text-decoration: underline 1.5px currentColor;
+    text-underline-offset: 4px;
+}
+
+starlight-toc a[aria-current="true"] {
+    color: var(--arc-ink);
+    background: color-mix(in oklab, var(--arc-ink) 6%, transparent);
+    font-weight: 600;
+}
+
+mobile-starlight-toc nav {
+    border-top: 0;
+    background: color-mix(in srgb, var(--arc-bg) 92%, transparent);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+}
+
+mobile-starlight-toc summary {
+    height: var(--sl-mobile-toc-height);
+    padding: 6px var(--arc-gutter);
+    border-bottom: 1px solid var(--arc-line);
+    font-size: 14px;
+}
+
+mobile-starlight-toc .toggle {
+    min-height: 40px;
+    padding-inline: 14px 10px;
+    border: 0;
+    border-radius: var(--std-r-ctl);
+    background: var(--q-t1);
+    box-shadow: none;
+    color: var(--arc-ink);
+    font-weight: 600;
+}
+
+mobile-starlight-toc details[open] .toggle,
+mobile-starlight-toc details .toggle:hover {
+    border-color: transparent;
+    background: var(--q-t3);
+}
+
+mobile-starlight-toc .display-current {
+    color: var(--arc-muted);
+}
+
+mobile-starlight-toc .dropdown {
+    border: 0;
+    border-radius: 0 0 var(--std-r-card) var(--std-r-card);
+    background: var(--q-popbg, var(--arc-pop));
+    box-shadow: 0 14px 36px var(--arc-shadow);
+}
+
+mobile-starlight-toc .isMobile a {
+    padding-inline-start: var(--arc-gutter);
+    border-top-color: var(--arc-line);
+    color: var(--arc-muted);
+}
+
+mobile-starlight-toc .isMobile a[aria-current="true"] {
+    color: var(--arc-ink);
+}
+
+/* ---------- 3f. long text: the main site's prose (arcana.css .arc-prose) ---------- */
+.sl-markdown-content {
+    color: color-mix(in oklab, var(--arc-ink) 86%, var(--arc-muted));
+    font-size: var(--arc-fs-body);
+    line-height: 1.7;
+}
+
+.sl-markdown-content :is(h2, h3, h4, h5, h6):not(:where(.not-content *)) {
+    margin-bottom: 0;
+    color: var(--arc-ink);
+    font-family: var(--arc-display);
+    font-variation-settings: 'FLAR' 100;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -.015em;
+    text-wrap: balance;
+}
+
+.sl-markdown-content :is(h2, h3, h4, h5, h6, .sl-heading-wrapper):not(:where(.not-content *)) {
+    margin-top: 1.9em;
+}
+
+.sl-markdown-content .sl-heading-wrapper > :is(h2, h3, h4, h5, h6) {
+    margin-top: 0;
+}
+
+.sl-markdown-content :is(h2, h3, h4, h5, h6, .sl-heading-wrapper):not(:where(.not-content *)) + * {
+    margin-top: .6em;
+}
+
+.sl-markdown-content > :first-child {
+    margin-top: 0;
+}
+
+/* the heading's own link (Starlight's anchor): small and quiet */
+.sl-anchor-link {
+    color: var(--arc-muted);
+}
+
+.sl-markdown-content .sl-heading-wrapper {
+    --sl-anchor-icon-size: .62em;
+}
+
+.sl-markdown-content strong:not(:where(.not-content *)) {
+    color: var(--arc-ink);
+    font-weight: 650;
+}
+
+.sl-markdown-content a:not(:where(.not-content *)) {
+    color: var(--arc-ink);
+    text-decoration: underline;
+    text-decoration-color: var(--arc-line-acc);
+    text-underline-offset: .2em;
+    transition: color .2s ease, text-decoration-color .2s ease;
+}
+
+.sl-markdown-content a:not(:where(.not-content *)):hover {
+    color: var(--acc-ink);
+    text-decoration-color: currentColor;
+}
+
+.sl-markdown-content a:not(:where(.not-content *)):focus-visible {
+    outline: none;
+    color: var(--acc-ink);
+    text-decoration: underline 2px currentColor;
+}
+
+.sl-markdown-content :is(ul, ol):not(:where(.not-content *)) {
+    padding-inline-start: 1.3em;
+}
+
+.sl-markdown-content li + li:not(:where(.not-content *)) {
+    margin-top: .4em;
+}
+
+.sl-markdown-content li::marker {
+    color: var(--acc-ink);
+}
+
+.sl-markdown-content blockquote:not(:where(.not-content *)) {
+    padding: 4px 0 4px 18px;
+    border-inline-start: var(--arc-bw-accent) solid var(--arc-line-acc);
+    color: var(--arc-muted);
+}
+
+.sl-markdown-content code:not(:where(.not-content *, pre *)) {
+    padding: 1px 6px;
+    border-radius: var(--arc-r-sm);
+    background: var(--arc-glass);
+    box-shadow: inset 0 0 0 var(--arc-bw) var(--arc-line);
+    color: var(--arc-ink);
+    font-size: .9em;
+}
+
+.sl-markdown-content hr:not(:where(.not-content *)) {
+    border: 0;
+    border-top: var(--arc-bw) solid var(--arc-line);
+}
+
+.sl-markdown-content :is(img, video, picture):not(:where(.not-content *)) {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--arc-r-lg);
+}
+
+/* tables: the main site's (arcana.css .arc-table): hairline rows in a rounded frame, quiet heads */
+.sl-markdown-content table:not(:where(.not-content *)) {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--std-r-card);
+    box-shadow: inset 0 0 0 var(--arc-bw) var(--arc-line);
+    font-size: var(--arc-fs-small);
+    line-height: 1.5;
+}
+
+.sl-markdown-content :is(th, td):not(:where(.not-content *)) {
+    padding: 12px 16px;
+    border-top: var(--arc-bw) solid var(--arc-line);
+    border-bottom: 0;
+    text-align: start;
+    vertical-align: top;
+}
+
+.sl-markdown-content :is(th:first-child, td:first-child):not(:where(.not-content *)) {
+    padding-inline-start: 16px;
+}
+
+.sl-markdown-content :is(th:last-child, td:last-child):not(:where(.not-content *)) {
+    padding-inline-end: 16px;
+}
+
+.sl-markdown-content thead th:not(:where(.not-content *)) {
+    border-top: 0;
+    color: var(--arc-muted);
+    font-size: var(--arc-fs-caption);
+    font-weight: 600;
+}
+
+/* asides: the main site's notice (Folio's slip): a tinted panel, its kind in small caps with an icon */
+.starlight-aside {
+    --tone: var(--arc-info);
+    padding: 14px 18px 16px;
+    border: 0;
+    border-radius: var(--std-r-card);
+    background: color-mix(in oklab, var(--tone) 6%, transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--tone) 24%, transparent);
+    color: var(--arc-ink);
+}
+
+.starlight-aside--note { --tone: var(--arc-info); }
+.starlight-aside--tip { --tone: var(--arc-ok); }
+.starlight-aside--caution { --tone: var(--arc-warn); }
+.starlight-aside--danger { --tone: var(--arc-error); }
+
+.starlight-aside__title {
+    gap: 8px;
+    margin: 0 0 6px;
+    color: var(--tone);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.starlight-aside__icon {
+    width: 16px;
+    height: 16px;
+}
+
+.starlight-aside__content {
+    color: color-mix(in oklab, var(--arc-ink) 86%, var(--arc-muted));
+}
+
+.starlight-aside__content a {
+    color: var(--arc-ink);
+}
+
+/*
+ * The footer spans the whole window, as on the main site: it reaches back under the
+ * sidebar column (and over it, once the page is scrolled to its end) instead of starting
+ * beside it, so its ground is one piece.
+ */
+@media (min-width: 50rem) {
+    .main-frame > .site-footer {
+        z-index: calc(var(--sl-z-index-menu) + 1);
+        margin-inline: calc(-1 * var(--sl-content-inline-start, 0px)) calc(-1 * var(--wiki-frame-end, 0px));
+    }
+}
+
+/* ---------- 3g. the end of a page: previous and next as std cards ---------- */
+.pagination-links {
+    gap: var(--arc-grid-gap);
+}
+
+.pagination-links a {
+    gap: 14px;
+    padding: 18px 20px;
+    border: 0;
+    border-radius: var(--std-r-card);
+    background: color-mix(in oklab, var(--arc-ink) 3%, transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--arc-ink) 8%, transparent);
+    color: var(--arc-muted);
+    font-size: 13px;
+    line-height: 1.4;
+    transition: background-color var(--q-dur) var(--q-ease);
+}
+
+.pagination-links a:hover {
+    border-color: transparent;
+    background: color-mix(in oklab, var(--arc-ink) 5%, transparent);
+}
+
+.pagination-links a:focus-visible {
+    outline: none;
+    background: color-mix(in oklab, var(--arc-ink) 8%, transparent);
+}
+
+.pagination-links a:focus-visible .link-title {
+    text-decoration: underline 1.5px currentColor;
+    text-underline-offset: 4px;
+}
+
+.pagination-links a > svg {
+    width: 18px;
+    height: 18px;
+    color: var(--arc-muted);
+}
+
+.pagination-links a:hover > svg {
+    color: var(--acc-ink);
+}
+
+.pagination-links .link-title {
+    color: var(--arc-ink);
+    font-size: 16px;
+    font-weight: 650;
+}
+
+/* ---------- 3h. search: Starlight's dialog on the std popup surface ---------- */
+site-search dialog {
+    border: 0;
+    border-radius: var(--std-r-card);
+    background: var(--q-popbg, var(--arc-pop));
+    box-shadow: inset 0 0 0 1px var(--arc-line), 0 24px 60px var(--arc-shadow);
+}
+
+site-search dialog::backdrop {
+    background: var(--std-backdrop);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+#starlight__search {
+    --pagefind-ui-font: var(--arc-body);
+    --pagefind-ui-border-radius: 8px;
+    --pagefind-ui-border: var(--arc-line);
+}
+
+#starlight__search mark {
+    background: color-mix(in oklab, var(--acc) 26%, transparent);
+    color: var(--arc-ink);
+}
+
+/* ---------- 3i. the landing page (components/starlight/Hero.astro) ---------- */
+:root[data-has-hero] {
+    --sl-content-width: var(--arc-container);
+}
+
+:root[data-has-hero] main > .content-panel:first-of-type {
+    padding-top: 0;
+}
+
+.landing {
+    display: grid;
+    gap: var(--arc-block-gap);
+}
+
+.landing-hero {
+    position: relative;
+    z-index: 0;
+    display: grid;
+    align-items: center;
+    min-height: clamp(420px, 58vh, 600px);
+    padding-block: clamp(40px, 6vw, 88px);
+}
+
+.landing-hero__art {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: calc(-1 * var(--arc-gutter));
+    bottom: 0;
+    width: min(70%, 980px);
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 45%);
+    mask-image: linear-gradient(90deg, transparent, #000 45%);
+    opacity: .85;
+}
+
+.landing-hero__art::after {
+    position: absolute;
+    inset: auto 0 0;
+    height: 40%;
+    background: linear-gradient(transparent, var(--arc-bg));
+    content: '';
+}
+
+.landing-hero__art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 30% 50%;
+}
+
+:root[data-theme="parchment"] .landing-hero__art {
+    opacity: .55;
+}
+
+.landing-hero__copy {
+    display: grid;
+    gap: 20px;
+    max-width: 640px;
+}
+
+.landing-hero__title {
+    margin: 0;
+    color: var(--arc-ink);
+    font-family: var(--arc-display);
+    font-variation-settings: 'FLAR' 100;
+    font-size: var(--arc-fs-display);
+    font-weight: 600;
+    line-height: 1.02;
+    letter-spacing: -.03em;
+    text-wrap: balance;
+}
+
+.landing-hero__lede {
+    color: color-mix(in oklab, var(--arc-ink) 80%, var(--arc-muted));
+}
+
+.landing-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.landing-cards {
+    --arc-grid-min: 240px;
+}
+
+.landing-index {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+    gap: var(--arc-head-gap) var(--arc-grid-gap);
+    align-items: start;
+}
+
+.landing-links {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.landing-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 44px;
+    padding: 8px 0;
+    border-top: var(--arc-bw) solid var(--arc-line);
+    color: color-mix(in oklab, var(--arc-ink) 86%, var(--arc-muted));
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.35;
+    text-decoration: none;
+    transition: color var(--q-dur) var(--q-ease);
+}
+
+.landing-links > li:first-child > .landing-link {
+    border-top: 0;
+}
+
+.landing-link:hover {
+    color: var(--acc-ink);
+}
+
+.landing-link:focus-visible {
+    outline: none;
+    color: var(--acc-ink);
+    text-decoration: underline 1.5px currentColor;
+    text-underline-offset: 4px;
+}
+
+@media (max-width: 49.99rem) {
+    .landing-hero {
+        min-height: 0;
+        padding-block: 0 8px;
+    }
+
+    .landing-hero__art {
+        position: relative;
+        right: auto;
+        order: -1;
+        width: auto;
+        height: 200px;
+        margin: 0 calc(-1 * var(--arc-gutter)) -24px;
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+}
+
+/* ---------- 3j. the MDX components (src/components/README.md) ---------- */
+/* a grid of std cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--arc-grid-min, 260px)), 1fr));
+    gap: var(--arc-grid-gap);
+}
+
+.sl-markdown-content :is(.card-grid, .wiki-notice, .wiki-figure, .sequence-table) {
+    margin-block: 1.5em;
+}
+
+/* a std card's title is a heading in a grid: it keeps the card's type, not the prose's */
+.std-card .std-card__title {
+    margin: 0;
+    color: inherit;
+    font-family: var(--arc-body);
+    font-variation-settings: normal;
+    font-size: 16px;
+    font-weight: 650;
+    line-height: 1.3;
+    letter-spacing: 0;
+}
+
+/* inside the prose, the std set's links keep their own look */
+.sl-markdown-content :is(.std-card, .std-btn:not(.std-btn--link)) {
+    text-decoration: none;
+}
+
+.sl-markdown-content .std-btn--primary,
+.sl-markdown-content .std-btn--primary:hover {
+    color: var(--arc-on-acc);
+}
+
+.sl-markdown-content :is(.std-card, .std-btn--secondary, .std-btn--quiet) {
+    color: var(--arc-ink);
+}
+
+/* a notice (Notice.astro): the asides' look, for MDX */
+.wiki-notice {
+    --tone: var(--arc-info);
+    padding: 14px 18px 16px;
+    border-radius: var(--std-r-card);
+    background: color-mix(in oklab, var(--tone) 6%, transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--tone) 24%, transparent);
+}
+
+.wiki-notice.is-tone-ok { --tone: var(--arc-ok); }
+.wiki-notice.is-tone-warn { --tone: var(--arc-warn); }
+.wiki-notice.is-tone-bad { --tone: var(--arc-error); }
+.wiki-notice.is-tone-acc { --tone: var(--acc-ink); }
+
+.wiki-notice__kind {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    color: var(--tone);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.wiki-notice__kind .std-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.sl-markdown-content .wiki-notice__title {
+    margin: 6px 0 0;
+    color: var(--arc-ink);
+    font-size: 16px;
+    font-weight: 650;
+    line-height: 1.35;
+}
+
+.wiki-notice__body {
+    margin-top: 6px;
+    color: color-mix(in oklab, var(--arc-ink) 86%, var(--arc-muted));
+}
+
+.wiki-notice__body > :first-child {
+    margin-top: 0;
+}
+
+/* a figure with a caption (Figure.astro) */
+.wiki-figure {
+    margin-inline: 0;
+}
+
+.wiki-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--arc-r-lg);
+}
+
+.wiki-figure.is-contain img {
+    width: auto;
+    max-width: 100%;
+    margin-inline: auto;
+}
+
+.wiki-figure figcaption {
+    margin-top: 10px;
+    color: var(--arc-muted);
+    font-size: var(--arc-fs-caption);
+    line-height: 1.5;
+}
+
+/* the Pathway and Sequence table (SequenceTable.astro): full width, the first column is the Sequence */
+.sequence-table table:not(:where(.not-content *)) {
+    display: table;
+    width: 100%;
+    max-width: none;
+}
+
+.sequence-table {
+    overflow-x: auto;
+    border-radius: var(--std-r-card);
+}
+
+.sequence-table tbody td:first-child {
+    width: 1%;
+    color: var(--acc-ink);
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.sequence-table tbody td:nth-child(2) {
+    color: var(--arc-ink);
+    font-weight: 600;
+}
+
+/* ---------- print ---------- */
+@media print {
+    .site-footer,
+    .landing-hero__art {
+        display: none;
+    }
+}
