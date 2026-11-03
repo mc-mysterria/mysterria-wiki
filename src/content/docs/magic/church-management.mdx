@@ -1,0 +1,239 @@
+---
+title: "Church Management"
+description: "Running a church on Mysterria: branches, Regional HQs, site roles, services, treasury, artifact vaults, Lands links and church wars on this LOTM server."
+sidebar:
+  label: Church Management
+  order: 34
+---
+
+import {Notice, Figure} from '~/components/mdx';
+
+This page is for church leaders and officers. New to churches? Start with [Churches: Getting Started](/magic/churches/). The numbers behind perks are on [Church Perks and Anchors](/magic/church-perks/). All values here are the live server values as of November 2026.
+
+## Church sites
+
+Church presence comes from **sites**, each with a placed, active Church Core. Perks are checked by distance to your active sites, not by chunk.
+
+| Site | What it is |
+|---|---|
+| **Main Site** | Your headquarters and main anchor. Created by your first core |
+| **Branch Site** | Extra sites that grow the network and local support |
+| **Regional HQ** | A distant site that unlocks more branch slots |
+
+A site whose core is missing or inactive does not count.
+
+### What if the main core breaks?
+
+<Figure src="https://in.ikeepcalm.me/mTxUFlLZVXbe.png" width={969} height={192} alt="Chat warning shown when a main Church Core is broken" />
+
+- Without a main core, **every church perk runs at 50%**.
+- After **14 days** without one, the church counts as abandoned.
+- After **another 14 days**, all members are removed and the church is deleted.
+
+To move your headquarters, break your main core and place it again.
+
+## How do I add a branch?
+
+1. Be the church leader, with your main core placed and active.
+2. Check you have a free branch slot (table below).
+3. Craft another [Church Core](/magic/churches/#church-core-recipe) and place it at least 16 blocks from any other core.
+4. It is registered as a branch. Manage it in the church menu under sites.
+
+| Leader's Sequence | Branch slots | Regional HQ slots |
+|---|---:|---:|
+| 4 | 0 | 0 |
+| 3 | 1 | 1 |
+| 2 | 3 | 1 |
+| 1 | 5 | 2 |
+| 0 | 8 | 3 |
+
+If placing a core fails, you may be out of branch slots, your main core may be inactive, you may need a Regional HQ first, or the core may belong to someone else.
+
+## Regional HQs
+
+Each active Regional HQ adds **5 branch slots**. To place one:
+
+- your next expansion must need a Regional HQ;
+- it must be at least **5,000 blocks** from your main site, your branches and other Regional HQs;
+- it must be in the **same world** as your main site;
+- it needs a manager: a co-leader, or an Angel with maximum piousness. Set one with `/coi church regional-manager set <siteId> <player>`.
+
+The church menu shows whether your current spot is valid.
+
+## Running a site
+
+Each site works best with an active, high-Sequence **Head Deacon**, up to **2 Bishops**, and regular prayer and attendance.
+
+| Head Deacon | Site effectiveness |
+|---|---:|
+| Sequence 0 to 4 | 100% |
+| Sequence 5 | 70% |
+| Sequence 6 | 55% |
+| Sequence 7 | 45% |
+| Sequence 8 | 35% |
+| Sequence 9 | 25% |
+| Non-Beyonder | 15% |
+| No Head Deacon | 65% |
+
+A head who has not prayed recently counts for less.
+
+| Site activity | Value |
+|---|---|
+| Recent activity window | 7 days |
+| Weekly prayer target | 12 prayers |
+| Weekly attendance target | 8 attendees |
+| A branch decays after | 14 days without real activity |
+| Reviving a decayed branch | 20 treasury and 12 Spirituality, standing within 12 blocks |
+
+Meeting either the prayer target or the attendance target is enough to count as fully active.
+
+### Treasury, offerings and upgrades
+
+Hold an item and use the offering action on a site in the church menu (or `/coi church offering donate <siteId>`) to add to its treasury. Treasury pays for site upgrades and revivals.
+
+Upgrades start at **32 treasury**, each level costs 1.6 times the one before, and a site goes up to **level 5**. Each level raises the site's anchor capacity by 12%.
+
+If your church is linked to a Land, treasury can draw on the Land's bank (see [Lands](#linking-a-land)).
+
+## Church services
+
+Services (sermons and the like) grow your **Church Progress**, which helps a young church climb tiers.
+
+| Service | Cooldown | Spirituality cost | Prayer strength | Extra effect | Base progress |
+|---|---:|---:|---:|---|---:|
+| Sermon | 60 min | 12 | +3.5% | none | 6 |
+| Mass | 180 min | 16 | +4.5% | 8 s of Regeneration I | 8 |
+| Communion | 240 min | 18 | +5.0% | 2 recoverable Madness relief | 7 |
+| Confession | 120 min | 10 | +3.0% | 1 recoverable Madness relief | 5 |
+
+- **Who can lead one:** the leader, co-leaders, Angels, or that site's Head Deacon.
+- The officiant must be within **24 blocks** of the site, and at least one member must attend.
+- Start one from the church menu or with `/coi church ritual <siteId> <sermon|mass|communion|confession>`.
+- Progress = (base progress + 0.75 per participant, up to 12 participants) x the site's activity, never counted below 25%.
+
+Each attendance counts toward the **Devout church service** deed (10 needed) for [Sequence 0](/magic/sequence-zero/).
+
+## Artifact vaults
+
+A **Church Vault** stores [Sealed Artifacts](/magic/sealed-artifacts/) for the church. Members borrow them; managers approve.
+
+### Vault recipe
+
+<Figure src="https://in.ikeepcalm.me/LdA4R48J2Gdg.png" width={515} height={492} alt="Church Vault crafting recipe with a Church Core in the centre" caption="The centre slot shows a Church Core, but a plain Beacon works too." contain />
+
+| Row | Items |
+|---|---|
+| Top | Diamond Block, Chest, Diamond Block |
+| Middle | Chest, Beacon (or a Church Core), Chest |
+| Bottom | Netherite Block, Obsidian, Netherite Block |
+
+Only the church leader can craft it. Place it within **16 blocks** of an active Church Core.
+
+### How borrowing works
+
+1. A manager stores a held Sealed Artifact at the vault.
+2. A member requests it from the vault menu (`/coi church artifact request <artifactId>`).
+3. A manager approves or denies.
+4. The member must return it before the borrow time runs out. Late, recalled or dropped artifacts are pulled back into church storage, and so is any artifact whose borrower logs off.
+
+The player who stored an artifact can take it back with `/coi church artifact withdraw` when it is not lent out and has no pending request.
+
+| Vault value | Live value |
+|---|---|
+| Use the vault within | 10 blocks |
+| Capacity | +1 per church tier, per vault, per site level and per Land link, up to **12** |
+| Borrow time | 2 hours, rising with tier, vaults, site levels and Land links, up to **4 hours** |
+| Remote artifact | Each site can keep one artifact for remote borrowing once it has been stored for **7 days** |
+
+Abilities cannot replace cores or vaults, and Characteristic Theft and Purification cannot take characteristics from church-owned artifacts.
+
+## Linking a Land
+
+Churches do not claim land. If you use [Towns](/guides/towns/), you can link a Land that contains one of your active sites:
+
+1. Claim the area in Lands and place the site's core inside it.
+2. Near the site, run `/coi church land request` (or `/coi church land request <siteId>`).
+3. The Land owner runs `/coi church land approve <churchLeader>`.
+4. Check it with `/coi church land`.
+
+A church gets **3** Land link slots, plus 1 for every 10 claimed chunks. The Land owner can toggle two perks with `/coi church land perk <churchLeader> <treasury|artifacts> <true|false>`:
+
+- **Treasury**: church treasury can use the Land's bank.
+- **Artifacts**: a little more vault capacity and borrow time.
+
+Inside a claimed Land, Lands permissions decide who may break cores and vaults (except in an accepted church war).
+
+## Church wars
+
+Mark other churches as allies, enemies or neutral in the **Diplomacy & War** menu. Wars change perks:
+
+| Situation | Perks |
+|---|---|
+| You declared, they have not accepted | x0.5 for the declaring church |
+| Accepted war, while it runs | x0 (all perks suspended) |
+| Winner | x1.5 for 14 days |
+| Loser | x0.5 for 14 days |
+| Draw | x0.5 for 7 days |
+| Ally of the winner | x1.2 |
+| Ally of the loser, or in a draw | x0.8 |
+
+- A church can have up to **3** active wars, with **30 minutes** between declarations. A war lasts at most **72 hours**.
+- In an accepted war, enemies at **Sequence 4 or stronger** can break your cores and vaults. Weaker players cannot.
+- Breaking the enemy's **main core** ends the war in the breaker's favour.
+
+| War command | What it does |
+|---|---|
+| `/coi church war` | List wars |
+| `/coi church war declare <leader>` | Declare war on a church |
+| `/coi church war accept <leader>` | Accept a declaration |
+| `/coi church war join <attackerLeader> <defenderLeader> <attacker\|defender>` | Join a war as an ally |
+| `/coi church war surrender <leader>` | Surrender |
+| `/coi church war draw <leader>` | Offer or accept a draw |
+
+## Danger alerts and Divine Observation
+
+The leader, co-leaders, Angels and Head Deacons can set alerts in the church menu's watch settings:
+
+- **Danger alerts** when a member (or anyone you mark as Blessed) drops to 6 health or less or reaches 85% Madness, with their exact location, at most once every 5 minutes.
+- **Mutation alerts** when someone risks losing control, and **death alerts**.
+- **Prayer notices** for members, senior members or outsiders who pray.
+
+**Divine Observation** lets church officers watch a member from nearby; sneak to stop. A member of equal or higher Sequence must give permission first. Trusted members (co-leaders, Angels, Head Deacons or senior active members) can be put on a remote observation list.
+
+## Leader checklist
+
+- Keep the main core placed and active.
+- Recruit active members who pray, not just names.
+- Assign a Head Deacon and Bishops to every site.
+- Hold services regularly.
+- Add branches as your Sequence allows, and revive any that decay.
+- Stay within your Angel slots.
+- Upgrade active sites with treasury.
+- Guard cores and vaults during a war.
+- Check `/coi church status` and `/coi church perks` when bonuses drop.
+
+## Commands for leaders and managers
+
+| Command | What it does |
+|---|---|
+| `/coi church add <player>` | Invite a player (leader and co-leaders) |
+| `/coi church remove <player>` | Remove a member |
+| `/coi church authority grant <player>` | Make a co-leader (at most 2) |
+| `/coi church authority revoke <player>` | Remove a co-leader |
+| `/coi church angel promote <player>` | Make an Angel |
+| `/coi church angel demote <player>` | Remove an Angel |
+| `/coi church role set <player> <follower\|angel>` | Set a member's role |
+| `/coi church regional-manager set <siteId> <player>` | Set a Regional HQ manager |
+| `/coi church ownership handoff <player> confirm` | Hand the church to someone else |
+| `/coi church disband` | Disband (type the church name within 45 s to confirm) |
+| `/coi church bless <player>` | Bless a member |
+| `/coi church gift <player> <type>` | Give a gift (see [gifts](/magic/church-perks/#gifts)) |
+| `/coi church ritual <siteId> <service>` | Hold a service |
+| `/coi church offering donate <siteId>` | Offer the held item to a site |
+| `/coi church artifact approve\|deny\|recall <artifactId>` | Manage vault loans |
+| `/coi church artifact deposit` | Store the held artifact |
+| `/coi church merge request <leader>` | Propose merging churches |
+| `/coi church merge accept\|decline\|status\|cancel` | Answer or check a merge |
+| `/coi church support set <prayer\|ritual\|blessing> <true\|false>` | Turn shared support on or off |
+
+Most of these are also buttons in the church menu.

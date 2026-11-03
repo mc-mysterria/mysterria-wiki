@@ -1,0 +1,225 @@
+---
+title: "Seats and Usurpation"
+description: "Seat limits per Pathway on Mysterria, how overflow acting banks, and how to contest a full Sequence seat or a Uniqueness in this Lord of the Mysteries server."
+sidebar:
+  label: Seats and Usurpation
+  order: 30
+---
+
+import {Notice, Button, Figure} from '~/components/mdx';
+
+<Figure src="https://in.ikeepcalm.me/IaAGV6FxcMUF.webp" width={2048} height={825} alt="Lord of the Mysteries artwork of eight gods side by side" />
+
+Beyonder characteristics are conserved. From Sequence 3 upward, every Pathway has only a few seats at each Sequence. When they are all taken, the only way up is to take one from someone who holds it. This page explains the seat limits, the **Overflow** you save up to do that, and the two ways to spend it: contesting a seat, or challenging a [Uniqueness](/magic/uniqueness/).
+
+## How many seats does each Sequence have?
+
+The limits are per Pathway. Sequence 4 and weaker have no limit.
+
+| Sequence | Rank | Seats per Pathway |
+|---|---|---:|
+| 3 | Saint | 18 |
+| 2 | Angel | 9 |
+| 1 | Archangel | 3 |
+| 0 | Deity | 1 |
+
+When a bracket is full, you cannot drink your next potion the normal way, even with a full acting bar and every ritual done. You can wait for a seat to open, or you can contest one.
+
+The main site shows who holds every seat right now.
+
+<Button href="https://www.mysterria.net/en/ascension" variant="secondary" iconEnd="external" external>Live seat census on mysterria.net</Button>
+
+Sequence 0 is never contested through a seat bid. Its single throne opens only through the vigil described on the [Sequence 0](/magic/sequence-zero/) page.
+
+## What is Overflow?
+
+Once your [acting](/magic/acting/) bar is full, further acting is not wasted. It is banked as **Overflow**, a separate pool that you spend on Usurpation and on a Sequence 0 claim.
+
+- Overflow is not acting. It never counts toward advancing and never shows in your bar.
+- It banks only while your Pathway is at **Sequence 3, 2 or 1**. Sequence 4 and weaker do not bank, and a Sequence 0 god has no bar at all.
+- Your bank is capped at **3.5 times your current bar**.
+- When a gain banks, the action bar shows `+N overflow`. `/coi usurp` shows your bank for each Pathway.
+- On a Tide of Diligence day, acting that would go past a source's cap banks as Overflow instead (see [Daily Tides](/guides/tides/)).
+
+<Notice tone="warn" title="Changing Pathway loses your bank">
+Your banked Overflow belongs to the Pathway you earned it on. If you transfer to another Pathway, it is lost.
+</Notice>
+
+### Weekly limits per source
+
+Each acting source can only bank so much per week, as a percent of your bar. The limits reset every Monday at 00:00 UTC.
+
+| Source | Weekly limit |
+|---|---:|
+| Ability gameplay | 40% |
+| World content | 40% |
+| Player interaction | 25% |
+| Stolen acting | 25% |
+| Events | 25% |
+| Passive | 5% |
+| Acting Bottles | 0% |
+| Deity Favor | 0% |
+
+Acting Bottles can be bought and traded, so they fill your bar but never bank Overflow. A god's Favor never banks Overflow either.
+
+### What things cost
+
+| Your Sequence | Full bar | Bank cap (3.5x) | Uniqueness challenge (50%) | Minimum seat bid (1.75x) |
+|---|---:|---:|---:|---:|
+| 3 | 35,942 | 125,797 | 17,971 | 62,899 (for an Angel seat) |
+| 2 | 47,001 | 164,503 | 23,501 | 82,252 (for an Archangel seat) |
+| 1 | 62,208 | 217,728 | 31,104 | none (Sequence 0 uses the vigil, stake 31,104) |
+
+<Notice tone="info" title="Why Saint seats are hard to contest">
+You contest the bracket one Sequence above you, so a Saint (Sequence 3) seat is contested from Sequence 4. Since Overflow only banks from Sequence 3 on the live server, a Sequence 4 player cannot save up a bid for a Saint seat.
+</Notice>
+
+## How do I challenge a Uniqueness?
+
+A Uniqueness challenge forces an immediate re-score between you and the current holder of your Pathway's [Uniqueness](/magic/uniqueness/). There is no war; it resolves as soon as you confirm. Open it from the Uniqueness menu (the **Usurpation** section) or with `/coi usurp uniqueness <pathway>`.
+
+**You need to:**
+
+- be Sequence 4 or stronger on that Pathway (in practice Sequence 3, since you need Overflow);
+- hold no Uniqueness yourself, and not be withdrawn from Uniqueness evaluation;
+- be settled into the Pathway (see [Switched Pathways recently?](#switched-pathways-recently));
+- have enough Overflow for the stake.
+
+The Pathway must have a holder, no other challenge pending, no challenge in the last 7 days, and no Sequence 0 vigil running for it.
+
+| Rule | Live value |
+|---|---|
+| Stake | Exactly **50%** of your bar. Higher stakes are refused, because they buy nothing |
+| Your score multiplier | **x1.25** (the cap) |
+| Score floor | Your unboosted score must be at least **90%** of the holder's, or you get a full refund and no verdict |
+| Holder's defence | The holder's score is raised by their accommodation, up to x1.25 at 100% |
+| To win | Strictly beat the holder. A tie keeps it with them |
+| If you lose | 50% of the stake burns, the rest returns to your bank |
+| If you win | The stake is spent and the Uniqueness moves to you at 0% accommodation |
+| Cooldown | 7 days on that Pathway after any verdict |
+
+The confirm screen shows both scores, your multiplier and the result before you pay, calculated the same way as the real verdict. If the challenge cannot reach a fair verdict (for example the holder stops being eligible, or the server restarts first), your stake is refunded in full and no cooldown starts.
+
+## How do I contest a full seat?
+
+A seat challenge targets a full bracket, not a named player. You must already have everything advancement asks for, so the only thing missing is a free seat. Open **Contest a Seat** from the Beyonder menu (`/coi menu character`, or the M key with the [client mod](/guides/client-mod/)), or use `/coi usurp seat <pathway>`.
+
+### The checklist
+
+The menu shows these as a live checklist:
+
+1. **Bracket full**: every seat at the next Sequence is taken.
+2. **Acting at 100%** on that Pathway.
+3. **All rituals complete.**
+4. **Next-Sequence potion in inventory.**
+5. **Not throttled by the progression limiter.**
+6. **Settled into this Pathway.**
+7. **Bracket not shielded**: no verdict on this bracket in the last 14 days.
+8. **Not on a re-declaration cooldown** after withdrawing.
+9. **Enough Overflow for the bid.**
+
+<Notice tone="ok" title="Your potion is safe in escrow">
+When you bid, your potion is taken into escrow and its expiry stops. It comes back with a fresh expiry on every ending except a win: outbid, refunded, war lost or withdrawn. If you are offline, it waits for your next login. It is only used when you drink it into the seat you won.
+</Notice>
+
+### The bid
+
+Minimum bid = your bar x 1.75, then:
+
+- x1.5 for each recent lost challenge (this fades after 60 days);
+- x0.5 if you were deposed in the last 60 days (a rematch).
+
+You may bid more than the minimum, up to your bank.
+
+### Step 1: the 48-hour declaration window
+
+Your bid is paid when you place it, and the server is told. For 48 hours anyone else who passes the checklist can bid on the same bracket. When the window closes, the highest bid goes forward and every other bid is refunded in full, potion included.
+
+You can withdraw while the window is open:
+
+- within **15 minutes** of declaring it is free;
+- after that, **50%** of your bid burns;
+- either way you cannot declare on that bracket again for **6 hours**.
+
+### Step 2: nomination
+
+The bracket names the holder with the lowest **Defense Score**:
+
+| Part | Weight |
+|---|---:|
+| Playtime (your best 31 days out of the last 60) | 40% |
+| Church religion score (see [Churches](/magic/churches/)) | 25% |
+| Ability casts in the last 31 days | 20% |
+| Uniqueness accommodation | 15% |
+
+If the named holder has less than **3 hours** of playtime in the last **45 days**, there is no war: the seat is simply taken.
+
+### Step 3: the war
+
+- The war lasts **7 contested days**. A day counts only if the holder was online and present for at least **20 minutes** of it. Logging in for a moment does not count.
+- War Points come from real acting gains, measured as a percent of each side's own bar, so different Sequences compete on effort.
+- Standings are announced once a day.
+- A **21-day** real-time cap stops a war from running forever. If the holder has been missing for **48 hours** or more, the challenger can withdraw for free. A war that is actually being fought cannot be abandoned.
+- Daily Tides never inflate War Points.
+
+| Acting source | War Point weight |
+|---|---:|
+| Ability gameplay, world content, player interaction, events | 1.0 |
+| Stolen acting | 0.5 |
+| Acting Bottles, passive, Deity Favor | 0 |
+
+### Who wins?
+
+| How the war ended | Result |
+|---|---|
+| Ran its full 7 contested days | Most War Points wins. A tie keeps the seat |
+| Hit the 21-day cap, challenger scored more | Challenger wins |
+| Hit the 21-day cap, level, and the challenger scored something | Challenger wins |
+| Hit the 21-day cap, the holder never appeared | Challenger wins |
+| Hit the 21-day cap, holder scored more | Holder keeps the seat |
+
+### Step 4: after the verdict
+
+**If the challenger wins**, they must log in within **48 hours** with acting and rituals still in order, and the potion is drunk into the seat through the normal advancement rules. If they miss that, the seat stays with the holder.
+
+**The deposed holder:**
+
+- drops one Sequence, on that Pathway only;
+- keeps **95%** of the bar at the new Sequence;
+- receives the **Beyonder Characteristic** of the seat they lost, which can stand in for a main ingredient when they brew again;
+- can bid for a rematch at **half price** for **60 days**.
+
+**If the challenger loses**, 50% of the bid burns, the rest returns, and the potion comes back. The bracket is then shielded for 14 days, but only if the challenger earned at least 10 War Points, so a token challenge cannot shield a bracket for a friend.
+
+If a contest ends without a verdict (a seat opens by itself, either side changes Sequence, nobody bid, or staff cancel it), every bid and potion is refunded in full and no cooldown starts.
+
+Fighting a seat war to its verdict, win or lose, counts as a legendary deed toward [Sequence 0](/magic/sequence-zero/).
+
+## Switched Pathways recently?
+
+A Pathway you reached sideways (a switch potion, a free transfer or an Avatar takeover) instead of walking it from Sequence 9 must settle in first:
+
+| Rule | Value |
+|---|---|
+| Challenge lockout | **30 days** before you can contest a seat or a Uniqueness on it |
+| Overflow settling | Banks at **25%** on arrival, rising to full over **60 days** |
+
+Pathways with no arrival record, including every character that existed before this rule, count as walked.
+
+## Commands
+
+| You want to | Command |
+|---|---|
+| See your Overflow bank and any active challenge | `/coi usurp` |
+| Challenge a Pathway's Uniqueness | `/coi usurp uniqueness <pathway>` |
+| Contest a full seat bracket | `/coi usurp seat <pathway> [percent]` |
+| Withdraw from an open window or a stalled war | `/coi usurp withdraw` |
+
+The `[percent]` is your bid as a percent of your bar. Leave it out to bid the minimum.
+
+## Related pages
+
+- [Uniqueness](/magic/uniqueness/): what the Uniqueness gives and how it is granted
+- [Sequence 0](/magic/sequence-zero/): the vigil, the only way to a throne
+- [Acting](/magic/acting/): how you fill your bar
+- [Acting Overflow and the Usurpation](https://www.mysterria.net/en/news/acting-overflow-the-usurpation): the original announcement (some numbers there are out of date; this page has the live values)
