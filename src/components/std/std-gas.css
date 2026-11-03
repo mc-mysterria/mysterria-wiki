@@ -1,0 +1,899 @@
+/*
+ * COPIED FROM mysteria-frontend (the main site, www.mysterria.net):
+ *   src/components/std/std-gas.css at origin/main 83290e3
+ * Keep it in sync with that file: copy it over again rather than editing it here.
+ * Unchanged from the original.
+ */
+
+/*
+ * Gaslight's variations: d1 Lamplight, d2 Folio, d3 Hush, d4 Settle, and d5 Folio, the
+ * owner's pick (d2 overall with d1's buttons and focus, a select after I3-b, menus that only
+ * fade; its section is at the end).
+ * The owner picked d Gaslight. Every variation keeps its base (std.css keys d off
+ * [data-fam^="d"], so d1-d4 draw all of it): 8px corners, neutral tonal surfaces, the
+ * bone-white primary, a sparing accent. Each differs where the owner asked:
+ *
+ *   d1 Lamplight  motion: a lamp turning up (opacity, the light rising from dim and warm).
+ *                 focus: the hover's tint, the label in the accent.
+ *                 toasts: a card at the bottom right, a wick that burns down.
+ *                 identity: gaslight-warm neutrals; panels catch a faint lamplight on top.
+ *   d2 Folio      motion: a quick unfold from the trigger's edge, like a folded page.
+ *                 focus: a small accent dot beside the label.
+ *                 toasts: a notice slip at the top right under the bar, its kind in small caps.
+ *                 identity: small-caps labels (fields, stats, menu sections, notices).
+ *   d3 Hush       motion: almost instant; menus dim the page behind a little.
+ *                 focus: a thin neutral outline, offset (never coloured, never a glow).
+ *                 toasts: one slim bar at the top centre.
+ *                 identity: a faint paper grain on panels, menus and dialogs.
+ *   d4 Settle     motion: a soft fade that settles a few pixels from the trigger's side.
+ *                 focus: an accent underline under the label (a short bar under icons).
+ *                 toasts: banners at the bottom centre, tinted in their tone.
+ *                 identity: an engraved double rule under section and page headings.
+ *
+ * Shared by all four: one popup surface (menus, the dropdown select, popovers) fixed to the
+ * window by popup.ts, a 36px item with one highlight for pointer and keyboard, ticks for the
+ * current choice, section labels and separators; info toasts in a steel blue, not the accent.
+ * Motion is 70-220ms in, faster out, no springs; reduced motion (and the gallery's switch)
+ * sets it all to 0.
+ */
+
+/* ---------- motion scale ---------- */
+:root,
+body {
+    --std-motion: 1;
+}
+
+:root.std-still,
+:root.std-still body {
+    --std-motion: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root,
+    body {
+        --std-motion: 0;
+    }
+}
+
+/* ---------- shared by d1-d4 ---------- */
+:root,
+body {
+    --q-info: var(--std-info);
+    --q-popbg: color-mix(in oklab, var(--arc-ink) 5%, #0e0e12);
+    --q-focus-dot: var(--acc-ink);
+    --g-in: calc(180ms * var(--std-motion));
+    --g-out: calc(110ms * var(--std-motion));
+    --g-ease: cubic-bezier(.2, .7, .25, 1);
+    --g-ease-out: cubic-bezier(.4, 0, 1, 1);
+}
+
+:root[data-theme="parchment"],
+:root[data-theme="parchment"] body {
+    --q-info: var(--std-info);
+    --q-popbg: #fbfaf7;
+}
+
+/* clearer hierarchy: the secondary button reads as a button, headings and labels stand up */
+.std-btn--secondary.std-btn--secondary {
+    background: var(--q-t2);
+    box-shadow: inset 0 0 0 1px var(--q-line);
+}
+
+.std-btn--quiet.std-btn--quiet {
+    color: color-mix(in oklab, var(--arc-ink) 78%, var(--arc-muted));
+}
+
+.std-sh.std-sh .std-sh__title {
+    font-size: clamp(21px, 1.8vw, 24px);
+    font-weight: 650;
+}
+
+.std-panel.std-panel .std-panel__title,
+.std-panel.std-panel > .std-panel__title {
+    margin-bottom: 8px;
+    font-size: 17px;
+    font-weight: 650;
+}
+
+.std-field.std-field .std-field__label {
+    color: var(--arc-ink);
+    font-size: 13.5px;
+    font-weight: 600;
+}
+
+.std-stat.std-stat .std-stat__label {
+    color: color-mix(in oklab, var(--arc-ink) 70%, var(--arc-muted));
+}
+
+/* a field in focus: one step up in tone (each version adds its own mark below) */
+.std-control.std-control:is(:focus-within, .is-focus) {
+    background: var(--q-t2);
+    box-shadow: inset 0 0 0 1px var(--q-line-2);
+}
+
+.std-control.std-control.is-invalid,
+.std-control.std-control.is-invalid:focus-within {
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--std-bad) 55%, transparent);
+}
+
+/* ---------- the dropdown select's button ---------- */
+.std-dd {
+    cursor: pointer;
+}
+
+.std-dd__value {
+    display: flex;
+    align-items: center;
+    padding-right: 26px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.std-dd__text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.std-dd__value.is-placeholder {
+    color: var(--arc-muted);
+}
+
+.std-dd__caret {
+    transition: transform var(--g-in, 150ms) var(--g-ease, ease);
+}
+
+.std-dd.is-open .std-dd__caret {
+    transform: rotate(180deg);
+}
+
+.std-dd.std-dd.is-open {
+    background: var(--q-t2);
+}
+
+/* ---------- the popup surface: menus, the dropdown's list, popovers ---------- */
+.std-pop {
+    position: fixed;
+    z-index: 1350;
+    top: 0;
+    left: 0;
+    display: grid;
+    align-content: start;
+    gap: 1px;
+    width: max-content;
+    min-width: 200px;
+    max-width: min(360px, calc(100vw - 16px));
+    margin: 0;
+    padding: 6px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-radius: var(--std-r-pop, 10px);
+    background: var(--q-popbg, var(--arc-pop));
+    box-shadow: inset 0 0 0 1px var(--q-line-2, var(--arc-line)), 0 14px 36px var(--arc-shadow);
+    color: var(--arc-ink);
+    font-family: var(--arc-body);
+    scrollbar-width: thin;
+    transform-origin: var(--pop-ox, 24px) top;
+}
+
+.std-pop[data-side="top"] {
+    transform-origin: var(--pop-ox, 24px) bottom;
+}
+
+.std-pop:focus {
+    outline: none;
+}
+
+.std-pop__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 36px;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: color-mix(in oklab, var(--arc-ink) 90%, var(--arc-muted));
+    font: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+    text-align: left;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    scroll-margin: 6px;
+    transition: background-color calc(90ms * var(--std-motion)) ease, color calc(90ms * var(--std-motion)) ease;
+}
+
+@media (pointer: coarse) {
+    .std-pop__item {
+        min-height: 44px;
+    }
+}
+
+.std-pop__item:focus {
+    outline: none;
+}
+
+/* one highlight for the pointer and the keyboard */
+.std-pop__item:is(:focus, .is-active, .is-hover) {
+    background: var(--q-t2, color-mix(in oklab, var(--arc-ink) 8%, transparent));
+    color: var(--arc-ink);
+}
+
+.std-pop__item[aria-disabled="true"] {
+    opacity: .42;
+    cursor: default;
+}
+
+.std-pop__icon {
+    width: 17px;
+    height: 17px;
+    color: var(--arc-muted);
+}
+
+.std-pop__item:is(:focus, .is-active, .is-hover) .std-pop__icon {
+    color: var(--arc-ink);
+}
+
+.std-pop__text {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.std-pop__hint {
+    color: var(--arc-muted);
+    font-size: 12.5px;
+    font-variant-numeric: tabular-nums;
+}
+
+.std-pop__check {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 16px;
+    color: var(--arc-ink);
+}
+
+.std-pop__check .std-icon {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2.2;
+}
+
+.std-pop__item.is-checked {
+    color: var(--arc-ink);
+    font-weight: 600;
+}
+
+.std-pop__item--danger,
+.std-pop__item--danger .std-pop__icon,
+.std-pop__item--danger:is(:focus, .is-active, .is-hover) .std-pop__icon {
+    color: var(--std-bad);
+}
+
+.std-pop__item--danger:is(:focus, .is-active, .is-hover) {
+    background: color-mix(in oklab, var(--std-bad) 11%, transparent);
+    color: var(--std-bad);
+}
+
+.std-pop__label {
+    padding: 8px 10px 4px;
+    color: var(--arc-muted);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .01em;
+    user-select: none;
+}
+
+.std-pop__label:first-child {
+    padding-top: 4px;
+}
+
+.std-pop__sep {
+    height: 1px;
+    margin: 5px -6px;
+    background: var(--q-line, var(--arc-line));
+}
+
+.std-pop--panel {
+    display: block;
+    width: 300px;
+    padding: 14px 16px 16px;
+    font-size: 14px;
+    line-height: 1.55;
+    white-space: normal;
+}
+
+.std-pop__title {
+    margin: 0 0 6px;
+    font-size: 14.5px;
+    font-weight: 650;
+}
+
+/* the page behind an open menu: only Hush dims it */
+.std-scrim {
+    display: none;
+}
+
+/* ---------- toasts: shared furniture ---------- */
+.std-toaster.std-toaster .std-toast.is-tone-acc {
+    --tone: var(--q-info);
+}
+
+.std-toaster.std-toaster .std-toast {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 12px;
+}
+
+.std-toast__kind {
+    display: none;
+}
+
+.std-toast__end {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: -5px -4px -5px 0;
+}
+
+.std-toast__close {
+    margin: 0;
+}
+
+.std-toast__action {
+    min-height: 30px;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--q-t2, rgba(255, 255, 255, .08));
+    color: var(--arc-ink);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color calc(120ms * var(--std-motion)) ease;
+}
+
+.std-toast__action:hover {
+    background: var(--q-t3, rgba(255, 255, 255, .11));
+}
+
+.std-toast__action:focus {
+    outline: none;
+}
+
+.std-toast__action--below {
+    justify-self: start;
+    margin-top: 8px;
+}
+
+.std-toaster.std-toaster .std-toast__text {
+    color: color-mix(in oklab, var(--arc-ink) 72%, var(--arc-muted));
+    font-size: 13.5px;
+}
+
+.std-toaster.std-toaster .std-toast.is-held .std-toast__timer {
+    animation-play-state: paused;
+}
+
+/* the leaving toast steps out of the stack; the rest close up */
+.std-toaster.std-toaster > .std-toast-move {
+    transition: transform calc(200ms * var(--std-motion)) var(--g-ease);
+}
+
+/* ######################################################################
+   d1  Lamplight
+   ###################################################################### */
+
+/* identity: warm surfaces that catch a little lamplight on top */
+
+/* focus: the hover's tint, the label in the accent */
+.std-focus.std-focus:is(:focus-visible, .is-focus):not(.std-btn--primary, .std-chip--solid, .std-btn--link, .std-head__back) {
+    background-color: var(--q-t3);
+    color: var(--acc-ink);
+}
+
+.std-focus.std-focus:is(:focus-visible, .is-focus) .std-icon {
+    color: var(--acc-ink);
+}
+
+:is(.std-btn--primary, .std-chip--solid):is(.std-btn--primary, .std-chip--solid):is(:focus-visible, .is-focus) {
+    background: color-mix(in oklab, var(--q-bone) 88%, var(--acc-solid));
+}
+
+:is(.std-btn--primary, .std-chip--solid):is(.std-btn--primary, .std-chip--solid):is(:focus-visible, .is-focus) .std-icon {
+    color: inherit;
+}
+
+:is(.std-btn--link, .std-head__back):is(.std-btn--link, .std-head__back):is(:focus-visible, .is-focus) {
+    color: var(--acc-ink);
+    text-decoration-color: currentColor;
+}
+
+.std-control.std-control:is(:focus-within, .is-focus) {
+    background: var(--q-t3);
+    caret-color: var(--acc-ink);
+}
+
+.std-field.std-field:focus-within > .std-field__label,
+.std-field.std-field:has(.is-focus) > .std-field__label {
+    color: var(--acc-ink);
+}
+
+.std-check.std-check:is(:has(.std-check__input:focus-visible), .is-focus) .std-check__box {
+    background: var(--q-t3);
+}
+
+/* a checked box keeps its bone fill under focus (only a touch of the accent), so it still reads as checked */
+.std-check.std-check:is(:has(.std-check__input:focus-visible), .is-focus) .std-check__input:checked + .std-check__box {
+    background: color-mix(in oklab, var(--q-bone) 86%, var(--acc-solid));
+}
+
+.std-check.std-check:is(:has(.std-check__input:focus-visible), .is-focus) .std-check__text > :first-child,
+.std-switch.std-switch:is(:focus-visible, .is-focus) > span:last-child {
+    color: var(--acc-ink);
+}
+
+.std-pop.std-pop .std-pop__item:focus-visible {
+    background: var(--q-t3);
+    color: var(--acc-ink);
+}
+
+.std-pop.std-pop .std-pop__item:focus-visible .std-pop__icon {
+    color: var(--acc-ink);
+}
+
+.std-toaster.std-toaster :is(.std-toast__action, .std-btn):focus-visible {
+    background: var(--q-t3);
+    color: var(--acc-ink);
+}
+
+/* motion: the lamp turns up. Opacity, and the light rising from dim and warm. */
+
+/* the warm light that rises with it and settles */
+
+@keyframes g-lamp {
+    0% { opacity: 0; }
+    35% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* toasts: a card at the bottom right; the tone in a small lamp-lit square; a wick burns down */
+
+/* ######################################################################
+   d2  Folio
+   ###################################################################### */
+
+/* identity: small-caps labels */
+.std-field.std-field .std-field__label,
+.std-stat.std-stat .std-stat__label,
+.std-pop.std-pop .std-pop__label,
+.std-toaster.std-toaster .std-toast__kind,
+.std-sh.std-sh .std-sh__count {
+    font-size: 11.5px;
+    font-weight: 650;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.std-field.std-field .std-field__label {
+    color: color-mix(in oklab, var(--arc-ink) 80%, var(--arc-muted));
+}
+
+.std-pop.std-pop .std-pop__label {
+    padding: 10px 10px 5px;
+    font-size: 10.5px;
+}
+
+/* focus: a small accent dot beside the label */
+
+/* motion: a quick, clean unfold from the trigger's edge */
+
+/* toasts: a notice slip at the top right, under the bar; its kind in small caps, in its tone */
+.std-toaster.std-toaster {
+    top: calc(var(--site-header-stack, 68px) + 12px);
+    right: 20px;
+    bottom: auto;
+    left: auto;
+    gap: 8px;
+    width: min(360px, calc(100vw - 32px));
+    transform: none;
+}
+
+.std-toaster.std-toaster .std-toast {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 12px 12px 13px 16px;
+    border-radius: 8px;
+    background: var(--q-popbg);
+    box-shadow: inset 0 0 0 1px var(--q-line-2), 0 12px 30px var(--arc-shadow);
+    backdrop-filter: none;
+    clip-path: inset(-30px -60px -60px -60px round 8px);
+}
+
+.std-toaster.std-toaster .std-toast__icon {
+    display: none;
+}
+
+.std-toaster.std-toaster .std-toast__kind {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 3px;
+    color: var(--tone);
+    font-size: 10.5px;
+}
+
+.std-toaster.std-toaster .std-toast__kind::before {
+    width: 14px;
+    height: 14px;
+    background: currentColor;
+    content: '';
+    -webkit-mask: var(--g-kind-icon) center / contain no-repeat;
+    mask: var(--g-kind-icon) center / contain no-repeat;
+}
+
+.std-toaster.std-toaster .is-tone-ok { --g-kind-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 12.3l2.8 2.8L16.2 9.6'/%3E%3C/svg%3E"); }
+.std-toaster.std-toaster .is-tone-acc { --g-kind-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 11v5.5M12 7.6v.4'/%3E%3C/svg%3E"); }
+.std-toaster.std-toaster .is-tone-warn { --g-kind-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4l9 16H3l9-16zM12 10v4.5M12 17.4v.3'/%3E%3C/svg%3E"); }
+.std-toaster.std-toaster .is-tone-bad { --g-kind-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7.5V13M12 16.2v.3'/%3E%3C/svg%3E"); }
+
+.std-toaster.std-toaster .std-toast__title {
+    font-size: 14.5px;
+}
+
+.std-toaster.std-toaster .std-toast__end {
+    align-self: start;
+    margin: -4px -4px 0 0;
+}
+
+/* ######################################################################
+   d3  Hush
+   ###################################################################### */
+
+/* identity: a faint paper grain on the surfaces */
+
+/* focus: a thin neutral outline, a little away from the control */
+
+/* motion: there almost at once; menus hush the page behind them */
+
+/* toasts: one slim bar at the top centre, under the bar */
+
+/* ######################################################################
+   d4  Settle
+   ###################################################################### */
+
+/* identity: an engraved double rule under headings */
+
+/* focus: an accent underline under the label; under icons, a short bar */
+
+/* motion: a soft fade that settles a few pixels toward the trigger's side */
+
+/* toasts: banners at the bottom centre, tinted in their tone */
+
+/* ######################################################################
+   d5  Folio  (the merge the owner asked for: Folio overall, Lamplight's buttons and focus)
+   From d2 Folio: the neutral surfaces, small-caps labels, the notice-slip toasts, the type.
+   From d1 Lamplight: the buttons' warm tints at rest, hover and press, and its focus (the
+   hover's tint stays, the label takes the accent), used the same way on tabs, segmented
+   choices, fields and menu items. Fields and the select are I3-b's recessed well (a darker
+   inset with a clear, constant edge) at Folio's 8px corner. Menus, lists, popovers, tooltips,
+   dialogs and toasts only fade: M1 (default) is opacity alone, M2 adds 3px from the trigger's
+   side (the gallery switches with <html data-std-motion="m2">).
+   ###################################################################### */
+:root,
+body {
+    --std-r-pop: 8px;
+    --q-well: color-mix(in oklab, #000 24%, transparent);
+    --q-well-edge: color-mix(in oklab, var(--arc-ink) 19%, transparent);
+    --q-well-1: color-mix(in oklab, var(--arc-ink) 3%, transparent);
+    --q-well-2: color-mix(in oklab, var(--arc-ink) 6%, transparent);
+    /* both ways eased: things settle in and fade away, never blink in or vanish */
+    --g-in: calc(200ms * var(--std-motion));
+    --g-in-big: calc(260ms * var(--std-motion));
+    --g-out: calc(160ms * var(--std-motion));
+    --g-out-big: calc(200ms * var(--std-motion));
+    --g-ease: cubic-bezier(.16, 1, .3, 1);
+    --g-ease-out: cubic-bezier(.4, 0, .7, .2);
+    --g-shift: 4px;
+    --g-scale: .985;
+    --g-reveal: calc(260ms * var(--std-motion));
+    --g-unreveal: calc(170ms * var(--std-motion));
+}
+
+:root[data-std-motion="m2"],
+:root[data-std-motion="m2"] body {
+    --g-in: calc(240ms * var(--std-motion));
+    --g-shift: 8px;
+    --g-scale: .97;
+    --g-reveal: calc(360ms * var(--std-motion));
+    --g-unreveal: calc(220ms * var(--std-motion));
+}
+
+:root[data-theme="parchment"],
+:root[data-theme="parchment"] body {
+    --q-well: color-mix(in oklab, var(--arc-ink) 4%, transparent);
+    --q-well-edge: color-mix(in oklab, var(--arc-ink) 24%, transparent);
+    --q-well-1: color-mix(in oklab, var(--arc-ink) 2.5%, transparent);
+    --q-well-2: color-mix(in oklab, var(--arc-ink) 5%, transparent);
+}
+
+/* Lamplight's buttons: the same warm tints at rest, hover and press */
+:is(.std-btn, .std-chip, .std-seg, .std-seg__opt, .std-tabs, .std-tab, .std-pg):is(.std-btn, .std-chip, .std-seg, .std-seg__opt, .std-tabs, .std-tab, .std-pg),
+.std-toaster.std-toaster {
+    --g-warm: #f2dfbd;
+    --q-t1: color-mix(in oklab, var(--g-warm) 5.5%, transparent);
+    --q-t2: color-mix(in oklab, var(--g-warm) 8.5%, transparent);
+    --q-t3: color-mix(in oklab, var(--g-warm) 12%, transparent);
+    --q-line: color-mix(in oklab, var(--g-warm) 9%, transparent);
+    --q-line-2: color-mix(in oklab, var(--g-warm) 15%, transparent);
+}
+
+:root[data-theme="parchment"] :is(:is(.std-btn, .std-chip, .std-seg, .std-seg__opt, .std-tabs, .std-tab, .std-pg):is(.std-btn, .std-chip, .std-seg, .std-seg__opt, .std-tabs, .std-tab, .std-pg), .std-toaster.std-toaster) {
+    --g-warm: #6b4a1e;
+    --q-t1: color-mix(in oklab, var(--g-warm) 5%, transparent);
+    --q-t2: color-mix(in oklab, var(--g-warm) 8%, transparent);
+    --q-t3: color-mix(in oklab, var(--g-warm) 11.5%, transparent);
+    --q-line: color-mix(in oklab, var(--g-warm) 12%, transparent);
+    --q-line-2: color-mix(in oklab, var(--g-warm) 19%, transparent);
+}
+
+/* the chosen segment and the focused one: Lamplight's focus on top of the chosen tint */
+.std-seg__opt.std-seg__opt:is(:focus-visible, .is-focus) {
+    background-color: var(--q-t3);
+    color: var(--acc-ink);
+}
+
+/* ---------- fields: I3-b's recessed well ---------- */
+.std-control.std-control {
+    padding-inline: 16px;
+    background: var(--q-well);
+    box-shadow: inset 0 0 0 1px var(--q-well-edge);
+}
+
+.std-control--area.std-control--area {
+    padding: 0;
+}
+
+.std-control.std-control textarea.std-control__input {
+    padding: 12px 16px;
+}
+
+.std-control.std-control:is(:hover, .is-hover):not(.is-disabled) {
+    background: linear-gradient(var(--q-well-1), var(--q-well-1)), var(--q-well);
+    box-shadow: inset 0 0 0 1px var(--q-well-edge);
+}
+
+/* focus: Lamplight's way. The hover's tint stays (a step up), the label and caret take the accent; the edge never changes */
+.std-control.std-control:is(:focus-within, .is-focus),
+.std-dd.std-dd.is-open {
+    background: linear-gradient(var(--q-well-2), var(--q-well-2)), var(--q-well);
+    box-shadow: inset 0 0 0 1px var(--q-well-edge);
+    caret-color: var(--acc-ink);
+}
+
+.std-control.std-control.is-invalid,
+.std-control.std-control.is-invalid:focus-within {
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--std-bad) 60%, transparent);
+}
+
+.std-control.std-control .std-control__trail {
+    right: 14px;
+    width: 16px;
+    height: 16px;
+}
+
+.std-field.std-field .std-field__error {
+    color: var(--std-bad);
+}
+
+/* ---------- the select: I3-b's well, a plain list under it ---------- */
+.std-dd.std-dd .std-dd__value {
+    padding-right: 26px;
+    font-size: 15px;
+    font-weight: 450;
+}
+
+.std-dd.std-dd .std-dd__caret {
+    transition: color calc(90ms * var(--std-motion)) ease;
+}
+
+/* the caret neither turns nor moves; open, it reads in ink, and in the accent under the keyboard */
+.std-dd.std-dd.is-open .std-dd__caret {
+    transform: none;
+    color: var(--arc-ink);
+}
+
+.std-dd.std-dd:has(.std-dd__value:focus-visible) .std-dd__caret {
+    color: var(--acc-ink);
+}
+
+.std-pop.std-pop {
+    padding: 4px;
+    box-shadow: inset 0 0 0 1px var(--q-line-2), 0 12px 30px var(--arc-shadow);
+    /* open: clipped wide enough to keep its shadow (the reveal animates this inset) */
+    clip-path: inset(-16px -40px -48px -40px round var(--std-r-pop));
+}
+
+/* a panel (StdPopover) keeps its reading padding; the 4px above is for menus' rows */
+.std-pop.std-pop--panel {
+    padding: 14px 16px 16px;
+}
+
+.std-pop.std-pop .std-pop__item {
+    gap: 10px;
+    padding: 0 12px;
+    border-radius: 5px;
+}
+
+.std-pop.std-pop .std-pop__label {
+    padding: 10px 12px 4px;
+}
+
+.std-pop.std-pop .std-pop__label:first-child {
+    padding-top: 7px;
+}
+
+.std-pop.std-pop .std-pop__sep {
+    margin: 4px -4px;
+}
+
+.std-pop--list.std-pop--list .std-pop__item.is-checked {
+    font-weight: 600;
+}
+
+/* the keyboard's highlight in a list: Lamplight's (the tint a step up, the label in the accent) */
+.std-pop.std-pop:focus-visible .std-pop__item.is-active,
+.std-pop.std-pop .std-pop__item:focus-visible {
+    background: var(--q-t3);
+    color: var(--acc-ink);
+}
+
+.std-pop.std-pop:focus-visible .std-pop__item.is-active :is(.std-pop__icon, .std-pop__check),
+.std-pop.std-pop .std-pop__item:focus-visible :is(.std-pop__icon, .std-pop__check) {
+    color: var(--acc-ink);
+}
+
+.std-pop.std-pop .std-pop__item--danger:focus-visible {
+    background: color-mix(in oklab, var(--std-bad) 13%, transparent);
+    color: var(--std-bad);
+}
+
+/* ---------- motion: a short fade (M1), or a fade and 3px from the trigger's side (M2) ---------- */
+/* a menu or list is revealed from its trigger: it unrolls down from the field (up when it
+   opens above), fully opaque from the first frame, and rolls back up when it closes */
+.std-pop.std-pop.std-pop-enter-active {
+    transition: clip-path var(--g-reveal) var(--g-ease);
+}
+
+.std-pop.std-pop.std-pop-leave-active {
+    transition: clip-path var(--g-unreveal) var(--g-ease-out), opacity var(--g-unreveal) var(--g-ease-out);
+}
+
+.std-pop.std-pop:is(.std-pop-enter-from, .std-pop-leave-to) {
+    clip-path: inset(0 0 100% 0 round var(--std-r-pop));
+}
+
+.std-pop.std-pop[data-side="top"]:is(.std-pop-enter-from, .std-pop-leave-to) {
+    clip-path: inset(100% 0 0 0 round var(--std-r-pop));
+}
+
+.std-pop.std-pop.std-pop-leave-to {
+    opacity: .4;
+}
+
+.std-tip.std-tip .std-tip__bubble {
+    transform: translate(-50%, calc(var(--g-shift) / 2));
+    transition: opacity var(--g-out) var(--g-ease-out), transform var(--g-out) var(--g-ease-out), visibility 0s linear var(--g-out);
+}
+
+.std-tip.std-tip.is-open .std-tip__bubble {
+    transform: translate(-50%, 0);
+    transition: opacity var(--g-in) var(--g-ease), transform var(--g-in) var(--g-ease), visibility 0s;
+}
+
+.std-dialog.std-dialog.std-dlg-enter-active {
+    transition: opacity var(--g-in-big) var(--g-ease);
+}
+
+.std-dialog.std-dialog.std-dlg-leave-active {
+    transition: opacity var(--g-out-big) var(--g-ease-out);
+}
+
+.std-dialog.std-dialog.std-dlg-enter-active .std-dialog__panel {
+    transition: transform var(--g-in-big) var(--g-ease);
+}
+
+.std-dialog.std-dialog.std-dlg-leave-active .std-dialog__panel {
+    transition: transform var(--g-out-big) var(--g-ease-out);
+}
+
+.std-dialog.std-dialog:is(.std-dlg-enter-from, .std-dlg-leave-to) .std-dialog__panel {
+    transform: translateY(calc(var(--g-shift) * 1.5)) scale(var(--g-scale));
+}
+
+.std-toaster.std-toaster > .std-toast-enter-active {
+    transition: opacity var(--g-in-big) var(--g-ease), transform var(--g-in-big) var(--g-ease);
+}
+
+.std-toaster.std-toaster > .std-toast-leave-active {
+    transition: opacity var(--g-out-big) var(--g-ease-out), transform var(--g-out-big) var(--g-ease-out);
+}
+
+.std-toaster.std-toaster > .std-toast-enter-from {
+    opacity: 0;
+    transform: translateY(calc(-1 * var(--g-shift)));
+}
+
+.std-toaster.std-toaster > .std-toast-leave-to {
+    opacity: 0;
+    transform: translateX(12px);
+}
+
+/* the others close up softly behind one that leaves */
+.std-toaster.std-toaster > .std-toast-move {
+    transition: transform calc(240ms * var(--std-motion)) var(--g-ease);
+}
+
+/* ######################################################################
+   Bone, the site's own accent, is nearly the colour of the text and of the primary's fill.
+   Focus may not tint a bone fill toward the accent (it would vanish), and where focus or
+   the current choice is told by the accent alone, a plain accent (<html class="std-acc-plain">,
+   set by accents.ts paintAccent) adds a mark that isn't colour. No rings, no borders, nothing
+   moves: a step of the fill, and an underline under the label in its own colour.
+   ###################################################################### */
+
+/* a bone fill under focus (primary, solid chip, a checked box): the fill dims a step, past
+   the hover's, and the label is underlined in its own ink. Whatever the accent. */
+:is(.std-btn--primary, .std-chip--solid):is(.std-btn--primary, .std-chip--solid):is(:focus-visible, .is-focus) {
+    background: color-mix(in oklab, var(--q-bone) 78%, var(--arc-bg));
+    text-decoration: underline 2px currentColor;
+    text-underline-offset: 4px;
+}
+
+/* icon-only: a short bar under the icon instead */
+.std-btn--primary.std-btn--icon:is(:focus-visible, .is-focus) {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 50% calc(100% - 7px);
+    background-repeat: no-repeat;
+    background-size: 12px 2px;
+}
+
+.std-check.std-check:is(:has(.std-check__input:focus-visible), .is-focus) .std-check__input:checked + .std-check__box {
+    background: color-mix(in oklab, var(--q-bone) 78%, var(--arc-bg));
+}
+
+/* a plain accent: focus underlines the label (the tint step stays) */
+:root.std-acc-plain :is(.std-btn, .std-chip, .std-pg__btn, .std-tab, .std-seg__opt, .std-toast__action):is(:focus-visible, .is-focus),
+:root.std-acc-plain .std-card:is(:focus-visible, .is-focus) .std-card__title,
+:root.std-acc-plain .std-pop__item:focus-visible,
+:root.std-acc-plain .std-pop:focus-visible .std-pop__item.is-active,
+:root.std-acc-plain .std-check:is(:has(.std-check__input:focus-visible), .is-focus) .std-check__text > :first-child,
+:root.std-acc-plain .std-switch:is(:focus-visible, .is-focus) > span:last-child,
+:root.std-acc-plain .std-field:focus-within > .std-field__label,
+:root.std-acc-plain .std-field:has(.is-focus) > .std-field__label {
+    text-decoration: underline 1.5px currentColor;
+    text-underline-offset: 4px;
+}
+
+/* a plain accent: the chosen segment is the brightest one, in full ink, the rest stay muted */
+:root.std-acc-plain .std-seg__opt.std-seg__opt:not([aria-checked="true"], [aria-selected="true"]) {
+    color: var(--arc-muted);
+}
+
+:root.std-acc-plain .std-seg__opt.std-seg__opt:is([aria-checked="true"], [aria-selected="true"]) {
+    color: var(--arc-ink);
+}
+
+/* a plain accent: the chosen tab's line in full ink (the accent's bone is a shade off the text) */
+:root.std-acc-plain .std-tab.std-tab[aria-selected="true"]::after {
+    background: var(--arc-ink);
+}
