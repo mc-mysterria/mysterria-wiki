@@ -1,67 +1,85 @@
 ---
 title: "Beyonder Creatures"
-description: "Detailed information about Beyonder Creatures on the server"
+description: "Beyonder Creatures on Mysterria, the LOTM Minecraft server: the two kinds, where they spawn, their ingredient drop chances and the pity bonus."
 sidebar:
-    label: 🐲 Creatures
-    order: 8
+  order: 31
 ---
 
-![Helpful image](../../../assets/magic/lotm.jpg)
+Beyonder Creatures are monsters touched by Beyonder power. They roam the world, hit harder than ordinary mobs, and they are the main source of **droppable** Beyonder ingredients, the ones you cannot find in chests.
 
-### Who are Beyonder Creatures?
+## What kinds of Beyonder Creatures are there?
 
-Sometimes Beyonder Creatures appear in the world - they are special creatures endowed with magical power. They come in two distinct varieties:
+There are two kinds.
 
----
+| | Custom creatures | Badge creatures |
+|---|---|---|
+| Looks | Their own models and animations (beasts, knights, spirits and stranger things) | A normal Minecraft mob with a Beyonder badge |
+| Behaviour | Advanced AI: they group up, use special abilities, retreat and call for help | Vanilla AI with more health and stronger attacks |
+| Name and health | Coloured nameplate, health shown in the action bar | Badge over the mob |
+| Ingredient drops | **x8** the base chance | **x2** the base chance, plus a pity bonus |
 
-### Custom Creatures
+Both kinds deal their own damage to Beyonder players directly, instead of going through the normal Minecraft hit.
 
-Some Beyonder Creatures are entirely unique entities with **custom models and AI** - such as dragons, armoured knights, and eldritch monsters. These are far more powerful than ordinary mobs and behave in complex, unpredictable ways.
+## What do Beyonder Creatures drop?
 
-**Key traits of custom creatures:**
-- Unique visual appearance with custom models
-- Advanced AI - they can attack, group, flee, use special abilities, and call for help
-- Colored signature indicating the creature's name
-- Health visible in the action bar
-- Their attacks deal damage directly to your soul
-- Always grant experience and acting points when killed
-- **Much higher ingredient drop chance** - these are MythicMobs-backed, and that multiplies their
-  ingredient drop odds several times over compared to a badge creature of the same strength, up to a
-  guaranteed drop for the most common ingredient tier
+Each creature carries its own droppable ingredients. The chance of a drop depends on the ingredient's Sequence and on the kind of creature:
 
----
+| Sequence | Base chance | Badge creature (x2) | Custom creature (x8) |
+|---|---|---|---|
+| 9 | 15% | 30% | 100% |
+| 8 | 10% | 20% | 80% |
+| 7 | 7% | 14% | 56% |
+| 6 | 5% | 10% | 40% |
+| 5 | 3% | 6% | 24% |
+| 4 | 2% | 4% | 16% |
+| 3 | 1% | 2% | 8% |
+| 2 | 0.5% | 1% | 4% |
+| 1 | 0.2% | 0.4% | 1.6% |
 
-### Badge Creatures
+A custom creature carrying a Sequence 9 ingredient always drops it (15% x 8 is capped at 100%). The pity bonus and Daily Tides raise these chances further.
 
-Other Beyonder Creatures are standard vanilla mobs enhanced with a **Beyonder badge**. They are less visually distinct but still carry Beyonder properties.
+### The Mob Slaying pity bonus
 
-**Key traits of badge creatures:**
-- Appear as normal Minecraft mobs with a badge indicator
-- Still have increased health, stronger attacks, and Beyonder properties
-- Lower drop rates compared to custom creatures, though every kill that drops nothing builds a small
-  pity bonus toward the next one, so a drought can't last forever
+Badge creatures have a safety net. Each kill that drops no ingredient adds **+5%** to your next roll, up to **+50%**. The game tells you with a "Mob Slaying pity increased" message, and the bonus resets when you get a drop.
 
----
+### Acting from kills
 
-### Where do they spawn?
+Killing a Beyonder Creature also gives acting through the **World** source. Like every acting source it is capped for your Sequence, so hunting alone will not fill your bar. See [Acting](/magic/acting/) for the caps. Creature kills never digest the Abyss Pathway, which only digests from killing Beyonder players.
 
-Every type of Beyonder Creature has a list of **biomes** it can spawn in. If you have stayed in a certain zone for two weeks and haven't met a single Beyonder Creature - it means that area is not claimed by any type. A location to the north with a different biome might have several Beyonder Creatures at once!
+## Where do Beyonder Creatures spawn?
 
-We will not disclose the list of their biomes. If you are interested, you will have to discover it on your own. Maybe in the future some abilities will be able to decipher and confirm your wild guesses!
+- **Not near spawn.** No Beyonder Creature spawns within 300 blocks of 0, 0.
+- **By biome.** Every creature has a list of biomes it can spawn in. If you have explored one area for weeks without meeting any, no creature claims that biome. Try a different one.
+- **By dimension.** Most weaker creatures (Sequence 9 to 7) live in the Overworld, and most stronger ones (Sequence 6 to 4) in the Nether. A few appear in both.
 
-:::tip[Daily Tides move the numbers]
-Spawn rates and ingredient drop chances aren't fixed day to day - a server-wide Daily Tide can boost
-both for 24 hours. See [Daily Tides](/guides/tides/) for what's running today.
+The exact biome lists are kept secret on purpose. Finding them is part of the game.
+
+## When do more creatures appear?
+
+| Event | Spawns | Drops |
+|---|---|---|
+| [Crimson Moon](/magic/crimson-moon/) night | x2.5 | |
+| Hunting Tide | x2 | x2, and Sequence 3 or stronger ingredients x3 |
+| Crimson Tide | | x1.5 |
+
+The [Daily Tides](/guides/tides/) page lists which Tide runs on which day. When a Tide is active, the total spawn boost from all sources stacks but is capped at x4.
+
+The [Crimson Moon](/magic/crimson-moon/) is the best night to hunt: creatures spawn far more often, you cannot sleep it away, and fishing can pull up ingredients or hostile creatures. The bounty board (`/bounty`) sometimes offers a **Crimson Moon Hunt** or a creature hunt for extra acting.
+
+## How do I survive a fight with one?
+
+:::caution[They can kill you]
+Custom creatures can outclass a young Beyonder. Bring armour, food and a way out, and do not fight a Nether creature at Sequence 9.
 :::
 
----
+- Check the nameplate before you engage. A creature far above your Sequence is not worth the risk.
+- Custom creatures retreat when hurt and come back with friends. Finish them quickly or leave.
+- Hunt in a group on Crimson Moon nights, when spawns pile up.
 
-### Why are they dangerous?
+## Related pages
 
-:::tip[Tip]
-Always have potions, armor, and an escape plan - an encounter with a Beyonder Creature can be fatal, especially if you are not a low-sequence Beyonder yourself!
-:::
-
-Custom Beyonder Creatures have sophisticated AI, far beyond ordinary monsters. They can attack, group together, retreat when low on health, use special abilities, and even call for reinforcements.
-
-Their AI continues to be improved, so stay tuned for updates!
+- [Crimson Moon](/magic/crimson-moon/): the red night that boosts spawns and fishing
+- [Wild Beyonders](/magic/wild-beyonders/): human Beyonder NPCs that trade or fight
+- [Daily Tides](/guides/tides/): which day boosts spawns and drops
+- [Loot and pity](/magic/loot/): the ingredients you find in chests instead
+- Main site guide: [Activities](https://www.mysterria.net/en/guide/activities)

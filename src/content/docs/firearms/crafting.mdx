@@ -1,188 +1,83 @@
 ---
-title: "Crafting Guide"
-description: "Complete guide to crafting firearms, parts, and the Weaponsmith Table"
+title: "Weaponsmith Table and Gun Crafting"
+description: "How to craft the Weaponsmith Table, Brass and gun parts on Mysterria, and where Deathknell and Steam Rifle parts drop. Builds every LOTM firearm."
 sidebar:
-    label: 🔨 Crafting
+    label: Weaponsmith Table and Crafting
     order: 2
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import {Figure, Notice} from '~/components/mdx';
+import weaponsmithTable from '../../../assets/firearms/weaponsmithtable.png';
+import brass from '../../../assets/firearms/brass.png';
+import kleinBarrel from '../../../assets/firearms/kleinbarrel.png';
+import kleinCylinder from '../../../assets/firearms/kleincylinder.png';
+import kleinFrame from '../../../assets/firearms/kleinframe.png';
+import kleinGrip from '../../../assets/firearms/kleingrip.png';
 
-### Crafting System
+Every gun is built from parts at a **Weaponsmith Table**. Klein's Repeater parts are crafted. Deathknell and Steam Rifle parts are found in chests. For the guns' stats, see the [stats table](/firearms/#weapon-stats).
 
-The mystical firearms crafting system is a multi-tier process that requires specialized components and a dedicated crafting station.
+## The Weaponsmith Table
 
-### Weaponsmith Table
+**Recipe:** a Smithing Table in the centre, 4 Iron Blocks on the sides and 4 Redstone Blocks in the corners.
 
-The Weaponsmith Table is your weapon assembly station where you combine weapon parts to create complete firearms.
+<Figure src={weaponsmithTable} alt="Crafting grid: Smithing Table in the centre, Iron Blocks on the sides, Redstone Blocks in the corners, making a Weaponsmith Table" caption="The Weaponsmith Table recipe." contain />
 
-import weaponsmithTable from "../../../assets/firearms/weaponsmithtable.png";
+Place it anywhere. If you break it, it drops as a Weaponsmith Table again.
 
-<p align="center">
-    <img
-        src={weaponsmithTable.src}
-        width="60%"
-        alt="Weaponsmith Table"
-    />
-</p>
+## How do I build a gun?
 
-**Recipe:**
+1. Put all the parts for one gun in your inventory (any slot).
+2. **Right-click** the Weaponsmith Table. The chat shows the gun you can build and the parts it needs.
+3. **Shift + right-click** the table to build it. The parts are used up and the gun goes into your inventory.
 
-**Ingredients:**
-- 1 Smithing Table
-- 4 Iron Blocks
-- 4 Redstone Blocks
+There is no menu. If you carry parts but not a full set, the chat lists the parts you have instead. If you carry no parts at all, nothing happens.
 
-**How to Use:**
+<Notice tone="warn" title="Carry one set at a time">
+If you carry full sets for more than one gun, the table builds the first one in this order: Klein's Repeater, Deathknell, Steam Rifle. Put the other parts in a chest first.
+</Notice>
 
-1. Place the Weaponsmith Table in your world
-2. Gather all required weapon parts in your inventory
-3. **Right-click** the table to view craftable weapons
-4. **Shift + Right-Click** to assemble the weapon
-5. The completed weapon appears in your inventory!
+## Brass
 
-<Aside type="tip">
-The Weaponsmith Table will only show weapons you have all the parts for. Missing parts? They won't appear in the crafting menu.
-</Aside>
+Brass goes into all cartridge cases and the Rifle Cartridge Core.
 
-### Crafting Brass
+**Recipe:** 3 Copper Ingots + 1 Gold Ingot = **4 Brass** (shapeless).
 
-Brass is the fundamental material for firearms and ammunition. You'll need lots of it!
+<Figure src={brass} alt="Crafting grid: 3 Copper Ingots and 1 Gold Ingot making 4 Brass" caption="Brass." contain />
 
-import brass from "../../../assets/firearms/brass.png";
+## Klein's Repeater parts
 
-<p align="center">
-    <img
-        src={brass.src}
-        width="60%"
-        alt="Brass Crafting"
-    />
-</p>
+Klein's Repeater is the only gun you can craft from scratch. Each part is crafted at a normal crafting table.
 
-**Recipe:** 3 Copper Ingots + 1 Gold Ingot = **4 Brass**
+| Part | Recipe |
+|---|---|
+| Repeater Barrel | 3 Iron Ingots + 1 Lapis Lazuli |
+| Repeater Cylinder | 2 Iron Ingots + 1 Redstone Dust |
+| Repeater Frame | 2 Iron Ingots + 1 Lapis Lazuli |
+| Repeater Grip | 2 Iron Ingots + 1 Dark Oak Log |
 
-<Aside>
-Brass is used extensively in ammunition crafting. Consider setting up a copper farm for sustainable production!
-</Aside>
+**One full gun costs:** 9 Iron Ingots, 2 Lapis Lazuli, 1 Redstone Dust and 1 Dark Oak Log.
 
-### Klein's Repeater
+<Figure src={kleinBarrel} alt="Crafting grid for the Repeater Barrel" caption="Repeater Barrel." contain />
+<Figure src={kleinCylinder} alt="Crafting grid for the Repeater Cylinder" caption="Repeater Cylinder." contain />
+<Figure src={kleinFrame} alt="Crafting grid for the Repeater Frame" caption="Repeater Frame." contain />
+<Figure src={kleinGrip} alt="Crafting grid for the Repeater Grip" caption="Repeater Grip." contain />
 
-Klein's Repeater is the only weapon you can craft from scratch. Other weapons require parts from dungeon rewards.
+## Deathknell and Steam Rifle parts
 
-**Required Parts:**
+These parts **cannot be crafted**. You find them in chests:
 
-You need 4 parts to build Klein's Repeater:
+- Each time a chest in a vanilla structure in the Overworld generates its loot, there is a **25% chance** that one random part is added.
+- The part is picked at random from all 9 Deathknell and Steam Rifle parts, so expect duplicates.
+- Parts are normal items. You can trade them with other players or store them.
 
-import kleinBarrel from "../../../assets/firearms/kleinbarrel.png";
-import kleinCylinder from "../../../assets/firearms/kleincylinder.png";
-import kleinFrame from "../../../assets/firearms/kleinframe.png";
-import kleinGrip from "../../../assets/firearms/kleingrip.png";
+| Gun | Parts needed |
+|---|---|
+| [Deathknell](/firearms/deathknell-revolver/) (4 parts) | Deathknell Barrel, Deathknell Cylinder, Deathknell Frame, Deathknell Grip |
+| [Steam Rifle](/firearms/steam-rifle/) (5 parts) | Steam Rifle Barrel, Steam Pipe Assembly, Mechanical Power Box, Military Rifle Stock, Sniper Scope |
 
-<p align="center">
-    <img
-        src={kleinBarrel.src}
-        width="45%"
-        alt="Klein Barrel"
-    />
-    <img
-        src={kleinCylinder.src}
-        width="45%"
-        alt="Klein Cylinder"
-    />
-</p>
+Want more chests? The [Beyonder Loot](/magic/loot/) page explains how chest loot and refills work.
 
-<p align="center">
-    <img
-        src={kleinFrame.src}
-        width="45%"
-        alt="Klein Frame"
-    />
-    <img
-        src={kleinGrip.src}
-        width="45%"
-        alt="Klein Grip"
-    />
-</p>
+## Next steps
 
-**Part Recipes:**
-
-| Part | Recipe | Materials Needed |
-|------|--------|------------------|
-| **Repeater Barrel** | 3 Iron Ingots + 1 Lapis Lazuli | 3 Iron, 1 Lapis |
-| **Repeater Cylinder** | 2 Iron Ingots + 1 Redstone | 2 Iron, 1 Redstone |
-| **Repeater Frame** | 2 Iron Ingots + 1 Lapis Lazuli | 2 Iron, 1 Lapis |
-| **Repeater Grip** | 1 Dark Oak Log + 2 Iron Ingots | 1 Dark Oak, 2 Iron |
-
-**Total Materials Required:**
-
-To craft one complete Klein's Repeater from scratch:
-
-- **9 Iron Ingots**
-- **2 Lapis Lazuli**
-- **1 Redstone**
-- **1 Dark Oak Log**
-
-**Assembly Steps:**
-
-1. Craft all 4 parts using a regular crafting table
-2. Place the Weaponsmith Table
-3. Ensure all 4 parts are in your inventory
-4. Right-click the Weaponsmith Table
-5. Shift + Right-Click to assemble Klein's Repeater
-
-<Aside type="tip">
-**Resource Efficiency Tip:** Before crafting multiple repeaters, ensure you have a steady supply of iron and lapis lazuli. Consider setting up an iron farm and mining at the right Y-levels for lapis!
-</Aside>
-
-### Deathknell Revolver & Steam-Pressured Rifle
-
-These advanced weapons cannot be crafted from scratch. Their parts are obtained as rewards from dungeons (nodes).
-
-**How to Obtain Parts:**
-
-1. Complete dungeon nodes on the server
-2. Receive weapon parts as rewards
-3. Collect all required parts for your desired weapon
-4. Assemble at the Weaponsmith Table
-
-<Aside type="caution">
-**Node Rewards Only:** Deathknell Revolver and Steam-Pressured Rifle parts are exclusive rewards from dungeon completions. Plan your dungeon runs accordingly!
-</Aside>
-
-**Required Parts:**
-
-**Deathknell Revolver:**
-- Revolver Barrel
-- Revolver Cylinder
-- Revolver Frame
-- Revolver Grip
-
-**Steam-Pressured Rifle:**
-- Rifle Barrel
-- Rifle Stock
-- Rifle Receiver
-- Rifle Trigger Assembly
-
-### Crafting Strategy
-
-**For Beginners:**
-
-1. **Start with Klein's Repeater** - It's craftable and effective
-2. **Gather iron and lapis** - Set up basic resource collection
-3. **Craft brass early** - You'll need it for ammunition
-4. **Build the Weaponsmith Table** - Central to all weapon assembly
-
-**For Advanced Players:**
-
-1. **Farm dungeons** - Collect parts for advanced weapons
-2. **Stockpile brass** - Special ammunition requires significant brass
-3. **Maintain multiple weapons** - Each excels in different situations
-4. **Optimize part storage** - Organize weapon parts for quick access
-
-### Next Steps
-
-Now that you know how to craft weapons, learn about:
-
-- [Ammunition Guide](/firearms/ammunition/) - Craft bullets and special rounds
-- [Klein's Repeater](/firearms/kleins-repeater/) - Detailed guide for your first weapon
-- [Overview](/firearms/) - Combat mechanics and usage tips
+- [Ammunition](/firearms/ammunition/): craft rounds for your gun.
+- [Klein's Repeater](/firearms/kleins-repeater/), [Deathknell](/firearms/deathknell-revolver/) and [Steam Rifle](/firearms/steam-rifle/): how each gun handles.

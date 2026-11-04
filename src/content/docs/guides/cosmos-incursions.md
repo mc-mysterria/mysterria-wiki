@@ -1,85 +1,122 @@
 ---
 title: "Cosmos Incursions"
-description: "Everything about dynamic PvP events and dangerous zones that shake up the server's balance"
+description: "Cosmos Incursions on Mysterria, the LOTM Minecraft server: when they start, zone colours and death rules, Spirit Beacons, town rewards and extraction zones."
 sidebar:
-    label: ☄️ Incursions
-    order: 11
+  order: 37
 ---
 
-![Helpful image](../../../assets/magic/lotm.jpg)
+Cosmos Incursions are the server's PvP events. During an Incursion, coloured zones open in the world and towns fight over the **Spirit Beacons** inside them. Outside the events, permanent **extraction zones** let you gather resources for your town while other players hunt you.
 
-### What are Cosmos Incursions?
+## When does an Incursion start?
 
-**Cosmos Incursions** are major dynamic events and permanent environmental changes designed to shake up the server’s power balance. I have been working hard to create a system where the rewards are worthy, but so are the risks!
+An Incursion starts on its own when **25 players** are online:
 
-These zones are essentially places where the fabric of reality weakens, allowing the influence of the Cosmos to seep in.
-
----
-
-### The Incursion Begins
-
-When the server concurrent player count rises above a specific threshold (**30 players**), the Incursion starts.
-
-- **Massive Scale:** Incursion Zones open in random locations with a radius of 300-500 blocks.
-- **Visibility:** Active zones appear on the Online Map as large, semi-transparent overlays.
-
-#### City vs. City
-The Incursion Zone often centers around a capture point. This is a team effort!
-- **Objective:** Capture and hold the central point for as long as possible.
-- **The Reward:** If your City controls the point when the event closes, your entire City receives a massive buff: **Increased Acting + Spirituality gain** for 4 hours.
-
----
-
-### Are they all dangerous?
-
-Well, it depends on the zone's color.
-
-Not all Incursions are equally punishing. We've categorized them into different difficulty levels so you know what you're getting into:
-
-| Zone Color | Death Penalty |
+| Rule | Value |
 |---|---|
-| **Green** | You lose just one or two items. |
-| **Yellow** | You lose more items upon death. |
-| **Red** | You lose all of them. |
-| **Black** | You can regress your sequence or lose 50% of your acting progress. |
+| Countdown | 3 minutes after the player count is reached |
+| Length | 30 minutes |
+| Cooldown | At least 2 hours before the next one |
+| Zones | 2 at 25 to 32 players online, 3 at 33 to 40, 4 at 41 or more |
+| Zone size | Radius 150 blocks, at least 500 blocks apart, at least 50 blocks from any town claim |
 
-:::tip[Green and Yellow zones are where you learn]
-**Only Black zones can cost you a Sequence.** In Green, Yellow and Red zones the worst that happens is losing items.
+Zones are marked by walls of coloured particles. The start is also announced on Discord. Use `/cosmos status` to see what is running.
 
-On top of that, **Green and Yellow zones balance damage output between Sequences**, so a freshly-made Sequence 9 Beyonder is not simply deleted on sight by a Demigod. These zones exist specifically so that newer players can get a feel for Incursion PvP without risking their progress. Start there.
+## How dangerous is each zone?
+
+Each zone has a colour, given out in this order: Green, Yellow, Red, then Death (players call it Black). So with 2 zones you get Green and Yellow, with 3 a Red zone is added, and a Death zone only opens when 41 or more players are online. Before you enter, a consent screen explains the rules.
+
+| Zone | When you die | PvP balancing |
+|---|---|---|
+| **Green** | You keep all your items | Damage is evened out by HP pools, Mythical Form is blocked, Madness from others is cancelled |
+| **Yellow** | Each item has a **33%** chance to drop | Damage is half evened out, Mythical Form is blocked, Madness from others is halved |
+| **Red** | **All** items drop | None |
+| **Death (Black)** | **All** items drop, plus the Sequence penalty below | None |
+
+Green and Yellow zones are the place to learn Incursion PvP: a fresh Beyonder is not simply deleted by a Demigod there.
+
+### What happens if I die in a Death zone?
+
+This applies to Beyonders at **Sequence 4 or stronger**, on **any** death in a Death zone, whoever or whatever killed you:
+
+- If you have **at least 50%** of your acting bar, you lose that 50% and keep your Sequence.
+- If you have **less than 50%**, you drop **one Sequence**. You start the new Sequence with 99% of its acting bar, and your Beyonder Characteristic drops where you died.
+- After a penalty you are safe from another one for **20 seconds**.
+
+Sequence 5 and weaker Beyonders only risk their items.
+
+:::tip[Paper Angel]
+A **Paper Angel** protects you. Right-click it to arm it. When armed, it absorbs one Death-zone penalty and is used up. It comes from events and staff.
 :::
 
----
+### What is Spirit Weight?
 
-### Permanent Zones
+Beyonders at Sequence 4 and stronger carry **Spirit Weight** inside a zone: they glow, so they cannot hide, and take 1 damage every 5 seconds.
 
-Unlike temporary incursions, some regions - often whole continents - are permanently affected. 
+### What if I log out in a zone?
 
-Inside them, PvP is **always allowed**. Instead of just fighting, you'll find Points of Interest where you can gather resources. However, you can't just run away with them; you have to go to an **extraction point** and stay there long enough to successfully pull your loot out. These resources can then be exchanged for very valuable rewards.
+A body called "Hollow \<your name\>" stays behind for **5 minutes**. If someone kills it, you suffer the full death rules.
 
----
+## How do towns win an Incursion?
 
-### The Stakes are high
+Every zone has **Spirit Beacons**. Stand within 20 blocks of a beacon to capture it for your town; more players capture faster, and an empty beacon slowly decays back. Towns score for **holding**, **holding under attack** (worth double) and **capturing** beacons. Deadlier zones count for more (Yellow x1.25, Red x1.5, Death x2).
 
-This is the most critical mechanic - and it applies **only inside Black zones**. If you are killed by another player there:
-- You **lose one Sequence** (e.g., a Sequence 4 Sun Beyonder degrades to Sequence 5).
-- You lose the characteristics associated with that higher sequence, which will be dropped upon your defeat.
+When the Incursion ends:
 
-Everywhere else - Green, Yellow and Red - your Sequence is safe. Only your items are at risk.
+| Reward | Who gets it |
+|---|---|
+| **+10% acting speed for 3 hours** | The town in 1st place. Winning again in a row adds +2% per win, up to +6% |
+| **+5% acting speed for 2 hours** | The town in 2nd place |
+| **Resources** (Gold, Silver, Gems) | Split between all towns that scored at least 5% of the winner's score, by how much they fought. Towns from the same nation that all take part get up to +30% |
+| **MVP reward** | The top 3 players, whatever their town's place: acting and money |
+| Acting | Everyone present when their town captures a beacon |
 
-#### The Paper Angel
-To mitigate the risk of de-leveling, you'll want to get your hands on a **Paper Angel**.
-- **Effect:** If you are defeated while holding this item, the Angel is consumed, but you do not lose your Sequence.
-- **Acquisition:** Can be purchased in the Store or found as rare loot.
+PvP kills inside zones also give acting, more in deadlier zones. A repeat kill of the same player gives no acting for 20 minutes.
 
----
+### Do I get loot for killing players?
 
-### Anti-Combat Logging
+You get a **PvP crate** only when your kill triggers a Death-zone penalty: the victim was Sequence 4 or stronger, had no Paper Angel and was not on penalty cooldown.
 
-There is no escape. If you disconnect inside an Incursion Zone, an NPC “Body” spawns in your place. If the NPC is killed, you suffer all standard consequences, including potential level loss.
+:::danger[Do not hunt the weak]
+Killing 3 players who are 3 or more Sequences weaker than you within 10 minutes makes you a **Corrupted Monster** for 15 minutes, and griefing kills give no crate.
+:::
 
----
+## What are extraction zones?
 
-### Exclusive Loot
+Extraction zones are **permanent** PvP areas drawn on the map, marked by dark red particle walls. PvP is always on inside.
 
-Why risk your sequence? For loot, of course. Killing a player in the zone rewards you with a **PvP Loot Chest**, containing exclusive items obtainable only inside Incursion Zones.
+1. **Gather** at a **Point of Interest**, a beam of light with a floating resource. Stand within 8 blocks to collect Gold, Silver or Gems. The longer you stay, the faster you collect. Points of Interest move every 15 minutes.
+2. **Extract** at an **extraction point** near the edge. Stand inside its ring for 10 seconds. Moving out cancels it, taking damage does not. Extraction points move every 30 minutes.
+3. Your resources go into your **town's balance** and you are teleported safely outside.
+
+If you die before extracting, you lose everything you were carrying in your buffer. Zones come in three tiers:
+
+| Tier | Item drops on death | Resources |
+|---|---|---|
+| Safe | None | Gold and Silver |
+| Medium | 33% per item | Gold, Silver and some Gems |
+| Hard | All items | The most of each, including Gems |
+
+Each zone has a daily resource budget, so the best Points of Interest run dry if many players farm them.
+
+### What can my town buy?
+
+Your town spends Gold, Silver and Gems in `/cosmos shop`. `/cosmos balance` shows what your town has.
+
+## Which commands are there?
+
+| Command | What it does |
+|---|---|
+| `/cosmos guide` | The in-game guide |
+| `/cosmos status` | The current Incursion and its zones |
+| `/cosmos leaderboard` | Town scores after an event |
+| `/cosmos balance` | Your town's Gold, Silver and Gems |
+| `/cosmos shop` | Spend your town's resources |
+
+The in-game `/cosmos guide` still shows some old numbers (24-hour buffs and a Sequence 6 regression rule). The numbers on this page come from the live server settings.
+
+## Related pages
+
+- [Towns](/guides/towns/): you need a town to score and to bank resources
+- [Acting](/magic/acting/): acting speed and World acting
+- [Outer Gods Anchors](/guides/outer-gods-anchors/): the PvE event, where PvP is off
+- Main site: [Rules](https://www.mysterria.net/en/rules)
