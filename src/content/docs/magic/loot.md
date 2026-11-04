@@ -1,133 +1,145 @@
 ---
-title: "Beyonder Loot"
-description: "A complete guide to Beyonder loot categories, ingredient types, and the reward focusing system"
+title: "Beyonder Loot and Loot Focus"
+description: "Where to find Beyonder recipes, pages, potions and ingredients on Mysterria, how loot chests refill, and how Loot Focus (pity) guarantees what you need."
 sidebar:
-    label: 📦 Beyonder Loot
-    order: 11
+  label: Loot and Loot Focus
+  order: 4
 ---
 
-![Helpful image](../../../assets/magic/lotm.jpg)
+Recipes, Recipe Pages, potions, altar blueprints and many ingredients come from **loot chests** in the world. This page explains where they are, what you can find, and how **Loot Focus** (the pity system) makes sure bad luck never lasts forever.
 
-### Overview
+## Where are the loot chests?
 
-As you explore the world, you will encounter many types of Beyonder loot. Understanding where each category comes from - and how to improve your chances of finding what you need - is essential to progressing as a Beyonder.
+**Every chest in a naturally generated structure is a Beyonder loot chest**: villages, mineshafts, dungeons, temples, shipwrecks, buried treasure, bastions, ruined portals and the rest. There is no special glowing Beyonder chest to look for.
 
-All Beyonder loot falls into one of four broad categories:
+When you open one and Beyonder loot drops, it **pops out next to the chest** and glows for a few seconds. A chat message tells you something has appeared.
 
-- **Potions** - ready-to-drink Beyonder potions
-- **Beyonder Chars** - versatile items used in brewing, crafting, and consumption
-- **Recipes & Pages** - knowledge needed to brew potions
-- **Ingredients** - raw materials required for brewing
-
----
-
-### Where are loot containers?
-
-**Loot containers are ordinary naturally-generated chests.** Villages, mineshafts, temples, shipwrecks, buried treasure, bastions, ruined portals - every chest the world generates on its own is a Beyonder loot container. There is no separate, specially-marked container type to hunt for.
-
-:::tip[Chests refill over time]
-The contents of a looted container **regenerate**. A structure that somebody else has already emptied is still worth visiting, and worth visiting again later. Exploration never runs out.
+:::caution[Each chest pays you only once]
+Each player gets a given chest's loot **once**. After **12 hours to 2 days** the chest refills, but only for players who have not looted it yet. Your action bar shows "Refill in ..." when you open it. A chest someone else emptied still pays you; going back to your own old chests does not. New structures are always worth more.
 :::
 
-:::tip[Daily Tides move the numbers]
-A server-wide Daily Tide can boost your chance of a chest yielding a recipe, page, potion, or scroll,
-speed up the pity counter below, or favor rarer ingredients and mineable nodes on a given day. See
-[Daily Tides](/guides/tides/) for what's running today.
+## What can a chest give?
+
+Each chest you open rolls for Beyonder loot:
+
+| Loot | Chance per chest | Notes |
+|---|---|---|
+| Recipe | 1% | A full recipe for one potion |
+| Recipe Page | 3% | One page of a recipe. See [Brewing](/magic/brewing/#recipes-and-recipe-pages) |
+| Potion | 1% | A finished potion. It expires 48 hours after it is made |
+| Altar Scroll | 2% | A **Strange Scroll**: the blueprint for a brewing altar or a Sacrificial Altar |
+
+**Which Sequence?** Most loot is low level. The rough odds are:
+
+| Sequence | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Share | about 38% | 22% | 15% | 10% | 7% | 1% | 0.5% | 0.2% | 0.1% | 0.05% |
+
+**Which Pathway?** The **Law of Convergence** favours you: in 60% of chests the item follows your own Pathway (70% of those) or one of your [neighbours](/magic/pathways/#neighbouring-pathways). Otherwise it is a random Pathway.
+
+Chests in Ancient Cities also have a 7.5% chance to hold a custom music disc.
+
+:::tip[Daily Tides]
+On a **Tide of Fortune** day, chests give loot 2.5 times as often, pity fills in half the chests, and rare loot is 2.5 times as likely. On a **Deep Tide** day there are twice as many mineable nodes and chests find ingredients twice as often. See [Daily Tides](/guides/tides/).
 :::
 
----
+## Ingredients
 
-### Potions
+Every potion needs main and supplementary ingredients. They come in three kinds, and **none of them can be focused** with Loot Focus.
 
-Potions are fully brewed Beyonder items that can be consumed directly to gain or advance your Sequence. They can occasionally be found in loot containers throughout the world, though they are rare.
+### Foundable ingredients
 
-:::danger[Remember: potions expire]
-Any potion - whether found or brewed - will transform into a random **Sealed Artifact** after **2 real-time days** from when it first appeared. Don't let them sit unused!
+These turn up in loot chests, next to the chest like other loot. Exploring new structures is the way to get them.
+
+### Droppable ingredients
+
+These drop from [Beyonder Creatures](/magic/creatures/). Hunt the right creature in the right biome. A [Crimson Moon](/magic/crimson-moon/) brings far more creatures.
+
+### Mineable ingredients
+
+These appear in the world as **nodes**: they **glow red** and send up a **beam**, so you can spot them from a distance. **Right-click** a node to harvest it.
+
+- A new set of nodes is placed **every day**, near where players are active.
+- Common ingredients get about 3 nodes a day. Rarer ones get fewer, and the rarest have a 15% chance of a single node each day.
+- Beyonders with a Divination ability can use **Vein Divination** to find a node, once every 5 minutes.
+- The "mineable ingredients" [bounty](/magic/acting/#bounties) points you to a live node too.
+
+### Other sources
+
+- **Wild Beyonders** trade Pathway goods and can drop ingredients. See [Wild Beyonders](/magic/wild-beyonders/).
+- **Rift bosses** pay out in a roulette that can hold ingredients, recipes, potions and Beyonder Characteristics. See [Rift Bosses](/guides/bosses/).
+- The [Brilliant Emporium](/guides/emporium/) sells some ingredients.
+- Spare ingredients can be sold to nitwit and jobless villagers for [Energy Shards](/guides/shards/).
+
+## Loot Focus (pity)
+
+**Loot Focus** guarantees the loot you need. You pick one type of loot, and every loot chest you open adds 1 to its counter. When the counter reaches the **threshold**, that chest is guaranteed to give you the focused loot.
+
+### How do I set my Loot Focus?
+
+1. Type `/magic`.
+2. Click **Loot Focus** (the hopper).
+3. Pick one type: **Recipes**, **Pages**, **Potions** or **Altar Scrolls**.
+4. Optionally pick a **Sequence bracket** (see below), or keep **Any Sequence**.
+
+After each chest, your action bar shows your progress as "Pity: X/Y".
+
+### How many chests does it take?
+
+With **Any Sequence**, the thresholds are:
+
+| Focus | Chests |
+|---|---|
+| Altar Scrolls | 50 |
+| Pages | 100 |
+| Recipes | 150 |
+| Potions | 200 |
+
+Recipes and Pages are separate: focus Pages if you are collecting pages, Recipes if you want a finished recipe.
+
+### Sequence brackets
+
+You can narrow the reward to a bracket of Sequences. The threshold is then multiplied by the bracket's multiplier, and again by **×1.5 for every Sequence** your strongest Pathway sits below the bracket's top Sequence.
+
+| Bracket | Sequences | Multiplier |
+|---|---|---|
+| High Sequences | 9 to 7 | ×2 |
+| Middle Sequences | 6 to 4 | ×4 |
+| Low Sequences | 3 to 1 | ×8 |
+| Peak | 0 | ×15 |
+
+Example thresholds for **Recipes**:
+
+| Your Sequence | High (9 to 7) | Middle (6 to 4) | Low (3 to 1) | Peak (0) |
+|---|---|---|---|---|
+| 9 | 675 | 4,557 | 30,755 | 86,498 |
+| 7 | 300 | 2,025 | 13,669 | 38,444 |
+| 4 | 300 | 600 | 4,050 | 11,391 |
+
+So aim at brackets close to your own Sequence. The menu shows your real threshold for each bracket before you pick it.
+
+### Pinning your next potion
+
+When you focus **Potions**, you can also click **Aim at your next Sequence** and pin one exact potion (a Pathway and a Sequence).
+
+- A pin on a Pathway **you already walk** costs the same as its bracket.
+- A pin on **another Pathway** costs twice as much, and is refused if that Sequence's seats are full.
+- If a pin can no longer be delivered, your progress is **kept**, not spent. Pin another target to claim it.
+
+Even without a pin, a potion paid out by pity aims at a Pathway you walk, at your next Sequence.
+
+### When does the counter reset?
+
+- A pity payout always resets the counter to 0.
+- Finding the focused loot naturally resets it only if it falls inside your bracket (or is your pinned potion). A lower-tier natural drop keeps your progress.
+- Changing your focus to another type drops a bracket that the new type cannot pay out in.
+
+:::note[Path of Resolve]
+New players who chose **Path of Resolve** start with their Recipes counter one chest short of the guarantee. Focus **Recipes** with **Any Sequence** and the next chest gives a recipe, for any Pathway and Sequence. See [Quick Start](/general/start/#4-choose-your-starter-bonus).
 :::
 
----
+## Related pages
 
-### Beyonder Chars
-
-**Beyonder Chars** are versatile items with multiple uses:
-- Replace **all main ingredients** in a potion recipe when brewing
-- Used to craft **Sealed Artifacts**
-- Consumed directly by certain pathways for special effects
-
-Chars can be found in loot containers and are among the more sought-after rewards for active Beyonders.
-
----
-
-### Recipes & Pages
-
-To brew a potion, you need to know its recipe. Recipe knowledge comes in two forms:
-
-**Complete Recipe Books**
-A full recipe book contains the entire ingredient list needed to brew a specific potion. Found in loot containers, these are the straightforward option.
-
-**Separate Recipe Pages**
-You may find individual pages from a recipe - fragments of the full book. Each page can be **read on its own** to give you partial knowledge, but to actually use them for brewing you must **collect all the pages** for that recipe and **combine them at a crafting table** to form the complete recipe book.
-
-:::tip[Collecting pages]
-Separate pages are generally easier to find than complete books, but require more effort to complete. If you find a page, hold onto it - other pages for the same recipe are out there!
-:::
-
----
-
-### Ingredients
-
-Ingredients are the raw materials used in brewing. Unlike other loot categories, they **cannot be focused** (see below). There are three types, each with a distinct acquisition method:
-
-#### Foundable Ingredients
-These ingredients only appear inside **loot containers** scattered throughout the world. They cannot be farmed from mobs or found in the wild - exploration and chest-hunting is the only way.
-
-#### Droppable Ingredients
-These ingredients only drop from **Beyonder Creatures** upon death. Hunting the right type of creature in the right biome is the key to obtaining these.
-
-#### Mineable Ingredients
-These ingredients appear in the **open world as resource nodes** - a glowing or distinct object that spawns naturally in certain areas. 
-
-To collect one:
-1. **Approach** the node
-2. **Interact** with it (right-click)
-3. It will **drop the ingredient** and **disappear**
-
-Resource nodes do not respawn immediately, so if you find a spot with them, it may be worth revisiting later.
-
----
-
-### Reward Focusing
-
-To reduce the frustration of RNG-heavy exploration, the server uses a **reward focusing** system - a built-in pity mechanic.
-
-You can choose to **focus** one of the following four categories:
-
-| Focus Category      | Description |
-|---------------------|-------------|
-| **Potions**         | Increases pity towards finding a Beyonder potion |
-| **Recipes**         | Increases pity towards finding complete recipe books |
-| **Pages**           | Increases pity towards finding individual recipe pages |
-| **Altar Scrolls**   | Increases pity towards finding blueprints for Cauldrons or Sacrificial Altars of various tiers |
-
-Note that **Recipes and Pages are separate categories**. If you are assembling a book from fragments, focus Pages; if you want a finished book outright, focus Recipes.
-
-:::note[Ingredients cannot be focused]
-The ingredient categories (foundable, droppable, mineable) are excluded from the focusing system. Those must be obtained through their respective methods.
-:::
-
-#### How focusing works
-
-Once you select a focus category, the system tracks how many loot containers you have opened **without receiving a reward from that category**.
-
-- If you open **N−1** containers without getting anything from your focused category, the **N-th container is guaranteed** to contain a reward from it.
-- This resets after you receive the focused reward, and the pity counter starts again.
-
-**The value of N is shown to you in-game**, and it is not a single fixed number - it varies from case to case. Check your current counter rather than assuming. Either way, the system ensures no focused category can be indefinitely unlucky.
-
-On top of the category, you can also narrow your focus to a **specific Sequence range** (for example, only Sequence 0-3 rewards). This raises N substantially the rarer the range you pick, but it means your eventual guaranteed reward will actually be worth having rather than a common one.
-
-Choose your focus based on what you need most right now, and explore consistently to take advantage of the guarantee.
-
-:::tip[Strategy]
-If you are close to advancing your Sequence and just need one more recipe page or a specific Char, focusing the relevant category can significantly cut down the time spent opening fruitless containers.
-:::
+- [Brewing and Potions](/magic/brewing/): what to do with what you find.
+- [Pathways](/magic/pathways/): neighbours and the Law of Convergence.
+- The main site's short version: [Find loot, recipes, and ingredients](https://www.mysterria.net/en/guide/loot).

@@ -1,0 +1,115 @@
+---
+title: "Brewing and Potions"
+description: "How to brew Beyonder potions on Mysterria: the Magic Cauldron and altar tiers, recipes and pages, ingredients, the brewing minigame and potion expiry."
+sidebar:
+  label: Brewing and Potions
+  order: 3
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import cauldron from '../../../assets/magic/cauldron.png';
+
+Every Sequence starts with a potion, and every potion is brewed. This page covers the whole process: what you need, how to brew, what can go wrong, and how long a potion lasts. It works the same way for Sequence 9 and for every potion after it.
+
+## What do I need to brew a potion?
+
+1. A **recipe** for the potion's Pathway and Sequence, or a full set of its **Recipe Pages**.
+2. A **Magic Cauldron**: the brewing altar you build from a blueprint.
+3. The recipe's **main** and **supplementary ingredients**. One **Beyonder Characteristic** of the same Pathway and Sequence can replace all the main ingredients.
+
+Before you drink anything stronger than Sequence 9, you also need at least 95% [acting](/magic/acting/), and your [ritual](/magic/rituals/) counts.
+
+## The Magic Cauldron (brewing altar)
+
+The brewing structure comes in three tiers. The tier changes your brewing result by one grade:
+
+| Altar | Effect on the brewing minigame |
+|---|---|
+| **Crude Altar** | Your result drops one grade (Excellent becomes Good, Good becomes Poor, Poor becomes Failed) |
+| **Ritual Altar** | No change |
+| **Grand Altar** | Your result rises one grade (Failed becomes Poor, Poor becomes Good, Good becomes Excellent) |
+
+**How to build one:** blueprints come from loot chests as a **Strange Scroll** (the **Altar Scrolls** category of [Loot Focus](/magic/loot/#loot-focus-pity)). Hold the scroll and **right-click a block** to see a preview of the structure, then **right-click again** to place it. The area must be clear. Left-clicking does nothing.
+
+<Notice tone="warn" title="Sacrificial Altars cannot brew">
+  The **Crude Sacrificial Altar**, **Sacrificial Altar** and **Grand Sacrificial Altar** look similar, but they are for advancing [Boons](/magic/boons/) and cannot brew potions. Check the scroll's name before you place it.
+</Notice>
+
+## Recipes and Recipe Pages
+
+You can find a **full recipe**, or a recipe split into **Recipe Pages**. Each page is called "Recipe Page *n* (Sequence *s*)":
+
+| Page | Contains |
+|---|---|
+| Page 1 | The main ingredients |
+| Page 2 | The supplementary ingredients |
+| Page 3 | The ritual requirements |
+
+Sequence 9 has no ritual, so its recipes have only pages 1 and 2. Right-click a page to read it. To turn pages into a recipe, put **exactly one of each page** for the same Pathway and Sequence into a crafting grid, with nothing else.
+
+Recipes are not tied to your Pathway: you can find recipes for any Pathway. To switch Pathway with a potion, see [Pathways](/magic/pathways/#can-i-change-pathways).
+
+## Ingredients
+
+Each potion has its own main and supplementary ingredients. There are three kinds:
+
+- **Foundable** ingredients come mostly from loot chests.
+- **Droppable** ingredients come mostly from [Beyonder Creatures](/magic/creatures/).
+- **Mineable** ingredients grow as glowing red nodes in the world. Right-click one to harvest it.
+
+Wild Beyonders and Rift bosses are other sources. See [Loot and Loot Focus](/magic/loot/#ingredients) for details. With the [Client Mod](/guides/client-mod/), hovering an ingredient tells you its Pathway, its Sequence, and whether it is main or supplementary.
+
+## How do I brew?
+
+Open your Magic Cauldron and place the items:
+
+- **Main ingredients** (or one Beyonder Characteristic) in the **left** slots (red),
+- **Supplementary ingredients** in the **right** slots (blue),
+- the **recipe** in the **top centre** slot (yellow).
+
+<Figure src={cauldron} alt="The Magic Cauldron menu with the main slots on the left, the supplementary slots on the right and the recipe slot at the top" caption="Main ingredients left, supplementary right, recipe at the top." contain />
+
+Put the ingredients in the same order the recipe lists them. If anything is wrong, nothing happens and you keep your items. Extra copies of an ingredient are given back.
+
+When everything matches, a short **brewing minigame** starts. Your grade decides the result:
+
+| Grade | Result |
+|---|---|
+| **Excellent** | You get the potion |
+| **Good** | You get the potion |
+| **Poor** | 50% chance of the potion. Otherwise the brew fails |
+| **Failed** | The brew fails, with a small explosion and a few seconds of Poison |
+
+**A failed brew** uses up the **recipe** and the **supplementary ingredients**. Your main ingredients fuse into a **Beyonder Characteristic** of that Pathway and Sequence, which you can use as the main ingredient next time.
+
+The minigame gets harder for stronger Sequences, from very easy at Sequence 9 to hardest at Sequence 2 and above. Beyonders of the **Moon** Pathway get one step easier. Use the altar tier above to shift your grade.
+
+<Notice tone="ok" title="Practise first">
+  `/coi practice` lets you rehearse the minigames for free, with nothing at stake.
+</Notice>
+
+## Drinking the potion
+
+When you drink, a confirmation screen shows exactly what the advancement will cost: missing acting, an incomplete ritual, or a risky Pathway switch. Nothing happens until you confirm, and cancelling gives the potion back.
+
+After you confirm, another short minigame runs:
+
+- **Excellent:** a short burst of Regeneration and Speed.
+- **Good:** nothing extra.
+- **Poor** or **Failed:** you gain some temporary Madness (more on Failed), plus Nausea or Blindness for a few seconds.
+
+A potion only works if it is **exactly one Sequence stronger** than your current Sequence. A weaker, equal or much stronger potion is simply refused. See [Madness and Mutation](/magic/mutation/#advancement-costs) for what advancing can cost.
+
+## How long does a potion last?
+
+A potion lasts **48 hours** from the moment it is made. Its description shows the time left. When it expires, it turns into a **Sealed Artifact** of the same Pathway and Sequence. If there is none, it becomes a **Beyonder Characteristic** instead, and failing that a **Ruined Potion**. An expired potion can no longer advance you.
+
+A potion you receive as a reward gets a fresh 48 hours when it first enters your inventory.
+
+## Other ways to get a potion
+
+- Loot chests sometimes hold a finished potion, and the **Potions** category of [Loot Focus](/magic/loot/#loot-focus-pity) guarantees one.
+- A Sun Beyonder at Sequence 4 can dissolve a potion or Sealed Artifact held in the offhand into its Beyonder Characteristic, with **Beyonder Characteristic Purification**.
+- The **Sequence 0** potion is special: it is brewed from the Sequence 0 recipe and **three Sequence 1 Beyonder Characteristics** of the same Pathway, with nothing else. See [Sequence 0](/magic/sequence-zero/).
+
+The main site has a short version of this page: [Brew and drink your first potion](https://www.mysterria.net/en/guide/first-potion).

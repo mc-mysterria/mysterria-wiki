@@ -1,0 +1,129 @@
+---
+title: "Quick Start"
+description: "How to join Mysterria, the Lord of the Mysteries Minecraft server: server address, resource pack, verification, starter bonus and your first potion."
+sidebar:
+  label: Quick Start
+  order: 1
+---
+
+import {Figure, Notice, CardGrid, Card, Button} from '~/components/mdx';
+import banner from '../../../assets/start/banner.png';
+import ipPreview from '../../../assets/start/ip-preview.png';
+import generate from '../../../assets/start/generate.png';
+import code from '../../../assets/start/code.png';
+import pathways from '../../../assets/start/pathways.png';
+
+<Figure src={banner} alt="A Mysterria Beyonder flying above the world" />
+
+Mysterria is a **Lord of the Mysteries (LOTM) Minecraft server**. The Beyonder system runs on the server through its own plugin, so you play with an ordinary Minecraft client: no mod or modpack needed. This page takes you from the server list to your first Sequence.
+
+## 1. Connect to the server
+
+| What | Details |
+|---|---|
+| **Server address** | `mc.mysterria.net` |
+| **Edition** | Java Edition. Bedrock can join through Geyser, with some custom menus and icons drawn wrong |
+| **Version** | The [player guide](https://www.mysterria.net/en/guide/connect) recommends Minecraft Java **26.2** |
+| **Mods** | None needed. The optional [Client Mod](/guides/client-mod/) adds native menus and a small acting bonus |
+
+<Figure src={ipPreview} alt="The Edit Server Info screen with mc.mysterria.net as the server address" caption="Add mc.mysterria.net in Multiplayer." />
+
+1. Open **Multiplayer**, add `mc.mysterria.net` and join.
+2. **Accept the server resource pack** when Minecraft asks.
+3. In the lobby server selector, choose **Mysteries**.
+4. Read what the lobby NPC says before you leave. It helps you find your way.
+
+<Notice tone="warn" title="Everything looks like plain Minecraft?">
+  Then the resource pack did not load. Edit the server entry, set **Server Resource Packs** to **Enabled**, and reconnect. If it still fails, update your Java client. More fixes are in the main site's [troubleshooting guide](https://www.mysterria.net/en/guide/troubleshooting).
+</Notice>
+
+## 2. Register (offline accounts only)
+
+Official (premium) Minecraft accounts log in automatically and skip this step.
+
+Offline accounts register once, then log in on every later visit:
+
+- `/register <password> <password>` the first time
+- `/login <password>` after that
+
+Remember your password.
+
+## 3. Verify your account
+
+Verifying links your Minecraft account to your Discord account and your profile on mysterria.net.
+
+1. Sign in on [mysterria.net](https://www.mysterria.net/en/profile) and open your **profile**.
+2. Click **Generate Code**.
+3. In game, type `/verify` and enter the 8-character code in the window that opens. You can also type `/verify <code>`.
+
+<Figure src={generate} alt="The Verify Minecraft Account box on the website profile, with a Generate Code button" caption="Generate the code on your website profile." />
+
+<Figure src={code} alt="The in-game verification window asking for the code" caption="Then enter it in game." contain />
+
+Verified players get exclusive Discord channels, a unique chat prefix and role, and full store access. If the code does not work, generate a fresh one and try again, or open a ticket on Discord.
+
+## 4. Choose your starter bonus
+
+Soon after you join, a menu shows all 22 Pathways. Pick one, then choose one of two starter bonuses.
+
+<Figure src={pathways} alt="The Pathway selection menu with the 22 Pathway emblems" caption="The Pathway menu you see as a new player." />
+
+| | Path of Shortcut | Path of Resolve |
+|---|---|---|
+| **You get** | Sequence 9 of the chosen Pathway, right away | Your recipe guarantee starts one chest away |
+| **Permanent cost** | Your maximum Spirituality is **10% lower forever**, at every Sequence | None |
+| **Best for** | Playing with abilities today | Learning brewing and keeping full power |
+
+**How Path of Resolve pays out:** open `/magic`, click **Loot Focus**, choose **Recipes** and keep **Any Sequence**. Your next loot chest then gives you a recipe. The recipe can be for **any Pathway and Sequence**, so it may not match the Pathway you clicked. See [Loot Focus](/magic/loot/#loot-focus-pity).
+
+<Notice tone="info" title="The Pathway you click does not lock you in">
+  You become a Beyonder only when you drink a Sequence 9 potion, and you join that potion's Pathway. If the menu said Fool but you later drink a Door potion, you are Door. The starter bonus itself cannot be picked again. If you made a genuine new-player mistake, open a ticket on Discord; staff sometimes give a reset.
+</Notice>
+
+## 5. Brew and drink your first potion
+
+Sequence 9 needs a **recipe**, a **Magic Cauldron** (the Ritual Altar structure), the recipe's **ingredients**, and a successful brew. It needs no acting and no ritual, and it costs no Madness. Brewed potions expire after 48 hours, so brew when you are ready to drink.
+
+<CardGrid>
+  <Card title="Brewing and Potions" text="Cauldrons, recipes, the brewing minigame and what a failed brew costs." href="/magic/brewing/" />
+  <Card title="Loot and Loot Focus" text="Where recipes and ingredients come from, and the pity counter." href="/magic/loot/" />
+  <Card title="Pathways" text="All 22 Pathways, their Sequences and neighbours." href="/magic/pathways/" />
+</CardGrid>
+
+## 6. Check your character
+
+Your Sequence, acting, Health, Spirituality and Madness are all on your character screen:
+
+- Open your **inventory**, click the **Pathway icon** in the top-left corner, and hover over your character's head, or
+- type `/coi menu character`, or
+- with the [Client Mod](/guides/client-mod/), press **M**. The mod removes the inventory icon.
+
+## Useful commands
+
+| Command | What it does |
+|---|---|
+| `/magic` | Newbie guide, with Loot Focus |
+| `/guide`, `/faq`, `/hints` | In-game guide book, common questions, hints |
+| `/bounty` | Acting bounties |
+| `/subspace` | Dungeons, their entrances and your cooldowns |
+| `/emporium`, `/daily`, `/vote` | Brilliant Emporium, daily rewards, voting |
+| `/wallet` | Your money |
+| `/lands` | Create or manage a town |
+| `/msg <player>`, `/r` | Private messages |
+
+There is **no** `/home`, `/sethome`, `/spawn`, `/tpa`, `/rtp` or `/back`. The full list is on [Commands](/general/commands/).
+
+## Before you settle
+
+- Travel takes planning, because there are no teleport commands. Pick your base with care, or join a town.
+- PvP is off in most of the world, and griefing is against the rules.
+- Every chest in a generated structure is a Beyonder loot chest, and each one pays **you** once.
+- The world resets between epochs. Epoch II began on 1 May 2026.
+
+Read [World and Safety](/general/world-and-safety/) for the details, and the [server rules](https://www.mysterria.net/en/rules) before you play.
+
+## Need help?
+
+Ask in chat or on the [Mysterria Discord](https://discord.com/invite/jc7GSxBWgb). The main site's [player guide](https://www.mysterria.net/en/guide) answers the most common questions too.
+
+<Button href="https://www.mysterria.net/en/guide" variant="secondary" external>Open the player guide</Button>

@@ -1,65 +1,84 @@
 ---
 title: "Spirituality"
-description: "Detailed information about the mechanics of advancing as a Beyonder on the server"
+description: "How Spirituality works on Mysterria: maximum Spirituality by Sequence and Pathway, regeneration, what Madness and Tiredness do to it, and running out."
 sidebar:
-    label: 🌀 Spirituality
-    order: 3
+  label: Spirituality
+  order: 7
 ---
 
-![Helpful image](../../../assets/magic/lotm.jpg)
+**Spirituality** is the energy your abilities spend. Every cast costs some, and it refills on its own over time. Running out does not kill you, but it can drive you towards Madness.
 
-### What is Spirituality?
+You can see it on the blue bar at the top of your screen (or the movable bar of the [Client Mod](/guides/client-mod/)), and on your character screen (`/coi menu character`).
 
-As soon as you become a Beyonder, you gain the power to use your Pathway's abilities. However, unlimited use of magic would be too simple an advantage, so you are limited by Spirituality.
+## How much Spirituality do I have?
 
-Spirituality functions as a measure of your character's inner fortitude. Using any ability depletes a portion of your Spirituality, requiring judicious use. Fortunately, Spirituality regenerates on its own, so there's no need for alarm if it depletes.
+Your maximum Spirituality depends on three things:
 
-:::danger[Warning]
-Running dry isn't harmless: sitting below 10% of your limit for too long builds up Madness, and Madness that reaches
-100% means losing control of your own power. See [Mutation](/magic/mutation/) for what losing control actually costs
-you these days - it's no longer always the permanent loss of everything, but it's never free. Keep a close eye on
-your Spirituality bar.
-:::
+**Maximum = base for your Sequence × (0.5 + 0.5 × your acting progress) × your Pathway's multiplier**
 
-### Does it increase later?
+So right after you advance, with 0% acting, you have **half** of your full maximum. It grows smoothly as you act, and reaches the full value at 100% acting. It never goes above that. At Sequence 0 it always counts as full.
 
-Yes, yes, it does.
+| Sequence | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **Base** | 100 | 250 | 500 | 1,000 | 2,500 | 5,000 | 10,000 | 25,000 | 70,000 | 100,000 |
 
-The maximum limit of your spirituality gets higher based on your current acting as well as Sequence. Just after advancing you will always get just **50%** of your current limit, but after using your spells for a little bit and getting 100% acting - it will increase by another 50%, so on and so forth. 
+### Pathway multipliers
 
-It also gets bigger based on your Sequence. For example, Sequence 9 only has 100 by default, but if you manage to advance to Sequence 0 - your limit will be of 100,000!
+Some Pathways have more Spirituality than others. Pathways not listed here use ×1.0.
 
-### How fast does it regenerate?
+| Pathway | Multiplier by Sequence |
+|---|---|
+| Fool | ×1.1 at 9, ×1.15 at 8, ×1.2 at 7, ×1.25 at 6 to 5, ×1.4 at 4 to 3, ×1.6 at 2 to 0 |
+| Moon | ×1.08 at 9 to 3, ×1.7 at 2, ×1.8 at 1, ×1.89 at 0 |
+| Door | ×1.0 at 9 to 8, ×1.2 at 7 to 5, ×1.35 at 4 to 3, ×1.5 at 2, ×1.65 at 1 to 0 |
+| Red Priest | ×1.02 at 9, ×1.08 at 8, ×1.15 at 7, ×1.25 at 6, ×1.3 at 5 to 4, ×1.4 at 3, ×1.55 at 2 to 0 |
+| Wheel of Fortune | ×1.1 at 9, ×1.15 at 8 to 7, ×1.4 at 6, ×1.45 at 5 to 0 |
+| Darkness | ×1.15 at 9 to 7, ×1.3 at 6 to 0 |
+| Death | ×1.1 at 9, ×1.15 at 8, ×1.2 at 7 to 0 |
+| Hanged Man | ×1.05 at 9, ×1.12 at 8 to 0 |
+| Twilight Giant | ×1.0 at 9 to 5, ×1.2 at 4 to 0 |
 
-Well, it depends.
+For example, a Moon Deity has about 189,000 Spirituality, while a Sequence 9 Seer with full acting has 110.
 
-The baseline passive regeneration ticks once a second, for roughly a quarter of a percent of your maximum limit each
-time (scaling gently with how large that limit actually is). Conditional passive abilities can add to that. For
-example, Fool's **Spiritualism** adds a flat **1% of your limit every 5 seconds** on top of the baseline - a
-meaningful, constant trickle rather than a one-off burst.
+### What else changes my maximum?
 
-### How does Madness and Tiredness affect Spirituality?
+- **Boons** add their own share on top of your Pathway. See [Boons](/magic/boons/).
+- **Path of Shortcut** (a starter bonus) lowers your maximum by **10% forever**, at every Sequence. See [Quick Start](/general/start/#4-choose-your-starter-bonus).
+- Breaking a Sun **Notarization** contract can be punished with **Spiritual Binding**, which also lowers your maximum by 10%.
+- A **Uniqueness** and some passive abilities raise it. A Darkness Beyonder's Nocturnality raises it at night.
 
-**Madness** is the governing risk factor for Beyonders, replacing the old Safe Mode system, and **Tiredness** is the
-day-to-day fatigue gauge covered on the [Health System](/magic/health/) page - both slow your regeneration down, and
-they stack with each other:
+## How fast does it come back?
 
-- Madness: regeneration drops to 80% speed at 25% Madness, 60% at 50%, and 30% at 75% and above.
-- Tiredness: regeneration drops to 85% speed at 65% Tiredness, and 70% at 85% and above.
+Every second you regain **1/400 of your maximum, plus 1**. A Sequence 9 Beyonder with 100 Spirituality regains about 1 a second; a Sequence 4 with 5,000 regains about 13 a second. Either way, an empty bar refills in under 7 minutes when nothing slows it down.
 
-At very high Madness and Tiredness together, regeneration can slow to a crawl, making use of your powers extremely
-risky.
+Madness and Tiredness slow it down, and the two stack:
 
-:::tip[Keep your Madness low]
-Managing Madness is just as important as managing Spirituality. See the [Mutation](/magic/mutation) page for full details on the Madness system.
-:::
+| Madness | Regeneration speed |
+|---|---|
+| Below 25% | Full |
+| 25% or more | 80% |
+| 50% or more | 60% |
+| 75% or more | 30% |
 
-### Path of Shortcut penalty
+| Tiredness | Regeneration speed |
+|---|---|
+| Below 65% | Full |
+| 65% or more | 85% |
+| 85% or more | 70% |
 
-If you chose the **Path of Shortcut** as your starting bonus - which grants you Sequence 9 instantly without brewing - be aware of its hidden cost:
+At 75% Madness and 85% Tiredness together you regenerate at only 21% speed.
 
-:::caution[Permanent Spirituality Reduction]
-Your maximum Spirituality will **always be 10% lower** than it should be for your Sequence and acting level. This penalty is permanent and cannot be removed.
-:::
+### Ways to refill faster
 
-This is the price paid for skipping the brewing process entirely.
+- **Spiritualism** (Fool and Darkness, Sequence 9) adds 1% of your maximum every 5 seconds.
+- You can only have **one** Spirituality regeneration passive switched on at a time, even if you own several.
+- **Spirituality potions** restore part of your Spirituality at once. They are in the Helping Card exchanges of the [dungeons](/guides/dungeons/).
+- A church can give the **Spirituality Restore** gift. See [Churches](/magic/churches/).
+
+## What happens when I run low?
+
+- **Below 10%:** every 2.5 minutes you stay there adds **1% Madness**.
+- **Not enough for a cast:** the game lets you pay the missing part in Madness instead, at **0.2% Madness per missing point**. It refuses if that would take you to 90% Madness or more, and the refusal also switches off all your toggled abilities.
+- **At 0:** every toggled ability switches off.
+
+Keep an eye on your bar, especially at high Sequences where a single cast can cost thousands. See [Madness and Mutation](/magic/mutation/) for what Madness does, and [Conditions](/magic/conditions/) for Tiredness.
