@@ -9,7 +9,7 @@ sidebar:
 import {Notice, Figure} from '~/components/mdx';
 import blessedSettings from '../../../assets/magic/church-blessed-settings.webp';
 
-This page is for church leaders and officers. New to churches? Start with [Churches: Getting Started](/magic/churches/). The numbers behind perks are on [Church Perks and Anchors](/magic/church-perks/). All values here are the live server values as of November 2026.
+Church leaders and officers grow a church through its sites, services, vaults, Land links and wars. Founding and joining a church are covered in [Churches: Getting Started](/magic/churches/).
 
 ## Church sites
 
@@ -98,7 +98,7 @@ If your church is linked to a Land, treasury can draw on the Land's bank (see [L
 
 ## Church services
 
-Services (sermons and the like) grow your **Church Progress**, which helps a young church climb tiers.
+Services grow your **Church Progress**, which helps a young church climb tiers.
 
 | Service | Cooldown | Spirituality cost | Prayer strength | Extra effect | Base progress |
 |---|---:|---:|---:|---|---:|
@@ -107,7 +107,7 @@ Services (sermons and the like) grow your **Church Progress**, which helps a you
 | Communion | 240 min | 18 | +5.0% | 2 recoverable Madness relief | 7 |
 | Confession | 120 min | 10 | +3.0% | 1 recoverable Madness relief | 5 |
 
-- **Who can lead one:** the leader, co-leaders, Angels, or that site's Head Deacon.
+- The leader, co-leaders, Angels or that site's Head Deacon can lead one.
 - The officiant must be within **24 blocks** of the site, and at least one member must attend.
 - Start one from the church menu or with `/coi church ritual <siteId> <sermon|mass|communion|confession>`.
 - Progress = (base progress + 0.75 per participant, up to 12 participants) x the site's activity, never counted below 25%.
@@ -159,8 +159,8 @@ Churches do not claim land. If you use [Towns](/guides/towns/), you can link a L
 
 A church gets **3** Land link slots, plus 1 for every 10 claimed chunks. The Land owner can toggle two perks with `/coi church land perk <churchLeader> <treasury|artifacts> <true|false>`:
 
-- **Treasury**: church treasury can use the Land's bank.
-- **Artifacts**: a little more vault capacity and borrow time.
+- **Treasury** lets the church treasury use the Land's bank.
+- **Artifacts** gives a little more vault capacity and borrow time.
 
 Inside a claimed Land, Lands permissions decide who may break cores and vaults (except in an accepted church war).
 
@@ -202,18 +202,6 @@ The leader, co-leaders, Angels and Head Deacons can set alerts in the church men
 <Figure src={blessedSettings} alt="The Blessed Settings page of the church menu with a row of alert and notice toggles" caption="Blessed Settings in the church menu. Each icon turns one alert or notice on or off." contain />
 
 **Divine Observation** lets church officers watch a member from nearby. Sneak to stop watching. A member of equal or higher Sequence must give permission first. Trusted members (co-leaders, Angels, Head Deacons or senior active members) can be put on a remote observation list.
-
-## Leader checklist
-
-- Keep the main core placed and active.
-- Recruit active members who pray, not just names.
-- Assign a Head Deacon and Bishops to every site.
-- Hold services regularly.
-- Add branches as your Sequence allows, and revive any that decay.
-- Stay within your Angel slots.
-- Upgrade active sites with treasury.
-- Guard cores and vaults during a war.
-- Check `/coi church status` and `/coi church perks` when bonuses drop.
 
 ## Commands for leaders and managers
 

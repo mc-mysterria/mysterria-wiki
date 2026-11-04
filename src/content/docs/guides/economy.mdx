@@ -10,16 +10,11 @@ import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
 import shard from '../../../assets/shards/shard.png';
 import walletBalance from '../../../assets/economy/wallet-balance.webp';
 
-Mysterria has two kinds of currency you will use every day:
+Mysterria has two currencies. **Money** (Coppets, Licks and Verl Dors) sits in your `/wallet` and pays for towns, the [Agora](/guides/agora/) and Wild Beyonder trades. **Energy Shards** are an item you get by selling spare Beyonder ingredients to villagers, and they pay for [Secret Order](/guides/orders/) levels and Wild Beyonder trades.
 
-- **Money**: Coppets, Licks and Verl Dors, kept in your `/wallet`. It pays for towns, the [Agora](/guides/agora/) and Wild Beyonder trades.
-- **Energy Shards**: a physical item you get by selling spare Beyonder ingredients to villagers. It pays for [Secret Order](/guides/orders/) levels and Wild Beyonder trades.
-
-[Emporium points](/guides/emporium/) are a third, separate balance that only works in the Brilliant Emporium.
+[Emporium points](/guides/emporium/) are a separate balance that only works in the Brilliant Emporium.
 
 ## What are Coppets, Licks and Verl Dors?
-
-The coin names come from the Intis money in *Lord of the Mysteries*.
 
 | Coin | Worth |
 |---|---|
@@ -33,24 +28,22 @@ Your balance is always counted in Coppets. When a menu shows a price with a `$` 
 
 Type `/wallet`. The wallet menu shows your balance and links to the server store and Discord. Click **Balance** to open the vault screen, where you can:
 
-- **Withdraw coins**: click a coin to take it out as a physical item.
-- **Deposit coins**: click a coin item from your inventory to put it into your balance.
-- **Sell items**: anything sellable in your inventory appears there too. Click it to see the price and confirm the sale.
+- Click a coin to withdraw it as a physical item.
+- Click a coin item in your inventory to deposit it into your balance.
+- Click a sellable item from your inventory to see its price and confirm the sale.
 
 The **Settings** button switches between three looks for the wallet menu.
 
 <Figure src={walletBalance} alt="The wallet menu with the Balance tooltip showing 1,250.75$" caption="The wallet menu. Hover over Balance to see how much money you hold." contain />
 
-Physical coins are useful for paying another player by hand or for trades that ask for a coin. To break a coin into smaller ones, hold **one** coin in your main hand and type `/shatter`. A Verl Dor becomes 64 Licks, and a Lick becomes 64 Coppets.
+Physical coins let you pay another player by hand or make trades that ask for a coin. To break a coin into smaller ones, hold **one** coin in your main hand and type `/shatter`. A Verl Dor becomes 64 Licks, and a Lick becomes 64 Coppets.
 
 ## How do I make money?
 
-There is no single best way. Most players earn money from several of these:
-
-- **The Agora.** Sell items to other players, anonymously, at the underground market. See [Agora](/guides/agora/).
-- **The Battle Pass.** Free and premium tiers pay from 100 to 1,500 Coppets each. See [Battle Pass](/guides/battle-pass/).
-- **Selling ore in the wallet.** Small but steady. See below.
-- **Trading with other players** and taking part in events.
+- Sell items anonymously to other players in the [Agora](/guides/agora/), the underground market.
+- Claim [Battle Pass](/guides/battle-pass/) tiers. Free and premium tiers pay from 100 to 1,500 Coppets each.
+- Sell ore in the wallet. It is small but steady.
+- Trade with other players and take part in events.
 
 ### Which ores can I sell?
 
@@ -67,26 +60,26 @@ Only three ores have a price. Everything else sells for nothing.
 
 ## What is money used for?
 
-- Founding and running a town: creation, extra claims, upkeep and levels. See [Towns](/guides/towns/).
+- Founding and running a [town](/guides/towns/), including extra claims, upkeep and levels.
 - Buying from other players in the [Agora](/guides/agora/) and renting a stall there.
-- Wild Beyonder trades, which cost money, Energy Shards **and** physical Verl Dor coins. See [Wild Beyonders](/magic/wild-beyonders/).
+- [Wild Beyonder](/magic/wild-beyonders/) trades, which cost money, Energy Shards **and** physical Verl Dor coins.
 - Some villager trades (below).
 
 ### Do villagers take coins?
 
-Partly. Trades for **enchanted books** and **items with durability** (tools, weapons, armour) cost Coppets instead of emeralds, at 2 Coppets per emerald of the original price. Every other trade still uses emeralds.
+Only for some trades. Trades for **enchanted books** and **items with durability** (tools, weapons, armour) cost Coppets instead of emeralds, at 2 Coppets per emerald of the original price. Every other trade still uses emeralds.
 
-A villager only trades once its AI is switched off. Trap it in a 2 by 1 space it cannot walk out of. Until then it refuses to trade.
+A villager only trades once its AI is switched off. Trap it in a 2 by 1 space it cannot walk out of.
 
 ### Is there a /shop?
 
-Not any more. The building-block shop moved underground. Buy those blocks from the **Quartermaster** in the [Agora](/guides/agora/).
+No. Buy building blocks from the **Quartermaster** in the [Agora](/guides/agora/).
 
 ## Energy Shards
 
 <Figure src={shard} alt="A stack of Energy Shards with the item tooltip: a fragment of mystical energy, used as currency for organization upgrades" caption="Energy Shards are a real item in your inventory, not a wallet balance." />
 
-Energy Shards are an item, so they sit in your inventory or a chest. They are not stored in `/wallet`, and they can be lost or stolen like any other item.
+Energy Shards are not stored in `/wallet`. They sit in your inventory or a chest and can be lost or stolen like any other item.
 
 ### How do I get Energy Shards?
 
@@ -100,7 +93,7 @@ Sell spare Beyonder ingredients to a **villager with no profession** or a **nitw
 
 If you carry nothing it wants, the villager *"finds nothing of interest in your pack"*.
 
-The villager buys **Pathway ingredients only**. Recipes, potions and other items are not bought. Each ingredient is worth more the stronger its Sequence:
+The villager buys **Pathway ingredients only**, not recipes, potions or other items. Stronger Sequences are worth more:
 
 | Ingredient Sequence | Shards each (almost all ingredients) |
 |---|---|
@@ -118,11 +111,11 @@ Energy Shards also come from the [Battle Pass](/guides/battle-pass/) (200 to 3,0
 
 ### What are Energy Shards used for?
 
-- **Secret Order levels**: 50, 200, 1,000 and 5,000 shards for levels 1 to 4, deposited into the Order's shared pool. See [Secret Orders](/guides/orders/).
-- **Secret Order extras**: Battle Cry, permanent upgrades, founding a Secret Lair and its teleport crystals.
-- **Wild Beyonder trades**, together with money and physical Verl Dor coins. See [Wild Beyonders](/magic/wild-beyonders/).
+- [Secret Order](/guides/orders/) levels, which cost 50, 200, 1,000 and 5,000 shards for levels 1 to 4, paid into the Order's shared pool.
+- Secret Order extras such as Battle Cry, permanent upgrades, founding a Secret Lair and its teleport crystals.
+- [Wild Beyonder](/magic/wild-beyonders/) trades, together with money and physical Verl Dor coins.
 
-Do not confuse Energy Shards with the Emporium's **Shard of ...** items (for example *Shard of Boon Token*). Those are crafting fragments for one specific reward. See [Emporium](/guides/emporium/#what-are-emporium-fragments).
+The Emporium's **Shard of ...** items, such as *Shard of Boon Token*, are not Energy Shards. They are [crafting fragments](/guides/emporium/#what-are-emporium-fragments) for one specific reward.
 
 ## Related pages
 
@@ -130,5 +123,4 @@ Do not confuse Energy Shards with the Emporium's **Shard of ...** items (for exa
   <Card title="Brilliant Emporium" text="Spend Emporium points from daily rewards and voting." icon="star" href="/guides/emporium/" />
   <Card title="Agora" text="The anonymous underground market for player trading." icon="coin" href="/guides/agora/" />
   <Card title="Battle Pass" text="Quests that pay money, shards, points and Boons." icon="scroll" href="/guides/battle-pass/" />
-  <Card title="Economy on the main site" text="The short version in the player guide." icon="book" href="https://www.mysterria.net/en/guide/economy" />
 </CardGrid>

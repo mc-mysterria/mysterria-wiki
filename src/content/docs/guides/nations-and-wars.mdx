@@ -8,7 +8,7 @@ sidebar:
 
 import {Card, CardGrid, Notice} from '~/components/mdx';
 
-Towns can join together into a **nation**, and towns and nations can **go to war**. Both build on [Towns](/guides/towns/), so read that page first.
+Towns can join together into a **nation**, and towns and nations can **go to war** to take money or land from each other. Both need a [town](/guides/towns/) first.
 
 ## Nations
 
@@ -20,7 +20,7 @@ A **nation** is a union of towns under one banner. One town is the **capital**.
 /nations create <name>
 ```
 
-- Your town must be at level 5, **Domain**. See [Town levels](/guides/towns/#town-levels).
+- Your town must be at [level 5](/guides/towns/#town-levels), **Domain**.
 - It costs **20,000 Coppets**.
 - The name needs 5 to 24 characters, with no spaces.
 
@@ -39,11 +39,11 @@ A **nation** is a union of towns under one banner. One town is the **capital**.
 | `/nations rename <name>` | Rename for 10,000 Coppets, at most once a day |
 | `/nations delete` | Disband the nation (the towns stay) |
 
-**Nation chat:** type `!n`, `!nation` or `!nations` in front of a message.
+For nation chat, type `!n`, `!nation` or `!nations` in front of a message.
 
 ### Nation levels and effects
 
-A nation levels up automatically. Its requirements count all of its towns together.
+A nation levels up automatically, counting all of its towns together.
 
 | Level | Name | Towns | Unique trusted players | Money across all towns | Effects unlocked | Active at once |
 |---|---|---|---|---|---|---|
@@ -51,12 +51,12 @@ A nation levels up automatically. Its requirements count all of its towns togeth
 | 2 | **Order** | 3 | 100 | 60,000 Coppets | Jump Boost, Speed, Haste, Dolphin's Grace | 1 |
 | 3 | **Dominion** | 5 | 200 | 120,000 Coppets | Jump Boost II, Speed II, Haste II, Dolphin's Grace II, Absorption, Night Vision, Luck, Strength, Health Boost | 3 |
 
-Higher levels also add claims and cut nation upkeep: Order +50 claims and -10% upkeep, Dominion +100 claims and -20% upkeep.
+Order also adds 50 claims and cuts nation upkeep by 10%. Dominion adds 100 claims and cuts it by 20%.
 
 ### What does a nation cost?
 
-- **Taxes:** towns in a nation stop paying upkeep to the server. Instead they pay the nation a tax that the nation sets, up to **5 Coppets per chunk** each cycle. A town that cannot pay is removed from the nation.
-- **Upkeep:** the nation pays the server **3 Coppets per chunk** every cycle. A nation that cannot pay is **deleted**. Its towns are not.
+- Towns in a nation stop paying upkeep to the server. Instead they pay the nation a tax that the nation sets, up to **5 Coppets per chunk** each cycle. A town that cannot pay is removed from the nation.
+- The nation pays the server upkeep of **3 Coppets per chunk** every cycle. A nation that cannot pay is **deleted**, but its towns stay.
 - New nations pay no upkeep for their first 2 days.
 
 ### Claiming near a nation
@@ -124,7 +124,7 @@ A **Capture Flag** takes enemy land in a Skirmish.
 | **Independence** | A vassal fights its overlord to break free. If the vassal loses, it cannot try again for 7 days | 7 days for the winner |
 
 <Notice tone="warn" title="Raids hurt">
-In a Raid, the winners can empty your chests for an hour. Keep valuables somewhere the listed blocks do not protect, or make sure someone is online to defend.
+In a Raid, the winners can empty your chests for an hour. Keep valuables behind blocks that are not on that list, or make sure someone is online to defend.
 </Notice>
 
 ## Related pages
@@ -132,5 +132,4 @@ In a Raid, the winners can empty your chests for an hour. Keep valuables somewhe
 <CardGrid>
   <Card title="Towns and Town Perks" text="Founding a town, levels and costs." icon="shield" href="/guides/towns/" />
   <Card title="Money and Wallet" text="Where the money for wars and nations comes from." icon="coin" href="/guides/economy/" />
-  <Card title="Towns on the main site" text="The short version in the player guide." icon="book" href="https://www.mysterria.net/en/guide/towns" />
 </CardGrid>

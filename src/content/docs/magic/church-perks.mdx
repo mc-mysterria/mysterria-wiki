@@ -8,24 +8,24 @@ sidebar:
 
 import {Notice} from '~/components/mdx';
 
-This page has the formulas and tables behind church perks. For the basics, read [Churches: Getting Started](/magic/churches/) first. All values are the live server values as of November 2026.
+Church perks are the Acting, Madness recovery and support bonuses that a [church](/magic/churches/) gives its members. How strong they are depends on how much active, praying support the church has.
 
 ## What makes perks stronger or weaker?
 
-Church perks are worked out from several things at once. If one is weak, the final bonus can feel much smaller.
+Perks combine all of these at once, so one weak factor can make the final bonus much smaller.
 
-- **Anchor weight**: how much active, praying support the church has, compared with what the leader's Sequence needs.
-- **Membership age**: new members start at 20% and reach full value after 14 days (21 days after switching churches).
-- **Piousness and activity**: recent prayer and site participation.
-- **Site network**: an active main core, healthy branches, Regional HQs.
-- **Site leadership**: Head Deacons and Bishops covering each site.
-- **Role**: leaders and co-leaders get the most, and new followers the least.
-- **Pathway**: the church's own Pathway helps most, neighbouring Pathways a bit less, others least.
-- **Your Sequence**: stronger members get somewhat stronger effects.
-- **War**: see [church wars](/magic/church-management/#church-wars).
-- **Main core**: without one, every perk runs at 50%.
+- **Anchor weight** is how much active, praying support the church has, compared with what the leader's Sequence needs.
+- **Membership age** matters because new members start at 20% and reach full value after 14 days (21 days after switching churches).
+- **Piousness and activity** come from recent prayer and site participation.
+- The **site network** needs an active main core and healthy branches and Regional HQs. Branches that decay stop helping.
+- **Site leadership** means a Head Deacon and Bishops covering each site.
+- By **role**, leaders and co-leaders get the most and new followers the least. Angel effects pause if there are more Angels than Angel slots.
+- By **Pathway**, the church's own Pathway helps most, neighbouring Pathways a bit less and others least.
+- Stronger members get somewhat stronger effects from **their Sequence**.
+- An accepted [church war](/magic/church-management/#church-wars) or a war penalty changes perks.
+- Without a **main core**, every perk runs at 50%.
 
-`/coi church perks` and `/coi church status` show where you stand.
+If your perks feel weak, `/coi church status`, `/coi church perks`, `/coi church acting`, `/coi church pathway progress`, `/coi church my-site` and `/coi church cooldowns` show where you stand.
 
 ## Anchor weight
 
@@ -45,7 +45,7 @@ Each active member adds **anchor weight** by Sequence:
 | 9 | 0.25 |
 | Non-Beyonder | 0.15 |
 
-Then multiplied by Pathway:
+That weight is then multiplied by Pathway:
 
 | Member's Pathway | Multiplier |
 |---|---:|
@@ -63,9 +63,9 @@ For example, a Sequence 4 member gives 4.5 on the church's own Pathway, 3.75 fro
 
 ### Limits on anchor weight
 
-- **High-Sequence taper:** weight from members at Sequence 4 or stronger starts to taper at **18** and can never pass **34**.
-- **Group bonus:** every **10** active members at Sequence 5 or weaker add **+1.0**.
-- **Site capacity:** each active site can hold a certain amount of weight, set by the leader's Sequence. Weight above your total capacity tapers off and stops near 1.35 times capacity.
+- Weight from members at Sequence 4 or stronger starts to taper at **18** and can never pass **34**.
+- Every **10** active members at Sequence 5 or weaker add a group bonus of **+1.0**.
+- Each active site can hold a certain amount of weight, set by the leader's Sequence. Weight above your total **site capacity** tapers off and stops near 1.35 times capacity.
 
 | Leader's Sequence | Main site capacity | Each branch |
 |---|---:|---:|
@@ -89,10 +89,10 @@ Full support needs this much effective anchor weight, set by the **leader's** Se
 | 1 | 38 |
 | 0 | 30 |
 
-These are weight targets, not member counts. A Sequence 4 leader can reach 15 with a few strong same-Pathway members or many weaker ones. Note that the same leader's main site holds only 12 before tapering, so they will want a branch or an upgrade.
+These are weight targets, not member counts. A Sequence 4 leader can reach 15 with a few strong same-Pathway members or many weaker ones. Their main site holds only 12 before tapering, so they will want a branch or an upgrade.
 
 <Notice tone="info" title="Sequence 0 reads this too">
-To claim a throne, your church needs **20** effective anchors, and you must be its leader, co-leader or Angel. A seated god's church is measured against **30**. See [Sequence 0](/magic/sequence-zero/).
+To claim a [throne](/magic/sequence-zero/), your church needs **20** effective anchors, and you must be its leader, co-leader or Angel. A seated god's church is measured against **30**.
 </Notice>
 
 ## Church tiers
@@ -109,7 +109,7 @@ For a Sequence 4 leader (target 15), tier 2 starts around 3.75 anchors, tier 3 a
 
 ### Church Progress
 
-Holding [services](/magic/church-management/#church-services) builds **Church Progress**. Every **100** progress points count as 1 extra anchor toward tier and ranking, up to **12**. It helps a young church grow, but it cannot replace real, praying members.
+Holding [services](/magic/church-management/#church-services) builds **Church Progress**. Every **100** progress points count as 1 extra anchor toward tier and ranking, up to **12**.
 
 ## Religion ranking
 
@@ -172,7 +172,7 @@ Relief is your church's anchor fill (effective anchors divided by the target) ti
 A new god's church usually has about the 20 anchors needed to ascend, but a god is measured against 30. At 20 of 30 they get two thirds of the relief, so their 90% floor only drops to about 30%. Growing the congregation to 30 clears the rest.
 </Notice>
 
-Red Priests without a church can get relief from their Chain of Command cohort instead. Cohort and church relief never stack. See [Red Priest cohorts](/magic/sequence-zero/#red-priest-cohorts-instead-of-a-church).
+Red Priests without a church can get relief from their [Chain of Command cohort](/magic/sequence-zero/#red-priest-cohorts-instead-of-a-church) instead. Cohort and church relief never stack.
 
 ## Blessings
 
@@ -197,16 +197,3 @@ Gifts are stronger support from the leader, co-leaders and active Angels. Use `/
 | `sanctuary-renewal` | 20 s Regeneration II and 120 s Absorption I | 36 | +1.5 |
 
 The same gift to the same target has a **5-minute** cooldown. A second gift to one target within an hour is weaker (down to 40%). A gift is refused if it would push the giver above 95% Madness.
-
-## Why are my perks weak?
-
-- Is the main core placed and active?
-- Have members, the leader and site heads prayed in the last 14 days?
-- Are branches active, or have they decayed?
-- Does every site have a Head Deacon?
-- Are there more Angels than Angel slots?
-- Is the church in an accepted war, or under a war penalty?
-- Is the member new and still ramping up?
-- Is the member's Pathway the church's own, a neighbour, or unrelated?
-
-Commands that help: `/coi church status`, `/coi church perks`, `/coi church acting`, `/coi church pathway progress`, `/coi church my-site`, `/coi church cooldowns`.
