@@ -1193,8 +1193,8 @@ mobile-starlight-toc .isMobile a[aria-current="true"] {
     background:
         linear-gradient(90deg, var(--arc-bg) 30%, transparent) left / 40px 100% no-repeat local,
         linear-gradient(270deg, var(--arc-bg) 30%, transparent) right / 40px 100% no-repeat local,
-        radial-gradient(farthest-side at 0 50%, color-mix(in oklab, var(--arc-ink) 16%, transparent), transparent) left / 14px 100% no-repeat scroll,
-        radial-gradient(farthest-side at 100% 50%, color-mix(in oklab, var(--arc-ink) 16%, transparent), transparent) right / 14px 100% no-repeat scroll;
+        radial-gradient(farthest-side at 0 50%, color-mix(in oklab, var(--arc-ink) 30%, transparent), transparent) left / 18px 100% no-repeat scroll,
+        radial-gradient(farthest-side at 100% 50%, color-mix(in oklab, var(--arc-ink) 30%, transparent), transparent) right / 18px 100% no-repeat scroll;
 }
 
 .sl-markdown-content :is(th, td):not(:where(.not-content *)) {
@@ -1351,6 +1351,8 @@ mobile-starlight-toc .isMobile a[aria-current="true"] {
     background: var(--q-popbg, var(--arc-pop));
     box-shadow: inset 0 0 0 1px var(--arc-line), 0 24px 60px var(--arc-shadow);
     color: var(--arc-ink);
+    /* the results scroll inside the panel, never the panel itself */
+    overflow: hidden;
 }
 
 .ws-dialog::backdrop {
@@ -1362,7 +1364,7 @@ mobile-starlight-toc .isMobile a[aria-current="true"] {
 .ws-panel {
     display: flex;
     flex-direction: column;
-    max-height: inherit;
+    max-height: min(560px, calc(100dvh - 96px));
 }
 
 /* the field is the top of the panel, divided from the results by one hairline, no box of its own */
@@ -1414,6 +1416,8 @@ mobile-starlight-toc .isMobile a[aria-current="true"] {
 }
 
 .ws-results {
+    flex: 1 1 auto;
+    min-height: 0;
     overflow-y: auto;
     padding: 8px;
 }
@@ -1640,7 +1644,7 @@ mobile-starlight-toc .isMobile a[aria-current="true"] {
 
 @media (max-width: 49.99rem) {
     :root[data-theme="parchment"] .landing-hero__art {
-        margin: 0 0 8px;
+        margin: 16px 0 20px;
         border-radius: var(--arc-r-lg, 16px);
         -webkit-mask-image: none;
         mask-image: none;
