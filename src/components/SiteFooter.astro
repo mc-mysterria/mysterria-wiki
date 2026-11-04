@@ -188,7 +188,7 @@ const year = new Date().getFullYear();
 			grid-template-areas:
 				'identity identity'
 				'play server'
-				'community .';
+				'community community';
 			gap: 22px 24px;
 			padding-bottom: 28px;
 		}
@@ -214,7 +214,22 @@ const year = new Date().getFullYear();
 
 		.footer-column--play { grid-area: play; }
 		.footer-column--server { grid-area: server; }
-		.footer-column--community { grid-area: community; }
+		/* Community spans both columns, its links two to a row in line with Play and Server */
+		.footer-column--community {
+			grid-area: community;
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+			column-gap: 24px;
+		}
+
+		.footer-column--community .footer-heading {
+			grid-column: 1 / -1;
+		}
+
+		/* .footer-column's gap below would shrink the column gap: keep it level with Play and Server */
+		.footer-columns .footer-column--community {
+			column-gap: 24px;
+		}
 
 		.footer-column {
 			gap: 9px;
@@ -240,6 +255,11 @@ const year = new Date().getFullYear();
 		/* the disclaimer goes under the logo, as on the main site, not squeezed beside it */
 		.footer-disclaimer {
 			flex-basis: 100%;
+		}
+
+		/* three columns again: Community is one list like the others */
+		.footer-column--community {
+			display: flex;
 		}
 	}
 
