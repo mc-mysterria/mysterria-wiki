@@ -8,6 +8,9 @@ sidebar:
 
 import {Notice, Figure} from '~/components/mdx';
 import blessedSettings from '../../../assets/magic/church-blessed-settings.webp';
+import coreBroken from '../../../assets/magic/church-core-broken.webp';
+import vaultRecipe from '../../../assets/magic/church-vault-recipe.webp';
+import vaultMenu from '../../../assets/magic/church-vault-menu.webp';
 
 This page is for church leaders and officers. New to churches? Start with [Churches: Getting Started](/magic/churches/). The numbers behind perks are on [Church Perks and Anchors](/magic/church-perks/). All values here are the live server values as of November 2026.
 
@@ -25,7 +28,7 @@ A site whose core is missing or inactive does not count.
 
 ### What if the main core breaks?
 
-<Figure src="https://in.ikeepcalm.me/mTxUFlLZVXbe.png" width={969} height={192} alt="Chat warning shown when a main Church Core is broken" />
+<Figure src={coreBroken} alt="Chat warning shown when a main Church Core is broken" />
 
 - Without a main core, **every church perk runs at 50%**.
 - After **14 days** without one, the church counts as abandoned.
@@ -120,7 +123,7 @@ A **Church Vault** stores [Sealed Artifacts](/magic/sealed-artifacts/) for the c
 
 ### Vault recipe
 
-<Figure src="https://in.ikeepcalm.me/LdA4R48J2Gdg.png" width={515} height={492} alt="Church Vault crafting recipe with a Church Core in the centre" caption="The centre slot shows a Church Core, but a plain Beacon works too." contain />
+<Figure src={vaultRecipe} alt="Church Vault crafting recipe with a Beacon in the centre" caption="The centre slot shows a plain Beacon, but a Church Core works too." contain />
 
 | Row | Items |
 |---|---|
@@ -136,6 +139,8 @@ Only the church leader can craft it. Place it within **16 blocks** of an active 
 2. A member requests it from the vault menu (`/coi church artifact request <artifactId>`).
 3. A manager approves or denies.
 4. The member must return it before the borrow time runs out. Late, recalled or dropped artifacts are pulled back into church storage, and so is any artifact whose borrower logs off.
+
+<Figure src={vaultMenu} alt="The Artifact Vault menu with the Vault Status tooltip showing stored, borrowed and pending counts" caption="The vault menu from /coi church vault. Hover over the book to see the vault status." contain />
 
 The player who stored an artifact can take it back with `/coi church artifact withdraw` when it is not lent out and has no pending request.
 

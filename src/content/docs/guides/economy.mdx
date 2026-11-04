@@ -9,6 +9,8 @@ sidebar:
 import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
 import shard from '../../../assets/shards/shard.png';
 import walletBalance from '../../../assets/economy/wallet-balance.webp';
+import walletVault from '../../../assets/economy/wallet-vault.webp';
+import walletSell from '../../../assets/economy/wallet-sell-ore.webp';
 
 Mysterria has two kinds of currency you will use every day:
 
@@ -40,6 +42,10 @@ Type `/wallet`. The wallet menu shows your balance and links to the server store
 The **Settings** button switches between three looks for the wallet menu.
 
 <Figure src={walletBalance} alt="The wallet menu with the Balance tooltip showing 1,250.75$" caption="The wallet menu. Hover over Balance to see how much money you hold." contain />
+
+<Figure src={walletVault} alt="The vault screen with the Balance tooltip showing 30.00 stored and ores from the bag ready to sell" caption="The vault screen. Click a coin to withdraw it, or a bag item to sell it." contain />
+
+<Figure src={walletSell} alt="The sell screen for 8 Diamond Ore with the Sell tooltip showing a price of 16 Coppets" caption="Selling ore. The Sell button shows the price before you confirm." contain />
 
 Physical coins are useful for paying another player by hand or for trades that ask for a coin. To break a coin into smaller ones, hold **one** coin in your main hand and type `/shatter`. A Verl Dor becomes 64 Licks, and a Lick becomes 64 Coppets.
 

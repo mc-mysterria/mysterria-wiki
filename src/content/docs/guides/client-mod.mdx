@@ -6,6 +6,19 @@ sidebar:
   order: 15
 ---
 
+import {Figure} from '~/components/mdx';
+import titleScreen from '../../../assets/client-mod/title-screen.webp';
+import dossier from '../../../assets/start/beyonder-dossier.webp';
+import destinations from '../../../assets/client-mod/dossier-destinations.webp';
+import catalogue from '../../../assets/client-mod/ability-catalogue.webp';
+import uniqueness from '../../../assets/magic/uniqueness-candidacy.webp';
+import mythicalForm from '../../../assets/client-mod/mythical-form.webp';
+import selector from '../../../assets/client-mod/ability-selector.webp';
+import characterPlate from '../../../assets/client-mod/character-plate.webp';
+import hudArrange from '../../../assets/client-mod/hud-arrange.webp';
+import hudSettingsAbility from '../../../assets/client-mod/hud-settings-ability.webp';
+import hudSettingsElements from '../../../assets/client-mod/hud-settings-elements.webp';
+
 **coi-client** is an optional Fabric mod built specifically for Mysterria. It replaces the chest-GUI
 menus and action-bar clutter of Circle of Imagination with proper HUD elements and native screens,
 without changing how the server plays.
@@ -15,7 +28,7 @@ Nothing on the server requires this mod. Every screen it draws has a plain chest
 if you don't install it (or play Bedrock through Geyser), you see those chest menus instead.
 :::
 
-![The coi-client splash screen, with all 22 Pathway icons orbiting the logo](https://in.ikeepcalm.me/mlqnpA3pPCPy.png)
+<Figure src={titleScreen} alt="The coi-client title screen, with all 22 Pathway icons orbiting the logo" />
 
 ---
 
@@ -71,36 +84,36 @@ With the mod installed and its features turned on, you get:
 You can change them in Minecraft's Controls, where the mod has its own category. Keys for opening
 single screens directly (for example your abilities) exist too, but are unbound until you set them.
 
-![The Beyonder character sheet as a native screen](https://in.ikeepcalm.me/0pKiY04Z8muN.png)
+<Figure src={dossier} alt="The Beyonder Dossier as a native screen" />
 
-![The main menu, with every other screen reachable from it](https://in.ikeepcalm.me/nh3XKVKmJgub.png)
+<Figure src={destinations} alt="The Destinations tab of the Beyonder Dossier, with every other screen reachable from it" />
 
-![The ability catalogue](https://in.ikeepcalm.me/qkcbjzwruKjG.png)
+<Figure src={catalogue} alt="The ability catalogue" />
 
-![The Uniqueness screen](https://in.ikeepcalm.me/ui82oLhQZ25f.png)
+<Figure src={uniqueness} alt="The Uniqueness screen" />
 
-![The Mythical Creature Form screen](https://in.ikeepcalm.me/T6GHRHkdh43V.png)
+<Figure src={mythicalForm} alt="The Mythical Creature Form screen" />
 
 The ability selector groups your kit by Pathway and Sequence, and shows each spell's description,
 type, category, Spirituality cost and cooldown in place:
 
-![The ability selector](https://in.ikeepcalm.me/RTN6DtdqySxe.png)
+<Figure src={selector} alt="The ability selector" />
 
 The character sheet HUD overlay replaces the separate Madness, reserve and Acting bars with one panel
 carrying your skin, Pathway and Sequence:
 
-![The character sheet HUD overlay](https://in.ikeepcalm.me/5z92kHSYi65y.png)
+<Figure src={characterPlate} alt="The character sheet HUD overlay" contain />
 
 Every part of the HUD is movable. Drag any element, including individual ability hotkeys, into the
 layout you want:
 
-![Dragging HUD elements into place](https://in.ikeepcalm.me/Xw8T62lAmv7C.gif)
+<Figure src={hudArrange} alt="The HUD in Arrange on screen mode, with each element ready to drag into place" />
 
 Its settings screen is deliberately short, keeping only the options you would actually change:
 
-![The mod's settings screen](https://in.ikeepcalm.me/qqcD1QcCKPqG.png)
+<Figure src={hudSettingsAbility} alt="The mod's settings screen" contain />
 
-![More of the mod's settings](https://in.ikeepcalm.me/pWRfUhAoEwja.png)
+<Figure src={hudSettingsElements} alt="More of the mod's settings" contain />
 
 Every one of these falls back gracefully if you don't have the mod, have an outdated build, or turn
 a feature off in the mod's own settings. Nothing on the server depends on any of it being present.

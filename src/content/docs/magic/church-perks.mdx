@@ -6,7 +6,8 @@ sidebar:
   order: 35
 ---
 
-import {Notice} from '~/components/mdx';
+import {Notice, Figure} from '~/components/mdx';
+import perksChat from '../../../assets/magic/church-perks-chat.webp';
 
 This page has the formulas and tables behind church perks. For the basics, read [Churches: Getting Started](/magic/churches/) first. All values are the live server values as of November 2026.
 
@@ -26,6 +27,8 @@ Church perks are worked out from several things at once. If one is weak, the fin
 - **Main core**: without one, every perk runs at 50%.
 
 `/coi church perks` and `/coi church status` show where you stand.
+
+<Figure src={perksChat} alt="Chat output of /coi church perks for a new church leader, with the perks applied to you and the reasons behind them" caption="What /coi church perks prints in chat." contain />
 
 ## Anchor weight
 
