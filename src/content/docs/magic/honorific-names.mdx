@@ -1,0 +1,141 @@
+---
+title: "Honorific Names"
+description: "How to write, validate and chant an Honorific Name on Mysterria from Sequence 4, the Divine Response, and every god's blessing. A Lord of the Mysteries guide."
+sidebar:
+  label: Honorific Names
+  order: 32
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import lotm from '../../../assets/magic/lotm.jpg';
+
+<Figure src={lotm} alt="Lord of the Mysteries artwork of a figure seated on a throne above the grey fog" />
+
+## What is an Honorific Name?
+
+In Lord of the Mysteries, chanting the honorific name of a powerful Beyonder lets the spiritual world carry your prayer to them. On Mysterria, every Beyonder at **Sequence 4 or stronger** can write their own Honorific Name. Other players can then chant it in chat to reach you, wherever you are.
+
+An example in five lines:
+
+> *King of the Skies*
+>
+> *Emperor of the Seas*
+>
+> *Lord of the Calamity*
+>
+> *God of the Storms*
+>
+> *The Wanderer Known to Mysterria*
+
+## How do I set my Honorific Name?
+
+Open your character menu (`/coi menu character`, or the M key with the [client mod](/guides/client-mod/)) and click the Honorific Name slot. The client mod's character sheet has it too. Until you set one, you get a chat reminder every 30 minutes with a button that opens the editor.
+
+The number of lines depends on your Sequence:
+
+| Your Sequence | Lines |
+|---|---:|
+| 4 or 3 | 5 |
+| 2 or 1 | 4 |
+| 0 | 3 |
+
+When you advance and the name gets shorter, the last line is kept. The name is then checked again and may stay inactive until its lines describe your new self.
+
+### Line rules
+
+Each line must:
+
+- be 2 to 80 characters long;
+- not start with `!` or `/`;
+- not be only digits;
+- have no double spaces and no spaces at the start or end;
+- use letters (Latin or Cyrillic), digits and basic punctuation only.
+
+### What makes a name valid?
+
+A valid name must point clearly to **you**. The editor shows how much identity evidence it found; you need a score of **3**. One strong personal descriptor or several related clues are enough. Evidence that counts:
+
+- your username or a meaningful part of it;
+- your town, church, church site, linked land or nation;
+- your Pathway or your current Sequence title;
+- an ability you have at your current Sequence;
+- recognised Pathway concepts and official phrases;
+- a personal descriptor approved by staff.
+
+Matching ignores capital letters, punctuation, spacing, apostrophes and hyphens. English and Ukrainian names for Pathways, Sequences and abilities are recognised.
+
+The editor rejects incomplete names, wrong line counts, blank or repeated lines, ordinary chat phrases, one-word filler and names that already answer to someone else. A rejected name is kept as a draft, but chanting it does nothing until it is valid.
+
+<Notice tone="warn" title="Choose wisely">
+Your name does not need your username, but it must have enough real identity evidence to tell you apart. Nobody else can claim an invocation that already answers to you.
+</Notice>
+
+## How do I chant someone's name?
+
+Type each line of their name as a normal chat message, in order.
+
+- You have **15 seconds** between lines.
+- A line of three or more words still counts if it sits inside a longer sentence.
+- You cannot chant your own name, except through a puppet or Avatar body.
+
+When the last line lands:
+
+- you enter a **15-minute** chanting cooldown;
+- if the owner is online, they see your coordinates and a prompt to respond, which expires after **2 minutes**;
+- if the owner belongs to a church, the chant counts as an outside prayer to that [church](/magic/churches/), and the owner may invite you to join it;
+- the owner is credited with the legendary deed **Your honorific invoked**, which counts toward [Sequence 0](/magic/sequence-zero/).
+
+<Notice tone="info" title="Watch out for Disguise">
+The Error Pathway's Disguise ability can secretly intercept a church's next completed Honorific Name call or Church Blessing. The church owner and Angels are warned and can stop it by saying the thief's name in chat.
+</Notice>
+
+## What can I do when my name is chanted?
+
+Click the prompt to open the **Divine Response** menu:
+
+| Button | What it does |
+|---|---|
+| **Teleport** | Opens a portal and takes you to the chanter. You must be in the same world, and it does not work in dungeons |
+| **Smite** | Strikes the chanter with lightning for 4 damage (2 hearts) |
+| **Gift Items** | Sends one item from your inventory to the chanter, at any distance |
+
+Using any of them starts a **30-minute** cooldown for you as the owner. Other players can still chant your name in the meantime; each chanter has their own cooldown.
+
+## What happens when you chant a god's name?
+
+At [Sequence 0](/magic/sequence-zero/) the name has 3 lines. Chanting it still opens the god's Divine Response menu as usual. On top of that, every completed chant of a god's name blesses the **chanter** straight away, even if the god is offline or does not answer.
+
+- The blessing lasts up to **2 minutes** and is shown with the Pathway's own particles and sound.
+- Each god's blessing has a **60-minute** cooldown that is **shared by every chanter** of that god. If someone else chanted it within the hour, your chant still reaches the god, but no blessing fires.
+- The blessing only affects the chanter. It never places blocks or touches anyone else.
+
+| God's Pathway | Blessing |
+|---|---|
+| [Fool](https://www.mysterria.net/en/pathways/fool) | Luck II, Resistance I |
+| [Error](https://www.mysterria.net/en/pathways/error) | Luck I, Speed I |
+| [Door](https://www.mysterria.net/en/pathways/door) | Speed II, Jump Boost I |
+| [Sun](https://www.mysterria.net/en/pathways/sun) | Regeneration II, Fire Resistance I |
+| [Visionary](https://www.mysterria.net/en/pathways/visionary) | Night Vision I, Luck I |
+| [Tyrant](https://www.mysterria.net/en/pathways/tyrant) | Conduit Power I, Dolphin's Grace I |
+| [White Tower](https://www.mysterria.net/en/pathways/tower) | Resistance II, Slow Falling I |
+| [Hanged Man](https://www.mysterria.net/en/pathways/hanged) | Speed II, Haste I |
+| [Red Priest](https://www.mysterria.net/en/pathways/priest) | Regeneration III, Strength II, Fire Resistance (a custom rite with fire and a Red Eye) |
+| [Demoness](https://www.mysterria.net/en/pathways/demoness) | Strength I, Speed II |
+| [Darkness](https://www.mysterria.net/en/pathways/darkness) | Night Vision I, Invisibility I |
+| [Death](https://www.mysterria.net/en/pathways/death) | Resistance I, Night Vision I |
+| [Twilight Giant](https://www.mysterria.net/en/pathways/giant) | Strength II, Resistance I |
+| [Paragon](https://www.mysterria.net/en/pathways/paragon) | Regeneration II, Absorption I |
+| [Hermit](https://www.mysterria.net/en/pathways/hermit) | Night Vision I, Haste I |
+| [Mother](https://www.mysterria.net/en/pathways/mother) | Regeneration II, Saturation I |
+| [Moon](https://www.mysterria.net/en/pathways/moon) | Regeneration I, Strength I |
+| [Abyss](https://www.mysterria.net/en/pathways/abyss) | Strength II, Night Vision I |
+| [Chained](https://www.mysterria.net/en/pathways/chained) | Resistance II, Slow Falling I |
+| [Black Emperor](https://www.mysterria.net/en/pathways/emperor) | Strength II, Fire Resistance I |
+| [Justiciar](https://www.mysterria.net/en/pathways/justiciar) | Resistance II, Strength I |
+| [Wheel of Fortune](https://www.mysterria.net/en/pathways/fortune) | Luck II, Speed I |
+
+## Related pages
+
+- [Churches](/magic/churches/): chanting a member's name is a way to pray
+- [Sequence 0](/magic/sequence-zero/): gods, Favor, Behest and Presence
+- [Advanced systems on the main site guide](https://www.mysterria.net/en/guide/advanced)
