@@ -172,6 +172,12 @@ const strings = {
 
 			input.addEventListener('input', () => this.#render(input.value));
 			input.addEventListener('keydown', event => {
+				// a search field clears itself on Escape first: close the box in one press instead
+				if (event.key === 'Escape') {
+					event.preventDefault();
+					close();
+					return;
+				}
 				const options = [...this.querySelectorAll<HTMLAnchorElement>('.ws-results a')];
 				if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
 					event.preventDefault();

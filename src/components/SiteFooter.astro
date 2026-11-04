@@ -184,10 +184,11 @@ const year = new Date().getFullYear();
 	@container site-footer (max-width: 900px) {
 		.footer-columns {
 			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+			/* Community sits under Play, so the two columns end level instead of leaving a gap under Play */
 			grid-template-areas:
 				'identity identity'
 				'play server'
-				'play community';
+				'community .';
 			gap: 22px 24px;
 			padding-bottom: 28px;
 		}
@@ -242,6 +243,17 @@ const year = new Date().getFullYear();
 			justify-content: center;
 			gap: 10px 20px;
 			text-align: center;
+		}
+
+		/* the legal links stay one centred row under the copyright line */
+		.footer-legal {
+			justify-content: center;
+			gap: 8px 16px;
+		}
+
+		.footer-copy,
+		.footer-legal a {
+			letter-spacing: 0.1em;
 		}
 	}
 </style>
