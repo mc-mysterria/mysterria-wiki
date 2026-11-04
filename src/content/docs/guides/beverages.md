@@ -1,25 +1,27 @@
 ---
-title: "Beverages"
-description: "Master the art of brewing: cauldrons, aging barrels, distillation, and custom recipes"
+title: "Beverages (Brewery)"
+description: "Brewing beverages on Mysterria, the LOTM Minecraft server: boiling, distilling, barrel aging, sealing, drunkenness, and all 29 recipes with effects."
 sidebar:
-  label: 🍺 Beverages
-  order: 12
+  label: Beverages
+  order: 44
 ---
 
 ![Helpful image](../../../assets/brewery/beverages.png)
 
 ### What is the Brewery?
 
-The **Brewery** system introduces a fermentation and aging process to the server. You can now craft standard alcoholic
-drinks, specialty coffees, and powerful **nourishing beverages** that grant saturation to completely replace solid food.
+The **Brewery** adds fermenting and aging to the game. You can brew ordinary alcoholic drinks, coffees, and
+**nourishing beverages** that give Saturation and can replace solid food. Most brews have their own 3D bottle model.
+
+These are everyday drinks, not Beyonder potions. For Beyonder potions see [Introduction to magic](/magic/introduction/).
 
 However, excess drinking leads to stumbling, distorted speech, scrambled signs, and severe hangovers!
 
 ---
 
-### How it Works
+### How does brewing work?
 
-The path from raw ingredients to a perfect 5-star bottle follows four distinct phases:
+The path from raw ingredients to a perfect 5-star bottle has four steps:
 
 - **Ferment** - Boil ingredients in a heated cauldron for a specific time and gather them in glass bottles.
 - **Distill** - Put the mixture through a brewing stand with Glowstone Dust to concentrate the alcohol (only for
@@ -66,7 +68,10 @@ takes **20 real-world minutes**). Brews will automatically age while sitting ins
 
 ### Barrel Structures
 
-You can build two different sizes of barrels using any of the 13 available wood types.
+You can build two sizes of barrel from any of 13 materials: Birch, Oak, Jungle, Spruce, Acacia, Dark Oak, Crimson,
+Warped, Mangrove, Cherry, Bamboo, Pale Oak, and Cut Copper.
+
+An ordinary Minecraft **Barrel** block also ages brews. It holds up to 6 brews and counts as Oak.
 
 ![Helpful image](../../../assets/brewery/barrels.webp)
 
@@ -93,7 +98,7 @@ You can build two different sizes of barrels using any of the 13 available wood 
 
 ### The Sealing Table
 
-Unsealed brews will keep aging in your inventory or storage. To lock a brew's quality and stop the aging process, you
+Unsealed brews keep changing in your inventory or storage. To lock a brew's quality and stop the aging process, you
 must seal it.
 
 The Sealing Table uses a **Smoker** block. Craft it by placing **2 Glass Bottles** on the top row of a crafting table
@@ -112,8 +117,10 @@ Consuming alcoholic beverages increases your drunkenness percentage, triggering 
 3. **Drunk Signs:** Trying to write on signs while drunk results in garbled, misspelled text.
 4. **Vomiting:** If your alcohol level is too high, you will throw up, dropping uncollectable items like `SOUL_SAND`,
    `ROTTEN_FLESH`, and `BEETROOT` on the floor.
-5. **Waking Up:** Logging out while extremely drunk will cause your character to "wake up" at a random coordinate in the
-   world, unable to remember how they got there!
+5. **Waking Up:** If you log out while very drunk, you may "wake up" somewhere else when you come back, at one of the
+   wake-up points staff have set. While extremely drunk you may also need several tries to log in.
+
+A hangover is remembered for **7 days** after you log out, so logging off is not a cure.
 
 #### Sobering Up
 
@@ -136,7 +143,7 @@ Below are the official recipes. Pay close attention to ingredients, boiling time
 aging times to achieve a **5-star Quality** rating! A "-" in the **Aging** column means the brew is bottled and
 ready immediately, with no barrel time required.
 
-#### 🌾 Saturation & Food-Replacing Brews
+#### Saturation and food-replacing brews
 
 These beverages are packed with nutrients and grant the **Saturation** effect, allowing you to bypass eating solid food
 entirely.
@@ -148,7 +155,7 @@ entirely.
 | **Elven Honeymead**     | 8 Sugar Cane, 2 Honey Bottles, 4 Melon Slices                     |  5 mins   |      0       | Acacia (15y) | Saturation II<br>Speed I (1-2m)<br>Regeneration I-II (10-20s) | Sweet as liquid sunlight. Can sustain a traveler for days in the wilderness.   |
 | **Golden Feast Elixir** | 2 Golden Carrots, 1 Glowstone Dust, 6 Sweet Berries, 4 Sugar Cane |  12 mins  |      1       | Spruce (10y) | Saturation IV-V<br>Glowing I (60s)<br>Speed I-II (30-60s)     | A shimmering, magical golden broth that cures even extreme hunger.             |
 
-#### 🤪 Chaotic & Funny Brews
+#### Chaotic and funny brews
 
 These drinks have unique, funny, or chaotic side effects that make player interactions hilarious.
 
@@ -158,7 +165,7 @@ These drinks have unique, funny, or chaotic side effects that make player intera
 | **Pirate's Grog**          | 6 Kelp, 10 Sugar Cane, 6 Melon Slices                       |  8 mins   |      2       | Dark Oak (5y) | Saturation I-II<br>Water Breathing I (1-2m)<br>Hero of the Village I (30s)                       | Spicy, salty grog that keeps the scurvy away and makes you feel like a pirate king. |
 | **Glowing Mushroom Vodka** | 10 Potatoes, 3 Red Mushrooms, 3 Brown Mushrooms             |  18 mins  |      5       |       -       | Weakness (80s)<br>Nausea (27s)<br>Night Vision (50-80s)<br>Blindness (2-12s)<br>Slowness (3-10s) | A psychedelic brew. Literally glows in the dark and distorts reality.               |
 
-#### 🍺 Classic Beers & Ales
+#### Classic beers and ales
 
 | Name          | Ingredients | Boil Time | Distill Runs |     Aging     | Lore / Description           |
 |:--------------|:------------|:---------:|:------------:|:-------------:|:-----------------------------|
@@ -166,7 +173,7 @@ These drinks have unique, funny, or chaotic side effects that make player intera
 | **Beer**      | 6 Wheat     |  8 mins   |      0       |   Any (3y)    | The traditional pub ale.     |
 | **Darkbeer**  | 6 Wheat     |  8 mins   |      0       | Dark Oak (8y) | Roasted, deep, malty flavor. |
 
-#### 🍇 Wines, Meads & Ciders
+#### Wines, meads and ciders
 
 | Name            | Ingredients            | Boil Time | Distill Runs |   Aging   | Potion Effects         | Description                                         |
 |:----------------|:-----------------------|:---------:|:------------:|:---------:|:-----------------------|:----------------------------------------------------|
@@ -175,7 +182,7 @@ These drinks have unique, funny, or chaotic side effects that make player intera
 | **Apple Mead**  | 6 Sugar Cane, 2 Apples |  4 mins   |      0       | Oak (4y)  | Water Breathing (150s) | Sweet apple mead that helps you breathe underwater. |
 | **Apple Cider** | 14 Apples              |  7 mins   |      0       | Any (3y)  | None                   | Sweet, refreshing apple cider.                      |
 
-#### 🥃 Spirits & Liquors
+#### Spirits and liquors
 
 High-alcohol drinks that require distillation:
 
@@ -192,15 +199,15 @@ High-alcohol drinks that require distillation:
 | **Golden Vodka**            | 10 Potatoes, 2 Gold Nuggets      |  18 mins  |      3       |      -       | Weakness (28s)<br>Poison (4s)                                 | Shimmering golden vodka.                                    |
 | **Blazing Whiskey**         | 10 Wheat, 2 Blaze Powder         |  12 mins  |      3       | Spruce (18y) | None                                                          | Gives a burning feeling in your mouth when drunk!           |
 
-#### ☕ Specialty & Sobering Brews
+#### Specialty and sobering brews
 
-These beverages are non-alcoholic or help sober up drunk players.
+Most of these are non-alcoholic or help you sober up. Advocaat is the exception: it has alcohol.
 
 | Name                  | Ingredients                           | Boil Time | Distill Runs |   Aging   | Potion Effects                                         | Description                                          |
 |:----------------------|:--------------------------------------|:---------:|:------------:|:---------:|:-------------------------------------------------------|:-----------------------------------------------------|
-| **Potato Soup**       | 5 Potatoes, 3 Grass                   |  3 mins   |      0       |     -     | Instant Health I                                       | Hot nourishing soup, restores health.                |
+| **Potato Soup**       | 5 Potatoes, 3 Grass                   |  3 mins   |      0       |     -     | Instant Health (stronger at high quality)              | Hot nourishing soup, restores health.                |
 | **Strong Coffee**     | 12 Cocoa Beans, 2 Milk Buckets        |  2 mins   |      0       |     -     | Speed (30-140s)<br>Regeneration (2-5s)<br>Alcohol: -6% | Perfect for clearing your head and sober up quickly. |
-| **Advocaat (Eggnog)** | 5 Eggs, 2 Sugar, 1 Milk Bucket        |  2 mins   |      0       | None (3y) | None                                                   | Creamy egg liquor.                                   |
+| **Advocaat (Eggnog)** | 5 Eggs, 2 Sugar, 1 Milk Bucket        |  2 mins   |      0       | Any (3y)  | None                                                   | Creamy egg liquor, made with raw egg. Alcoholic.     |
 | **Hot Chocolate**     | 3 Cookies                             |  2 mins   |      0       |     -     | Haste (40s)                                            | Hot sugary cocoa that gives you energy to mine.      |
 | **Iced Coffee**       | 8 Cookies, 4 Snowballs, 1 Milk Bucket |   1 min   |      0       |     -     | Speed (10s)<br>Regeneration (30s)<br>Alcohol: -8%      | The best drink to sober up fast. Cold and sweet.     |
 
@@ -210,7 +217,7 @@ These beverages are non-alcoholic or help sober up drunk players.
 
 ---
 
-:::tip[Tips for Success]
+:::tip[Tips for success]
 
 - **Read the Hints** - If your brew is ruined, hover over it. The tooltip contains diagnostic hints like
   `Too much time in the oven...` or `One of the ingredients doesn't taste good...` to help you fix your mistakes.

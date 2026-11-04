@@ -1,93 +1,130 @@
 ---
 title: "Wild Beyonders"
-description: "Everything about Wild Beyonders - where to find them, how they react to you, trading, and combat"
+description: "Wild Beyonders on Mysterria, the LOTM Minecraft server: who is hostile, what they sell and for how much, what they drop, and how to fight them."
 sidebar:
-    label: 🧙 Wild Beyonders
-    order: 12
+  order: 33
 ---
 
 ![A Wild Beyonder](https://in.ikeepcalm.me/26nikKgnkLJs.webp)
 
-### What are Wild Beyonders?
+Wild Beyonders are NPC Beyonders who wander the wilds. Each one belongs to a Pathway and a Sequence from **Sequence 9 to Sequence 5**. Depending on your own Pathway they will trade with you or attack you on sight, and they fight with real Pathway abilities.
 
-**Wild Beyonders** are a faction of powerful NPCs imbued with the mystical energies of various Beyonder Pathways. Unlike ordinary monsters, they are intelligent entities designed to fill the wilderness with genuine risk and opportunity.
+## Will a Wild Beyonder attack me?
 
-They range in power from **Sequence 9** to **Sequence 5** - no Demigods or above, for everyone's sake.
+It depends only on your Pathway compared with theirs:
 
----
-
-### Where to find them?
-
-Wild Beyonders do **not** appear near the world center (0, 0) or in safe zones. They claim the **outer reaches of the world** as their domain, spawning in a large radius away from the center.
-
-If you want to find them - or avoid them - head away from spawn and into the wilderness.
-
-:::tip[Daily Tides move the numbers]
-A server-wide Daily Tide can double both the Wild Beyonder spawn rate and the number that can exist
-at once for 24 hours. See [Daily Tides](/guides/tides/) for what's running today.
-:::
-
----
-
-### Friend or Foe?
-
-This is the most important mechanic. A Wild Beyonder's attitude toward you depends entirely on **your Pathway** relative to theirs:
-
-| Relationship | Attitude | Trading |
+| You are | Their attitude | Trading |
 |---|---|---|
-| **Same Pathway** | Peaceful (unless provoked) | Standard prices |
-| **Adjacent / Neighboring Pathway** | Peaceful (unless provoked) | **+50% price markup** |
-| **Opposing Pathway** | Hostile on sight | Not possible |
-| **Any Pathway (if you attack first)** | Immediately hostile | Not possible |
+| The **same Pathway** | Peaceful unless you attack | Normal prices |
+| A **neighbouring Pathway** (same group) | Peaceful unless you attack | Prices **x1.5** |
+| **Any other Pathway** | Hostile on sight | Not possible |
+| **Not a Beyonder yet** | Hostile on sight | Not possible |
+| Anyone who attacks first | Hostile | Not possible |
 
-:::caution[Pathway matters]
-Wild Beyonders are, to put it simply, **pathists**. Know your relationship to their Pathway before approaching. Attacking one - or being from an opposing Pathway - means no mercy.
+Neighbouring Pathways are the ones in the same group, for example Fool, Error and Door. The [Pathways](/magic/pathways/) page lists the groups. If you right-click a hostile one, you get "This Wild Beyonder is hostile toward your pathway!".
+
+If you die or log out, the Wild Beyonder loses track of you. It does not come after you when you return.
+
+## Where do Wild Beyonders spawn?
+
+| Rule | Value |
+|---|---|
+| Spawn check | Every 5 minutes, **5% chance** per online player |
+| Distance from you | 64 to 256 blocks |
+| Distance from world spawn | At least 200 blocks |
+| Distance from each other | At least 100 blocks |
+| Most at once | 20 on the whole server (40 on Wild Tide) |
+| Despawn | After 60 seconds with no player within 50 blocks |
+
+So they do not wait for you in fixed places: they appear around players who are out exploring. On **Wild Tide** days twice as many spawn and twice as many can exist at once. See [Daily Tides](/guides/tides/).
+
+### How strong are they?
+
+| Sequence | 9 | 8 | 7 | 6 | 5 |
+|---|---|---|---|---|---|
+| Share of spawns | 30% | 20% | 18% | 17% | 10% |
+
+There are no Wild Beyonders at Sequence 4 or stronger in the wild.
+
+## How do I trade with a Wild Beyonder?
+
+Right-click a peaceful Wild Beyonder. The first time you meet one it greets you first, and the trade menu opens about 10 seconds later. You cannot trade while it is fighting.
+
+Every offer costs **three things at once**, each the same number:
+
+1. Money from your wallet
+2. **Energy Shards**
+3. **Verl Dor** coins
+
+### What do they sell?
+
+A Wild Beyonder has at most 8 offers, all from its own Pathway:
+
+| Offer | When it appears |
+|---|---|
+| Ingredients | Always: 1 or 2 ingredients for each Sequence from its own down to 9 |
+| A potion | 30% chance, only if the Wild Beyonder is Sequence 8 or stronger. The potion is its own Sequence or weaker |
+| A Beyonder Characteristic | 50% chance, only if it is Sequence 7 or stronger. Always its own Sequence |
+| A potion recipe | 20% chance, only if it is Sequence 6 or stronger. Its own Sequence or up to 2 weaker |
+
+### How much does it cost?
+
+The price grows by x1.5 for every Sequence above 9. Each number below is paid in money, **and** in Energy Shards, **and** in Verl Dor coins:
+
+| Item Sequence | Ingredient | Potion | Recipe | Characteristic |
+|---|---|---|---|---|
+| 9 | 100 | 500 | 1,500 | 2,000 |
+| 8 | 150 | 750 | 2,250 | 3,000 |
+| 7 | 225 | 1,125 | 3,375 | 4,500 |
+| 6 | 338 | 1,688 | 5,063 | 6,750 |
+| 5 | 507 | 2,532 | 7,594 | 10,125 |
+
+If you are from a neighbouring Pathway, multiply by 1.5. A trade fails without taking anything if you cannot pay or have no room for the item.
+
+:::tip[Getting the currencies]
+Energy Shards come from selling ingredients to nitwit and jobless villagers. Verl Dor is the largest coin in the wallet. See [Energy Shards](/guides/shards/) and [Economy](/guides/economy/).
 :::
 
----
+## What do I get for killing one?
 
-### Trading
+Only Wild Beyonders that spawned naturally give rewards. Ones summoned by abilities do not.
 
-Peaceful Wild Beyonders can be traded with, but they don't come cheap. They require **Money together with every one of the server's custom currencies at once** - currently Energy Shards and VerlDor - not just one or the other.
+| Reward | Chance |
+|---|---|
+| Beyonder Characteristic of its Sequence | 30% (Sequence 9), 25% (8), 20% (7), 15% (6), 10% (5) |
+| Ingredients | 15% for each Sequence from its own down to 9 |
+| [Sealed Artifact](/magic/sealed-artifacts/) | 5% (Sequence 6), 10% (Sequence 5) |
+| Acting | Through the World source, capped like all [acting](/magic/acting/) |
 
-What can you get from them?
-- **Beyonder Ingredients**
-- **Recipes & Potions**
-- **Beyonder Characteristics**
+The bounty board (`/bounty`) sometimes offers a **Wild Beyonder Hunt** for Sequence 9 to 5 players, which pays extra acting.
 
-Trading is one of the most reliable ways to obtain specific progression items without relying purely on exploration luck.
+## Which Pathway abilities work on Wild Beyonders?
 
----
+Many acting methods ask you to hunt or control other Beyonders, and Wild Beyonders let you do that without bothering real players. Confirmed examples:
 
-### Acting against Wild Beyonders
+- **Hanged Man:** Grazing their souls
+- **Door:** Replication can copy their abilities
+- **Fool:** turning them into Marionettes
+- **Abyss:** a Wild Beyonder kill satisfies Bloodlust
 
-Wild Beyonders were introduced specifically to address a real problem: many Pathway acting methods require killing, controlling, or interacting with other Beyonders - but doing this to real players requires their consent.
-
-**Wild Beyonders are fully valid targets for these abilities.** They count as players for the purposes of all pathway mechanics:
-
-- **Hanged Man** - Kill them to Graze their souls and steal abilities
-- **Door** - Observe them to Record or Replicate their spells
-- **Fool** - Defeat them to convert them into Marionettes with abilities
-- **Abyss** - Slaughter them to gain Acting Points freely
-
-If your Pathway requires you to hunt other Beyonders to advance, Wild Beyonders are your answer - no need to ask other players for permission.
-
----
-
-### Combat
-
-If you engage a Wild Beyonder in combat - whether by choice or because you are from an opposing Pathway - be prepared for a serious fight.
-
-:::danger[They are stronger than you]
-Wild Beyonders simulate full player combat and use their Pathway abilities against you, with **20% shorter cooldowns** than a player using the same spells. Do not underestimate them based on their Sequence alone.
+:::caution[Abyss acting]
+Killing Wild Beyonders does **not** digest the Abyss potion. Abyss acting comes only from killing Beyonder players of a qualifying Sequence.
 :::
 
-There is one small mercy:
+Not every copying ability works on them, so test before you rely on it.
 
-:::note[They don't hold grudges]
-If you die during a fight with a Wild Beyonder, it loses track of you - dying or disconnecting clears
-its target. It won't come looking for you specifically when you return. The danger resets with you;
-it doesn't carry over.
-:::
+## How dangerous are they in a fight?
 
-**Rewards for defeating them** include acting points, Beyonder drops, and other spoils appropriate to their Sequence and Pathway. Higher-Sequence Wild Beyonders are more dangerous, but their rewards reflect that risk.
+Wild Beyonders fight like players. They use their Pathway's abilities with **20% shorter cooldowns** than a player would have, and they try to retreat when their health runs low. Do not judge one by its Sequence alone.
+
+- Check the name and Pathway before you approach.
+- Fight near cover and bring healing.
+- Higher Sequences hit much harder but drop better rewards.
+
+## Related pages
+
+- [Beyonder Creatures](/magic/creatures/): monster Beyonders and their drops
+- [Daily Tides](/guides/tides/): Wild Tide doubles Wild Beyonders
+- [Rift Bosses](/guides/bosses/): bosses summon Wild Beyonder guards
+- [Outer Gods Anchors](/guides/outer-gods-anchors/): Wild Beyonders defend the corruption
+- Main site guide: [Activities](https://www.mysterria.net/en/guide/activities)

@@ -1,63 +1,102 @@
 ---
 title: "Boons"
-description: "Detailed information about magical boons on the server"
+description: "Boons on Mysterria, the LOTM Minecraft server: the ten Outer God boons, how to get a Boon Token, and how to advance a boon to Sequence 5 by sacrifice."
 sidebar:
-    label: 💊 Boons
-    order: 7
+  order: 42
 ---
 
-![Helpful image](../../../assets/magic/lotm.jpg)
+A boon is a second, smaller Pathway granted by an Outer God. You hold it next to your normal Pathway, and it gives you its own abilities. The boon Pathways come from **Circle of Inevitability**, the sequel to Lord of the Mysteries.
 
-### What are boons?
+Boons work very differently from normal Pathways:
 
-Unlike the standard potion system, where your power comes from within, this power comes from another entity. We will not name him here.
+- A boon goes from **Sequence 9 to Sequence 5**, never further.
+- It has **no acting bar, no potions and no rituals**. Using its abilities does not advance it.
+- It advances only by **sacrificing** ingredients at a **Sacrificial Altar**.
+- You can hold **one boon at a time**.
 
-A Boon is effectively a **bestowed Sequence** which you can hold in parallel to your normal one. It grants you its own spells, has its own acting progression, and increases your maximum Spirituality.
+## Which boons are there?
 
----
+There are ten. Click a name to see its abilities on the main site.
 
-### How to get one?
+| Boon (in-game name) | Main site page |
+|---|---|
+| Aeon | [aeon](https://www.mysterria.net/en/pathways/aeon) |
+| Chaos Primogenitor | [chaos](https://www.mysterria.net/en/pathways/chaos) |
+| Chaos Mist | [chaosmist](https://www.mysterria.net/en/pathways/chaosmist) |
+| Condenser | [condenser](https://www.mysterria.net/en/pathways/condenser) |
+| Devouring | [devouring](https://www.mysterria.net/en/pathways/devouring) |
+| Eternal Edict | [edict](https://www.mysterria.net/en/pathways/edict) |
+| Everlasting | [everlasting](https://www.mysterria.net/en/pathways/everlasting) |
+| Patriarch | [patriarch](https://www.mysterria.net/en/pathways/patriarch) |
+| Second Law | [secondlaw](https://www.mysterria.net/en/pathways/secondlaw) |
+| Sublunary Eye | [sublunary](https://www.mysterria.net/en/pathways/sublunary) |
 
-To receive your first Boon (Sequence 9 of a boon pathway), you must be **useful** to the entity that grants it.
+## How do I get a boon?
 
-This can happen through various means:
-- Helping to test new features
-- Working as a moderator or admin, resolving common issues
-- Spreading the word about the server on TikTok / YouTube
-- Boosting the Discord guild with Nitro
-- Receiving it as a **Battlepass** reward
-- Earning it through **server events**
-- ...and other contributions
+You need a **Boon Token** for that boon. Right-click the token to receive the boon at Sequence 9.
 
----
+| Source | Which boons | Details |
+|---|---|---|
+| [Outer Gods Anchors](/guides/outer-gods-anchors/) reward shop (`/oga rewards`) | All ten | 900 Contribution Points each, at most 1 of each boon per month |
+| Battle Pass, free track | Second Law | Tier 41 of the current pass |
+| Battle Pass, premium track | Devouring | Tier 37 of the current pass |
+| Translator reward | Any | Accepted [Weblate translators](https://www.mysterria.net/en/news/multilanguage-support-weblate-translator-bounties) may pick a boon |
 
-### How to progress boons?
+Boon Token shards also exist: 10 shards combine into one token.
 
-Boons can be **progressed down to Sequence 1**. Sequence 0 is a throne, not an ordinary advancement -
-it's claimed only through the same ascension system that crowns a pathway's god, never through sacrifice.
+### What if I already have a boon?
 
-You can also only hold **one Boon at a time**.
+Using a second Boon Token opens a **Choose a Boon to Replace** screen, then **Confirm Boon Replacement**. The old boon is **lost for good**, including its Sequence and sacrifice progress. You cannot use a token for the boon you already have.
 
-To advance your Boon, you must:
+## How do I advance my boon?
 
-1. **Build a Sacrificial Altar** - any tier will work, though higher tiers may offer better results.
-2. **Gather Beyonder Ingredients** - specifically, ingredients that correspond to the Sequence you are advancing **towards**, or lower. You cannot skip ahead by offering low-value materials.
-3. **Sacrifice the ingredients** at the altar to advance your Boon.
+1. **Build a Sacrificial Altar.** Its blueprint comes from an Altar Scroll found in loot. A looted blueprint is a brewing altar or a Sacrificial Altar with equal odds, and it is Crude 65% of the time, normal 25% and Grand 10%. See [Loot and pity](/magic/loot/).
+2. **Open the altar** and put in Beyonder ingredients or Beyonder Characteristics.
+3. **Confirm the offering.** The value is added to your boon's sacrifice bar.
+4. When the bar is full, the Outer God acknowledges your tribute and your boon goes up one Sequence.
 
-:::caution[Ingredient requirements]
-The ingredients must be appropriate for the Sequence you want to reach. You cannot sacrifice weak, low-Sequence ingredients to advance to a more powerful Boon level.
+### What can I sacrifice?
+
+Only items of the Sequence you are advancing **to**, or stronger. If your boon is Sequence 9 and you are working towards Sequence 8, Sequence 9 ingredients are refused ("This ingredient is too weak for your current advancement"). Ingredients and Characteristics from **any** Pathway count.
+
+Each item is worth a base value, plus **10% for every Sequence** it is stronger than your target:
+
+| Item Sequence | Ingredient | Beyonder Characteristic |
+|---|---|---|
+| 8 | 100 | 400 |
+| 7 | 150 | 650 |
+| 6 | 200 | 800 |
+| 5 | 250 | 1,000 |
+| 4 | 300 | 1,200 |
+| 3 | 350 | 1,500 |
+| 2 | 400 | 1,800 |
+| 1 | 450 | 2,000 |
+
+### How many points does each Sequence need?
+
+| Advance to | Sequence 8 | Sequence 7 | Sequence 6 | Sequence 5 |
+|---|---|---|---|---|
+| Points needed | 7,871 | 13,824 | 21,073 | 33,177 |
+
+Example: going from Sequence 9 to 8 at a normal Sacrificial Altar takes about 79 Sequence 8 ingredients (100 each), or 48 Sequence 7 ingredients (150 x 1.1 = 165 each).
+
+### Which altar should I build?
+
+| Altar | Points | Risk |
+|---|---|---|
+| Crude Sacrificial Altar | x0.7 | When the bar fills there is a **15% chance** the ritual falters: everything you offered is gone and the bar resets to zero |
+| Sacrificial Altar | x1.0 | None |
+| Grand Sacrificial Altar | x1.3 | None |
+
+Sacrificial Altars are only for boons. You cannot brew potions in them.
+
+:::danger[Your boon cannot pass your main Pathway]
+Your boon can never be a stronger Sequence than your main Pathway. If the bar fills but the new boon Sequence would be stronger than your main Pathway's Sequence, the advance is refused **and the bar resets to zero**. Advance your main Pathway first, then fill the bar.
 :::
 
-:::note[Your Boon can't outrun your main pathway]
-If your Boon's sacrifice bar fills but the result would put it **ahead** of your primary pathway's own
-Sequence, the advancement is refused and your sacrifice progress resets to zero. Keep your main pathway
-moving if you want your Boon to keep climbing.
-:::
+## Related pages
 
----
-
-### How do boon spells work?
-
-Boon spells function like standard Beyonder abilities - they have acting methods, contribute to Spirituality, and must be used to advance digestion. However, boon acting progression is **separate** from your main pathway's progression.
-
-Each boon only draws from the pathways of ~~Outer Deities~~, and boon spells carry their own identity and flavour distinct from the standard 22 pathways.
+- [Outer Gods Anchors](/guides/outer-gods-anchors/): the event whose shop sells every Boon Token
+- [Pathways](/magic/pathways/): the 22 normal Pathways
+- [Loot and pity](/magic/loot/): Altar Scrolls and ingredients
+- News: [Outer Gods Anchors](https://www.mysterria.net/en/news/outer-gods-anchors) and [The Great Reset](https://www.mysterria.net/en/news/the-great-reset)

@@ -1,298 +1,65 @@
 ---
-title: "Steam-Pressured Rifle"
-description: "Complete guide to Steam-Pressured Rifle - the ultimate long-range weapon"
+title: "Steam Rifle"
+description: "The Steam Rifle on Mysterria, the LOTM server: its five parts and where they drop, Rifle Rounds, the scope and how its two reload modes work."
 sidebar:
-    label: 🎯 Steam Rifle
+    label: Steam Rifle
     order: 6
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import {Figure, Notice} from '~/components/mdx';
+import rifleRounds from '../../../assets/firearms/riflerounds.png';
 
-### Overview
+The **Steam Rifle** (announced as the Steam-Pressured Rifle) is the long-range gun. It hits for 20 damage, reaches 100 blocks and has a scope, but it fires slowest and holds only 5 rounds.
 
-The Steam-Pressured Rifle is a steam-powered masterpiece designed for long-distance elimination. With **100-block range** and **20.0 base damage**, it's the most powerful mystical firearm available.
+Its numbers are in the [stats table](/firearms/#weapon-stats): 20 damage, 5 rounds, 100 blocks range, 1.2 s between shots.
 
-<Aside type="caution">
-Parts for this weapon are obtained as **rewards from dungeons (nodes)**. Features authentic Kar98k-style reload mechanics.
-</Aside>
+## How do I get one?
 
----
+You need five parts, and **none of them can be crafted**:
 
-### Statistics
-
-| Attribute | Value |
-|-----------|-------|
-| **Type** | Long-Range Precision Rifle |
-| **Damage** | 20.0 per shot |
-| **Magazine Size** | 5 rounds |
-| **Range** | 100 blocks |
-| **Reload Time** | 4 seconds (full magazine) |
-| **Fire Rate** | 1.3 seconds between shots |
-| **Ammo Type** | Rifle Rounds (all 13 variants supported) |
-| **Reload Type** | Sequential (Kar98k-style) |
-| **Accuracy (Standing)** | Perfect (0° spread) |
-| **Accuracy (Moving)** | 4° spread |
-| **Accuracy (In Air)** | 8° spread |
-
----
-
-### Strengths & Weaknesses
-
-**Strengths:**
-
-- **Highest damage** - 20.0 per shot
-- **Extreme range** - 100 blocks for sniper-style combat
-- **One-shot potential** - Can kill most mobs in 1-2 hits
-- **Tactical reload** - Interruptible Kar98k-style loading
-- **Precision weapon** - Perfect for long-range elimination
-
-**Weaknesses:**
-
-- **Slowest fire rate** - 1.3 seconds between shots
-- **Longest full reload** - 4 seconds (though interruptible)
-- **Smallest magazine** - Only 5 rounds
-- **Most expensive ammo** - Rifle rounds cost 2 brass per 6 cases
-
----
-
-### How to Obtain
-
-Steam-Pressured Rifle parts can be obtained in dungeons and overworld chest. You cannot craft these parts.
-
-### Required Parts
-
-**5 Parts Required:**
-- Rifle Barrel
-- Rifle Stock
-- Rifle Scope
-- Rifle Pipe Assembly
+- Steam Rifle Barrel
+- Steam Pipe Assembly
 - Mechanical Power Box
+- Military Rifle Stock
+- Sniper Scope
 
-### Acquisition Steps
+Parts come from chest loot in the Overworld. Each time a chest in a vanilla structure generates its loot, there is a 25% chance it also holds one random Deathknell or Steam Rifle part. You can also trade for parts with other players.
 
-1. **Complete dungeon nodes** on the Mysterria server
-2. **Collect all 5 parts** as rewards (may take multiple runs)
-3. **Craft a Weaponsmith Table** if you don't have one
-4. **Assemble the weapon** by shift-right-clicking the Weaponsmith Table with all parts in inventory
+With all five in your inventory, right-click a [Weaponsmith Table](/firearms/crafting/#how-do-i-build-a-gun) to check, then Shift + right-click to build.
 
-<Aside type="tip">
-The Steam-Pressured Rifle is the rarest weapon. Coordinate with your team to efficiently farm dungeon nodes!
-</Aside>
+## What ammo does it use?
 
----
+Only **Rifle Rounds** and the special Rifle Rounds made from them (13 kinds in all).
 
-### Ammunition
+- 1 Rifle Cartridge Case + 1 Rifle Cartridge Core + 2 Gunpowder = **3 Rifle Rounds**.
+- 3 Brass + 1 Iron Ingot + 12 Gunpowder makes **18 rounds**. It is the most Brass-hungry ammo.
 
-Steam-Pressured Rifle uses **Rifle Rounds** and supports all 13 ammunition variants.
+<Figure src={rifleRounds} alt="Crafting grid: a Rifle Cartridge Case, a Rifle Cartridge Core and 2 Gunpowder making 3 Rifle Rounds" caption="Rifle Rounds." contain />
 
-### Crafting Rifle Rounds
+The [Ammunition](/firearms/ammunition/) page has the case and core recipes and all special rounds.
 
-import rifleCartridge from "../../../assets/firearms/riflecartridge.png";
-import rifleCore from "../../../assets/firearms/riflecore.png";
-import rifleRounds from "../../../assets/firearms/riflerounds.png";
+## How do I use the scope?
 
-<p align="center">
-    <img
-        src={rifleCartridge.src}
-        width="30%"
-        alt="Rifle Cartridge Case"
-    />
-    <img
-        src={rifleCore.src}
-        width="30%"
-        alt="Rifle Cartridge Core"
-    />
-    <img
-        src={rifleRounds.src}
-        width="30%"
-        alt="Rifle Rounds"
-    />
-</p>
+Hold **Sneak** while holding the rifle to look through the scope. Let go to stop. The zoom comes from a Slowness effect, so you move slowly while scoped. Scoping does not improve accuracy by itself: standing still does (see [Accuracy](/firearms/#accuracy)).
 
-**Step 1:** Craft Rifle Cartridge Cases
-- Recipe: `2 Brass → 6 Cases`
+## How does reloading work?
 
-**Step 2:** Craft Rifle Cartridge Cores
-- Recipe: `1 Iron Ingot + 1 Brass → 6 Cores`
+The rifle has two reload modes, depending on whether any rounds are left.
 
-**Step 3:** Assemble Standard Rifle Rounds
-- Recipe: `1 Case + 1 Core + 1 Gunpowder → 1 Rifle Round`
+| Magazine when you reload | What happens |
+|---|---|
+| Empty | All rounds go in together after **3.0 seconds**. Nothing is usable before that. |
+| 1 to 4 rounds left | The first round goes in after **1.0 second**, then one more every **0.75 seconds**. Topping up 4 rounds takes 3.25 s. |
 
-<Aside type="caution">
-Rifle ammunition is the most expensive, requiring **3 brass and 1 iron ingot** for just 6 rounds! Plan your resource gathering accordingly.
-</Aside>
+<Notice tone="warn" title="You cannot shoot mid-reload">
+Firing is blocked while the reload runs ("Weapon is reloading!"). Switching to another hotbar slot cancels it. On a top-up, the rounds already loaded stay in the gun. On a reload from empty, nothing is loaded if you cancel before the 3 seconds are up.
+</Notice>
 
-For special ammunition types, see the [Ammunition Guide](/firearms/ammunition/).
+Because a reload from empty is all or nothing, it often pays to top up after a shot or two instead of firing all 5 first.
 
----
+When you reload from empty, the rifle takes the first stack of Rifle Rounds in your inventory. When it is partly loaded, it only tops up with the same kind of round already inside.
 
-### Reload Mechanics
+## Next steps
 
-The Steam-Pressured Rifle features **Kar98k-style reload mechanics** with sequential loading.
-
-### How Kar98k-Style Reload Works
-
-- **One at a time:** Each round loads individually
-- **Interruptible:** You can **stop reloading and fire** at any moment
-- **Flexible:** Load 1-5 rounds depending on tactical needs
-- **Authentic:** Inspired by real Kar98k bolt-action rifles
-
-### Reload Timing
-
-**Full Reload:** 4 seconds for 5 rounds (~0.8 seconds per round)
-
-| Rounds to Load | Approximate Time |
-|----------------|------------------|
-| 1 round | ~0.8 seconds |
-| 2 rounds | ~1.6 seconds |
-| 3 rounds | ~2.4 seconds |
-| 4 rounds | ~3.2 seconds |
-| 5 rounds (full) | ~4.0 seconds |
-
-<Aside type="tip">
-**Sniper Reload Strategy:** After firing a killing shot, immediately start reloading. If another target appears, you can fire your partially-loaded rounds!
-</Aside>
-
----
-
-### Combat Guide
-
-### Best Use Cases
-
-**Long-Range Sniping (50-100 blocks):**
-- Eliminate targets before they can respond
-- Perfect accuracy at extreme distances
-- One-shot capability on most enemies
-
-**Precision Strikes:**
-- Take out high-priority targets first
-- Eliminate threats before close combat
-- Support teammates from the backline
-
-### Tactical Tips
-
-<Aside type="tip">
-**Master Positioning:** The rifle excels at 60-100 blocks. Position yourself where enemies can't easily reach you.
-</Aside>
-
-**Pre-Combat:**
-- Find elevated or protected positions
-- Load Implosive or Exorcist rounds for first shots
-- Ensure clear sight lines to targets
-- Mark target priority (bosses, archers, mages)
-
-**During Combat:**
-- **ALWAYS stand still** when firing (perfect accuracy required)
-- Fire from cover or at extreme range
-- Reload behind cover or during enemy downtime
-- Don't panic - quality over quantity with 5 rounds
-
-**Ammunition Selection:**
-- **Boss Fights:** Implosive Rounds (17.5 damage!)
-- **Undead Sniping:** Exorcist Rounds (35.0 damage vs undead!)
-- **Armored Targets:** Armor-Piercing Rounds
-- **General Sniping:** Standard Rifle Rounds
-
----
-
-### Damage Calculations
-
-### Standard Ammunition Damage
-
-**Base Damage:** 20.0 per shot
-
----
-
-### Advanced Tactics
-
-### The Sniper's Position
-
-**Ideal Setup:**
-1. Find elevation 60-100 blocks from combat zone
-2. Ensure clear sight lines and cover
-3. Set up escape route if compromised
-4. Have backup weapon for close-range defense
-
-### Shot Discipline
-
-**Don't Spam Fire:**
-- Each shot counts with only 5 rounds
-- Take time to aim (perfect accuracy when standing)
-- Prioritize high-value targets
-- Reload during enemy movement/downtime
-
-### Ammunition Economy
-
-**Make Every Shot Count:**
-- Use Implosive Rounds on bosses only
-- Standard rounds for regular mobs
-- Exorcist rounds exclusively for undead
-- Don't waste expensive rifle ammunition on weak targets
-
-### Combo Strategies
-
-**With Teammates:**
-1. Snipe high-priority targets from distance
-2. Use Spirit Control rounds to disable enemies
-3. Teammates finish disabled targets in melee
-4. Reload while team engages
-
-**Solo Hunting:**
-1. Position at 80+ blocks
-2. One-shot targets with Implosive/Exorcist rounds
-3. Reload before next engagement
-4. Maintain distance from survivors
-
----
-
-**Why Choose Steam-Pressured Rifle:**
-- You need **maximum damage** (20.0 base)
-- You engage at **long range** (60-100 blocks)
-- You want **one-shot capability**
-- You prefer **precision over volume of fire**
-
-**When to Use Other Weapons:**
-- **Klein's Repeater:** Close range, sustained fire
-- **Deathknell Revolver:** Medium range, balance of damage and fire rate
-
----
-
-### One-Shot Potential
-
-- You can kill most mobs in 1-2 hits
-
----
-
-### Frequently Asked Questions
-
-**Q: Can the Steam-Pressured Rifle one-shot players?**
-
-A: Against unarmored or lightly armored players, yes! You can one-shot players without armor or with weak armor. Diamond/Netherite armor requires 2-3 shots.
-
-**Q: Is the slow fire rate a problem?**
-
-A: Not if you use it correctly! The rifle is designed for **precision, not volume**. Position properly, make your shots count, and the 20.0 damage compensates for slower fire rate.
-
-**Q: How much does rifle ammunition cost?**
-
-A: Rifle rounds are expensive:
-- 6 cases require 2 brass
-- 6 cores require 1 iron ingot + 1 brass
-- **Total: 3 brass + 1 iron ingot for 6 rounds**
-
-**Q: Can I use this in close combat?**
-
-A: Not recommended! The rifle excels at 60-100 blocks. In close combat:
-- Slow fire rate is a liability
-- Long reload is dangerous
-- Accuracy suffers while moving
-- Carry a Deathknell or Klein's Repeater as backup
-
----
-
-### Next Steps
-
-- [Ammunition Guide](/firearms/ammunition/) - Master all 13 ammo types
-- [Deathknell Revolver](/firearms/deathknell-revolver/) - Medium-range alternative
-- [Overview](/firearms/) - Combat mechanics and fundamentals
-- [Crafting Guide](/firearms/crafting/) - Build the Weaponsmith Table
+- [Klein's Repeater](/firearms/kleins-repeater/) and [Deathknell](/firearms/deathknell-revolver/): the other two guns.
+- [Firearms overview](/firearms/): controls, accuracy and the stats table.

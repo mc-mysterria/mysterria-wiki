@@ -1,109 +1,108 @@
 ---
-title: "Firearms Overview"
-description: "Learn the basics of mystical firearms - controls, HUD, and combat mechanics"
+title: "Firearms"
+description: "Guns on Mysterria, the LOTM Minecraft server: Klein's Repeater, Deathknell and Steam Rifle stats, controls, reloading, accuracy and how to get started."
 sidebar:
-    label: 🔫 Overview
+    label: Overview
     order: 1
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import {Card, CardGrid, Notice} from '~/components/mdx';
 
-### What is Mystical Weaponry?
+Mysterria has three guns inspired by Lord of the Mysteries: **Klein's Repeater**, the **Deathknell** and the **Steam Rifle**. You build them from parts at a **Weaponsmith Table** and load them with crafted rounds.
 
-Mystical Weaponry brings the legendary firearms from Lord of the Mysteries into Minecraft! Craft powerful weapons, load them with specialized ammunition, and experience a whole new dimension of combat.
+## How do I get my first gun?
 
-### What You'll Need
+1. Craft a [Weaponsmith Table](/firearms/crafting/#the-weaponsmith-table) and place it.
+2. Craft the four parts of **Klein's Repeater** from iron, lapis, redstone and a dark oak log. It is the only gun whose parts you can craft.
+3. Carry the parts, right-click the table, then **Shift + right-click** to build the gun.
+4. Craft Brass, then cartridge cases, cores and [Klein Rounds](/firearms/ammunition/).
 
-To get started with mystical firearms:
+The **Deathknell** and **Steam Rifle** parts cannot be crafted. They turn up in chest loot in the Overworld: each time a chest in a vanilla structure generates its loot, there is a 25% chance it also holds one random part from either gun. Parts are normal items, so you can also trade for them.
 
-1. **A Weaponsmith Table** - Special crafting station for assembling weapons
-2. **Weapon Parts** - Components to build your weapon
-3. **Ammunition** - Bullets to fire your weapon
+## Weapon stats
 
-### How to Use Weapons
+This is the one stats table for all guns on the wiki. Damage is in health points per hit, before armor.
 
-**Basic Controls:**
-- **Right-Click:** Fire
-- **Left-Click:** Reload
+| Weapon | Damage | Magazine | Range | Between shots | Reload |
+|---|---|---|---|---|---|
+| [Klein's Repeater](/firearms/kleins-repeater/) | 7 | 6 | 40 | 0.55 s | 2.8 s (all at once) |
+| [Deathknell](/firearms/deathknell-revolver/) | 12 | 6 | 60 | 0.6 s | 0.7 s per round |
+| [Steam Rifle](/firearms/steam-rifle/) | 20 | 5 | 100 | 1.2 s | 3.0 s from empty |
 
-**Firing Your Weapon:**
-1. Hold the weapon in your hand
-2. Ensure you have ammunition loaded
-3. Aim at your target
-4. Right-click to fire
-5. Watch the action bar for your current ammo count
+Range is in blocks. Each gun fires only its own rounds (Klein Rounds, Deathknell Rounds, Rifle Rounds). A full Deathknell reload takes 4.2 s. The Steam Rifle reloads all 5 rounds at once from empty, but when topping up it loads the first round after 1.0 s and then one every 0.75 s. Klein's Repeater parts can be crafted; the other two guns need parts from chest loot.
 
-**Understanding the HUD:**
+### Damage by ammo type
 
-The action bar (above your hotbar) shows:
-- **Current Ammo / Max Ammo** (e.g., "Klein's Repeater 4/6")
-- **Reload Status** (yellow "Reloading..." during reload)
-- **Ammo Type** (colored text showing your current ammunition effect)
-- **Special Warnings** (red "No ammo!" when empty)
+Special rounds change the damage. See [Ammunition](/firearms/ammunition/) for what each effect does.
 
-### Weapon Comparison
+| Ammo | Multiplier | Klein's Repeater | Deathknell | Steam Rifle |
+|---|---|---|---|---|
+| Standard rounds | 100% | 7 | 12 | 20 |
+| Fire, Poison, Aging, Spirit Control, Deceiving, Deprivation, Rotten, Weakening | 85% | 5.95 | 10.2 | 17 |
+| Armor Piercing | 90% | 6.3 | 10.8 | 18 |
+| Implosive | 125% | 8.75 | 15 | 25 |
+| Exorcist against undead mobs | 250% | 17.5 | 30 | 50 |
+| Demon Hunter against Beyonder Creatures | 250% | 17.5 | 30 | 50 |
 
-| Weapon | Type | Damage | Magazine | Range | Reload Time | Fire Rate | Availability |
-|--------|------|--------|----------|-------|-------------|-----------|--------------|
-| **Klein's Repeater** | Repeater | 4.0 | 6 rounds | 40 blocks | 3s (full) | 1/second | Craftable |
-| **Deathknell Revolver** | Revolver | 8.0 | 6 rounds | 60 blocks | 0.8s (each) | 0.9s/shot | Dungeon Reward |
-| **Steam-Pressured Rifle** | Rifle | 14.0 | 5 rounds | 100 blocks | 4s (full) | 1.5s/shot | Dungeon Reward |
+Exorcist and Demon Hunter rounds deal 100% against everything else.
 
-<Aside type="tip">
-**Klein's Repeater** is the only weapon you can craft from scratch. **Deathknell Revolver** and **Steam-Pressured Rifle** require parts obtained as rewards from dungeons (nodes).
-</Aside>
+## Controls
 
-### Combat Mechanics
+| Action | How |
+|---|---|
+| Fire | Right-click |
+| Reload | Left-click |
+| Cancel a reload | Switch to another hotbar slot |
+| Scope in (Steam Rifle only) | Hold Sneak |
 
-**Accuracy System:**
+You **cannot fire while a reload is running**. The chat says "Weapon is reloading!". If you need to shoot, switch hotbar slots to cancel the reload, then switch back:
 
-Your accuracy varies based on your movement:
+- **Klein's Repeater** loads nothing if you cancel.
+- **Deathknell** keeps every round it has already loaded.
+- **Steam Rifle** keeps the rounds already loaded when topping up. A reload from empty loads nothing if you cancel it before the 3 seconds are up.
 
-- **Standing Still:** Perfect accuracy (0° spread)
-- **Moving:** 4° bullet spread
-- **In Air (jumping/falling):** 8° bullet spread
+Guns cannot be enchanted, used in an anvil or moved to your off hand.
 
-<Aside type="tip">**Accuracy Matters:** Stand still for best precision when taking important shots!</Aside>
+## The action bar
 
-**Reload Mechanics:**
+While you hold a gun, the bar above your hotbar shows:
 
-Different weapons have different reload systems:
+- the gun's name and its rounds, for example "Klein's Repeater 4/6"
+- a yellow **Reloading...** while it reloads
+- a red **No ammo!** when the magazine is empty
 
-**Full Magazine Reload (Klein's Repeater):**
-- Loads all rounds at once
-- 3-second reload time
-- Cannot interrupt - must complete full reload
+## Accuracy
 
-**Sequential Reload (Deathknell Revolver & Steam-Pressured Rifle):**
-- Loads one round at a time
-- Can interrupt reload to fire
-- Tactical advantage - partial reload possible
+| You are | Bullet spread |
+|---|---|
+| Standing still | 0 degrees (perfectly accurate) |
+| Moving (any movement in the last 0.3 seconds) | 4 degrees |
+| In the air | 8 degrees |
 
-### Combat Tips
+Stand still for important shots. Sneaking alone does not tighten the spread.
 
-**Ammo Management:**
-- Carry multiple ammo types for different situations
-- Use Exorcist rounds for the Nether and undead mobs
-- Save Implosive rounds for bosses and tough enemies
+## What bullets go through
 
-**Reload Timing:**
-- Klein's Repeater: Find cover and reload during safe moments
-- Deathknell/Rifle: Can interrupt reload to fire when threatened
+- Bullets pass through leaves, grass, flowers, crops, sugar cane, bamboo and glass. Each block they pass through takes 10% off the damage, down to a minimum of 1.
+- Glass and glass panes that a bullet passes through break.
+- Each shot leaves a coloured trail, and players within 10 blocks of a passing bullet hear it crack by.
 
-**Visual Feedback:**
-- Colored particle trails show your bullet path
-- Impact effects on entities and blocks
-- Bullet crack sounds for near misses
+## Which ammo does the gun load?
 
-**Range Management:**
-- Use Klein's Repeater for close to medium range combat
-- Deathknell Revolver excels at medium range
-- Steam-Pressured Rifle dominates at long range
+- **Empty magazine:** the reload takes the first stack of matching rounds in your inventory, standard or special.
+- **Partly loaded:** you can only top up with the same kind of round that is already in the gun.
+- **To switch ammo type**, fire the magazine empty, then reload with the new rounds first in your inventory.
 
-### Next Steps
+<Notice tone="info" title="Each gun has its own rounds">
+Klein Rounds only fit Klein's Repeater, Deathknell Rounds only fit the Deathknell, and Rifle Rounds only fit the Steam Rifle. Special rounds keep the gun type they were made from.
+</Notice>
 
-Ready to get your hands on these weapons? Check out:
+## Firearms pages
 
-- [Crafting Guide](/firearms/crafting/) - Learn how to craft weapons and parts
-- [Ammunition Guide](/firearms/ammunition/) - Discover all 13 ammo types
-- [Individual Weapon Pages](/firearms/) - Detailed stats for each weapon
+<CardGrid>
+  <Card title="Weaponsmith Table and Gun Crafting" text="The table, Brass, and every gun part." href="/firearms/crafting/" />
+  <Card title="Ammunition" text="Cases, cores, rounds and the 12 special effects." href="/firearms/ammunition/" />
+  <Card title="Klein's Repeater" text="The gun you can craft from scratch." href="/firearms/kleins-repeater/" />
+  <Card title="Deathknell" text="A heavy revolver that reloads round by round." href="/firearms/deathknell-revolver/" />
+  <Card title="Steam Rifle" text="Long range, high damage, with a scope." href="/firearms/steam-rifle/" />
+</CardGrid>

@@ -1,57 +1,112 @@
 ---
-title: "Guardians"
-description: "Open world Guardians"
+title: "Rift Bosses"
+description: "Rift Bosses on Mysterria, the LOTM Minecraft server: the weekly schedule of all 22 Pathway bosses, their fight phases, scaling and the Reward Roulette."
 sidebar:
-    label: ⚔️ Guardians
-    order: 8
+  order: 35
 ---
 
-![Helpful image](../../../assets/bosses/bosses.jpg)
+![Rift Bosses](../../../assets/bosses/bosses.jpg)
 
-### Who is a Guardian?
+Rift Bosses (once called Guardians) are world bosses, one for each of the 22 Pathways. Each boss appears on a fixed weekly schedule somewhere in the main Overworld, and every player who helps defeat it gets a chance at that Pathway's recipes, Beyonder Characteristics and ingredients.
 
-A Guardian (or "Boss") is a powerful enemy that can be encountered in the open world. Guardians now **spawn completely randomly** - there is no fixed schedule or location. Keep your eyes open and your gear ready at all times!
+## When do Rift Bosses spawn?
 
-![Helpful image](../../../assets/bosses/example.png)
+Every boss has its own weekly time slots, usually two a week. The whole server is warned in chat **30, 15, 5 and 1 minute** before a boss appears.
 
----
+| Day | Bosses (server time) |
+|---|---|
+| Monday | Darkness 10:00, Demoness 16:00, Mother 18:00, Black Emperor 20:00, Door 22:00, Hermit 22:00 |
+| Tuesday | Error 10:00, Fool 16:00, Moon 22:00, Wheel of Fortune 22:00 |
+| Wednesday | Hanged Man 10:00, White Tower 10:00, Chained 14:00, Death 14:00, Paragon 16:00, Red Priest 22:00, Sun 23:00 |
+| Thursday | Justiciar 10:00, Tyrant 16:00, Mother 18:00, Twilight Giant 18:00, Abyss 22:00, Hermit 22:00, Visionary 22:00 |
+| Friday | Darkness 10:00, Black Emperor 16:00, Demoness 16:00, Door 22:00, Moon 22:00 |
+| Saturday | Error 10:00, Chained 14:00, Fool 14:00, White Tower 14:00, Wheel of Fortune 18:00, Twilight Giant 20:00, Hanged Man 22:00 |
+| Sunday | Paragon 10:00, Red Priest 14:00, Justiciar 16:00, Death 18:00, Sun 19:00, Abyss 22:00, Tyrant 22:00 |
 
-### What are they for?
+The times are in the server's time zone. Staff can change the schedule, so trust the chat warnings over this table.
 
-If you defeat a Guardian before it disappears on its own, you will receive a special **"Reward Token"** item that looks like this:
+### Where do they appear?
 
-![Helpful image](../../../assets/bosses/token.png)
+At a random spot in the main Overworld, up to 12,000 blocks from the centre in each direction. Use a **Boss Compass** to find it (see below).
 
-Right-click, spin the wheel, and win invaluable rewards that are unique to this Guardian! You can get magical ingredients, recipes, and even characteristics!
+## Which boss belongs to which Pathway?
 
-![Helpful image](../../../assets/bosses/roulette.gif)
+| Pathway | Boss | Enrage at | Magic-only at |
+|---|---|---|---|
+| Abyss | The Abyssal Horror | 35% | 20% |
+| Black Emperor | The Imperial Sovereign | 35% | 20% |
+| Chained | The Chained Devourer | 30% | 20% |
+| Darkness | The Shadow Harbinger | 30% | 20% |
+| Death | The Eternal Reaper | 30% | 20% |
+| Demoness | The Crimson Demoness | 35% | 25% |
+| Door | The Dimensional Gatekeeper | 35% | 20% |
+| Error | The Paradox Entity | 35% | 20% |
+| Fool | The Jester of Madness | 50% | 20% |
+| Hanged Man | The Suspended Soul | 30% | 25% |
+| Hermit | The Solitary Sage | 25% | 20% |
+| Justiciar | The Divine Arbitrator | 30% | 20% |
+| Moon | The Lunar Empress | 40% | 25% |
+| Mother | The Primal Mother | 30% | 20% |
+| Paragon | The Apex Crafter | 30% | 20% |
+| Red Priest | The Flame Cleric | 40% | 20% |
+| Sun | The Solar Champion | 25% | 15% |
+| Twilight Giant | The Colossal Guardian | 40% | 15% |
+| Tyrant | The Storm Tyrant | 35% | 15% |
+| Visionary | The Mind Seer | 40% | 15% |
+| Wheel of Fortune | The Fate Weaver | 30% | 20% |
+| White Tower | The Tower Architect | 30% | 25% |
 
----
+## How does the fight work?
 
-### Combat mechanics
+A boss fight has three phases:
 
-Guardians are not simple boss fights - they have several phases that change the rules mid-battle:
+1. **Normal.** The boss fights at full strength.
+2. **Enrage.** When its health falls to its enrage threshold, the boss **heals back up** to between 60% and 80% of its health and summons **2 Wild Beyonder guards**. If the enrage phase drags on for 10 minutes, it starts dealing x1.2 to x1.5 damage.
+3. **Final phase (magic only).** At 15% to 25% health the boss becomes **immune to physical damage**. Only spells hurt it now. It summons **3 more guards**.
 
-**Enrage (30% health)**
-
-When a Guardian drops below **30% of its maximum health**, it **enrages**. Its attacks become significantly more powerful and aggressive. Be prepared to adapt your strategy at this threshold.
-
-**Final Phase (below 20% health)**
-
-:::danger[Magic only below 20%]
-When a Guardian's health drops below **20%**, it becomes **immune to all physical attacks**. From this point on, only **magic spells** can deal damage to it. If your party has no magic users, the fight may become extremely difficult!
+:::danger[Bring Beyonders]
+A group with no spellcasters cannot finish a boss. The guards it summons scale with the strongest Beyonder in the fight.
 :::
 
-This mechanic makes having at least one Beyonder in your party strongly recommended for Guardian encounters.
+### What makes a boss fight hard?
 
----
+| Rule | Details |
+|---|---|
+| Scaling | The boss scales with the **total Beyonder power** of nearby players, not with headcount. Power per player: Sequence 9 = 1, 8 = 1.6, 7 = 2.6, 6 = 4.2, 5 = 6.8, 4 = 11, 3 = 18, 2 = 29, 1 = 47; a non-Beyonder counts 0.35 |
+| Own-Pathway resistance | A boss takes only **35%** damage from abilities of its own Pathway |
+| Damage cap per hit | One hit can take at most **4%** of the boss's health |
+| Boss hits | A boss hit deals at most 60 damage |
+| Spirituality drain | Within 40 blocks you lose **6% Spirituality every 8 seconds** (more in later phases) |
+| Madness | Within 40 blocks you gain Madness every 15 seconds (more in later phases; Sequence 4 and stronger gain half) |
+| No flying | Flight stops working near the boss after 10 seconds |
 
-### Important things to note
+## What do I get for defeating a boss?
 
-- Battle difficulty increases with the number of players participating
-- Reward Tokens can be given to other players or used later
-- You can use the **"Boss Compass"** to search for active Guardians
+Players who contributed get one or more **Boss Reward Tokens**, named after the boss (for example "Boss Reward Token: The Solar Champion"). The bigger your share of the fight, the more tokens you get. Tokens can be traded or saved.
 
-![Helpful image](../../../assets/bosses/compass.png)
+![A Boss Reward Token](../../../assets/bosses/token.png)
 
-P.S. Boss Compass can only be bought in the Store
+Right-click a token to open the **Reward Roulette** and spin it. The prize pool holds that Pathway's recipes, Beyonder Characteristics and ingredients from Sequence 9 down to Sequence 1. Common, weaker items are far more likely than rare, strong ones.
+
+![The Reward Roulette](../../../assets/bosses/roulette.gif)
+
+Boss kills also give acting through the World source.
+
+## How do I find a boss?
+
+The **Boss Compass** points to the nearest active boss.
+
+- Right-click it during a boss encounter to switch it on. It works for **30 minutes**.
+- It shows the direction and a rough distance, and it disappears when you get close.
+- Carry only one at a time.
+
+The Battle Pass includes Boss Compasses among its rewards.
+
+![The Boss Compass](../../../assets/bosses/compass.png)
+
+## Related pages
+
+- [Wild Beyonders](/magic/wild-beyonders/): the guards bosses summon
+- [Dungeons](/guides/dungeons/): the other group content
+- [Spirituality](/magic/spirituality/) and [Madness and Mutation](/magic/mutation/): what the boss drains
+- Main site guide: [Activities](https://www.mysterria.net/en/guide/activities)
