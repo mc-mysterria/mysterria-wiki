@@ -6,20 +6,18 @@
  * wiki's sections as std cards, then every page of each section.
  *
  * The copy comes from the page itself. The hero is the frontmatter's `title` and `hero`
- * (tagline, actions), as Starlight reads it. The section cards take their title and line
- * from the frontmatter's optional `landing.sections` list; a section that is not listed
- * there falls back to its translated name below and the description of the page it leads
- * to. The page lists are the sidebar's.
+ * (tagline, actions), as Starlight reads it. The section cards are the sidebar's top-level
+ * sections (their translated names), and the frontmatter's optional `landing.sections`
+ * list can override a card by position. The page lists are the sidebar's.
  */
 import {Image} from 'astro:assets';
-import {getEntry} from 'astro:content';
 import StdButton from '../std/StdButton.vue';
 import StdCard from '../std/StdCard.vue';
 import StdSectionHead from '../std/StdSectionHead.vue';
 import StdTag from '../std/StdTag.vue';
 import type {IconName} from '../std/icons';
 import banner from '../../assets/brand/banner.webp';
-import {entryIds, links, plainLabel, sectionsByFolder, type SidebarLink} from '../../lib/sections';
+import {links, plainLabel, type SidebarGroup} from '../../lib/sections';
 
 const route = Astro.locals.starlightRoute;
 const {data} = route.entry;
@@ -27,46 +25,28 @@ const {t} = Astro.locals;
 const {locale} = route;
 const {title = data.title, tagline, actions = []} = data.hero || {};
 
-type Override = {folder: string; title?: string; text?: string; icon?: IconName; link?: string};
+type Override = {title?: string; text?: string; icon?: IconName; link?: string};
 const overrides: Override[] = (data as {landing?: {sections?: Override[]}}).landing?.sections ?? [];
 
-/* The four sections the landing leads with, in order; each starts at one page of its folder. */
-const LEAD: {folder: string; key: string; icon: IconName; start?: string}[] = [
-	{folder: 'general', key: 'landing.start', icon: 'login'},
-	{folder: 'magic', key: 'landing.magic', icon: 'star', start: 'introduction'},
-	{folder: 'guides', key: 'landing.guides', icon: 'scroll'},
-	{folder: 'firearms', key: 'landing.firearms', icon: 'flame'},
-];
+/*
+ * One card per top-level sidebar section, in sidebar order (astro.config.mjs). Sections are
+ * not folders any more (Start here and High Sequences both hold magic/ pages), so they are
+ * read from the sidebar itself. A card opens the section's first page and lists its first
+ * pages as its text, in the reader's language.
+ */
+const ICONS: IconName[] = ['login', 'star', 'globe', 'flame', 'coin', 'shield', 'book'];
+const groups = route.sidebar.filter((entry): entry is SidebarGroup => entry.type === 'group');
 
-const sections = sectionsByFolder(route.sidebar, locale);
-
-async function describe(link: SidebarLink | undefined) {
-	if (!link) return '';
-	for (const id of entryIds(link.href, locale)) {
-		const entry = await getEntry('docs', id);
-		if (entry) return entry.data.description ?? '';
-	}
-	return '';
-}
-
-const cards = await Promise.all(
-	LEAD.map(async lead => {
-		const group = sections.get(lead.folder);
-		const pages = group ? links(group) : [];
-		const start = pages.find(page => lead.start && page.href.replace(/\/$/, '').endsWith(`/${lead.start}`)) ?? pages[0];
-		const own = overrides.find(o => o.folder === lead.folder);
-		const fallbackText =
-			lead.folder === 'guides' ? pages.slice(0, 4).map(page => plainLabel(page.label)).join(', ') : await describe(start);
-		return {
-			title: own?.title ?? t(lead.key as 'landing.start'),
-			text: own?.text ?? fallbackText,
-			icon: own?.icon ?? lead.icon,
-			href: own?.link ?? start?.href ?? '#',
-		};
-	}),
-);
-
-const groups = [...sections.values()];
+const cards = groups.map((group, index) => {
+	const pages = links(group);
+	const own = overrides[index];
+	return {
+		title: own?.title ?? plainLabel(group.label),
+		text: own?.text ?? pages.slice(0, 3).map(page => plainLabel(page.label)).join(', '),
+		icon: own?.icon ?? ICONS[index % ICONS.length],
+		href: own?.link ?? pages[0]?.href ?? '/',
+	};
+});
 ---
 
 <div class="landing not-content">
