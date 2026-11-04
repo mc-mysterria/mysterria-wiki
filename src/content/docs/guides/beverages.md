@@ -76,7 +76,7 @@ An ordinary Minecraft **Barrel** block also ages brews. It holds up to 6 brews a
 
 Unsealed brews keep changing in your inventory or storage. Sealing locks a brew's quality and stops it aging, so seal finished brews before you sell or store them.
 
-The Sealing Table uses a **Smoker** block. Craft it with **2 Glass Bottles** on the top row of a crafting table and **4 Wood Planks** below them. Put your finished brew in the Sealing Table and click to seal it.
+The Sealing Table is placed as a **Smoker** block, but a normal Smoker will not seal brews. Craft it with **2 Glass Bottles** on the top row of a crafting table and **4 Wood Planks** below them. Put your finished brew in the Sealing Table and click to seal it.
 
 ## Drunkenness & Hangover Mechanics
 
@@ -169,7 +169,7 @@ Most of these are non-alcoholic or help you sober up. Advocaat is the exception 
 | Name                  | Ingredients                           | Boil Time | Distill Runs |   Aging   | Potion Effects                                         | Description                                          |
 |:----------------------|:--------------------------------------|:---------:|:------------:|:---------:|:-------------------------------------------------------|:-----------------------------------------------------|
 | **Potato Soup**       | 5 Potatoes, 3 Grass                   |  3 min    |      0       |     -     | Instant Health (stronger at high quality)              | Hot nourishing soup, restores health.                |
-| **Strong Coffee**     | 12 Cocoa Beans, 2 Milk Buckets        |  2 min    |      0       |     -     | Speed (30-140s)<br>Regeneration (2-5s)<br>Alcohol: -6% | Perfect for clearing your head and sober up quickly. |
+| **Strong Coffee**     | 12 Cocoa Beans, 2 Milk Buckets        |  2 min    |      0       |     -     | Speed (30-140s)<br>Regeneration (2-5s)<br>Alcohol: -6% | Perfect for clearing your head and sobering up quickly. |
 | **Advocaat (Eggnog)** | 5 Eggs, 2 Sugar, 1 Milk Bucket        |  2 min    |      0       | Any (3y)  | None                                                   | Creamy egg liquor, made with raw egg. Alcoholic.     |
 | **Hot Chocolate**     | 3 Cookies                             |  2 min    |      0       |     -     | Haste (40s)                                            | Hot sugary cocoa that gives you energy to mine.      |
 | **Iced Coffee**       | 8 Cookies, 4 Snowballs, 1 Milk Bucket |   1 min   |      0       |     -     | Speed (10s)<br>Regeneration (30s)<br>Alcohol: -8%      | The best drink to sober up fast. Cold and sweet.     |

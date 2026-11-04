@@ -39,7 +39,7 @@ Ordinary recovery and cures cannot lower it. A few specific things can.
 - The Hanged Man's **Forbidden Knowledge**.
 - Permanent Madness from a contract is removed when the contract ends.
 - Some abilities add "permanent" Madness that only lasts while they are active, such as Berserk, Bane and Virtual Persona.
-- Staff sometimes run church **Permanent Madness Relief** events. None is running right now.
+- Staff sometimes run church **Permanent Madness Relief** events for a limited time.
 
 ## What raises Madness?
 
