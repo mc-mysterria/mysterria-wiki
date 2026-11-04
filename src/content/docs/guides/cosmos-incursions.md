@@ -32,14 +32,14 @@ Each zone has a colour, given out in this order: Green, Yellow, Red, then Death 
 | **Red** | **All** items drop | None |
 | **Death (Black)** | **All** items drop, plus the Sequence penalty below | None |
 
-Green and Yellow zones are the place to learn Incursion PvP: a fresh Beyonder is not simply deleted by a Demigod there.
+Green and Yellow zones are the place to learn Incursion PvP, because a fresh Beyonder is not simply deleted by a Demigod there.
 
 ### What happens if I die in a Death zone?
 
 This applies to Beyonders at **Sequence 4 or stronger**, on **any** death in a Death zone, whoever or whatever killed you:
 
-- If you have **at least 50%** of your acting bar, you lose that 50% and keep your Sequence.
-- If you have **less than 50%**, you drop **one Sequence**. You start the new Sequence with 99% of its acting bar, and your Beyonder Characteristic drops where you died.
+- If you have **at least 50%** of your Acting bar, you lose that 50% and keep your Sequence.
+- If you have **less than 50%**, you drop **one Sequence**. You start the new Sequence with 99% of its Acting bar, and your Beyonder Characteristic drops where you died.
 - After a penalty you are safe from another one for **20 seconds**.
 
 Sequence 5 and weaker Beyonders only risk their items.
@@ -50,7 +50,7 @@ A **Paper Angel** protects you. Right-click it to arm it. When armed, it absorbs
 
 ### What is Spirit Weight?
 
-Beyonders at Sequence 4 and stronger carry **Spirit Weight** inside a zone: they glow, so they cannot hide, and take 1 damage every 5 seconds.
+Beyonders at Sequence 4 and stronger carry **Spirit Weight** inside a zone. They glow, so they cannot hide, and they take 1 damage every 5 seconds.
 
 ### What if I log out in a zone?
 
@@ -58,23 +58,23 @@ A body called "Hollow \<your name\>" stays behind for **5 minutes**. If someone 
 
 ## How do towns win an Incursion?
 
-Every zone has **Spirit Beacons**. Stand within 20 blocks of a beacon to capture it for your town; more players capture faster, and an empty beacon slowly decays back. Towns score for **holding**, **holding under attack** (worth double) and **capturing** beacons. Deadlier zones count for more (Yellow x1.25, Red x1.5, Death x2).
+Every zone has **Spirit Beacons**. Stand within 20 blocks of a beacon to capture it for your town. More players capture faster, and an empty beacon slowly decays back. Towns score for **holding**, **holding under attack** (worth double) and **capturing** beacons. Deadlier zones count for more (Yellow x1.25, Red x1.5, Death x2).
 
 When the Incursion ends:
 
 | Reward | Who gets it |
 |---|---|
-| **+10% acting speed for 3 hours** | The town in 1st place. Winning again in a row adds +2% per win, up to +6% |
-| **+5% acting speed for 2 hours** | The town in 2nd place |
+| **+10% Acting speed for 3 hours** | The town in 1st place. Winning again in a row adds +2% per win, up to +6% |
+| **+5% Acting speed for 2 hours** | The town in 2nd place |
 | **Resources** (Gold, Silver, Gems) | Split between all towns that scored at least 5% of the winner's score, by how much they fought. Towns from the same nation that all take part get up to +30% |
-| **MVP reward** | The top 3 players, whatever their town's place: acting and money |
+| **MVP reward** | The top 3 players get Acting and money, whatever their town's place |
 | Acting | Everyone present when their town captures a beacon |
 
-PvP kills inside zones also give acting, more in deadlier zones. A repeat kill of the same player gives no acting for 20 minutes.
+PvP kills inside zones also give Acting, more in deadlier zones. A repeat kill of the same player gives no Acting for 20 minutes.
 
 ### Do I get loot for killing players?
 
-You get a **PvP crate** only when your kill triggers a Death-zone penalty: the victim was Sequence 4 or stronger, had no Paper Angel and was not on penalty cooldown.
+You get a **PvP crate** only when your kill triggers a Death-zone penalty. That means the victim was Sequence 4 or stronger, had no Paper Angel and was not on penalty cooldown.
 
 :::danger[Do not hunt the weak]
 Killing 3 players who are 3 or more Sequences weaker than you within 10 minutes makes you a **Corrupted Monster** for 15 minutes, and griefing kills give no crate.
@@ -117,6 +117,6 @@ The in-game `/cosmos guide` still shows some old numbers (24-hour buffs and a Se
 ## Related pages
 
 - [Towns](/guides/towns/): you need a town to score and to bank resources
-- [Acting](/magic/acting/): acting speed and World acting
+- [Acting](/magic/acting/): Acting speed and World Acting
 - [Outer Gods Anchors](/guides/outer-gods-anchors/): the PvE event, where PvP is off
 - Main site: [Rules](https://www.mysterria.net/en/rules)

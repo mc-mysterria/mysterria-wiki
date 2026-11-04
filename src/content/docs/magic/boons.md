@@ -1,20 +1,20 @@
 ---
 title: "Boons"
-description: "Boons on Mysterria, the LOTM Minecraft server: the ten Outer God boons, how to get a Boon Token, and how to advance a boon to Sequence 5 by sacrifice."
+description: "Boons on Mysterria, the LOTM Minecraft server: the ten Outer God Boons, how to get a Boon Token, and how to advance a Boon to Sequence 5 by sacrifice."
 sidebar:
   order: 42
 ---
 
-A boon is a second, smaller Pathway granted by an Outer God. You hold it next to your normal Pathway, and it gives you its own abilities. The boon Pathways come from **Circle of Inevitability**, the sequel to Lord of the Mysteries.
+A Boon is a second, smaller Pathway granted by an Outer God. You hold it next to your normal Pathway, and it gives you its own abilities. The Boon Pathways come from **Circle of Inevitability**, the sequel to Lord of the Mysteries.
 
 Boons work very differently from normal Pathways:
 
-- A boon goes from **Sequence 9 to Sequence 5**, never further.
-- It has **no acting bar, no potions and no rituals**. Using its abilities does not advance it.
+- A Boon goes from **Sequence 9 to Sequence 5**, never further.
+- It has **no Acting bar, no potions and no rituals**. Using its abilities does not advance it.
 - It advances only by **sacrificing** ingredients at a **Sacrificial Altar**.
-- You can hold **one boon at a time**.
+- You can hold **one Boon at a time**.
 
-## Which boons are there?
+## Which Boons are there?
 
 There are ten. Click a name to see its abilities on the main site.
 
@@ -31,33 +31,33 @@ There are ten. Click a name to see its abilities on the main site.
 | Second Law | [secondlaw](https://www.mysterria.net/en/pathways/secondlaw) |
 | Sublunary Eye | [sublunary](https://www.mysterria.net/en/pathways/sublunary) |
 
-## How do I get a boon?
+## How do I get a Boon?
 
-You need a **Boon Token** for that boon. Right-click the token to receive the boon at Sequence 9.
+You need a **Boon Token** for that Boon. Right-click the token to receive the Boon at Sequence 9.
 
-| Source | Which boons | Details |
+| Source | Which Boons | Details |
 |---|---|---|
-| [Outer Gods Anchors](/guides/outer-gods-anchors/) reward shop (`/oga rewards`) | All ten | 900 Contribution Points each, at most 1 of each boon per month |
+| [Outer Gods Anchors](/guides/outer-gods-anchors/) reward shop (`/oga rewards`) | All ten | 900 Contribution Points each, at most 1 of each Boon per month |
 | Battle Pass, free track | Second Law | Tier 41 of the current pass |
 | Battle Pass, premium track | Devouring | Tier 37 of the current pass |
-| Translator reward | Any | Accepted [Weblate translators](https://www.mysterria.net/en/news/multilanguage-support-weblate-translator-bounties) may pick a boon |
+| Translator reward | Any | Accepted [Weblate translators](https://www.mysterria.net/en/news/multilanguage-support-weblate-translator-bounties) may pick a Boon |
 
-Boon Token shards also exist: 10 shards combine into one token.
+Boon Token shards also exist. Ten shards combine into one token.
 
-### What if I already have a boon?
+### What if I already have a Boon?
 
-Using a second Boon Token opens a **Choose a Boon to Replace** screen, then **Confirm Boon Replacement**. The old boon is **lost for good**, including its Sequence and sacrifice progress. You cannot use a token for the boon you already have.
+Using a second Boon Token opens a **Choose a Boon to Replace** screen, then **Confirm Boon Replacement**. The old Boon is **lost for good**, including its Sequence and sacrifice progress. You cannot use a token for the Boon you already have.
 
-## How do I advance my boon?
+## How do I advance my Boon?
 
 1. **Build a Sacrificial Altar.** Its blueprint comes from an Altar Scroll found in loot. A looted blueprint is a brewing altar or a Sacrificial Altar with equal odds, and it is Crude 65% of the time, normal 25% and Grand 10%. See [Loot and pity](/magic/loot/).
 2. **Open the altar** and put in Beyonder ingredients or Beyonder Characteristics.
-3. **Confirm the offering.** The value is added to your boon's sacrifice bar.
-4. When the bar is full, the Outer God acknowledges your tribute and your boon goes up one Sequence.
+3. **Confirm the offering.** The value is added to your Boon's sacrifice bar.
+4. When the bar is full, the Outer God acknowledges your tribute and your Boon goes up one Sequence.
 
 ### What can I sacrifice?
 
-Only items of the Sequence you are advancing **to**, or stronger. If your boon is Sequence 9 and you are working towards Sequence 8, Sequence 9 ingredients are refused ("This ingredient is too weak for your current advancement"). Ingredients and Characteristics from **any** Pathway count.
+Only items of the Sequence you are advancing **to**, or stronger. If your Boon is Sequence 9 and you are working towards Sequence 8, Sequence 9 ingredients are refused ("This ingredient is too weak for your current advancement"). Ingredients and Characteristics from **any** Pathway count.
 
 Each item is worth a base value, plus **10% for every Sequence** it is stronger than your target:
 
@@ -84,14 +84,14 @@ Example: going from Sequence 9 to 8 at a normal Sacrificial Altar takes about 79
 
 | Altar | Points | Risk |
 |---|---|---|
-| Crude Sacrificial Altar | x0.7 | When the bar fills there is a **15% chance** the ritual falters: everything you offered is gone and the bar resets to zero |
+| Crude Sacrificial Altar | x0.7 | When the bar fills there is a **15% chance** the ritual falters. Everything you offered is gone and the bar resets to zero |
 | Sacrificial Altar | x1.0 | None |
 | Grand Sacrificial Altar | x1.3 | None |
 
-Sacrificial Altars are only for boons. You cannot brew potions in them.
+Sacrificial Altars are only for Boons. You cannot brew potions in them.
 
-:::danger[Your boon cannot pass your main Pathway]
-Your boon can never be a stronger Sequence than your main Pathway. If the bar fills but the new boon Sequence would be stronger than your main Pathway's Sequence, the advance is refused **and the bar resets to zero**. Advance your main Pathway first, then fill the bar.
+:::danger[Your Boon cannot pass your main Pathway]
+Your Boon can never be a stronger Sequence than your main Pathway. If the bar fills but the new Boon Sequence would be stronger than your main Pathway's Sequence, the advance is refused **and the bar resets to zero**. Advance your main Pathway first, then fill the bar.
 :::
 
 ## Related pages

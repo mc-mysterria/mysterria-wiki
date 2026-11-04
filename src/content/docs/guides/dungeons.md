@@ -7,7 +7,7 @@ sidebar:
 
 ![A dungeon boss room](../../../assets/dungeons/dungeons.png)
 
-Dungeons are instanced worlds that a party enters through a **Rift** in the Overworld. You get class equipment at the start, fight through rooms to a final boss, and leave with loot, Helping Cards and acting. Each player has **one life** per run.
+Dungeons are instanced worlds that a party enters through a **Rift** in the Overworld. You get class equipment at the start, fight through rooms to a final boss, and leave with loot, Helping Cards and Acting. Each player has **one life** per run.
 
 ## Which dungeons are there?
 
@@ -57,11 +57,11 @@ Your power comes from your Sequence:
 |---|---|---|---|---|---|
 | Power | 320 | 450 | 600 | 800 | 999 |
 
-You can enter a dungeon only if your power is **at most 29 below** the dungeon's power. Being under-powered also weakens you: in steps at 10, 20 and 29 below the dungeon's power, the damage you deal drops (down to x0.4) and the damage you take rises (up to x1.6). At or above the dungeon's power there is no penalty.
+You can enter a dungeon only if your power is **at most 29 below** the dungeon's power. Being under-powered also weakens you. In steps at 10, 20 and 29 below the dungeon's power, the damage you deal drops (down to x0.4) and the damage you take rises (up to x1.6). At or above the dungeon's power there is no penalty.
 
 ## What are the difficulty tiers?
 
-Every dungeon has four tiers. Harder tiers pay more acting and better Helping Cards.
+Every dungeon has four tiers. Harder tiers pay more Acting and better Helping Cards.
 
 | Tier | Power needed | Damage you deal | Damage you take |
 |---|---|---|---|
@@ -101,13 +101,13 @@ A **Helping Card** belongs to one dungeon and one tier. Right-click it to open t
 | Potion Token (Sequence 6) | 16 |
 | Acting Bottle (10,000) | 20 |
 | Anti-Control Charm | 24 |
-| Ritual Book I | 32 |
+| Ritual Book (Tier I) | 32 |
 
 Root of the Canopy and The Dust Citadel pay their shop rewards as loot shards instead of whole items. Grandmaster shops at Embers Resurgence and Root of the Canopy also sell the [Pathway Transfer Token](/guides/special-items/).
 
-## How much acting do dungeons give?
+## How much Acting do dungeons give?
 
-Finishing a dungeon gives acting through the World source. Harder tiers give more (Advanced x1.25, Master x1.5, Grandmaster x2). Dungeon acting is capped at **600 per day** across all dungeons, resetting at midnight UTC.
+Finishing a dungeon gives Acting through the World source. Harder tiers give more (Advanced x1.25, Master x1.5, Grandmaster x2). Dungeon Acting is capped at **600 per day** across all dungeons, resetting at midnight UTC.
 
 ## Which class should I pick?
 
@@ -127,11 +127,11 @@ These abilities do not work inside a dungeon: Nightmare, Nightmare World, Travel
 
 ## What about closed Rifts?
 
-A Rift can be closed until players weaken it together: stand near it, accept "The node is too strong. You can try to weaken it. [Try?]" and survive the defence while it absorbs your shards. Right now every dungeon Rift is open.
+A Rift can be closed until players weaken it together. Stand near it, accept "The node is too strong. You can try to weaken it. [Try?]" and survive the defence while it absorbs your shards. Right now every dungeon Rift is open.
 
 ## Related pages
 
 - [Rift Bosses](/guides/bosses/): world bosses with their own schedule
 - [Special items](/guides/special-items/): the Anti-Control Charm and Pathway Transfer Token from the card shops
-- [Acting](/magic/acting/): how World acting and its caps work
+- [Acting](/magic/acting/): how World Acting and its caps work
 - Main site guide: [Activities](https://www.mysterria.net/en/guide/activities) and the news post [December update 2025](https://www.mysterria.net/en/news/december-update-2025)

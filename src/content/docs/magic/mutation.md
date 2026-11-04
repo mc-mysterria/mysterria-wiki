@@ -6,7 +6,7 @@ sidebar:
   order: 10
 ---
 
-**Madness** measures how close you are to losing control of your own power. It runs from **0% to 100%**. At 100% you **lose control**: your body mutates, and you face an [Ordeal](/magic/ordeals/) or, if you are still weak, lose your Beyonder for good.
+**Madness** measures how close you are to losing control of your own power. It runs from **0% to 100%**. At 100% you **lose control**. Your body mutates, and you face an [Ordeal](/magic/ordeals/) or, if you are still weak, lose your Beyonder for good.
 
 You can see your Madness on your character screen (`/coi menu character`).
 
@@ -43,7 +43,7 @@ Ordinary recovery and cures cannot lower it. A few specific things can:
 
 ## What raises Madness?
 
-- **Advancing** with less than 100% acting or an incomplete ritual (see below).
+- **Advancing** with less than 100% Acting or an incomplete ritual (see below).
 - **Unsafe Pathway switches** (see below).
 - **A Poor or Failed drinking minigame** when you advance. See [Brewing](/magic/brewing/#drinking-the-potion).
 - **Dying:** 1 to 2% each time.
@@ -55,9 +55,9 @@ Ordinary recovery and cures cannot lower it. A few specific things can:
 
 ## Advancement costs
 
-Each potion must be **exactly one Sequence stronger** than your current one; anything else is refused at no cost. Before you drink, a confirmation screen shows the exact Madness the advancement will cost. These are the parts:
+Each potion must be **exactly one Sequence stronger** than your current one. Anything else is refused at no cost. Before you drink, a confirmation screen shows the exact Madness the advancement will cost. These are the parts:
 
-**Acting:** you need at least 95%. Every missing percent costs 6% temporary Madness, so 95% acting costs **30%**. See [Acting](/magic/acting/).
+**Acting:** you need at least 95%. Every missing percent costs 6% temporary Madness, so 95% Acting costs **30%**. See [Acting](/magic/acting/).
 
 **Ritual:** an incomplete ritual costs up to **40% temporary and 10% permanent** Madness, in proportion to how much is missing. See [Rituals](/magic/rituals/#what-if-i-skip-the-ritual).
 
@@ -69,7 +69,7 @@ Each potion must be **exactly one Sequence stronger** than your current one; any
 | To a Pathway that is not a neighbour | 45% | 15% | 35% |
 | To or from Fool, Error or Door | 55% | 20% | 20% |
 
-When a switch is safe, and the full rules, are on [Pathways](/magic/pathways/#can-i-change-pathways).
+The full rules, including when a switch is safe, are on [Pathways](/magic/pathways/#can-i-change-pathways).
 
 :::danger[The re-drink trap]
 If a potion is refused because you do not meet its requirements, do not drink it again right away. A second try within 5 seconds triggers a loss of control with only a **10% chance to survive**.
@@ -107,6 +107,6 @@ An **Anti-Control Charm** in your inventory is used up automatically and **cance
 You **lose control**. What follows depends on your strongest Sequence:
 
 - **Sequence 7, 8 or 9:** your Beyonder is wiped. You lose your Pathway, Sequence and abilities, your items go into the mutant your power becomes, and you must wait three days before becoming a Beyonder again.
-- **Sequence 6 or stronger:** you enter an **Ordeal** instead. You lose Sequences and acting, but keep your character.
+- **Sequence 6 or stronger:** you enter an **Ordeal** instead. You lose Sequences and Acting, but keep your character.
 
 Everything about Ordeals, including the offense counter that can still lead to a wipe, is on the [Ordeals](/magic/ordeals/) page.

@@ -72,12 +72,12 @@ A group with no spellcasters cannot finish a boss. The guards it summons scale w
 
 | Rule | Details |
 |---|---|
-| Scaling | The boss scales with the **total Beyonder power** of nearby players, not with headcount. Power per player: Sequence 9 = 1, 8 = 1.6, 7 = 2.6, 6 = 4.2, 5 = 6.8, 4 = 11, 3 = 18, 2 = 29, 1 = 47; a non-Beyonder counts 0.35 |
+| Scaling | The boss scales with the **total Beyonder power** of nearby players, not with headcount. Power per player: Sequence 9 = 1, 8 = 1.6, 7 = 2.6, 6 = 4.2, 5 = 6.8, 4 = 11, 3 = 18, 2 = 29, 1 = 47. A non-Beyonder counts 0.35 |
 | Own-Pathway resistance | A boss takes only **35%** damage from abilities of its own Pathway |
 | Damage cap per hit | One hit can take at most **4%** of the boss's health |
 | Boss hits | A boss hit deals at most 60 damage |
 | Spirituality drain | Within 40 blocks you lose **6% Spirituality every 8 seconds** (more in later phases) |
-| Madness | Within 40 blocks you gain Madness every 15 seconds (more in later phases; Sequence 4 and stronger gain half) |
+| Madness | Within 40 blocks you gain Madness every 15 seconds (more in later phases, and Sequence 4 and stronger gain half) |
 | No flying | Flight stops working near the boss after 10 seconds |
 
 ## What do I get for defeating a boss?
@@ -90,7 +90,7 @@ Right-click a token to open the **Reward Roulette** and spin it. The prize pool 
 
 ![The Reward Roulette](../../../assets/bosses/roulette.gif)
 
-Boss kills also give acting through the World source.
+Boss kills also give Acting through the World source.
 
 ## How do I find a boss?
 

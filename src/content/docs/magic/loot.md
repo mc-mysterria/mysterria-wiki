@@ -15,7 +15,7 @@ Recipes, Recipe Pages, potions, altar blueprints and many ingredients come from 
 When you open one and Beyonder loot drops, it **pops out next to the chest** and glows for a few seconds. A chat message tells you something has appeared.
 
 :::caution[Each chest pays you only once]
-Each player gets a given chest's loot **once**. After **12 hours to 2 days** the chest refills, but only for players who have not looted it yet. Your action bar shows "Refill in ..." when you open it. A chest someone else emptied still pays you; going back to your own old chests does not. New structures are always worth more.
+Each player gets a given chest's loot **once**. After **12 hours to 2 days** the chest refills, but only for players who have not looted it yet. Your action bar shows "Refill in ..." when you open it. A chest someone else emptied still pays you, but going back to your own old chests does not. New structures are always worth more.
 :::
 
 ## What can a chest give?
@@ -27,7 +27,7 @@ Each chest you open rolls for Beyonder loot:
 | Recipe | 1% | A full recipe for one potion |
 | Recipe Page | 3% | One page of a recipe. See [Brewing](/magic/brewing/#recipes-and-recipe-pages) |
 | Potion | 1% | A finished potion. It expires 48 hours after it is made |
-| Altar Scroll | 2% | A **Strange Scroll**: the blueprint for a brewing altar or a Sacrificial Altar |
+| Altar Scroll | 2% | A **Strange Scroll**, the blueprint for a brewing altar or a Sacrificial Altar |
 
 **Which Sequence?** Most loot is low level. The rough odds are:
 
@@ -35,7 +35,7 @@ Each chest you open rolls for Beyonder loot:
 |---|---|---|---|---|---|---|---|---|---|---|
 | Share | about 38% | 22% | 15% | 10% | 7% | 1% | 0.5% | 0.2% | 0.1% | 0.05% |
 
-**Which Pathway?** The **Law of Convergence** favours you: in 60% of chests the item follows your own Pathway (70% of those) or one of your [neighbours](/magic/pathways/#neighbouring-pathways). Otherwise it is a random Pathway.
+**Which Pathway?** The **Law of Convergence** favours you. In 60% of chests the item follows your own Pathway (70% of those) or one of your [neighbours](/magic/pathways/#neighbouring-pathways). Otherwise it is a random Pathway.
 
 Chests in Ancient Cities also have a 7.5% chance to hold a custom music disc.
 
@@ -57,7 +57,7 @@ These drop from [Beyonder Creatures](/magic/creatures/). Hunt the right creature
 
 ### Mineable ingredients
 
-These appear in the world as **nodes**: they **glow red** and send up a **beam**, so you can spot them from a distance. **Right-click** a node to harvest it.
+These appear in the world as **nodes**. They **glow red** and send up a **beam**, so you can spot them from a distance. **Right-click** a node to harvest it.
 
 - A new set of nodes is placed **every day**, near where players are active.
 - Common ingredients get about 3 nodes a day. Rarer ones get fewer, and the rarest have a 15% chance of a single node each day.
@@ -67,7 +67,7 @@ These appear in the world as **nodes**: they **glow red** and send up a **beam**
 ### Other sources
 
 - **Wild Beyonders** trade Pathway goods and can drop ingredients. See [Wild Beyonders](/magic/wild-beyonders/).
-- **Rift bosses** pay out in a roulette that can hold ingredients, recipes, potions and Beyonder Characteristics. See [Rift Bosses](/guides/bosses/).
+- **Rift Bosses** pay out in a roulette that can hold ingredients, recipes, potions and Beyonder Characteristics. See [Rift Bosses](/guides/bosses/).
 - The [Brilliant Emporium](/guides/emporium/) sells some ingredients.
 - Spare ingredients can be sold to nitwit and jobless villagers for [Energy Shards](/guides/shards/).
 
@@ -95,18 +95,18 @@ With **Any Sequence**, the thresholds are:
 | Recipes | 150 |
 | Potions | 200 |
 
-Recipes and Pages are separate: focus Pages if you are collecting pages, Recipes if you want a finished recipe.
+Recipes and Pages are separate. Focus Pages if you are collecting pages, and Recipes if you want a finished recipe.
 
 ### Sequence brackets
 
-You can narrow the reward to a bracket of Sequences. The threshold is then multiplied by the bracket's multiplier, and again by **×1.5 for every Sequence** your strongest Pathway sits below the bracket's top Sequence.
+You can narrow the reward to a bracket of Sequences. The threshold is then multiplied by the bracket's multiplier, and again by **x1.5 for every Sequence** your strongest Pathway sits below the bracket's top Sequence.
 
 | Bracket | Sequences | Multiplier |
 |---|---|---|
-| High Sequences | 9 to 7 | ×2 |
-| Middle Sequences | 6 to 4 | ×4 |
-| Low Sequences | 3 to 1 | ×8 |
-| Peak | 0 | ×15 |
+| High Sequences | 9 to 7 | x2 |
+| Middle Sequences | 6 to 4 | x4 |
+| Low Sequences | 3 to 1 | x8 |
+| Peak | 0 | x15 |
 
 Example thresholds for **Recipes**:
 

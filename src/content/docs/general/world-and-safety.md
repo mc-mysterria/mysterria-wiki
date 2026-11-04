@@ -31,7 +31,7 @@ Players who are not Beyonders, or not strong enough, are stopped at the portal. 
 
 ## Is there /home, /spawn or /tpa?
 
-No. There is no `/home`, `/sethome`, `/spawn`, `/tpa`, `/rtp` or `/back`, and they will not be added. Distance is part of the game: plan your trips, and choose where you settle with care. Fast movement is one of the rewards of Pathways such as [Door](https://www.mysterria.net/en/pathways/door).
+No. There is no `/home`, `/sethome`, `/spawn`, `/tpa`, `/rtp` or `/back`, and they will not be added. Distance is part of the game. Plan your trips, and choose where you settle with care. Fast movement is one of the rewards of Pathways such as [Door](https://www.mysterria.net/en/pathways/door).
 
 Joining a town helps a lot in a world without teleports. See [Towns](/guides/towns/).
 
@@ -44,7 +44,7 @@ PvP is **off** in most of the world. It is on only in places you enter on purpos
 - **Town claims** where the owner has turned PvP on for some roles.
 - **Duels, FFA and Bedwars** events, which you join yourself with `/pvpevent` and `/bedwars`.
 
-The [server rules](https://www.mysterria.net/en/rules) are clear: inside a PvP zone anyone may attack you, and that is the consent. Outside one, any ability that damages, drains or debuffs another player counts as an attack, whatever it is called. Pulling or teleporting someone into a fight they did not agree to is also against the rules.
+The [server rules](https://www.mysterria.net/en/rules) are clear. Inside a PvP zone anyone may attack you, and that is the consent. Outside one, any ability that damages, drains or debuffs another player counts as an attack, whatever it is called. Pulling or teleporting someone into a fight they did not agree to is also against the rules.
 
 ## What happens when I die?
 
