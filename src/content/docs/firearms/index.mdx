@@ -6,7 +6,8 @@ sidebar:
     order: 1
 ---
 
-import {Card, CardGrid, Notice} from '~/components/mdx';
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import actionBar from '../../../assets/firearms/action-bar.webp';
 
 Mysterria has three guns: **Klein's Repeater**, the **Deathknell** and the **Steam Rifle**. You build them from parts at a **Weaponsmith Table** and load them with crafted rounds.
 
@@ -67,9 +68,11 @@ Guns cannot be enchanted, used in an anvil or moved to your offhand.
 
 While you hold a gun, the bar above your hotbar shows:
 
-- the gun's name and its rounds, for example "Klein's Repeater 4/6"
+- the round type and how many are loaded, for example "Klein Rounds 4/6"
 - a yellow **Reloading...** while it reloads
 - a red **No ammo!** when the magazine is empty
+
+<Figure src={actionBar} alt="The action bar above the hotbar reading Klein Rounds 6/6 while holding a loaded Klein's Repeater" caption="The action bar while holding a loaded Klein's Repeater." contain />
 
 ## Accuracy
 

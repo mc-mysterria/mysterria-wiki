@@ -6,13 +6,26 @@ sidebar:
   order: 15
 ---
 
+import {Figure} from '~/components/mdx';
+import titleScreen from '../../../assets/client-mod/title-screen.webp';
+import dossier from '../../../assets/start/beyonder-dossier.webp';
+import destinations from '../../../assets/client-mod/dossier-destinations.webp';
+import catalogue from '../../../assets/client-mod/ability-catalogue.webp';
+import uniqueness from '../../../assets/magic/uniqueness-candidacy.webp';
+import mythicalForm from '../../../assets/client-mod/mythical-form.webp';
+import selector from '../../../assets/client-mod/ability-selector.webp';
+import characterPlate from '../../../assets/client-mod/character-plate.webp';
+import hudArrange from '../../../assets/client-mod/hud-arrange.webp';
+import hudSettingsAbility from '../../../assets/client-mod/hud-settings-ability.webp';
+import hudSettingsElements from '../../../assets/client-mod/hud-settings-elements.webp';
+
 **coi-client** is an optional Fabric mod made for Mysterria. It replaces the chest menus and
 action-bar clutter with native screens and HUD elements, and it gives a small Acting bonus.
 
 Nothing on the server needs the mod. Every screen it draws has a chest-menu version, which you see
 if you do not install it, play Bedrock through Geyser, run an outdated build or turn a feature off.
 
-![The coi-client splash screen, with all 22 Pathway icons orbiting the logo](https://in.ikeepcalm.me/mlqnpA3pPCPy.png)
+<Figure src={titleScreen} alt="The coi-client title screen, with all 22 Pathway icons orbiting the logo" />
 
 ---
 
@@ -33,12 +46,12 @@ bonus is working. The mod is close to essential for the full Ascension Ceremony 
 
 With the mod installed and its features turned on:
 
-- Your character sheet, ability list, map visibility, the Pantheon and Throne screens and more open
+- Your Beyonder Dossier, ability list, map visibility, the Pantheon and Throne screens and more open
   as **native windows** instead of inventory grids.
-- The **character sheet** shows Sequence, Spirituality, Madness, Acting progress and its sources in
-  one panel, with a **Beyonder dossier** of your character's model, pose and background.
-- An **ability selector and hotkeys HUD** shows your abilities with their cooldowns and costs. You can
-  cast by category and bind abilities to keys. The hotkeys HUD can be turned off.
+- The **Beyonder Dossier** shows Sequence, Spirituality, Madness, Acting progress and its sources in
+  one panel, beside your character's model. Its **Destinations** tab opens every other screen.
+- An **ability selector and hotkeys HUD** let you cast by category and bind abilities to keys. The
+  hotkeys HUD can be turned off.
 - A **Beyonder health bar** shows your real Beyonder HP instead of plain hearts, in the styles Hearts +
   Numbers, Bar, Ornate Bar or Segments. PvP damage feedback is clearer, and a **movable Spirituality
   bar** replaces the vanilla boss bar. See [Health](/magic/health/).
@@ -67,35 +80,35 @@ With the mod installed and its features turned on:
 Change them in Minecraft's Controls, where the mod has its own category. Keys that open single
 screens directly, such as your abilities, exist too but are unbound until you set them.
 
-![The Beyonder character sheet as a native screen](https://in.ikeepcalm.me/0pKiY04Z8muN.png)
+<Figure src={dossier} alt="The Beyonder Dossier as a native screen" />
 
-![The main menu, with every other screen reachable from it](https://in.ikeepcalm.me/nh3XKVKmJgub.png)
+<Figure src={destinations} alt="The Destinations tab of the Beyonder Dossier, with every other screen reachable from it" />
 
-![The ability catalogue](https://in.ikeepcalm.me/qkcbjzwruKjG.png)
+<Figure src={catalogue} alt="The ability catalogue" />
 
-![The Uniqueness screen](https://in.ikeepcalm.me/ui82oLhQZ25f.png)
+<Figure src={uniqueness} alt="The Uniqueness screen" />
 
-![The Mythical Creature Form screen](https://in.ikeepcalm.me/T6GHRHkdh43V.png)
+<Figure src={mythicalForm} alt="The Mythical Creature Form screen" />
 
-The ability selector groups your kit by Pathway and Sequence and shows each spell's description,
-type, category, Spirituality cost and cooldown.
+The ability catalogue lists each spell's description, type, category, Spirituality cost and cooldown.
+The ability selector shows only each ability's name and type, so you can pick one quickly.
 
-![The ability selector](https://in.ikeepcalm.me/RTN6DtdqySxe.png)
+<Figure src={selector} alt="The ability selector" />
 
-The character sheet HUD overlay replaces the separate Madness, reserve and Acting bars with one panel
+The character plate HUD overlay replaces the separate Madness, reserve and Acting bars with one panel
 that also shows your skin, Pathway and Sequence.
 
-![The character sheet HUD overlay](https://in.ikeepcalm.me/5z92kHSYi65y.png)
+<Figure src={characterPlate} alt="The character plate HUD overlay" contain />
 
 You can drag every part of the HUD, including single ability hotkeys, into the layout you want.
 
-![Dragging HUD elements into place](https://in.ikeepcalm.me/Xw8T62lAmv7C.gif)
+<Figure src={hudArrange} alt="The HUD in Arrange on screen mode, with each element ready to drag into place" />
 
 The settings screen keeps only the options you are likely to change.
 
-![The mod's settings screen](https://in.ikeepcalm.me/qqcD1QcCKPqG.png)
+<Figure src={hudSettingsAbility} alt="The mod's settings screen" contain />
 
-![More of the mod's settings](https://in.ikeepcalm.me/pWRfUhAoEwja.png)
+<Figure src={hudSettingsElements} alt="More of the mod's settings" contain />
 
 ---
 

@@ -6,7 +6,8 @@ sidebar:
   order: 35
 ---
 
-import {Notice} from '~/components/mdx';
+import {Notice, Figure} from '~/components/mdx';
+import perksChat from '../../../assets/magic/church-perks-chat.webp';
 
 Church perks are the Acting, Madness recovery and support bonuses that a [church](/magic/churches/) gives its members. How strong they are depends on how much active, praying support the church has.
 
@@ -26,6 +27,8 @@ Perks combine all of these at once, so one weak factor can make the final bonus 
 - Without a **main core**, every perk runs at 50%.
 
 If your perks feel weak, `/coi church status`, `/coi church perks`, `/coi church acting`, `/coi church pathway progress`, `/coi church my-site` and `/coi church cooldowns` show where you stand.
+
+<Figure src={perksChat} alt="Chat output of /coi church perks for a new church leader, with the perks applied to you and the reasons behind them" caption="What /coi church perks prints in chat." contain />
 
 ## Anchor weight
 
