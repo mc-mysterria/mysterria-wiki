@@ -1,0 +1,68 @@
+---
+title: "Couriers: Sending Items to Players"
+description: "How couriers work on Mysterria: craft a Horn of Summoning, drop items to your courier, choose a recipient, and how long delivery takes, even to offline players."
+sidebar:
+    label: Couriers
+    order: 34
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import hornCraft from '../../../assets/couriers/courier_horn_craft.png';
+
+**Couriers** are undead messengers that carry items to other players, wherever they are and even while they are offline. Summon one with a **Horn of Summoning**, give it your items and pick who should get them.
+
+## How do I get a Horn of Summoning?
+
+1. Find **Courier Horn Shards** in loot chests in the Overworld. Each newly generated chest has a **15%** chance to hold one.
+2. Collect **3 shards** and craft them in an **L shape** in a crafting table:
+
+<Figure src={hornCraft} alt="Three Courier Horn Shards in an L shape in a crafting grid, making a Horn of Summoning" caption="The Horn of Summoning recipe." contain />
+
+The horn is **not used up**. You can summon a courier with it again and again, once every **5 minutes**.
+
+## Courier types
+
+Your horn always summons the best courier you have access to.
+
+| Courier | Items it carries | Delivery time | Waits for your items | How to get it |
+|---|---|---|---|---|
+| **Skeleton** (Bone Runner) | 1 | 5 minutes | 5 minutes | Any Horn of Summoning |
+| **Jellyfish** | 2 | 5 minutes | 5 minutes | Jellyfish Courier in the [store](https://www.mysterria.net/en/store) |
+| **Incinerated Courier** | 2 | 3 minutes | 3 minutes | Incinerated Courier in the [store](https://www.mysterria.net/en/store) |
+
+Couriers carry **single items only**, not stacks. A stack of 64 is refused, so split it first. **Shulker boxes** are refused too.
+
+## How do I send items?
+
+1. **Right-click** with the Horn of Summoning. Your courier appears next to you.
+2. **Drop** each item (press `Q`) within **3 blocks** of the courier. It takes the item and confirms in chat.
+3. When the courier is full (1 item for a Skeleton, 2 for the others), the **Select Recipient** menu opens after about 2 seconds.
+4. Pick the player, then click **Confirm Delivery**.
+
+The courier leaves with your items. You and the recipient both get a chat message when the delivery starts and when it arrives.
+
+<Notice tone="warn" title="Do not wander off">
+A courier that is still waiting for items disappears after its waiting time (5 minutes, or 3 for the Incinerated Courier). Any items it already took come back to you.
+</Notice>
+
+## Where do couriers work?
+
+**Summoning** works in the Overworld, the Nether, the Manipulation Pool, the Mirror Realm, the Nightmare Pool and a [Secret Lair](/guides/orders/#secret-lair-level-4). It does not work in the End.
+
+**Delivery** only happens while the recipient is in the **Overworld** or the **Nether**. If the recipient is somewhere else, in spectator mode or above Y 320, the courier waits and tries again every 5 seconds until they are back.
+
+## Can I send items to an offline player?
+
+Yes. The items are kept and delivered the next time the player logs in, once the delivery time has passed. A delivery that is still waiting after **30 days** is deleted, so do not send items to players who have left the server.
+
+## Couriers and the Agora
+
+Leave your Horn of Summoning at the **Courier Post** in the [Agora](/guides/agora/#courier-post), and everything you buy there is delivered to you by your courier. You can take the horn back whenever you like.
+
+## Related pages
+
+<CardGrid>
+  <Card title="Agora" text="Have your market purchases delivered." icon="coin" href="/guides/agora/" />
+  <Card title="Secret Orders" text="Share items with your Order through its stash." icon="lock" href="/guides/orders/" />
+  <Card title="Social systems on the main site" text="Couriers, Orders and messages in short." icon="book" href="https://www.mysterria.net/en/guide/social" />
+</CardGrid>
