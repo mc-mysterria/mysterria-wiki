@@ -42,7 +42,8 @@ const cards = groups.map((group, index) => {
 	const own = overrides[index];
 	return {
 		title: own?.title ?? plainLabel(group.label),
-		text: own?.text ?? pages.slice(0, 3).map(page => plainLabel(page.label)).join(', '),
+		// the section's first three entries: a page, or a sub-group by its own name (Firearms)
+		text: own?.text ?? group.entries.slice(0, 3).map(entry => plainLabel(entry.label)).join(', '),
 		icon: own?.icon ?? ICONS[index % ICONS.length],
 		href: own?.link ?? pages[0]?.href ?? '/',
 	};
