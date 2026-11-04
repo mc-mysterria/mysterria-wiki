@@ -84,7 +84,7 @@ Do not take too long. While you hunt in the Overworld you lose **5% of your Acti
 
 You are **sealed in a private realm**, in your own body, for **14 days**. The sentence counts in real time, including while you are offline. You lose **1 Sequence**, and your inventory is stored and returned when you are freed.
 
-There is one way to shorten it. When a [Crimson Moon](/magic/crimson-moon/) rises naturally, you are released into the world for as long as the moon lasts (at most 30 minutes) and given an **exile bounty**. Each exile bounty you complete takes **6 hours** off your sentence, up to half of the 14 days.
+There is one way to shorten it. When a [Crimson Moon](/magic/crimson-moon/) rises naturally, you are released into the world for as long as the moon lasts, which is the rest of that night (about 8 real minutes), and given an **exile bounty**. Each exile bounty you complete takes **6 hours** off your sentence, up to half of the 14 days.
 
 ## Repeat offenses
 
