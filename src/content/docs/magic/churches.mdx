@@ -9,12 +9,9 @@ sidebar:
 import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
 import churchStatus from '../../../assets/magic/church-status.webp';
 
-A church is a player-run religion built around a leader, a Pathway, praying members and physical church sites. This page covers the basics: founding, joining, praying, roles and commands. Two more pages go deeper:
+A **church** is a player-run religion built around a leader, a Pathway, praying members and physical church sites. Its members get Acting and Madness bonuses that grow as the church stays active.
 
-<CardGrid>
-  <Card title="Church Management" text="Sites, branches, Regional HQs, services, vaults, Lands and church wars." icon="shield" href="/magic/church-management/" />
-  <Card title="Church Perks and Anchors" text="Anchor weight, tiers, Acting and recovery bonuses, Madness floor relief, blessings and gifts." icon="star" href="/magic/church-perks/" />
-</CardGrid>
+Running sites, branches and church wars is covered in [Church Management](/magic/church-management/), and the exact bonus numbers are in [Church Perks and Anchors](/magic/church-perks/).
 
 ## What does a church give its members?
 
@@ -24,11 +21,9 @@ A church is a player-run religion built around a leader, a Pathway, praying memb
 - **Blessings** and **gifts** from church officers, for Madness, Tiredness and Spirituality support.
 - **Prayer effects** near church sites.
 - A shared **Church Vault** for [Sealed Artifacts](/magic/sealed-artifacts/).
-- **Danger alerts**: the leader, co-leaders, Angels and Head Deacons can be told when a member is in trouble.
+- **Danger alerts** that tell the leader, co-leaders, Angels and Head Deacons when a member is in trouble.
 
-None of these are flat. They grow with how active and healthy the church is: active members, recent prayer, site activity, Pathway match and more. [Church Perks and Anchors](/magic/church-perks/) explains the numbers.
-
-For the main site's short overview, see [Advanced systems](https://www.mysterria.net/en/guide/advanced) in the player guide.
+None of these are flat. They grow with active members, recent prayer, site activity, Pathway match and other signs of a healthy church.
 
 ## How do I found a church?
 
@@ -41,7 +36,7 @@ You need:
 | Current church | You must not be a member, leader or co-leader of another church |
 | Cooldown | **14 days** after you last left, were removed from, or disbanded a church |
 
-Every church starts with a **Church Core**:
+Every church starts with a **Church Core**.
 
 1. Craft a Church Core (recipe below).
 2. Place it where your main church site should be.
@@ -73,13 +68,13 @@ New members do not get full perks straight away. You start at **20%** and reach 
 
 ### Leaving
 
-Use `/coi church leave`. A leader cannot leave. They must hand the church to someone else with `/coi church ownership handoff <player> confirm`, or disband it with `/coi church disband` (you then have 45 seconds to type the exact church name in chat to confirm).
+Use `/coi church leave`. A leader cannot leave. They must first hand the church to someone else with `/coi church ownership handoff <player> confirm`, or disband it with `/coi church disband` (you then have 45 seconds to type the exact church name in chat to confirm).
 
 ## How do I pray?
 
-Prayer keeps church bonuses alive. Members who have not prayed in **14 days**, or have not logged in for 14 days, stop counting toward the church.
+Prayer keeps church bonuses alive. A member stops counting toward the church after **14 days** without praying, or 14 days without logging in.
 
-Ways to pray:
+You can pray with:
 
 - `/coi church pray`
 - the prayer button in the church menu
@@ -116,10 +111,10 @@ Talk to your whole church with `/coi church chat <message>`, or start a normal c
 
 From Sequence 4, every Beyonder has a godhood Madness floor, which is Madness that recovery cannot remove. A healthy church lowers that floor for its members, most of all for leaders and co-leaders. A fresh god, for example, sits at about 30% until their congregation grows.
 
-The floors, the relief formula and the role caps are on [Church Perks and Anchors](/magic/church-perks/#madness-floor-relief). For how Madness works in general, see [Madness and Mutation](/magic/mutation/).
+The floors, the relief formula and the role caps are on [Church Perks and Anchors](/magic/church-perks/#madness-floor-relief). [Madness and Mutation](/magic/mutation/) explains Madness in general.
 
 <Notice tone="info" title="Red Priest cohorts">
-A Red Priest's Chain of Command cohort gives its own floor relief to members who have no active church. That is not a church role. See [Sequence 0](/magic/sequence-zero/#red-priest-cohorts-instead-of-a-church).
+A Red Priest's [Chain of Command cohort](/magic/sequence-zero/#red-priest-cohorts-instead-of-a-church) gives its own floor relief to members who have no active church. That is not a church role.
 </Notice>
 
 ## Churches and gods

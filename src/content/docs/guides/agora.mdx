@@ -13,9 +13,9 @@ import selling from '../../../assets/agora/selling.png';
 import sellingCoi from '../../../assets/agora/selling_coi.png';
 import plots from '../../../assets/agora/plots.png';
 
-The **Agora** is the market that is not on any map. It lies beneath the world, behind hidden doors, and it is where players trade with players without ever meeting and without knowing each other's names.
+The **Agora** is an underground market behind hidden doors where players buy and sell from each other anonymously. Listings carry no names, so buyers and sellers never learn who the other is.
 
-There are **no commands** for the Agora. You walk through a door and talk to the people who work there.
+There are **no commands** for the Agora. You go in through a door and right-click the people who work there.
 
 ## How do I get into the Agora?
 
@@ -33,13 +33,13 @@ O E O        D = Dark Oak Door
 
 <Figure src={doorCraft} alt="Obsidian and echo shards arranged around a dark oak door in a crafting grid" caption="The Secret Entrance recipe." contain />
 
-Right-click a block with the **Secret Entrance** in hand. It becomes a Crimson Door. The rules:
+Right-click a block with the **Secret Entrance** in hand to turn it into a Crimson Door. It only works when:
 
-- The spot needs **two blocks of free space** above it.
-- It must be inside a **town's claimed land**, and you must be **trusted** there. See [Towns](/guides/towns/).
-- **One entrance per land.** A land that already hides a door refuses a second.
+- the spot has **two blocks of free space** above it
+- it is inside a [town's](/guides/towns/) **claimed land** where you are **trusted**
+- that land does not already hide a door, since each land allows **one entrance**
 
-The wall shivers and your door appears. Right-click it to descend.
+Right-click the door to go down.
 
 ### A secret, not a lock
 
@@ -49,7 +49,7 @@ The door cannot be broken, blown up or moved. The only way to get rid of it is t
 
 ### Getting back out
 
-Find the **exit door** and right-click it. You surface at the spot where you went down. If that entrance is gone or unsafe, you surface at world spawn instead.
+Right-click the **exit door**. You surface at the spot where you went down. If that entrance is gone or unsafe, you surface at world spawn instead.
 
 ## What are the rules inside?
 
@@ -78,19 +78,13 @@ Right-click anyone to talk to them.
 
 ## How are prices written?
 
-Everything is counted in the server's three coins. See [Money and Wallet](/guides/economy/).
-
-| Coin | Worth |
-|---|---|
-| **Coppet** | The smallest coin |
-| **Lick** | 64 Coppets |
-| **Verl Dor** | 64 Licks, or 4,096 Coppets |
+Prices use the server's [three coins](/guides/economy/). 64 Coppets make a Lick, and 64 Licks (4,096 Coppets) make a Verl Dor.
 
 Prices are shown in whichever mix reads shortest, for example `16 coppets 11 licks` instead of 720 Coppets. Where you type a price yourself, use `c` for Coppets, `l` for Licks and `v` for Verl Dors.
 
 ## How do I sell in the Agora?
 
-Hand your item to **the Fence** and name a price. He appraises it first and suggests what it is worth. Beyonder materials are judged by their Sequence, and ordinary goods by what similar things have sold for. It is only advice. The price is yours.
+Hand your item to **the Fence** and name a price. He first suggests what it is worth, judging Beyonder materials by their Sequence and ordinary goods by what similar things have sold for. You can ignore the suggestion and set any price.
 
 | Rule | Value |
 |---|---|
@@ -117,7 +111,7 @@ The listing fee is paid **up front** and never comes back, whether the item sell
 
 ### When something sells
 
-You are not told what sold or for how much, only that *a coin has been set aside in your name*. Go to the **Ledger Keeper** to collect it. Sales made while you were offline wait for you.
+You only get a message that *a coin has been set aside in your name*, without what sold or for how much. Collect the money from the **Ledger Keeper**. Sales made while you were offline wait for you.
 
 ### When it doesn't
 
@@ -125,7 +119,7 @@ After 72 hours an unsold listing expires and the item goes to your **stash** at 
 
 ## How do I buy in the Agora?
 
-The **Bazaar Clerk** shows everything on offer. **The Informant** is for when you know exactly what you want. You can search by Pathway and Sequence.
+The **Bazaar Clerk** shows everything on offer. **The Informant** lets you search by Pathway and Sequence when you know what you want.
 
 You pay the price on the label and nothing more. The tax comes out of the seller's share. You cannot buy your own listing.
 
@@ -133,14 +127,14 @@ Purchases **do not go into your inventory**. They wait at the Ledger Keeper, unl
 
 ## Collecting from the Ledger Keeper
 
-Whatever the market owes you stays with the **Ledger Keeper** until you come for it. It never expires.
+Whatever the market owes you stays with the **Ledger Keeper** until you collect it. It never expires.
 
-- **Your stash** holds items: things you bought, listings that expired or were cancelled, and anything rescued from a stall you lost. Take as much as your inventory has room for. The rest stays safe.
-- **Your ledger** holds money, meaning every sale and what it earned after tax. Collecting pays out everything owed at once.
+- **Your stash** holds items you bought, listings that expired or were cancelled, and anything rescued from a stall you lost. Take as much as your inventory has room for and the rest stays.
+- **Your ledger** holds the money from every sale after tax. Collecting pays out everything owed at once.
 
 ## Courier Post
 
-Tired of walking back down for every purchase? Leave a **Horn of Summoning** at the **Courier Post**. From then on, everything you **buy** is delivered to you by your courier, wherever you are. See [Couriers](/guides/couriers/).
+Leave a **Horn of Summoning** at the **Courier Post** and everything you **buy** is delivered to you by your [courier](/guides/couriers/), wherever you are.
 
 - One horn at a time. Take it back whenever you like, and deliveries stop.
 - Delivery is free. The horn is the price.
@@ -159,11 +153,11 @@ A **stall** is a room in the market you can rent, build in and sell from. Speak 
 | Stalls per player | **1** |
 | Grace period | **48 hours** |
 
-While your rent is paid you can build, break and use chests **inside your stall**. A **Stall Keeper** appears at your storefront. Visitors who click it see what you sell. When you click it, you get your own counter.
+While your rent is paid you can build, break and use chests **inside your stall**. A **Stall Keeper** appears at your storefront. Visitors who click it see what you sell, and you get your own counter.
 
 ### Keeping your stall
 
-Pay the Plot Warden again before the week runs out to renew for another week. If you miss it you get **48 hours of grace**. You keep everything, and you are reminded.
+Pay the Plot Warden again before the week runs out to renew for another week. If you miss it you get **48 hours of grace**, with reminders, and keep everything.
 
 ### Losing your stall
 
@@ -173,12 +167,12 @@ You can also hand a stall back early from the Plot Warden's menu.
 
 ## Stall Counters
 
-Inside your own stall you can set up **counters**. A counter is a sign on a chest that sells to anyone walking past, with no listing fee and no waiting. Up to **12 per stall**.
+A **counter** is a sign on a chest in your stall that sells to anyone walking past, with no listing fee and no waiting. You can have up to **12 per stall**.
 
 1. Put down a chest, and a sign on it (on its face or on top).
-2. **Line 1:** `[Market]`
-3. **Line 2:** the price, as a plain number of Coppets or in shorthand like `3v 12l 5c` (3 Verl Dors, 12 Licks and 5 Coppets, which is 13,061 Coppets).
-4. **Line 3** (optional): how many items per purchase, 1 to 64. Leave it blank for 1.
+2. Write `[Market]` on **line 1**.
+3. Write the price on **line 2**, as a plain number of Coppets or in shorthand like `3v 12l 5c` (3 Verl Dors, 12 Licks and 5 Coppets, which is 13,061 Coppets).
+4. Optionally, write how many items per purchase on **line 3**, from 1 to 64. Leave it blank for 1.
 5. **Right-click the sign while holding the item you want to sell.**
 
 The sign redraws itself as a **STALL COUNTER** with the item, the price and your name.
@@ -191,7 +185,7 @@ The sign redraws itself as a **STALL COUNTER** with the item, the price and your
 
 **The chest is your stock.** To restock, put more in. When it is empty, the counter is sold out. To change a price, break the sign and set it up again.
 
-**To buy from a counter:** right-click the sign once to see the price, then **again within 6 seconds** to pay. The items go straight into your hands.
+To buy from a counter, right-click the sign once to see the price, then **again within 6 seconds** to pay. The items go straight into your hands.
 
 A counter ends when its sign, its chest or the stall is gone.
 
@@ -206,15 +200,10 @@ A counter ends when its sign, its chest or the stall is gone.
 | Renting a stall | 1 Verl Dor (4,096 Coppets) a week |
 | Courier delivery | Free (the horn is the price) |
 
-<Notice tone="info" title="Worth remembering">
-Nobody knows who you are, because listings carry no name. Nothing comes to you on its own, so purchases and earnings wait at the Ledger Keeper. Nothing is lost, because expired, cancelled and evicted items all end up in your stash. And the listing fee is gone the moment you list.
-</Notice>
-
 ## Related pages
 
 <CardGrid>
   <Card title="Money and Wallet" text="Coins, /wallet and Energy Shards." icon="coin" href="/guides/economy/" />
   <Card title="Couriers" text="Get a Horn of Summoning and send items." icon="gift" href="/guides/couriers/" />
   <Card title="Towns" text="Claim land to hide your own entrance." icon="shield" href="/guides/towns/" />
-  <Card title="Economy on the main site" text="The short version in the player guide." icon="book" href="https://www.mysterria.net/en/guide/economy" />
 </CardGrid>

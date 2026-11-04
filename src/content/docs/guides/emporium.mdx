@@ -12,11 +12,11 @@ import hourly from '../../../assets/daily/hourly.png';
 import emporiumMain from '../../../assets/emporium/emporium-main.webp';
 import emporiumIngredients from '../../../assets/emporium/emporium-ingredients.webp';
 
-The **Brilliant Emporium** is a shop that sells Beyonder ingredients, potions, recipes, enchanted books and Mystery Boxes for **Emporium points**. Open it with `/emporium`.
+The **Brilliant Emporium** is a daily shop that sells Beyonder ingredients, potions, recipes, enchanted books and Mystery Boxes for **Emporium points**. Open it with `/emporium`.
 
 <Figure src={emporiumMain} alt="The Emporium main menu with six category icons on two shelves" caption="The Emporium main menu. Each icon on the shelves opens a category or your daily rewards." contain />
 
-Emporium points are their own balance. They are not money, you cannot buy them with Coppets, and they only work in the Emporium. Check your points with `/emporium balance`.
+Emporium points are a separate balance from money. You cannot buy them with Coppets, and they only work in the Emporium. Check your points with `/emporium balance`.
 
 ## How do I get Emporium points?
 
@@ -39,7 +39,7 @@ Open `/daily`, or click **Daily Rewards** in the Emporium main menu. There are t
 | **1 Hour Playtime Reward** | Play 1 hour today, not AFK | 10 + 1 per streak day |
 | **3 Hour Playtime Reward** | Play 3 hours today, not AFK | 10 + 1 per streak day |
 
-The streak bonus stops growing at **+50** per reward. So the login reward reaches its maximum of 60 points at a 25-day streak, and each playtime reward reaches 60 at a 50-day streak. With all three at the maximum you get **180 points a day**.
+The streak bonus stops growing at **+50** per reward. The login reward reaches its maximum of 60 points at a 25-day streak, and each playtime reward reaches 60 at a 50-day streak. With all three at the maximum you get **180 points a day**.
 
 <CardGrid min={280}>
   <Figure src={dailyLogin} alt="The Daily Login Reward tooltip: 14 points, streak bonus +2 per day, ready to claim" caption="Login reward on a 2-day streak: 10 + 2 x 2 = 14 points." />
@@ -52,10 +52,10 @@ The streak bonus stops growing at **+50** per reward. So the login reward reache
 - Miss a day and it starts again at 1.
 - Days follow the server's date.
 
-### Things to know
+### Claiming rewards
 
-- **Claim before the day ends.** Rewards you do not claim today are gone tomorrow. They do not carry over.
-- **AFK time does not count** toward the 1 hour and 3 hour rewards.
+- **Claim before the day ends.** Unclaimed rewards do not carry over to tomorrow.
+- AFK time does not count toward the 1 hour and 3 hour rewards.
 - You get a reminder 5 minutes after joining if your login reward is waiting, and a chat line when you have unclaimed rewards.
 
 ## Voting
@@ -98,7 +98,7 @@ Each item has its own base price. The price you see is the base price moved up o
 
 Enchanted books cost 25 to 40 points before the daily change. They include Mending, Protection IV, Sharpness V, Efficiency V, Fortune III, Unbreaking III and others.
 
-Stronger items appear less often in the daily pick, so a Sequence 4 potion is a rare find.
+Stronger items appear less often in the daily pick.
 
 ## What are Mystery Boxes?
 
@@ -112,10 +112,6 @@ A Mystery Box gives random Beyonder items from one Sequence range. Right-click i
 | Legendary Mystery Box | 2,000 | 1 to 4 | Sequence 4 |
 
 Each box can drop ingredients, recipes, Beyonder Characteristics and potions of any of the 22 Pathways in its range. Ingredients are the most common result and potions the rarest.
-
-<Notice tone="info" title="Good to know">
-The Mystery Box prices also change daily, by up to 20%.
-</Notice>
 
 ## What are Emporium fragments?
 
@@ -133,5 +129,4 @@ These fragments were handed out in seasonal Emporium shops and events. They are 
 <CardGrid>
   <Card title="Battle Pass" text="Tiers that pay up to 3,000 Emporium points at once." icon="scroll" href="/guides/battle-pass/" />
   <Card title="Money and Wallet" text="Coppets, Licks, Verl Dors and Energy Shards." icon="coin" href="/guides/economy/" />
-  <Card title="Economy on the main site" text="The short version in the player guide." icon="book" href="https://www.mysterria.net/en/guide/economy" />
 </CardGrid>

@@ -12,7 +12,7 @@ import seatReadiness from '../../../assets/magic/usurpation-readiness.webp';
 
 <Figure src={leadImage} eager alt="Lord of the Mysteries artwork of eight gods side by side" />
 
-Beyonder Characteristics are conserved. From Sequence 3 upward, every Pathway has only a few seats at each Sequence. When they are all taken, the only way up is to take one from someone who holds it. This page explains the seat limits, the **Overflow** you save up to do that, and the two ways to spend it: contesting a seat, or challenging a [Uniqueness](/magic/uniqueness/).
+From Sequence 3 upward, every Pathway has only a few seats at each Sequence. When they are all taken, the only way up is to spend banked **Overflow** to contest a seat from its holder, and Overflow can also pay to challenge a [Uniqueness](/magic/uniqueness/).
 
 ## How many seats does each Sequence have?
 
@@ -31,7 +31,7 @@ The main site shows who holds every seat right now.
 
 <Button href="https://www.mysterria.net/en/ascension" variant="secondary" iconEnd="external" external>Live seat census on mysterria.net</Button>
 
-Sequence 0 is never contested through a seat bid. Its single throne opens only through the vigil described on the [Sequence 0](/magic/sequence-zero/) page.
+Sequence 0 is never contested through a seat bid. Its single throne opens only through the [Sequence 0 vigil](/magic/sequence-zero/).
 
 ## What is Overflow?
 
@@ -73,14 +73,14 @@ Acting Bottles can be bought and traded, so they fill your bar but never bank Ov
 | 1 | 62,208 | 217,728 | 31,104 | none (Sequence 0 uses the vigil, stake 31,104) |
 
 <Notice tone="info" title="Why Saint seats are hard to contest">
-You contest the bracket one Sequence above you, so a Saint (Sequence 3) seat is contested from Sequence 4. Since Overflow only banks from Sequence 3 on the live server, a Sequence 4 player cannot save up a bid for a Saint seat.
+You contest the bracket one Sequence above you, so a Saint (Sequence 3) seat is contested from Sequence 4. Overflow only banks from Sequence 3, so a Sequence 4 player cannot save up a bid for a Saint seat.
 </Notice>
 
 ## How do I challenge a Uniqueness?
 
 A Uniqueness challenge forces an immediate re-score between you and the current holder of your Pathway's [Uniqueness](/magic/uniqueness/). There is no war, and it resolves as soon as you confirm. Open it from the Uniqueness menu (the **Usurpation** section) or with `/coi usurp uniqueness <pathway>`.
 
-**You need to:**
+To challenge, you need to:
 
 - Be Sequence 4 or stronger on that Pathway (in practice Sequence 3, since you need Overflow).
 - Hold no Uniqueness yourself, and not be withdrawn from Uniqueness evaluation.
@@ -110,20 +110,20 @@ A seat challenge targets a full bracket, not a named player. You must already ha
 
 The menu shows these as a live checklist:
 
-1. **Bracket full**: every seat at the next Sequence is taken.
-2. **Acting at 100%** on that Pathway.
-3. **All rituals complete.**
-4. **Next-Sequence potion in inventory.**
-5. **Not throttled by the progression limiter.**
-6. **Settled into this Pathway.**
-7. **Bracket not shielded**: no verdict on this bracket in the last 14 days.
-8. **Not on a re-declaration cooldown** after withdrawing.
-9. **Enough Overflow for the bid.**
+1. Every seat at the next Sequence is taken.
+2. Your Acting is at 100% on that Pathway.
+3. All rituals are complete.
+4. The next-Sequence potion is in your inventory.
+5. The progression limiter is not throttling you.
+6. You are settled into this Pathway.
+7. The bracket is not shielded, meaning it had no verdict in the last 14 days.
+8. You are not on a re-declaration cooldown after withdrawing.
+9. You have enough Overflow for the bid.
 
 <Figure src={seatReadiness} alt="The Your readiness tab of Contest a Seat with 5 of 9 items met and the bid terms below" caption="The readiness checklist and the bid terms, shown for a test character." />
 
-<Notice tone="ok" title="Your potion is safe in escrow">
-When you bid, your potion is taken into escrow and its expiry stops. It comes back with a fresh expiry on every ending except a win: outbid, refunded, war lost or withdrawn. If you are offline, it waits for your next login. It is only used when you drink it into the seat you won.
+<Notice tone="info" title="Your potion is safe in escrow">
+When you bid, your potion is taken into escrow and its expiry stops. If you are outbid, refunded, lose the war or withdraw, it comes back with a fresh expiry, waiting for your next login if you are offline. It is only used when you drink it into the seat you won.
 </Notice>
 
 ### The bid
@@ -160,7 +160,7 @@ If the named holder has less than **3 hours** of playtime in the last **45 days*
 
 ### Step 3: the war
 
-- The war lasts **7 contested days**. A day counts only if the holder was online and present for at least **20 minutes** of it. Logging in for a moment does not count.
+- The war lasts **7 contested days**. A day counts only if the holder was online and present for at least **20 minutes** of it.
 - War Points come from real Acting gains, measured as a percent of each side's own bar, so different Sequences compete on effort.
 - Standings are announced once a day.
 - A **21-day** real-time cap stops a war from running forever. If the holder has been missing for **48 hours** or more, the challenger can withdraw for free. A war that is actually being fought cannot be abandoned.
@@ -186,7 +186,7 @@ If the named holder has less than **3 hours** of playtime in the last **45 days*
 
 **If the challenger wins**, they must log in within **48 hours** with Acting and rituals still in order, and the potion is drunk into the seat through the normal advancement rules. If they miss that, the seat stays with the holder.
 
-**The deposed holder:**
+The deposed holder then:
 
 - Drops one Sequence, on that Pathway only.
 - Keeps **95%** of the bar at the new Sequence.
@@ -220,10 +220,3 @@ Pathways with no arrival record, including every character that existed before t
 | Withdraw from an open window or a stalled war | `/coi usurp withdraw` |
 
 The `[percent]` is your bid as a percent of your bar. Leave it out to bid the minimum.
-
-## Related pages
-
-- [Uniqueness](/magic/uniqueness/): what the Uniqueness gives and how it is granted
-- [Sequence 0](/magic/sequence-zero/): the vigil, the only way to a throne
-- [Acting](/magic/acting/): how you fill your bar
-- [Acting Overflow and the Usurpation](https://www.mysterria.net/en/news/acting-overflow-the-usurpation): the original announcement (some numbers there are out of date, and this page has the live values)
