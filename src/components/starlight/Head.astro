@@ -25,6 +25,13 @@ const homeUrl = new URL(wikiPath(locale), site).href;
 const isHome = id === '' || id === locale;
 const isNotFound = id === '404' || id.endsWith('/404');
 
+/* The home page is the site, not an article: og:type website (Starlight says article on every page). */
+if (isHome) {
+	for (const tag of route.head) {
+		if (tag.tag === 'meta' && tag.attrs?.property === 'og:type') tag.attrs.content = 'website';
+	}
+}
+
 const pathWithoutLocale = locale ? Astro.url.pathname.replace(new RegExp(`^/${locale}(?=/)`), '') : Astro.url.pathname;
 const xDefault = new URL(pathWithoutLocale, site).href;
 

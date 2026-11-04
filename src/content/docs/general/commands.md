@@ -46,7 +46,6 @@ High Sequence players also use `/coi usurp` ([Usurpation](/magic/usurpation/)), 
 | Command | What it does |
 |---|---|
 | `/wallet` | Your money. See [Economy](/guides/economy/) |
-| `/shop` | The building-block market |
 | `/emporium` | The [Brilliant Emporium](/guides/emporium/) |
 | `/daily` | Daily rewards |
 | `/vote` | Vote for the server |

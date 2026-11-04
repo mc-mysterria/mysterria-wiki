@@ -15,17 +15,21 @@ interface Props {
 	height?: number;
 	/** Keep a small image at its own size, centred, instead of the column's width. */
 	contain?: boolean;
+	/** The page's lead image, above the fold: load it first instead of lazily. */
+	eager?: boolean;
 }
 
-const {src, alt, caption, width, height, contain = false} = Astro.props;
+const {src, alt, caption, width, height, contain = false, eager = false} = Astro.props;
+const loading = eager ? 'eager' : 'lazy';
+const fetchpriority = eager ? 'high' : undefined;
 ---
 
 <figure class:list={['wiki-figure', 'not-content', {'is-contain': contain}]}>
 	{
 		typeof src === 'string' ? (
-			<img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async"/>
+			<img src={src} alt={alt} width={width} height={height} loading={loading} fetchpriority={fetchpriority} decoding="async"/>
 		) : (
-			<Image src={src} alt={alt} width={width} height={height} widths={contain ? undefined : [480, 800, 1200]} sizes={contain ? undefined : '(min-width: 72rem) 46rem, 100vw'}/>
+			<Image src={src} alt={alt} width={width} height={height} loading={loading} fetchpriority={fetchpriority} widths={contain ? undefined : [480, 800, 1200]} sizes={contain ? undefined : '(min-width: 72rem) 46rem, 100vw'}/>
 		)
 	}
 	{caption && <figcaption set:html={caption}/>}
