@@ -6,14 +6,14 @@ sidebar:
   order: 44
 ---
 
-![Helpful image](../../../assets/brewery/beverages.png)
+![Brewery beverages in their bottles](../../../assets/brewery/beverages.png)
 
 ### What is the Brewery?
 
 The **Brewery** adds fermenting and aging to the game. You can brew ordinary alcoholic drinks, coffees, and
 **nourishing beverages** that give Saturation and can replace solid food. Most brews have their own 3D bottle model.
 
-These are everyday drinks, not Beyonder potions. For Beyonder potions see [Introduction to magic](/magic/introduction/).
+These are everyday drinks, not Beyonder potions. For Beyonder potions, see [Brewing and Potions](/magic/brewing/).
 
 However, excess drinking leads to stumbling, distorted speech, scrambled signs, and severe hangovers!
 
@@ -23,11 +23,11 @@ However, excess drinking leads to stumbling, distorted speech, scrambled signs, 
 
 The path from raw ingredients to a perfect 5-star bottle has four steps:
 
-- **Ferment** - Boil ingredients in a heated cauldron for a specific time and gather them in glass bottles.
-- **Distill** - Put the mixture through a brewing stand with Glowstone Dust to concentrate the alcohol (only for
+- **Ferment:** Boil ingredients in a heated cauldron for a specific time and gather them in glass bottles.
+- **Distill:** Put the mixture through a brewing stand with Glowstone Dust to concentrate the alcohol (only for
   high-proof spirits).
-- **Age** - Store the bottles in custom-built wooden barrels to mature over several Minecraft "years".
-- **Seal** - Place the finished bottle in a Brew Sealing Table to freeze its quality and age forever.
+- **Age:** Store the bottles in custom-built wooden barrels to mature over several Minecraft "years".
+- **Seal:** Place the finished bottle in a Brew Sealing Table to freeze its quality and age forever.
 
 ---
 
@@ -35,10 +35,10 @@ The path from raw ingredients to a perfect 5-star bottle has four steps:
 
 Every brew begins in a boiling cauldron.
 
-1. Place a cauldron filled with water over a heat source (e.g., Campfire, fire, magma, or lava).
+1. Place a cauldron filled with water over a heat source (for example a campfire, fire, magma or lava).
 2. Right-click the cauldron with ingredients. Check the recipe details for exact quantities.
 3. Right-click the boiling cauldron with a **Clock** to see how long the ingredients have been cooking.
-4. The bubble particles rising from the cauldron change color over time. Watch them closely to time your recipes without
+4. The bubble particles rising from the cauldron change colour over time. Watch them closely to time your recipes without
    a clock!
 5. Once boiling is complete, right-click the cauldron with empty **Glass Bottles** to extract the base mixture.
 
@@ -46,18 +46,18 @@ Every brew begins in a boiling cauldron.
 
 ### Distillation
 
-Hard liquors and spirits require distillation to purify the flavor and boost the proof.
+Hard liquors and spirits require distillation to purify the flavour and boost the proof.
 
 1. Place your cauldron-boiled bottles into the bottom three slots of a standard **Brewing Stand**.
 2. Put **Glowstone Dust** in the top ingredient slot. The dust acts as a filter and is consumed as the brew distills.
-3. Each pass through the brewing stand counts as one "distill run". Be precise - over-distilling will ruin the quality
+3. Each pass through the brewing stand counts as one "distill run". Be precise. Over-distilling will ruin the quality
    or turn the brew into a ruined potion.
 
 ---
 
 ### Barrel Aging
 
-Aging mature drinks changes their description, improves quality, and adds unique flavor profiles based on the wood type
+Aging mature drinks changes their description, improves quality, and adds unique flavour profiles based on the wood type
 of the barrel.
 
 The wood type of the barrel dictates the aging characteristics. A recipe requiring Spruce barrel aging will only reach
@@ -73,7 +73,7 @@ Warped, Mangrove, Cherry, Bamboo, Pale Oak, and Cut Copper.
 
 An ordinary Minecraft **Barrel** block also ages brews. It holds up to 6 brews and counts as Oak.
 
-![Helpful image](../../../assets/brewery/barrels.webp)
+![The small and large barrel designs](../../../assets/brewery/barrels.webp)
 
 #### Small Barrel (Holds 9 Brews)
 
@@ -86,10 +86,10 @@ An ordinary Minecraft **Barrel** block also ages brews. It holds up to 6 brews a
 
 1. Place 4 fence posts on the ground to serve as the corners/legs of a 3x3x4 cylinder.
 2. Build the horizontal cylinder (3 blocks wide, 4 blocks long):
-    - **Bottom Layer:** 4 stairs on the left, 4 stairs on the right, 4 planks down the center.
-    - **Middle Layer:** 4 planks on the left, 4 planks on the right, 1 plank at the front-center, and 1 plank at the
-      back-center (leave the core hollow).
-    - **Top Layer:** 4 stairs on the left, 4 stairs on the right, 4 planks down the center.
+    - **Bottom Layer:** 4 stairs on the left, 4 stairs on the right, 4 planks down the centre.
+    - **Middle Layer:** 4 planks on the left, 4 planks on the right, 1 plank at the front-centre, and 1 plank at the
+      back-centre (leave the core hollow).
+    - **Top Layer:** 4 stairs on the left, 4 stairs on the right, 4 planks down the centre.
 3. Place a fence post on the bottom-middle plank of the front face (this acts as the spigot).
 4. Place a sign directly above the spigot (middle-middle plank) and write `barrel` on the first line.
 5. Right-click the sign to register.
@@ -109,7 +109,7 @@ brews are ideal for shops and long-term storage.
 
 ### Drunkenness & Hangover Mechanics
 
-Consuming alcoholic beverages increases your drunkenness percentage, triggering custom behavioral changes:
+Consuming alcoholic beverages increases your drunkenness percentage, triggering custom behavioural changes:
 
 1. **Stumbling:** Your character will lose control of their footing and stumble in random directions.
 2. **Drunk Speech:** Your chat messages are distorted. S letters become `sh`, words get mixed up, and you will randomly
@@ -150,10 +150,10 @@ entirely.
 
 | Name                    | Ingredients                                                       | Boil Time | Distill Runs |    Aging     | Potion Effects                                                | Description                                                                    |
 |:------------------------|:------------------------------------------------------------------|:---------:|:------------:|:------------:|:--------------------------------------------------------------|:-------------------------------------------------------------------------------|
-| **Dwarven Stout**       | 8 Wheat, 4 Sweet Berries, 1 Coal                                  |  10 mins  |      0       |   Oak (6y)   | Saturation I-II<br>Resistance I (1-2m)<br>Slowness I (15s)    | A heavy, smoky stout that tastes of earth and hearth. Extremely filling.       |
-| **Liquid Bread**        | 4 Bread, 4 Wheat, 2 Sugar                                         |  6 mins   |      0       |  Birch (2y)  | Saturation II-III<br>Regeneration I (10-30s)                  | The ultimate survival drink, favored by fasting monks. Literally liquid bread. |
-| **Elven Honeymead**     | 8 Sugar Cane, 2 Honey Bottles, 4 Melon Slices                     |  5 mins   |      0       | Acacia (15y) | Saturation II<br>Speed I (1-2m)<br>Regeneration I-II (10-20s) | Sweet as liquid sunlight. Can sustain a traveler for days in the wilderness.   |
-| **Golden Feast Elixir** | 2 Golden Carrots, 1 Glowstone Dust, 6 Sweet Berries, 4 Sugar Cane |  12 mins  |      1       | Spruce (10y) | Saturation IV-V<br>Glowing I (60s)<br>Speed I-II (30-60s)     | A shimmering, magical golden broth that cures even extreme hunger.             |
+| **Dwarven Stout**       | 8 Wheat, 4 Sweet Berries, 1 Coal                                  |  10 min   |      0       |   Oak (6y)   | Saturation I-II<br>Resistance I (1-2m)<br>Slowness I (15s)    | A heavy, smoky stout that tastes of earth and hearth. Extremely filling.       |
+| **Liquid Bread**        | 4 Bread, 4 Wheat, 2 Sugar                                         |  6 min    |      0       |  Birch (2y)  | Saturation II-III<br>Regeneration I (10-30s)                  | The ultimate survival drink, favoured by fasting monks. Literally liquid bread. |
+| **Elven Honeymead**     | 8 Sugar Cane, 2 Honey Bottles, 4 Melon Slices                     |  5 min    |      0       | Acacia (15y) | Saturation II<br>Speed I (1-2m)<br>Regeneration I-II (10-20s) | Sweet as liquid sunlight. Can sustain a traveler for days in the wilderness.   |
+| **Golden Feast Elixir** | 2 Golden Carrots, 1 Glowstone Dust, 6 Sweet Berries, 4 Sugar Cane |  12 min   |      1       | Spruce (10y) | Saturation IV-V<br>Glowing I (60s)<br>Speed I-II (30-60s)     | A shimmering, magical golden broth that cures even extreme hunger.             |
 
 #### Chaotic and funny brews
 
@@ -161,26 +161,26 @@ These drinks have unique, funny, or chaotic side effects that make player intera
 
 | Name                       | Ingredients                                                 | Boil Time | Distill Runs |     Aging     | Potion Effects                                                                                   | Description                                                                         |
 |:---------------------------|:------------------------------------------------------------|:---------:|:------------:|:-------------:|:-------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------|
-| **Gnomish Giddy Juice**    | 2 Red Mushrooms, 2 Brown Mushrooms, 4 Glow Berries, 4 Sugar |  4 mins   |      2       |   Oak (1y)    | Saturation I<br>Nausea I-II (20-40s)<br>Jump Boost II-IV (30-60s)<br>Glowing I (30s)             | A bubbly, glowing pink concoction. Makes you jump high and feel incredibly giddy!   |
-| **Pirate's Grog**          | 6 Kelp, 10 Sugar Cane, 6 Melon Slices                       |  8 mins   |      2       | Dark Oak (5y) | Saturation I-II<br>Water Breathing I (1-2m)<br>Hero of the Village I (30s)                       | Spicy, salty grog that keeps the scurvy away and makes you feel like a pirate king. |
-| **Glowing Mushroom Vodka** | 10 Potatoes, 3 Red Mushrooms, 3 Brown Mushrooms             |  18 mins  |      5       |       -       | Weakness (80s)<br>Nausea (27s)<br>Night Vision (50-80s)<br>Blindness (2-12s)<br>Slowness (3-10s) | A psychedelic brew. Literally glows in the dark and distorts reality.               |
+| **Gnomish Giddy Juice**    | 2 Red Mushrooms, 2 Brown Mushrooms, 4 Glow Berries, 4 Sugar |  4 min    |      2       |   Oak (1y)    | Saturation I<br>Nausea I-II (20-40s)<br>Jump Boost II-IV (30-60s)<br>Glowing I (30s)             | A bubbly, glowing pink concoction. Makes you jump high and feel incredibly giddy!   |
+| **Pirate's Grog**          | 6 Kelp, 10 Sugar Cane, 6 Melon Slices                       |  8 min    |      2       | Dark Oak (5y) | Saturation I-II<br>Water Breathing I (1-2m)<br>Hero of the Village I (30s)                       | Spicy, salty grog that keeps the scurvy away and makes you feel like a pirate king. |
+| **Glowing Mushroom Vodka** | 10 Potatoes, 3 Red Mushrooms, 3 Brown Mushrooms             |  18 min   |      5       |       -       | Weakness (80s)<br>Nausea (27s)<br>Night Vision (50-80s)<br>Blindness (2-12s)<br>Slowness (3-10s) | A psychedelic brew. Literally glows in the dark and distorts reality.               |
 
 #### Classic beers and ales
 
 | Name          | Ingredients | Boil Time | Distill Runs |     Aging     | Lore / Description           |
 |:--------------|:------------|:---------:|:------------:|:-------------:|:-----------------------------|
-| **Wheatbeer** | 3 Wheat     |  8 mins   |      0       |  Birch (2y)   | Refreshing and crisp.        |
-| **Beer**      | 6 Wheat     |  8 mins   |      0       |   Any (3y)    | The traditional pub ale.     |
-| **Darkbeer**  | 6 Wheat     |  8 mins   |      0       | Dark Oak (8y) | Roasted, deep, malty flavor. |
+| **Wheatbeer** | 3 Wheat     |  8 min    |      0       |  Birch (2y)   | Refreshing and crisp.        |
+| **Beer**      | 6 Wheat     |  8 min    |      0       |   Any (3y)    | The traditional pub ale.     |
+| **Darkbeer**  | 6 Wheat     |  8 min    |      0       | Dark Oak (8y) | Roasted, deep, malty flavor. |
 
 #### Wines, meads and ciders
 
 | Name            | Ingredients            | Boil Time | Distill Runs |   Aging   | Potion Effects         | Description                                         |
 |:----------------|:-----------------------|:---------:|:------------:|:---------:|:-----------------------|:----------------------------------------------------|
-| **Red Wine**    | 5 Sweet Berries        |  5 mins   |      0       | Any (20y) | None                   | Full-bodied, requires deep barrel aging.            |
-| **Mead**        | 6 Sugar Cane           |  3 mins   |      0       | Oak (4y)  | None                   | Classic honey-like wine.                            |
-| **Apple Mead**  | 6 Sugar Cane, 2 Apples |  4 mins   |      0       | Oak (4y)  | Water Breathing (150s) | Sweet apple mead that helps you breathe underwater. |
-| **Apple Cider** | 14 Apples              |  7 mins   |      0       | Any (3y)  | None                   | Sweet, refreshing apple cider.                      |
+| **Red Wine**    | 5 Sweet Berries        |  5 min    |      0       | Any (20y) | None                   | Full-bodied, requires deep barrel aging.            |
+| **Mead**        | 6 Sugar Cane           |  3 min    |      0       | Oak (4y)  | None                   | Classic honey-like wine.                            |
+| **Apple Mead**  | 6 Sugar Cane, 2 Apples |  4 min    |      0       | Oak (4y)  | Water Breathing (150s) | Sweet apple mead that helps you breathe underwater. |
+| **Apple Cider** | 14 Apples              |  7 min    |      0       | Any (3y)  | None                   | Sweet, refreshing apple cider.                      |
 
 #### Spirits and liquors
 
@@ -188,27 +188,27 @@ High-alcohol drinks that require distillation:
 
 | Name                        | Ingredients                      | Boil Time | Distill Runs |    Aging     | Potion Effects                                                | Description                                                 |
 |:----------------------------|:---------------------------------|:---------:|:------------:|:------------:|:--------------------------------------------------------------|:------------------------------------------------------------|
-| **Calvados (Apple Liquor)** | 12 Apples                        |  16 mins  |      3       | Acacia (6y)  | None                                                          | Sour like acid at worst, a premium brandy at best.          |
-| **Scotch Whiskey**          | 10 Wheat                         |  10 mins  |      2       | Spruce (18y) | None                                                          | A single-malt whiskey with deep wood notes.                 |
-| **Golden Rum**              | 18 Sugar Cane                    |  6 mins   |      2       |  Oak (14y)   | Fire Resistance (20-100s)<br>Poison (0-30s)                   | Warm spiced gold rum that grants temporary fire protection. |
-| **Russian Vodka**           | 10 Potatoes                      |  15 mins  |      3       |      -       | Weakness (15s)<br>Poison (10s)                                | A harsh potato spirit. Almost undrinkable at poor quality.  |
-| **Old Tom Gin**             | 9 Wheat, 6 Blue Flowers, 1 Apple |  6 mins   |      2       |      -       | None                                                          | Infused with the delicate taste of juniper.                 |
-| **Tequila Anejo**           | 8 Cactus                         |  15 mins  |      2       | Birch (12y)  | None                                                          | Spirit of the desert, aged in birch wood.                   |
-| **Strong Absinthe**         | 15 Grass                         |  3 mins   |      6       |      -       | Poison (15-25s)                                               | High-proof herbal liquor. Highly toxic but powerful.        |
-| **Green Absinthe**          | 17 Grass, 2 Poisonous Potatoes   |  5 mins   |      6       |      -       | Poison (25-40s)<br>Instant Damage II<br>Night Vision (40-60s) | A poisonous-looking lime green liquor. Distorts vision.     |
-| **Golden Vodka**            | 10 Potatoes, 2 Gold Nuggets      |  18 mins  |      3       |      -       | Weakness (28s)<br>Poison (4s)                                 | Shimmering golden vodka.                                    |
-| **Blazing Whiskey**         | 10 Wheat, 2 Blaze Powder         |  12 mins  |      3       | Spruce (18y) | None                                                          | Gives a burning feeling in your mouth when drunk!           |
+| **Calvados (Apple Liquor)** | 12 Apples                        |  16 min   |      3       | Acacia (6y)  | None                                                          | Sour like acid at worst, a premium brandy at best.          |
+| **Scotch Whiskey**          | 10 Wheat                         |  10 min   |      2       | Spruce (18y) | None                                                          | A single-malt whiskey with deep wood notes.                 |
+| **Golden Rum**              | 18 Sugar Cane                    |  6 min    |      2       |  Oak (14y)   | Fire Resistance (20-100s)<br>Poison (0-30s)                   | Warm spiced gold rum that grants temporary fire protection. |
+| **Russian Vodka**           | 10 Potatoes                      |  15 min   |      3       |      -       | Weakness (15s)<br>Poison (10s)                                | A harsh potato spirit. Almost undrinkable at poor quality.  |
+| **Old Tom Gin**             | 9 Wheat, 6 Blue Flowers, 1 Apple |  6 min    |      2       |      -       | None                                                          | Infused with the delicate taste of juniper.                 |
+| **Tequila Anejo**           | 8 Cactus                         |  15 min   |      2       | Birch (12y)  | None                                                          | Spirit of the desert, aged in birch wood.                   |
+| **Strong Absinthe**         | 15 Grass                         |  3 min    |      6       |      -       | Poison (15-25s)                                               | High-proof herbal liquor. Highly toxic but powerful.        |
+| **Green Absinthe**          | 17 Grass, 2 Poisonous Potatoes   |  5 min    |      6       |      -       | Poison (25-40s)<br>Instant Damage II<br>Night Vision (40-60s) | A poisonous-looking lime green liquor. Distorts vision.     |
+| **Golden Vodka**            | 10 Potatoes, 2 Gold Nuggets      |  18 min   |      3       |      -       | Weakness (28s)<br>Poison (4s)                                 | Shimmering golden vodka.                                    |
+| **Blazing Whiskey**         | 10 Wheat, 2 Blaze Powder         |  12 min   |      3       | Spruce (18y) | None                                                          | Gives a burning feeling in your mouth when drunk!           |
 
 #### Specialty and sobering brews
 
-Most of these are non-alcoholic or help you sober up. Advocaat is the exception: it has alcohol.
+Most of these are non-alcoholic or help you sober up. Advocaat is the exception, because it has alcohol.
 
 | Name                  | Ingredients                           | Boil Time | Distill Runs |   Aging   | Potion Effects                                         | Description                                          |
 |:----------------------|:--------------------------------------|:---------:|:------------:|:---------:|:-------------------------------------------------------|:-----------------------------------------------------|
-| **Potato Soup**       | 5 Potatoes, 3 Grass                   |  3 mins   |      0       |     -     | Instant Health (stronger at high quality)              | Hot nourishing soup, restores health.                |
-| **Strong Coffee**     | 12 Cocoa Beans, 2 Milk Buckets        |  2 mins   |      0       |     -     | Speed (30-140s)<br>Regeneration (2-5s)<br>Alcohol: -6% | Perfect for clearing your head and sober up quickly. |
-| **Advocaat (Eggnog)** | 5 Eggs, 2 Sugar, 1 Milk Bucket        |  2 mins   |      0       | Any (3y)  | None                                                   | Creamy egg liquor, made with raw egg. Alcoholic.     |
-| **Hot Chocolate**     | 3 Cookies                             |  2 mins   |      0       |     -     | Haste (40s)                                            | Hot sugary cocoa that gives you energy to mine.      |
+| **Potato Soup**       | 5 Potatoes, 3 Grass                   |  3 min    |      0       |     -     | Instant Health (stronger at high quality)              | Hot nourishing soup, restores health.                |
+| **Strong Coffee**     | 12 Cocoa Beans, 2 Milk Buckets        |  2 min    |      0       |     -     | Speed (30-140s)<br>Regeneration (2-5s)<br>Alcohol: -6% | Perfect for clearing your head and sober up quickly. |
+| **Advocaat (Eggnog)** | 5 Eggs, 2 Sugar, 1 Milk Bucket        |  2 min    |      0       | Any (3y)  | None                                                   | Creamy egg liquor, made with raw egg. Alcoholic.     |
+| **Hot Chocolate**     | 3 Cookies                             |  2 min    |      0       |     -     | Haste (40s)                                            | Hot sugary cocoa that gives you energy to mine.      |
 | **Iced Coffee**       | 8 Cookies, 4 Snowballs, 1 Milk Bucket |   1 min   |      0       |     -     | Speed (10s)<br>Regeneration (30s)<br>Alcohol: -8%      | The best drink to sober up fast. Cold and sweet.     |
 
 :::note[Ingredient note]
@@ -219,10 +219,10 @@ Most of these are non-alcoholic or help you sober up. Advocaat is the exception:
 
 :::tip[Tips for success]
 
-- **Read the Hints** - If your brew is ruined, hover over it. The tooltip contains diagnostic hints like
+- **Read the Hints:** If your brew is ruined, hover over it. The tooltip contains diagnostic hints like
   `Too much time in the oven...` or `One of the ingredients doesn't taste good...` to help you fix your mistakes.
-- **Double Check Wood Types** - Make sure the barrel structure is built entirely of the required wood type (e.g.
-  Spruce, Oak) so your high-quality recipes age correctly.
-- **Seal Your Masterpieces** - Always use the Brew Sealing Table on your finished 5-star brews before placing them in
+- **Double Check Wood Types:** Make sure the barrel structure is built entirely of the required wood type (for example
+  Spruce or Oak) so your high-quality recipes age correctly.
+- **Seal Your Masterpieces:** Always use the Brew Sealing Table on your finished 5-star brews before placing them in
   player shops or storing them.
   :::

@@ -6,11 +6,11 @@ sidebar:
   order: 45
 ---
 
-Two rare items change the rules of Beyonder progress: the **Pathway Transfer Token** lets you switch Pathway without starting over, and the **Anti-Control Charm** saves you from losing control once.
+Two rare items change the rules of Beyonder progress. The **Pathway Transfer Token** lets you switch Pathway without starting over, and the **Anti-Control Charm** saves you from losing control once.
 
 ## Pathway Transfer Token
 
-The Pathway Transfer Token gives you **one free Pathway transfer**. You move to another of the 22 Pathways and keep your **Sequence and your acting progress**.
+The Pathway Transfer Token gives you **one free Pathway transfer**. You move to another of the 22 Pathways and keep your **Sequence and your Acting progress**.
 
 ### How do I use it?
 
@@ -27,7 +27,7 @@ The game checks your Sequence again when you open the menu. If you reached Seque
 - For **30 days** you cannot contest a seat on your new Pathway. See [Usurpation](/magic/usurpation/).
 - Fool Beyonders lose their Marionettes.
 
-You cannot transfer to the Pathway you already have, and boons cannot be transferred. A [boon](/magic/boons/) is changed with a Boon Token instead.
+You cannot transfer to the Pathway you already have, and Boons cannot be transferred. A [Boon](/magic/boons/) is changed with a Boon Token instead.
 
 ### Where do I get one?
 

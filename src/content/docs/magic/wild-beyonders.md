@@ -36,7 +36,7 @@ If you die or log out, the Wild Beyonder loses track of you. It does not come af
 | Most at once | 20 on the whole server (40 on Wild Tide) |
 | Despawn | After 60 seconds with no player within 50 blocks |
 
-So they do not wait for you in fixed places: they appear around players who are out exploring. On **Wild Tide** days twice as many spawn and twice as many can exist at once. See [Daily Tides](/guides/tides/).
+So they do not wait for you in fixed places. They appear around players who are out exploring. On **Wild Tide** days twice as many spawn and twice as many can exist at once. See [Daily Tides](/guides/tides/).
 
 ### How strong are they?
 
@@ -62,7 +62,7 @@ A Wild Beyonder has at most 8 offers, all from its own Pathway:
 
 | Offer | When it appears |
 |---|---|
-| Ingredients | Always: 1 or 2 ingredients for each Sequence from its own down to 9 |
+| Ingredients | Always, with 1 or 2 ingredients for each Sequence from its own down to 9 |
 | A potion | 30% chance, only if the Wild Beyonder is Sequence 8 or stronger. The potion is its own Sequence or weaker |
 | A Beyonder Characteristic | 50% chance, only if it is Sequence 7 or stronger. Always its own Sequence |
 | A potion recipe | 20% chance, only if it is Sequence 6 or stronger. Its own Sequence or up to 2 weaker |
@@ -94,21 +94,21 @@ Only Wild Beyonders that spawned naturally give rewards. Ones summoned by abilit
 | Beyonder Characteristic of its Sequence | 30% (Sequence 9), 25% (8), 20% (7), 15% (6), 10% (5) |
 | Ingredients | 15% for each Sequence from its own down to 9 |
 | [Sealed Artifact](/magic/sealed-artifacts/) | 5% (Sequence 6), 10% (Sequence 5) |
-| Acting | Through the World source, capped like all [acting](/magic/acting/) |
+| Acting | Through the World source, capped like all [Acting](/magic/acting/) |
 
-The bounty board (`/bounty`) sometimes offers a **Wild Beyonder Hunt** for Sequence 9 to 5 players, which pays extra acting.
+The bounty board (`/bounty`) sometimes offers a **Wild Beyonder Hunt** for Sequence 9 to 5 players, which pays extra Acting.
 
 ## Which Pathway abilities work on Wild Beyonders?
 
-Many acting methods ask you to hunt or control other Beyonders, and Wild Beyonders let you do that without bothering real players. Confirmed examples:
+Many Acting methods ask you to hunt or control other Beyonders, and Wild Beyonders let you do that without bothering real players. Confirmed examples:
 
 - **Hanged Man:** Grazing their souls
 - **Door:** Replication can copy their abilities
 - **Fool:** turning them into Marionettes
 - **Abyss:** a Wild Beyonder kill satisfies Bloodlust
 
-:::caution[Abyss acting]
-Killing Wild Beyonders does **not** digest the Abyss potion. Abyss acting comes only from killing Beyonder players of a qualifying Sequence.
+:::caution[Abyss Acting]
+Killing Wild Beyonders does **not** digest the Abyss potion. Abyss Acting comes only from killing Beyonder players of a qualifying Sequence.
 :::
 
 Not every copying ability works on them, so test before you rely on it.

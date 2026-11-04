@@ -14,7 +14,7 @@ A Sealed Artifact is an item that holds a Beyonder ability. Anyone can use it, e
 | **Expired potion** | A Sequence potion that is not drunk within **48 hours** turns into a Sealed Artifact of the same Pathway and Sequence. The ability inside is random. If no artifact can be made for it, you get a Beyonder Characteristic instead, and failing that a Ruined Potion |
 | **Paragon crafting** | Paragon Beyonders make them on purpose (see below) |
 | **Wild Beyonders** | A naturally spawned [Wild Beyonder](/magic/wild-beyonders/) drops one 5% of the time at Sequence 6 and 10% at Sequence 5 |
-| **Church vault** | A church can store artifacts in its Artifact Vault, and members can request to borrow one. See [Churches](/magic/churches/) |
+| **Church vault** | A church can store artifacts in its Church Vault, and members can request to borrow one. See [Churches](/magic/churches/) |
 | **Other players** | Artifacts are ordinary items, so you can trade for them |
 
 Potions held as a stake in a Usurpation do not expire.
@@ -39,7 +39,7 @@ Hold it and right-click to use its ability (left-click uses the second ability o
 
 ### Which abilities can be sealed into an artifact?
 
-Most active abilities. Passive abilities, Contracts and Deity Authority can never be sealed. The Door Pathway's **Recording** can copy a spell from an artifact you hold in your off hand, but with half its usual chance of success.
+Most active abilities. Passive abilities, Contracts and Deity Authority can never be sealed. The Door Pathway's **Recording** can copy a spell from an artifact you hold in your offhand, but with half its usual chance of success.
 
 ## What are the drawbacks?
 
@@ -73,12 +73,12 @@ A Grade 0 artifact can be deadly to its own user. Check the drawback list in the
 | Death | 4 | Artifact Sealing | Seals one artifact's drawbacks for up to 24 hours |
 | Tyrant | 4 | Artifact Sealing | Suppresses drawbacks of all nearby artifacts for 30 seconds, or seals their abilities |
 
-The Sun Pathway's Sequence 4 **Beyonder Characteristic Purification** can also dissolve an artifact you hold in your off hand back into its Beyonder Characteristic.
+The Sun Pathway's Sequence 4 **Beyonder Characteristic Purification** can also dissolve an artifact you hold in your offhand back into its Beyonder Characteristic.
 
 ## Related pages
 
 - [Wild Beyonders](/magic/wild-beyonders/): a source of artifacts
-- [Churches](/magic/churches/): the church Artifact Vault
+- [Churches](/magic/churches/): the Church Vault
 - [Loot and pity](/magic/loot/): where potions come from
 - [Madness and Mutation](/magic/mutation/): what Madness does to you
 - Pathway abilities on the main site: [Paragon](https://www.mysterria.net/en/pathways/paragon), [Twilight Giant](https://www.mysterria.net/en/pathways/giant), [Death](https://www.mysterria.net/en/pathways/death), [Tyrant](https://www.mysterria.net/en/pathways/tyrant), [Sun](https://www.mysterria.net/en/pathways/sun)

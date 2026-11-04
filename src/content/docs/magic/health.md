@@ -6,7 +6,7 @@ sidebar:
   order: 8
 ---
 
-When you advance, your hearts do not change. Your body does: every Beyonder has a hidden **Beyonder HP** pool that grows with each Sequence. Spells and Beyonder creatures hit that pool, and your hearts show what share of it is left.
+When you advance, your hearts do not change. Your body does. Every Beyonder has a hidden **Beyonder HP** pool that grows with each Sequence. Spells and Beyonder creatures hit that pool, and your hearts show what share of it is left.
 
 ## How much HP does each Sequence have?
 
@@ -25,12 +25,12 @@ When a spell hits you, its damage is taken from your Beyonder HP, and your heart
 **Example:**
 
 - Player A is a Sequence 4 Sun Beyonder with **450 HP**. Player B is a Sequence 8 Fool with **75 HP**.
-- A hits B with a spell for 60 damage. B has 15 HP left: **80% of their hearts are gone** in one spell.
+- A hits B with a spell for 60 damage. B has 15 HP left, so **80% of their hearts are gone** in one spell.
 - B hits A with a spell for 28 damage. A has 422 HP left and loses barely more than half a heart.
 
 ## Does armour protect me from spells?
 
-No. **Beyonder spell damage is true damage**: armour, enchantments, potion effects and shields do not reduce it. The only vanilla protection that works is **Absorption**, and it is capped at **40% of your max health**.
+No. **Beyonder spell damage is true damage**, so armour, enchantments, potion effects and shields do not reduce it. The only vanilla protection that works is **Absorption**, and it is capped at **40% of your max HP**.
 
 ## PvP damage limits
 

@@ -13,7 +13,7 @@ At the start of every Minecraft night, the server rolls once. There is a **10% c
 
 - It only happens in the main Overworld, not in the Nether, the End or other worlds.
 - A Minecraft night lasts about 8 real minutes and a full day about 20, so you can see several rolls in one evening of play.
-- On **Crimson Tide** days the chance is five times higher: **50% per night**. See [Daily Tides](/guides/tides/) for when the Crimson Tide comes round (normally once a week).
+- On **Crimson Tide** days the chance is five times higher, at **50% per night**. See [Daily Tides](/guides/tides/) for when the Crimson Tide comes round (normally once a week).
 
 ### How do I know it has started?
 
@@ -59,7 +59,7 @@ Yes. A Moon Beyonder at Sequence 1 (Beauty Goddess) can raise one with **Moon Au
 ## How do I make the most of it?
 
 - **Hunt.** With x2.5 creature spawns, a Crimson Moon is the best time to farm droppable ingredients. See [Beyonder Creatures](/magic/creatures/) for drop chances.
-- **Check your bounties.** The bounty board (`/bounty`) can offer a **Crimson Moon Hunt** that pays extra acting.
+- **Check your bounties.** The bounty board (`/bounty`) can offer a **Crimson Moon Hunt** that pays extra Acting.
 - **Fish near shelter.** If a catch turns into a fight you can fall back.
 - **Do not go out unprepared.** You cannot skip the night, and spawns pile up fast.
 
@@ -67,5 +67,5 @@ Yes. A Moon Beyonder at Sequence 1 (Beauty Goddess) can raise one with **Moon Au
 
 - [Beyonder Creatures](/magic/creatures/): what spawns and what it drops
 - [Daily Tides](/guides/tides/): the Crimson Tide makes a Crimson Moon five times as likely
-- [Acting](/magic/acting/): bounties and other acting sources
+- [Acting](/magic/acting/): bounties and other Acting sources
 - Main site guide: [Activities](https://www.mysterria.net/en/guide/activities)

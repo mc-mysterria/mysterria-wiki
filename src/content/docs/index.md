@@ -2,7 +2,7 @@
 title: Mysterria
 template: splash
 hero:
-  tagline: Lord of The Mysteries inspired Minecraft server. All you need to know about the server can be found here!
+  tagline: A Minecraft server inspired by Lord of the Mysteries. Everything you need to know about the server is here.
   actions:
     - text: Quick Start
       link: /general/start

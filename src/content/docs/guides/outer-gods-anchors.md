@@ -35,7 +35,7 @@ For about **24 hours** the seed is hidden. Every 30 minutes the chat carries a r
 
 ### Phase 2: The anchor awakens
 
-When incubation ends, the chat announces the god and the **coordinates**. The seed becomes a **Heart**: a Magma block inside a Bedrock shell. Corruption spreads from it in tendrils, up to 400 blocks out, and defenders spawn: [Wild Beyonders](/magic/wild-beyonders/), hostile NPCs and, from stage 2, mini-bosses.
+When incubation ends, the chat announces the god and the **coordinates**. The seed becomes a **Heart**, a Magma block inside a Bedrock shell. Corruption spreads from it in tendrils, up to 400 blocks out, and defenders spawn: [Wild Beyonders](/magic/wild-beyonders/), hostile NPCs and, from stage 2, mini-bosses.
 
 `/oga where` lists every active anchor with its coordinates, integrity, stage and direction from you.
 
@@ -64,7 +64,7 @@ The corruption never enters land claims, and it never touches chests, other cont
 
 ### What happens to an anchor nobody fights?
 
-After 72 hours with nobody fighting it, the god starves: it stops healing, loses Integrity and finally collapses on its own. Contributors then get only **half** of what a victory would have paid.
+After 72 hours with nobody fighting it, the god starves. It stops healing, loses Integrity and finally collapses on its own. Contributors then get only **half** of what a victory would have paid.
 
 ## Which tools help against the corruption?
 
@@ -79,7 +79,7 @@ Pylons and Censers also earn Contribution Points, so players who do not like fig
 
 ## What is Corruption Pressure?
 
-Inside the field a **Corruption Pressure** bar fills up. Weaker Sequences fill it faster: a Sequence 9 Beyonder fills it about ten times as fast as a Sequence 0.
+Inside the field a **Corruption Pressure** bar fills up. Weaker Sequences fill it faster. A Sequence 9 Beyonder fills it about ten times as fast as a Sequence 0.
 
 - Kills relieve pressure, and standing by a fuelled Pylon drains it.
 - Above 50% the god's own debuff starts to affect you, getting stronger as the bar fills.
@@ -89,19 +89,19 @@ Step outside for 30 seconds to let it drain.
 
 ## What happens if I fall in battle?
 
-You cannot die inside an anchor. Fatal damage leaves you **Downed**: you cannot move or cast and you glow. An ally who sneaks next to you for 5 seconds revives you with 10 health. If nobody revives you within 45 seconds, you are put outside the field with a short debuff and lose 15% of your score for that anchor. You keep your items.
+You cannot die inside an anchor. Fatal damage leaves you **Downed**. You cannot move or cast, and you glow. An ally who sneaks next to you for 5 seconds revives you with 10 health. If nobody revives you within 45 seconds, you are put outside the field with a short debuff and lose 15% of your score for that anchor. You keep your items.
 
 ## How do Contribution Points work?
 
 You earn Contribution Points for kills, mini-bosses, breaking a Nexus, rituals, fuelling Pylons, cleansing, reviving allies, holding ground while you fight, and a big bonus for breaking the Heart. Holding ground only counts if you have fought in the last 3 minutes, so standing idle earns nothing.
 
-Weaker Sequences earn more for the same work: up to x1.3 at Sequence 9, down to x0.85 at Sequence 0. You need at least 10 points on an anchor to be paid. Your points are saved between anchors, so you can save up.
+Weaker Sequences earn more for the same work. They get up to x1.3 at Sequence 9, down to x0.85 at Sequence 0. You need at least 10 points on an anchor to be paid. Your points are saved between anchors, so you can save up.
 
 ## What can I buy in /oga rewards?
 
 | Reward | Price | Limit |
 |---|---|---|
-| Boon Token, one for each of the ten [boons](/magic/boons/) | 900 | 1 of each per month |
+| Boon Token, one for each of the ten [Boons](/magic/boons/) | 900 | 1 of each per month |
 | [Pathway Transfer Token](/guides/special-items/) | 1,200 | 1 per month |
 | [Anti-Control Charm](/guides/special-items/) | 200 | 1 per week |
 | Recipe Token (Sequence 9+ / 7+ / 5+ / 4+) | 50 / 110 / 220 / 380 | 4 / 3 / 2 / 1 per week |
@@ -111,12 +111,12 @@ Weaker Sequences earn more for the same work: up to x1.3 at Sequence 9, down to 
 | Ingredient Token | 45 | 6 per week |
 | Acting Bottle 500 | 15 | No limit |
 | Acting Bottle 1,000 / 5,000 / 10,000 | 28 / 130 / 240 | 8 / 3 / 2 per week |
-| Ritual Book I / II | 160 / 300 | 2 / 1 per week |
-| Ritual Book III (skips the whole ritual) | 550 | 1 per month |
+| Ritual Book (Tier I / Tier II) | 160 / 300 | 2 / 1 per week |
+| Ritual Book (Tier III), skips the whole ritual | 550 | 1 per month |
 | Censer | 60 | No limit |
 | Warding Pylon Kit (Lodestone and 8 Glowstone Dust) | 40 | No limit |
 
-A token's Sequence is the strongest you can pick: a "Sequence 5+" token lets you choose anything from Sequence 9 to 5. Weekly limits refill on Monday at 00:00 UTC, monthly ones on the 1st.
+A token's Sequence is the strongest you can pick. A "Sequence 5+" token lets you choose anything from Sequence 9 to 5. Weekly limits refill on Monday at 00:00 UTC, monthly ones on the 1st.
 
 ## Rules
 

@@ -14,9 +14,9 @@ You can see it on the blue bar at the top of your screen (or the movable bar of 
 
 Your maximum Spirituality depends on three things:
 
-**Maximum = base for your Sequence × (0.5 + 0.5 × your acting progress) × your Pathway's multiplier**
+**Maximum = base for your Sequence × (0.5 + 0.5 × your Acting progress) × your Pathway's multiplier**
 
-So right after you advance, with 0% acting, you have **half** of your full maximum. It grows smoothly as you act, and reaches the full value at 100% acting. It never goes above that. At Sequence 0 it always counts as full.
+So right after you advance, with 0% Acting, you have **half** of your full maximum. It grows smoothly as you act, and reaches the full value at 100% Acting. It never goes above that. At Sequence 0 it always counts as full.
 
 | Sequence | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -24,21 +24,21 @@ So right after you advance, with 0% acting, you have **half** of your full maxim
 
 ### Pathway multipliers
 
-Some Pathways have more Spirituality than others. Pathways not listed here use ×1.0.
+Some Pathways have more Spirituality than others. Pathways not listed here use x1.0.
 
 | Pathway | Multiplier by Sequence |
 |---|---|
-| Fool | ×1.1 at 9, ×1.15 at 8, ×1.2 at 7, ×1.25 at 6 to 5, ×1.4 at 4 to 3, ×1.6 at 2 to 0 |
-| Moon | ×1.08 at 9 to 3, ×1.7 at 2, ×1.8 at 1, ×1.89 at 0 |
-| Door | ×1.0 at 9 to 8, ×1.2 at 7 to 5, ×1.35 at 4 to 3, ×1.5 at 2, ×1.65 at 1 to 0 |
-| Red Priest | ×1.02 at 9, ×1.08 at 8, ×1.15 at 7, ×1.25 at 6, ×1.3 at 5 to 4, ×1.4 at 3, ×1.55 at 2 to 0 |
-| Wheel of Fortune | ×1.1 at 9, ×1.15 at 8 to 7, ×1.4 at 6, ×1.45 at 5 to 0 |
-| Darkness | ×1.15 at 9 to 7, ×1.3 at 6 to 0 |
-| Death | ×1.1 at 9, ×1.15 at 8, ×1.2 at 7 to 0 |
-| Hanged Man | ×1.05 at 9, ×1.12 at 8 to 0 |
-| Twilight Giant | ×1.0 at 9 to 5, ×1.2 at 4 to 0 |
+| Fool | x1.1 at 9, x1.15 at 8, x1.2 at 7, x1.25 at 6 to 5, x1.4 at 4 to 3, x1.6 at 2 to 0 |
+| Moon | x1.08 at 9 to 3, x1.7 at 2, x1.8 at 1, x1.89 at 0 |
+| Door | x1.0 at 9 to 8, x1.2 at 7 to 5, x1.35 at 4 to 3, x1.5 at 2, x1.65 at 1 to 0 |
+| Red Priest | x1.02 at 9, x1.08 at 8, x1.15 at 7, x1.25 at 6, x1.3 at 5 to 4, x1.4 at 3, x1.55 at 2 to 0 |
+| Wheel of Fortune | x1.1 at 9, x1.15 at 8 to 7, x1.4 at 6, x1.45 at 5 to 0 |
+| Darkness | x1.15 at 9 to 7, x1.3 at 6 to 0 |
+| Death | x1.1 at 9, x1.15 at 8, x1.2 at 7 to 0 |
+| Hanged Man | x1.05 at 9, x1.12 at 8 to 0 |
+| Twilight Giant | x1.0 at 9 to 5, x1.2 at 4 to 0 |
 
-For example, a Moon Deity has about 189,000 Spirituality, while a Sequence 9 Seer with full acting has 110.
+For example, a Moon Deity has about 189,000 Spirituality, while a Sequence 9 Seer with full Acting has 110.
 
 ### What else changes my maximum?
 
@@ -49,7 +49,7 @@ For example, a Moon Deity has about 189,000 Spirituality, while a Sequence 9 See
 
 ## How fast does it come back?
 
-Every second you regain **1/400 of your maximum, plus 1**. A Sequence 9 Beyonder with 100 Spirituality regains about 1 a second; a Sequence 4 with 5,000 regains about 13 a second. Either way, an empty bar refills in under 7 minutes when nothing slows it down.
+Every second you regain **1/400 of your maximum, plus 1**. A Sequence 9 Beyonder with 100 Spirituality regains about 1 a second. A Sequence 4 with 5,000 regains about 13 a second. Either way, an empty bar refills in under 7 minutes when nothing slows it down.
 
 Madness and Tiredness slow it down, and the two stack:
 
@@ -62,11 +62,11 @@ Madness and Tiredness slow it down, and the two stack:
 
 | Tiredness | Regeneration speed |
 |---|---|
-| Below 65% | Full |
-| 65% or more | 85% |
-| 85% or more | 70% |
+| Below 65 | Full |
+| 65 or more | 85% |
+| 85 or more | 70% |
 
-At 75% Madness and 85% Tiredness together you regenerate at only 21% speed.
+At 75% Madness and 85 Tiredness together you regenerate at only 21% speed.
 
 ### Ways to refill faster
 

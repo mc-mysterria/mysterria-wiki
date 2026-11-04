@@ -1,6 +1,6 @@
 ---
 title: "Commands"
-description: "Every player command on Mysterria, the Lord of the Mysteries Minecraft server: Beyonder, acting, rituals, economy, towns and events, plus what does not exist."
+description: "Every player command on Mysterria, the Lord of the Mysteries Minecraft server: Beyonder, Acting, rituals, economy, towns and events, plus what does not exist."
 sidebar:
   label: Commands
   order: 3
@@ -29,10 +29,10 @@ There is **no** `/home`, `/sethome`, `/spawn`, `/tpa`, `/rtp` or `/back`. Travel
 
 | Command | What it does |
 |---|---|
-| `/coi menu character` | Your character screen: Sequence, acting, Health, Spirituality, Madness |
+| `/coi menu character` | Your character screen: Sequence, Acting, Health, Spirituality, Madness |
 | `/coi menu abilities` | Your abilities |
 | `/coi menu native` | Switch between the [Client Mod](/guides/client-mod/)'s screens and the chest menus |
-| `/coi acting` | Acting method cooldowns and your acting by source. See [Acting](/magic/acting/) |
+| `/coi acting` | Acting method cooldowns and your Acting by source. See [Acting](/magic/acting/) |
 | `/bounty` (or `/coi bounty`) | Acting bounties |
 | `/ritual status` | Your ritual score for the next Sequence. See [Rituals](/magic/rituals/) |
 | `/ritual view <sequence>` | Your ritual tasks in a menu, where you can ask for a reroll |

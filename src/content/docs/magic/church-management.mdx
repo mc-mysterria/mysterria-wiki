@@ -1,6 +1,6 @@
 ---
 title: "Church Management"
-description: "Running a church on Mysterria: branches, Regional HQs, site roles, services, treasury, artifact vaults, Lands links and church wars on this LOTM server."
+description: "Running a church on Mysterria: branches, Regional HQs, site roles, services, treasury, Church Vaults, Lands links and church wars on this LOTM server."
 sidebar:
   label: Church Management
   order: 34
@@ -53,10 +53,10 @@ If placing a core fails, you may be out of branch slots, your main core may be i
 
 Each active Regional HQ adds **5 branch slots**. To place one:
 
-- your next expansion must need a Regional HQ;
-- it must be at least **5,000 blocks** from your main site, your branches and other Regional HQs;
-- it must be in the **same world** as your main site;
-- it needs a manager: a co-leader, or an Angel with maximum piousness. Set one with `/coi church regional-manager set <siteId> <player>`.
+- Your next expansion must need a Regional HQ.
+- It must be at least **5,000 blocks** from your main site, your branches and other Regional HQs.
+- It must be in the **same world** as your main site.
+- It needs a manager, either a co-leader or an Angel with maximum piousness. Set one with `/coi church regional-manager set <siteId> <player>`.
 
 The church menu shows whether your current spot is valid.
 
@@ -115,7 +115,7 @@ Each attendance counts toward the **Devout church service** deed (10 needed) for
 
 ## Artifact vaults
 
-A **Church Vault** stores [Sealed Artifacts](/magic/sealed-artifacts/) for the church. Members borrow them; managers approve.
+A **Church Vault** stores [Sealed Artifacts](/magic/sealed-artifacts/) for the church. Members borrow them, and managers approve the loans.
 
 ### Vault recipe
 
@@ -145,7 +145,7 @@ The player who stored an artifact can take it back with `/coi church artifact wi
 | Borrow time | 2 hours, rising with tier, vaults, site levels and Land links, up to **4 hours** |
 | Remote artifact | Each site can keep one artifact for remote borrowing once it has been stored for **7 days** |
 
-Abilities cannot replace cores or vaults, and Characteristic Theft and Purification cannot take characteristics from church-owned artifacts.
+Abilities cannot replace cores or vaults, and Beyonder Characteristic Theft and Purification cannot take Beyonder Characteristics from church-owned artifacts.
 
 ## Linking a Land
 
@@ -198,7 +198,7 @@ The leader, co-leaders, Angels and Head Deacons can set alerts in the church men
 - **Mutation alerts** when someone risks losing control, and **death alerts**.
 - **Prayer notices** for members, senior members or outsiders who pray.
 
-**Divine Observation** lets church officers watch a member from nearby; sneak to stop. A member of equal or higher Sequence must give permission first. Trusted members (co-leaders, Angels, Head Deacons or senior active members) can be put on a remote observation list.
+**Divine Observation** lets church officers watch a member from nearby. Sneak to stop watching. A member of equal or higher Sequence must give permission first. Trusted members (co-leaders, Angels, Head Deacons or senior active members) can be put on a remote observation list.
 
 ## Leader checklist
 
@@ -225,7 +225,7 @@ The leader, co-leaders, Angels and Head Deacons can set alerts in the church men
 | `/coi church role set <player> <follower\|angel>` | Set a member's role |
 | `/coi church regional-manager set <siteId> <player>` | Set a Regional HQ manager |
 | `/coi church ownership handoff <player> confirm` | Hand the church to someone else |
-| `/coi church disband` | Disband (type the church name within 45 s to confirm) |
+| `/coi church disband` | Disband (type the church name within 45 seconds to confirm) |
 | `/coi church bless <player>` | Bless a member |
 | `/coi church gift <player> <type>` | Give a gift (see [gifts](/magic/church-perks/#gifts)) |
 | `/coi church ritual <siteId> <service>` | Hold a service |

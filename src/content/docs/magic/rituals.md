@@ -6,13 +6,13 @@ sidebar:
   order: 6
 ---
 
-From Sequence 8 on, every advancement has a **ritual**: a set of tasks you complete before you drink the next potion. On Mysterria a ritual is a personal list of Minecraft **advancements**, and each one is worth points. Finish enough of them and the ritual is complete.
+From Sequence 8 on, every advancement has a **ritual**, a set of tasks you complete before you drink the next potion. On Mysterria a ritual is a personal list of Minecraft **advancements**, and each one is worth points. Finish enough of them and the ritual is complete.
 
 Your **first potion (Sequence 9) needs no ritual.**
 
 ## How does a ritual work?
 
-When you reach a Sequence, the game gives you a random set of advancements for the **next** Sequence. Each advancement has a difficulty worth some points, and your set adds up to the score that Sequence needs. The set is yours and stays the same; it is not rerolled when you log out.
+When you reach a Sequence, the game gives you a random set of advancements for the **next** Sequence. Each advancement has a difficulty worth some points, and your set adds up to the score that Sequence needs. The set is yours and stays the same. It is not rerolled when you log out.
 
 | Next Sequence | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 |---|---|---|---|---|---|---|---|---|---|
@@ -31,7 +31,7 @@ A few rules shape your set:
 ## How do I check my ritual?
 
 - `/ritual status` shows your score, for example "7/9 ritual score completed".
-- To see **which** advancements you need, carry the recipe for your next Sequence: either a full recipe, or its **Recipe Page 3** (the ritual page). Without it, you only see the score.
+- To see **which** advancements you need, carry the recipe for your next Sequence. That is either a full recipe or its **Recipe Page 3** (the ritual page). Without it, you only see the score.
 - `/ritual view <sequence>` opens your tasks in a menu. Reading the ritual page of a recipe also gives you a clickable link to it.
 
 ## Can I reroll a task?
@@ -51,7 +51,7 @@ From the Sequence 5 ritual on, some activities count as **ritual credit**, filli
 | Activity | Points | Rituals |
 |---|---|---|
 | Attend a church service at an active church site | 1 | Sequence 5 to 0 |
-| Complete an acting bounty | 1 | Sequence 5 to 0 |
+| Complete an Acting bounty | 1 | Sequence 5 to 0 |
 | Complete a staff-approved story ritual | 2 | Sequence 5 to 0 |
 | Fight a seat war to its verdict | 3 | Sequence 3 to 0 |
 | Hold your Uniqueness through a paid challenge | 3 | Sequence 2 to 0 |

@@ -14,7 +14,7 @@ There are two kinds.
 | | Custom creatures | Badge creatures |
 |---|---|---|
 | Looks | Their own models and animations (beasts, knights, spirits and stranger things) | A normal Minecraft mob with a Beyonder badge |
-| Behaviour | Advanced AI: they group up, use special abilities, retreat and call for help | Vanilla AI with more health and stronger attacks |
+| Behaviour | Advanced AI. They group up, use special abilities, retreat and call for help | Vanilla AI with more health and stronger attacks |
 | Name and health | Coloured nameplate, health shown in the action bar | Badge over the mob |
 | Ingredient drops | **x8** the base chance | **x2** the base chance, plus a pity bonus |
 
@@ -44,7 +44,7 @@ Badge creatures have a safety net. Each kill that drops no ingredient adds **+5%
 
 ### Acting from kills
 
-Killing a Beyonder Creature also gives acting through the **World** source. Like every acting source it is capped for your Sequence, so hunting alone will not fill your bar. See [Acting](/magic/acting/) for the caps. Creature kills never digest the Abyss Pathway, which only digests from killing Beyonder players.
+Killing a Beyonder Creature also gives Acting through the **World** source. Like every Acting source it is capped for your Sequence, so hunting alone will not fill your bar. See [Acting](/magic/acting/) for the caps. Creature kills never digest the Abyss Pathway, which only digests from killing Beyonder players.
 
 ## Where do Beyonder Creatures spawn?
 
@@ -64,7 +64,7 @@ The exact biome lists are kept secret on purpose. Finding them is part of the ga
 
 The [Daily Tides](/guides/tides/) page lists which Tide runs on which day. When a Tide is active, the total spawn boost from all sources stacks but is capped at x4.
 
-The [Crimson Moon](/magic/crimson-moon/) is the best night to hunt: creatures spawn far more often, you cannot sleep it away, and fishing can pull up ingredients or hostile creatures. The bounty board (`/bounty`) sometimes offers a **Crimson Moon Hunt** or a creature hunt for extra acting.
+The [Crimson Moon](/magic/crimson-moon/) is the best night to hunt: creatures spawn far more often, you cannot sleep it away, and fishing can pull up ingredients or hostile creatures. The bounty board (`/bounty`) sometimes offers a **Crimson Moon Hunt** or a creature hunt for extra Acting.
 
 ## How do I survive a fight with one?
 

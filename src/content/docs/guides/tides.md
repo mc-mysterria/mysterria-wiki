@@ -9,13 +9,13 @@ A Daily Tide is a server-wide bonus that lasts one day. Exactly one Tide is acti
 
 ## When does the Tide change?
 
-A Tide day runs from **00:00 to 24:00 Kyiv time** (Europe/Kyiv: UTC+2 in winter, UTC+3 in summer). At midnight Kyiv time the next Tide starts for everyone, wherever you live.
+A Tide day runs from **00:00 to 24:00 Kyiv time** (Europe/Kyiv, which is UTC+2 in winter and UTC+3 in summer). At midnight Kyiv time the next Tide starts for everyone, wherever you live.
 
 ## What are the seven Tides?
 
 | Tide | What it does | Multipliers |
 |---|---|---|
-| **Tide of Diligence** | Every acting gain is doubled | Acting gain x2 |
+| **Tide of Diligence** | Every Acting gain is doubled | Acting gain x2 |
 | **Hunting Tide** | Creatures spawn and drop more, rare ingredients much more | Creature spawns x2, creature drops x2, rare ingredients x3 |
 | **Tide of Fortune** | Richer chests and faster pity | Chest loot x2.5, pity in half the opens, rare loot x2.5 |
 | **Wild Tide** | More [Wild Beyonders](/magic/wild-beyonders/) | Wild Beyonder spawns x2, Wild Beyonder limit x2 |
@@ -52,12 +52,12 @@ Yes. When several bonuses apply together (a Tide, a Crimson Moon and the Moon Pa
 - Creature spawns: at most **x4**
 - Acting gain: at most **x2.5**
 
-On Tide of Diligence, once an acting source reaches its cap the extra banks as Overflow instead of filling your bar. Overflow only exists at Sequence 3 and stronger. See [Usurpation](/magic/usurpation/).
+On Tide of Diligence, once an Acting source reaches its cap the extra banks as Overflow instead of filling your bar. Overflow only exists at Sequence 3 and stronger. See [Usurpation](/magic/usurpation/).
 
 ## Which Tide helps me most?
 
-- **Early and mid Sequences:** your acting bar is the bottleneck, so **Diligence** helps most. **Wild Tide** helps too, because Wild Beyonders only exist at Sequence 9 to 5.
-- **Sequence 3 and stronger:** the cooldown on each acting method holds you back more than the bar, so **Patience** is your day. Hunting, Fortune and Deep Tide also carry the rare-tier bonuses aimed at you.
+- **Early and mid Sequences:** your Acting bar is the bottleneck, so **Diligence** helps most. **Wild Tide** helps too, because Wild Beyonders only exist at Sequence 9 to 5.
+- **Sequence 3 and stronger:** the cooldown on each Acting method holds you back more than the bar, so **Patience** is your day. Hunting, Fortune and Deep Tide also carry the rare-tier bonuses aimed at you.
 - **Looting:** save your chest runs for **Fortune** and your ingredient hunting for **Hunting** or **Deep Tide**.
 
 The creature-drop bonus matters most on badge creatures and on rare ingredients. Custom creatures already drop their common ingredients almost every time. See [Beyonder Creatures](/magic/creatures/).
@@ -71,7 +71,7 @@ Pity is only checked when you open a container. If you get close to your pity th
 The game tells you in several ways:
 
 - **Login card:** a chat card a few seconds after you join, with the Tide, what it does and the time left
-- **Client toast:** the same card as a pop-up, if you use the [client mod](/guides/client-mod/)
+- **Client toast:** the same card as a pop-up, if you use the [Client Mod](/guides/client-mod/)
 - **Hourly reminder:** one line in chat every hour (skipped if you just joined or are AFK)
 - **Boss bar:** a countdown to the end of the day
 - **Rollover:** a title and a sound for everyone online when the Tide changes
