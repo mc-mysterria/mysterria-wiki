@@ -18,9 +18,18 @@ Your maximum Spirituality is worked out like this:
 
 Right after you advance, with 0% Acting, you have **half** of your full maximum. It grows as you act and reaches the full value at 100% Acting. At Sequence 0 it always counts as full.
 
-| Sequence | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
-|---|---|---|---|---|---|---|---|---|---|---|
-| **Base** | 100 | 250 | 500 | 1,000 | 2,500 | 5,000 | 10,000 | 25,000 | 70,000 | 100,000 |
+| Sequence | Base |
+|---|---:|
+| 9 | 100 |
+| 8 | 250 |
+| 7 | 500 |
+| 6 | 1,000 |
+| 5 | 2,500 |
+| 4 | 5,000 |
+| 3 | 10,000 |
+| 2 | 25,000 |
+| 1 | 70,000 |
+| 0 | 100,000 |
 
 ### Pathway multipliers
 

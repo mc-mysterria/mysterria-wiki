@@ -232,7 +232,13 @@ const strings = {
 			const extra = await this.#fullText(query);
 			if (!extra || ticket !== this.#query) return;
 			const seen = new Set(ranked.map(r => r.page.u));
-			const more = extra.filter((d: any) => !seen.has(new URL(d.url, location.origin).pathname)).slice(0, 5);
+			// keep a page only if its excerpt really contains what was typed (Pagefind also matches loosely)
+			const typed = norm(query.trim()).split(/\s+/).filter(Boolean);
+			const contains = (excerpt: string) => {
+				const marked = [...excerpt.matchAll(/<mark>([^<]*)<\/mark>/g)].map(m => norm(m[1]));
+				return typed.some(token => marked.some(word => word.startsWith(token)));
+			};
+			const more = extra.filter((d: any) => !seen.has(new URL(d.url, location.origin).pathname) && contains(d.excerpt ?? '')).slice(0, 5);
 			if (!more.length) return;
 			if (!ranked.length) box.innerHTML = '';
 			box.insertAdjacentHTML('beforeend', `<p class="ws-label">${escapeHtml(strings.more)}</p>` + more.map((d: any) => {

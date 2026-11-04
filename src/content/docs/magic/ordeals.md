@@ -1,5 +1,5 @@
 ---
-title: "Ordeals: Losing Control"
+title: "Ordeals and Losing Control"
 description: "What happens when a Beyonder loses control on Mysterria: the three Ordeals (Bloodlust, Hollowing, Sealing), what each costs, and when you get wiped."
 sidebar:
   label: Ordeals
