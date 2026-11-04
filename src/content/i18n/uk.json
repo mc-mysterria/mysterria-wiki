@@ -35,5 +35,11 @@
   "landing.start": "Початок",
   "landing.magic": "Магія і Шляхи",
   "landing.guides": "Посібники",
-  "landing.firearms": "Вогнепал"
+  "landing.firearms": "Вогнепал",
+  "wiki.search.placeholder": "Пошук у вікі",
+  "wiki.search.empty": "Жодна сторінка не підходить.",
+  "wiki.search.more": "Також згадується на",
+  "wiki.search.popular": "Найпопулярніше",
+  "landing.popular": "Найпопулярніше",
+  "landing.allPages": "Усі сторінки"
 }

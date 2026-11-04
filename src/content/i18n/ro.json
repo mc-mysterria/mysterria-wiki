@@ -35,5 +35,11 @@
   "landing.start": "Început",
   "landing.magic": "Magie și Căi",
   "landing.guides": "Ghiduri",
-  "landing.firearms": "Arme de foc"
+  "landing.firearms": "Arme de foc",
+  "wiki.search.placeholder": "Caută în wiki",
+  "wiki.search.empty": "Nicio pagină nu se potrivește.",
+  "wiki.search.more": "Mai apare pe",
+  "wiki.search.popular": "Cele mai citite",
+  "landing.popular": "Cele mai citite",
+  "landing.allPages": "Toate paginile"
 }

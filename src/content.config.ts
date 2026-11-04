@@ -52,6 +52,12 @@ const uiStrings = z
 		'landing.magic': z.string(),
 		'landing.guides': z.string(),
 		'landing.firearms': z.string(),
+		'wiki.search.placeholder': z.string(),
+		'wiki.search.empty': z.string(),
+		'wiki.search.more': z.string(),
+		'wiki.search.popular': z.string(),
+		'landing.popular': z.string(),
+		'landing.allPages': z.string(),
 	})
 	.partial();
 

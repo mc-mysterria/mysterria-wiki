@@ -1,0 +1,246 @@
+---
+/*
+ * The wiki's search, in place of Starlight's Pagefind box.
+ *
+ * Readers mostly look for a page, not a sentence. So the box first ranks a small index of
+ * titles, sections, headings and bold terms (/search/<lang>.json, src/pages/search/[lang].json.ts):
+ * it is a few kilobytes, loads when the reader first reaches for search, and answers as they
+ * type. A title match beats a heading match, which beats a passing mention. When that list is
+ * short, Pagefind's full-text index (still built by Starlight) adds "Also mentioned on".
+ * With nothing typed, the box offers the most read pages.
+ */
+import {POPULAR} from '../../lib/popular.mjs';
+
+const {t} = Astro.locals;
+const {locale} = Astro.locals.starlightRoute;
+const lang = locale ?? 'en';
+const s = (key: string, fallback: string) => {
+	const value = (t.all() as Record<string, string>)[key];
+	return value && value !== key ? value : fallback;
+};
+const strings = {
+	placeholder: s('wiki.search.placeholder', 'Search the wiki'),
+	empty: s('wiki.search.empty', 'No page matches that.'),
+	more: s('wiki.search.more', 'Also mentioned on'),
+	popular: s('wiki.search.popular', 'Most read'),
+	close: t('search.cancelLabel'),
+};
+---
+
+<wiki-search class={Astro.props.class} data-lang={lang} data-popular={JSON.stringify(POPULAR)} data-strings={JSON.stringify(strings)}>
+	<button type="button" data-open-modal aria-label={t('search.label')} aria-keyshortcuts="Control+K" aria-haspopup="dialog">
+		<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zM15.5 15.5L20 20"/></svg>
+		<span aria-hidden="true">{t('search.label')}</span>
+		<kbd aria-hidden="true"><kbd data-platform-key>{t('search.ctrlKey')}</kbd><kbd>K</kbd></kbd>
+	</button>
+
+	<dialog class="ws-dialog" aria-label={t('search.label')}>
+		<div class="ws-panel">
+			<div class="ws-bar">
+				<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zM15.5 15.5L20 20"/></svg>
+				<input class="ws-input" type="search" autocomplete="off" spellcheck="false" placeholder={strings.placeholder} aria-label={strings.placeholder} aria-controls="ws-results" aria-autocomplete="list"/>
+				<button type="button" class="ws-close" data-close>{strings.close}</button>
+			</div>
+			<div class="ws-results" id="ws-results" role="listbox" aria-label={t('search.label')}></div>
+		</div>
+	</dialog>
+</wiki-search>
+
+<script is:inline>
+	(() => {
+		if (!/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) return;
+		for (const key of document.querySelectorAll('wiki-search [data-platform-key]')) key.textContent = '⌘';
+		for (const button of document.querySelectorAll('wiki-search [data-open-modal]')) button.setAttribute('aria-keyshortcuts', 'Meta+K');
+	})();
+</script>
+
+<script>
+	type Page = {t: string; u: string; s: string; d: string; h: [string, string][]; k: string[]};
+	type Hit = {page: Page; score: number; heading?: [string, string]};
+
+	const norm = (text: string) => text.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '');
+	const wordsOf = (text: string) => norm(text).split(/[^\p{L}\p{N}]+/u).filter(Boolean);
+	const CJK = /[\u3400-\u9fff\uf900-\ufaff]/;
+
+	/** One typo apart: a letter changed, added, dropped, or two neighbours swapped. */
+	function nearly(a: string, b: string) {
+		if (Math.abs(a.length - b.length) > 1) return false;
+		let i = 0;
+		while (i < a.length && i < b.length && a[i] === b[i]) i++;
+		if (a[i] === b[i + 1] && a[i + 1] === b[i] && a.slice(i + 2) === b.slice(i + 2)) return true;
+		return a.slice(i + 1) === b.slice(i + 1) || a.slice(i) === b.slice(i + 1) || a.slice(i + 1) === b.slice(i);
+	}
+
+	/*
+	 * A query word matches a word that starts with it. From five letters up it may also be one
+	 * typo away ("acitng"), compared with the start of the word ("crimsn" finds Crimson). Shorter
+	 * words match exactly only, or "boon" would find the Moon.
+	 */
+	function hits(token: string, text: string, words: string[]) {
+		if (CJK.test(token)) return text.includes(token);
+		return words.some(word => word.startsWith(token)
+			|| (token.length >= 5 && (nearly(word.slice(0, token.length), token) || nearly(word, token))));
+	}
+
+	/* what players type for a thing whose page uses its full name */
+	const ALIASES: Record<string, string> = {char: 'characteristic', chars: 'characteristic', bp: 'battle pass', seq: 'sequence', oga: 'outer gods anchors'};
+
+	function rank(pages: Page[], query: string): Hit[] {
+		const typed = norm(query.trim());
+		const q = ALIASES[typed] ?? typed;
+		const tokens = CJK.test(q) ? q.split(/\s+/).filter(Boolean) : wordsOf(q);
+		if (!tokens.length) return [];
+		const out: Hit[] = [];
+		pages.forEach((page, order) => {
+			const title = norm(page.t);
+			const titleWords = wordsOf(page.t);
+			const all = (text: string, words = wordsOf(text)) => tokens.every(token => hits(token, norm(text), words));
+			let score = 0;
+			if (title === q) score += 1000;
+			else if (title.startsWith(q)) score += 600;
+			else if (title.includes(q)) score += 400;
+			if (all(page.t, titleWords)) score += 300;
+
+			let heading: [string, string] | undefined;
+			let headingScore = 0;
+			for (const h of page.h) {
+				const text = norm(h[0]);
+				const value = text.includes(q) ? 250 : all(h[0]) ? 150 : 0;
+				if (value > headingScore) [headingScore, heading] = [value, h];
+			}
+			score += headingScore;
+
+			const terms = page.k.join(' | ');
+			if (norm(terms).includes(q)) score += 120;
+			else if (all(terms)) score += 80;
+			if (norm(page.d).includes(q)) score += 60;
+			else if (all(page.d)) score += 40;
+			if (all(page.s)) score += 30;
+
+			// every word typed must appear somewhere in what was indexed for the page
+			const everything = [page.t, page.s, page.d, terms, ...page.h.map(h => h[0])].join(' ');
+			if (!score || !all(everything)) return;
+			out.push({page, score: score - order / 1000, heading: headingScore && headingScore >= 150 ? heading : undefined});
+		});
+		return out.sort((a, b) => b.score - a.score).slice(0, 8);
+	}
+
+	const escapeHtml = (text: string) => text.replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'})[c]!);
+
+	class WikiSearch extends HTMLElement {
+		#pages?: Promise<Page[]>;
+		#pagefind?: Promise<any>;
+		#active = -1;
+		#query = 0;
+
+		connectedCallback() {
+			const dialog = this.querySelector('dialog')!;
+			const input = this.querySelector<HTMLInputElement>('.ws-input')!;
+			const open = () => {
+				if (dialog.open) return;
+				dialog.showModal();
+				document.body.toggleAttribute('data-search-modal-open', true);
+				input.select();
+				this.#render(input.value);
+			};
+			const close = () => {
+				dialog.close();
+				document.body.toggleAttribute('data-search-modal-open', false);
+			};
+
+			// load the index as soon as the reader reaches for search, before they open it
+			const warm = () => void this.#load();
+			const button = this.querySelector<HTMLButtonElement>('[data-open-modal]')!;
+			button.addEventListener('pointerenter', warm, {once: true});
+			button.addEventListener('focus', warm, {once: true});
+			button.addEventListener('click', open);
+			this.querySelector('[data-close]')!.addEventListener('click', close);
+			dialog.addEventListener('close', () => document.body.toggleAttribute('data-search-modal-open', false));
+			dialog.addEventListener('click', event => event.target === dialog && close());
+
+			window.addEventListener('wiki-search:open', open);
+			window.addEventListener('keydown', event => {
+				const typing = event.target instanceof HTMLElement && (event.target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(event.target.tagName));
+				if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+					event.preventDefault();
+					dialog.open ? close() : open();
+				} else if (event.key === '/' && !dialog.open && !typing) {
+					event.preventDefault();
+					open();
+				}
+			});
+
+			input.addEventListener('input', () => this.#render(input.value));
+			input.addEventListener('keydown', event => {
+				const options = [...this.querySelectorAll<HTMLAnchorElement>('.ws-results a')];
+				if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+					event.preventDefault();
+					if (!options.length) return;
+					this.#active = (this.#active + (event.key === 'ArrowDown' ? 1 : -1) + options.length) % options.length;
+					options.forEach((option, i) => option.setAttribute('aria-selected', String(i === this.#active)));
+					options[this.#active].scrollIntoView({block: 'nearest'});
+				} else if (event.key === 'Enter') {
+					const target = options[this.#active] ?? options[0];
+					if (target) {
+						event.preventDefault();
+						target.click();
+					}
+				}
+			});
+		}
+
+		#load() {
+			this.#pages ??= fetch(`/search/${this.dataset.lang}.json`).then(r => r.json()).catch(() => []);
+			return this.#pages;
+		}
+
+		#fullText(query: string) {
+			this.#pagefind ??= import(/* @vite-ignore */ `${location.origin}/pagefind/pagefind.js`).catch(() => null);
+			return this.#pagefind.then(async pagefind => {
+				if (!pagefind) return [];
+				const result = await pagefind.debouncedSearch(query, {}, 250);
+				if (!result) return null;
+				return Promise.all(result.results.slice(0, 6).map((r: any) => r.data()));
+			});
+		}
+
+		async #render(query: string) {
+			const strings = JSON.parse(this.dataset.strings!);
+			const box = this.querySelector('.ws-results')!;
+			const ticket = ++this.#query;
+			const pages = await this.#load();
+			if (ticket !== this.#query) return;
+			this.#active = -1;
+
+			const link = (href: string, title: string, meta: string, sub?: string) =>
+				`<a role="option" aria-selected="false" class="ws-item" href="${escapeHtml(href)}"><span class="ws-item__title">${escapeHtml(title)}</span><span class="ws-item__meta">${escapeHtml(meta)}</span>${sub ? `<span class="ws-item__sub">${escapeHtml(sub)}</span>` : ''}</a>`;
+
+			if (!query.trim()) {
+				const popular: string[] = JSON.parse(this.dataset.popular!);
+				const list = popular.map(id => pages.find(p => p.u.endsWith(`/${id}/`))).filter(Boolean) as Page[];
+				box.innerHTML = `<p class="ws-label">${escapeHtml(strings.popular)}</p>` + list.map(p => link(p.u, p.t, p.s)).join('');
+				return;
+			}
+
+			const ranked = rank(pages, query);
+			box.innerHTML = ranked.length
+				? ranked.map(({page, heading}) => link(heading ? `${page.u}#${heading[1]}` : page.u, page.t, page.s, heading?.[0])).join('')
+				: `<p class="ws-empty">${escapeHtml(strings.empty)}</p>`;
+
+			// a short list: add the pages that mention it in their text
+			if (ranked.length >= 4 || query.trim().length < 3) return;
+			const extra = await this.#fullText(query);
+			if (!extra || ticket !== this.#query) return;
+			const seen = new Set(ranked.map(r => r.page.u));
+			const more = extra.filter((d: any) => !seen.has(new URL(d.url, location.origin).pathname)).slice(0, 5);
+			if (!more.length) return;
+			if (!ranked.length) box.innerHTML = '';
+			box.insertAdjacentHTML('beforeend', `<p class="ws-label">${escapeHtml(strings.more)}</p>` + more.map((d: any) => {
+				const page = pages.find(p => p.u === new URL(d.url, location.origin).pathname);
+				return `<a role="option" aria-selected="false" class="ws-item" href="${escapeHtml(d.url)}"><span class="ws-item__title">${escapeHtml(d.meta?.title ?? '')}</span>${page ? `<span class="ws-item__meta">${escapeHtml(page.s)}</span>` : ''}<span class="ws-item__sub ws-item__excerpt">${d.excerpt}</span></a>`;
+			}).join(''));
+		}
+	}
+
+	customElements.define('wiki-search', WikiSearch);
+</script>

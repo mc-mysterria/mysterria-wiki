@@ -35,5 +35,11 @@
   "landing.start": "Commencer",
   "landing.magic": "Magie et Voies",
   "landing.guides": "Guides",
-  "landing.firearms": "Armes à feu"
+  "landing.firearms": "Armes à feu",
+  "wiki.search.placeholder": "Rechercher dans le wiki",
+  "wiki.search.empty": "Aucune page ne correspond.",
+  "wiki.search.more": "Aussi mentionné sur",
+  "wiki.search.popular": "Les plus lues",
+  "landing.popular": "Les plus lues",
+  "landing.allPages": "Toutes les pages"
 }

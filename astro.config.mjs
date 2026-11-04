@@ -1,5 +1,6 @@
 // @ts-check
 import {defineConfig} from 'astro/config';
+import {sidebar} from './src/lib/sidebar.mjs';
 import starlight from '@astrojs/starlight';
 import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
@@ -254,7 +255,7 @@ export default defineConfig({
             /*
              * The main site's chrome over Starlight's: its header, footer, theme switch and
              * language menu, the landing page, and the head's SEO additions. Starlight's
-             * sidebar, search, table of contents and pagination stay its own (restyled in wiki.css).
+             * sidebar, table of contents and pagination stay its own (restyled in wiki.css). Search is the wiki's own (Search.astro).
              */
             components: {
                 Head: './src/components/starlight/Head.astro',
@@ -265,169 +266,10 @@ export default defineConfig({
                 LanguageSelect: './src/components/starlight/LanguageSelect.astro',
                 MobileMenuFooter: './src/components/starlight/MobileMenuFooter.astro',
                 Hero: './src/components/starlight/Hero.astro',
+                Search: './src/components/starlight/Search.astro',
             },
 
-            /*
-             * Seven sections in the order a new player needs them, then the late game
-             * (.review/content-audit.md, 5b). Pages keep their folders and so their URLs, which
-             * already rank; the sections are set here rather than by folder.
-             */
-            sidebar: [
-                {
-                    label: 'Start here',
-                    translations: {
-                        uk: 'Почни тут',
-                        ro: 'Începe aici',
-                        de: 'Erste Schritte',
-                        es: 'Empieza aquí',
-                        fr: 'Bien commencer',
-                        'zh-TW': '新手入門',
-                        'zh-CN': '新手入门',
-                    },
-                    items: [
-                        'general/start',
-                        'general/world-and-safety',
-                        'general/commands',
-                        'guides/client-mod',
-                    ],
-                },
-                {
-                    label: 'Becoming a Beyonder',
-                    translations: {
-                        uk: 'Як стати Потойбічним',
-                        ro: 'Cum devii Beyonder',
-                        de: 'Beyonder werden',
-                        es: 'Convertirse en Trascendente',
-                        fr: 'Devenir Beyonder',
-                        'zh-TW': '成為非凡者',
-                        'zh-CN': '成为非凡者',
-                    },
-                    items: [
-                        'magic/introduction',
-                        'magic/pathways',
-                        'magic/brewing',
-                        'magic/loot',
-                        'magic/acting',
-                        'magic/rituals',
-                        'magic/spirituality',
-                        'magic/health',
-                        'magic/conditions',
-                        'magic/mutation',
-                        'magic/ordeals',
-                    ],
-                },
-                {
-                    label: 'The World',
-                    translations: {
-                        uk: 'Світ',
-                        ro: 'Lumea',
-                        de: 'Die Welt',
-                        es: 'El mundo',
-                        fr: 'Le monde',
-                        'zh-TW': '世界',
-                        'zh-CN': '世界',
-                    },
-                    items: [
-                        'magic/creatures',
-                        'magic/crimson-moon',
-                        'magic/wild-beyonders',
-                        'guides/tides',
-                        'guides/bosses',
-                        'guides/dungeons',
-                        'guides/cosmos-incursions',
-                        'guides/outer-gods-anchors',
-                    ],
-                },
-                {
-                    label: 'Items and Power',
-                    translations: {
-                        uk: 'Предмети й сила',
-                        ro: 'Obiecte și putere',
-                        de: 'Gegenstände und Macht',
-                        es: 'Objetos y poder',
-                        fr: 'Objets et puissance',
-                        'zh-TW': '物品與力量',
-                        'zh-CN': '物品与力量',
-                    },
-                    items: [
-                        'magic/sealed-artifacts',
-                        'magic/boons',
-                        {
-                            label: 'Firearms',
-                            translations: {
-                                uk: 'Вогнепальна зброя',
-                                ro: 'Arme de foc',
-                                de: 'Feuerwaffen',
-                                es: 'Armas de fuego',
-                                fr: 'Armes à feu',
-                                'zh-TW': '槍械',
-                                'zh-CN': '枪械',
-                            },
-                            collapsed: true,
-                            items: ['firearms', 'firearms/crafting', 'firearms/ammunition', 'firearms/kleins-repeater', 'firearms/deathknell-revolver', 'firearms/steam-rifle'],
-                        },
-                        'guides/beverages',
-                        'guides/special-items',
-                    ],
-                },
-                {
-                    label: 'Economy',
-                    translations: {
-                        uk: 'Економіка',
-                        ro: 'Economie',
-                        de: 'Wirtschaft',
-                        es: 'Economía',
-                        fr: 'Économie',
-                        'zh-TW': '經濟',
-                        'zh-CN': '经济',
-                    },
-                    items: [
-                        'guides/economy',
-                        'guides/emporium',
-                        'guides/agora',
-                        'guides/battle-pass',
-                    ],
-                },
-                {
-                    label: 'Towns and Society',
-                    translations: {
-                        uk: 'Міста й спільнота',
-                        ro: 'Orașe și societate',
-                        de: 'Städte und Gesellschaft',
-                        es: 'Ciudades y sociedad',
-                        fr: 'Villes et société',
-                        'zh-TW': '城鎮與社會',
-                        'zh-CN': '城镇与社会',
-                    },
-                    items: [
-                        'guides/towns',
-                        'guides/nations-and-wars',
-                        'guides/orders',
-                        'guides/couriers',
-                    ],
-                },
-                {
-                    label: 'High Sequences',
-                    translations: {
-                        uk: 'Високі Послідовності',
-                        ro: 'Secvențe înalte',
-                        de: 'Hohe Sequenzen',
-                        es: 'Secuencias altas',
-                        fr: 'Hautes Séquences',
-                        'zh-TW': '高序列',
-                        'zh-CN': '高序列',
-                    },
-                    items: [
-                        'magic/usurpation',
-                        'magic/uniqueness',
-                        'magic/honorific-names',
-                        'magic/churches',
-                        'magic/church-management',
-                        'magic/church-perks',
-                        'magic/sequence-zero',
-                    ],
-                },
-            ],
+            sidebar,
         }),
     ],
 });

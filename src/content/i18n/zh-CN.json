@@ -35,5 +35,11 @@
   "landing.start": "开始",
   "landing.magic": "魔法与途径",
   "landing.guides": "指南",
-  "landing.firearms": "枪械"
+  "landing.firearms": "枪械",
+  "wiki.search.placeholder": "搜索维基",
+  "wiki.search.empty": "没有匹配的页面。",
+  "wiki.search.more": "也出现在",
+  "wiki.search.popular": "最常阅读",
+  "landing.popular": "最常阅读",
+  "landing.allPages": "全部页面"
 }

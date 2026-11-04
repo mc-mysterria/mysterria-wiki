@@ -35,5 +35,11 @@
   "landing.start": "開始",
   "landing.magic": "魔法與途徑",
   "landing.guides": "指南",
-  "landing.firearms": "槍械"
+  "landing.firearms": "槍械",
+  "wiki.search.placeholder": "搜尋維基",
+  "wiki.search.empty": "沒有符合的頁面。",
+  "wiki.search.more": "也出現在",
+  "wiki.search.popular": "最常閱讀",
+  "landing.popular": "最常閱讀",
+  "landing.allPages": "全部頁面"
 }

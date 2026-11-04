@@ -35,5 +35,11 @@
   "landing.start": "Start",
   "landing.magic": "Magie und Pfade",
   "landing.guides": "Leitfäden",
-  "landing.firearms": "Feuerwaffen"
+  "landing.firearms": "Feuerwaffen",
+  "wiki.search.placeholder": "Im Wiki suchen",
+  "wiki.search.empty": "Keine Seite passt dazu.",
+  "wiki.search.more": "Auch erwähnt auf",
+  "wiki.search.popular": "Meistgelesen",
+  "landing.popular": "Meistgelesen",
+  "landing.allPages": "Alle Seiten"
 }
