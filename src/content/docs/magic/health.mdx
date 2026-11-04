@@ -6,6 +6,9 @@ sidebar:
   order: 8
 ---
 
+import {Figure} from '~/components/mdx';
+import heartsNumbers from '../../../assets/magic/health-hearts-numbers.webp';
+
 When you advance, your hearts do not change. Your body does: every Beyonder has a hidden **Beyonder HP** pool that grows with each Sequence. Spells and Beyonder creatures hit that pool, and your hearts show what share of it is left.
 
 ## How much HP does each Sequence have?
@@ -63,6 +66,8 @@ Out of combat, healing works as normal.
 - **Client Mod:** the [Client Mod](/guides/client-mod/) can replace your hearts with a bar that shows your Beyonder HP (styles: Hearts + Numbers, Bar, Ornate Bar, Segments).
 - **Character screen:** your Health is listed on your character screen (`/coi menu character`).
 - **Visionary:** a Sequence 9 Spectator's **Body Language Analysis** shows another player's current and max HP. See [Visionary](https://www.mysterria.net/en/pathways/visionary).
+
+<Figure src={heartsNumbers} alt="The hearts and hotbar with 50 / 50 shown above the hearts" caption="The Client Mod's Hearts + Numbers style shows your real HP above the hearts." contain />
 
 ## Related pages
 

@@ -6,6 +6,10 @@ sidebar:
   order: 5
 ---
 
+import {Figure} from '~/components/mdx';
+import actingRecord from '../../../assets/magic/acting-dossier.webp';
+import actingChat from '../../../assets/magic/acting-cooldowns.webp';
+
 In Lord of the Mysteries, a Beyonder **digests** a potion by acting out the role its Sequence describes. On Mysterria this is your **acting bar**: you fill it by playing your Sequence the way it is meant to be played, and you need it nearly full before the next potion will work.
 
 ## Why does acting matter?
@@ -27,6 +31,10 @@ If a potion is refused because your acting is too low, do not drink it again str
 
 - Your character screen shows the bar: open the Pathway icon in your inventory and hover your head, or type `/coi menu character`. With the [Client Mod](/guides/client-mod/), press **M**.
 - `/coi acting` shows your acting method cooldowns and how much each source has given you, against its cap.
+
+<Figure src={actingRecord} alt="The Acting record tab of the Client Mod's Beyonder Dossier, with acting progress of 24 out of 5,832 and a bar for the Passive source" caption="The Acting record tab in the Client Mod's Beyonder Dossier." />
+
+<Figure src={actingChat} alt="Chat output of /coi acting with the current state, the Client Mod bonus, method cooldowns and the Passive acting source" caption="What /coi acting prints in chat." contain />
 
 ## Where does acting come from?
 

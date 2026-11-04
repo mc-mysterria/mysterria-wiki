@@ -5,6 +5,11 @@ sidebar:
   order: 34
 ---
 
+import {Figure} from '~/components/mdx';
+import bossBar from '../../../assets/tides/boss-bar.webp';
+import tideStatus from '../../../assets/tides/tide-status.webp';
+import tideCalendar from '../../../assets/tides/tide-calendar.webp';
+
 A Daily Tide is a server-wide bonus that lasts one day. Exactly one Tide is active at a time, it is the same for every player, and it follows a fixed weekly rotation, so you can plan around it.
 
 ## When does the Tide change?
@@ -76,6 +81,8 @@ The game tells you in several ways:
 - **Boss bar:** a countdown to the end of the day
 - **Rollover:** a title and a sound for everyone online when the Tide changes
 
+<Figure src={bossBar} alt="The Tide boss bar reading Wild Tide with 18 hours and 38 minutes left" caption="The Tide boss bar counts down to the end of the day." contain />
+
 ## Which commands are there?
 
 | Command | What it does |
@@ -84,6 +91,10 @@ The game tells you in several ways:
 | `/coi tide calendar [days]` | The coming Tides, starting today (14 days by default, up to 60) |
 | `/coi tide notify` | Turn your hourly reminder off or on |
 | `/coi tide bar` | Turn your Tide boss bar off or on |
+
+<Figure src={tideStatus} alt="Chat output of /coi tide for the Wild Tide, with twice as many Wild Beyonders, spawns x2 and limit x2, ending in 18 hours and 27 minutes" caption="/coi tide shows today's Tide and what it changes." contain />
+
+<Figure src={tideCalendar} alt="Part of the /coi tide calendar output, one weekday and date per line with its Tide" caption="The end of a /coi tide calendar list." contain />
 
 If staff have pinned today's Tide, `/coi tide status` says "Pinned by an administrator."
 
