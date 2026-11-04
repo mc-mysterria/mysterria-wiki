@@ -10,7 +10,7 @@ import bossBar from '../../../assets/tides/boss-bar.webp';
 import tideStatus from '../../../assets/tides/tide-status.webp';
 import tideCalendar from '../../../assets/tides/tide-calendar.webp';
 
-A Daily Tide is a server-wide bonus that lasts one day. Exactly one Tide is active at a time, it is the same for every player, and it follows a fixed weekly rotation, so you can plan around it.
+A Daily Tide is a server-wide bonus that lasts one day. One Tide is active at a time for every player, and they follow a fixed weekly rotation you can plan around.
 
 ## When does the Tide change?
 
@@ -28,15 +28,13 @@ A Tide day runs from **00:00 to 24:00 Kyiv time** (Europe/Kyiv, which is UTC+2 i
 | **Deep Tide** | More mineable nodes and ingredients in chests | Mineable nodes x2, ingredients in chests x2, rare ingredients x2 |
 | **Crimson Tide** | A [Crimson Moon](/magic/crimson-moon/) is five times as likely | Crimson Moon chance x5, creature drops x1.5 |
 
-"Rare" means **Sequence 3 or stronger** (in practice Sequence 3, 2 and 1, since there are no Sequence 0 ingredients). On Hunting and Deep Tide the rare-ingredient bonus applies to creature drops and to ingredients found in chests, but not to mineable nodes.
+"Rare" means **Sequence 3 or stronger**, so Sequence 3, 2 and 1. On Hunting and Deep Tide the rare-ingredient bonus applies to creature drops and to ingredients found in chests, but not to mineable nodes.
 
-:::note[Crimson Tide is not a sure thing]
-The in-game text calls the Crimson Moon "near certain" on Crimson Tide. The normal chance is 10% per Minecraft night, so on Crimson Tide it is **50% per night**. Each night in the main Overworld rolls separately, so over a whole day of play you will very likely see at least one.
-:::
+The in-game text calls the Crimson Moon "near certain" on Crimson Tide. In fact it is **50% per night** instead of the usual 10%. Each night in the main Overworld rolls separately, so over a whole day of play you will very likely see at least one.
 
 ### Which weekday has which Tide?
 
-The rotation runs in the order of the table above and repeats every seven days, so each Tide lands on the same weekday every week:
+The rotation follows the order of the table above, so each Tide lands on the same weekday every week:
 
 | Day (Kyiv time) | Tide |
 |---|---|
@@ -48,38 +46,36 @@ The rotation runs in the order of the table above and repeats every seven days, 
 | Saturday | Crimson Tide |
 | Sunday | Tide of Diligence |
 
-This is the current schedule. Staff can change the rotation or pin a different Tide for a day, so check `/coi tide calendar` in game to be sure.
+Staff can change the rotation or pin a different Tide for a day, so check `/coi tide calendar` in game to be sure.
 
 ### Are there limits when bonuses stack?
 
-Yes. When several bonuses apply together (a Tide, a Crimson Moon and the Moon Pathway's Moon Authority, for example), the total is capped:
+Yes. When several bonuses apply together, such as a Tide plus a Crimson Moon plus the Moon Pathway's Moon Authority, the total has a cap.
 
-- Creature spawns: at most **x4**
-- Acting gain: at most **x2.5**
+- Creature spawns are capped at **x4**.
+- Acting gain is capped at **x2.5**.
 
-On Tide of Diligence, once an Acting source reaches its cap the extra banks as Overflow instead of filling your bar. Overflow only exists at Sequence 3 and stronger. See [Usurpation](/magic/usurpation/).
+On Tide of Diligence, once an Acting source reaches its cap the extra banks as Overflow instead of filling your bar. Overflow only exists at Sequence 3 and stronger, as explained on [Usurpation](/magic/usurpation/).
 
 ## Which Tide helps me most?
 
-- **Early and mid Sequences:** your Acting bar is the bottleneck, so **Diligence** helps most. **Wild Tide** helps too, because Wild Beyonders only exist at Sequence 9 to 5.
-- **Sequence 3 and stronger:** the cooldown on each Acting method holds you back more than the bar, so **Patience** is your day. Hunting, Fortune and Deep Tide also carry the rare-tier bonuses aimed at you.
-- **Looting:** save your chest runs for **Fortune** and your ingredient hunting for **Hunting** or **Deep Tide**.
+- **Early and mid Sequences.** Your Acting bar is the bottleneck, so **Diligence** helps most. **Wild Tide** helps too, because Wild Beyonders only exist at Sequence 9 to 5.
+- **Sequence 3 and stronger.** The cooldown on each Acting method holds you back more than the bar, so **Patience** is your day. Hunting, Fortune and Deep Tide also carry the rare-tier bonuses aimed at you.
+- **Looting.** Save your chest runs for **Fortune** and your ingredient hunting for **Hunting** or **Deep Tide**.
 
-The creature-drop bonus matters most on badge creatures and on rare ingredients. Custom creatures already drop their common ingredients almost every time. See [Beyonder Creatures](/magic/creatures/).
+The creature-drop bonus matters most on badge creatures and on rare ingredients. Custom [Beyonder Creatures](/magic/creatures/) already drop their common ingredients almost every time.
 
 :::tip[Fortune and pity]
-Pity is only checked when you open a container. If you get close to your pity threshold on Tide of Fortune, open one more chest before midnight. Your counter is kept either way, but the halved threshold ends with the day.
+Pity is only checked when you open a container. If you are close to your pity threshold on Tide of Fortune, open one more chest before midnight. Your counter is kept either way, but the halved threshold ends with the day.
 :::
 
 ## How do I find out today's Tide?
 
-The game tells you in several ways:
-
-- **Login card:** a chat card a few seconds after you join, with the Tide, what it does and the time left
-- **Client toast:** the same card as a pop-up, if you use the [Client Mod](/guides/client-mod/)
-- **Hourly reminder:** one line in chat every hour (skipped if you just joined or are AFK)
-- **Boss bar:** a countdown to the end of the day
-- **Rollover:** a title and a sound for everyone online when the Tide changes
+- **Login card.** A chat card a few seconds after you join shows the Tide, what it does and the time left.
+- **Client toast.** The same card appears as a pop-up if you use the [Client Mod](/guides/client-mod/).
+- **Hourly reminder.** One line in chat every hour, skipped if you just joined or are AFK.
+- **Boss bar.** A countdown to the end of the day.
+- **Rollover.** A title and a sound for everyone online when the Tide changes.
 
 <Figure src={bossBar} alt="The Tide boss bar reading Wild Tide with 18 hours and 38 minutes left" caption="The Tide boss bar counts down to the end of the day." contain />
 
@@ -106,11 +102,3 @@ If staff have pinned today's Tide, `/coi tide status` says "Pinned by an adminis
 | [Usurpation](/magic/usurpation/) War Points | Points are counted from the amount before the Tide bonus |
 | Ordeals | They can cost you your inventory, so a calendar should not change the odds |
 | Combat damage | Balance stays the same every day |
-
-## Related pages
-
-- [Crimson Moon](/magic/crimson-moon/) and [Beyonder Creatures](/magic/creatures/)
-- [Wild Beyonders](/magic/wild-beyonders/)
-- [Loot and pity](/magic/loot/)
-- [Acting](/magic/acting/)
-- News: [The Pantheon Opens](https://www.mysterria.net/en/news/the-pantheon-opens), where Tides were announced

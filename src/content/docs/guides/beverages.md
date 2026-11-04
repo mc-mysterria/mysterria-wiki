@@ -8,145 +8,110 @@ sidebar:
 
 ![Brewery beverages in their bottles](../../../assets/brewery/beverages.png)
 
-### What is the Brewery?
+## What is the Brewery?
 
-The **Brewery** adds fermenting and aging to the game. You can brew ordinary alcoholic drinks, coffees, and
-**nourishing beverages** that give Saturation and can replace solid food. Most brews have their own 3D bottle model.
+The **Brewery** lets you brew alcoholic drinks, coffees and **nourishing beverages** that give Saturation and can replace solid food. These are everyday drinks, not Beyonder potions, which are covered in [Brewing and Potions](/magic/brewing/).
 
-These are everyday drinks, not Beyonder potions. For Beyonder potions, see [Brewing and Potions](/magic/brewing/).
+Most brews have their own 3D bottle model.
 
-However, excess drinking leads to stumbling, distorted speech, scrambled signs, and severe hangovers!
+## How does brewing work?
 
----
+A perfect 5-star bottle takes up to four steps:
 
-### How does brewing work?
+1. **Ferment** by boiling ingredients in a heated cauldron for a set time, then collecting them in glass bottles.
+2. **Distill** the mixture in a brewing stand with Glowstone Dust. Only high-proof spirits need this.
+3. **Age** the bottles in wooden barrels over several Minecraft "years".
+4. **Seal** the finished bottle in a Brew Sealing Table to freeze its quality and age forever.
 
-The path from raw ingredients to a perfect 5-star bottle has four steps:
-
-- **Ferment:** Boil ingredients in a heated cauldron for a specific time and gather them in glass bottles.
-- **Distill:** Put the mixture through a brewing stand with Glowstone Dust to concentrate the alcohol (only for
-  high-proof spirits).
-- **Age:** Store the bottles in custom-built wooden barrels to mature over several Minecraft "years".
-- **Seal:** Place the finished bottle in a Brew Sealing Table to freeze its quality and age forever.
-
----
-
-### Boiling
+## Boiling
 
 Every brew begins in a boiling cauldron.
 
-1. Place a cauldron filled with water over a heat source (for example a campfire, fire, magma or lava).
-2. Right-click the cauldron with ingredients. Check the recipe details for exact quantities.
-3. Right-click the boiling cauldron with a **Clock** to see how long the ingredients have been cooking.
-4. The bubble particles rising from the cauldron change colour over time. Watch them closely to time your recipes without
-   a clock!
-5. Once boiling is complete, right-click the cauldron with empty **Glass Bottles** to extract the base mixture.
+1. Place a cauldron filled with water over a heat source, such as a campfire, fire, magma or lava.
+2. Right-click the cauldron with the ingredients from the recipe.
+3. Right-click the boiling cauldron with a **Clock** to see how long the ingredients have been cooking. The bubble particles also change colour over time, so you can time recipes without a clock.
+4. When boiling is done, right-click the cauldron with empty **Glass Bottles** to collect the base mixture.
 
----
+## Distillation
 
-### Distillation
+Hard liquors and spirits need distillation.
 
-Hard liquors and spirits require distillation to purify the flavour and boost the proof.
+1. Put your boiled bottles in the bottom three slots of a **Brewing Stand**.
+2. Put **Glowstone Dust** in the top slot. It is used up as the brew distills.
+3. Each pass through the brewing stand counts as one "distill run". Over-distilling lowers the quality or ruins the brew.
 
-1. Place your cauldron-boiled bottles into the bottom three slots of a standard **Brewing Stand**.
-2. Put **Glowstone Dust** in the top ingredient slot. The dust acts as a filter and is consumed as the brew distills.
-3. Each pass through the brewing stand counts as one "distill run". Be precise. Over-distilling will ruin the quality
-   or turn the brew into a ruined potion.
+## Barrel Aging
 
----
+Aging improves quality and changes a drink's description and flavour, depending on the barrel's wood. A recipe that needs a Spruce barrel only reaches top quality in a barrel built entirely of Spruce.
 
-### Barrel Aging
+Brews age by themselves inside a registered barrel. Each Minecraft "year" takes **20 real-world minutes**.
 
-Aging mature drinks changes their description, improves quality, and adds unique flavour profiles based on the wood type
-of the barrel.
+## Barrel Structures
 
-The wood type of the barrel dictates the aging characteristics. A recipe requiring Spruce barrel aging will only reach
-maximum quality inside a barrel constructed entirely of Spruce wood. Brews mature over Minecraft "years" (each year
-takes **20 real-world minutes**). Brews will automatically age while sitting inside a registered barrel's inventory.
-
----
-
-### Barrel Structures
-
-You can build two sizes of barrel from any of 13 materials: Birch, Oak, Jungle, Spruce, Acacia, Dark Oak, Crimson,
-Warped, Mangrove, Cherry, Bamboo, Pale Oak, and Cut Copper.
+You can build two sizes of barrel from any of 13 materials: Birch, Oak, Jungle, Spruce, Acacia, Dark Oak, Crimson, Warped, Mangrove, Cherry, Bamboo, Pale Oak and Cut Copper.
 
 An ordinary Minecraft **Barrel** block also ages brews. It holds up to 6 brews and counts as Oak.
 
 ![The small and large barrel designs](../../../assets/brewery/barrels.webp)
 
-#### Small Barrel (Holds 9 Brews)
+### Small Barrel (Holds 9 Brews)
 
-1. Place 4 wooden stairs of your choice in a 2x2 square on the ground (facing inward).
-2. Place another 4 stairs directly on top of them (facing inward), forming a hollow 2x2x2 block.
+1. Place 4 wooden stairs of your choice in a 2x2 square on the ground, facing inward.
+2. Place another 4 stairs directly on top of them, facing inward, to form a hollow 2x2x2 block.
 3. Place a sign on the front and write `barrel` on the first line.
 4. Right-click the sign to register. You should see `Barrel created!` in chat.
 
-#### Large Barrel (Holds 27 Brews)
+### Large Barrel (Holds 27 Brews)
 
-1. Place 4 fence posts on the ground to serve as the corners/legs of a 3x3x4 cylinder.
-2. Build the horizontal cylinder (3 blocks wide, 4 blocks long):
-    - **Bottom Layer:** 4 stairs on the left, 4 stairs on the right, 4 planks down the centre.
-    - **Middle Layer:** 4 planks on the left, 4 planks on the right, 1 plank at the front-centre, and 1 plank at the
-      back-centre (leave the core hollow).
-    - **Top Layer:** 4 stairs on the left, 4 stairs on the right, 4 planks down the centre.
-3. Place a fence post on the bottom-middle plank of the front face (this acts as the spigot).
-4. Place a sign directly above the spigot (middle-middle plank) and write `barrel` on the first line.
+1. Place 4 fence posts on the ground as the legs of a 3x3x4 cylinder.
+2. Build the horizontal cylinder, 3 blocks wide and 4 blocks long:
+    - **Bottom layer.** 4 stairs on the left, 4 stairs on the right, 4 planks down the centre.
+    - **Middle layer.** 4 planks on the left, 4 planks on the right, 1 plank at the front centre and 1 plank at the back centre. Leave the core hollow.
+    - **Top layer.** 4 stairs on the left, 4 stairs on the right, 4 planks down the centre.
+3. Place a fence post on the bottom middle plank of the front face. This is the spigot.
+4. Place a sign directly above the spigot, on the middle plank, and write `barrel` on the first line.
 5. Right-click the sign to register.
 
----
+## The Sealing Table
 
-### The Sealing Table
+Unsealed brews keep changing in your inventory or storage. Sealing locks a brew's quality and stops it aging, so seal finished brews before you sell or store them.
 
-Unsealed brews keep changing in your inventory or storage. To lock a brew's quality and stop the aging process, you
-must seal it.
+The Sealing Table uses a **Smoker** block. Craft it with **2 Glass Bottles** on the top row of a crafting table and **4 Wood Planks** below them. Put your finished brew in the Sealing Table and click to seal it.
 
-The Sealing Table uses a **Smoker** block. Craft it by placing **2 Glass Bottles** on the top row of a crafting table
-and **4 Wood Planks** below them. Put your finished brew inside the Sealing Table interface and click to seal it. Sealed
-brews are ideal for shops and long-term storage.
+## Drunkenness & Hangover Mechanics
 
----
+Alcoholic drinks raise your drunkenness percentage, which causes these effects:
 
-### Drunkenness & Hangover Mechanics
-
-Consuming alcoholic beverages increases your drunkenness percentage, triggering custom behavioural changes:
-
-1. **Stumbling:** Your character will lose control of their footing and stumble in random directions.
-2. **Drunk Speech:** Your chat messages are distorted. S letters become `sh`, words get mixed up, and you will randomly
-   hiccup (`*hic*`) or burp (`*burp*`).
-3. **Drunk Signs:** Trying to write on signs while drunk results in garbled, misspelled text.
-4. **Vomiting:** If your alcohol level is too high, you will throw up, dropping uncollectable items like `SOUL_SAND`,
-   `ROTTEN_FLESH`, and `BEETROOT` on the floor.
-5. **Waking Up:** If you log out while very drunk, you may "wake up" somewhere else when you come back, at one of the
-   wake-up points staff have set. While extremely drunk you may also need several tries to log in.
+1. **Stumbling.** You stumble in random directions.
+2. **Drunk speech.** Your chat messages are distorted. S becomes `sh`, words get mixed up, and you randomly hiccup (`*hic*`) or burp (`*burp*`).
+3. **Drunk signs.** Text you write on signs comes out garbled.
+4. **Vomiting.** If your alcohol level is too high, you throw up and drop items you cannot pick up, like `SOUL_SAND`, `ROTTEN_FLESH` and `BEETROOT`.
+5. **Waking up.** If you log out while very drunk, you may "wake up" at one of the wake-up points staff have set when you come back. While extremely drunk you may also need several tries to log in.
 
 A hangover is remembered for **7 days** after you log out, so logging off is not a cure.
 
-#### Sobering Up
+### Sobering Up
 
-To quickly lower your drunkenness percentage or cure a hangover, consume one of the following:
+These items lower your drunkenness or cure a hangover:
 
-| Item            | Effect                                                           |
-|:----------------|:-----------------------------------------------------------------|
-| 🍎 Golden Apple | Drastically reduces alcohol levels by **10** (the ultimate cure) |
-| 🍞 Bread        | Soaks up the alcohol, reducing levels by **4**                   |
-| 🍯 Honey Bottle | Soothes the stomach, reducing levels by **3**                    |
-| 🥛 Milk Bucket  | Neutralizes toxins, reducing levels by **2**                     |
-| 🧪 Water Bucket | Hydrates your system, reducing levels by **2**                   |
-| 🥕 Carrot       | Light snack that reduces levels by **2**                         |
+| Item | Lowers alcohol by |
+|:---|:---|
+| Golden Apple | **10** |
+| Bread | **4** |
+| Honey Bottle | **3** |
+| Milk Bucket | **2** |
+| Water Bucket | **2** |
+| Carrot | **2** |
 
----
+## The Recipe Book
 
-### The Recipe Book
+Follow a recipe exactly to get a **5-star Quality** brew. A "-" in the **Aging** column means the brew is ready as soon as it is bottled.
 
-Below are the official recipes. Pay close attention to ingredients, boiling times, distillation runs, barrel aging, and
-aging times to achieve a **5-star Quality** rating! A "-" in the **Aging** column means the brew is bottled and
-ready immediately, with no barrel time required.
+If a brew comes out ruined, hover over it. The tooltip gives hints like `Too much time in the oven...` or `One of the ingredients doesn't taste good...` to help you fix the recipe.
 
-#### Saturation and food-replacing brews
+### Saturation and food-replacing brews
 
-These beverages are packed with nutrients and grant the **Saturation** effect, allowing you to bypass eating solid food
-entirely.
+These give the **Saturation** effect, so you can skip solid food.
 
 | Name                    | Ingredients                                                       | Boil Time | Distill Runs |    Aging     | Potion Effects                                                | Description                                                                    |
 |:------------------------|:------------------------------------------------------------------|:---------:|:------------:|:------------:|:--------------------------------------------------------------|:-------------------------------------------------------------------------------|
@@ -155,9 +120,7 @@ entirely.
 | **Elven Honeymead**     | 8 Sugar Cane, 2 Honey Bottles, 4 Melon Slices                     |  5 min    |      0       | Acacia (15y) | Saturation II<br>Speed I (1-2m)<br>Regeneration I-II (10-20s) | Sweet as liquid sunlight. Can sustain a traveler for days in the wilderness.   |
 | **Golden Feast Elixir** | 2 Golden Carrots, 1 Glowstone Dust, 6 Sweet Berries, 4 Sugar Cane |  12 min   |      1       | Spruce (10y) | Saturation IV-V<br>Glowing I (60s)<br>Speed I-II (30-60s)     | A shimmering, magical golden broth that cures even extreme hunger.             |
 
-#### Chaotic and funny brews
-
-These drinks have unique, funny, or chaotic side effects that make player interactions hilarious.
+### Chaotic and funny brews
 
 | Name                       | Ingredients                                                 | Boil Time | Distill Runs |     Aging     | Potion Effects                                                                                   | Description                                                                         |
 |:---------------------------|:------------------------------------------------------------|:---------:|:------------:|:-------------:|:-------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------|
@@ -165,7 +128,7 @@ These drinks have unique, funny, or chaotic side effects that make player intera
 | **Pirate's Grog**          | 6 Kelp, 10 Sugar Cane, 6 Melon Slices                       |  8 min    |      2       | Dark Oak (5y) | Saturation I-II<br>Water Breathing I (1-2m)<br>Hero of the Village I (30s)                       | Spicy, salty grog that keeps the scurvy away and makes you feel like a pirate king. |
 | **Glowing Mushroom Vodka** | 10 Potatoes, 3 Red Mushrooms, 3 Brown Mushrooms             |  18 min   |      5       |       -       | Weakness (80s)<br>Nausea (27s)<br>Night Vision (50-80s)<br>Blindness (2-12s)<br>Slowness (3-10s) | A psychedelic brew. Literally glows in the dark and distorts reality.               |
 
-#### Classic beers and ales
+### Classic beers and ales
 
 | Name          | Ingredients | Boil Time | Distill Runs |     Aging     | Lore / Description           |
 |:--------------|:------------|:---------:|:------------:|:-------------:|:-----------------------------|
@@ -173,7 +136,7 @@ These drinks have unique, funny, or chaotic side effects that make player intera
 | **Beer**      | 6 Wheat     |  8 min    |      0       |   Any (3y)    | The traditional pub ale.     |
 | **Darkbeer**  | 6 Wheat     |  8 min    |      0       | Dark Oak (8y) | Roasted, deep, malty flavor. |
 
-#### Wines, meads and ciders
+### Wines, meads and ciders
 
 | Name            | Ingredients            | Boil Time | Distill Runs |   Aging   | Potion Effects         | Description                                         |
 |:----------------|:-----------------------|:---------:|:------------:|:---------:|:-----------------------|:----------------------------------------------------|
@@ -182,9 +145,9 @@ These drinks have unique, funny, or chaotic side effects that make player intera
 | **Apple Mead**  | 6 Sugar Cane, 2 Apples |  4 min    |      0       | Oak (4y)  | Water Breathing (150s) | Sweet apple mead that helps you breathe underwater. |
 | **Apple Cider** | 14 Apples              |  7 min    |      0       | Any (3y)  | None                   | Sweet, refreshing apple cider.                      |
 
-#### Spirits and liquors
+### Spirits and liquors
 
-High-alcohol drinks that require distillation:
+High-alcohol drinks that need distillation. In Old Tom Gin, "Blue Flowers" means Cornflowers or Blue Orchids.
 
 | Name                        | Ingredients                      | Boil Time | Distill Runs |    Aging     | Potion Effects                                                | Description                                                 |
 |:----------------------------|:---------------------------------|:---------:|:------------:|:------------:|:--------------------------------------------------------------|:------------------------------------------------------------|
@@ -199,9 +162,9 @@ High-alcohol drinks that require distillation:
 | **Golden Vodka**            | 10 Potatoes, 2 Gold Nuggets      |  18 min   |      3       |      -       | Weakness (28s)<br>Poison (4s)                                 | Shimmering golden vodka.                                    |
 | **Blazing Whiskey**         | 10 Wheat, 2 Blaze Powder         |  12 min   |      3       | Spruce (18y) | None                                                          | Gives a burning feeling in your mouth when drunk!           |
 
-#### Specialty and sobering brews
+### Specialty and sobering brews
 
-Most of these are non-alcoholic or help you sober up. Advocaat is the exception, because it has alcohol.
+Most of these are non-alcoholic or help you sober up. Advocaat is the exception and contains alcohol.
 
 | Name                  | Ingredients                           | Boil Time | Distill Runs |   Aging   | Potion Effects                                         | Description                                          |
 |:----------------------|:--------------------------------------|:---------:|:------------:|:---------:|:-------------------------------------------------------|:-----------------------------------------------------|
@@ -210,19 +173,3 @@ Most of these are non-alcoholic or help you sober up. Advocaat is the exception,
 | **Advocaat (Eggnog)** | 5 Eggs, 2 Sugar, 1 Milk Bucket        |  2 min    |      0       | Any (3y)  | None                                                   | Creamy egg liquor, made with raw egg. Alcoholic.     |
 | **Hot Chocolate**     | 3 Cookies                             |  2 min    |      0       |     -     | Haste (40s)                                            | Hot sugary cocoa that gives you energy to mine.      |
 | **Iced Coffee**       | 8 Cookies, 4 Snowballs, 1 Milk Bucket |   1 min   |      0       |     -     | Speed (10s)<br>Regeneration (30s)<br>Alcohol: -8%      | The best drink to sober up fast. Cold and sweet.     |
-
-:::note[Ingredient note]
-"Blue Flowers" refers to Cornflowers or Blue Orchids.
-:::
-
----
-
-:::tip[Tips for success]
-
-- **Read the Hints:** If your brew is ruined, hover over it. The tooltip contains diagnostic hints like
-  `Too much time in the oven...` or `One of the ingredients doesn't taste good...` to help you fix your mistakes.
-- **Double Check Wood Types:** Make sure the barrel structure is built entirely of the required wood type (for example
-  Spruce or Oak) so your high-quality recipes age correctly.
-- **Seal Your Masterpieces:** Always use the Brew Sealing Table on your finished 5-star brews before placing them in
-  player shops or storing them.
-  :::
