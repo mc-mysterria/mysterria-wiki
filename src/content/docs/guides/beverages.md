@@ -6,7 +6,7 @@ sidebar:
   order: 44
 ---
 
-![Brewery beverages in their bottles](../../../assets/brewery/beverages.png)
+![Brewery drinks in their own bottles and mugs on a tavern shelf](../../../assets/brewery/beverages.png)
 
 ## What is the Brewery?
 
