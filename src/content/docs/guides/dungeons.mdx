@@ -5,6 +5,9 @@ sidebar:
   order: 36
 ---
 
+import {Figure} from '~/components/mdx';
+import subspaceMenu from '../../../assets/dungeons/subspace-menu.webp';
+
 ![A dungeon boss room](../../../assets/dungeons/dungeons.png)
 
 Dungeons are instanced worlds that a party enters through a **Rift** in the Overworld. You get class equipment at the start, fight through rooms to a final boss, and leave with loot, Helping Cards and Acting. Each player has **one life** per run.
@@ -27,6 +30,8 @@ Type `/subspace`. The menu lists every dungeon with:
 - the coordinates of each entrance Rift
 - your power compared with the dungeon's
 - your cooldowns and card runs left today
+
+<Figure src={subspaceMenu} alt="The Ventures to the Subspace menu with a tooltip for The Dust Citadel, power level 450 and one entrance" caption="The /subspace menu. Hover over a dungeon to see its power level and entrances." contain />
 
 ![A Rift entrance](../../../assets/dungeons/entrance.png)
 

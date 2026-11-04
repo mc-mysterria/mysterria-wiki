@@ -10,6 +10,7 @@ import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
 import towns from '../../../assets/towns/towns.jpg';
 import dragon from '../../../assets/towns/dragon.jpeg';
 import hall from '../../../assets/towns/hall.jpg';
+import landsLevel from '../../../assets/towns/lands-level-menu.webp';
 
 <Figure src={towns} alt="A large player city at night, lit by lanterns, with a domed cathedral in front" />
 
@@ -106,6 +107,8 @@ The Owner can charge trusted members a tax each payment cycle, up to **10 Coppet
 ## Town levels
 
 A town levels up **automatically** when it meets the requirements, and **drops a level** if it stops meeting them, for example when the bank balance falls. Every level needs **5 trusted players** and a balance in the **town bank** (`/lands deposit`).
+
+<Figure src={landsLevel} alt="The Lands Level menu with two padlocks, one for each requirement of the next level" caption="The Level menu in /lands. Each padlock is one requirement for the next level." contain />
 
 | Level | Name | Trusted players | Town bank | Extra claims | Extra member slots | Upkeep |
 |---|---|---|---|---|---|---|

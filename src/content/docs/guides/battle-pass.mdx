@@ -6,11 +6,15 @@ sidebar:
     order: 24
 ---
 
-import {Card, CardGrid, Notice} from '~/components/mdx';
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import bpMain from '../../../assets/battle-pass/battle-pass-main.webp';
+import bpRewards from '../../../assets/battle-pass/battle-pass-rewards.webp';
 
 The **Battle Pass** turns ordinary play into rewards. You complete quests, quests give points, and points raise your tier. Many tiers carry a reward: money, Energy Shards, Emporium points, Acting Bottles, dungeon keys and two Boons.
 
 Open it with `/battlepass` or `/bp`.
+
+<Figure src={bpMain} alt="The Battle Pass menu with Rewards, Premium, Quests and Info buttons" caption="The Battle Pass menu." contain />
 
 ## How does the Battle Pass work?
 
@@ -19,6 +23,8 @@ Open it with `/battlepass` or `/bp`.
 3. When you reach a reward tier, open **Rewards** in the Battle Pass menu and **click the reward to claim it**. Rewards are not given automatically.
 
 Every player has the **free pass**. The **premium pass** adds a second reward track and extra premium-only quests.
+
+<Figure src={bpRewards} alt="The Battle Pass Rewards page with the Tier 2 tooltip listing $200 and an Acting Bottle" caption="The Rewards page. Hover over a tier to see its rewards and whether it is unlocked." contain />
 
 ## Quests
 

@@ -9,8 +9,12 @@ sidebar:
 import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
 import dailyLogin from '../../../assets/daily/daily.png';
 import hourly from '../../../assets/daily/hourly.png';
+import emporiumMain from '../../../assets/emporium/emporium-main.webp';
+import emporiumIngredients from '../../../assets/emporium/emporium-ingredients.webp';
 
 The **Brilliant Emporium** is a shop that sells Beyonder ingredients, potions, recipes, enchanted books and Mystery Boxes for **Emporium points**. Open it with `/emporium`.
+
+<Figure src={emporiumMain} alt="The Emporium main menu with six category icons on two shelves" caption="The Emporium main menu. Each icon on the shelves opens a category or your daily rewards." contain />
 
 Emporium points are their own balance. They are not money, you cannot buy them with Coppets, and they only work in the Emporium. Check your points with `/emporium balance`.
 
@@ -76,6 +80,8 @@ The shop has five categories. Every day at the server's midnight it picks a new 
 | Mystery Boxes | 4 | 10 | up to 20% either way |
 
 **Stock is shared by everyone.** When an item's stock is gone, it is sold out for all players until the next day. The item shows **Stock: x/y**.
+
+<Figure src={emporiumIngredients} alt="The Emporium Ingredients page with a tooltip for a Reality Fragment priced at 1061 points" caption="The Ingredients page. Hover over an item to see its price in points." contain />
 
 ### How much do things cost?
 

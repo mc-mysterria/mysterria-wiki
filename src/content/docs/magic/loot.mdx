@@ -6,6 +6,10 @@ sidebar:
   order: 4
 ---
 
+import {Figure} from '~/components/mdx';
+import lootFocus from '../../../assets/magic/loot-focus-menu.webp';
+import sequenceFocus from '../../../assets/magic/loot-sequence-focus.webp';
+
 Recipes, Recipe Pages, potions, altar blueprints and many ingredients come from **loot chests** in the world. This page explains where they are, what you can find, and how **Loot Focus** (the pity system) makes sure bad luck never lasts forever.
 
 ## Where are the loot chests?
@@ -82,6 +86,8 @@ These appear in the world as **nodes**. They **glow red** and send up a **beam**
 3. Pick one type: **Recipes**, **Pages**, **Potions** or **Altar Scrolls**.
 4. Optionally pick a **Sequence bracket** (see below), or keep **Any Sequence**.
 
+<Figure src={lootFocus} alt="The Loot Focus menu with the Recipes tooltip showing 0 of 150 chests" caption="The Loot Focus menu. Hover over a type to see your progress toward it." contain />
+
 After each chest, your action bar shows your progress as "Pity: X/Y".
 
 ### How many chests does it take?
@@ -117,6 +123,8 @@ Example thresholds for **Recipes**:
 | 4 | 300 | 600 | 4,050 | 11,391 |
 
 So aim at brackets close to your own Sequence. The menu shows your real threshold for each bracket before you pick it.
+
+<Figure src={sequenceFocus} alt="The Sequence Focus menu with one icon for each bracket" caption="Click a focused type again to open the Sequence Focus menu and pick a bracket." contain />
 
 ### Pinning your next potion
 
