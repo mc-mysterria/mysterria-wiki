@@ -6,6 +6,10 @@ sidebar:
   order: 6
 ---
 
+import {Figure} from '~/components/mdx';
+import ritualStatus from '../../../assets/magic/rituals-status.webp';
+import ritualTask from '../../../assets/magic/rituals-task.webp';
+
 From Sequence 8 on, every advancement has a **ritual**, a set of tasks you complete before you drink the next potion. On Mysterria a ritual is a personal list of Minecraft **advancements**, and each one is worth points. Finish enough of them and the ritual is complete.
 
 Your **first potion (Sequence 9) needs no ritual.**
@@ -33,6 +37,10 @@ A few rules shape your set:
 - `/ritual status` shows your score, for example "7/9 ritual score completed".
 - To see **which** advancements you need, carry the recipe for your next Sequence. That is either a full recipe or its **Recipe Page 3** (the ritual page). Without it, you only see the score.
 - `/ritual view <sequence>` opens your tasks in a menu. Reading the ritual page of a recipe also gives you a clickable link to it.
+
+<Figure src={ritualStatus} alt="Chat output of /ritual status for a Fool heading to Sequence 8, with 0/2 ritual score completed and a hint to get the recipe book" caption="Without the recipe, /ritual status shows only your score." contain />
+
+<Figure src={ritualTask} alt="The ritual menu for Fool Sequence 8 with a task tooltip for Master Trader, trade with every villager career at master level, not completed, progress score 0/13" caption="With the recipe in hand, /ritual view shows each task. Hover a task to read it." contain />
 
 ## Can I reroll a task?
 

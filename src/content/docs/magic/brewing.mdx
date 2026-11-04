@@ -8,6 +8,10 @@ sidebar:
 
 import {Figure, Notice} from '~/components/mdx';
 import cauldron from '../../../assets/magic/cauldron.png';
+import practiceMenu from '../../../assets/magic/brewing-practice-menu.webp';
+import practiceResult from '../../../assets/magic/brewing-rehearsal-result.webp';
+import minigame from '../../../assets/magic/brewing-minigame.webp';
+import drinkConfirm from '../../../assets/magic/brewing-drink-confirm.webp';
 
 Every Sequence starts with a potion, and every potion is brewed. This page covers the whole process: what you need, how to brew, what can go wrong, and how long a potion lasts. It works the same way for Sequence 9 and for every potion after it.
 
@@ -84,13 +88,21 @@ When everything matches, a short **brewing minigame** starts. Your grade decides
 
 The minigame gets harder for stronger Sequences, from very easy at Sequence 9 to hardest at Sequence 2 and above. Beyonders of the **Moon** Pathway get one step easier. Use the altar tier above to shift your grade.
 
+<Figure src={minigame} alt="The Focus your will minigame, a chest menu with three buttons where one glows green" caption="Focus your will, one of the minigames. Click the glowing button before time runs out." contain />
+
 <Notice tone="ok" title="Practise first">
   `/coi practice` lets you rehearse the minigames for free, with nothing at stake.
 </Notice>
 
+<Figure src={practiceMenu} alt="The Choose a rehearsal menu with seven minigame icons" caption="The menu that /coi practice opens. Pick a minigame to rehearse it." contain />
+
+<Figure src={practiceResult} alt="Chat lines reading Rehearsal result Excellent 100 percent, practice only, nothing was gained or lost" caption="A rehearsal ends with your grade in chat." contain />
+
 ## Drinking the potion
 
 When you drink, a confirmation screen shows exactly what the advancement will cost: missing Acting, an incomplete ritual, or a risky Pathway switch. Nothing happens until you confirm, and cancelling gives the potion back.
+
+<Figure src={drinkConfirm} alt="The Advancement Details screen with a green Confirm button, the potion, and a tooltip saying there are no drawbacks and the advancement is safe" caption="The confirmation screen for a first potion. With nothing missing, it says the advancement is safe." contain />
 
 After you confirm, another short minigame runs:
 
