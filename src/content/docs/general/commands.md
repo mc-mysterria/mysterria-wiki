@@ -6,11 +6,11 @@ sidebar:
   order: 3
 ---
 
-Most of Mysterria runs through menus, so you only need a handful of commands. This list covers the commands ordinary players can use on the main server. If a guide mentions a command that is not here, it probably does not work for players.
+These are the commands ordinary players can use on the main server. Most of Mysterria runs through menus, so a command missing from this list probably does not work for players.
 
 ## Commands that do not exist
 
-There is **no** `/home`, `/sethome`, `/spawn`, `/tpa`, `/rtp` or `/back`. Travel is part of the game. See [World and Safety](/general/world-and-safety/#is-there-home-spawn-or-tpa).
+There is **no** `/home`, `/sethome`, `/spawn`, `/tpa`, `/rtp` or `/back`. See [World and Safety](/general/world-and-safety/#is-there-home-spawn-or-tpa).
 
 ## Getting started
 
@@ -75,7 +75,7 @@ High Sequence players also use `/coi usurp` ([Usurpation](/magic/usurpation/)), 
 |---|---|
 | `/subspace` | Every dungeon, its entrance and your cooldowns. See [Dungeons](/guides/dungeons/) |
 | `/dparty`, `/ready`, `/leave` | Dungeon party, ready check, leave the dungeon |
-| `/cosmos` | Cosmos Incursions: `/cosmos guide`, `status`, `shop`, `balance`, `leaderboard`. See [Cosmos Incursions](/guides/cosmos-incursions/) |
+| `/cosmos` | [Cosmos Incursions](/guides/cosmos-incursions/), with `/cosmos guide`, `status`, `shop`, `balance` and `leaderboard` |
 | `/pvpevent join` | Join a Duels or FFA event while signups are open (`/pvpevent status` shows it) |
 | `/bedwars` | Bedwars |
 

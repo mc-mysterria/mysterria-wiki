@@ -6,17 +6,17 @@ sidebar:
   order: 7
 ---
 
-**Spirituality** is the energy your abilities spend. Every cast costs some, and it refills on its own over time. Running out does not kill you, but it can drive you towards Madness.
+**Spirituality** is the energy your abilities spend, and it refills on its own over time. Running out does not kill you, but it can drive you towards Madness.
 
-You can see it on the blue bar at the top of your screen (or the movable bar of the [Client Mod](/guides/client-mod/)), and on your character screen (`/coi menu character`).
+It shows on the blue bar at the top of your screen (or the movable bar of the [Client Mod](/guides/client-mod/)) and on your character screen (`/coi menu character`).
 
 ## How much Spirituality do I have?
 
-Your maximum Spirituality depends on three things:
+Your maximum Spirituality is worked out like this:
 
 **Maximum = base for your Sequence × (0.5 + 0.5 × your Acting progress) × your Pathway's multiplier**
 
-So right after you advance, with 0% Acting, you have **half** of your full maximum. It grows smoothly as you act, and reaches the full value at 100% Acting. It never goes above that. At Sequence 0 it always counts as full.
+Right after you advance, with 0% Acting, you have **half** of your full maximum. It grows as you act and reaches the full value at 100% Acting. At Sequence 0 it always counts as full.
 
 | Sequence | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -24,7 +24,7 @@ So right after you advance, with 0% Acting, you have **half** of your full maxim
 
 ### Pathway multipliers
 
-Some Pathways have more Spirituality than others. Pathways not listed here use x1.0.
+Pathways not listed here use x1.0.
 
 | Pathway | Multiplier by Sequence |
 |---|---|
@@ -38,20 +38,20 @@ Some Pathways have more Spirituality than others. Pathways not listed here use x
 | Hanged Man | x1.05 at 9, x1.12 at 8 to 0 |
 | Twilight Giant | x1.0 at 9 to 5, x1.2 at 4 to 0 |
 
-For example, a Moon Deity has about 189,000 Spirituality, while a Sequence 9 Seer with full Acting has 110.
+A Moon Deity has about 189,000 Spirituality, and a Sequence 9 Seer with full Acting has 110.
 
 ### What else changes my maximum?
 
-- **Boons** add their own share on top of your Pathway. See [Boons](/magic/boons/).
+- [Boons](/magic/boons/) add their own share on top of your Pathway.
 - **Path of Shortcut** (a starter bonus) lowers your maximum by **10% forever**, at every Sequence. See [Quick Start](/general/start/#4-choose-your-starter-bonus).
 - Breaking a Sun **Notarization** contract can be punished with **Spiritual Binding**, which also lowers your maximum by 10%.
 - A **Uniqueness** and some passive abilities raise it. A Darkness Beyonder's Nocturnality raises it at night.
 
 ## How fast does it come back?
 
-Every second you regain **1/400 of your maximum, plus 1**. A Sequence 9 Beyonder with 100 Spirituality regains about 1 a second. A Sequence 4 with 5,000 regains about 13 a second. Either way, an empty bar refills in under 7 minutes when nothing slows it down.
+Every second you regain **1/400 of your maximum, plus 1**. A Sequence 9 Beyonder with 100 Spirituality regains about 1 a second, and a Sequence 4 with 5,000 regains about 13. An empty bar refills in under 7 minutes when nothing slows it down.
 
-Madness and Tiredness slow it down, and the two stack:
+Madness and Tiredness slow it down, and the two stack.
 
 | Madness | Regeneration speed |
 |---|---|
@@ -77,8 +77,8 @@ At 75% Madness and 85 Tiredness together you regenerate at only 21% speed.
 
 ## What happens when I run low?
 
-- **Below 10%:** every 2.5 minutes you stay there adds **1% Madness**.
-- **Not enough for a cast:** the game lets you pay the missing part in Madness instead, at **0.2% Madness per missing point**. It refuses if that would take you to 90% Madness or more, and the refusal also switches off all your toggled abilities.
-- **At 0:** every toggled ability switches off.
+- Every 2.5 minutes you stay **below 10%** adds **1% Madness**.
+- If you lack Spirituality for a cast, the game lets you pay the missing part in Madness, at **0.2% Madness per missing point**. It refuses if that would take you to 90% Madness or more, and the refusal also switches off all your toggled abilities.
+- **At 0**, every toggled ability switches off.
 
-Keep an eye on your bar, especially at high Sequences where a single cast can cost thousands. See [Madness and Mutation](/magic/mutation/) for what Madness does, and [Conditions](/magic/conditions/) for Tiredness.
+At high Sequences a single cast can cost thousands. See [Madness and Mutation](/magic/mutation/) for what Madness does, and [Conditions](/magic/conditions/) for Tiredness.

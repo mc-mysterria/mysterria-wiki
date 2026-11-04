@@ -11,18 +11,17 @@ import actingRecord from '../../../assets/magic/acting-dossier.webp';
 import actingChat from '../../../assets/magic/acting-cooldowns.webp';
 import bountyBoard from '../../../assets/magic/bounty-board.webp';
 
-In Lord of the Mysteries, a Beyonder **digests** a potion by acting out the role its Sequence describes. On Mysterria this is your **Acting bar**. You fill it by playing your Sequence the way it is meant to be played, and you need it nearly full before the next potion will work.
+A Beyonder **digests** a potion by acting out the role its Sequence describes. On Mysterria you fill your **Acting bar** by playing your Sequence the way it is meant to be played, and the next potion only works once the bar is nearly full.
 
 ## Why does Acting matter?
 
-- **The next potion needs at least 95% Acting.** Below that, the potion is refused.
-- **Between 95% and 100%, you can advance, but the gap costs temporary Madness:**
+The next potion needs at least **95% Acting**. Below that, the potion is refused. Between 95% and 100% you can advance, but the gap costs temporary Madness.
 
 | Acting | 95% | 96% | 97% | 98% | 99% | 100% |
 |---|---|---|---|---|---|---|
 | Temporary Madness | 30% | 24% | 18% | 12% | 6% | 0% |
 
-- **Acting raises your maximum Spirituality**, from half at 0% Acting to full at 100%. See [Spirituality](/magic/spirituality/).
+Acting also raises your maximum [Spirituality](/magic/spirituality/), from half at 0% Acting to full at 100%.
 
 :::danger[Do not spam a refused potion]
 If a potion is refused because your Acting is too low, do not drink it again straight away. A second try within 5 seconds rolls a loss of control with only a 10% chance to survive. See [Ordeals](/magic/ordeals/).
@@ -30,8 +29,9 @@ If a potion is refused because your Acting is too low, do not drink it again str
 
 ## How do I see my Acting?
 
-- Your character screen shows the bar. Open the Pathway icon in your inventory and hover your head, or type `/coi menu character`. With the [Client Mod](/guides/client-mod/), press **M**.
-- `/coi acting` shows your Acting method cooldowns and how much each source has given you, against its cap.
+Your character screen shows the bar. Open the Pathway icon in your inventory and hover your head, or type `/coi menu character`. With the [Client Mod](/guides/client-mod/), press **M**.
+
+`/coi acting` shows your Acting method cooldowns and how much each source has given you against its cap.
 
 <Figure src={actingRecord} alt="The Acting record tab of the Client Mod's Beyonder Dossier, with acting progress of 24 out of 5,832 and a bar for the Passive source" caption="The Acting record tab in the Client Mod's Beyonder Dossier." />
 
@@ -54,7 +54,7 @@ Acting comes from several **sources**. Each source has its own **cap**, which is
 
 ### Caps by Sequence
 
-These are the default caps, as a percentage of your bar:
+These are the default caps, as a percentage of your bar.
 
 | Sequence | Bottles | Abilities | Interaction | World | Passive | Events | Deity Favor |
 |---|---|---|---|---|---|---|---|
@@ -98,9 +98,9 @@ Each cell is Bottles / Abilities / Interaction / World. `/coi acting` shows your
 
 ## Acting methods
 
-Simply casting your spells gives nothing. Each ability has an **Acting method**. This is a specific way of using it that fits your Sequence, such as killing a mob with that spell, using it on another Beyonder, or discovering something with it. Only the methods of your **current** Sequence count. When you advance, the old ones stop working.
+Casting your spells gives nothing on its own. Each ability has an **Acting method**, a specific way of using it that fits your Sequence, such as killing a mob with that spell, using it on another Beyonder or discovering something with it. Only the methods of your **current** Sequence count.
 
-When a method succeeds, your action bar says so, and the method goes on **cooldown**. A chat line tells you when it is ready again. Doing it again in the same spot is blocked for a while, so move around.
+When a method succeeds, your action bar says so and the method goes on **cooldown**. A chat line tells you when it is ready again. Repeating it in the same spot is blocked for a while, so move around.
 
 The cooldown counts **active play time**. It runs at half speed while you are AFK and at a fifth of the speed while you are offline.
 
@@ -119,7 +119,7 @@ The cooldown counts **active play time**. It runs at half speed while you are AF
 Each ability has its own cooldown, so a Sequence with several abilities can act with each of them in turn.
 
 :::note[Repeating yourself pays less]
-If you earn Abilities, Interaction or World Acting the same way again within 15 minutes, each repeat pays 75% of the one before, down to 25%. Vary what you do.
+If you earn Abilities, Interaction or World Acting the same way again within 15 minutes, each repeat pays 75% of the one before, down to 25%.
 :::
 
 ## Bounties
@@ -133,11 +133,11 @@ Bounties are personal tasks that pay Acting. Open them with `/bounty` (or `/coi 
 - Each bounty has a **deadline**, from 30 minutes to 8 hours.
 - PvE and gathering bounties fill your **World** source. PvP bounties fill **Interaction**.
 
-**Kinds of bounty:** hunting mobs near a location, elite mob hunts (Sequence 6 and stronger), field encounters, Wild Beyonder hunts, killing mobs with spells, Crimson Moon hunts, sacrificing items at a spot, travelling a distance or a long journey, scouting a location, scouting with an ability, harvesting crops, mining ores, harvesting mineable ingredients, fishing, surveying biomes or resources, earning advancements, ability mastery in different conditions, and consensual duels and spell challenges with other players. The other player must agree to a duel or spell challenge.
+Bounties include hunting mobs near a location, elite mob hunts (Sequence 6 and stronger), field encounters, Wild Beyonder hunts, killing mobs with spells, Crimson Moon hunts, sacrificing items at a spot, travelling a distance or a long journey, scouting a location, scouting with an ability, harvesting crops, mining ores, harvesting mineable ingredients, fishing, surveying biomes or resources, earning advancements, ability mastery in different conditions, and consensual duels and spell challenges with other players. The other player must agree to a duel or spell challenge.
 
-**Distance:** destinations are rolled around you, at least 200 blocks away and at most 250 blocks at Sequence 9, 500 at 8, 1,000 at 7, 2,000 at 6, 3,500 at 5, 6,000 at 4 and 7,500 at 3. From Sequence 2 there is no limit.
+Destinations are rolled around you, at least 200 blocks away and at most 250 blocks at Sequence 9, 500 at 8, 1,000 at 7, 2,000 at 6, 3,500 at 5, 6,000 at 4 and 7,500 at 3. From Sequence 2 there is no limit.
 
-**Reward:** each bounty rolls a base reward between 0.1% and 5% of your bar, depending on the kind. It is then multiplied by your Sequence: x2 at Sequence 9, x1.5 at 8, x1 at 7, x0.8 at 6, x0.6 at 5, x0.45 at 4, x0.3 at 3, x0.2 at 2 and x0.12 at 1. The offer shows the real amount you will get.
+Each bounty rolls a base reward between 0.1% and 5% of your bar, depending on the kind. It is then multiplied by your Sequence, x2 at Sequence 9, x1.5 at 8, x1 at 7, x0.8 at 6, x0.6 at 5, x0.45 at 4, x0.3 at 3, x0.2 at 2 and x0.12 at 1. The offer shows the real amount you will get.
 
 Completing a bounty also counts as **ritual credit** for Sequence 5 and stronger. See [Rituals](/magic/rituals/#ritual-credit).
 
@@ -145,11 +145,11 @@ Completing a bounty also counts as **ritual credit** for Sequence 5 and stronger
 
 ## Acting Bottles
 
-An **Acting Bottle** holds a fixed amount of Acting points. **Throw it** and it gives its Acting to the nearest Beyonder within 5 blocks of where it lands, so you can throw it at a friend. It counts towards the target's **current** Sequence and their **Bottles** cap.
+An **Acting Bottle** holds a fixed amount of Acting points. **Throw it** and it gives its Acting to the nearest Beyonder within 5 blocks of where it lands, so you can throw it at a friend. It counts towards the target's **current** Sequence and **Bottles** cap.
 
 Bottles are weaker the higher your Sequence. The bottle's description shows how much you would really get. If the target's Bottles cap is already full, the bottle breaks for nothing, so check `/coi acting` first.
 
-Where to get them:
+You can get them from these places.
 
 - The **Battle Pass** (`/bp`) and the reward **calendar** (`/calendar`).
 - The [Brilliant Emporium](/guides/emporium/), where two Acting Bottle shards make a bottle.
@@ -162,8 +162,9 @@ While you are online and **not AFK**, you get a small amount of Acting about eve
 
 ## Events and Deity Favor
 
-- **Events:** Bedwars, Duels, FFA and tournaments pay Acting into the Events source. Join with `/bedwars` and `/pvpevent join`.
-- **Deity Favor:** if your Pathway has a Sequence 0 god, they can grant you Favor. Each grant is 5% of your bar, once a week per person, up to 10% per Sequence at Sequence 9 to 7, 15% at 6 to 4 and 20% at 3 to 1. See [Sequence 0](/magic/sequence-zero/).
+Bedwars, Duels, FFA and tournaments pay Acting into the **Events** source. Join with `/bedwars` and `/pvpevent join`.
+
+If your Pathway has a Sequence 0 god, they can grant you **Deity Favor**. Each grant is 5% of your bar, once a week per person, up to 10% per Sequence at Sequence 9 to 7, 15% at 6 to 4 and 20% at 3 to 1. See [Sequence 0](/magic/sequence-zero/).
 
 ## What speeds Acting up or slows it down?
 
@@ -179,12 +180,3 @@ The last row is the **progression limiter**. If you are 3 or more Sequences ahea
 ## What happens when my bar is full?
 
 At **Sequence 3 and stronger**, Acting you earn after your bar is full is banked as **Overflow**. Overflow never counts towards advancement. It pays for seat challenges and the Sequence 0 contest. Bottles and Deity Favor never bank. See [Usurpation](/magic/usurpation/).
-
-## Tips
-
-- **Act with every ability.** Each method has its own cooldown, so rotate through them.
-- **Take bounties all the time.** Three slots and a new offer every half hour add up.
-- **Play actively.** AFK time slows your cooldowns and gives no passive Acting.
-- **Use bottles early.** They give fewer points as you climb, and the Bottles cap shrinks from 90% at Sequence 9 to 5% at Sequence 1.
-
-Read more in the main site's [Advancement guide](https://www.mysterria.net/en/guide/progression).

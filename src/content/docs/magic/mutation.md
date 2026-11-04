@@ -6,13 +6,13 @@ sidebar:
   order: 10
 ---
 
-**Madness** measures how close you are to losing control of your own power. It runs from **0% to 100%**. At 100% you **lose control**. Your body mutates, and you face an [Ordeal](/magic/ordeals/) or, if you are still weak, lose your Beyonder for good.
+**Madness** measures how close you are to losing control of your own power, from **0% to 100%**. At 100% you **lose control**, your body mutates, and you face an [Ordeal](/magic/ordeals/) or, if you are still weak, lose your Beyonder for good.
 
-You can see your Madness on your character screen (`/coi menu character`).
+Your Madness shows on your character screen (`/coi menu character`).
 
 ## Temporary, permanent and the godhood floor
 
-Your Madness has a **floor** it can never fall below. The floor is made of two parts:
+Your Madness has a **floor** it can never fall below. Most Madness is temporary and fades, but two parts make up the floor.
 
 | Part | Where it comes from | Can it go away? |
 |---|---|---|
@@ -20,7 +20,7 @@ Your Madness has a **floor** it can never fall below. The floor is made of two p
 | **Permanent Madness** | Risky advancements, unsafe Pathway switches, Ordeals, some powers | Not with time or normal cures (see below) |
 | **Godhood floor** | Being Sequence 4 or stronger | Relieved by your church or cohort |
 
-Your floor is your Permanent Madness plus whatever godhood floor is left. Recovery and cures stop at the floor. The floor can never be higher than **95%**, so it can never kill you on its own.
+Your floor is your Permanent Madness plus whatever godhood floor is left. Recovery and cures stop at the floor. The floor can never be higher than **95%**, so it cannot kill you on its own.
 
 ### The godhood floor
 
@@ -34,7 +34,7 @@ An active church relieves it through its anchors (Angels get half of their leade
 
 ### Can Permanent Madness ever be removed?
 
-Ordinary recovery and cures cannot lower it. A few specific things can:
+Ordinary recovery and cures cannot lower it. A few specific things can.
 
 - The Hanged Man's **Forbidden Knowledge**.
 - Permanent Madness from a contract is removed when the contract ends.
@@ -46,22 +46,22 @@ Ordinary recovery and cures cannot lower it. A few specific things can:
 - **Advancing** with less than 100% Acting or an incomplete ritual (see below).
 - **Unsafe Pathway switches** (see below).
 - **A Poor or Failed drinking minigame** when you advance. See [Brewing](/magic/brewing/#drinking-the-potion).
-- **Dying:** 1 to 2% each time.
-- **Low Spirituality:** 1% for every 2.5 minutes below 10% of your maximum.
-- **Paying a spell with Madness** when you lack Spirituality: 0.2% per missing point. See [Spirituality](/magic/spirituality/#what-happens-when-i-run-low).
+- **Dying**, 1 to 2% each time.
+- **Low Spirituality**, 1% for every 2.5 minutes below 10% of your maximum.
+- **Paying a spell with Madness** when you lack Spirituality, 0.2% per missing point. See [Spirituality](/magic/spirituality/#what-happens-when-i-run-low).
 - **Mental Pressure** at 90 or more. See [Conditions](/magic/conditions/#mental-pressure).
 - **The Spirit World (Nether) and the Astral World (End)** slowly raise it while you stay.
-- **Abilities:** your own (for example some Hanged Man powers) and other players' (for example Visionary).
+- **Abilities**, both your own (for example some Hanged Man powers) and other players' (for example Visionary).
 
 ## Advancement costs
 
-Each potion must be **exactly one Sequence stronger** than your current one. Anything else is refused at no cost. Before you drink, a confirmation screen shows the exact Madness the advancement will cost. These are the parts:
+Each potion must be **exactly one Sequence stronger** than your current one. Anything else is refused at no cost. Before you drink, a confirmation screen shows the exact Madness the advancement will cost, made up of the parts below.
 
-**Acting:** you need at least 95%. Every missing percent costs 6% temporary Madness, so 95% Acting costs **30%**. See [Acting](/magic/acting/).
+You need at least 95% [Acting](/magic/acting/). Every missing percent costs 6% temporary Madness, so 95% Acting costs **30%**.
 
-**Ritual:** an incomplete ritual costs up to **40% temporary and 10% permanent** Madness, in proportion to how much is missing. See [Rituals](/magic/rituals/#what-if-i-skip-the-ritual).
+An incomplete [ritual](/magic/rituals/#what-if-i-skip-the-ritual) costs up to **40% temporary and 10% permanent** Madness, in proportion to how much is missing.
 
-**Pathway switch:** a switch that is not safe adds a cost and a survival roll:
+A Pathway switch that is not safe adds a cost and a survival roll.
 
 | Switch | Temporary | Permanent | Survival |
 |---|---|---|---|
@@ -89,12 +89,11 @@ Locked abilities cannot be cast until your Madness drops below that stage again.
 
 ## How do I lower my Madness?
 
-- **Time:** while you are online, Madness drops by **0.5% every 6 minutes** (5% an hour).
-- **Sleep:** in a bed it drops twice as fast.
-- **Rest:** at 85 Tiredness or more it drops at only 60% speed. See [Conditions](/magic/conditions/).
-- **Church:** a church can add a recovery bonus, and give the **Madness Relief** gift. See [Churches](/magic/churches/).
-- **Cures:** some abilities heal Madness, such as **Placate**, **Soul Suture** and **Requiem**. Outside combat and PvP areas they use a short minigame, and your score sets how well they work.
-- **Divine Presence:** believers within 24 blocks of their Pathway's god take 10% less incoming Madness. See [Sequence 0](/magic/sequence-zero/).
+While you are online, Madness drops by **0.5% every 6 minutes** (5% an hour). It drops twice as fast while you sleep in a bed, and at only 60% speed at 85 [Tiredness](/magic/conditions/) or more.
+
+- A [church](/magic/churches/) can add a recovery bonus and give the **Madness Relief** gift.
+- Some abilities heal Madness, such as **Placate**, **Soul Suture** and **Requiem**. Outside combat and PvP areas they use a short minigame, and your score sets how well they work.
+- Believers within 24 blocks of their Pathway's god take 10% less incoming Madness from the god's **Divine Presence**. See [Sequence 0](/magic/sequence-zero/).
 
 All of these stop at your floor.
 
@@ -104,9 +103,9 @@ An **Anti-Control Charm** in your inventory is used up automatically and **cance
 
 ## What happens at 100%?
 
-You **lose control**. What follows depends on your strongest Sequence:
+You **lose control**, and what follows depends on your strongest Sequence.
 
-- **Sequence 7, 8 or 9:** your Beyonder is wiped. You lose your Pathway, Sequence and abilities, your items go into the mutant your power becomes, and you must wait three days before becoming a Beyonder again.
-- **Sequence 6 or stronger:** you enter an **Ordeal** instead. You lose Sequences and Acting, but keep your character.
+- At **Sequence 7, 8 or 9**, your Beyonder is wiped. You lose your Pathway, Sequence and abilities, your items go into the mutant your power becomes, and you must wait three days before becoming a Beyonder again.
+- At **Sequence 6 or stronger**, you enter an **Ordeal** instead. You lose Sequences and Acting, but keep your character.
 
-Everything about Ordeals, including the offense counter that can still lead to a wipe, is on the [Ordeals](/magic/ordeals/) page.
+Ordeals, including the offense counter that can still lead to a wipe, are covered on [Ordeals](/magic/ordeals/).

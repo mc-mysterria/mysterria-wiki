@@ -16,7 +16,7 @@ import dossier from '../../../assets/start/beyonder-dossier.webp';
 
 <Figure src={banner} alt="A Mysterria Beyonder flying above the world" />
 
-Mysterria is a **Lord of the Mysteries (LOTM) Minecraft server**. The Beyonder system runs on the server through its own plugin, so you play with an ordinary Minecraft client. You need no mod or modpack. This page takes you from the server list to your first Sequence.
+Mysterria is a **Lord of the Mysteries (LOTM) Minecraft server**. The Beyonder system runs in a server plugin, so you join with an ordinary Minecraft client and no mods.
 
 ## 1. Connect to the server
 
@@ -32,7 +32,7 @@ Mysterria is a **Lord of the Mysteries (LOTM) Minecraft server**. The Beyonder s
 1. Open **Multiplayer**, add `mc.mysterria.net` and join.
 2. **Accept the server resource pack** when Minecraft asks.
 3. In the lobby server selector, choose **Mysteries**.
-4. Read what the lobby NPC says before you leave. It helps you find your way.
+4. Read what the lobby NPC says before you leave.
 
 <Notice tone="warn" title="Everything looks like plain Minecraft?">
   Then the resource pack did not load. Edit the server entry, set **Server Resource Packs** to **Enabled**, and reconnect. If it still fails, update your Java client. More fixes are in the main site's [troubleshooting guide](https://www.mysterria.net/en/guide/troubleshooting).
@@ -42,16 +42,11 @@ Mysterria is a **Lord of the Mysteries (LOTM) Minecraft server**. The Beyonder s
 
 Official (premium) Minecraft accounts log in automatically and skip this step.
 
-Offline accounts register once, then log in on every later visit:
-
-- `/register <password> <password>` the first time
-- `/login <password>` after that
-
-Remember your password.
+Offline accounts type `/register <password> <password>` on the first visit and `/login <password>` on every visit after that. Remember your password.
 
 ## 3. Verify your account
 
-Verifying links your Minecraft account to your Discord account and your profile on mysterria.net.
+Verifying links your Minecraft account to your Discord account and your mysterria.net profile. Verified players get exclusive Discord channels, a unique chat prefix and role, and full store access.
 
 1. Sign in on [mysterria.net](https://www.mysterria.net/en/profile) and open your **profile**.
 2. Click **Generate Code**.
@@ -61,7 +56,7 @@ Verifying links your Minecraft account to your Discord account and your profile 
 
 <Figure src={code} alt="The in-game verification window asking for the code" caption="Then enter it in game." contain />
 
-Verified players get exclusive Discord channels, a unique chat prefix and role, and full store access. If the code does not work, generate a fresh one and try again, or open a ticket on Discord.
+If the code does not work, generate a fresh one or open a ticket on Discord.
 
 ## 4. Choose your starter bonus
 
@@ -75,15 +70,15 @@ Soon after you join, a menu shows all 22 Pathways. Pick one, then choose one of 
 | **Permanent cost** | Your maximum Spirituality is **10% lower forever**, at every Sequence | None |
 | **Best for** | Playing with abilities today | Learning brewing and keeping full power |
 
-**How Path of Resolve pays out:** open `/magic`, click **Loot Focus**, choose **Recipes** and keep **Any Sequence**. Your next loot chest then gives you a recipe. The recipe can be for **any Pathway and Sequence**, so it may not match the Pathway you clicked. See [Loot Focus](/magic/loot/#loot-focus-pity).
+To claim Path of Resolve, open `/magic`, click **Loot Focus**, choose **Recipes** and keep **Any Sequence**. Your next loot chest then gives you a recipe for **any Pathway and Sequence**, so it may not match the Pathway you clicked. More on this in [Loot Focus](/magic/loot/#loot-focus-pity).
 
 <Notice tone="info" title="The Pathway you click does not lock you in">
-  You become a Beyonder only when you drink a Sequence 9 potion, and you join that potion's Pathway. If the menu said Fool but you later drink a Door potion, you are Door. The starter bonus itself cannot be picked again. If you made a genuine new-player mistake, open a ticket on Discord. Staff sometimes give a reset.
+  You join the Pathway of the first Sequence 9 potion you drink. If the menu said Fool but you drink a Door potion, you are Door. The starter bonus cannot be picked again, but staff sometimes give a reset for a genuine new-player mistake. Open a ticket on Discord to ask.
 </Notice>
 
 ## 5. Brew and drink your first potion
 
-Sequence 9 needs a **recipe**, a **Magic Cauldron** (a Crude, Ritual or Grand Altar, see [Brewing](/magic/brewing/)), the recipe's **ingredients**, and a successful brew. It needs no Acting and no ritual, and it costs no Madness. Brewed potions expire after 48 hours, so brew when you are ready to drink.
+Sequence 9 needs a **recipe**, a **Magic Cauldron** (a Crude, Ritual or Grand Altar) and the recipe's **ingredients**, then a successful brew. It needs no Acting or ritual and costs no Madness. Brewed potions expire after 48 hours, so brew when you are ready to drink.
 
 <CardGrid>
   <Card title="Brewing and Potions" text="Cauldrons, recipes, the brewing minigame and what a failed brew costs." href="/magic/brewing/" />
@@ -93,11 +88,7 @@ Sequence 9 needs a **recipe**, a **Magic Cauldron** (a Crude, Ritual or Grand Al
 
 ## 6. Check your character
 
-Your Sequence, Acting, Health, Spirituality and Madness are all on your character screen:
-
-- Open your **inventory**, click the **Pathway icon** in the top-left corner, and hover over your character's head, or
-- type `/coi menu character`, or
-- with the [Client Mod](/guides/client-mod/), press **M**. The mod removes the inventory icon.
+Your Sequence, Acting, Health, Spirituality and Madness are on your character screen. Open your **inventory**, click the **Pathway icon** in the top-left corner and hover over your character's head. You can also type `/coi menu character`. With the [Client Mod](/guides/client-mod/) the inventory icon is gone, and you press **M** instead.
 
 <Figure src={dossier} alt="The Client Mod's Beyonder Dossier for a Fool Sequence 9 player, with Health, Spirituality, Madness, Tiredness and acting progress" caption="The Beyonder Dossier that the Client Mod opens with M." />
 
@@ -118,15 +109,15 @@ There is **no** `/home`, `/sethome`, `/spawn`, `/tpa`, `/rtp` or `/back`. The fu
 
 ## Before you settle
 
-- Travel takes planning, because there are no teleport commands. Pick your base with care, or join a town.
+- With no teleport commands, pick your base with care or join a town.
 - PvP is off in most of the world, and griefing is against the rules.
 - Every chest in a generated structure is a Beyonder loot chest, and each one pays **you** once.
 - The world resets between epochs. Epoch II began on 1 May 2026.
 
-Read [World and Safety](/general/world-and-safety/) for the details, and the [server rules](https://www.mysterria.net/en/rules) before you play.
+The details are on [World and Safety](/general/world-and-safety/). Read the [server rules](https://www.mysterria.net/en/rules) before you play.
 
 ## Need help?
 
-Ask in chat or on the [Mysterria Discord](https://discord.com/invite/jc7GSxBWgb). The main site's [player guide](https://www.mysterria.net/en/guide) answers the most common questions too.
+Ask in chat or on the [Mysterria Discord](https://discord.com/invite/jc7GSxBWgb). The main site's player guide answers the most common questions.
 
 <Button href="https://www.mysterria.net/en/guide" variant="secondary" external>Open the player guide</Button>
