@@ -11,7 +11,7 @@ import wbTrade from '../../../assets/magic/wild-beyonder-trade.webp';
 
 <Figure src={leadImage} eager alt="A Wild Beyonder" />
 
-Wild Beyonders are NPC Beyonders who wander the wilds. Each one belongs to a Pathway and a Sequence from **Sequence 9 to Sequence 5**. Depending on your own Pathway they will trade with you or attack you on sight, and they fight with real Pathway abilities.
+Wild Beyonders are NPC Beyonders who wander the wilds, each with a Pathway and a Sequence from **Sequence 9 to Sequence 5**. Depending on your own Pathway they trade with you or attack on sight, and they fight with real Pathway abilities.
 
 ## Will a Wild Beyonder attack me?
 
@@ -25,11 +25,13 @@ It depends only on your Pathway compared with theirs:
 | **Not a Beyonder yet** | Hostile on sight | Not possible |
 | Anyone who attacks first | Hostile | Not possible |
 
-Neighbouring Pathways are the ones in the same group, for example Fool, Error and Door. The [Pathways](/magic/pathways/) page lists the groups. If you right-click a hostile one, you get "This Wild Beyonder is hostile toward your pathway!".
+Neighbouring Pathways are the ones in the same group, for example Fool, Error and Door. The [Pathways](/magic/pathways/) page lists the groups. Right-clicking a hostile one shows "This Wild Beyonder is hostile toward your pathway!".
 
-If you die or log out, the Wild Beyonder loses track of you. It does not come after you when you return.
+If you die or log out, the Wild Beyonder loses track of you and does not come after you when you return.
 
 ## Where do Wild Beyonders spawn?
+
+They have no fixed places. They appear around players who are out exploring.
 
 | Rule | Value |
 |---|---|
@@ -40,7 +42,7 @@ If you die or log out, the Wild Beyonder loses track of you. It does not come af
 | Most at once | 20 on the whole server (40 on Wild Tide) |
 | Despawn | After 60 seconds with no player within 50 blocks |
 
-So they do not wait for you in fixed places. They appear around players who are out exploring. On **Wild Tide** days twice as many spawn and twice as many can exist at once. See [Daily Tides](/guides/tides/).
+On **Wild Tide** days twice as many spawn and twice as many can exist at once. The [Daily Tides](/guides/tides/) page says when.
 
 ### How strong are they?
 
@@ -48,17 +50,13 @@ So they do not wait for you in fixed places. They appear around players who are 
 |---|---|---|---|---|---|
 | Share of spawns (about) | 32% | 21% | 19% | 18% | 11% |
 
-There are no Wild Beyonders at Sequence 4 or stronger in the wild.
+There are no wild ones at Sequence 4 or stronger.
 
 ## How do I trade with a Wild Beyonder?
 
-Right-click a peaceful Wild Beyonder. The first time you meet one it greets you first, and the trade menu opens about 10 seconds later. You cannot trade while it is fighting.
+Right-click a peaceful Wild Beyonder. The first time you meet one it greets you, and the trade menu opens about 10 seconds later. You cannot trade while it is fighting.
 
-Every offer costs **three things at once**, each the same number:
-
-1. Money from your wallet
-2. **Energy Shards**
-3. **Verl Dor** coins
+Every offer costs the same number in money from your wallet, in **Energy Shards** and in **Verl Dor** coins, all paid at once. Energy Shards come from selling ingredients to nitwit and jobless villagers, as explained on [Energy Shards](/guides/shards/). Verl Dor is the largest coin in the wallet (see [Economy](/guides/economy/)).
 
 ### What do they sell?
 
@@ -87,10 +85,6 @@ The price grows by x1.5 for every Sequence above 9. Each number below is paid in
 
 If you are from a neighbouring Pathway, multiply by 1.5. A trade fails without taking anything if you cannot pay or have no room for the item.
 
-:::tip[Getting the currencies]
-Energy Shards come from selling ingredients to nitwit and jobless villagers. Verl Dor is the largest coin in the wallet. See [Energy Shards](/guides/shards/) and [Economy](/guides/economy/).
-:::
-
 ## What do I get for killing one?
 
 Only Wild Beyonders that spawned naturally give rewards. Ones summoned by abilities do not.
@@ -106,31 +100,19 @@ The bounty board (`/bounty`) sometimes offers a **Wild Beyonder Hunt** for Seque
 
 ## Which Pathway abilities work on Wild Beyonders?
 
-Many Acting methods ask you to hunt or control other Beyonders, and Wild Beyonders let you do that without bothering real players. Confirmed examples:
+Many Acting methods ask you to hunt or control other Beyonders. Wild Beyonders let you do that without bothering real players. Confirmed examples:
 
-- **Hanged Man:** Grazing their souls
-- **Door:** Replication can copy their abilities
-- **Fool:** turning them into Marionettes
-- **Abyss:** a Wild Beyonder kill satisfies Bloodlust
+- **Hanged Man** can Graze their souls.
+- **Door** Replication can copy their abilities.
+- **Fool** can turn them into Marionettes.
+- **Abyss** Bloodlust counts a Wild Beyonder kill.
+
+Not every copying ability works on them, so test before you rely on it.
 
 :::caution[Abyss Acting]
 Killing Wild Beyonders does **not** digest the Abyss potion. Abyss Acting comes only from killing Beyonder players of a qualifying Sequence.
 :::
 
-Not every copying ability works on them, so test before you rely on it.
-
 ## How dangerous are they in a fight?
 
-Wild Beyonders fight like players. They use their Pathway's abilities with **20% shorter cooldowns** than a player would have, and they try to retreat when their health runs low. Do not judge one by its Sequence alone.
-
-- Check the name and Pathway before you approach.
-- Fight near cover and bring healing.
-- Higher Sequences hit much harder but drop better rewards.
-
-## Related pages
-
-- [Beyonder Creatures](/magic/creatures/): monster Beyonders and their drops
-- [Daily Tides](/guides/tides/): Wild Tide doubles Wild Beyonders
-- [Rift Bosses](/guides/bosses/): bosses summon Wild Beyonder guards
-- [Outer Gods Anchors](/guides/outer-gods-anchors/): Wild Beyonders defend the corruption
-- Main site guide: [Activities](https://www.mysterria.net/en/guide/activities)
+Wild Beyonders fight like players. They use their Pathway's abilities with **20% shorter cooldowns** than a player would have, and they retreat when their health runs low. Check the name and Pathway before you approach, and fight near cover with healing ready. Higher Sequences hit much harder but drop better rewards.

@@ -9,9 +9,9 @@ sidebar:
 import {Figure, Notice} from '~/components/mdx';
 import rifleRounds from '../../../assets/firearms/riflerounds.png';
 
-The **Steam Rifle** (announced as the Steam-Pressured Rifle) is the long-range gun. It hits for 20 damage, reaches 100 blocks and has a scope, but it fires slowest and holds only 5 rounds.
+The **Steam Rifle** is the long-range gun with a scope. It hits hardest but fires slowest and holds only 5 rounds.
 
-Its numbers are in the [stats table](/firearms/#weapon-stats): 20 damage, 5 rounds, 100 blocks range and 1.2 seconds between shots.
+Its [stats](/firearms/#weapon-stats) are 20 damage, 5 rounds, 100 blocks range and 1.2 seconds between shots.
 
 ## How do I get one?
 
@@ -23,7 +23,7 @@ You need five parts, and **none of them can be crafted**:
 - Military Rifle Stock
 - Sniper Scope
 
-Parts come from chest loot in the Overworld. Each time a chest in a vanilla structure generates its loot, there is a 25% chance it also holds one random Deathknell or Steam Rifle part. You can also trade for parts with other players.
+Each time a chest in a vanilla Overworld structure generates its loot, there is a 25% chance it also holds one random Deathknell or Steam Rifle part. You can also trade for parts with other players.
 
 With all five in your inventory, right-click a [Weaponsmith Table](/firearms/crafting/#how-do-i-build-a-gun) to check, then Shift + right-click to build.
 
@@ -32,7 +32,7 @@ With all five in your inventory, right-click a [Weaponsmith Table](/firearms/cra
 Only **Rifle Rounds** and the special Rifle Rounds made from them (13 kinds in all).
 
 - 1 Rifle Cartridge Case + 1 Rifle Cartridge Core + 2 Gunpowder = **3 Rifle Rounds**.
-- 3 Brass + 1 Iron Ingot + 12 Gunpowder makes **18 rounds**. It is the most Brass-hungry ammo.
+- 3 Brass + 1 Iron Ingot + 12 Gunpowder makes **18 rounds**, the most Brass-hungry ammo.
 
 <Figure src={rifleRounds} alt="Crafting grid: a Rifle Cartridge Case, a Rifle Cartridge Core and 2 Gunpowder making 3 Rifle Rounds" caption="Rifle Rounds." contain />
 
@@ -40,7 +40,7 @@ The [Ammunition](/firearms/ammunition/) page has the case and core recipes and a
 
 ## How do I use the scope?
 
-Hold **Sneak** while holding the rifle to look through the scope. Let go to stop. The zoom comes from a Slowness effect, so you move slowly while scoped. Scoping does not improve accuracy by itself. Standing still does (see [Accuracy](/firearms/#accuracy)).
+Hold **Sneak** while holding the rifle to look through the scope, and let go to stop. The zoom comes from a Slowness effect, so you move slowly while scoped. Scoping does not improve [accuracy](/firearms/#accuracy) by itself. Standing still does.
 
 ## How does reloading work?
 
@@ -51,15 +51,6 @@ The rifle has two reload modes, depending on whether any rounds are left.
 | Empty | All rounds go in together after **3.0 seconds**. Nothing is usable before that. |
 | 1 to 4 rounds left | The first round goes in after **1.0 second**, then one more every **0.75 seconds**. Topping up 4 rounds takes 3.25 seconds. |
 
-<Notice tone="warn" title="You cannot shoot mid-reload">
-Firing is blocked while the reload runs ("Weapon is reloading!"). Switching to another hotbar slot cancels it. On a top-up, the rounds already loaded stay in the gun. On a reload from empty, nothing is loaded if you cancel before the 3 seconds are up.
-</Notice>
-
-Because a reload from empty is all or nothing, it often pays to top up after a shot or two instead of firing all 5 first.
+Firing is blocked while the reload runs ("Weapon is reloading!"). Switching to another hotbar slot cancels it. On a top-up, the rounds already loaded stay in the gun. On a reload from empty, nothing is loaded if you cancel before the 3 seconds are up. So it often pays to top up after a shot or two instead of firing all 5 first.
 
 When you reload from empty, the rifle takes the first stack of Rifle Rounds in your inventory. When it is partly loaded, it only tops up with the same kind of round already inside.
-
-## Next steps
-
-- [Klein's Repeater](/firearms/kleins-repeater/) and [Deathknell](/firearms/deathknell-revolver/): the other two guns.
-- [Firearms overview](/firearms/): controls, accuracy and the stats table.

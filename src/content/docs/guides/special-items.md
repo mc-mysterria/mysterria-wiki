@@ -6,7 +6,7 @@ sidebar:
   order: 45
 ---
 
-Two rare items change the rules of Beyonder progress. The **Pathway Transfer Token** lets you switch Pathway without starting over, and the **Anti-Control Charm** saves you from losing control once.
+The **Pathway Transfer Token** lets you switch Pathway without starting over. The **Anti-Control Charm** saves you from losing control once.
 
 ## Pathway Transfer Token
 
@@ -22,12 +22,12 @@ The game checks your Sequence again when you open the menu. If you reached Seque
 
 ### What do I lose?
 
-- Your old Pathway's abilities, of course. Your Spirituality and Health are recalculated for the new Pathway.
+- Your old Pathway's abilities. Your Spirituality and Health are recalculated for the new Pathway.
 - Any **Overflow** you banked on the old Pathway.
-- For **30 days** you cannot contest a seat on your new Pathway. See [Usurpation](/magic/usurpation/).
+- For **30 days**, the right to contest a seat on your new Pathway in [Usurpation](/magic/usurpation/).
 - Fool Beyonders lose their Marionettes.
 
-You cannot transfer to the Pathway you already have, and Boons cannot be transferred. A [Boon](/magic/boons/) is changed with a Boon Token instead.
+You cannot transfer to the Pathway you already have. A [Boon](/magic/boons/) cannot be transferred and is changed with a Boon Token instead.
 
 ### Where do I get one?
 
@@ -38,14 +38,11 @@ You cannot transfer to the Pathway you already have, and Boons cannot be transfe
 
 ## Anti-Control Charm
 
-The Anti-Control Charm **stops one loss of control**. Keep it anywhere in your inventory. The next time you would lose control, the charm is used up instead, with a totem effect and the message "Your Anti-Control Charm protected you from losing control!".
+The Anti-Control Charm **stops one loss of control**. Keep it anywhere in your inventory, with no need to hold or activate it. The next time you would [lose control](/magic/mutation/), the charm is used up instead, with a totem effect and the message "Your Anti-Control Charm protected you from losing control!".
 
-- It works passively. You do not need to hold or activate it.
 - One charm protects you once. Carry more for more protection.
 - When you drink a potion, the confirmation screen tells you that your charm will absorb the roll.
 - It does **not** protect against the "Lose Control" punishment of a Notarization contract.
-
-See [Madness and Mutation](/magic/mutation/) for what losing control means and how to avoid it.
 
 ### Where do I get one?
 
@@ -54,10 +51,3 @@ See [Madness and Mutation](/magic/mutation/) for what losing control means and h
 | [Outer Gods Anchors](/guides/outer-gods-anchors/) shop, `/oga rewards` | 200 Contribution Points, at most 1 per week |
 | [Dungeon](/guides/dungeons/) Helping Card Shop at Embers Resurgence and Root of the Canopy, Advanced tier and above | 21 to 27 Helping Cards, depending on tier |
 | Mythic Bedwars | A rare bonus prize for the match MVP |
-
-## Related pages
-
-- [Pathways](/magic/pathways/): choose your new Pathway
-- [Madness and Mutation](/magic/mutation/): losing control
-- [Boons](/magic/boons/): the other token-based item
-- [Outer Gods Anchors](/guides/outer-gods-anchors/) and [Dungeons](/guides/dungeons/): where these items come from
