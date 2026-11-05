@@ -1,0 +1,220 @@
+---
+title: "Locuri și uzurpare"
+description: "Limita de locuri pe Cale pe Mysterria, cum se strânge Interpretarea Overflow și cum contești un loc plin de Secvență sau o Unicitate pe acest server Lord of the Mysteries."
+sidebar:
+  label: Locuri și uzurpare
+  order: 30
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import leadImage from '~/assets/heroes/usurpation.webp';
+import seatReadiness from '~/assets/magic/usurpation-readiness.webp';
+
+<Figure src={leadImage} eager alt="Imagine din Lord of the Mysteries cu opt zei unul lângă altul" />
+
+De la Secvența 3 în sus, fiecare Cale are doar câteva locuri la fiecare Secvență. Când sunt toate ocupate, singurul drum în sus e să cheltui **Overflow** strâns ca să contești un loc de la cel care îl ocupă, iar Overflow poate plăti și o provocare pentru o [Unicitate](/ro/magic/uniqueness/).
+
+## Câte locuri are fiecare Secvență?
+
+Limitele sunt pe Cale. Secvența 4 și cele mai slabe nu au limită.
+
+| Secvența | Rang | Locuri pe Cale |
+|---|---|---:|
+| 3 | Sfânt | 18 |
+| 2 | Înger | 9 |
+| 1 | Arhanghel | 3 |
+| 0 | Zeitate | 1 |
+
+Când o treaptă e plină, nu poți bea următorul elixir pe calea obișnuită, nici cu bara de Interpretare plină și toate ritualurile făcute. Poți aștepta să se elibereze un loc sau poți contesta unul.
+
+[Recensământul locurilor](https://www.mysterria.net/en/ascension) de pe site-ul principal arată cine ocupă acum fiecare loc.
+
+Secvența 0 nu se contestă niciodată printr-o ofertă pentru loc. Singurul ei tron se deschide doar prin [veghea pentru Secvența 0](/ro/magic/sequence-zero/).
+
+## Ce este Overflow?
+
+După ce bara de [Interpretare](/ro/magic/acting/) e plină, Interpretarea de după nu se pierde. Se strânge ca **Overflow**, o rezervă separată pe care o cheltui pe Uzurpare și pe o revendicare pentru Secvența 0.
+
+- Overflow nu e Interpretare. Nu contează niciodată pentru avansare și nu apare niciodată în bară.
+- Se strânge doar cât Calea ta e la **Secvența 3, 2 sau 1**. Secvența 4 și cele mai slabe nu strâng, iar un zeu de Secvența 0 nu are deloc bară.
+- Rezerva ta are limita de **3,5 ori bara ta actuală**.
+- Când un câștig se strânge, bara de acțiuni arată `+N overflow`. `/coi usurp` îți arată rezerva pentru fiecare Cale.
+- Într-o zi cu Tide of Diligence, Interpretarea care ar trece de limita unei surse se strânge în schimb ca Overflow (vezi [Mareele zilnice](/ro/guides/tides/)).
+
+<Notice tone="warn" title="Dacă schimbi Calea, pierzi rezerva">
+Overflow-ul strâns aparține Căii pe care l-ai câștigat. Dacă te transferi pe altă Cale, se pierde.
+</Notice>
+
+### Limitele săptămânale pe surse
+
+Fiecare sursă de Interpretare poate strânge doar o anumită cantitate pe săptămână, ca procent din bara ta. Limitele se resetează în fiecare luni la 00:00 UTC.
+
+| Sursă | Limită săptămânală |
+|---|---:|
+| Jocul cu abilități | 40% |
+| Conținutul lumii | 40% |
+| Interacțiunea cu jucători | 25% |
+| Interpretare furată | 25% |
+| Evenimente | 25% |
+| Pasivă | 5% |
+| Sticle de Interpretare | 0% |
+| Deity Favor | 0% |
+
+Sticlele de Interpretare pot fi cumpărate și schimbate, așa că îți umplu bara, dar nu strâng niciodată Overflow. Nici Favoarea unui zeu nu strânge niciodată Overflow.
+
+### Cât costă lucrurile
+
+| Secvența ta | Bara plină | Limita rezervei (3,5x) | Provocare pentru Unicitate (50%) | Oferta minimă pentru loc (1,75x) |
+|---|---:|---:|---:|---:|
+| 3 | 35.942 | 125.797 | 17.971 | 62.899 (pentru un loc de Înger) |
+| 2 | 47.001 | 164.503 | 23.501 | 82.252 (pentru un loc de Arhanghel) |
+| 1 | 62.208 | 217.728 | 31.104 | niciuna (Secvența 0 folosește veghea, miză 31.104) |
+
+<Notice tone="info" title="De ce locurile de Sfânt sunt greu de contestat">
+Contești treapta cu o Secvență peste tine, așa că un loc de Sfânt (Secvența 3) se contestă de la Secvența 4. Overflow se strânge doar de la Secvența 3, deci un jucător de Secvența 4 nu poate strânge o ofertă pentru un loc de Sfânt.
+</Notice>
+
+## Cum provoc o Unicitate?
+
+O provocare pentru Unicitate forțează imediat un nou scor între tine și deținătorul actual al [Unicității](/ro/magic/uniqueness/) Căii tale. Nu există război și se rezolvă imediat ce confirmi. O deschizi din meniul Unicității (secțiunea **Usurpation**) sau cu `/coi usurp uniqueness <pathway>`.
+
+Ca să provoci, trebuie:
+
+- Să fii de Secvența 4 sau mai puternic pe acea Cale (în practică Secvența 3, pentru că ai nevoie de Overflow).
+- Să nu deții tu o Unicitate și să nu fii retras din evaluarea pentru Unicitate.
+- Să fii așezat pe Cale (vezi [Ai schimbat Calea de curând?](#ai-schimbat-calea-de-curând)).
+- Să ai destul Overflow pentru miză.
+
+Calea trebuie să aibă un deținător, nicio altă provocare în așteptare, nicio provocare în ultimele 7 zile și nicio veghe pentru Secvența 0 în desfășurare.
+
+| Regulă | Valoarea actuală |
+|---|---|
+| Miza | Exact **50%** din bara ta. Mizele mai mari sunt refuzate, pentru că nu cumpără nimic |
+| Multiplicatorul scorului tău | **x1,25** (limita) |
+| Pragul de scor | Scorul tău fără bonus trebuie să fie cel puțin **90%** din al deținătorului, altfel primești toți banii înapoi și niciun verdict |
+| Apărarea deținătorului | Scorul deținătorului crește după acomodarea lui, până la x1,25 la 100% |
+| Ca să câștigi | Trebuie să-l întreci clar pe deținător. La egalitate rămâne la el |
+| Dacă pierzi | 50% din miză arde, restul se întoarce în rezerva ta |
+| Dacă câștigi | Miza se cheltuie, iar Unicitatea trece la tine cu 0% acomodare |
+| Timp de așteptare | 7 zile pe acea Cale după orice verdict |
+
+Ecranul de confirmare îți arată ambele scoruri, multiplicatorul tău și rezultatul înainte să plătești, calculate la fel ca verdictul real. Dacă provocarea nu poate ajunge la un verdict corect (de exemplu deținătorul nu mai e eligibil sau serverul repornește înainte), îți primești miza înapoi întreagă și nu pornește niciun timp de așteptare.
+
+## Cum contest un loc plin?
+
+O provocare pentru loc țintește o treaptă plină, nu un jucător anume. Trebuie să ai deja tot ce cere avansarea, ca singurul lucru care lipsește să fie un loc liber. Deschide **Contest a Seat** din meniul Beyonder (`/coi menu character` sau tasta M cu [Modul Client](/ro/guides/client-mod/)) sau folosește `/coi usurp seat <pathway>`.
+
+### Lista de verificare
+
+Meniul îți arată acestea ca listă de verificare în timp real:
+
+1. Fiecare loc de la Secvența următoare e ocupat.
+2. Interpretarea ta e la 100% pe acea Cale.
+3. Toate ritualurile sunt terminate.
+4. Elixirul pentru Secvența următoare e în inventarul tău.
+5. Limitatorul de progres nu te încetinește.
+6. Ești așezat pe această Cale.
+7. Treapta nu e protejată, adică nu a avut niciun verdict în ultimele 14 zile.
+8. Nu ești în timpul de așteptare pentru o nouă declarație după o retragere.
+9. Ai destul Overflow pentru ofertă.
+
+<Figure src={seatReadiness} alt="Fila Your readiness din Contest a Seat, cu 5 din 9 puncte îndeplinite și condițiile ofertei dedesubt" caption="Lista de verificare și condițiile ofertei, arătate pentru un personaj de test." />
+
+<Notice tone="info" title="Elixirul tău e în siguranță, ținut în păstrare">
+Când faci o ofertă, elixirul tău e luat în păstrare și nu mai expiră. Dacă altcineva oferă mai mult, primești banii înapoi, pierzi războiul sau te retragi, el se întoarce cu un nou termen de expirare și te așteaptă la următoarea intrare dacă ești offline. E folosit doar când îl bei ca să intri pe locul câștigat.
+</Notice>
+
+### Oferta
+
+Oferta minimă = bara ta x 1,75, apoi:
+
+- x1,5 pentru fiecare provocare pierdută de curând (efectul trece după 60 de zile)
+- x0,5 dacă ai fost dat jos de pe un loc în ultimele 60 de zile (o revanșă)
+
+Poți oferi mai mult decât minimul, până la cât ai în rezervă.
+
+### Pasul 1: fereastra de declarare de 48 de ore
+
+Oferta se plătește când o faci, iar serverul e anunțat. Timp de 48 de ore, oricine altcineva care trece de lista de verificare poate face o ofertă pentru aceeași treaptă. Când se închide fereastra, cea mai mare ofertă merge mai departe, iar toate celelalte primesc banii înapoi întregi, cu tot cu elixir.
+
+Te poți retrage cât e fereastra deschisă:
+
+- În primele **15 minute** de la declarare, e gratuit.
+- După aceea, **50%** din oferta ta arde.
+- Oricum ar fi, nu mai poți declara pe acea treaptă timp de **6 ore**.
+
+### Pasul 2: nominalizarea
+
+Treapta îl numește pe deținătorul cu cel mai mic **Defense Score**:
+
+| Parte | Pondere |
+|---|---:|
+| Timpul de joc (cele mai bune 31 de zile din ultimele 60) | 40% |
+| Scorul de religie al bisericii (vezi [Biserici](/ro/magic/churches/)) | 25% |
+| Vrăjile folosite în ultimele 31 de zile | 20% |
+| Acomodarea Unicității | 15% |
+
+Dacă deținătorul numit are mai puțin de **3 ore** de joc în ultimele **45 de zile**, nu există război. Locul e pur și simplu luat.
+
+### Pasul 3: războiul
+
+- Războiul ține **7 zile disputate**. O zi contează doar dacă deținătorul a fost online și prezent cel puțin **20 de minute** din ea.
+- War Points vin din câștigurile reale de Interpretare, măsurate ca procent din bara fiecărei părți, așa că Secvențe diferite se întrec în efort.
+- Clasamentul e anunțat o dată pe zi.
+- O limită de **21 de zile** în timp real oprește un război să țină la nesfârșit. Dacă deținătorul lipsește de **48 de ore** sau mai mult, cel care provoacă se poate retrage gratuit. Un război care chiar se poartă nu poate fi abandonat.
+- Mareele zilnice nu umflă niciodată War Points.
+
+| Sursa de Interpretare | Ponderea în War Points |
+|---|---:|
+| Jocul cu abilități, conținutul lumii, interacțiunea cu jucători, evenimentele | 1,0 |
+| Interpretare furată | 0,5 |
+| Sticle de Interpretare, pasivă, Deity Favor | 0 |
+
+### Cine câștigă?
+
+| Cum s-a terminat războiul | Rezultat |
+|---|---|
+| A ținut toate cele 7 zile disputate | Câștigă cine are cele mai multe War Points. La egalitate, locul rămâne |
+| A atins limita de 21 de zile, cel care provoacă a avut mai mult | Câștigă cel care provoacă |
+| A atins limita de 21 de zile, egalitate, iar cel care provoacă a făcut ceva puncte | Câștigă cel care provoacă |
+| A atins limita de 21 de zile, deținătorul nu a apărut deloc | Câștigă cel care provoacă |
+| A atins limita de 21 de zile, deținătorul a avut mai mult | Deținătorul își păstrează locul |
+
+### Pasul 4: după verdict
+
+**Dacă cel care provoacă câștigă**, trebuie să intre în joc în **48 de ore**, cu Interpretarea și ritualurile încă în regulă, iar elixirul e băut pentru loc după regulile obișnuite de avansare. Dacă ratează asta, locul rămâne la deținător.
+
+Deținătorul dat jos apoi:
+
+- Coboară o Secvență, doar pe acea Cale.
+- Își păstrează **95%** din bară la noua Secvență.
+- Primește **Caracteristica Beyonder** a locului pe care l-a pierdut, care poate ține loc de ingredient principal când prepară din nou.
+- Poate face o ofertă de revanșă la **jumătate de preț** timp de **60 de zile**.
+
+**Dacă cel care provoacă pierde**, 50% din ofertă arde, restul se întoarce, iar elixirul revine. Treapta e apoi protejată 14 zile, dar doar dacă cel care a provocat a făcut cel puțin 10 War Points, ca o provocare de formă să nu poată proteja treapta pentru un prieten.
+
+Dacă o dispută se termină fără verdict (un loc se eliberează singur, una dintre părți își schimbă Secvența, nimeni n-a făcut ofertă sau staff-ul o anulează), toate ofertele și elixirele se dau înapoi întregi și nu pornește niciun timp de așteptare.
+
+Dacă lupți un război pentru loc până la verdict, câștigat sau pierdut, asta contează ca faptă legendară pentru [Secvența 0](/ro/magic/sequence-zero/).
+
+## Ai schimbat Calea de curând?
+
+O Cale la care ai ajuns din lateral (un elixir de schimbare, un transfer gratuit sau preluarea unui Avatar), în loc s-o urci de la Secvența 9, trebuie mai întâi să se așeze:
+
+| Regulă | Valoare |
+|---|---|
+| Blocarea provocărilor | **30 de zile** până poți contesta un loc sau o Unicitate pe ea |
+| Așezarea Overflow-ului | Se strânge la **25%** la sosire și urcă la întreg în **60 de zile** |
+
+Căile fără nicio înregistrare de sosire, inclusiv toate personajele care existau înainte de regula asta, contează ca urcate pas cu pas.
+
+## Comenzi
+
+| Vrei să | Comandă |
+|---|---|
+| Vezi rezerva ta de Overflow și orice provocare activă | `/coi usurp` |
+| Provoci Unicitatea unei Căi | `/coi usurp uniqueness <pathway>` |
+| Contești o treaptă de locuri plină | `/coi usurp seat <pathway> [percent]` |
+| Te retragi dintr-o fereastră deschisă sau dintr-un război blocat | `/coi usurp withdraw` |
+
+`[percent]` e oferta ta ca procent din bară. Dacă îl lași deoparte, oferi minimul.

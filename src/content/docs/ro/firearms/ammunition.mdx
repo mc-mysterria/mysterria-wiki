@@ -1,0 +1,110 @@
+---
+title: "Muniție"
+description: "Toate gloanțele pentru armele de pe Mysterria: rețetele pentru Klein, Deathknell și Rifle Rounds, cele 12 efecte speciale, materialele lor și costul real pe glonț."
+sidebar:
+    label: Muniție
+    order: 3
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import kleinCartridge from '~/assets/firearms/kleincartridge.png';
+import deathknellCartridge from '~/assets/firearms/deathknellcartridge.png';
+import rifleCartridge from '~/assets/firearms/riflecartridge.png';
+import kleinCore from '~/assets/firearms/kleincore.png';
+import deathknellCore from '~/assets/firearms/deathknellcore.png';
+import rifleCore from '~/assets/firearms/riflecore.png';
+import kleinRounds from '~/assets/firearms/kleinrounds.png';
+import deathknellRounds from '~/assets/firearms/deathknellrounds.png';
+import rifleRounds from '~/assets/firearms/riflerounds.png';
+import effectAmmo from '~/assets/firearms/effectammo.png';
+
+Fiecare armă trage cu gloanțele ei: **Klein Rounds** pentru Klein's Repeater, **Deathknell Rounds** pentru Deathknell și **Rifle Rounds** pentru Steam Rifle. Faci gloanțele standard dintr-un tub, un miez și praf de pușcă, iar apoi le poți transforma în unul dintre cele 12 feluri de gloanțe speciale.
+
+Daunele fiecărui glonț în fiecare armă sunt la [Daune după tipul de muniție](/ro/firearms/#daune-după-tipul-de-muniție).
+
+## Pasul 1: Brass
+
+3 Copper Ingots + 1 Gold Ingot = **4 Brass**, cum vezi la [Construcția armelor](/ro/firearms/crafting/#brass).
+
+## Pasul 2: Tuburile de cartuș
+
+| Tub | Rețetă | Face |
+|---|---|---|
+| Klein Cartridge Case | 1 Brass | 8 |
+| Deathknell Cartridge Case | 1 Brass + 1 Iron Nugget | 6 |
+| Rifle Cartridge Case | 2 Brass | 6 |
+
+<Figure src={kleinCartridge} alt="Grila de crafting: 1 Brass care face 8 Klein Cartridge Cases" caption="Klein Cartridge Case." contain />
+<Figure src={deathknellCartridge} alt="Grila de crafting: Brass și un Iron Nugget care fac 6 Deathknell Cartridge Cases" caption="Deathknell Cartridge Case." contain />
+<Figure src={rifleCartridge} alt="Grila de crafting: 2 Brass care fac 6 Rifle Cartridge Cases" caption="Rifle Cartridge Case." contain />
+
+## Pasul 3: Miezurile de cartuș
+
+| Miez | Rețetă | Face |
+|---|---|---|
+| Klein Cartridge Core | 4 Iron Nuggets în pătrat | 8 |
+| Deathknell Cartridge Core | 6 Iron Nuggets | 6 |
+| Rifle Cartridge Core | 1 Iron Ingot + 1 Brass | 6 |
+
+<Figure src={kleinCore} alt="Grila de crafting: 4 Iron Nuggets care fac 8 Klein Cartridge Cores" caption="Klein Cartridge Core." contain />
+<Figure src={deathknellCore} alt="Grila de crafting: 6 Iron Nuggets care fac 6 Deathknell Cartridge Cores" caption="Deathknell Cartridge Core." contain />
+<Figure src={rifleCore} alt="Grila de crafting: un Iron Ingot și Brass care fac 6 Rifle Cartridge Cores" caption="Rifle Cartridge Core." contain />
+
+## Pasul 4: Gloanțele standard
+
+Toate trei sunt rețete fără formă fixă.
+
+| Gloanțe | Rețetă | Face |
+|---|---|---|
+| Klein Rounds | 1 Klein Cartridge Case + 1 Klein Cartridge Core + 1 Gunpowder | 4 |
+| Deathknell Rounds | 1 Deathknell Cartridge Case + 1 Deathknell Cartridge Core + 2 Gunpowder | 3 |
+| Rifle Rounds | 1 Rifle Cartridge Case + 1 Rifle Cartridge Core + 2 Gunpowder | 3 |
+
+<Figure src={kleinRounds} alt="Grila de crafting care face 4 Klein Rounds" caption="Klein Rounds." contain />
+<Figure src={deathknellRounds} alt="Grila de crafting care face 3 Deathknell Rounds" caption="Deathknell Rounds." contain />
+<Figure src={rifleRounds} alt="Grila de crafting care face 3 Rifle Rounds" caption="Rifle Rounds." contain />
+
+### Cât costă o tură întreagă?
+
+O tură folosește o rețetă întreagă de tuburi și miezuri:
+
+| Gloanțe | Materii prime | Face |
+|---|---|---|
+| Klein Rounds | 1 Brass + 4 Iron Nuggets + 8 Gunpowder | 32 de gloanțe |
+| Deathknell Rounds | 1 Brass + 7 Iron Nuggets + 12 Gunpowder | 18 gloanțe |
+| Rifle Rounds | 3 Brass + 1 Iron Ingot + 12 Gunpowder | 18 gloanțe |
+
+## Pasul 5: Gloanțele speciale
+
+Pune un material de efect în centrul mesei de crafting și înconjoară-l cu **8 gloanțe standard de același tip**. Primești **8 gloanțe speciale** de acel tip. De exemplu, 8 Klein Rounds în jurul unui Blaze Powder fac 8 **Fire Klein Rounds**, care merg doar în Klein's Repeater.
+
+<Figure src={effectAmmo} alt="Grila de crafting: 8 Klein Rounds în jurul unui Blaze Powder care fac 8 Fire Klein Rounds" caption="Fire Klein Rounds: 8 Klein Rounds în jurul unui Blaze Powder." contain />
+
+Dacă amesteci Klein, Deathknell și Rifle Rounds în jurul materialului, nu se face nimic.
+
+Gloanțele speciale se numesc „*Efect* *Armă* Rounds”, de exemplu „Fire Deathknell Rounds” sau „Demon Hunter Rifle Rounds”. Cu tot cu gloanțele standard, fiecare armă are 13 feluri de muniție.
+
+| Efect | Materialul din centru | Daune | Ce face |
+|---|---|---|---|
+| Fire | Blaze Powder | 85% | Dă foc țintei timp de 5 secunde |
+| Poison | Spider Eye | 85% | Otrăvire I timp de 8 secunde |
+| Armor Piercing | Iron Ingot | 90% | Ignoră armura |
+| Aging | Clock | 85% | Încetinire I și Wither II timp de 10 secunde |
+| Spirit Control | Soul Sand | 85% | Încetinire IV și Orbire timp de 5 secunde |
+| Deceiving | Eye of Ender | 85% | Întoarce ținta cu 180 de grade |
+| Deprivation | Milk Bucket | 85% | Scoate efectele pozitive ale țintei |
+| Exorcist | Glowstone Dust | 100% sau 250% împotriva mobilor strigoi | Niciun efect de stare |
+| Implosive | Diamond | 125% | Niciun efect de stare, doar daune mai mari |
+| Rotten | Rotten Flesh | 85% | Foame III și Slăbiciune I timp de 8 secunde |
+| Weakening | Fermented Spider Eye | 85% | Slăbiciune II și Oboseală la minat II timp de 10 secunde |
+| Demon Hunter | Nether Star | 100% sau 250% împotriva Creaturilor Beyonder | Niciun efect de stare |
+
+### Pe cine merg gloanțele Exorcist și Demon Hunter?
+
+Gloanțele **Exorcist** merg pe zombi, săteni zombi, husks, drowned, schelete, strays, wither skeletons, Wither, zoglins și zombified piglins. Ceilalți mobi și jucătorii primesc daune normale.
+
+Gloanțele **Demon Hunter** merg pe [Creaturile Beyonder](/ro/magic/creatures/) pe care le face să apară serverul. **Nu dau niciun bonus împotriva jucătorilor Beyonder**.
+
+## Cum încarci gloanțele potrivite
+
+Când încărcătorul e **gol**, reîncărcarea ia prima stivă de gloanțe potrivite din inventar, standard sau speciale. Când arma e **încărcată pe jumătate**, poți completa doar cu același fel de glonț care e deja înăuntru. Ca să treci între gloanțe standard și speciale, golește încărcătorul trăgând și ține gloanțele pe care le vrei primele în inventar.

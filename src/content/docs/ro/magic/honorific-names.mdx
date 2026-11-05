@@ -1,0 +1,134 @@
+---
+title: "Nume Onorifice"
+description: "Cum scrii, validezi și rostești un Nume Onorific pe Mysterria de la Secvența 4, Divine Response și binecuvântarea fiecărui zeu. Un ghid Lord of the Mysteries."
+sidebar:
+  label: Nume Onorifice
+  order: 32
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import lotm from '~/assets/magic/lotm.jpg';
+import honorificEditor from '~/assets/magic/honorific-editor.webp';
+
+<Figure src={lotm} alt="Imagine din Lord of the Mysteries cu o siluetă așezată pe un tron deasupra ceții cenușii" />
+
+## Ce este un Nume Onorific?
+
+Un **Nume Onorific** e un scurt set de rânduri pe care alți jucători le rostesc în chat ca să ajungă la tine, oriunde ai fi. Fiecare Beyonder de **Secvența 4 sau mai puternic** poate scrie unul.
+
+Iată un exemplu de cinci rânduri:
+
+> *King of the Skies*
+>
+> *Emperor of the Seas*
+>
+> *Lord of the Calamity*
+>
+> *God of the Storms*
+>
+> *The Wanderer Known to Mysterria*
+
+## Cum îmi setez Numele Onorific?
+
+Deschide meniul personajului (`/coi menu character` sau tasta M cu [Modul Client](/ro/guides/client-mod/)) și dă click pe slotul Numelui Onorific. Până nu setezi unul, primești un memento în chat la fiecare 30 de minute, cu un buton care deschide editorul.
+
+<Figure src={honorificEditor} alt="Editorul Numelui Onorific cu trei rânduri completate și o descriere de stare care spune Complete și Active" caption="Editorul Numelui Onorific. Cartea de sus îți arată dacă numele tău e complet și activ." contain />
+
+Numărul de rânduri depinde de Secvența ta:
+
+| Secvența ta | Rânduri |
+|---|---:|
+| 4 sau 3 | 5 |
+| 2 sau 1 | 4 |
+| 0 | 3 |
+
+Când avansezi și numele se scurtează, ultimul rând se păstrează. Numele e apoi verificat din nou și poate rămâne inactiv până când rândurile îl descriu pe noul tu.
+
+### Regulile rândurilor
+
+Fiecare rând trebuie:
+
+- Să aibă între 2 și 80 de caractere.
+- Să nu înceapă cu `!` sau `/`.
+- Să nu fie doar cifre.
+- Să nu aibă spații duble și nici spații la început sau la sfârșit.
+- Să folosească doar litere (latine sau chirilice), cifre și punctuație de bază.
+
+### Ce face un nume valid?
+
+Un nume valid trebuie să arate clar spre **tine**. Nu are nevoie de numele tău de utilizator. Editorul îți arată câte dovezi de identitate a găsit, iar tu ai nevoie de un scor de **3**. Un singur descriptor personal puternic sau mai multe indicii legate între ele sunt de ajuns. Dovezile care contează:
+
+- Numele tău de utilizator sau o parte cu sens din el
+- Orașul, biserica, sediul bisericii, terenul legat sau națiunea ta
+- Calea ta sau titlul Secvenței tale actuale
+- O abilitate pe care o ai la Secvența actuală
+- Concepte de Cale recunoscute și expresii oficiale
+- Un descriptor personal aprobat de staff
+
+Potrivirea ignoră literele mari, punctuația, spațiile, apostrofurile și cratimele. Sunt recunoscute numele în engleză și în ucraineană pentru Căi, Secvențe și abilități.
+
+Editorul respinge numele incomplete, numărul greșit de rânduri, rândurile goale sau repetate, frazele obișnuite de chat, cuvintele de umplutură și numele care răspund deja altcuiva. Un nume respins e păstrat ca ciornă, dar rostirea lui nu face nimic până nu e valid.
+
+## Cum rostesc numele cuiva?
+
+Scrie fiecare rând din numele lui ca mesaj obișnuit în chat, în ordine.
+
+- Ai **15 secunde** între rânduri.
+- Un rând de trei sau mai multe cuvinte contează și dacă e într-o propoziție mai lungă.
+- Nu-ți poți rosti propriul nume, decât printr-o marionetă sau un corp Avatar.
+
+Când ajunge ultimul rând:
+
+- Intri într-un timp de așteptare pentru rostire de **15 minute**.
+- Dacă proprietarul e online, îți vede coordonatele și o invitație să răspundă, care expiră după **2 minute**.
+- Dacă proprietarul face parte dintr-o biserică, rostirea contează ca rugăciune din afară la acea [biserică](/ro/magic/churches/), iar proprietarul te poate invita în ea.
+- Proprietarul primește fapta legendară **Your honorific invoked**, care contează pentru [Secvența 0](/ro/magic/sequence-zero/).
+
+<Notice tone="info" title="Ai grijă la Disguise">
+Abilitatea Disguise de pe Calea Error poate intercepta în secret următoarea chemare completă a unui Nume Onorific sau următoarea Church Blessing a unei biserici. Proprietarul bisericii și Îngerii sunt avertizați și o pot opri spunând în chat numele hoțului.
+</Notice>
+
+## Ce pot face când mi se rostește numele?
+
+Dă click pe invitație ca să deschizi meniul **Divine Response**:
+
+| Buton | Ce face |
+|---|---|
+| **Teleport** | Deschide un portal și te duce la cel care a rostit. Trebuie să fiți în aceeași lume și nu merge în temnițe |
+| **Smite** | Îl lovește pe cel care a rostit cu un fulger de 4 daune (2 inimi) |
+| **Gift Items** | Îi trimite celui care a rostit un obiect din inventarul tău, la orice distanță |
+
+Oricare dintre ele îți pornește ca proprietar un timp de așteptare de **30 de minute**. Alți jucători îți pot rosti numele între timp, iar fiecare are propriul timp de așteptare.
+
+## Ce se întâmplă când rostești numele unui zeu?
+
+Rostirea numelui unui zeu de [Secvența 0](/ro/magic/sequence-zero/) îi deschide meniul Divine Response ca de obicei. Fiecare rostire completă îl și binecuvântează imediat pe **cel care rostește**, chiar dacă zeul e offline sau nu răspunde.
+
+- Binecuvântarea ține până la **2 minute** și apare cu particulele și sunetul Căii.
+- Binecuvântarea fiecărui zeu are un timp de așteptare de **60 de minute**, **comun pentru toți cei care îl rostesc** pe acel zeu. Dacă altcineva l-a rostit în ultima oră, rostirea ta tot ajunge la zeu, dar nu vine nicio binecuvântare.
+- Binecuvântarea îl afectează doar pe cel care rostește. Nu pune niciodată blocuri și nu atinge pe nimeni altcineva.
+
+| Calea zeului | Binecuvântare |
+|---|---|
+| [Fool](https://www.mysterria.net/en/pathways/fool) | Noroc II, Rezistență I |
+| [Error](https://www.mysterria.net/en/pathways/error) | Noroc I, Viteză I |
+| [Door](https://www.mysterria.net/en/pathways/door) | Viteză II, Săritură îmbunătățită I |
+| [Sun](https://www.mysterria.net/en/pathways/sun) | Regenerare II, Rezistență la foc I |
+| [Visionary](https://www.mysterria.net/en/pathways/visionary) | Vedere nocturnă I, Noroc I |
+| [Tyrant](https://www.mysterria.net/en/pathways/tyrant) | Puterea conductului I, Grația delfinului I |
+| [White Tower](https://www.mysterria.net/en/pathways/tower) | Rezistență II, Cădere lentă I |
+| [Hanged Man](https://www.mysterria.net/en/pathways/hanged) | Viteză II, Grabă I |
+| [Red Priest](https://www.mysterria.net/en/pathways/priest) | Regenerare III, Forță II, Rezistență la foc (un rit special cu foc și un Ochi Roșu) |
+| [Demoness](https://www.mysterria.net/en/pathways/demoness) | Forță I, Viteză II |
+| [Darkness](https://www.mysterria.net/en/pathways/darkness) | Vedere nocturnă I, Invizibilitate I |
+| [Death](https://www.mysterria.net/en/pathways/death) | Rezistență I, Vedere nocturnă I |
+| [Twilight Giant](https://www.mysterria.net/en/pathways/giant) | Forță II, Rezistență I |
+| [Paragon](https://www.mysterria.net/en/pathways/paragon) | Regenerare II, Absorbție I |
+| [Hermit](https://www.mysterria.net/en/pathways/hermit) | Vedere nocturnă I, Grabă I |
+| [Mother](https://www.mysterria.net/en/pathways/mother) | Regenerare II, Saturație I |
+| [Moon](https://www.mysterria.net/en/pathways/moon) | Regenerare I, Forță I |
+| [Abyss](https://www.mysterria.net/en/pathways/abyss) | Forță II, Vedere nocturnă I |
+| [Chained](https://www.mysterria.net/en/pathways/chained) | Rezistență II, Cădere lentă I |
+| [Black Emperor](https://www.mysterria.net/en/pathways/emperor) | Forță II, Rezistență la foc I |
+| [Justiciar](https://www.mysterria.net/en/pathways/justiciar) | Rezistență II, Forță I |
+| [Wheel of Fortune](https://www.mysterria.net/en/pathways/fortune) | Noroc II, Viteză I |

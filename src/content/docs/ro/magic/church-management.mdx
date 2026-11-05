@@ -1,0 +1,235 @@
+---
+title: "Conducerea bisericii"
+description: "Cum conduci o biserică pe Mysterria: filiale, sedii regionale, roluri pe sedii, slujbe, vistierie, Church Vaults, legături cu Lands și războaie între biserici pe acest server LOTM."
+sidebar:
+  label: Conducerea bisericii
+  order: 34
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import blessedSettings from '~/assets/magic/church-blessed-settings.webp';
+import coreBroken from '~/assets/magic/church-core-broken.webp';
+import vaultRecipe from '~/assets/magic/church-vault-recipe.webp';
+import vaultMenu from '~/assets/magic/church-vault-menu.webp';
+
+Liderii și ofițerii unei biserici o fac să crească prin sediile ei, slujbe, seifuri, legături cu Lands și războaie. Cum întemeiezi o biserică și cum intri în una afli la [Primii pași cu bisericile](/ro/magic/churches/).
+
+## Sediile bisericii
+
+Prezența bisericii vine din **sedii**, fiecare cu un Church Core pus și activ. Avantajele se verifică după distanța până la sediile tale active, nu după chunk.
+
+| Sediu | Ce este |
+|---|---|
+| **Sediul principal** (Main Site) | Cartierul tău general și ancora principală. Îl creează primul tău nucleu |
+| **Filială** (Branch Site) | Sedii în plus care cresc rețeaua și sprijinul local |
+| **Sediu regional** (Regional HQ) | Un sediu îndepărtat care deblochează mai multe locuri pentru filiale |
+
+Un sediu al cărui nucleu lipsește sau nu e activ nu contează.
+
+### Ce se întâmplă dacă se sparge nucleul principal?
+
+<Figure src={coreBroken} alt="Avertismentul din chat care apare când se sparge Church Core principal" />
+
+- Fără un nucleu principal, **fiecare avantaj al bisericii merge la 50%**.
+- După **14 zile** fără el, biserica e socotită abandonată.
+- După **încă 14 zile**, toți membrii sunt scoși, iar biserica e ștearsă.
+
+Ca să-ți muți cartierul general, sparge nucleul principal și pune-l din nou.
+
+## Cum adaug o filială?
+
+1. Fii liderul bisericii, cu nucleul principal pus și activ.
+2. Verifică dacă ai un loc liber pentru filială (tabelul de mai jos).
+3. Fă încă un [Church Core](/ro/magic/churches/#rețeta-pentru-church-core) și pune-l la cel puțin 16 blocuri de orice alt nucleu.
+4. E înregistrat ca filială. Îl administrezi din meniul bisericii, la sedii.
+
+| Secvența liderului | Locuri pentru filiale | Locuri pentru sedii regionale |
+|---|---:|---:|
+| 4 | 0 | 0 |
+| 3 | 1 | 1 |
+| 2 | 3 | 1 |
+| 1 | 5 | 2 |
+| 0 | 8 | 3 |
+
+Dacă nu reușești să pui un nucleu, poate nu mai ai locuri pentru filiale, poate nucleul principal nu e activ, poate îți trebuie mai întâi un sediu regional sau poate nucleul e al altcuiva.
+
+## Sediile regionale
+
+Fiecare sediu regional activ adaugă **5 locuri pentru filiale**. Ca să pui unul:
+
+- Următoarea ta extindere trebuie să ceară un sediu regional.
+- Trebuie să fie la cel puțin **5.000 de blocuri** de sediul principal, de filiale și de alte sedii regionale.
+- Trebuie să fie în **aceeași lume** cu sediul principal.
+- Are nevoie de un administrator, fie un colider, fie un Înger cu evlavie maximă. Îl setezi cu `/coi church regional-manager set <siteId> <player>`.
+
+Meniul bisericii îți arată dacă locul în care ești e bun.
+
+## Cum conduci un sediu
+
+Fiecare sediu merge cel mai bine cu un **Diacon-șef** (Head Deacon) activ și de Secvență înaltă, până la **2 Episcopi** și rugăciuni și participare regulate.
+
+| Diaconul-șef | Eficiența sediului |
+|---|---:|
+| Secvența 0 până la 4 | 100% |
+| Secvența 5 | 70% |
+| Secvența 6 | 55% |
+| Secvența 7 | 45% |
+| Secvența 8 | 35% |
+| Secvența 9 | 25% |
+| Nu e Beyonder | 15% |
+| Niciun Diacon-șef | 65% |
+
+Un șef care nu s-a mai rugat de curând contează mai puțin.
+
+| Activitatea sediului | Valoare |
+|---|---|
+| Perioada de activitate recentă | 7 zile |
+| Ținta săptămânală de rugăciuni | 12 rugăciuni |
+| Ținta săptămânală de participare | 8 participanți |
+| O filială decade după | 14 zile fără activitate reală |
+| Reînvierea unei filiale decăzute | 20 de vistierie și 12 Spiritualitate, stând la cel mult 12 blocuri |
+
+E de ajuns să atingi fie ținta de rugăciuni, fie ținta de participare ca sediul să conteze drept complet activ.
+
+### Vistierie, ofrande și îmbunătățiri
+
+Ține un obiect în mână și folosește acțiunea de ofrandă pe un sediu din meniul bisericii (sau `/coi church offering donate <siteId>`) ca să-l adaugi la vistieria lui. Vistieria plătește îmbunătățirile și reînvierile sediilor.
+
+Îmbunătățirile încep de la **32 de vistierie**, fiecare nivel costă de 1,6 ori cât cel de dinainte, iar un sediu urcă până la **nivelul 5**. Fiecare nivel crește capacitatea de ancorare a sediului cu 12%.
+
+Dacă biserica ta e legată de un Land, vistieria poate lua bani din banca Land-ului (vezi [Lands](#cum-legi-un-land)).
+
+## Slujbele bisericii
+
+Slujbele îți cresc **Church Progress**, care ajută o biserică tânără să urce în trepte.
+
+| Slujbă | Timp de așteptare | Cost de Spiritualitate | Puterea rugăciunii | Efect în plus | Progres de bază |
+|---|---:|---:|---:|---|---:|
+| Predică (Sermon) | 60 min | 12 | +3,5% | niciunul | 6 |
+| Liturghie (Mass) | 180 min | 16 | +4,5% | 8 s de Regenerare I | 8 |
+| Împărtășanie (Communion) | 240 min | 18 | +5,0% | 2 alinări de Nebunie recuperabilă | 7 |
+| Spovedanie (Confession) | 120 min | 10 | +3,0% | 1 alinare de Nebunie recuperabilă | 5 |
+
+- Liderul, coliderii, Îngerii sau Diaconul-șef al acelui sediu pot ține o slujbă.
+- Cel care oficiază trebuie să fie la cel mult **24 de blocuri** de sediu, iar cel puțin un membru trebuie să participe.
+- Pornești una din meniul bisericii sau cu `/coi church ritual <siteId> <sermon|mass|communion|confession>`.
+- Progresul = (progresul de bază + 0,75 pentru fiecare participant, până la 12 participanți) x activitatea sediului, niciodată socotită sub 25%.
+
+Fiecare participare contează pentru fapta **Devout church service** (îți trebuie 10) pentru [Secvența 0](/ro/magic/sequence-zero/).
+
+## Seifurile de artefacte
+
+Un **Church Vault** păstrează [Artefacte Sigilate](/ro/magic/sealed-artifacts/) pentru biserică. Membrii le împrumută, iar administratorii aprobă împrumuturile.
+
+### Rețeta seifului
+
+<Figure src={vaultRecipe} alt="Rețeta pentru Church Vault cu un Beacon în centru" caption="Slotul din centru arată un Beacon simplu, dar merge și un Church Core." contain />
+
+| Rând | Obiecte |
+|---|---|
+| Sus | Diamond Block, Chest, Diamond Block |
+| Mijloc | Chest, Beacon (sau un Church Core), Chest |
+| Jos | Netherite Block, Obsidian, Netherite Block |
+
+Doar liderul bisericii îl poate face. Pune-l la cel mult **16 blocuri** de un Church Core activ.
+
+### Cum funcționează împrumutul
+
+1. Un administrator pune în seif un Artefact Sigilat pe care îl ține în mână.
+2. Un membru îl cere din meniul seifului (`/coi church artifact request <artifactId>`).
+3. Un administrator aprobă sau refuză.
+4. Membrul trebuie să-l dea înapoi înainte să se termine timpul de împrumut. Artefactele întârziate, rechemate sau aruncate sunt trase înapoi în depozitul bisericii, la fel ca orice artefact al cărui împrumutător iese din joc.
+
+<Figure src={vaultMenu} alt="Meniul Artifact Vault cu descrierea Vault Status, care arată câte artefacte sunt depuse, împrumutate și în așteptare" caption="Meniul seifului din /coi church vault. Ține mouse-ul pe carte ca să vezi starea seifului." contain />
+
+Jucătorul care a pus un artefact în seif îl poate lua înapoi cu `/coi church artifact withdraw` când nu e împrumutat și nu are nicio cerere în așteptare.
+
+| Valoare a seifului | Valoarea actuală |
+|---|---|
+| Folosești seiful de la cel mult | 10 blocuri |
+| Capacitate | +1 pentru fiecare treaptă a bisericii, fiecare seif, fiecare nivel de sediu și fiecare legătură cu un Land, până la **12** |
+| Timp de împrumut | 2 ore, crește cu treapta, seifurile, nivelurile sediilor și legăturile cu Lands, până la **4 ore** |
+| Artefact la distanță | Fiecare sediu poate ține un artefact pentru împrumut de la distanță după ce a stat în seif **7 zile** |
+
+Abilitățile nu pot înlocui nucleele sau seifurile, iar Beyonder Characteristic Theft și Purification nu pot lua Caracteristici Beyonder din artefactele bisericii.
+
+## Cum legi un Land
+
+Bisericile nu revendică teren. Dacă folosești [Orașe](/ro/guides/towns/), poți lega un Land care conține unul dintre sediile tale active:
+
+1. Revendică zona în Lands și pune nucleul sediului înăuntru.
+2. Lângă sediu, folosește `/coi church land request` (sau `/coi church land request <siteId>`).
+3. Proprietarul Land-ului folosește `/coi church land approve <churchLeader>`.
+4. Verifici cu `/coi church land`.
+
+O biserică primește **3** locuri pentru legături cu Lands, plus 1 pentru fiecare 10 chunkuri revendicate. Proprietarul Land-ului poate porni sau opri două avantaje cu `/coi church land perk <churchLeader> <treasury|artifacts> <true|false>`:
+
+- **Treasury** lasă vistieria bisericii să folosească banca Land-ului.
+- **Artifacts** dă puțin mai multă capacitate seifului și mai mult timp de împrumut.
+
+Pe un Land revendicat, permisiunile din Lands decid cine poate sparge nucleele și seifurile (în afară de un război între biserici acceptat).
+
+## Războaiele între biserici
+
+Marchează alte biserici ca aliate, inamice sau neutre în meniul **Diplomacy & War**. Războaiele schimbă avantajele:
+
+| Situație | Avantaje |
+|---|---|
+| Ai declarat, ei nu au acceptat | x0,5 pentru biserica ce a declarat |
+| Război acceptat, cât durează | x0 (toate avantajele suspendate) |
+| Câștigător | x1,5 timp de 14 zile |
+| Învins | x0,5 timp de 14 zile |
+| Egalitate | x0,5 timp de 7 zile |
+| Aliatul câștigătorului | x1,2 |
+| Aliatul învinsului sau la egalitate | x0,8 |
+
+- O biserică poate avea până la **3** războaie active, cu **30 de minute** între declarații. Un război ține cel mult **72 de ore**.
+- Într-un război acceptat, inamicii de **Secvența 4 sau mai puternici** îți pot sparge nucleele și seifurile. Jucătorii mai slabi nu pot.
+- Cine sparge **nucleul principal** al inamicului câștigă războiul.
+
+| Comandă de război | Ce face |
+|---|---|
+| `/coi church war` | Arată războaiele |
+| `/coi church war declare <leader>` | Declară război unei biserici |
+| `/coi church war accept <leader>` | Acceptă o declarație |
+| `/coi church war join <attackerLeader> <defenderLeader> <attacker\|defender>` | Intră într-un război ca aliat |
+| `/coi church war surrender <leader>` | Predă-te |
+| `/coi church war draw <leader>` | Propune sau acceptă o egalitate |
+
+## Alerte de pericol și Divine Observation
+
+Liderul, coliderii, Îngerii și Diaconii-șefi pot seta alerte din setările de supraveghere din meniul bisericii:
+
+- **Alerte de pericol** când un membru (sau oricine marchezi ca Blessed) scade la 6 puncte de viață sau mai puțin ori ajunge la 85% Nebunie, cu locul lui exact, cel mult o dată la 5 minute.
+- **Alerte de mutație** când cineva riscă să-și piardă controlul și **alerte de moarte**.
+- **Anunțuri de rugăciune** pentru membri, membri vechi sau străini care se roagă.
+
+<Figure src={blessedSettings} alt="Pagina Blessed Settings din meniul bisericii, cu un rând de comutatoare pentru alerte și anunțuri" caption="Blessed Settings din meniul bisericii. Fiecare pictogramă pornește sau oprește o alertă sau un anunț." contain />
+
+**Divine Observation** îi lasă pe ofițerii bisericii să urmărească un membru de aproape. Ghemuiește-te ca să te oprești din urmărit. Un membru de Secvență egală sau mai înaltă trebuie să-și dea mai întâi acordul. Membrii de încredere (colideri, Îngeri, Diaconi-șefi sau membri vechi activi) pot fi puși pe o listă de urmărire de la distanță.
+
+## Comenzi pentru lideri și administratori
+
+| Comandă | Ce face |
+|---|---|
+| `/coi church add <player>` | Invită un jucător (liderul și coliderii) |
+| `/coi church remove <player>` | Scoate un membru |
+| `/coi church authority grant <player>` | Fă pe cineva colider (cel mult 2) |
+| `/coi church authority revoke <player>` | Scoate un colider |
+| `/coi church angel promote <player>` | Fă pe cineva Înger |
+| `/coi church angel demote <player>` | Scoate un Înger |
+| `/coi church role set <player> <follower\|angel>` | Setează rolul unui membru |
+| `/coi church regional-manager set <siteId> <player>` | Setează administratorul unui sediu regional |
+| `/coi church ownership handoff <player> confirm` | Dă biserica altcuiva |
+| `/coi church disband` | Desființează biserica (scrie numele bisericii în 45 de secunde ca să confirmi) |
+| `/coi church bless <player>` | Binecuvântează un membru |
+| `/coi church gift <player> <type>` | Dă un dar (vezi [darurile](/ro/magic/church-perks/#daruri)) |
+| `/coi church ritual <siteId> <service>` | Ține o slujbă |
+| `/coi church offering donate <siteId>` | Oferă unui sediu obiectul din mână |
+| `/coi church artifact approve\|deny\|recall <artifactId>` | Administrează împrumuturile din seif |
+| `/coi church artifact deposit` | Pune în seif artefactul din mână |
+| `/coi church merge request <leader>` | Propune unirea bisericilor |
+| `/coi church merge accept\|decline\|status\|cancel` | Răspunde la o unire sau verific-o |
+| `/coi church support set <prayer\|ritual\|blessing> <true\|false>` | Pornește sau oprește sprijinul comun |
+
+Majoritatea acestora sunt și butoane în meniul bisericii.

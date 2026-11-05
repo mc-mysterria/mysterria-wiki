@@ -1,0 +1,123 @@
+---
+title: "Ordine Secrete"
+description: "Ordinele Secrete pe Mysterria, serverul de Minecraft LOTM: creează un ordin privat, crește-l în nivel cu Fragmente de Energie și deblochează depozitul, chemarea, ritualurile și un ascunziș."
+sidebar:
+    label: Ordine Secrete
+    order: 33
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import levelup from '~/assets/orders/levelup.png';
+
+Un **Ordin Secret** este o mică organizație privată. Membrii au un chat privat comun, un depozit comun și puteri care cresc pe măsură ce Ordinul crește în nivel cu **Fragmente de Energie**.
+
+Comanda este `/o` (și `/org` și `/organization`). Scrie `/o` ca să deschizi meniul Ordinului.
+
+## Cine poate crea un Ordin Secret?
+
+Ca să creezi un Ordin și să-l crești în nivel ai nevoie de rangul de susținător **Shepherd Subscription** din [magazinul serverului](https://www.mysterria.net/en/store). Oricine poate fi invitat într-un Ordin.
+
+Dacă abonamentul liderului se termină, Ordinul coboară la nivelul 0. Când abonamentul revine, Ordinul **își primește înapoi nivelul de dinainte**.
+
+## Comenzi
+
+| Comandă | Ce face |
+|---|---|
+| `/o` | Deschide meniul Ordinului |
+| `/o create <name>` | Creează un Ordin (cere rangul de susținător) |
+| `/o invite <player>` | Invită un jucător (liderul sau viceliderul) |
+| `/o kick <player>` | Scoate un membru (liderul sau viceliderul) |
+| `/o vice set <player>`, `/o vice remove <player>` | Adaugă sau scoate un vicelider |
+| `/o levelup` | Crește Ordinul în nivel (liderul, cu rangul de susținător) |
+| `/o sos` | Trimite coordonatele tale în chatul Ordinului (de la nivelul 1) |
+| `/o rename <name>` | Schimbă numele Ordinului (doar liderul) |
+| `/o info [order]` | Arată informații despre un Ordin |
+| `/o leave` | Ieși din Ordin (liderul nu poate ieși) |
+| `/o disband` | Desființează Ordinul |
+| `/o confirm` | Confirmă o ieșire, o eliminare sau o desființare |
+| `/oc <message>` | Trimite un mesaj în chatul Ordinului |
+
+Pentru chatul Ordinului, folosește `/oc <message>` sau scrie `!o`, `!oc`, `!org` sau `!order` în fața mesajului. Mesajele apar ca `[ORG] Name: message`.
+
+## Cum funcționează nivelurile Ordinului?
+
+Membrii pun **Fragmente de Energie** în rezerva comună a Ordinului, iar liderul cheltuie rezerva pe niveluri.
+
+1. Deschide `/o` și folosește obiectul **Your Shards**. Click stânga depune 1 fragment, click dreapta depune 10, iar Shift și click stânga depune tot.
+2. Când rezerva e destul de mare, liderul folosește **Level Up** din meniu sau scrie `/o levelup`.
+
+<Figure src={levelup} alt="Obiectul Your Shards din meniul Ordinului: personal 0, organizație 342, cu butoanele de depunere" caption="Cum depui Fragmente de Energie în rezerva Ordinului." />
+
+| Nivel | Nume | Membri maximi | Costul până acolo | Deblochează |
+|---|---|---|---|---|
+| 0 | **Whisper of Mist** | 3 | - | Invitații, vicelideri, chatul Ordinului |
+| 1 | **Shadow of Mist** | 4 | 50 de fragmente | Organization Stash, `/o sos` |
+| 2 | **Gaze of Mist** | 5 | 200 de fragmente | Pocket Dimension |
+| 3 | **Embrace of Mist** | 6 | 1.000 de fragmente | Instant Summon, Growth Ritual |
+| 4 | **Heart of Mist** | 7 | 5.000 de fragmente | Secret Lair, Battle Cry, Global Announcement, îmbunătățiri permanente |
+
+Ia [Fragmente de Energie](/ro/guides/economy/#fragmente-de-energie) vânzând ingredientele de care nu ai nevoie unui sătean fără profesie sau unui nitwit, ori din Battle Pass.
+
+## Abilitățile Ordinului
+
+Le deschizi din obiectul **Abilities** din meniul `/o`.
+
+### Organization Stash (nivelul 1)
+
+Un depozit comun de 27 de sloturi pe care îl poate deschide orice membru. Poți cumpăra pagini în plus la nivelul maxim (vezi [îmbunătățirile](#îmbunătățiri-permanente)).
+
+### Pocket Dimension (nivelul 2)
+
+Un loc privat de întâlnire pentru Ordin.
+
+- Liderul sau un vicelider deschide o sesiune. Ține **10 minute** și poate fi deschisă o dată la **24 de ore**.
+- Membrii intră din meniul de abilități cât e sesiunea deschisă.
+- Cât ești înăuntru, o copie a ta rămâne acolo unde ai plecat. Dacă e atacată, ești tras înapoi.
+
+### Instant Summon (nivelul 3)
+
+Te teleportezi la un membru online al Ordinului tău.
+
+- Costă **1,5% până la 3%** din Interpretarea ta, ales la întâmplare. Trebuie să fii Beyonder.
+- Pregătire de **5 secunde**. Dacă te miști sau primești daune, se anulează.
+- Merge doar în aceeași dimensiune.
+- Timp de așteptare de **30 de minute**.
+
+### Growth Ritual (nivelul 3)
+
+Liderul sau un vicelider le dă tuturor membrilor **online** **+20% până la 25% viteză de Interpretare** timp de **24 de ore**. Se poate folosi **o dată pe săptămână**.
+
+### Secret Lair (nivelul 4)
+
+O lume privată permanentă pentru Ordinul tău.
+
+- Liderul sau un vicelider o întemeiază cu 50 de Fragmente de Energie, 20 de Obsidian, 5 Ender Pearls și 3 Diamonds din propriul inventar.
+- Fiecare intrare folosește un **Lair Teleportation Crystal**. Le faci în meniul Secret Lair, fiecare pentru 10 Fragmente de Energie, 1 Ender Pearl și 2 Crying Obsidian.
+- Între teleportări sunt 30 de minute, iar după ce ieși mai aștepți 30 de minute până poți intra din nou.
+- Dacă treci de granița ascunzișului, ești trimis înapoi în centru.
+
+### Battle Cry (nivelul 4)
+
+Liderul sau un vicelider le dă tuturor membrilor online **Viteză II, Forță II și Regenerare I** timp de 5 minute. Costă **50 de fragmente** din rezerva Ordinului și merge o dată la **12 ore**.
+
+### Global Announcement (nivelul 4)
+
+Liderul sau un vicelider trimite un **mesaj anonim către tot serverul** în numele Ordinului, o dată la **24 de ore**.
+
+### Îmbunătățiri permanente
+
+La nivelul 4, liderul sau un vicelider poate cumpăra îmbunătățiri permanente cu fragmente din rezerva Ordinului:
+
+| Îmbunătățire | Costuri | Maximum |
+|---|---|---|
+| **Extra Member Slot** | 200, apoi 400, apoi 800 de fragmente | +3 membri (10 în total) |
+| **Extra Stash Page** | 300, apoi 600, apoi 1.200 de fragmente | 4 pagini |
+
+Remote Exchange și Unification Ritual nu mai există. Ca să dai obiecte între membri, folosește depozitul comun sau un [curier](/ro/guides/couriers/).
+
+## Pagini înrudite
+
+<CardGrid>
+  <Card title="Fragmente de Energie" text="Cum câștigi fragmentele de care au nevoie Ordinele." icon="coin" href="/ro/guides/economy/#fragmente-de-energie" />
+  <Card title="Curieri" text="Trimite obiecte oricărui jucător." icon="gift" href="/ro/guides/couriers/" />
+</CardGrid>

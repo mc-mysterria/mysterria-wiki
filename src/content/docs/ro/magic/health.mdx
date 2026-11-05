@@ -1,0 +1,70 @@
+---
+title: "Viața Beyonder"
+description: "Cum funcționează viața Beyonder pe Mysterria: viața maximă pe Secvențe, cum se transformă daunele vrăjilor în inimi, limitele de daune în PvP, vindecarea în luptă și cum îți vezi viața reală."
+sidebar:
+  label: Viață
+  order: 8
+---
+
+import {Figure} from '~/components/mdx';
+import heartsNumbers from '~/assets/magic/health-hearts-numbers.webp';
+
+Fiecare Beyonder are o rezervă ascunsă de **viață Beyonder** care crește cu fiecare Secvență, în timp ce inimile tale rămân la fel. Vrăjile și creaturile Beyonder lovesc această rezervă, iar inimile îți arată cât la sută a mai rămas din ea.
+
+## Câtă viață are fiecare Secvență?
+
+| Secvența | Viață maximă |
+|---|---:|
+| 9 | 50 |
+| 8 | 75 |
+| 7 | 125 |
+| 6 | 175 |
+| 5 | 225 |
+| 4 | 450 |
+| 3 | 675 |
+| 2 | 1.025 |
+| 1 | 1.375 |
+| 0 | 2.500 |
+
+Viața ta maximă vine din Secvența ta **cea mai puternică**. Unele abilități o schimbă pentru o vreme.
+
+## Cum se leagă de inimile mele?
+
+Viața ta Beyonder și inimile tale arată mereu **același procent**. La 60% din viața Beyonder, ești la 60% din inimi.
+
+Daunele unei vrăji se iau din viața ta Beyonder, iar inimile scad cu aceeași parte, așa că un Beyonder mai puternic pierde mai puține inimi la aceeași vrajă. Să luăm doi jucători.
+
+- Jucătorul A e un Beyonder Sun de Secvența 4 cu **450 de viață**. Jucătorul B e un Fool de Secvența 8 cu **75 de viață**.
+- A îl lovește pe B cu o vrajă de 60 de daune. Lui B îi rămân 15 puncte de viață, deci **80% din inimile lui au dispărut** dintr-o singură vrajă.
+- B îl lovește pe A cu o vrajă de 28 de daune. Lui A îi rămân 422 de puncte de viață și pierde abia ceva mai mult de o jumătate de inimă.
+
+## Mă apără armura de vrăji?
+
+Nu. **Daunele vrăjilor Beyonder sunt daune reale**, așa că armura, farmecele, efectele de poțiuni și scuturile nu le scad. Singura apărare vanilla care merge e **Absorbția**, iar ea are limita de **40% din viața ta maximă**.
+
+## Limitele de daune în PvP
+
+Ca să nu existe ucideri dintr-un click între jucători de putere asemănătoare, daunele vrăjilor în PvP au limite. **Pe lovitură**, o vrajă poate lua cel mult atât:
+
+| Atacatorul față de tine | Maximum pe lovitură |
+|---|---|
+| Mai slab (număr de Secvență mai mare) | 20% din viața ta maximă |
+| Aceeași Secvență | 30% |
+| Cu o Secvență mai puternic | 50% |
+| Cu două sau mai multe Secvențe mai puternic | Fără limită |
+
+În orice 2 secunde, daunele adunate peste 35% din viața ta maximă sunt reduse la 30% din valoarea lor, iar nimic nu trece de 60%. Asta se aplică doar când atacatorul nu e cu două sau mai multe Secvențe mai puternic.
+
+Și creșterile și scăderile de daune adunate sunt ținute într-un interval, așa că o lovitură dă mereu între 15% și 250% din daunele ei obișnuite.
+
+## Vindecarea în timpul luptei
+
+Timp de 15 secunde după ce ai primit ultima oară daune magice, ești **în luptă magică**, iar vindecarea e mai slabă. Vindecarea naturală din mâncare vindecă doar **15%** din cât ar vindeca de obicei. Instant Health și Regenerarea vindecă **50%**, iar fiecare vindecare are limita de **5% din viața ta maximă**.
+
+## Cum îmi văd viața reală?
+
+Viața ta apare pe ecranul personajului (`/coi menu character`). [Modul Client](/ro/guides/client-mod/) îți poate înlocui și inimile cu o afișare a vieții Beyonder în stilurile Hearts + Numbers, Bar, Ornate Bar sau Segments.
+
+**Body Language Analysis** a unui Spectator de Secvența 9 de pe Calea [Visionary](https://www.mysterria.net/en/pathways/visionary) îți arată viața actuală și maximă a altui jucător.
+
+<Figure src={heartsNumbers} alt="Inimile și bara rapidă, cu 450 / 450 afișat deasupra inimilor" caption="Stilul Hearts + Numbers din Modul Client îți arată viața reală deasupra inimilor." contain />

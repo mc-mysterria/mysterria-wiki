@@ -1,0 +1,121 @@
+---
+title: "Start rapid"
+description: "Cum intri pe Mysterria, serverul de Minecraft Lord of the Mysteries: adresa serverului, pachetul de resurse, verificarea, bonusul de început și primul tău elixir."
+sidebar:
+  label: Start rapid
+  order: 1
+---
+
+import {Figure, Notice, CardGrid, Card} from '~/components/mdx';
+import banner from '~/assets/start/banner.png';
+import ipPreview from '~/assets/start/ip-preview.png';
+import generate from '~/assets/start/generate.png';
+import code from '~/assets/start/code.png';
+import pathways from '~/assets/start/pathways.png';
+import dossier from '~/assets/start/beyonder-dossier.webp';
+
+<Figure src={banner} alt="Un Beyonder de pe Mysterria zboară deasupra lumii" />
+
+Mysterria este un **server de Minecraft Lord of the Mysteries (LOTM)**. Sistemul Beyonder rulează într-un plugin pe server, așa că intri cu un client Minecraft obișnuit, fără moduri.
+
+## 1. Conectează-te la server
+
+| Ce | Detalii |
+|---|---|
+| **Adresa serverului** | `mc.mysterria.net` |
+| **Ediția** | Java Edition. Bedrock poate intra prin Geyser, dar unele meniuri și pictograme personalizate se văd greșit |
+| **Versiunea** | [Ghidul jucătorului](https://www.mysterria.net/en/guide/connect) recomandă Minecraft Java **26.2** |
+| **Moduri** | Nu ai nevoie de niciunul. [Modul Client](/ro/guides/client-mod/) opțional adaugă meniuri native și un mic bonus la Interpretare |
+
+<Figure src={ipPreview} alt="Ecranul Edit Server Info cu mc.mysterria.net ca adresă a serverului" caption="Adaugă mc.mysterria.net în Multiplayer." />
+
+1. Deschide **Multiplayer**, adaugă `mc.mysterria.net` și intră.
+2. **Acceptă pachetul de resurse al serverului** când Minecraft te întreabă.
+3. În selectorul de servere din lobby, alege **Mysteries**.
+4. Citește ce spune NPC-ul din lobby înainte să pleci.
+
+<Notice tone="warn" title="Totul arată ca Minecraft obișnuit?">
+  Atunci pachetul de resurse nu s-a încărcat. Editează serverul din listă, pune **Server Resource Packs** pe **Enabled** și conectează-te din nou. Dacă tot nu merge, actualizează-ți clientul Java. Mai multe soluții găsești în [ghidul de probleme](https://www.mysterria.net/en/guide/troubleshooting) de pe site-ul principal.
+</Notice>
+
+## 2. Înregistrează-te (doar conturile offline)
+
+Conturile oficiale (premium) de Minecraft se autentifică automat și sar peste acest pas.
+
+Conturile offline scriu `/register <password> <password>` la prima vizită și `/login <password>` la fiecare vizită de după. Ține minte parola.
+
+## 3. Verifică-ți contul
+
+Verificarea leagă contul tău de Minecraft de contul de Discord și de profilul de pe mysterria.net. Jucătorii verificați primesc canale Discord exclusive, un prefix și un rol unic în chat și acces complet la magazin.
+
+1. Autentifică-te pe [mysterria.net](https://www.mysterria.net/en/profile) și deschide-ți **profilul**.
+2. La **Conectează-ți contul de Minecraft**, apasă **Ia un cod**.
+3. În joc, scrie `/verify` și introdu codul de 8 caractere în fereastra care se deschide. Poți scrie și `/verify <code>`.
+
+<Figure src={generate} alt="Caseta de legare a contului de Minecraft din profilul de pe site, cu butonul pentru cod și comanda /verify" caption="Ia codul din profilul tău de pe site." />
+
+<Figure src={code} alt="Fereastra de verificare din joc care cere codul" caption="Apoi introdu-l în joc." contain />
+
+Dacă codul nu merge, generează unul nou sau deschide un tichet pe Discord.
+
+## 4. Alege-ți bonusul de început
+
+La scurt timp după ce intri, un meniu îți arată toate cele 22 de Căi. Alege una, apoi alege unul dintre cele două bonusuri de început.
+
+<Figure src={pathways} alt="Meniul Choose Your Path cu emblemele celor 22 de Căi" caption="Meniul de Căi pe care îl vezi ca jucător nou." />
+
+| | Calea Scurtăturii | Calea Hotărârii |
+|---|---|---|
+| **Primești** | Secvența 9 a Căii alese, imediat | Garanția ta de formulă începe la un singur cufăr distanță |
+| **Cost permanent** | Spiritualitatea ta maximă este **cu 10% mai mică pentru totdeauna**, la fiecare Secvență | Niciunul |
+| **Potrivit pentru** | Să joci cu abilități chiar azi | Să înveți prepararea și să-ți păstrezi toată puterea |
+
+Ca să iei Calea Hotărârii, deschide `/magic`, apasă **Loot Focus**, alege **Recipes** și lasă **Any Sequence**. Următorul tău cufăr de pradă îți dă atunci o formulă pentru **orice Cale și Secvență**, deci s-ar putea să nu fie Calea pe care ai apăsat-o. Mai multe găsești la [Loot Focus](/ro/magic/loot/#loot-focus-garanția).
+
+<Notice tone="info" title="Calea pe care o alegi în meniu nu te leagă de ea">
+  Intri pe Calea primului elixir de Secvența 9 pe care îl bei. Dacă meniul a spus Fool, dar bei un elixir Door, ești Door. Bonusul de început nu poate fi ales din nou, dar staff-ul dă uneori o resetare pentru o greșeală reală de jucător nou. Deschide un tichet pe Discord ca să ceri asta.
+</Notice>
+
+## 5. Prepară și bea primul elixir
+
+Secvența 9 cere o **formulă**, un **Cazan Magic** (un altar Crude, Ritual sau Grand) și **ingredientele** din formulă, apoi o preparare reușită. Nu cere Interpretare sau ritual și nu costă Nebunie. Elixirele preparate expiră după 48 de ore, așa că prepară-l când ești gata să-l bei.
+
+<CardGrid>
+  <Card title="Preparare și elixire" text="Cazane, formule, minijocul de preparare și ce te costă o preparare eșuată." href="/ro/magic/brewing/" />
+  <Card title="Pradă și Loot Focus" text="De unde vin formulele și ingredientele și cum merge contorul de garanție." href="/ro/magic/loot/" />
+  <Card title="Căi" text="Toate cele 22 de Căi, Secvențele și vecinii lor." href="/ro/magic/pathways/" />
+</CardGrid>
+
+## 6. Verifică-ți personajul
+
+Secvența, Interpretarea, Viața, Spiritualitatea și Nebunia ta apar pe ecranul personajului. Deschide **inventarul**, apasă **pictograma Căii** din colțul din stânga sus și ține mouse-ul pe capul personajului. Poți scrie și `/coi menu character`. Cu [Modul Client](/ro/guides/client-mod/) pictograma din inventar dispare și apeși **M** în schimb.
+
+<Figure src={dossier} alt="Dosarul Beyonder din Modul Client pentru un jucător Fool de Secvența 9, cu Viața, Spiritualitatea, Nebunia, Oboseala și progresul de Interpretare" caption="Dosarul Beyonder pe care Modul Client îl deschide cu M." />
+
+## Comenzi utile
+
+| Comandă | Ce face |
+|---|---|
+| `/magic` | Ghidul pentru începători, cu Loot Focus |
+| `/guide`, `/faq`, `/hints` | Cartea-ghid din joc, întrebări frecvente, sfaturi |
+| `/bounty` | Recompense pentru Interpretare |
+| `/subspace` | Temnițele, intrările lor și timpii tăi de așteptare |
+| `/emporium`, `/daily`, `/vote` | Brilliant Emporium, recompense zilnice, votare |
+| `/wallet` | Banii tăi |
+| `/lands` | Creează sau administrează un oraș |
+| `/msg <player>`, `/r` | Mesaje private |
+
+**Nu există** `/home`, `/sethome`, `/spawn`, `/tpa`, `/rtp` sau `/back`. Lista completă e la [Comenzi](/ro/general/commands/).
+
+## Înainte să te stabilești
+
+- Fără comenzi de teleportare, alege-ți baza cu grijă sau intră într-un oraș.
+- PvP este oprit în cea mai mare parte a lumii, iar griefingul este interzis de reguli.
+- Fiecare cufăr dintr-o structură generată este un cufăr de pradă Beyonder și fiecare îți dă pradă **ție** o singură dată.
+- Lumea se resetează între epoci. Epoca II a început pe 1 mai 2026.
+
+Detaliile sunt la [Lume și siguranță](/ro/general/world-and-safety/). Citește [regulile serverului](https://www.mysterria.net/en/rules) înainte să joci.
+
+## Ai nevoie de ajutor?
+
+Întreabă în chat sau pe [Discordul Mysterria](https://discord.com/invite/jc7GSxBWgb). [Ghidul jucătorului](https://www.mysterria.net/en/guide) răspunde la cele mai frecvente întrebări.

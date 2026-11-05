@@ -1,0 +1,118 @@
+---
+title: "Beyonderii Sălbatici"
+description: "Beyonderii Sălbatici pe Mysterria, serverul de Minecraft LOTM: care sunt ostili, ce vând și cu cât, ce dau și cum te lupți cu ei."
+sidebar:
+  order: 33
+---
+
+import {Figure} from '~/components/mdx';
+import leadImage from '~/assets/heroes/wild-beyonders.webp';
+import wbTrade from '~/assets/magic/wild-beyonder-trade.webp';
+
+<Figure src={leadImage} eager alt="Un Beyonder Sălbatic" />
+
+Beyonderii Sălbatici sunt Beyonderi NPC care rătăcesc prin sălbăticie, fiecare cu o Cale și o Secvență de la **Secvența 9 la Secvența 5**. În funcție de Calea ta, fac schimburi cu tine sau te atacă pe loc, iar în luptă folosesc abilități reale de Cale.
+
+## Mă va ataca un Beyonder Sălbatic?
+
+Depinde doar de Calea ta față de a lui:
+
+| Tu ești | Atitudinea lui | Schimburi |
+|---|---|---|
+| De **aceeași Cale** | Pașnic, dacă nu-l ataci | Prețuri normale |
+| De o **Cale vecină** (același grup) | Pașnic, dacă nu-l ataci | Prețuri **x1,5** |
+| De **orice altă Cale** | Ostil pe loc | Nu se poate |
+| **Încă nu ești Beyonder** | Ostil pe loc | Nu se poate |
+| Oricine atacă primul | Ostil | Nu se poate |
+
+Căile vecine sunt cele din același grup, de exemplu Fool, Error și Door. Pagina [Căi](/ro/magic/pathways/) arată grupurile. Dacă dai click dreapta pe unul ostil, vezi „This Wild Beyonder is hostile toward your pathway!”.
+
+Dacă mori sau ieși din joc, Beyonderul Sălbatic te pierde din vedere și nu mai vine după tine când te întorci.
+
+## Unde apar Beyonderii Sălbatici?
+
+Nu au locuri fixe. Apar în jurul jucătorilor care explorează.
+
+| Regulă | Valoare |
+|---|---|
+| Verificarea apariției | La fiecare 5 minute, **5% șanse** pentru fiecare jucător online |
+| Distanța față de tine | Între 64 și 256 de blocuri |
+| Distanța față de spawnul lumii | Cel puțin 200 de blocuri |
+| Distanța dintre ei | Cel puțin 100 de blocuri |
+| Cei mai mulți în același timp | 20 pe tot serverul (40 la Wild Tide) |
+| Dispariție | După 60 de secunde fără vreun jucător la mai puțin de 50 de blocuri |
+
+În zilele cu **Wild Tide** apar de două ori mai mulți și pot exista de două ori mai mulți în același timp. Pagina [Mareele zilnice](/ro/guides/tides/) îți spune când.
+
+### Cât de puternici sunt?
+
+| Secvența | 9 | 8 | 7 | 6 | 5 |
+|---|---|---|---|---|---|
+| Parte din apariții (cam) | 32% | 21% | 19% | 18% | 11% |
+
+Nu există Beyonderi Sălbatici de Secvența 4 sau mai puternici.
+
+## Cum fac schimburi cu un Beyonder Sălbatic?
+
+Dă click dreapta pe un Beyonder Sălbatic pașnic. Prima dată când întâlnești unul, te salută, iar meniul de schimb se deschide după vreo 10 secunde. Nu poți face schimburi cât se luptă.
+
+Fiecare ofertă costă același număr în bani din portofel, în **Fragmente de Energie** și în monede **Verl Dor**, toate plătite deodată. Fragmentele de Energie vin din vânzarea ingredientelor către sătenii nitwit și cei fără profesie, cum e explicat la [Fragmente de Energie](/ro/guides/economy/#fragmente-de-energie). Verl Dor e cea mai mare monedă din portofel (vezi [Economie](/ro/guides/economy/)).
+
+### Ce vând?
+
+Un Beyonder Sălbatic are cel mult 8 oferte, toate de pe Calea lui:
+
+| Ofertă | Când apare |
+|---|---|
+| Ingrediente | Mereu, cu 1 sau 2 ingrediente pentru fiecare Secvență de la a lui până la 9 |
+| Un elixir | 30% șanse, doar dacă Beyonderul Sălbatic e de Secvența 8 sau mai puternic. Elixirul e de Secvența lui sau mai slab |
+| O Caracteristică Beyonder | 50% șanse, doar dacă e de Secvența 7 sau mai puternic. Mereu de Secvența lui |
+| O formulă de elixir | 20% șanse, doar dacă e de Secvența 6 sau mai puternic. De Secvența lui sau cu până la 2 mai slabă |
+
+### Cât costă?
+
+Prețul crește de x1,5 pentru fiecare Secvență peste 9. Fiecare număr de mai jos se plătește în bani, **și** în Fragmente de Energie, **și** în monede Verl Dor:
+
+| Secvența obiectului | Ingredient | Elixir | Formulă | Caracteristică |
+|---|---|---|---|---|
+| 9 | 100 | 500 | 1.500 | 2.000 |
+| 8 | 150 | 750 | 2.250 | 3.000 |
+| 7 | 225 | 1.125 | 3.375 | 4.500 |
+| 6 | 338 | 1.688 | 5.063 | 6.750 |
+| 5 | 507 | 2.532 | 7.594 | 10.125 |
+
+<Figure src={wbTrade} alt="Meniul de schimb al unui Beyonder Sălbatic cu o Brilliance Rock la prețul de 150 Money, 150 VerlDor și 150 Energy Shards" caption="Fiecare ofertă își arată prețul în bani, monede Verl Dor și Fragmente de Energie." contain />
+
+Dacă ești de pe o Cale vecină, înmulțește cu 1,5. Un schimb eșuează fără să ia nimic dacă nu poți plăti sau nu ai loc pentru obiect.
+
+## Ce primesc dacă ucid unul?
+
+Doar Beyonderii Sălbatici apăruți natural dau recompense. Cei chemați prin abilități nu dau.
+
+| Recompensă | Șansă |
+|---|---|
+| Caracteristică Beyonder de Secvența lui | 30% (Secvența 9), 25% (8), 20% (7), 15% (6), 10% (5) |
+| Ingrediente | 15% pentru fiecare Secvență de la a lui până la 9 |
+| [Artefact Sigilat](/ro/magic/sealed-artifacts/) | 5% (Secvența 6), 10% (Secvența 5) |
+| Interpretare | Prin sursa World, cu limită ca orice [Interpretare](/ro/magic/acting/) |
+
+Panoul de recompense (`/bounty`) oferă uneori o **Wild Beyonder Hunt** pentru jucătorii de Secvența 9 până la 5, care dă Interpretare în plus.
+
+## Ce abilități de Cale merg pe Beyonderii Sălbatici?
+
+Multe metode de Interpretare îți cer să vânezi sau să controlezi alți Beyonderi. Beyonderii Sălbatici te lasă să faci asta fără să-i deranjezi pe jucătorii reali. Exemple confirmate:
+
+- **Hanged Man** le poate păstori sufletele (Graze).
+- Replication de la **Door** le poate copia abilitățile.
+- **Fool** îi poate transforma în Marionete.
+- Bloodlust de la **Abyss** socotește uciderea unui Beyonder Sălbatic.
+
+Nu orice abilitate de copiere merge pe ei, așa că testează înainte să te bazezi pe ea.
+
+:::caution[Interpretarea Abyss]
+Uciderea Beyonderilor Sălbatici **nu** digeră elixirul Abyss. Interpretarea Abyss vine doar din uciderea jucătorilor Beyonder de o Secvență potrivită.
+:::
+
+## Cât de periculoși sunt în luptă?
+
+Beyonderii Sălbatici se luptă ca jucătorii. Își folosesc abilitățile Căii cu **timpi de așteptare cu 20% mai scurți** decât ar avea un jucător și se retrag când le scade viața. Verifică numele și Calea înainte să te apropii și luptă lângă un adăpost, cu vindecare pregătită. Secvențele mai înalte lovesc mult mai tare, dar dau recompense mai bune.

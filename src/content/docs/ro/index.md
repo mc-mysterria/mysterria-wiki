@@ -1,8 +1,9 @@
 ---
 title: Mysterria
+description: Wiki-ul Mysterria pentru serverul de Minecraft Lord of the Mysteries (LOTM). Căi, elixire, Interpretare, Haruri, orașe, economie și Secvențe înalte.
 template: splash
 hero:
-  tagline: Server de Minecraft inspirat de Lord of The Mysteries. Tot ce trebuie să știi despre server se găsește aici!
+  tagline: Tot ce le trebuie jucătorilor pe Mysterria, serverul de Minecraft Lord of the Mysteries. De la primul tău elixir până la locurile Secvențelor înalte.
   actions:
     - text: Start rapid
       link: /ro/general/start

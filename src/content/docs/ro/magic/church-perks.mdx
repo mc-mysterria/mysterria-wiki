@@ -1,0 +1,200 @@
+---
+title: "Avantajele bisericii și ancorele"
+description: "Numerele din spatele avantajelor bisericii pe Mysterria: greutatea ancorelor, treptele, bonusurile de Interpretare și de recuperare, alinarea pragului de Nebunie, binecuvântările și darurile. Un ghid LOTM."
+sidebar:
+  label: Avantajele bisericii și ancorele
+  order: 35
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import perksChat from '~/assets/magic/church-perks-chat.webp';
+
+Avantajele bisericii sunt bonusurile de Interpretare, de recuperare din Nebunie și de sprijin pe care o [biserică](/ro/magic/churches/) le dă membrilor ei. Cât de puternice sunt depinde de cât sprijin activ și rugător are biserica.
+
+## Ce face avantajele mai puternice sau mai slabe?
+
+Avantajele combină toți acești factori deodată, așa că un singur factor slab poate face bonusul final mult mai mic.
+
+- **Greutatea ancorelor** arată cât sprijin activ și rugător are biserica, față de cât cere Secvența liderului.
+- **Vechimea în biserică** contează pentru că membrii noi încep de la 20% și ajung la valoarea întreagă după 14 zile (21 de zile după ce schimbă biserica).
+- **Evlavia și activitatea** vin din rugăciunile recente și din participarea la sedii.
+- **Rețeaua de sedii** are nevoie de un nucleu principal activ și de filiale și sedii regionale sănătoase. Filialele care decad nu mai ajută.
+- **Conducerea sediilor** înseamnă un Diacon-șef și Episcopi care acoperă fiecare sediu.
+- După **rol**, liderii și coliderii primesc cel mai mult, iar adepții noi cel mai puțin. Efectele Îngerilor se opresc dacă sunt mai mulți Îngeri decât locuri de Înger.
+- După **Cale**, Calea bisericii ajută cel mai mult, Căile vecine puțin mai puțin, iar celelalte cel mai puțin.
+- Membrii mai puternici primesc efecte ceva mai puternice datorită **Secvenței lor**.
+- Un [război între biserici](/ro/magic/church-management/#războaiele-între-biserici) acceptat sau o penalizare de război schimbă avantajele.
+- Fără un **nucleu principal**, fiecare avantaj merge la 50%.
+
+Dacă avantajele tale par slabe, `/coi church status`, `/coi church perks`, `/coi church acting`, `/coi church pathway progress`, `/coi church my-site` și `/coi church cooldowns` îți arată unde te afli.
+
+<Figure src={perksChat} alt="Rezultatul /coi church perks în chat pentru liderul unei biserici noi, cu avantajele aplicate și motivele lor" caption="Ce scrie /coi church perks în chat." contain />
+
+## Greutatea ancorelor
+
+Fiecare membru activ adaugă **greutate de ancoră** după Secvența lui:
+
+| Secvența membrului | Greutate de ancoră |
+|---|---:|
+| 0 | 12,0 |
+| 1 | 9,0 |
+| 2 | 7,0 |
+| 3 | 5,0 |
+| 4 | 3,0 |
+| 5 | 0,75 |
+| 6 | 0,60 |
+| 7 | 0,45 |
+| 8 | 0,35 |
+| 9 | 0,25 |
+| Nu e Beyonder | 0,15 |
+
+Greutatea se înmulțește apoi după Cale:
+
+| Calea membrului | Multiplicator |
+|---|---:|
+| Aceeași cu a bisericii | x1,5 |
+| O Cale vecină | x1,25 |
+| Oricare alta | x1,0 |
+
+De exemplu, un membru de Secvența 4 dă 4,5 pe Calea bisericii, 3,75 de pe o Cale vecină și 3,0 în rest. Un membru de Secvența 9 de pe aceeași Cale dă 0,375.
+
+### Cine contează?
+
+- Un membru contează doar dacă a intrat în joc **și** s-a rugat în ultimele **14 zile**.
+- **Liderul nu contează niciodată** ca ancoră pentru propria biserică.
+- Nici **coliderii nu contează** ca ancore de membru.
+
+### Limitele greutății ancorelor
+
+- Greutatea de la membrii de Secvența 4 sau mai puternici începe să crească mai încet de la **18** și nu poate trece niciodată de **34**.
+- Fiecare **10** membri activi de Secvența 5 sau mai slabi adaugă un bonus de grup de **+1,0**.
+- Fiecare sediu activ poate ține o anumită greutate, stabilită de Secvența liderului. Greutatea de peste **capacitatea totală a sediilor** crește tot mai încet și se oprește pe la 1,35 ori capacitatea.
+
+| Secvența liderului | Capacitatea sediului principal | Fiecare filială |
+|---|---:|---:|
+| 4 | 12 | 8 |
+| 3 | 16 | 10 |
+| 2 | 20 | 12 |
+| 1 | 24 | 14 |
+| 0 | 28 | 16 |
+
+Capacitatea unui sediu scade dacă nu e destul de activ sau are un Diacon-șef slab ori lipsă și crește cu 12% pentru fiecare nivel de îmbunătățire. Fără un nucleu principal activ, capacitatea întregii biserici e 6.
+
+## De câte ancore are nevoie o biserică?
+
+Sprijinul complet cere atâta greutate efectivă de ancoră, stabilită de Secvența **liderului**. Fiecare membru e măsurat după rândul liderului, oricare i-ar fi propria Secvență.
+
+| Secvența liderului | Ancore pentru sprijin complet |
+|---|---:|
+| 4 | 15 |
+| 3 | 25 |
+| 2 | 28 |
+| 1 | 38 |
+| 0 | 30 |
+
+Acestea sunt ținte de greutate, nu număr de membri. Un lider de Secvența 4 poate ajunge la 15 cu câțiva membri puternici de pe aceeași Cale sau cu mulți membri mai slabi. Sediul lui principal ține doar 12 până să înceapă să crească mai încet, așa că o să vrea o filială sau o îmbunătățire.
+
+<Notice tone="info" title="Și Secvența 0 se uită la asta">
+Ca să revendici un [tron](/ro/magic/sequence-zero/), biserica ta are nevoie de **20** de ancore efective, iar tu trebuie să fii liderul, coliderul sau un Înger al ei. Biserica unui zeu așezat pe tron e măsurată după **30**. E mai puțin decât ținta pentru Secvența 1, intenționat. Un zeu nou aduce deja 20 de ancore, așa că biserica mai are de crescut doar puțin pentru sprijin complet.
+</Notice>
+
+## Treptele bisericii
+
+| Treaptă | Parte din ținta de ancore | Bonus de Interpretare x | Bonus de recuperare x | Binecuvântare x |
+|---|---:|---:|---:|---:|
+| 1 | sub 25% | 1,00 | 1,00 | 1,00 |
+| 2 | 25% | 1,03 | 1,15 | 1,12 |
+| 3 | 45% | 1,06 | 1,32 | 1,28 |
+| 4 | 70% | 1,09 | 1,52 | 1,45 |
+| 5 | 95% | 1,12 | 1,75 | 1,65 |
+
+Pentru un lider de Secvența 4 (ținta 15), treapta 2 începe pe la 3,75 ancore, treapta 3 pe la 6,75, treapta 4 pe la 10,5 și treapta 5 pe la 14,25.
+
+### Church Progress
+
+Ținerea [slujbelor](/ro/magic/church-management/#slujbele-bisericii) adună **Church Progress**. Fiecare **100** de puncte de progres contează ca o ancoră în plus pentru treaptă și clasament, până la **12**.
+
+## Clasamentul religiilor
+
+Mai multe biserici pot urma aceeași Cale, iar cea cu cel mai mare scor de religie o conduce. O biserică are o singură Cale oficială, cea a liderului.
+
+Scorul se face din greutatea efectivă a ancorelor, Church Progress, treaptă (+8 pentru fiecare treaptă), sediile active (+2 fiecare) și sănătatea actuală. Îl vezi cu `/coi church top` sau `/coi church top <pathway>`.
+
+Scorul de religie face și **25%** din Defense Score al celui care ocupă un loc la [Locuri și uzurpare](/ro/magic/usurpation/#pasul-2-nominalizarea).
+
+### Sprijin pentru alte Căi
+
+- Doi sau mai mulți membri activi care se roagă, de pe aceeași Cale, formează un **grup** și primesc un mic bonus.
+- Coliderii activi, administratorii sediilor regionale și Îngerii de pe altă Cale adaugă **sprijin secundar** limitat pentru acea Cale (până la 15%).
+- Asta nu face niciodată din biserică o a doua religie oficială.
+
+Verifică orice Cale din biserica ta cu `/coi church pathway <pathway> progress`.
+
+## Bonusul de Interpretare
+
+Bonusul de Interpretare al bisericii se adaugă la câștigurile tale de Interpretare. Ajunge până la vreo **16%** și crește tot mai încet de la 14%. E cel mai mare pentru Calea bisericii și pentru lideri și Îngeri și crește cu treapta, rugăciunea și vechimea în biserică. Îl verifici cu `/coi church acting`.
+
+## Bonusul de recuperare din Nebunie
+
+Bonusul de recuperare ajută Nebunia recuperabilă să scadă mai repede. Poate ajunge la **24** (crește tot mai încet de la 14, limită fixă 30) și crește cu treapta. Nu șterge niciodată Nebunia Permanentă.
+
+## Alinarea pragului de Nebunie
+
+De la Secvența 4, Beyonderii au un prag de Nebunie al divinității, sub care recuperarea nu poate coborî:
+
+| Secvența | Pragul divinității |
+|---|---:|
+| 0 | 90% |
+| 1 | 75% |
+| 2 | 60% |
+| 3 | 40% |
+| 4 | 25% |
+| 5 până la 9 | 0% |
+
+O biserică poate alina o parte din acest prag:
+
+> Nebunia ta minimă = Nebunia Permanentă + pragul divinității x (1 - alinarea)
+
+Totalul are limita **95%**, deci nu ajunge niciodată la 100%. Recuperarea, darurile, binecuvântările și abilitățile de vindecare se opresc toate la acest prag.
+
+Alinarea e gradul de umplere a ancorelor bisericii tale (ancorele efective împărțite la țintă) înmulțit cu partea rolului tău, până la limita rolului. Membrii obișnuiți au nevoie și de vechime în biserică, evlavie și activitate recentă ca să ajungă la partea întreagă.
+
+| Rol | Parte | Limită |
+|---|---:|---:|
+| Lider | 100% | 100% |
+| Colider | 95% | 100% |
+| Înger | 75% | 90% |
+| Diacon-șef | 65% | 80% |
+| Episcop | 55% | 70% |
+| Adept vechi (Senior Follower) | 45% | 60% |
+| Adept (Follower) | 38% | 55% |
+| Adept tânăr (Junior Follower) | 30% | 45% |
+| Adept nou (New Follower) | 20% | 35% |
+
+Un zeu nou e măsurat după 30 de ancore, nu după cele 20 necesare ca să urce pe tron. La 20 din 30 primește două treimi din alinare, așa că pragul lui de 90% scade doar până pe la 30% până crește congregația.
+
+Red Priests fără biserică pot primi în schimb alinare de la [cohorta lor Chain of Command](/ro/magic/sequence-zero/#cohortele-red-priest-în-locul-unei-biserici). Alinarea de la cohortă și cea de la biserică nu se adună niciodată.
+
+## Binecuvântări
+
+O binecuvântare e o acțiune rapidă de sprijin pentru un membru al bisericii. Scade Nebunia recuperabilă și Oboseala și dă un scurt efect de sprijin. Folosește `/coi church bless <player>` sau meniul bisericii. Nu te poți binecuvânta singur, iar ținta ar trebui să fie lângă un sediu activ.
+
+| Cine binecuvântează | Alinare de Nebunie | Alinare de Oboseală | Efect de sprijin | Cost de Spiritualitate |
+|---|---:|---:|---:|---:|
+| Ofițerii sediului (Diaconi-șefi, Episcopi) | 4 | 6 | 6 s | 10 |
+| Liderul, coliderii, Îngerii activi | 6 | 10 | 10 s | 18 |
+
+Fiecare țintă poate fi binecuvântată o dată la **10 minute**. După **2** binecuvântări în 30 de minute, următoarele binecuvântări pe acea țintă pierd din putere (până la 35%).
+
+## Daruri
+
+Darurile sunt un sprijin mai puternic de la lider, colideri și Îngerii activi. Folosește `/coi church gift <player> <type>`. Îl costă Spiritualitate pe cel care dă și îi adaugă puțină Nebunie. Nu-ți poți face singur un dar.
+
+| Dar | Efect | Cost de Spiritualitate | Nebunia celui care dă |
+|---|---|---:|---:|
+| `madness-relief` | Până la 10 Nebunie recuperabilă ștearsă | 30 | +1,0 |
+| `spirituality-restore` | Până la 35 Spiritualitate refăcută | 24 | +0,5 |
+| `tiredness-recovery` | Până la 20 Oboseală ștearsă | 28 | +0,75 |
+| `sanctuary-renewal` | 20 s de Regenerare II și 120 s de Absorbție I | 36 | +1,5 |
+
+Același dar pentru aceeași țintă are un timp de așteptare de **5 minute**. Un al doilea dar pentru aceeași țintă într-o oră e mai slab (până la 40%). Un dar e refuzat dacă l-ar duce pe cel care dă peste 95% Nebunie.

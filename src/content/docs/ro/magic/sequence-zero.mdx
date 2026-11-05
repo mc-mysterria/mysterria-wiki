@@ -1,0 +1,242 @@
+---
+title: "Cum devii zeu la Secvența 0"
+description: "Cum ajungi la Secvența 0 pe Mysterria: fiecare cerință, veghea, ritul ascensiunii, Deity Authority și cum îți păstrezi tronul. Un ghid Lord of the Mysteries."
+sidebar:
+  label: Secvența 0
+  order: 36
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import pantheon from '~/assets/magic/sequence-zero-pantheon.webp';
+import leadImage from '~/assets/heroes/sequence-zero.jpg';
+import throneMenu from '~/assets/magic/sequence-zero-throne.webp';
+
+<Figure src={leadImage} eager alt="Un castel în ruină pe o insulă plutitoare, sub o lună roșie" />
+
+## Ce este un tron?
+
+Un **tron** îl face pe jucătorul care stă pe el **zeul** unei Căi, la Secvența 0, cu rangul de Zeitate. Există **22 de tronuri**, câte unul pentru fiecare Cale obișnuită, iar Căile Exterioare nu au niciunul.
+
+Un zeu primește un titlu deasupra capului și un loc în Panteonul public. Două abilități sunt doar ale zeilor, **Deity Authority** și **Divine Presence**.
+
+Nimeni nu poate lua tronul unui zeu care stă pe el. Nu există război pentru loc la Secvența 0. Un tron se golește doar când zeul lui nu mai e de Secvența 0 pe acea Cale, cel mai des pentru că nu mai apare în joc (vezi [Cum îți păstrezi tronul](#cum-îți-păstrezi-tronul)). De aceea lupta pentru tron, **veghea**, are loc *înainte* ca cineva să se așeze pe el.
+
+[Recensământul locurilor](https://www.mysterria.net/en/ascension) de pe site-ul principal arată cine stă pe fiecare tron și pe fiecare alt loc înalt.
+
+## Cine poate încerca?
+
+Ești refuzat imediat dacă:
+
+- Calea e o Cale Exterioară.
+- Nu ești de **Secvența 1** pe ea.
+- Nu e Calea ta **principală** (cea pe care ești socotit).
+- Faci deja parte dintr-o veghe.
+
+## De ce am nevoie ca să revendic un tron?
+
+`/coi ascend` deschide meniul Throne. `/coi ascend status [pathway]` scrie aceeași listă de verificare în chat. Are **11 puncte**: șapte cerințe și patru verificări.
+
+<Figure src={throneMenu} alt="Fila Where you stand din meniul Throne, cu 5 din 11 puncte îndeplinite" caption="Lista de verificare din meniul Throne, arătată pentru un personaj de test." />
+
+### Cele șapte cerințe
+
+| | Cerință | Ce îți trebuie |
+|---|---|---|
+| R1 | **Unicitatea deținută și acomodată** | Deții [Unicitatea](/ro/magic/uniqueness/) Căii tale **și** o ai la **95%** acomodare sau mai mult |
+| R2 | **Biserica ta are ancorele** | [Biserica](/ro/magic/churches/) ta are **20** de greutate efectivă de ancoră, iar tu ești liderul, coliderul sau un Înger al ei. Contează membrii de pe orice Cale, iar cei de pe Calea ta contează cel mai mult. Un Red Priest poate folosi în schimb o cohortă (vezi [mai jos](#cohortele-red-priest-în-locul-unei-biserici)) |
+| R3 | **Fiecare ritual al ultimului pas** | Un set de ritual pentru Secvența 0 care valorează **30 de puncte** (vezi [Ritualuri](#setul-de-ritual-de-30-de-puncte)) |
+| R3b | **Ritualul de poveste certificat de staff** | Un ritual de poveste legendar aprobat de staff (vezi [mai jos](#ritualul-de-poveste)) |
+| R4 | **Interpretare strânsă pentru miză** | **31.104 Overflow**, adică jumătate din bara de Secvența 1 (vezi [Locuri și uzurpare](/ro/magic/usurpation/#ce-este-overflow)). Un zeu căzut aflat în perioada de grație plătește jumătate |
+| R5 | **Destul timp pe loc** | **14 zile calendaristice** la Secvența 1 pe această Cale de când ai avansat ultima oară sau ai ajuns pe ea. Perioada de grație a unui zeu căzut îl scutește de asta |
+| R6 | **Elixirul de Secvența 0 în mână** | Preparat din **trei Caracteristici Beyonder de Secvența 1 de aceeași Cale**, fără nimic altceva |
+
+### Cele patru verificări
+
+- Tronul e gol.
+- Ești așezat pe această Cale, deci nu ai ajuns pe ea din lateral (o schimbare, un transfer sau o preluare) în ultimele 30 de zile.
+- Nu ești într-un război pentru loc.
+- Niciun timp de așteptare al Căii sau personal nu te oprește să revendici.
+
+<Notice tone="info" title="Nu poți bea elixirul de Secvența 0">
+Dacă încerci să-l bei singur, e refuzat. Doar ritul ascensiunii îl folosește.
+</Notice>
+
+`/coi ascend board` arată progresul tuturor pe panoul public al cursei. `/coi ascend private` îți ascunde numele de pe panou, dar tot ești socotit.
+
+## Setul de ritual de 30 de puncte
+
+R3 funcționează ca ritualurile pentru orice altă Secvență (îl verifici pe al tău cu `/ritual status`), cu cea mai mare țintă din joc. Setul tău e **împărțit** din toată rezerva de ritualuri, nu ales. De la Secvența 4 în sus, rezerva include sarcini legendare de câte 10 puncte, cum ar fi realizările de provocare Blaze și Cave („Collect 64 nether stars”, „Obtain all the items!”) și aceste fapte de pe server, care se înregistrează singure:
+
+| Faptă | Cum o câștigi | Necesar |
+|---|---|---:|
+| Un război pentru loc luptat până la verdict | Lupți într-un [război pentru loc](/ro/magic/usurpation/) până la capăt, câștigat sau pierdut | 1 |
+| O Unicitate apărată | Îți păstrezi Unicitatea după o provocare plătită | 1 |
+| Slujire devotată în biserică | Participi la [slujbele bisericii](/ro/magic/church-management/#slujbele-bisericii) | 10 |
+| Numele tău onorific a fost invocat | Cineva îți rostește întreg [Numele Onorific](/ro/magic/honorific-names/) | 1 |
+| O Încercare la care ai supraviețuit | Treci printr-o Încercare și îți păstrezi Beyonderul | 1 |
+| O recompensă de vârf | Termini o recompensă cât ești de Secvența 1 | 1 |
+| Hărnicie păstrată | Câștigi Interpretare în 7 zile diferite (fiecare zi are o Maree) | 7 |
+
+Până la **10** din cele 30 de puncte pot veni în schimb din credite de slujire:
+
+| Credit de slujire | Puncte |
+|---|---:|
+| O slujbă a bisericii la care ai participat | 1 |
+| Un obiectiv de recompensă | 1 |
+| Un ritual de poveste aprobat de staff | 2 |
+| Un război pentru loc luptat | 3 |
+| O Unicitate apărată | 3 |
+
+Poți cere staff-ului să reextragă o singură sarcină din setul tău.
+
+## Ritualul de poveste
+
+Ritualul de poveste este o **cerință separată și obligatorie** (R3b), peste cele 30 de puncte. E pentru lucrurile pe care serverul nu le poate măsura:
+
+> Organizează un eveniment public, pentru tot serverul, care joacă rolul Căii tale din roman, și fă serverul să-l trăiască.
+
+O captură de ecran sau o muncă de unul singur nu contează. Trebuie să fie un eveniment anunțat dinainte, cu alți jucători prezenți și cu urmări reale, pe care doar un Beyonder de pe Calea *ta* l-ar fi putut organiza. De exemplu, Fool ar putea aduna un Tarot Club deasupra ceții cenușii, iar Red Priest ar putea declara și duce un război real, acceptat, între două biserici.
+
+Vorbește cu staff-ul **înainte** să-l organizezi și spune-le ce plănuiești, când și cu cine. Ei îți vor spune dacă se pune. După ce staff-ul îl certifică, punctul din listă devine verde. O revendicare declarată fără el e anulată, cu totul dat înapoi și fără timp de așteptare.
+
+## Declararea și veghea
+
+Când toate punctele sunt verzi, **declari**. Miza ta se cheltuie, elixirul intră în păstrare cu expirarea oprită, iar tot serverul e anunțat. Se deschide o fereastră de **72 de ore**.
+
+### Cine poate contesta?
+
+Alt jucător de Secvența 1 de pe aceeași Cale poate plăti aceeași miză ca să te conteste, dar doar dacă:
+
+- E de 14 zile la Secvența 1, e așezat pe Cale, nu e într-un război pentru loc și nu e în timpul de așteptare pentru contestare.
+- Are Overflow-ul pentru miză.
+- Îndeplinește deja cel puțin **3 din aceste 4**: ancorele, cele 30 de puncte de ritual, ritualul de poveste și un elixir de Secvența 0.
+
+Cu doar 3 locuri de Arhanghel pe Cale, pot exista cel mult 2 rivali. Dacă nu te contestă nimeni, treci direct la rit.
+
+### Dacă te contestă cineva
+
+Cea mai mare ofertă de la închiderea ferestrei contestă, iar celelalte oferte sunt date înapoi. Urmează o dispută de **7 zile**, cu punctaj în War Points din câștigurile reale de Interpretare, ca într-un [război pentru loc](/ro/magic/usurpation/#pasul-3-războiul). Sunt zile calendaristice, iar absența înseamnă pur și simplu zero puncte. **La egalitate câștigă cel care revendică.**
+
+| Verdict | Învinsul plătește | Câștigătorul primește | După aceea |
+|---|---|---|---|
+| **Câștigă cel care revendică** | Rivalului îi arde jumătate din miză | Cel care revendică merge la rit | Rivalul nu poate contesta veghea acestei Căi timp de 14 zile |
+| **Câștigă rivalul** | Celui care revendică îi arde jumătate din miză | **Unicitatea**, nu tronul. Miza rivalului se întoarce întreagă | Nimeni nu poate declara pe Cale timp de 7 zile. Unicitatea e protejată 14 zile. Cel care a revendicat are un timp de așteptare de 24 de ore până poate declara din nou |
+
+Un rival care câștigă **nu** devine zeu. Trebuie să parcurgă singur tot drumul, inclusiv să crească acomodarea până la 95% de la zero. O dispută pierdută îți dă mereu elixirul înapoi.
+
+### Retragerea și alte ieșiri
+
+| Ce s-a întâmplat | Miza | Elixirul | Timp de așteptare |
+|---|---|---|---|
+| Te-ai retras în 15 minute | Dată înapoi întreagă | Returnat | 24 de ore până poți declara din nou |
+| Te-ai retras după 15 minute | Jumătate arde | Returnat | 24 de ore până poți declara din nou |
+| Altcineva a oferit mai mult, tronul s-a ocupat, anulare, eroare | Dată înapoi întreagă | Returnat | Niciunul |
+| Nu ai intrat în fereastra de 48 de ore după ce ai câștigat | Dată înapoi întreagă | Returnat | 24 de ore până poți declara din nou |
+| Nu ai răspuns la chemare în 7 zile | Dată înapoi întreagă | Returnat | Niciunul |
+
+## Chemarea, vestitorul și ritul
+
+Dacă câștigi veghea, ești **chemat**. Ai **24 de ore** să-ți alegi momentul înainte ca ritul să pornească singur, iar o chemare la care nu răspunzi e returnată după **7 zile**. Răspunzi cu `/coi ascension begin`.
+
+Serverul primește apoi **10 minute** de avertizare, cu o bară de boss, un card în chat cu coordonatele și o chemare cu un minut înainte. Oricine poate verifica locul cu `/coi ascension where`. În aceste 10 minute te mai poți mișca, dar după ce începe ritul rămâi pe loc. Dacă sunt chemate două rituri unul după altul, al doilea își așteaptă rândul.
+
+### În timpul ritului
+
+Ritul ține cam **2 minute și jumătate**, iar fiecare dintre cele 22 de Căi are propria scenă.
+
+- **Rivalii nu-l pot întrerupe.** Ești invulnerabil și nu poți fi controlat cu efecte puternice. Se termină mai devreme doar dacă pleci, îl oprește staff-ul sau intri într-o stare la care niciun rit nu poate supraviețui.
+- **Nu se cheltuie nimic până la jumătate.** Înainte de asta, un rit oprit nu costă nimic și poți răspunde din nou la chemare. Tronul e luat la jumătatea ritului.
+- **Martorii sunt plătiți.** Stai la cel mult **24 de blocuri** și primești **3%** din propria bară de Interpretare și 30 de secunde de Regenerare.
+- **Mulțimea scandează.** De cinci ori apare o chemare în chat. Fiecare răspuns aduce încă **1,5%** din bara ta. Se acceptă formularea în orice limbă.
+
+Când e luat tronul, tot serverul simte un efect al Căii timp de cam **3 minute**, cum ar fi Sun care transformă noaptea într-o lumină orbitoare. Nimic din el nu te poate omorî sau lua ceva pentru totdeauna și nimic nu rămâne după o repornire. Locul e marcat pe hartă pentru totdeauna.
+
+## Ce primește un zeu?
+
+Un zeu își păstrează abilitățile de la Secvențele 9 până la 1 și mai primește două:
+
+**Deity Authority** (activă). Click stânga ca să treci între Favor, Behest și Ledger. Click dreapta ca s-o folosești pe cea aleasă.
+
+- **Favor** îi dă unui credincios al Căii tale Interpretare cât **5%** din bara *lui*. Ai **60%** din bară pe săptămână de împărțit (se poate strânge până la 2 săptămâni), iar fiecare credincios poate primi un Favor pe săptămână. Costă 10% Spiritualitate, cu un timp de așteptare de 60 de secunde. Favor nu creează niciodată Overflow, War Points sau progres la Unicitate și nu ajută niciodată pe nimeni la propria revendicare a unui tron.
+- **Behest** îi cere unui membru devotat al bisericii tale să apară, să-ți vestească numele sau să facă un pelerinaj. Dacă răspunde, primește un Favor. Are **30 de minute** să răspundă. Poți avea **3** deschise odată și poți trimite **6** pe zi, iar fiecare membru poate fi rugat o dată la **72 de ore**. Costă 10% Spiritualitate, cu un timp de așteptare de 5 minute. Răspunzi la unul cu `/coi deity answer <id>` sau îl refuzi cu `/coi deity refuse <id>`.
+- **Ledger** e registrul tău public.
+
+Dacă refuzi sau ignori un Behest, primești **Disfavor**. Timp de **3 zile** nu mai primești Favor sau Behest de la acel zeu și ai **-25%** câștig de Interpretare, iar o dată primești **+5** Nebunie. Nu atinge nimic altceva.
+
+**Divine Presence** (pasivă). Credincioșii Căii tale aflați la cel mult **24 de blocuri** primesc cu **10% mai puțină** Nebunie și cu **15% mai puțină** Oboseală.
+
+Favor și Presence ajung la fiecare credincios al Căii tale, fie el membru al bisericii sau nu. Apartenența la biserică doar te face accesibil pentru un Behest. Fiecare membru are un comutator de devotament. Oprirea lui e imediată, dar repornirea durează 7 zile.
+
+[Numele tău Onorific](/ro/magic/honorific-names/#ce-se-întâmplă-când-rostești-numele-unui-zeu) se scurtează la 3 rânduri, iar oricine îl rostește întreg primește binecuvântarea Căii tale, chiar și cât ești offline.
+
+<Notice tone="warn" title="Un zeu proaspăt are un prag de Nebunie de vreo 30%">
+Un zeu e măsurat după **30** de ancore ale bisericii pentru [alinarea pragului de Nebunie](/ro/magic/church-perks/#alinarea-pragului-de-nebunie), mai mult decât cele 20 necesare ca să urce pe tron. Un zeu nou cu 20 de ancore își alină pragul de 90% doar până pe la 30%. Dacă îi crește congregația, pragul scade și mai mult.
+</Notice>
+
+## Cum îți păstrezi tronul
+
+> Fii online și nu AFK timp de 20 de minute în cel puțin 4 zile din orice 30, altfel tronul se golește.
+
+Zilele se numără după ora Kievului. Abilitățile, rostirile și ancorele nu contează aici. O domnie nouă nu se poate pierde așa înainte să treacă primele ei 30 de zile.
+
+Ca să pleci o vreme, `/coi god absence <days>` declară un concediu de până la **21 de zile**, pe care îl poți folosi o dată la **60 de zile**. Acele zile nu se pun la socoteală.
+
+Ești avertizat în privat când mai ai **14 zile**, apoi public la **7, 3 și 1**.
+
+Dacă tot se întâmplă:
+
+- Cobori la **Secvența 1** pe acea Cale, cu **95%** dintr-o bară plină.
+- Tronul se golește și oricine îndeplinește cerințele îl poate revendica.
+- Timp de **60 de zile** poți urca din nou pe tron la **jumătate din miză**, cu cele 14 zile pe loc deja socotite.
+
+Un zeu care nu mai e de Secvența 0 pe acea Cale în orice alt fel, de exemplu pentru că își schimbă Calea, pierde și el tronul.
+
+## Cohortele Red Priest în locul unei biserici
+
+Cohorta **Chain of Command** a unui comandant [Red Priest](https://www.mysterria.net/en/pathways/priest) nu e o biserică, dar poate face două lucruri ale unei biserici pentru jucătorii care nu au o biserică activă.
+
+**Alinarea pragului de Nebunie.** De la Secvența 4, o cohortă coboară [pragul de Nebunie](/ro/magic/church-perks/#alinarea-pragului-de-nebunie) al divinității pentru comandantul, Generalii și Soldații ei:
+
+| Rangul în cohortă | Parte din alinare |
+|---|---:|
+| Comandant | 85% |
+| General | 45% |
+| Soldat | 30% |
+
+- Alinarea = (greutatea ancorelor cohortei / ancorele necesare) x partea rangului tău, cel mult partea rangului tău.
+- Ancorele necesare vin din tabelul bisericilor, după Secvența **comandantului** (15 la Secvența 4, până la 38 la Secvența 1).
+- Greutatea ancorelor cohortei folosește aceleași greutăți pe Secvențe ca la biserici, fără bonus de Cale și cu aceeași creștere tot mai lentă la Secvențe înalte (de la 18, cel mult 34). Comandantul nu contează.
+- Un membru contează doar dacă a fost activ în ultimele **14 zile** și nu e într-o biserică activă.
+- Alinarea de la cohortă și cea de la biserică **nu se adună niciodată**. Dacă ai o biserică activă, se aplică în schimb alinarea bisericii.
+
+**Ancorele pentru Secvența 0.** Dacă nu ai rolul de lider, colider sau Înger într-o biserică, lista de verificare a tronului citește pentru R2 greutatea ancorelor cohortei tale.
+
+## Comenzi
+
+| Comandă | Ce face |
+|---|---|
+| `/coi ascend` | Deschide meniul Throne sau răspunde la o chemare care așteaptă |
+| `/coi ascend status [pathway]` | Lista de 11 puncte în chat |
+| `/coi ascend board` | Panoul public al cursei |
+| `/coi ascend declare` | Îți declari revendicarea |
+| `/coi ascend contest <pathway>` | Contești o veghe deschisă |
+| `/coi ascend withdraw` | Îți retragi miza |
+| `/coi ascend private` | Îți ascunde numele de pe panou (tot ești socotit) |
+| `/coi ascension begin` | Răspunzi la o chemare |
+| `/coi ascension where` | Coordonatele ritului vestit |
+| `/coi ascension notify [on\|off]` | Oprește chatul ceremoniei (niciodată clopotul sau bara de boss) |
+| `/coi ascension status` | Ritul de acum și coada |
+| `/coi ascension gods` | Lista Panteonului |
+| `/coi deity gods` | Fereastra Panteonului |
+| `/coi deity ledger <pathway>` | Registrul public al unui tron |
+| `/coi deity answer\|refuse <id>` | Răspunzi la un Behest sau îl refuzi |
+| `/coi god` | Starea tronului tău |
+| `/coi god absence <days>` | Declari un concediu |
+| `/coi god thrones` | Toate cele 22 de tronuri și cine stă pe ele |
+| `/coi menu native` | Comută între ecranele Modului Client și meniurile tip cufăr (salvat pentru fiecare personaj) |
+
+[Modul Client](/ro/guides/client-mod/) arată meniurile Throne și Pantheon ca ecrane native. Fără el, fiecare fereastră se deschide ca meniu tip cufăr.
+
+<Figure src={pantheon} alt="Fereastra Thrones of the Twenty-Two, cu fiecare Cale marcată No god și Empty, 0 din 22 de tronuri ocupate" caption="Fereastra Panteonului din /coi deity gods ca ecran al modului client, înainte să fie ocupat vreun tron." />
+
+Când se termină epoca, toate cele 22 de tronuri se golesc și toată lumea o ia de la capăt.

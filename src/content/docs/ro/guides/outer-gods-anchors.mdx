@@ -1,0 +1,128 @@
+---
+title: "Ancorele Zeilor Exteriori"
+description: "Ancorele Zeilor Exteriori pe Mysterria, serverul de Minecraft LOTM: cum merge evenimentul în cooperare, Corruption Pressure, Contribution Points și magazinul /oga rewards."
+sidebar:
+  order: 38
+---
+
+import {Figure} from '~/components/mdx';
+import rewardShop from '~/assets/oga/reward-shop.webp';
+
+Ancorele Zeilor Exteriori (Outer Gods Anchors, OGA) sunt un eveniment în cooperare pentru tot serverul, în care jucătorii împing înapoi corupția unui Zeu Exterior și îi sparg Inima. **Contribution Points** pe care le câștigi cumpără recompense în `/oga rewards`, singurul magazin care vinde toate Jetoanele de Har.
+
+Alți jucători nu te pot răni într-o ancoră și nu poți muri acolo, așa că e sigur pentru orice Secvență.
+
+## Ce Zei Exteriori pot apărea?
+
+Fiecare ancoră ține de unul dintre cei cinci Zei Exteriori. Fiecare zeu are aspectul lui, efectul lui negativ și viteza lui de creștere:
+
+- Circle of Inevitability
+- Monarch of Decay (crește cel mai încet)
+- Mother Goddess of Depravity
+- Mother Tree of Desire (crește repede)
+- Primordial Hunger (crește cel mai repede)
+
+## Când apare o ancoră?
+
+Serverul încearcă să planteze o ancoră nouă cam **la fiecare 3 zile** (cu 12 ore în plus sau în minus) și doar când sunt online cel puțin **5 jucători**. Între 02:00 și 08:00, ora serverului, nu pornește nicio încercare.
+
+| Regulă | Valoare |
+|---|---|
+| Unde | Doar în Overworld, între 300 și 3.000 de blocuri de 0, 0, niciodată în oceane sau râuri |
+| Distanța față de orașe | Între 80 și 160 de blocuri de cea mai apropiată revendicare |
+| Câte | Cel mult 3 ancore în același timp |
+
+### Faza 1: Incubația
+
+Timp de vreo **24 de ore** sămânța e ascunsă. La fiecare 30 de minute, în chat apare un zvon care numește zeul și cât timp a mai rămas, cu o mică bară de numărătoare inversă. Jucătorii aflați la cel mult 40 de blocuri de sămânță îi aud sunetul.
+
+### Faza 2: Ancora se trezește
+
+Când se termină incubația, chatul anunță zeul și **coordonatele**. Sămânța devine o **Inimă**, un bloc de Magma într-o carcasă de Bedrock. Corupția se întinde din ea în tentacule, până la 400 de blocuri, și apar apărători: [Beyonderi Sălbatici](/ro/magic/wild-beyonders/), NPC-uri ostile și, de la etapa 2, mini-bossi.
+
+`/oga where` arată fiecare ancoră activă cu coordonatele, integritatea, etapa și direcția față de tine.
+
+## Cum învingem o ancoră?
+
+Ancora are o bară de **Integrity**, afișată ca bară de boss cu etapa ei de la 1 la 5. Nu poți lovi Inima cât e protejată de scut, așa că îi scazi integritatea din afară:
+
+| Acțiune | Daune la integritate |
+|---|---|
+| Ucizi un apărător | 0,1 |
+| Ucizi un NPC | 0,5 |
+| Ucizi un mini-boss | 3 |
+| Distrugi un Nexus de sector | 5 |
+
+Dacă nu se luptă nimeni, ancora se vindecă încet, dar niciodată peste cea mai bună etapă la care au împins-o jucătorii. Progresul rămâne de la o seară la alta.
+
+### Faza 3: Raidul Inimii
+
+Sub **10% integritate** carcasa crapă și apar spărturi cu lavă. Sparge Inima de Magma în **45 de minute**. Dacă nu reușești, Inima își pune scutul 2 minute, își recapătă 15 puncte de integritate și crește mai repede o vreme.
+
+Când Inima se sparge, apărătorii dispar, iar terenul se reface singur în următoarele 24 de ore.
+
+:::note[Construcțiile tale sunt în siguranță]
+Corupția nu intră niciodată pe terenurile revendicate și nu atinge niciodată containere, tăblițe, paturi sau blocuri asemănătoare. Construcțiile nerevendicate pot fi acoperite, dar totul se reface după ce ancora e învinsă.
+:::
+
+### Ce se întâmplă cu o ancoră cu care nu se luptă nimeni?
+
+După 72 de ore fără ca cineva să se lupte cu ea, zeul moare de foame. Nu se mai vindecă, pierde integritate și până la urmă se prăbușește singur. Cei care au contribuit primesc atunci doar **jumătate** din ce ar fi primit la o victorie.
+
+## Ce unelte ajută împotriva corupției?
+
+| Unealtă | Cum merge |
+|---|---|
+| **Nexus** | Zona e împărțită în 5 sectoare, fiecare cu un Nexus (un bloc de crying obsidian) lângă luptă. Minează-l (mai multe lovituri) ca să oprești pentru totdeauna creșterea în direcția aceea și să rănești ancora |
+| **Ritual** | 3 sau mai mulți jucători stau la cel mult 6 blocuri de un Nexus timp de 20 de secunde. Creșterea încetinește la 40% timp de 10 minute. La fiecare Nexus se poate face un ritual o dată la 15 minute |
+| **Warding Pylon** | Pune un **Lodestone** în zonă, apoi dă click dreapta pe el cu **Glowstone Dust** ca să-l alimentezi (1 minut pentru fiecare praf, până la 30 de minute). Un Pylon alimentat ține corupția pe loc în direcția lui, nu lasă apărătorii să apară la mai puțin de 24 de blocuri și îți scade Corruption Pressure. Până la 3 pe ancoră |
+| **Censer** | Se cumpără din `/oga rewards`. Dă click dreapta pe un bloc corupt ca să faci pământul normal la loc pe o rază mică. 5 încărcări, la 15 secunde una de alta. Destulă curățare împinge marginea înapoi |
+
+Și Pylonii, și Censerele aduc Contribution Points, așa că poți ajuta fără să lupți.
+
+## Ce este Corruption Pressure?
+
+În zonă se umple o bară de **Corruption Pressure**. Secvențele mai slabe o umplu mai repede, așa că un Beyonder de Secvența 9 o umple de vreo zece ori mai repede decât unul de Secvența 0.
+
+- Uciderile scad presiunea, iar dacă stai lângă un Pylon alimentat, ea scade.
+- Peste 50% începe să te afecteze efectul negativ al zeului, tot mai tare pe măsură ce se umple bara.
+- La 100% primești 1 daună pe secundă (niciodată mortală). După 8 secunde ești aruncat la 15 blocuri în afara zonei, cu puțină Nebunie (care nu te duce niciodată peste 95), iar presiunea se resetează.
+
+Ieși afară 30 de secunde ca s-o lași să scadă.
+
+## Ce se întâmplă dacă sunt doborât în luptă?
+
+O lovitură mortală într-o ancoră te lasă **Downed** în loc să te omoare. Nu te poți mișca, nu poți folosi vrăji și strălucești. Un aliat care stă ghemuit lângă tine 5 secunde te readuce cu 10 puncte de viață. Dacă nu te readuce nimeni în 45 de secunde, ești scos din zonă cu un efect negativ scurt și pierzi 15% din scorul tău pentru acea ancoră. Îți păstrezi obiectele.
+
+## Cum funcționează Contribution Points?
+
+Primești Contribution Points pentru ucideri, mini-bossi, spargerea unui Nexus, ritualuri, alimentarea Pylonilor, curățare, readucerea aliaților și ținerea poziției, cu un bonus mare pentru spargerea Inimii. Ținerea poziției contează doar dacă te-ai luptat în ultimele 3 minute.
+
+Secvențele mai slabe primesc mai mult pentru aceeași muncă, de la x1,3 la Secvența 9 până la x0,85 la Secvența 0. Ai nevoie de cel puțin 10 puncte la o ancoră ca să fii plătit. Punctele se păstrează de la o ancoră la alta, așa că poți strânge.
+
+## Ce pot cumpăra în /oga rewards?
+
+| Recompensă | Preț | Limită |
+|---|---|---|
+| Jeton de Har, câte unul pentru fiecare dintre cele zece [Haruri](/ro/magic/boons/) | 900 | 1 din fiecare pe lună |
+| [Pathway Transfer Token](/ro/guides/special-items/) | 1.200 | 1 pe lună |
+| [Anti-Control Charm](/ro/guides/special-items/) | 200 | 1 pe săptămână |
+| Jeton de formulă (Secvența 9+ / 7+ / 5+ / 4+) | 50 / 110 / 220 / 380 | 4 / 3 / 2 / 1 pe săptămână |
+| Jeton de formulă (Secvența 3+) | 650 | 1 pe lună |
+| Jeton de foaie de formulă (Secvența 7+ / 5+) | 140 / 300 | 2 / 1 pe săptămână |
+| Jeton de elixir (Secvența 9+ / 7+ / 5+ / 4+) | 40 / 90 / 180 / 320 | 4 / 3 / 2 / 1 pe săptămână |
+| Jeton de ingredient | 45 | 6 pe săptămână |
+| Sticlă de Interpretare 500 | 15 | Fără limită |
+| Sticlă de Interpretare 1.000 / 5.000 / 10.000 | 28 / 130 / 240 | 8 / 3 / 2 pe săptămână |
+| Ritual Book (Tier I / Tier II) | 160 / 300 | 2 / 1 pe săptămână |
+| Ritual Book (Tier III), sare peste tot ritualul | 550 | 1 pe lună |
+| Censer | 60 | Fără limită |
+| Warding Pylon Kit (Lodestone și 8 Glowstone Dust) | 40 | Fără limită |
+
+Secvența unui jeton e cea mai puternică pe care o poți alege. Un jeton „Secvența 5+” te lasă să alegi orice de la Secvența 9 la 5. Limitele săptămânale se reîncarcă lunea la 00:00 UTC, iar cele lunare pe 1 ale lunii.
+
+<Figure src={rewardShop} alt="Meniul Reward Shop din /oga rewards, cu un rând de Jetoane de Har urmat de jetoane, elixire, cărți și alte recompense" caption="Magazinul /oga rewards." contain />
+
+## Reguli
+
+PvP-ul, furtul și griefingul în timpul evenimentului sunt interzise de [Reguli](https://www.mysterria.net/en/rules). Oricum, în zona coruptă nu poți răni aliații, iar Nebunia din abilitățile altor jucători e blocată.

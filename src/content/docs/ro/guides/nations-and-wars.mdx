@@ -1,0 +1,135 @@
+---
+title: "Națiuni și războaie"
+description: "Națiunile și războaiele dintre orașe pe Mysterria: cum întemeiezi o națiune, nivelurile și efectele ei, taxele, declararea războiului, steagurile de cucerire, modurile de război și ce primește câștigătorul."
+sidebar:
+    label: Națiuni și războaie
+    order: 32
+---
+
+import {Card, CardGrid, Notice} from '~/components/mdx';
+
+Orașele se pot uni într-o **națiune**, iar orașele și națiunile pot **porni război** ca să ia bani sau teren unele de la altele. Pentru amândouă ai nevoie mai întâi de un [oraș](/ro/guides/towns/).
+
+## Națiuni
+
+O **națiune** este o uniune de orașe sub același steag. Unul dintre orașe e **capitala**.
+
+### Cum întemeiez o națiune?
+
+```
+/nations create <name>
+```
+
+- Orașul tău trebuie să fie la [nivelul 5](/ro/guides/towns/#nivelurile-orașului), **Domain**.
+- Costă **20.000 de Coppets**.
+- Numele trebuie să aibă între 5 și 24 de caractere, fără spații.
+
+`/n` e forma scurtă pentru `/nations`.
+
+### Comenzile națiunii
+
+| Comandă | Ce face |
+|---|---|
+| `/nations` | Deschide meniul națiunii |
+| `/nations trust <town>` | Invită un oraș. Proprietarul lui acceptă cu `/nations accept` |
+| `/nations untrust <town>` | Scoate un oraș |
+| `/nations leave` | Ieși din națiunea ta |
+| `/nations level` | Vezi cât mai ai până la următorul nivel al națiunii |
+| `/nations setcapital <town>` | Mută capitala |
+| `/nations rename <name>` | Schimbă numele pentru 10.000 de Coppets, cel mult o dată pe zi |
+| `/nations delete` | Desființează națiunea (orașele rămân) |
+
+Pentru chatul națiunii, scrie `!n`, `!nation` sau `!nations` în fața mesajului.
+
+### Nivelurile și efectele națiunii
+
+O națiune crește în nivel singură, socotind toate orașele ei la un loc.
+
+| Nivel | Nume | Orașe | Jucători de încredere unici | Bani în toate orașele | Efecte deblocate | Active în același timp |
+|---|---|---|---|---|---|---|
+| 1 | **Covenant** | - | - | - | Niciunul | 0 |
+| 2 | **Order** | 3 | 100 | 60.000 de Coppets | Săritură îmbunătățită, Viteză, Grabă, Grația delfinului | 1 |
+| 3 | **Dominion** | 5 | 200 | 120.000 de Coppets | Săritură îmbunătățită II, Viteză II, Grabă II, Grația delfinului II, Absorbție, Vedere nocturnă, Noroc, Forță, Viață suplimentară | 3 |
+
+Order mai adaugă 50 de revendicări și scade întreținerea națiunii cu 10%. Dominion adaugă 100 de revendicări și o scade cu 20%.
+
+### Cât costă o națiune?
+
+- Orașele dintr-o națiune nu mai plătesc întreținere serverului. În schimb plătesc națiunii o taxă pe care o stabilește națiunea, de cel mult **5 Coppets pe chunk** la fiecare ciclu. Un oraș care nu poate plăti e scos din națiune.
+- Națiunea plătește serverului o întreținere de **3 Coppets pe chunk** la fiecare ciclu. O națiune care nu poate plăti e **ștearsă**, dar orașele ei rămân.
+- Națiunile noi nu plătesc întreținere în primele 2 zile.
+
+### Revendicări lângă o națiune
+
+Orașele dintr-o națiune au o zonă tampon de **3 chunkuri**, așa că alte orașe nu pot revendica la mai puțin de 3 chunkuri de ele. Rolurile Nation și Ally pot revendica implicit la granițele celorlalți.
+
+## Războaie
+
+Orice oraș sau națiune poate declara război altuia. Cel atacat **nu trebuie să accepte**. Războiul începe după o **zi de pregătire**.
+
+### Cine poate declara război?
+
+- Orașul care atacă are nevoie de cel puțin **5.000 de Coppets** în bancă.
+- Nu există mărime minimă, număr minim de membri sau vechime minimă și nicio regulă despre diferența de nivel. Un Domain poate declara război unui Shelter abia făcut.
+- Un oraș sau o națiune nouă primește un **scut de război de o zi**. Orașele care tocmai au terminat un război pot avea un scut mai lung (vezi [Ce primește câștigătorul?](#ce-primește-câștigătorul)).
+- Într-un oraș, implicit doar Owner poate conduce războaiele.
+
+### Comenzile de război
+
+| Comandă | Ce face |
+|---|---|
+| `/wars` | Deschide meniul de război |
+| `/wars declare <town or nation>` | Declară război |
+| `/wars info captureflag` | Arată rețeta pentru Capture Flag |
+
+Oricare parte se poate preda, în timpul pregătirii sau în timpul războiului. Predarea e de obicei mai blândă decât un război pierdut în luptă.
+
+### Cum se duce un război?
+
+Fiecare război are un **mod de război** (cum se socotesc punctele) și un **scop de război** (ce primește câștigătorul). Războaiele noi sunt un **Skirmish** purtat pentru un **Raid**, dacă nu se alege alt mod sau alt scop.
+
+| Mod | Cum se câștigă |
+|---|---|
+| **Skirmish** (implicit) | Puncte: 1 pentru fiecare ucidere, 5 pentru fiecare steag cucerit, 3 pentru fiecare steag spart, 5 pentru fiecare steag aruncat în aer. Câștigă prima parte care ajunge la 5 puncte pentru fiecare jucător din echipa mai mică (cel puțin **100**). După **36 de ore** câștigă scorul mai mare |
+| **King of the Hill** | Ții un punct neutru dintr-o arenă ca să faci 5 puncte la fiecare 20 de secunde. Uciderile nu dau nimic. 100 de puncte sau 30 de minute. Apare doar când staff-ul a pregătit o arenă |
+| **King of the Hill (pe terenul jucătorilor)** | Fiecare parte pune un punct pe terenul ei și face puncte ținându-l pe al inamicului. 100 de puncte sau 30 de minute |
+
+În timpul unui război, inamicii pot intra pe terenul tău, pot ataca jucători, pot ridica obiecte și pot pune sau sparge scări, liane și schele. Pot face asta doar cât **cel puțin un apărător e online** pe terenul invadat.
+
+**Nu** îți păstrezi inventarul dacă mori într-un război.
+
+### Capture Flags
+
+Un **Capture Flag** cucerește terenul inamic într-un Skirmish.
+
+```
+  .   R   .        R = Red Stained Glass Pane
+  .   B   .        B = Beacon
+  I   I   I        I = Iron Block
+```
+
+- Pune-l pe terenul inamic între **Y 30 și Y 127**.
+- Ține-l **10 minute** ca să cucerești. Terenul cucerit **nu mai e revendicat** de inamic.
+- Poți pune până la **3 steaguri** în același timp, cu **10 minute** între ele.
+- Și spargerea sau aruncarea în aer a unui steag inamic aduce puncte.
+
+### Ce primește câștigătorul?
+
+| Scop | Câștigătorul primește | Scut de pace după |
+|---|---|---|
+| **Raid** (implicit) | Timp de **o oră**, membrii câștigătorului pot deschide containere, uși și trape, pot folosi mecanisme și pot ridica obiecte pe terenul celui învins și pot sparge blocurile obișnuite de construcție (scânduri, bușteni, piatră, piatră spartă, pământ, nisip, pietriș, sticlă) ca să intre | Niciunul |
+| **Skirmish** | **75%** din banca orașului învins (40% dacă învinsul se predă). Nu se pierde teren | 7 zile pentru amândouă părțile |
+| **Annex** | Tot terenul de război al învinsului nu mai e revendicat. Învinsul primește banii înapoi ca de obicei pentru terenul pierdut | 3 zile pentru învins |
+| **Vassal** | Orașul învins intră în națiunea câștigătorului ca vasal cu drepturi limitate. Doar o națiune poate alege acest scop | Niciunul |
+| **Independence** | Un vasal se luptă cu stăpânul lui ca să scape. Dacă vasalul pierde, nu mai poate încerca 7 zile | 7 zile pentru câștigător |
+
+<Notice tone="warn" title="Raidurile dor">
+Într-un Raid, câștigătorii îți pot goli cuferele timp de o oră, chiar dacă nimeni de pe terenul tău nu e online. Ține lucrurile de valoare după blocuri care nu sunt pe lista aceea.
+</Notice>
+
+## Pagini înrudite
+
+<CardGrid>
+  <Card title="Orașe și avantajele lor" text="Cum întemeiezi un oraș, niveluri și costuri." icon="shield" href="/ro/guides/towns/" />
+  <Card title="Bani și portofel" text="De unde vin banii pentru războaie și națiuni." icon="coin" href="/ro/guides/economy/" />
+</CardGrid>

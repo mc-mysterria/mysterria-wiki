@@ -1,0 +1,132 @@
+---
+title: "Bani, portofel și Fragmente de Energie"
+description: "Cum funcționează banii pe Mysterria, serverul de Minecraft LOTM: Coppets, Licks și Verl Dors, /wallet, vânzarea minereurilor și cum câștigi și cheltui Fragmente de Energie."
+sidebar:
+    label: Bani și portofel
+    order: 21
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import shard from '~/assets/shards/shard.png';
+import walletBalance from '~/assets/economy/wallet-balance.webp';
+import walletVault from '~/assets/economy/wallet-vault.webp';
+import walletSell from '~/assets/economy/wallet-sell-ore.webp';
+
+Mysterria are două monede. **Banii** (Coppets, Licks și Verl Dors) stau în `/wallet` și plătesc orașele, [Agora](/ro/guides/agora/) și schimburile cu Beyonderii Sălbatici. **Fragmentele de Energie** sunt un obiect pe care îl primești când vinzi sătenilor ingredientele Beyonder de care nu ai nevoie. Cu ele plătești nivelurile [Ordinelor Secrete](/ro/guides/orders/) și schimburile cu Beyonderii Sălbatici.
+
+[Punctele Emporium](/ro/guides/emporium/) sunt un sold separat care merge doar în Brilliant Emporium.
+
+## Ce sunt Coppets, Licks și Verl Dors?
+
+| Monedă | Valoare |
+|---|---|
+| **Coppet** | Unitatea de bază |
+| **Lick** | 64 de Coppets |
+| **Verl Dor** | 64 de Licks, adică 4.096 de Coppets |
+
+Soldul tău se socotește mereu în Coppets. Când un meniu arată un preț cu semnul `$`, cum ar fi un nivel de oraș care cere `$5000`, înseamnă 5.000 de Coppets.
+
+## Cum îmi folosesc portofelul?
+
+Scrie `/wallet`. Meniul portofelului îți arată soldul și are linkuri spre magazinul serverului și spre Discord. Apasă **Balance** ca să deschizi seiful, unde poți:
+
+- Să apeși pe o monedă ca s-o scoți ca obiect fizic.
+- Să apeși pe o monedă din inventar ca s-o depui în sold.
+- Să apeși pe un obiect care se poate vinde din inventar ca să-i vezi prețul și să confirmi vânzarea.
+
+Butonul **Settings** schimbă între trei aspecte ale meniului portofelului.
+
+<Figure src={walletBalance} alt="Meniul portofelului cu descrierea Balance care arată 1,250.75$" caption="Meniul portofelului. Ține mouse-ul pe Balance ca să vezi câți bani ai." contain />
+
+<Figure src={walletVault} alt="Seiful cu descrierea Balance care arată 30.00 depuși și minereuri din sac gata de vânzare" caption="Seiful. Apasă pe o monedă ca s-o scoți sau pe un obiect din sac ca să-l vinzi." contain />
+
+<Figure src={walletSell} alt="Ecranul de vânzare pentru 8 Diamond Ore, cu descrierea Sell care arată un preț de 16 Coppets" caption="Vânzarea minereului. Butonul Sell îți arată prețul înainte să confirmi." contain />
+
+Monedele fizice te lasă să plătești alt jucător din mână sau să faci schimburi care cer o monedă. Ca să spargi o monedă în monede mai mici, ține **o singură** monedă în mâna principală și scrie `/shatter`. Un Verl Dor devine 64 de Licks, iar un Lick devine 64 de Coppets.
+
+## Cum fac bani?
+
+- Vinde obiecte anonim altor jucători în [Agora](/ro/guides/agora/), piața subterană.
+- Ia nivelurile din [Battle Pass](/ro/guides/battle-pass/). Nivelurile gratuite și premium dau între 100 și 1.500 de Coppets fiecare.
+- Vinde minereu din portofel. Nu e mult, dar e constant.
+- Fă schimburi cu alți jucători și participă la evenimente.
+
+### Ce minereuri pot vinde?
+
+Doar trei minereuri au preț. Restul se vând pe nimic.
+
+| Minereu | Preț pe bloc |
+|---|---|
+| Diamond Ore (și Deepslate Diamond Ore) | 2 Coppets |
+| Emerald Ore (și Deepslate Emerald Ore) | 3 Coppets |
+| Ancient Debris | 5 Coppets |
+
+- Minează minereul de diamant și de smarald cu un târnăcop cu **Silk Touch**, ca minereul să cadă ca bloc pe care îl poți vinde. Ancient Debris cade mereu ca atare.
+- Poți vinde de cel mult **512 Coppets pe zi**. Când ajungi la limită, ecranul de vânzare îți arată **Cannot sell** și cât ți-a mai rămas din limita zilnică.
+
+## La ce folosesc banii?
+
+- Ca să întemeiezi și să ții un [oraș](/ro/guides/towns/), cu revendicări în plus, întreținere și niveluri.
+- Ca să cumperi de la alți jucători în [Agora](/ro/guides/agora/) și să închiriezi o tarabă acolo.
+- Pentru schimburile cu [Beyonderii Sălbatici](/ro/magic/wild-beyonders/), care costă bani, Fragmente de Energie **și** monede fizice Verl Dor.
+- Pentru unele schimburi cu sătenii (mai jos).
+
+### Sătenii primesc monede?
+
+Doar la unele schimburi. Schimburile pentru **cărți fermecate** și **obiecte cu durabilitate** (unelte, arme, armuri) costă Coppets în loc de smaralde, 2 Coppets pentru fiecare smarald din prețul original. Toate celelalte schimburi folosesc tot smaralde.
+
+Un sătean face schimburi doar după ce i se oprește AI-ul. Prinde-l într-un spațiu de 2 pe 1 din care nu poate ieși.
+
+### Există /shop?
+
+Nu. Cumpără blocuri de construcție de la **Quartermaster** din [Agora](/ro/guides/agora/).
+
+## Fragmente de Energie
+
+<Figure src={shard} alt="O stivă de Fragmente de Energie cu descrierea obiectului: un fragment de energie mistică, folosit ca monedă pentru îmbunătățirile organizațiilor" caption="Fragmentele de Energie sunt un obiect real din inventar, nu un sold în portofel." />
+
+Fragmentele de Energie nu stau în `/wallet`. Stau în inventarul tău sau într-un cufăr și pot fi pierdute sau furate ca orice alt obiect.
+
+### Cum obțin Fragmente de Energie?
+
+Vinde ingredientele Beyonder de care nu ai nevoie unui **sătean fără profesie** sau unui **nitwit**:
+
+1. Ia la tine ingredientele pe care vrei să le vinzi.
+2. Dă click dreapta pe sătean. Un mesaj în chat se oferă să le cumpere: *„The wandering trader offers to buy N items for X Energy Shards”*.
+3. Apasă **[Trade All]** în mesajul acela sau scrie `/tradeall`.
+4. Un meniu **Trade Preview** arată tot ce va cumpăra și cât valorează fiecare stivă. Apasă pe o stivă ca s-o scoți din schimb.
+5. Apasă **CONFIRM TRADE**. Ingredientele îți sunt luate, iar fragmentele ajung în inventar.
+
+Dacă nu ai nimic din ce vrea, sătenul *„finds nothing of interest in your pack”*.
+
+Sătenul cumpără **doar ingrediente de Cale**, nu formule, elixire sau alte obiecte. Secvențele mai puternice valorează mai mult:
+
+| Secvența ingredientului | Fragmente pe bucată (aproape toate ingredientele) |
+|---|---|
+| Secvența 9 | 10 |
+| Secvența 8 | 15 |
+| Secvența 7 | 20 |
+| Secvența 6 | 25 |
+| Secvența 5 și mai puternice | 30 |
+
+<Notice tone="warn" title="Verifică previzualizarea">
+Schimbul ia toate stivele potrivite din inventarul tău. Scoate din Trade Preview tot ce vrei să păstrezi înainte să confirmi sau lasă lucrurile într-un cufăr dinainte.
+</Notice>
+
+Fragmentele de Energie vin și din [Battle Pass](/ro/guides/battle-pass/) (între 200 și 3.000 de fragmente la multe niveluri) și din evenimente.
+
+### La ce folosesc Fragmentele de Energie?
+
+- Pentru nivelurile [Ordinelor Secrete](/ro/guides/orders/), care costă 50, 200, 1.000 și 5.000 de fragmente pentru nivelurile 1 până la 4, plătite în rezerva comună a Ordinului.
+- Pentru extrele Ordinelor Secrete, cum ar fi Battle Cry, îmbunătățirile permanente, întemeierea unui Secret Lair și cristalele lui de teleportare.
+- Pentru schimburile cu [Beyonderii Sălbatici](/ro/magic/wild-beyonders/), împreună cu bani și monede fizice Verl Dor.
+
+Obiectele **Shard of ...** din Emporium, cum ar fi *Shard of Boon Token*, nu sunt Fragmente de Energie. Sunt [bucăți de crafting](/ro/guides/emporium/#ce-sunt-fragmentele-din-emporium) pentru o anumită recompensă.
+
+## Pagini înrudite
+
+<CardGrid>
+  <Card title="Brilliant Emporium" text="Cheltuie punctele Emporium din recompensele zilnice și din votare." icon="star" href="/ro/guides/emporium/" />
+  <Card title="Agora" text="Piața subterană anonimă pentru schimburi între jucători." icon="coin" href="/ro/guides/agora/" />
+  <Card title="Battle Pass" text="Misiuni care dau bani, fragmente, puncte și Haruri." icon="scroll" href="/ro/guides/battle-pass/" />
+</CardGrid>

@@ -1,0 +1,137 @@
+---
+title: "Temnițe"
+description: "Temnițele pe Mysterria, serverul de Minecraft LOTM: cele patru temnițe, mărimea grupurilor, puterea și nivelurile de dificultate, timpii de așteptare, Helping Cards și clasele."
+sidebar:
+  order: 36
+---
+
+import {Figure} from '~/components/mdx';
+import subspaceMenu from '~/assets/dungeons/subspace-menu.webp';
+import chooseDifficulty from '~/assets/dungeons/choose-difficulty.webp';
+import cardShop from '~/assets/dungeons/helping-card-shop.webp';
+
+![Camera bossului dintr-o temniță](~/assets/dungeons/dungeons.png)
+
+Temnițele sunt lumi separate în care un grup intră printr-o **Fisură** din Overworld. Te lupți prin camere până la un boss final, cu echipamentul clasei tale, și pleci cu pradă, Helping Cards și Interpretare. Fiecare jucător are **o singură viață** pe tură.
+
+## Ce temnițe există?
+
+| Temniță | Mărimea grupului | Puterea temniței | Locul |
+|---|---|---|---|
+| **The Shivering Hollow** | 4 | 0 | O peșteră subterană înghețată |
+| **Embers Resurgence** | 5 | 100 | O fortăreață vulcanică |
+| **Root of the Canopy** | 4 | 240 | Un labirint de rădăcini uriașe |
+| **The Dust Citadel** | 3 | 450 | O fortăreață îngropată în deșert |
+
+The Shivering Hollow și Embers Resurgence au câte două intrări, celelalte câte una. The Shivering Hollow e deschisă și jucătorilor care nu sunt încă Beyonderi.
+
+## Cum găsesc o temniță?
+
+Scrie `/subspace`. Meniul arată fiecare temniță cu coordonatele fiecărei Fisuri de intrare, puterea ta față de a temniței, timpii tăi de așteptare și câte ture pentru cărți mai ai azi.
+
+<Figure src={subspaceMenu} alt="Meniul Ventures to the Subspace cu descrierea pentru The Dust Citadel, nivel de putere 450 și o singură intrare" caption="Meniul /subspace. Ține mouse-ul pe o temniță ca să vezi nivelul de putere și intrările." contain />
+
+![O Fisură de intrare](~/assets/dungeons/entrance.png)
+
+O Fisură e un stâlp de particule sclipitoare. Intră în ea cu grupul tău ca să începi.
+
+## Cum intru într-o temniță?
+
+1. **Fă un grup** cu `/party` și invită-ți prietenii. `/ready` și `/leave` controlează coada.
+2. **Mergi la Fisură** și intră în ea.
+3. **Alege o dificultate** în ecranul „Choose Difficulty”.
+4. **Alege o clasă** când se încarcă temnița. Dacă nu alegi la timp, primești una automat.
+
+<Figure src={chooseDifficulty} alt="Ecranul Choose Difficulty cu descrierea pentru Normal, care cere 450 de putere, cu daunele date și primite la x1" caption="Choose Difficulty. Ține mouse-ul pe un nivel ca să vezi ce putere cere." contain />
+
+Dacă grupul tău e mai mic decât mărimea temniței, ești întrebat **Enter Understaffed?** Ai voie doar dacă puterea ta nu e cu mai mult de 150 peste puterea temniței. Jucătorii prea puternici trebuie să vină cu grupul complet.
+
+:::note[Golește-ți mâinile]
+Temnița nu pornește dacă cineva din grup are la el anumite resurse („Someone in the party is carrying resources!”). Lasă lucrurile de valoare acasă.
+:::
+
+## Ce este puterea de temniță?
+
+Puterea ta vine din Secvența ta:
+
+| Secvența | 9 | 8 | 7 | 6 | 5 |
+|---|---|---|---|---|---|
+| Putere | 30 | 60 | 100 | 150 | 220 |
+
+| Secvența | 4 | 3 | 2 | 1 | 0 |
+|---|---|---|---|---|---|
+| Putere | 320 | 450 | 600 | 800 | 999 |
+
+Poți intra într-o temniță doar dacă puterea ta e **cu cel mult 29 sub** puterea temniței. Dacă ești sub putere, ești și mai slab. În trepte, la 10, 20 și 29 sub, daunele pe care le dai scad (până la x0,4), iar daunele pe care le primești cresc (până la x1,6). La puterea temniței sau peste ea nu ai nicio penalizare.
+
+## Care sunt nivelurile de dificultate?
+
+Fiecare temniță are patru niveluri. Nivelurile mai grele dau mai multă Interpretare și Helping Cards mai bune.
+
+| Nivel | Putere necesară | Daunele pe care le dai | Daunele pe care le primești |
+|---|---|---|---|
+| Normal | Puterea temniței | x1,0 | x1,0 |
+| Advanced | Puterea temniței + 50 | x0,7 | x1,5 |
+| Master | Puterea temniței + 150 | x0,5 | x1,8 |
+| Grandmaster | 450 (Secvența 3) sau mai mult | x0,3 | x2,5 |
+
+Pe Master și Grandmaster ești tratat mereu și ca fiind puțin sub putere.
+
+## Cât de des pot face o temniță?
+
+| Tipul turei | Cât de des | Ce primești |
+|---|---|---|
+| **Tură cu pradă reală** | O dată la **72 de ore** pentru fiecare temniță | Prada din cufere și de la boss |
+| **Tură pentru cărți** | Până la **2 pe temniță pe zi** cât ești în timpul de așteptare | Cuferele sunt sigilate. Primești **1 Helping Card** când termini |
+
+Cea mai mare parte a prăzii cade ca **bucăți** („Shard of ...”). Dă click dreapta ținând destule bucăți ca să le unești în obiectul adevărat. O formulă sau un elixir de Secvența 9 cere 2 bucăți, iar obiectele mai puternice cer mai multe, până la 9 pentru Secvența 0.
+
+### Ce sunt cheile de temniță?
+
+| Cheie | Efect |
+|---|---|
+| **Cheie Simplă** | Îți resetează timpul de așteptare pentru prada reală la o temniță |
+| **Cheie Premium** | Resetează timpul de așteptare pentru tot grupul (până la mărimea grupului temniței), face tura una cu pradă reală și dublează Helping Cards |
+
+Dă click dreapta pe o cheie și alege temnița. Cheile vin din Battle Pass și din magazin.
+
+## La ce folosesc Helping Cards?
+
+Un **Helping Card** ține de o singură temniță și de un singur nivel. Dă click dreapta pe el ca să deschizi **Helping Card Shop** și schimbă cărțile pe recompense. De exemplu, la Embers Resurgence pe Master:
+
+<Figure src={cardShop} alt="Helping Card Shop cu descrierea pentru Ingredient Exchange Token la Embers Resurgence pe Master, care costă 8 Helping Cards" caption="Helping Card Shop. Ține mouse-ul pe o recompensă ca să vezi câte cărți costă." contain />
+
+| Recompensă | Cărți |
+|---|---|
+| Jeton de ingredient | 8 |
+| Jeton de formulă (Secvența 6) | 12 |
+| Jeton de elixir (Secvența 6) | 16 |
+| Sticlă de Interpretare (10.000) | 20 |
+| Anti-Control Charm | 24 |
+| Ritual Book (Tier I) | 32 |
+
+Root of the Canopy și The Dust Citadel dau recompensele din magazin ca bucăți de pradă, nu ca obiecte întregi. Magazinele Grandmaster de la Embers Resurgence și Root of the Canopy vând și [Pathway Transfer Token](/ro/guides/special-items/).
+
+## Câtă Interpretare dau temnițele?
+
+Când termini o temniță primești Interpretare prin sursa World. Nivelurile mai grele dau mai mult (Advanced x1,25, Master x1,5, Grandmaster x2). Interpretarea din temnițe are o limită de **600 pe zi** pentru toate temnițele la un loc și se resetează la miezul nopții UTC.
+
+## Ce clasă să aleg?
+
+| Clasă | Daune magice | Daune fizice | Note |
+|---|---|---|---|
+| **Tank** | x0,3 | x0,6 | Apărare mare, atrage mobii spre el |
+| **Mage** | x2,2 | x0,15 | Vrăjile lovesc tare, cu mâinile goale nu faci nimic |
+| **Warrior** | x0,7 | x1,8 | Puternic în corp la corp, moare repede |
+| **Archer** | x0,8 | x0,7 | Arcurile și arbaletele dau x2,2 |
+| **Support** | x1,0 | x0,8 | Apărare magică bună, acces la toate bonusurile |
+
+Un grup echilibrat are un Tank care ține mobii, jucători care dau daune potrivite pentru Beyonderii voștri și un Support, dacă aveți unul.
+
+### Ce abilități sunt interzise în temnițe?
+
+Aceste abilități nu merg într-o temniță: Nightmare, Nightmare World, Traveler's Door, Exile, Thread Hands, Threads, Paper Figurine, Pocket Space, Holy Equipment, Lockpick, Wraith Transformation, Puppet Transformation și posedarea marionetelor. Unele clase blochează și anumite abilități („Your class cannot use this ability in the dungeon!”).
+
+## Ce se întâmplă cu Fisurile închise?
+
+O Fisură poate fi închisă până când jucătorii o slăbesc împreună. Stai lângă ea, acceptă „The node is too strong. You can try to weaken it. [Try?]” și rezistă la apărare cât timp îți absoarbe bucățile. Acum toate Fisurile temnițelor sunt deschise.

@@ -1,0 +1,104 @@
+---
+title: "Mareele zilnice"
+description: "Mareele zilnice pe Mysterria, serverul de Minecraft Lord of the Mysteries: cele șapte Maree, în ce zi a săptămânii cade fiecare, bonusurile lor și comenzile /coi tide."
+sidebar:
+  order: 34
+---
+
+import {Figure} from '~/components/mdx';
+import bossBar from '~/assets/tides/boss-bar.webp';
+import tideStatus from '~/assets/tides/tide-status.webp';
+import tideCalendar from '~/assets/tides/tide-calendar.webp';
+
+O Maree Zilnică este un bonus pentru tot serverul care ține o zi. E activă o singură Maree odată pentru toți jucătorii, iar ele urmează o rotație săptămânală fixă după care îți poți face planurile.
+
+## Când se schimbă Mareea?
+
+O zi de Maree ține de la **00:00 la 24:00, ora Kievului** (Europe/Kyiv, adică UTC+2 iarna și UTC+3 vara). La miezul nopții, ora Kievului, următoarea Maree începe pentru toată lumea, oriunde ai locui.
+
+## Care sunt cele șapte Maree?
+
+| Maree | Ce face | Multiplicatori |
+|---|---|---|
+| **Tide of Diligence** | Fiecare câștig de Interpretare e dublat | Câștig de Interpretare x2 |
+| **Hunting Tide** | Creaturile apar mai des și dau mai mult, iar ingredientele rare mult mai mult | Apariția creaturilor x2, prada de la creaturi x2, ingrediente rare x3 |
+| **Tide of Fortune** | Cufere mai bogate și garanție mai rapidă | Prada din cufere x2,5, garanția la jumătate din deschideri, pradă rară x2,5 |
+| **Wild Tide** | Mai mulți [Beyonderi Sălbatici](/ro/magic/wild-beyonders/) | Apariția Beyonderilor Sălbatici x2, limita de Beyonderi Sălbatici x2 |
+| **Tide of Patience** | Timpii de așteptare ai Interpretării sunt înjumătățiți | Timpul de așteptare al Interpretării x0,5 |
+| **Deep Tide** | Mai multe noduri de minat și ingrediente în cufere | Noduri de minat x2, ingrediente în cufere x2, ingrediente rare x2 |
+| **Crimson Tide** | O [Lună Purpurie](/ro/magic/crimson-moon/) e de cinci ori mai probabilă | Șansa de Lună Purpurie x5, prada de la creaturi x1,5 |
+
+„Rar” înseamnă **Secvența 3 sau mai puternică**, deci Secvențele 3, 2 și 1. La Hunting și Deep Tide, bonusul pentru ingrediente rare se aplică la prada de la creaturi și la ingredientele găsite în cufere, dar nu și la nodurile de minat.
+
+La Crimson Tide, fiecare noapte are **50%** șanse de Lună Purpurie în loc de 10% cât e de obicei. Fiecare noapte din Overworldul principal se trage separat, așa că într-o zi întreagă de joc e foarte probabil să vezi cel puțin una.
+
+### În ce zi a săptămânii e fiecare Maree?
+
+Rotația urmează ordinea din tabelul de mai sus, așa că fiecare Maree cade în aceeași zi a săptămânii în fiecare săptămână:
+
+| Ziua (ora Kievului) | Maree |
+|---|---|
+| Luni | Hunting Tide |
+| Marți | Tide of Fortune |
+| Miercuri | Wild Tide |
+| Joi | Tide of Patience |
+| Vineri | Deep Tide |
+| Sâmbătă | Crimson Tide |
+| Duminică | Tide of Diligence |
+
+Staff-ul poate schimba rotația sau poate fixa altă Maree pentru o zi, așa că verifică `/coi tide calendar` în joc ca să fii sigur.
+
+### Există limite când bonusurile se adună?
+
+Da. Când se aplică mai multe bonusuri deodată, cum ar fi o Maree plus o Lună Purpurie plus Moon Authority de la Calea Moon, totalul are o limită.
+
+- Apariția creaturilor are limita **x4**.
+- Câștigul de Interpretare are limita **x2,5**.
+
+La Tide of Diligence, după ce o sursă de Interpretare ajunge la limita ei, ce e în plus se strânge ca Overflow în loc să-ți umple bara. Overflow există doar de la Secvența 3 în sus, cum e explicat la [Uzurpare](/ro/magic/usurpation/).
+
+## Ce Maree mă ajută cel mai mult?
+
+- **Secvențele de început și de mijloc.** Bara de Interpretare te ține pe loc, așa că **Diligence** te ajută cel mai mult. Ajută și **Wild Tide**, pentru că Beyonderii Sălbatici există doar la Secvențele 9 până la 5.
+- **Secvența 3 și mai puternice.** Timpul de așteptare al fiecărei metode de Interpretare te ține pe loc mai mult decât bara, așa că **Patience** e ziua ta. Hunting, Fortune și Deep Tide au și bonusurile pentru nivelul rar, gândite pentru tine.
+- **Jefuitul.** Păstrează-ți turele de cufere pentru **Fortune** și vânătoarea de ingrediente pentru **Hunting** sau **Deep Tide**.
+
+Bonusul la prada de la creaturi contează cel mai mult la creaturile cu insignă și la ingredientele rare. [Creaturile Beyonder](/ro/magic/creatures/) personalizate își dau deja ingredientele obișnuite aproape de fiecare dată.
+
+:::tip[Fortune și garanția]
+Garanția e verificată doar când deschizi un container. Dacă ești aproape de pragul garanției la Tide of Fortune, mai deschide un cufăr înainte de miezul nopții. Contorul tău se păstrează oricum, dar pragul înjumătățit se termină odată cu ziua.
+:::
+
+## Cum aflu Mareea de azi?
+
+- **Cardul de la intrare.** Un card în chat, la câteva secunde după ce intri, îți arată Mareea, ce face și cât timp a mai rămas.
+- **Notificarea din client.** Același card apare ca fereastră dacă folosești [Modul Client](/ro/guides/client-mod/).
+- **Mementoul din oră în oră.** Un rând în chat în fiecare oră, care nu apare dacă tocmai ai intrat sau ești AFK.
+- **Bara de boss.** O numărătoare inversă până la sfârșitul zilei.
+- **Schimbarea.** Un titlu și un sunet pentru toți cei online când se schimbă Mareea.
+
+<Figure src={bossBar} alt="Bara de boss a Mareei care arată Wild Tide cu 11 ore și 27 de minute rămase" caption="Bara de boss a Mareei numără invers până la sfârșitul zilei." contain />
+
+## Ce comenzi există?
+
+| Comandă | Ce face |
+|---|---|
+| `/coi tide` sau `/coi tide status` | Mareea de azi, multiplicatorii ei și cât timp a mai rămas |
+| `/coi tide calendar [days]` | Mareele care urmează, începând de azi (14 zile implicit, până la 60) |
+| `/coi tide notify` | Oprește sau pornește mementoul din oră în oră |
+| `/coi tide bar` | Oprește sau pornește bara de boss a Mareei |
+
+<Figure src={tideStatus} alt="Rezultatul /coi tide în chat pentru Wild Tide, cu de două ori mai mulți Beyonderi Sălbatici, apariții x2 și limită x2, care se termină în 11 ore și 7 minute" caption="/coi tide îți arată Mareea de azi și ce schimbă." contain />
+
+<Figure src={tideCalendar} alt="O parte din rezultatul /coi tide calendar, câte o zi a săptămânii și o dată pe rând, cu Mareea ei" caption="Sfârșitul unei liste /coi tide calendar." contain />
+
+Dacă staff-ul a fixat Mareea de azi, `/coi tide status` spune „Pinned by an administrator.”
+
+## Ce nu schimbă niciodată Mareele?
+
+| Sistem | De ce rămâne neatins |
+|---|---|
+| Punctajul pentru [Unicitate](/ro/magic/uniqueness/) | Se măsoară pe 31 de zile, așa că zilele în care se întâmplă să joci n-ar trebui să conteze |
+| War Points din [Uzurpare](/ro/magic/usurpation/) | Punctele se socotesc din suma de dinainte de bonusul Mareei |
+| Încercările | Te pot costa inventarul, așa că un calendar n-ar trebui să schimbe șansele |
+| Daunele în luptă | Echilibrul rămâne același în fiecare zi |

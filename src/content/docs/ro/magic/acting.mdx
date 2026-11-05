@@ -1,0 +1,187 @@
+---
+title: "Interpretare"
+description: "Cum funcționează Interpretarea (digerarea elixirului) pe Mysterria: metode de Interpretare, recompense, Sticle de Interpretare, limitele surselor, timpii de așteptare și regula de 95% pentru următorul tău elixir LOTM."
+sidebar:
+  label: Interpretare
+  order: 5
+---
+
+import {Figure} from '~/components/mdx';
+import actingRecord from '~/assets/magic/acting-dossier.webp';
+import actingChat from '~/assets/magic/acting-cooldowns.webp';
+import bountyBoard from '~/assets/magic/bounty-board.webp';
+import bountyOffer from '~/assets/magic/bounty-offer-chat.webp';
+
+Un Beyonder **digeră** un elixir interpretând rolul pe care îl descrie Secvența lui. Pe Mysterria îți umpli **bara de Interpretare** jucându-ți Secvența așa cum se cuvine, iar următorul elixir funcționează doar când bara e aproape plină.
+
+## De ce contează Interpretarea?
+
+Următorul elixir cere cel puțin **95% Interpretare**. Sub atât, elixirul e refuzat. Între 95% și 100% poți avansa, dar diferența costă Nebunie temporară.
+
+| Interpretare | 95% | 96% | 97% | 98% | 99% | 100% |
+|---|---|---|---|---|---|---|
+| Nebunie temporară | 30% | 24% | 18% | 12% | 6% | 0% |
+
+Interpretarea îți crește și [Spiritualitatea](/ro/magic/spirituality/) maximă, de la jumătate la 0% Interpretare până la întreagă la 100%.
+
+:::danger[Nu bea iar și iar un elixir refuzat]
+Dacă un elixir e refuzat pentru că Interpretarea ta e prea mică, nu-l bea din nou imediat. O a doua încercare în 5 secunde aruncă zarul pentru pierderea controlului, cu doar 10% șanse să supraviețuiești. Vezi [Încercări](/ro/magic/ordeals/).
+:::
+
+## Cum îmi văd Interpretarea?
+
+Ecranul personajului îți arată bara. Deschide pictograma Căii din inventar și ține mouse-ul pe capul tău sau scrie `/coi menu character`. Cu [Modul Client](/ro/guides/client-mod/), apasă **M**.
+
+`/coi acting` îți arată timpii de așteptare ai metodelor de Interpretare și cât ți-a dat fiecare sursă față de limita ei.
+
+<Figure src={actingRecord} alt="Fila cu istoricul Interpretării din Dosarul Beyonder al Modului Client, cu un progres de 24 din 27.648 și o bară pentru sursa Passive" caption="Fila cu istoricul Interpretării din Dosarul Beyonder al Modului Client." />
+
+<Figure src={actingChat} alt="Rezultatul /coi acting în chat, cu starea actuală, bonusul Modului Client, timpii de așteptare ai metodelor și sursa de Interpretare Passive" caption="Ce scrie /coi acting în chat." contain />
+
+## De unde vine Interpretarea?
+
+Interpretarea vine din mai multe **surse**. Fiecare sursă are **limita** ei, adică partea din bară pe care o poate umple la Secvența ta actuală. Nicio sursă în afară de Stolen nu poate umple singură bara, așa că trebuie să le combini. Când avansezi, fiecare sursă o ia de la zero.
+
+| Sursă | Apare ca | Ce este |
+|---|---|---|
+| Metode de Interpretare | Abilities | Îți folosești abilitățile în felul în care îl cere Secvența ta |
+| Interacțiunea cu jucători | Interaction | Recompense PvP și joc asemănător cu alți jucători |
+| Conținutul lumii | World | Recompense PvE și de adunat resurse și alte activități din lume |
+| Sticle de Interpretare | Bottles | Sticle de Interpretare aruncate |
+| Pasivă | Passive | Un firicel mic cât joci |
+| Evenimente | Events | Bedwars, Duels, FFA și turnee |
+| Interpretare furată | Stolen | Puterile Abyss care fură Interpretare |
+| Deity Favor | (separat) | Un dar de la zeul Căii tale |
+
+### Limitele pe Secvențe
+
+Acestea sunt limitele implicite, ca procent din bară.
+
+| Secvența | Bottles | Abilities | Interaction | World | Passive | Events | Deity Favor |
+|---|---|---|---|---|---|---|---|
+| 9 | 90 | 90 | 15 | 25 | 10 | 40 | 10 |
+| 8 | 80 | 80 | 15 | 25 | 10 | 40 | 10 |
+| 7 | 70 | 60 | 20 | 25 | 10 | 35 | 10 |
+| 6 | 55 | 70 | 20 | 30 | 10 | 30 | 15 |
+| 5 | 35 | 55 | 25 | 35 | 8 | 25 | 15 |
+| 4 | 20 | 50 | 30 | 40 | 5 | 15 | 15 |
+| 3 | 10 | 45 | 35 | 45 | 5 | 10 | 20 |
+| 2 | 8 | 45 | 30 | 50 | 5 | 20 | 20 |
+| 1 | 5 | 45 | 25 | 55 | 5 | 30 | 20 |
+
+Interpretarea furată are limita 100%. La început, sticlele și abilitățile duc cea mai mare parte a barei. De la Secvența 5 în sus, sticlele contează mai puțin, iar recompensele și conținutul lumii contează mai mult.
+
+<details>
+<summary>Limitele pentru grupul Căii tale (Bottles, Abilities, Interaction, World)</summary>
+
+Căile sunt împărțite în patru grupuri, iar fiecare grup schimbă unele limite. Passive, Events și Deity Favor rămân ca mai sus.
+
+| Grup | Căi |
+|---|---|
+| Combat | Tyrant, Twilight Giant, Red Priest, Hanged Man, Chained, Abyss, Death |
+| Social | Sun, Demoness, Visionary, Black Emperor, Justiciar |
+| Utility | Fool, Door, Error, Hermit, White Tower, Paragon, Wheel of Fortune |
+| Support | Moon, Mother, Darkness |
+
+| Secvența | Combat | Social | Utility | Support |
+|---|---|---|---|---|
+| 9 | 90 / 90 / 35 / 35 | 90 / 90 / 30 / 30 | 90 / 60 / 15 / 30 | 90 / 55 / 25 / 35 |
+| 8 | 80 / 80 / 35 / 35 | 80 / 80 / 30 / 30 | 80 / 60 / 15 / 30 | 80 / 55 / 25 / 35 |
+| 7 | 70 / 60 / 35 / 35 | 70 / 60 / 30 / 30 | 70 / 60 / 20 / 30 | 70 / 55 / 25 / 35 |
+| 6 | 55 / 70 / 35 / 35 | 55 / 70 / 30 / 30 | 55 / 60 / 20 / 30 | 55 / 55 / 25 / 35 |
+| 5 | 30 / 55 / 35 / 40 | 35 / 60 / 35 / 30 | 35 / 65 / 25 / 35 | 35 / 60 / 25 / 40 |
+| 4 | 15 / 50 / 40 / 45 | 20 / 55 / 40 / 30 | 20 / 60 / 30 / 40 | 20 / 55 / 25 / 45 |
+| 3 | 12 / 45 / 40 / 48 | 12 / 50 / 42 / 40 | 12 / 55 / 35 / 42 | 12 / 50 / 30 / 48 |
+| 2 | 10 / 45 / 35 / 52 | 10 / 48 / 38 / 45 | 10 / 52 / 30 / 48 | 10 / 48 / 28 / 52 |
+| 1 | 8 / 45 / 30 / 58 | 8 / 48 / 34 / 50 | 8 / 50 / 25 / 54 | 8 / 48 / 25 / 58 |
+
+Fiecare căsuță e Bottles / Abilities / Interaction / World. `/coi acting` îți arată limitele tale după ce o sursă ți-a dat ceva.
+
+</details>
+
+## Metodele de Interpretare
+
+Doar folosirea vrăjilor nu îți dă nimic. Fiecare abilitate are o **metodă de Interpretare**, un anumit fel de a o folosi care se potrivește cu Secvența ta, cum ar fi să ucizi un mob cu vraja aceea, s-o folosești pe alt Beyonder sau să descoperi ceva cu ea. Contează doar metodele Secvenței tale **actuale**.
+
+Când o metodă reușește, bara de acțiuni îți spune asta, iar metoda intră în **timpul de așteptare**. Un rând în chat îți spune când e gata din nou. Dacă o repeți în același loc, e blocată o vreme, așa că mută-te prin lume.
+
+Timpul de așteptare numără **timpul de joc activ**. Merge la jumătate de viteză cât ești AFK și la o cincime cât ești offline.
+
+| Secvența | Interpretare pe metodă | Timp de așteptare (joc activ) |
+|---|---|---|
+| 9 | 20% | 22 min |
+| 8 | 20% | 1 h 6 min |
+| 7 | 10% | 3 h 9 min |
+| 6 | 10% | 6 h 45 min |
+| 5 | 5% | 6 h 18 min |
+| 4 | 5% | 9 h 54 min |
+| 3 | 4% | 10 h 48 min |
+| 2 | 4% | 12 h 36 min |
+| 1 | 4% | 13 h 36 min |
+
+Secvența 5 are un timp de așteptare puțin mai scurt decât Secvența 6, dar fiecare metodă dă de două ori mai puțină Interpretare. Umplerea barei tot durează mai mult.
+
+Fiecare abilitate are timpul ei de așteptare, așa că o Secvență cu mai multe abilități le poate folosi pe rând pentru Interpretare.
+
+:::note[Dacă te repeți, primești mai puțin]
+Dacă primești Interpretare Abilities, Interaction sau World în același fel din nou în 15 minute, fiecare repetare dă 75% din cea de dinainte, până la 25%.
+:::
+
+## Recompense (bounties)
+
+Recompensele sunt sarcini personale care dau Interpretare. Le deschizi cu `/bounty` (sau `/coi bounty`).
+
+<Figure src={bountyBoard} alt="Panoul de recompense cu trei oferte și descrierea unei recompense de pescuit" caption="Panoul de recompense. Ține mouse-ul pe o ofertă ca să vezi ce cere." contain />
+
+- Poți avea până la **3** recompense odată, inclusiv ofertele la care nu ai răspuns încă.
+- O **ofertă nouă** vine la fiecare **30 de minute**. Primești un mesaj în chat și o poți accepta sau refuza.
+- Fiecare recompensă are un **termen**, de la 30 de minute la 8 ore.
+- Recompensele PvE și de adunat resurse îți umplu sursa **World**. Recompensele PvP umplu **Interaction**.
+
+Printre recompense sunt vânatul de mobi lângă un loc, vânătoarea de mobi de elită (Secvența 6 și mai puternici), întâlniri pe teren, vânătoarea de Beyonderi Sălbatici, uciderea mobilor cu vrăji, vânătorile din timpul Lunii Purpurii, sacrificarea de obiecte într-un loc, parcurgerea unei distanțe sau a unei călătorii lungi, cercetarea unui loc, cercetarea cu o abilitate, recoltarea culturilor, minatul minereurilor, recoltarea ingredientelor de minat, pescuitul, cercetarea biomurilor sau a resurselor, obținerea de realizări, stăpânirea abilităților în condiții diferite și dueluri și provocări cu vrăji cu alți jucători, cu acordul lor. Celălalt jucător trebuie să fie de acord cu un duel sau o provocare cu vrăji.
+
+Destinațiile sunt alese în jurul tău, la cel puțin 200 de blocuri și la cel mult 250 de blocuri la Secvența 9, 500 la 8, 1.000 la 7, 2.000 la 6, 3.500 la 5, 6.000 la 4 și 7.500 la 3. De la Secvența 2 nu mai există limită.
+
+Fiecare recompensă trage o răsplată de bază între 0,1% și 5% din bară, în funcție de fel. Apoi se înmulțește după Secvența ta, x2 la Secvența 9, x1,5 la 8, x1 la 7, x0,8 la 6, x0,6 la 5, x0,45 la 4, x0,3 la 3, x0,2 la 2 și x0,12 la 1. Oferta îți arată cât vei primi de fapt.
+
+Terminarea unei recompense contează și ca **credit de ritual** pentru Secvența 5 și mai puternice. Vezi [Ritualuri](/ro/magic/rituals/#creditul-de-ritual).
+
+<Figure src={bountyOffer} alt="O ofertă de recompensă în chat, cu sarcina, sursa, categoria și butoanele Accept și Decline" caption="O ofertă de recompensă în chat." contain />
+
+## Sticlele de Interpretare
+
+O **Sticlă de Interpretare** ține un număr fix de puncte de Interpretare. **Arunc-o** și îi dă Interpretarea celui mai apropiat Beyonder aflat la cel mult 5 blocuri de locul unde cade, așa că o poți arunca la un prieten. Contează pentru Secvența **actuală** a țintei și pentru limita ei **Bottles**.
+
+Sticlele sunt mai slabe cu cât Secvența ta e mai înaltă. Descrierea sticlei îți arată cât ai primi de fapt. Dacă limita Bottles a țintei e deja plină, sticla se sparge degeaba, așa că verifică înainte `/coi acting`.
+
+Le poți obține din aceste locuri.
+
+- Din **Battle Pass** (`/bp`) și din **calendarul** de recompense (`/calendar`).
+- Din [Brilliant Emporium](/ro/guides/emporium/), unde două bucăți de Acting Bottle fac o sticlă.
+- Din magazinul **Ancorelor Zeilor Exteriori** (`/oga rewards`), cu sticle de 500, 1.000, 5.000 și 10.000 de puncte pentru 15, 28, 130 și 240 de puncte.
+- Din **schimburile din temnițe**, plătite cu Helping Cards. Vezi [Temnițe](/ro/guides/dungeons/).
+
+## Interpretarea pasivă
+
+Cât ești online și **nu ești AFK**, primești o mică cantitate de Interpretare cam la fiecare 3 minute, până la limita Passive (5 până la 10% din bară). O biserică poate adăuga un bonus aici. Dacă ești AFK sau offline, nu primești Interpretare pasivă.
+
+## Evenimente și Deity Favor
+
+Bedwars, Duels, FFA și turneele dau Interpretare în sursa **Events**. Intri cu `/bedwars` și `/pvpevent join`.
+
+Dacă pe Calea ta există un zeu de Secvența 0, el îți poate da **Deity Favor**. Fiecare dar înseamnă 5% din bară, o dată pe săptămână de persoană, până la 10% pe Secvență la Secvențele 9 până la 7, 15% la 6 până la 4 și 20% la 3 până la 1. Vezi [Secvența 0](/ro/magic/sequence-zero/).
+
+## Ce grăbește sau încetinește Interpretarea?
+
+| Efect | Cât |
+|---|---|
+| [Modul Client](/ro/guides/client-mod/) instalat | +2% Interpretare din fiecare sursă, timpi de așteptare ai metodelor cu 5% mai scurți |
+| **Tide of Diligence** (o [Maree Zilnică](/ro/guides/tides/)) | Câștigurile de Interpretare se dublează |
+| **Tide of Patience** (o Maree Zilnică) | Timpii de așteptare ai metodelor se înjumătățesc |
+| Mult înaintea serverului | Jumătate de Interpretare din fiecare sursă |
+
+Ultimul rând este **limitatorul de progres**. Dacă ești cu 3 sau mai multe Secvențe înaintea jucătorului activ mediu (oricine a jucat în ultimele 14 zile) sau ești de **Secvența 2 sau mai puternic**, primești Interpretare la jumătate de viteză.
+
+## Ce se întâmplă când bara mea e plină?
+
+De la **Secvența 3 în sus**, Interpretarea pe care o câștigi după ce bara e plină se strânge ca **Overflow**. Overflow nu contează niciodată pentru avansare. Plătește provocările pentru locuri și concursul pentru Secvența 0. Sticlele și Deity Favor nu se strâng niciodată ca Overflow. Vezi [Uzurpare](/ro/magic/usurpation/).
