@@ -1,0 +1,118 @@
+---
+title: "Trascendentes Salvajes"
+description: "Los Trascendentes Salvajes en Mysterria, el servidor de Minecraft de LOTM: quién es hostil, qué venden y a qué precio, qué sueltan y cómo luchar contra ellos."
+sidebar:
+  order: 33
+---
+
+import {Figure} from '~/components/mdx';
+import leadImage from '~/assets/heroes/wild-beyonders.webp';
+import wbTrade from '~/assets/magic/wild-beyonder-trade.webp';
+
+<Figure src={leadImage} eager alt="Un Trascendente Salvaje" />
+
+Los Trascendentes Salvajes son Trascendentes NPC que vagan por las tierras salvajes, cada uno con un Sendero y una Secuencia de la **Secuencia 9 a la Secuencia 5**. Según tu propio Sendero, comercian contigo o te atacan nada más verte, y luchan con habilidades reales de su Sendero.
+
+## ¿Me atacará un Trascendente Salvaje?
+
+Solo depende de tu Sendero comparado con el suyo.
+
+| Eres | Su actitud | Comercio |
+|---|---|---|
+| Del **mismo Sendero** | Pacífico salvo que ataques | Precios normales |
+| De un **Sendero vecino** (mismo grupo) | Pacífico salvo que ataques | Precios **x1,5** |
+| De **cualquier otro Sendero** | Hostil nada más verte | No se puede |
+| **Todavía no eres Trascendente** | Hostil nada más verte | No se puede |
+| Cualquiera que ataque primero | Hostil | No se puede |
+
+Los Senderos vecinos son los del mismo grupo, por ejemplo Fool, Error y Door. La página de [Senderos](/es/magic/pathways/) muestra los grupos. Si haces clic derecho en uno hostil, sale "This Wild Beyonder is hostile toward your pathway!".
+
+Si mueres o te desconectas, el Trascendente Salvaje te pierde la pista y no va a por ti cuando vuelves.
+
+## ¿Dónde aparecen los Trascendentes Salvajes?
+
+No tienen sitios fijos. Aparecen alrededor de los jugadores que están explorando.
+
+| Regla | Valor |
+|---|---|
+| Comprobación de aparición | Cada 5 minutos, **5 % de probabilidad** por jugador conectado |
+| Distancia a ti | De 64 a 256 bloques |
+| Distancia al spawn del mundo | Al menos 200 bloques |
+| Distancia entre ellos | Al menos 100 bloques |
+| Máximo a la vez | 20 en todo el servidor (40 en Wild Tide) |
+| Desaparición | Tras 60 segundos sin ningún jugador a menos de 50 bloques |
+
+Los días de **Wild Tide** aparecen el doble y puede haber el doble a la vez. La página de [Mareas diarias](/es/guides/tides/) dice cuándo.
+
+### ¿Qué fuerza tienen?
+
+| Secuencia | 9 | 8 | 7 | 6 | 5 |
+|---|---|---|---|---|---|
+| Parte de las apariciones (aprox.) | 32 % | 21 % | 19 % | 18 % | 11 % |
+
+No hay Trascendentes Salvajes de Secuencia 4 o superior.
+
+## ¿Cómo comercio con un Trascendente Salvaje?
+
+Haz clic derecho en un Trascendente Salvaje pacífico. La primera vez que te encuentras con uno te saluda, y el menú de comercio se abre unos 10 segundos después. No puedes comerciar mientras está luchando.
+
+Cada oferta cuesta el mismo número en dinero de tu cartera, en **Fragmentos de Energía** y en monedas de **Verl Dor**, todo pagado a la vez. Los Fragmentos de Energía se consiguen vendiendo ingredientes a aldeanos simplones y sin profesión, como se explica en [Fragmentos de Energía](/es/guides/economy/#fragmentos-de-energía). El Verl Dor es la moneda más grande de la cartera (mira [Economía](/es/guides/economy/)).
+
+### ¿Qué venden?
+
+Un Trascendente Salvaje tiene como mucho 8 ofertas, todas de su propio Sendero.
+
+| Oferta | Cuándo aparece |
+|---|---|
+| Ingredientes | Siempre, con 1 o 2 ingredientes de cada Secuencia desde la suya hasta la 9 |
+| Una pócima | 30 % de probabilidad, solo si el Trascendente Salvaje es de Secuencia 8 o superior. La pócima es de su Secuencia o más débil |
+| Una Característica Trascendente | 50 % de probabilidad, solo si es de Secuencia 7 o superior. Siempre de su propia Secuencia |
+| Una receta de pócima | 20 % de probabilidad, solo si es de Secuencia 6 o superior. De su propia Secuencia o hasta 2 más débil |
+
+### ¿Cuánto cuesta?
+
+El precio sube x1,5 por cada Secuencia por encima de la 9. Cada número de abajo se paga en dinero, **y** en Fragmentos de Energía, **y** en monedas de Verl Dor.
+
+| Secuencia del objeto | Ingrediente | Pócima | Receta | Característica |
+|---|---|---|---|---|
+| 9 | 100 | 500 | 1 500 | 2 000 |
+| 8 | 150 | 750 | 2 250 | 3 000 |
+| 7 | 225 | 1 125 | 3 375 | 4 500 |
+| 6 | 338 | 1 688 | 5 063 | 6 750 |
+| 5 | 507 | 2 532 | 7 594 | 10 125 |
+
+<Figure src={wbTrade} alt="El menú de comercio de un Trascendente Salvaje con una Brilliance Rock que cuesta 150 Money, 150 VerlDor y 150 Energy Shards" caption="Cada oferta muestra su precio en dinero, en monedas de Verl Dor y en Fragmentos de Energía." contain />
+
+Si eres de un Sendero vecino, multiplica por 1,5. Un intercambio falla sin quitarte nada si no puedes pagar o no tienes sitio para el objeto.
+
+## ¿Qué consigo por matar a uno?
+
+Solo dan recompensas los Trascendentes Salvajes que aparecieron de forma natural. Los que se invocan con habilidades no dan nada.
+
+| Recompensa | Probabilidad |
+|---|---|
+| Característica Trascendente de su Secuencia | 30 % (Secuencia 9), 25 % (8), 20 % (7), 15 % (6), 10 % (5) |
+| Ingredientes | 15 % por cada Secuencia desde la suya hasta la 9 |
+| [Artefacto Sellado](/es/magic/sealed-artifacts/) | 5 % (Secuencia 6), 10 % (Secuencia 5) |
+| Actuación | Por la fuente World, con tope como toda la [Actuación](/es/magic/acting/) |
+
+El tablón de recompensas (`/bounty`) a veces ofrece una **Wild Beyonder Hunt** para jugadores de Secuencia 9 a 5, que paga Actuación extra.
+
+## ¿Qué habilidades de Sendero funcionan con los Trascendentes Salvajes?
+
+Muchos métodos de Actuación te piden cazar o controlar a otros Trascendentes. Los Trascendentes Salvajes te dejan hacerlo sin molestar a jugadores reales. Estos ejemplos están confirmados.
+
+- **Hanged Man** puede pastorear sus almas con Graze.
+- La Replication de **Door** puede copiar sus habilidades.
+- **Fool** puede convertirlos en Marionetas.
+- Bloodlust de **Abyss** cuenta la muerte de un Trascendente Salvaje.
+
+No todas las habilidades de copia funcionan con ellos, así que pruébalo antes de contar con ello.
+
+:::caution[Actuación de Abyss]
+Matar Trascendentes Salvajes **no** digiere la pócima de Abyss. La Actuación de Abyss solo sale de matar a jugadores Trascendentes de una Secuencia que cuente.
+:::
+
+## ¿Qué peligro tienen en combate?
+
+Los Trascendentes Salvajes luchan como jugadores. Usan las habilidades de su Sendero con **tiempos de espera un 20 % más cortos** que los de un jugador y se retiran cuando les queda poca vida. Mira su nombre y su Sendero antes de acercarte, y lucha cerca de un refugio con curación preparada. Las Secuencias más altas pegan mucho más fuerte, pero sueltan mejores recompensas.

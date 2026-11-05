@@ -1,0 +1,81 @@
+---
+title: "Artefactos Sellados"
+description: "Los Artefactos Sellados en Mysterria, el servidor de Minecraft de Lord of the Mysteries: cómo conseguir uno, cómo usarlo, los grados de los artefactos y sus inconvenientes."
+sidebar:
+  order: 41
+---
+
+import {Figure} from '~/components/mdx';
+import artifactTooltip from '~/assets/magic/sealed-artifact-tooltip.webp';
+
+Un Artefacto Sellado es un objeto que guarda una habilidad Trascendente y que puede usar cualquiera, incluso alguien que no es Trascendente o un Trascendente de otro Sendero. A cambio, todo artefacto lleva **inconvenientes** que dañan a quien lo usa.
+
+## ¿Cómo consigo un Artefacto Sellado?
+
+| Fuente | Cómo funciona |
+|---|---|
+| **Pócima caducada** | Una pócima de Secuencia que no se bebe en **48 horas** se convierte en un Artefacto Sellado del mismo Sendero y Secuencia. La habilidad de dentro es al azar. Si no se puede hacer un artefacto con ella, recibes una Característica Trascendente, y si tampoco, una Ruined Potion |
+| **Fabricación de Paragon** | Los Trascendentes Paragon los fabrican a propósito (mira abajo) |
+| **Trascendentes Salvajes** | Un [Trascendente Salvaje](/es/magic/wild-beyonders/) aparecido de forma natural suelta uno el 5 % de las veces en la Secuencia 6 y el 10 % en la Secuencia 5 |
+| **Cámara de la iglesia** | Una [iglesia](/es/magic/churches/) puede guardar artefactos en su Cámara de Iglesia, y los miembros pueden pedir uno prestado |
+| **Otros jugadores** | Los artefactos son objetos normales, así que puedes conseguirlos comerciando |
+
+Las pócimas que se apuestan en una Usurpación no caducan.
+
+### ¿Cómo fabrica artefactos el Sendero Paragon?
+
+Solo el [Sendero Paragon](https://www.mysterria.net/en/pathways/paragon) puede fabricar Artefactos Sellados.
+
+| Secuencia | Habilidad | Qué hace |
+|---|---|---|
+| 6 | Artifact Crafting | Combina una Característica Trascendente con ingredientes para hacer un artefacto. Mejores materiales dan un mejor resultado. Una fabricación fallida gasta la Característica y todos los ingredientes |
+| 3 | Dual Artifact Crafting | Mete **dos** habilidades en un mismo artefacto, con el doble de probabilidad base de éxito. Clic derecho usa la primera habilidad y clic izquierdo la segunda |
+| 2 | Manufacturing Authority | Hace un artefacto temporal de cualquier Sendero o Secuencia, sin inconvenientes, que dura 18 minutos |
+
+## ¿Cómo uso un Artefacto Sellado?
+
+Sujétalo y haz clic derecho para usar su habilidad. En un artefacto doble, el clic izquierdo usa la segunda habilidad.
+
+- **Los tiempos de espera son compartidos.** Usar un artefacto pone en tiempo de espera a todos los artefactos con la misma habilidad, no solo al que tienes en la mano.
+- **Los Trascendentes pagan Espiritualidad** para usarlo, igual que con sus propias habilidades. Quien no es Trascendente no paga nada.
+- **Las habilidades activables cuestan [Locura](/es/magic/mutation/).** Mientras la habilidad activable de un artefacto está encendida, ganas 0,05 de Locura cada segundo.
+
+### ¿Qué habilidades se pueden sellar en un artefacto?
+
+Casi todas las habilidades activas. Las habilidades pasivas, los Contratos y la Deity Authority nunca se pueden sellar. La **Recording** del Sendero Door puede copiar un hechizo de un artefacto que lleves en la mano secundaria, pero con la mitad de su probabilidad habitual de éxito.
+
+## ¿Qué inconvenientes tienen?
+
+Todo artefacto tiene un **grado** que depende de la Secuencia de su habilidad. Cuanto más fuerte es la habilidad, peores son los inconvenientes.
+
+| Grado | Secuencia de la habilidad | Inconvenientes |
+|---|---|---|
+| Grado 3 | 9 a 8 | 1 leve |
+| Grado 2 | 7 a 6 | 1 medio |
+| Grado 1 | 5 a 4 | 1 medio y 2 leves |
+| Grado 0 | 3 a 0 | 2 graves y 2 medios |
+
+El primer número de la línea **Artifact** de su descripción es su grado, así que **Artifact: 2-990025** es de Grado 2. La descripción también enumera sus inconvenientes. Hay decenas de inconvenientes, la mayoría relacionados con el Sendero del artefacto.
+
+<Figure src={artifactTooltip} alt="La descripción de un artefacto sellado con su ID, la habilidad Prohibition y el inconveniente Law Restriction" caption="La descripción de un artefacto nombra su habilidad y enumera sus inconvenientes." />
+
+Hay dos tipos de inconvenientes.
+
+- Los inconvenientes **de un solo golpe** saltan **cada vez** que usas la habilidad.
+- Los inconvenientes **permanentes** siguen actuando mientras tengas en el inventario un artefacto activado. Se paran cuando sale de tu inventario.
+
+:::danger[Lee antes los inconvenientes]
+Un artefacto de Grado 0 puede ser mortal para quien lo usa. Mira la lista de inconvenientes en la descripción del objeto antes de usar un artefacto en un combate.
+:::
+
+### ¿Cómo puedo reducir los inconvenientes?
+
+| Sendero | Secuencia | Habilidad | Efecto |
+|---|---|---|---|
+| [Twilight Giant](https://www.mysterria.net/en/pathways/giant) | 7 | Artifact Mastery | Un 25 % de probabilidad de anular cada inconveniente |
+| Paragon | 7 | Mastery Shield | Un escudo personal que reduce o bloquea los inconvenientes, según lo peligrosos que sean |
+| Paragon | 3 | Arcane Scholar Complete Mastery | Inmune a los inconvenientes de Grado 3, 2 y 1, y resistente en parte a los de Grado 0 |
+| [Death](https://www.mysterria.net/en/pathways/death) | 4 | Artifact Sealing | Sella los inconvenientes de un artefacto durante un máximo de 24 horas |
+| [Tyrant](https://www.mysterria.net/en/pathways/tyrant) | 4 | Artifact Sealing | Suprime durante 30 segundos los inconvenientes de todos los artefactos cercanos, o sella sus habilidades |
+
+La **Beyonder Characteristic Purification** de Secuencia 4 del [Sendero Sun](https://www.mysterria.net/en/pathways/sun) también puede disolver un artefacto que lleves en la mano secundaria y devolverlo a su Característica Trascendente.

@@ -1,0 +1,110 @@
+---
+title: "Munición"
+description: "Todas las balas de las armas de Mysterria: recetas de Klein, Deathknell y Rifle Rounds, los 12 efectos especiales, sus materiales y el coste real por bala."
+sidebar:
+    label: Munición
+    order: 3
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import kleinCartridge from '~/assets/firearms/kleincartridge.png';
+import deathknellCartridge from '~/assets/firearms/deathknellcartridge.png';
+import rifleCartridge from '~/assets/firearms/riflecartridge.png';
+import kleinCore from '~/assets/firearms/kleincore.png';
+import deathknellCore from '~/assets/firearms/deathknellcore.png';
+import rifleCore from '~/assets/firearms/riflecore.png';
+import kleinRounds from '~/assets/firearms/kleinrounds.png';
+import deathknellRounds from '~/assets/firearms/deathknellrounds.png';
+import rifleRounds from '~/assets/firearms/riflerounds.png';
+import effectAmmo from '~/assets/firearms/effectammo.png';
+
+Cada arma dispara sus propias balas. Klein's Repeater usa **Klein Rounds**, la Deathknell usa **Deathknell Rounds** y el Steam Rifle usa **Rifle Rounds**. Las balas normales se fabrican con un casquillo, un núcleo y pólvora, y puedes convertirlas en uno de 12 tipos de bala especial.
+
+El daño de cada bala en cada arma aparece en [Daño según la munición](/es/firearms/#daño-según-la-munición).
+
+## Paso 1. Brass
+
+3 Lingotes de cobre + 1 Lingote de oro = **4 Brass**, como se ve en [Fabricación de armas](/es/firearms/crafting/#brass).
+
+## Paso 2. Casquillos
+
+| Casquillo | Receta | Da |
+|---|---|---|
+| Klein Cartridge Case | 1 Brass | 8 |
+| Deathknell Cartridge Case | 1 Brass + 1 Pepita de hierro | 6 |
+| Rifle Cartridge Case | 2 Brass | 6 |
+
+<Figure src={kleinCartridge} alt="Cuadrícula de fabricación con 1 Brass que da 8 Klein Cartridge Cases" caption="Klein Cartridge Case." contain />
+<Figure src={deathknellCartridge} alt="Cuadrícula de fabricación con Brass y una Pepita de hierro que dan 6 Deathknell Cartridge Cases" caption="Deathknell Cartridge Case." contain />
+<Figure src={rifleCartridge} alt="Cuadrícula de fabricación con 2 Brass que dan 6 Rifle Cartridge Cases" caption="Rifle Cartridge Case." contain />
+
+## Paso 3. Núcleos
+
+| Núcleo | Receta | Da |
+|---|---|---|
+| Klein Cartridge Core | 4 Pepitas de hierro en cuadrado | 8 |
+| Deathknell Cartridge Core | 6 Pepitas de hierro | 6 |
+| Rifle Cartridge Core | 1 Lingote de hierro + 1 Brass | 6 |
+
+<Figure src={kleinCore} alt="Cuadrícula de fabricación con 4 Pepitas de hierro que dan 8 Klein Cartridge Cores" caption="Klein Cartridge Core." contain />
+<Figure src={deathknellCore} alt="Cuadrícula de fabricación con 6 Pepitas de hierro que dan 6 Deathknell Cartridge Cores" caption="Deathknell Cartridge Core." contain />
+<Figure src={rifleCore} alt="Cuadrícula de fabricación con un Lingote de hierro y Brass que dan 6 Rifle Cartridge Cores" caption="Rifle Cartridge Core." contain />
+
+## Paso 4. Balas normales
+
+Las tres son recetas sin forma.
+
+| Balas | Receta | Da |
+|---|---|---|
+| Klein Rounds | 1 Klein Cartridge Case + 1 Klein Cartridge Core + 1 Pólvora | 4 |
+| Deathknell Rounds | 1 Deathknell Cartridge Case + 1 Deathknell Cartridge Core + 2 Pólvora | 3 |
+| Rifle Rounds | 1 Rifle Cartridge Case + 1 Rifle Cartridge Core + 2 Pólvora | 3 |
+
+<Figure src={kleinRounds} alt="Cuadrícula de fabricación que da 4 Klein Rounds" caption="Klein Rounds." contain />
+<Figure src={deathknellRounds} alt="Cuadrícula de fabricación que da 3 Deathknell Rounds" caption="Deathknell Rounds." contain />
+<Figure src={rifleRounds} alt="Cuadrícula de fabricación que da 3 Rifle Rounds" caption="Rifle Rounds." contain />
+
+### ¿Cuánto cuesta una tanda completa?
+
+Una tanda gasta una fabricación entera de casquillos y núcleos.
+
+| Balas | Materias primas | Da |
+|---|---|---|
+| Klein Rounds | 1 Brass + 4 Pepitas de hierro + 8 Pólvora | 32 balas |
+| Deathknell Rounds | 1 Brass + 7 Pepitas de hierro + 12 Pólvora | 18 balas |
+| Rifle Rounds | 3 Brass + 1 Lingote de hierro + 12 Pólvora | 18 balas |
+
+## Paso 5. Balas especiales
+
+Pon un material de efecto en el centro de una mesa de crafteo y rodéalo con **8 balas normales del mismo tipo**. Obtienes **8 balas especiales** de ese tipo. Por ejemplo, 8 Klein Rounds alrededor de Polvo de blaze dan 8 **Fire Klein Rounds**, que solo sirven para Klein's Repeater.
+
+<Figure src={effectAmmo} alt="Cuadrícula de fabricación con 8 Klein Rounds alrededor de Polvo de blaze que dan 8 Fire Klein Rounds" caption="Fire Klein Rounds, 8 Klein Rounds alrededor de Polvo de blaze." contain />
+
+Si mezclas Klein, Deathknell y Rifle Rounds alrededor del material, no se fabrica nada.
+
+Las balas especiales se llaman "*Efecto* *Arma* Rounds", por ejemplo "Fire Deathknell Rounds" o "Demon Hunter Rifle Rounds". Contando las normales, cada arma tiene 13 tipos de munición.
+
+| Efecto | Material del centro | Daño | Qué hace |
+|---|---|---|---|
+| Fire | Polvo de blaze | 85 % | Prende fuego al objetivo durante 5 segundos |
+| Poison | Ojo de araña | 85 % | Veneno I durante 8 segundos |
+| Armor Piercing | Lingote de hierro | 90 % | Ignora la armadura |
+| Aging | Reloj | 85 % | Lentitud I y Wither II durante 10 segundos |
+| Spirit Control | Arena de almas | 85 % | Lentitud IV y Ceguera durante 5 segundos |
+| Deceiving | Ojo de ender | 85 % | Gira al objetivo 180 grados |
+| Deprivation | Cubo de leche | 85 % | Quita los efectos de poción positivos del objetivo |
+| Exorcist | Polvo de piedra luminosa | 100 %, o 250 % contra mobs no muertos | Sin efecto de estado |
+| Implosive | Diamante | 125 % | Sin efecto de estado, solo más daño |
+| Rotten | Carne podrida | 85 % | Hambre III y Debilidad I durante 8 segundos |
+| Weakening | Ojo de araña fermentado | 85 % | Debilidad II y Fatiga minera II durante 10 segundos |
+| Demon Hunter | Estrella del Nether | 100 %, o 250 % contra criaturas Trascendentes | Sin efecto de estado |
+
+### ¿Contra qué funcionan las balas Exorcist y Demon Hunter?
+
+Las balas **Exorcist** funcionan contra zombis, aldeanos zombi, husks, ahogados, esqueletos, strays, esqueletos del Wither, el Wither, zoglins y piglins zombificados. Los demás mobs y los jugadores reciben el daño normal.
+
+Las balas **Demon Hunter** funcionan contra las [criaturas Trascendentes](/es/magic/creatures/) que genera el servidor. **No dan ninguna bonificación contra jugadores Trascendentes**.
+
+## Cargar las balas correctas
+
+Cuando el cargador está **vacío**, la recarga toma el primer montón de balas compatibles de tu inventario, normales o especiales. Cuando el arma está **medio cargada**, solo puedes rellenarla con el mismo tipo de bala que ya tiene dentro. Para cambiar entre balas normales y especiales, vacía el cargador disparando y deja primero en tu inventario las balas que quieres.

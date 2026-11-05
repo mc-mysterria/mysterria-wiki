@@ -1,0 +1,104 @@
+---
+title: "Mareas diarias"
+description: "Las Mareas diarias en Mysterria, el servidor de Minecraft de Lord of the Mysteries: las siete Mareas, qué día de la semana toca cada una, sus bonificaciones y los comandos /coi tide."
+sidebar:
+  order: 34
+---
+
+import {Figure} from '~/components/mdx';
+import bossBar from '~/assets/tides/boss-bar.webp';
+import tideStatus from '~/assets/tides/tide-status.webp';
+import tideCalendar from '~/assets/tides/tide-calendar.webp';
+
+Una Marea diaria es una bonificación para todo el servidor que dura un día. Hay una sola Marea activa a la vez para todos los jugadores, y siguen una rotación semanal fija con la que puedes planificarte.
+
+## ¿Cuándo cambia la Marea?
+
+Un día de Marea va de las **00:00 a las 24:00, hora de Kiev** (Europe/Kyiv, que es UTC+2 en invierno y UTC+3 en verano). A medianoche, hora de Kiev, empieza la siguiente Marea para todos, vivas donde vivas.
+
+## ¿Cuáles son las siete Mareas?
+
+| Marea | Qué hace | Multiplicadores |
+|---|---|---|
+| **Tide of Diligence** | Toda la Actuación que ganas se duplica | Actuación ganada x2 |
+| **Hunting Tide** | Aparecen más criaturas y sueltan más cosas, y muchos más ingredientes raros | Aparición de criaturas x2, botín de criaturas x2, ingredientes raros x3 |
+| **Tide of Fortune** | Cofres más ricos y garantía más rápida | Botín de cofres x2,5, garantía en la mitad de aperturas, botín raro x2,5 |
+| **Wild Tide** | Más [Trascendentes Salvajes](/es/magic/wild-beyonders/) | Aparición de Trascendentes Salvajes x2, límite de Trascendentes Salvajes x2 |
+| **Tide of Patience** | Los tiempos de espera de Actuación se reducen a la mitad | Tiempo de espera de Actuación x0,5 |
+| **Deep Tide** | Más nodos que picar y más ingredientes en los cofres | Nodos x2, ingredientes en cofres x2, ingredientes raros x2 |
+| **Crimson Tide** | Una [Luna Carmesí](/es/magic/crimson-moon/) es cinco veces más probable | Probabilidad de Luna Carmesí x5, botín de criaturas x1,5 |
+
+"Raro" significa **Secuencia 3 o superior**, es decir, las Secuencias 3, 2 y 1. En Hunting Tide y Deep Tide, la bonificación de ingredientes raros se aplica al botín de criaturas y a los ingredientes de los cofres, pero no a los nodos.
+
+En una Crimson Tide cada noche tiene un **50 %** de probabilidad de Luna Carmesí en lugar del 10 % normal. Cada noche del Overworld principal se sortea por separado, así que si juegas un día entero es muy probable que veas al menos una.
+
+### ¿Qué Marea toca cada día de la semana?
+
+La rotación sigue el orden de la tabla de arriba, así que cada Marea cae el mismo día de la semana todas las semanas.
+
+| Día (hora de Kiev) | Marea |
+|---|---|
+| Lunes | Hunting Tide |
+| Martes | Tide of Fortune |
+| Miércoles | Wild Tide |
+| Jueves | Tide of Patience |
+| Viernes | Deep Tide |
+| Sábado | Crimson Tide |
+| Domingo | Tide of Diligence |
+
+El staff puede cambiar la rotación o fijar otra Marea para un día, así que mira `/coi tide calendar` en el juego para asegurarte.
+
+### ¿Hay límites cuando se suman las bonificaciones?
+
+Sí. Cuando se juntan varias bonificaciones, como una Marea más una Luna Carmesí más la Moon Authority del Sendero Moon, el total tiene un tope.
+
+- La aparición de criaturas tiene un tope de **x4**.
+- La Actuación ganada tiene un tope de **x2,5**.
+
+En Tide of Diligence, cuando una fuente de Actuación llega a su tope, lo que sobra se guarda como Overflow en lugar de llenar tu barra. El Overflow solo existe en la Secuencia 3 o superior, como se explica en [Usurpación](/es/magic/usurpation/).
+
+## ¿Qué Marea me ayuda más?
+
+- **Secuencias bajas y medias.** Tu barra de Actuación es lo que te frena, así que **Diligence** es la que más ayuda. **Wild Tide** también ayuda, porque los Trascendentes Salvajes solo existen de la Secuencia 9 a la 5.
+- **Secuencia 3 o superior.** El tiempo de espera de cada método de Actuación te frena más que la barra, así que **Patience** es tu día. Hunting, Fortune y Deep Tide también traen las bonificaciones de nivel raro pensadas para ti.
+- **Saqueo.** Guarda tus rondas de cofres para **Fortune** y tu caza de ingredientes para **Hunting** o **Deep Tide**.
+
+La bonificación de botín de criaturas importa sobre todo en las criaturas con insignia y en los ingredientes raros. Las [criaturas Trascendentes](/es/magic/creatures/) propias del servidor ya sueltan sus ingredientes comunes casi siempre.
+
+:::tip[Fortune y la garantía]
+La garantía solo se comprueba cuando abres un contenedor. Si estás cerca de tu umbral de garantía en Tide of Fortune, abre un cofre más antes de medianoche. Tu contador se guarda igualmente, pero el umbral reducido a la mitad termina con el día.
+:::
+
+## ¿Cómo sé qué Marea hay hoy?
+
+- **Tarjeta al entrar.** Una tarjeta en el chat unos segundos después de entrar muestra la Marea, lo que hace y el tiempo que queda.
+- **Aviso del cliente.** La misma tarjeta sale como ventana emergente si usas el [Client Mod](/es/guides/client-mod/).
+- **Recordatorio cada hora.** Una línea en el chat cada hora, que no sale si acabas de entrar o estás AFK.
+- **Barra de jefe.** Una cuenta atrás hasta el final del día.
+- **Cambio de Marea.** Un título y un sonido para todos los conectados cuando cambia la Marea.
+
+<Figure src={bossBar} alt="La barra de jefe de la Marea, que dice Wild Tide y que quedan 11 horas y 27 minutos" caption="La barra de jefe de la Marea cuenta el tiempo hasta el final del día." contain />
+
+## ¿Qué comandos hay?
+
+| Comando | Qué hace |
+|---|---|
+| `/coi tide` o `/coi tide status` | La Marea de hoy, sus multiplicadores y el tiempo que queda |
+| `/coi tide calendar [días]` | Las próximas Mareas, empezando por hoy (14 días por defecto, hasta 60) |
+| `/coi tide notify` | Desactiva o activa tu recordatorio de cada hora |
+| `/coi tide bar` | Desactiva o activa tu barra de jefe de la Marea |
+
+<Figure src={tideStatus} alt="El resultado de /coi tide en el chat para la Wild Tide, con el doble de Trascendentes Salvajes, aparición x2 y límite x2, que termina en 11 horas y 7 minutos" caption="/coi tide muestra la Marea de hoy y lo que cambia." contain />
+
+<Figure src={tideCalendar} alt="Parte del resultado de /coi tide calendar, con un día de la semana y una fecha por línea junto a su Marea" caption="El final de una lista de /coi tide calendar." contain />
+
+Si el staff ha fijado la Marea de hoy, `/coi tide status` dice "Pinned by an administrator."
+
+## ¿Qué no cambian nunca las Mareas?
+
+| Sistema | Por qué no se toca |
+|---|---|
+| Puntuación de [Unicidad](/es/magic/uniqueness/) | Se mide a lo largo de 31 días, así que no debería importar qué días juegas |
+| War Points de la [Usurpación](/es/magic/usurpation/) | Los puntos se cuentan con la cantidad anterior a la bonificación de la Marea |
+| Ordalías | Te pueden costar el inventario, así que un calendario no debería cambiar las probabilidades |
+| Daño en combate | El equilibrio es el mismo todos los días |

@@ -1,0 +1,187 @@
+---
+title: "Actuación"
+description: "Cómo funciona la Actuación (digerir la pócima) en Mysterria: métodos de Actuación, recompensas, Frascos de Actuación, topes por fuente, tiempos de espera y la regla del 95 % para tu siguiente pócima de LOTM."
+sidebar:
+  label: Actuación
+  order: 5
+---
+
+import {Figure} from '~/components/mdx';
+import actingRecord from '~/assets/magic/acting-dossier.webp';
+import actingChat from '~/assets/magic/acting-cooldowns.webp';
+import bountyBoard from '~/assets/magic/bounty-board.webp';
+import bountyOffer from '~/assets/magic/bounty-offer-chat.webp';
+
+Un Trascendente **digiere** una pócima interpretando el papel que describe su Secuencia. En Mysterria llenas tu **barra de Actuación** jugando tu Secuencia como se supone que hay que jugarla, y la siguiente pócima solo funciona cuando la barra está casi llena.
+
+## ¿Por qué importa la Actuación?
+
+La siguiente pócima necesita al menos un **95 % de Actuación**. Por debajo, la pócima se rechaza. Entre el 95 % y el 100 % puedes avanzar, pero lo que falta te cuesta Locura temporal.
+
+| Actuación | 95 % | 96 % | 97 % | 98 % | 99 % | 100 % |
+|---|---|---|---|---|---|---|
+| Locura temporal | 30 % | 24 % | 18 % | 12 % | 6 % | 0 % |
+
+La Actuación también sube tu [Espiritualidad](/es/magic/spirituality/) máxima, desde la mitad con un 0 % de Actuación hasta el total con un 100 %.
+
+:::danger[No insistas con una pócima rechazada]
+Si una pócima se rechaza porque tu Actuación es demasiado baja, no vuelvas a beberla enseguida. Un segundo intento en menos de 5 segundos provoca una tirada de pérdida de control con solo un 10 % de probabilidad de sobrevivir. Mira [Ordalías](/es/magic/ordeals/).
+:::
+
+## ¿Cómo veo mi Actuación?
+
+La barra está en tu pantalla de personaje. Abre el icono del Sendero de tu inventario y pasa el ratón por tu cabeza, o escribe `/coi menu character`. Con el [Client Mod](/es/guides/client-mod/), pulsa **M**.
+
+`/coi acting` muestra los tiempos de espera de tus métodos de Actuación y cuánto te ha dado cada fuente frente a su tope.
+
+<Figure src={actingRecord} alt="La pestaña Acting record del Expediente de Trascendente del Client Mod, con un progreso de Actuación de 24 de 27 648 y una barra para la fuente Passive" caption="La pestaña Acting record del Expediente de Trascendente del Client Mod." />
+
+<Figure src={actingChat} alt="El resultado de /coi acting en el chat con el estado actual, la bonificación del Client Mod, los tiempos de espera de los métodos y la fuente de Actuación Passive" caption="Lo que muestra /coi acting en el chat." contain />
+
+## ¿De dónde sale la Actuación?
+
+La Actuación sale de varias **fuentes**. Cada fuente tiene su propio **tope**, que es la parte de la barra que puede llenar en tu Secuencia actual. Ninguna fuente salvo Stolen puede llenar la barra sola, así que tienes que combinarlas. Cuando avanzas, todas las fuentes vuelven a empezar de cero.
+
+| Fuente | Aparece como | Qué es |
+|---|---|---|
+| Métodos de Actuación | Abilities | Usar tus habilidades como pide tu Secuencia |
+| Interacción con jugadores | Interaction | Recompensas de PvP y juego parecido con otros jugadores |
+| Contenido del mundo | World | Recompensas de PvE y de recolección, y otras actividades del mundo |
+| Frascos de Actuación | Bottles | Frascos de Actuación lanzados |
+| Pasiva | Passive | Un goteo pequeño mientras juegas |
+| Eventos | Events | Bedwars, Duelos, FFA y torneos |
+| Actuación robada | Stolen | Poderes de Abyss que roban Actuación |
+| Favor de la Deidad | (aparte) | Un regalo del dios de tu Sendero |
+
+### Topes por Secuencia
+
+Estos son los topes por defecto, como porcentaje de tu barra.
+
+| Secuencia | Bottles | Abilities | Interaction | World | Passive | Events | Favor de la Deidad |
+|---|---|---|---|---|---|---|---|
+| 9 | 90 | 90 | 15 | 25 | 10 | 40 | 10 |
+| 8 | 80 | 80 | 15 | 25 | 10 | 40 | 10 |
+| 7 | 70 | 60 | 20 | 25 | 10 | 35 | 10 |
+| 6 | 55 | 70 | 20 | 30 | 10 | 30 | 15 |
+| 5 | 35 | 55 | 25 | 35 | 8 | 25 | 15 |
+| 4 | 20 | 50 | 30 | 40 | 5 | 15 | 15 |
+| 3 | 10 | 45 | 35 | 45 | 5 | 10 | 20 |
+| 2 | 8 | 45 | 30 | 50 | 5 | 20 | 20 |
+| 1 | 5 | 45 | 25 | 55 | 5 | 30 | 20 |
+
+La Actuación robada tiene un tope del 100 %. Al principio, los frascos y las habilidades llenan casi toda la barra. Desde la Secuencia 5, los frascos importan menos y las recompensas y el contenido del mundo importan más.
+
+<details>
+<summary>Topes para el grupo de tu Sendero (Bottles, Abilities, Interaction, World)</summary>
+
+Los Senderos se reparten en cuatro grupos, y cada grupo cambia algunos topes. Passive, Events y Favor de la Deidad siguen como arriba.
+
+| Grupo | Senderos |
+|---|---|
+| Combate | Tyrant, Twilight Giant, Red Priest, Hanged Man, Chained, Abyss, Death |
+| Social | Sun, Demoness, Visionary, Black Emperor, Justiciar |
+| Utilidad | Fool, Door, Error, Hermit, White Tower, Paragon, Wheel of Fortune |
+| Apoyo | Moon, Mother, Darkness |
+
+| Secuencia | Combate | Social | Utilidad | Apoyo |
+|---|---|---|---|---|
+| 9 | 90 / 90 / 35 / 35 | 90 / 90 / 30 / 30 | 90 / 60 / 15 / 30 | 90 / 55 / 25 / 35 |
+| 8 | 80 / 80 / 35 / 35 | 80 / 80 / 30 / 30 | 80 / 60 / 15 / 30 | 80 / 55 / 25 / 35 |
+| 7 | 70 / 60 / 35 / 35 | 70 / 60 / 30 / 30 | 70 / 60 / 20 / 30 | 70 / 55 / 25 / 35 |
+| 6 | 55 / 70 / 35 / 35 | 55 / 70 / 30 / 30 | 55 / 60 / 20 / 30 | 55 / 55 / 25 / 35 |
+| 5 | 30 / 55 / 35 / 40 | 35 / 60 / 35 / 30 | 35 / 65 / 25 / 35 | 35 / 60 / 25 / 40 |
+| 4 | 15 / 50 / 40 / 45 | 20 / 55 / 40 / 30 | 20 / 60 / 30 / 40 | 20 / 55 / 25 / 45 |
+| 3 | 12 / 45 / 40 / 48 | 12 / 50 / 42 / 40 | 12 / 55 / 35 / 42 | 12 / 50 / 30 / 48 |
+| 2 | 10 / 45 / 35 / 52 | 10 / 48 / 38 / 45 | 10 / 52 / 30 / 48 | 10 / 48 / 28 / 52 |
+| 1 | 8 / 45 / 30 / 58 | 8 / 48 / 34 / 50 | 8 / 50 / 25 / 54 | 8 / 48 / 25 / 58 |
+
+Cada celda es Bottles / Abilities / Interaction / World. `/coi acting` muestra tus propios topes en cuanto una fuente te ha dado algo.
+
+</details>
+
+## Métodos de Actuación
+
+Lanzar tus hechizos no da nada por sí solo. Cada habilidad tiene un **método de Actuación**, una forma concreta de usarla que encaja con tu Secuencia, como matar a un mob con ese hechizo, usarlo sobre otro Trascendente o descubrir algo con él. Solo cuentan los métodos de tu Secuencia **actual**.
+
+Cuando un método sale bien, tu barra de acción lo indica y el método entra en **tiempo de espera**. Una línea en el chat te avisa cuando vuelve a estar listo. Repetirlo en el mismo sitio está bloqueado durante un rato, así que muévete.
+
+El tiempo de espera cuenta el **tiempo de juego activo**. Corre a la mitad de velocidad mientras estás AFK y a una quinta parte mientras estás desconectado.
+
+| Secuencia | Actuación por método | Tiempo de espera (juego activo) |
+|---|---|---|
+| 9 | 20 % | 22 min |
+| 8 | 20 % | 1 h 6 min |
+| 7 | 10 % | 3 h 9 min |
+| 6 | 10 % | 6 h 45 min |
+| 5 | 5 % | 6 h 18 min |
+| 4 | 5 % | 9 h 54 min |
+| 3 | 4 % | 10 h 48 min |
+| 2 | 4 % | 12 h 36 min |
+| 1 | 4 % | 13 h 36 min |
+
+La Secuencia 5 tiene un tiempo de espera algo más corto que la Secuencia 6, pero cada método da la mitad de Actuación. Llenar la barra sigue llevando más tiempo.
+
+Cada habilidad tiene su propio tiempo de espera, así que una Secuencia con varias habilidades puede actuar con cada una por turnos.
+
+:::note[Repetirte paga menos]
+Si ganas Actuación de Abilities, Interaction o World de la misma forma otra vez en menos de 15 minutos, cada repetición paga el 75 % de la anterior, hasta un mínimo del 25 %.
+:::
+
+## Recompensas
+
+Las recompensas (bounties) son tareas personales que pagan Actuación. Ábrelas con `/bounty` (o `/coi bounty`).
+
+<Figure src={bountyBoard} alt="El tablón de recompensas con tres ofertas y la descripción de una recompensa de pesca" caption="El tablón de recompensas. Pasa el ratón por una oferta para ver lo que pide." contain />
+
+- Puedes tener hasta **3** recompensas a la vez, contando las ofertas que todavía no has respondido.
+- Cada **30 minutos** llega una **oferta nueva**. Recibes un mensaje en el chat y puedes aceptarla o rechazarla.
+- Cada recompensa tiene un **plazo**, de 30 minutos a 8 horas.
+- Las recompensas de PvE y de recolección llenan tu fuente **World**. Las de PvP llenan **Interaction**.
+
+Hay recompensas de cazar mobs cerca de un lugar, cazar mobs de élite (Secuencia 6 o superior), encuentros en el campo, cazar Trascendentes Salvajes, matar mobs con hechizos, cazar bajo la Luna Carmesí, sacrificar objetos en un sitio, recorrer una distancia o hacer un viaje largo, explorar un lugar, explorar con una habilidad, cosechar cultivos, picar minerales, recoger ingredientes de nodos, pescar, inspeccionar biomas o recursos, conseguir logros, dominar habilidades en distintas condiciones y duelos y retos de hechizos aceptados con otros jugadores. El otro jugador tiene que aceptar el duelo o el reto de hechizos.
+
+Los destinos se sortean a tu alrededor, a 200 bloques como mínimo y como máximo a 250 bloques en la Secuencia 9, 500 en la 8, 1 000 en la 7, 2 000 en la 6, 3 500 en la 5, 6 000 en la 4 y 7 500 en la 3. Desde la Secuencia 2 no hay límite.
+
+Cada recompensa sortea un pago base de entre el 0,1 % y el 5 % de tu barra, según el tipo. Luego se multiplica según tu Secuencia, x2 en la Secuencia 9, x1,5 en la 8, x1 en la 7, x0,8 en la 6, x0,6 en la 5, x0,45 en la 4, x0,3 en la 3, x0,2 en la 2 y x0,12 en la 1. La oferta muestra la cantidad real que vas a recibir.
+
+Completar una recompensa también cuenta como **crédito de ritual** en la Secuencia 5 o superior. Mira [Rituales](/es/magic/rituals/#crédito-de-ritual).
+
+<Figure src={bountyOffer} alt="Una oferta de recompensa en el chat con su tarea, su fuente, su categoría y los botones Accept y Decline" caption="Una oferta de recompensa en el chat." contain />
+
+## Frascos de Actuación
+
+Un **Frasco de Actuación** guarda una cantidad fija de puntos de Actuación. **Lánzalo** y da su Actuación al Trascendente más cercano a menos de 5 bloques de donde cae, así que puedes lanzárselo a un amigo. Cuenta para la Secuencia **actual** del objetivo y para su tope de **Bottles**.
+
+Los frascos rinden menos cuanto más alta es tu Secuencia. La descripción del frasco muestra cuánto recibirías de verdad. Si el tope de Bottles del objetivo ya está lleno, el frasco se rompe sin dar nada, así que mira antes `/coi acting`.
+
+Puedes conseguirlos en estos sitios.
+
+- El **Pase de batalla** (`/bp`) y el **calendario** de recompensas (`/calendar`).
+- El [Emporio Brillante](/es/guides/emporium/), donde dos fragmentos de Frasco de Actuación forman un frasco.
+- La tienda de **Outer Gods Anchors** (`/oga rewards`), con frascos de 500, 1 000, 5 000 y 10 000 puntos por 15, 28, 130 y 240 puntos.
+- Los **intercambios de mazmorra**, que se pagan con Helping Cards. Mira [Mazmorras](/es/guides/dungeons/).
+
+## Actuación pasiva
+
+Mientras estás conectado y **no estás AFK**, recibes una pequeña cantidad de Actuación más o menos cada 3 minutos, hasta el tope Passive (del 5 al 10 % de la barra). Una iglesia puede añadir una bonificación a esto. Estar AFK o desconectado no da Actuación pasiva.
+
+## Eventos y Favor de la Deidad
+
+Bedwars, Duelos, FFA y los torneos pagan Actuación a la fuente **Events**. Únete con `/bedwars` y `/pvpevent join`.
+
+Si tu Sendero tiene un dios de Secuencia 0, puede concederte **Favor de la Deidad**. Cada concesión es el 5 % de tu barra, una vez a la semana por persona, hasta un 10 % por Secuencia en las Secuencias 9 a 7, un 15 % en las 6 a 4 y un 20 % en las 3 a 1. Mira [Secuencia 0](/es/magic/sequence-zero/).
+
+## ¿Qué acelera o frena la Actuación?
+
+| Efecto | Cuánto |
+|---|---|
+| [Client Mod](/es/guides/client-mod/) instalado | +2 % de Actuación de cualquier fuente, tiempos de espera de los métodos un 5 % más cortos |
+| **Tide of Diligence** (una [Marea diaria](/es/guides/tides/)) | La Actuación ganada se duplica |
+| **Tide of Patience** (una Marea diaria) | Los tiempos de espera de los métodos se reducen a la mitad |
+| Ir muy por delante del servidor | La mitad de Actuación de cualquier fuente |
+
+La última fila es el **limitador de progreso**. Si vas 3 o más Secuencias por delante del jugador activo medio (cualquiera que haya jugado en los últimos 14 días), o estás en la **Secuencia 2 o superior**, ganas Actuación a la mitad de velocidad.
+
+## ¿Qué pasa cuando mi barra está llena?
+
+En la **Secuencia 3 o superior**, la Actuación que ganas con la barra llena se guarda como **Overflow**. El Overflow nunca cuenta para avanzar. Sirve para pagar los desafíos por puestos y la disputa de la Secuencia 0. Los frascos y el Favor de la Deidad nunca se guardan. Mira [Usurpación](/es/magic/usurpation/).

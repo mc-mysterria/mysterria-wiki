@@ -1,0 +1,160 @@
+---
+title: "Primeros pasos con las Iglesias"
+description: "Cómo fundar una iglesia o unirte a una en Mysterria, cómo rezar, qué hace cada cargo de la iglesia y los comandos que necesitas. Una guía de religión de Lord of the Mysteries (LOTM)."
+sidebar:
+  label: Primeros pasos
+  order: 33
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import churchStatus from '~/assets/magic/church-status.webp';
+import corePlaced from '~/assets/magic/church-core-placed.webp';
+import coreRecipe from '~/assets/magic/church-core-recipe.webp';
+
+Una **iglesia** es una religión llevada por jugadores en torno a un líder, un Sendero, miembros que rezan y sedes físicas. Sus miembros reciben bonificaciones de Actuación y de Locura que crecen mientras la iglesia sigue activa.
+
+Cómo llevar sedes, filiales y guerras entre iglesias se explica en [Gestión de la Iglesia](/es/magic/church-management/), y los números exactos de las bonificaciones están en [Ventajas y anclas de la Iglesia](/es/magic/church-perks/).
+
+## ¿Qué da una iglesia a sus miembros?
+
+- Una **bonificación de Actuación** que se suma a tu Actuación normal.
+- Una **bonificación de recuperación de Locura** que ayuda a que la Locura recuperable baje más rápido.
+- **Alivio del mínimo de Locura** para la Secuencia 4 o superior (mira [más abajo](#alivio-del-mínimo-de-locura)).
+- **Bendiciones** y **regalos** de los oficiales de la iglesia, como apoyo para la Locura, el Cansancio y la Espiritualidad.
+- **Efectos de oración** cerca de las sedes de la iglesia.
+- Una **Cámara de Iglesia** compartida para [Artefactos Sellados](/es/magic/sealed-artifacts/).
+- **Alertas de peligro** que avisan al líder, a los colíderes, a los Ángeles y a los Head Deacons cuando un miembro está en apuros.
+
+Nada de esto es fijo. Todo crece con los miembros activos, la oración reciente, la actividad de las sedes, que coincida el Sendero y otras señales de que la iglesia está sana.
+
+## ¿Cómo fundo una iglesia?
+
+Necesitas cumplir esto.
+
+| Requisito | Valor |
+|---|---|
+| Trascendente | Sí |
+| Secuencia | **4 o superior** |
+| Iglesia actual | No puedes ser miembro, líder ni colíder de otra iglesia |
+| Tiempo de espera | **14 días** desde la última vez que dejaste una iglesia, te expulsaron o la disolviste |
+
+Toda iglesia empieza con un **Núcleo de Iglesia**.
+
+1. Fabrica un Núcleo de Iglesia (receta abajo).
+2. Colócalo donde quieras tener tu sede principal.
+3. Escribe el nombre de la iglesia en el chat cuando te lo pida.
+4. Gestiona la iglesia haciendo clic en el núcleo o con `/coi church menu`.
+
+<Figure src={corePlaced} alt="Un Núcleo de Iglesia colocado" caption="Un Núcleo de Iglesia colocado." />
+
+### Receta del Núcleo de Iglesia
+
+<Figure src={coreRecipe} alt="La receta de fabricación del Núcleo de Iglesia" contain />
+
+| Fila | Objetos |
+|---|---|
+| Arriba | Bloque de diamante, Estrella del Nether, Bloque de diamante |
+| Medio | Faro, Mesa de encantamientos, Faro |
+| Abajo | Bloque de netherita, Obsidiana, Bloque de netherita |
+
+Un Núcleo de Iglesia queda ligado al jugador que lo fabricó o lo recibió, así que nadie más puede colocar tu núcleo. No lo pierdas.
+
+## ¿Cómo me uno a una iglesia?
+
+- El líder o un colíder de la iglesia te invita con `/coi church add <jugador>`. Acepta con `/coi church accept` en menos de **5 minutos**.
+- Si recitas el [Nombre Honorífico](/es/magic/honorific-names/) de un miembro de la iglesia, esa persona también puede ofrecerte una invitación.
+
+No hay límite de miembros. Cualquiera puede unirse, también jugadores de otros Senderos y quienes no son Trascendentes, pero los miembros del propio Sendero de la iglesia son los que más cuentan. Los 14 días de espera después de dejar una iglesia también se aplican para unirte a otra.
+
+Los miembros nuevos no reciben todas las ventajas enseguida. Empiezas en un **20 %** y llegas al valor completo a los **14 días** (21 días si vienes de otra iglesia).
+
+### Salir
+
+Usa `/coi church leave`. Un líder no puede salir. Antes tiene que pasar la iglesia a otra persona con `/coi church ownership handoff <jugador> confirm` o disolverla con `/coi church disband` (luego tienes 45 segundos para escribir en el chat el nombre exacto de la iglesia y confirmarlo).
+
+## ¿Cómo rezo?
+
+La oración mantiene vivas las bonificaciones de la iglesia. Un miembro deja de contar para la iglesia tras **14 días** sin rezar, o 14 días sin conectarse.
+
+Puedes rezar de estas formas.
+
+- `/coi church pray`
+- El botón de oración del menú de la iglesia
+- Recitando el [Nombre Honorífico](/es/magic/honorific-names/) completo de cualquier miembro de la iglesia, línea a línea en el chat (cuenta como una oración de fuera)
+
+| Regla de oración | Valor |
+|---|---|
+| Alcance con fuerza completa | A menos de **100 bloques** de una sede activa de la iglesia |
+| Lejos de una sede | Cuenta con un **10 %** de fuerza |
+| La conexión de oración dura | **30 minutos** |
+| Tiempo de espera de los efectos de oración | **12 horas** |
+
+El mensaje de oración te dice exactamente lo que has recibido. Si tus ventajas parecen flojas, lo primero es que los miembros recen cerca de una sede de la iglesia.
+
+## ¿Qué hace cada cargo de la iglesia?
+
+| Cargo | Qué hace |
+|---|---|
+| **Líder** | Es dueño de la iglesia y fija su Sendero. Coloca núcleos y gestiona miembros, sedes y Ángeles. No cuenta como ancla para su propia iglesia |
+| **Colíder** | Autoridad parecida a la del líder sobre casi todos los sistemas de la iglesia. Como mucho **2**. Puede encargarse de una sede regional. No cuenta como ancla de miembro |
+| **Ángel** | Necesita la **Secuencia 3** o superior. Bendiciones fuertes, regalos y derechos sobre la cámara. Hay **3** huecos, más 1 por cada filial activa. Si hay más Ángeles que huecos, los efectos de Ángel se pausan |
+| **Head Deacon** | Lleva una sede de la iglesia y la mantiene atendida |
+| **Bishop** | Apoya una sede. Como mucho **2** por sede |
+| **Regional Manager** | Lleva una sede regional |
+| **Follower** | Reza y suma peso de ancla. Pasa a Junior Follower a los 3 días, a Follower a los 7 y a Senior Follower a los 14 |
+
+Los cargos de sede se explican en [Gestión de la Iglesia](/es/magic/church-management/).
+
+## Chat de la iglesia
+
+Habla con toda tu iglesia con `/coi church chat <mensaje>`, o empieza un mensaje normal del chat con `!c`, `!cc` o `!church`, por ejemplo `!c nos vemos en la catedral`.
+
+## Alivio del mínimo de Locura
+
+Desde la Secuencia 4, todo Trascendente tiene un mínimo de Locura por divinidad, una Locura que la recuperación no puede quitar. Una iglesia sana baja ese mínimo a sus miembros, sobre todo a los líderes y colíderes. Un dios recién llegado, por ejemplo, se queda en torno al 30 % hasta que su congregación crece.
+
+Los mínimos, la fórmula del alivio y los topes por cargo están en [Ventajas y anclas de la Iglesia](/es/magic/church-perks/#alivio-del-mínimo-de-locura). [Locura y mutación](/es/magic/mutation/) explica la Locura en general.
+
+<Notice tone="info" title="Cohortes del Red Priest">
+La [cohorte de Chain of Command](/es/magic/sequence-zero/#cohortes-del-red-priest-en-lugar-de-una-iglesia) de un Red Priest da su propio alivio del mínimo a los miembros que no tienen una iglesia activa. No es un cargo de iglesia.
+</Notice>
+
+## Las iglesias y los dioses
+
+Una iglesia importa muchísimo en el camino a la [Secuencia 0](/es/magic/sequence-zero/). Un aspirante necesita que su iglesia tenga **20** anclas, y tiene que ser su líder, colíder o Ángel. Asistir a **10** oficios de la iglesia es una de las hazañas legendarias.
+
+Cuando un dios ocupa un trono, ser miembro de la iglesia no da por sí solo ninguna bonificación de estadísticas. Solo permite que el dios llegue hasta ti con un **Behest**. Cada miembro tiene un interruptor de devoción. Desactivarlo es inmediato, pero volver a activarlo tarda una semana.
+
+## ¿Dónde está el menú de la iglesia?
+
+- `/coi church menu`, o haz clic en tu Núcleo de Iglesia
+- La casilla de la iglesia (un Faro) en tu menú de personaje, `/coi menu character`
+- El menú Churches del [Client Mod](/es/guides/client-mod/) (tecla M por defecto)
+
+<Figure src={churchStatus} alt="El menú de la iglesia con la descripción de Church Status, que muestra la congregación, la fuerza de las anclas, la posición y la estabilidad" caption="El menú de la iglesia. Pasa el ratón por el primer icono para ver el estado de tu iglesia." contain />
+
+## Comandos para miembros
+
+| Comando | Qué hace |
+|---|---|
+| `/coi church menu` | Abre el menú de la iglesia |
+| `/coi church accept` | Acepta la última invitación |
+| `/coi church leave` | Sal de tu iglesia |
+| `/coi church pray` | Reza |
+| `/coi church chat <mensaje>` | Chat de la iglesia (o `!c <mensaje>`) |
+| `/coi church info` | Los datos de tu iglesia |
+| `/coi church members` | La lista de miembros |
+| `/coi church status` | La salud de la iglesia de un vistazo |
+| `/coi church perks` | Tus ventajas actuales y lo que las limita |
+| `/coi church acting` | Tu bonificación de Actuación de la iglesia |
+| `/coi church pathway progress` | El apoyo a tu propio Sendero |
+| `/coi church pathway <sendero> progress` | El apoyo a otro Sendero dentro de tu iglesia |
+| `/coi church my-site` | La sede de la iglesia que tienes asignada |
+| `/coi church cooldowns` | Tus tiempos de espera de la iglesia |
+| `/coi church top [sendero]` | Las iglesias más fuertes, en general o de un Sendero |
+| `/coi church vault` | Abre la Cámara de Iglesia |
+| `/coi church artifacts list` | Los artefactos que guarda tu iglesia |
+| `/coi church artifact request <artifactId>` | Pide prestado un artefacto |
+| `/coi church artifact return` | Devuelve un artefacto prestado |
+
+Los comandos para líderes y encargados están en [Gestión de la Iglesia](/es/magic/church-management/#comandos-para-líderes-y-encargados).

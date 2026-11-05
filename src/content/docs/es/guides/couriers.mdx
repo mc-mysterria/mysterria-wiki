@@ -1,0 +1,65 @@
+---
+title: "Enviar objetos a otros jugadores con mensajeros"
+description: "Cómo funcionan los mensajeros en Mysterria: fabrica un Horn of Summoning, suelta objetos a tu mensajero, elige quién los recibe y cuánto tarda la entrega, incluso a jugadores desconectados."
+sidebar:
+    label: Mensajeros
+    order: 34
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import hornCraft from '~/assets/couriers/courier_horn_craft.png';
+
+Los **mensajeros** son mensajeros no muertos que llevan objetos a otros jugadores, estén donde estén e incluso si no están conectados. Invoca uno con un **Horn of Summoning**, dale tus objetos y elige quién los recibe.
+
+## ¿Cómo consigo un Horn of Summoning?
+
+1. Busca **Courier Horn Shards** en los cofres de botín del Overworld. Cada cofre recién generado tiene un **15 %** de probabilidad de traer uno.
+2. Junta **3 fragmentos** y colócalos **en forma de L** en una mesa de crafteo.
+
+<Figure src={hornCraft} alt="Tres Courier Horn Shards en forma de L en una cuadrícula de fabricación, que dan un Horn of Summoning" caption="La receta del Horn of Summoning." contain />
+
+El cuerno **no se gasta**. Puedes invocar un mensajero con él una vez cada **5 minutos**.
+
+## Tipos de mensajero
+
+Tu cuerno siempre invoca el mejor mensajero que tengas disponible.
+
+| Mensajero | Objetos que lleva | Tiempo de entrega | Espera tus objetos | Cómo conseguirlo |
+|---|---|---|---|---|
+| **Esqueleto** (Bone Runner) | 1 | 5 minutos | 5 minutos | Cualquier Horn of Summoning |
+| **Medusa** | 2 | 5 minutos | 5 minutos | Jellyfish Courier en la [tienda](https://www.mysterria.net/en/store) |
+| **Incinerated Courier** | 2 | 3 minutos | 3 minutos | Incinerated Courier en la [tienda](https://www.mysterria.net/en/store) |
+
+Los mensajeros llevan **solo objetos sueltos**, no montones. Un montón de 64 lo rechazan, así que divídelo antes. Las **cajas de shulker** también las rechazan.
+
+## ¿Cómo envío objetos?
+
+1. Haz **clic derecho** con el Horn of Summoning. Tu mensajero aparece a tu lado.
+2. **Suelta** cada objeto (pulsa `Q`) a menos de **3 bloques** del mensajero. Lo coge y te lo confirma en el chat.
+3. Cuando el mensajero está lleno (1 objeto el Esqueleto, 2 los demás), el menú **Select Recipient** se abre a los 2 segundos más o menos.
+4. Elige al jugador y pulsa **Confirm Delivery**.
+
+El mensajero se va con tus objetos. Tú y quien los recibe recibís un mensaje en el chat cuando empieza la entrega y cuando llega.
+
+Si no terminas a tiempo, el mensajero desaparece cuando acaba su tiempo de espera (5 minutos, o 3 para el Incinerated Courier) y los objetos que ya había cogido vuelven a ti.
+
+## ¿Dónde funcionan los mensajeros?
+
+**Invocarlos** funciona en el Overworld, el Nether, la Manipulation Pool, el Mirror Realm, la Nightmare Pool y una [Secret Lair](/es/guides/orders/#secret-lair-nivel-4). No funciona en el End.
+
+**La entrega** solo ocurre mientras quien la recibe está en el **Overworld** o en el **Nether**. Si está en otro sitio, en modo espectador o por encima de Y 320, el mensajero espera y lo intenta otra vez cada 5 segundos hasta que vuelve.
+
+## ¿Puedo enviar objetos a un jugador desconectado?
+
+Sí. Los objetos se guardan y se entregan la próxima vez que el jugador entre, una vez pasado el tiempo de entrega. Una entrega que sigue esperando después de **30 días** se borra, así que no envíes objetos a jugadores que se han ido del servidor.
+
+## Los mensajeros y el Agora
+
+Deja tu Horn of Summoning en el **Courier Post** del [Agora](/es/guides/agora/#courier-post) y todo lo que compres allí te lo llevará tu mensajero. Puedes recuperar el cuerno cuando quieras.
+
+## Páginas relacionadas
+
+<CardGrid>
+  <Card title="Agora" text="Recibe a domicilio lo que compras en el mercado." icon="coin" href="/es/guides/agora/" />
+  <Card title="Órdenes Secretas" text="Comparte objetos con tu Orden a través de su alijo." icon="lock" href="/es/guides/orders/" />
+</CardGrid>

@@ -1,0 +1,209 @@
+---
+title: "Agora, el mercado subterráneo de jugadores"
+description: "El Agora en Mysterria: encuentra o fabrica una entrada secreta, vende de forma anónima con el Fence, compra, recoge lo tuyo en el Ledger Keeper y alquila un puesto."
+sidebar:
+    label: Agora
+    order: 23
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import doorCraft from '~/assets/agora/door_craft.png';
+import fence from '~/assets/agora/fence.png';
+import selling from '~/assets/agora/selling.png';
+import sellingCoi from '~/assets/agora/selling_coi.png';
+import plots from '~/assets/agora/plots.png';
+
+El **Agora** es un mercado subterráneo escondido tras puertas ocultas, donde los jugadores se compran y venden cosas entre sí de forma anónima. Los anuncios no llevan nombres, así que compradores y vendedores nunca saben quién es el otro.
+
+El Agora **no tiene comandos**. Entras por una puerta y haces clic derecho en las personas que trabajan allí.
+
+## ¿Cómo entro en el Agora?
+
+### Usa la entrada pública
+
+El servidor tiene una **entrada pública en las coordenadas (0, 0)**. Cualquiera puede usarla. Haz clic derecho en la puerta para bajar.
+
+### Fabrica tu propia Secret Entrance
+
+```
+O E O        O = Obsidiana
+E D E        E = Fragmento de eco
+O E O        D = Puerta de roble oscuro
+```
+
+<Figure src={doorCraft} alt="Obsidiana y fragmentos de eco alrededor de una puerta de roble oscuro en una cuadrícula de fabricación" caption="La receta de la Secret Entrance." contain />
+
+Haz clic derecho en un bloque con la **Secret Entrance** en la mano para convertirlo en una Crimson Door. Solo funciona si se cumple todo esto.
+
+- El sitio tiene **dos bloques de espacio libre** encima
+- Está dentro del **terreno reclamado** de una [ciudad](/es/guides/towns/) donde eres de **confianza**
+- Ese terreno no esconde ya otra puerta, porque cada terreno admite **una sola entrada**
+
+Haz clic derecho en la puerta para bajar.
+
+### Un secreto, no una cerradura
+
+Cualquiera que encuentre tu puerta puede cruzarla. Escóndela bien.
+
+La puerta no se puede romper, volar ni mover. La única forma de quitarla es dejar de reclamar el terreno donde está. Las puertas se revisan cada 30 minutos, y una puerta se borra en la tercera revisión que encuentra su terreno sin reclamar. Las revisiones solo ocurren mientras un jugador tiene esa zona cargada. Así que una entrada en un terreno que ya no está reclamado desaparece en más o menos hora y media si hay alguien cerca. Para mover tu entrada, deja de reclamar ese chunk, reclámalo otra vez más tarde y coloca una entrada recién fabricada. La puerta vieja nunca vuelve.
+
+### Cómo salir
+
+Haz clic derecho en la **puerta de salida**. Sales al sitio por donde bajaste. Si esa entrada ya no existe o no es segura, sales en el spawn del mundo.
+
+## ¿Qué reglas hay dentro?
+
+- **Nadie puede sufrir daño.** No hay PvP, ni mobs, ni daño por caída, ni explosiones, ni fuego.
+- **No hay habilidades Trascendentes.** No funcionan en el Agora.
+- **No hay atajos.** Las perlas de ender, la fruta coral, los élitros y los vehículos están bloqueados. Se sale por la puerta de salida.
+- **Tu inventario es tuyo.** No te quitan nada en la puerta, ni al entrar ni al salir.
+- **No se puede construir** ni abrir contenedores, salvo dentro de un [puesto](#puestos) que alquiles.
+
+## ¿Quién trabaja en el Agora?
+
+Haz clic derecho en cualquiera para hablar con él.
+
+| Quién | Para qué |
+|---|---|
+| **The Fence** | Poner tus cosas a la venta |
+| **Bazaar Clerk** | Mirar y comprar |
+| **The Informant** | Buscar por Sendero y Secuencia |
+| **Ledger Keeper** | Recoger tus compras y tu dinero |
+| **Courier Post** | Recibir tus compras a domicilio |
+| **Plot Warden** | Alquilar un puesto |
+| **Stall Keeper** | El escaparate propio de quien alquila |
+| **Quartermaster** | Bloques de construcción (la antigua `/shop`) |
+
+<Figure src={fence} alt="The Fence esperando tras su mostrador en el Agora" caption="The Fence recoge tus cosas y las pone a la venta." />
+
+## ¿Cómo se escriben los precios?
+
+Los precios usan las [tres monedas](/es/guides/economy/) del servidor. 64 Coppets son un Lick, y 64 Licks (4 096 Coppets) son un Verl Dor.
+
+Los precios se muestran con la mezcla de monedas más corta, por ejemplo `16 coppets 11 licks` en vez de 720 Coppets. Cuando escribas tú un precio, usa `c` para Coppets, `l` para Licks y `v` para Verl Dors.
+
+## ¿Cómo vendo en el Agora?
+
+Dale tu objeto a **the Fence** y pon un precio. Primero te sugiere lo que vale. Juzga los materiales Trascendentes por su Secuencia y las cosas normales por lo que se ha pagado por otras parecidas. Puedes ignorar la sugerencia y poner el precio que quieras.
+
+| Regla | Valor |
+|---|---|
+| Tasa por anunciar | **2 %** de tu precio (mínimo 1 Coppet) |
+| Impuesto de venta | **8 %** de la venta |
+| Rango de precio | De 1 a 1 000 000 Coppets |
+| Anuncios nuevos al día | **3** |
+| Anuncios activos a la vez | **10** |
+| Duración del anuncio | **72 horas** |
+
+La tasa por anunciar se paga **por adelantado** y nunca se devuelve, tanto si el objeto se vende como si caduca o se cancela.
+
+<CardGrid min={280}>
+  <Figure src={selling} alt="The Fence tasando un Fragmento de eco en 5 Coppets" caption="Un objeto normal, tasado según las ventas recientes." />
+  <Figure src={sellingCoi} alt="The Fence tasando un ingrediente de Secuencia 5 en 16 Coppets 11 Licks" caption="Un ingrediente Trascendente, tasado según su Secuencia." />
+</CardGrid>
+
+### ¿Qué no se puede vender?
+
+- Cajas de shulker, bolsas y cualquier otra cosa que guarde objetos
+- Roca madre
+- Objetos ligados a ti
+- Objetos de control de Historical Pact
+
+### Cuando algo se vende
+
+Solo recibes un mensaje que dice que *se ha apartado una moneda a tu nombre*, sin decir qué se vendió ni por cuánto. Recoge el dinero en el **Ledger Keeper**. Las ventas que se hacen mientras no estás conectado te esperan allí.
+
+### Cuando no se vende
+
+Pasadas 72 horas, un anuncio sin vender caduca y el objeto va a tu **alijo** en el Ledger Keeper. Si cancelas un anuncio antes, va al mismo sitio.
+
+## ¿Cómo compro en el Agora?
+
+El **Bazaar Clerk** muestra todo lo que está a la venta. **The Informant** te deja buscar por Sendero y Secuencia cuando sabes lo que quieres.
+
+Pagas el precio de la etiqueta y nada más. El impuesto sale de la parte del vendedor. No puedes comprar tu propio anuncio.
+
+Las compras **no van a tu inventario**. Te esperan en el Ledger Keeper, a menos que hayas dejado un cuerno en el [Courier Post](#courier-post).
+
+## Recoger en el Ledger Keeper
+
+Todo lo que el mercado te debe se queda con el **Ledger Keeper** hasta que lo recojas. Nunca caduca.
+
+- **Tu alijo** guarda los objetos que compraste, los anuncios que caducaron o cancelaste y todo lo que se rescató de un puesto que perdiste. Coge lo que quepa en tu inventario y el resto se queda allí.
+- **Tu libro de cuentas** guarda el dinero de cada venta después del impuesto. Al recogerlo te pagan todo lo que se te debe de una vez.
+
+## Courier Post
+
+Deja un **Horn of Summoning** en el **Courier Post** y todo lo que **compres** te lo llevará tu [mensajero](/es/guides/couriers/), estés donde estés.
+
+- Un cuerno cada vez. Recupéralo cuando quieras y las entregas se detienen.
+- La entrega es gratis. El precio es el cuerno.
+- El dinero de tus ventas no se entrega. Recógelo en el Ledger Keeper.
+
+## Puestos
+
+Un **puesto** es una sala del mercado que puedes alquilar, donde puedes construir y vender. Habla con el **Plot Warden** para quedarte uno.
+
+<Figure src={plots} alt="El barrio de puestos del Agora, iluminado con faroles" caption="El barrio de puestos." />
+
+| Regla | Valor |
+|---|---|
+| Alquiler | **1 Verl Dor** (4 096 Coppets) |
+| Periodo | **7 días** |
+| Puestos por jugador | **1** |
+| Periodo de gracia | **48 horas** |
+
+Mientras tengas el alquiler pagado puedes construir, romper y usar cofres **dentro de tu puesto**. Aparece un **Stall Keeper** en tu escaparate. Los visitantes que hacen clic en él ven lo que vendes, y tienes tu propio mostrador.
+
+### Mantener tu puesto
+
+Vuelve a pagar al Plot Warden antes de que acabe la semana para renovarlo otra semana. Si se te pasa, tienes **48 horas de gracia**, con avisos, y lo conservas todo.
+
+### Perder tu puesto
+
+Cuando acaba el periodo de gracia te desalojan, pero **no se destruye nada**. Todo lo que haya en tus cofres, marcos y soportes de armadura, y lo que quede en el suelo, va a tu alijo en el Ledger Keeper. La sala se reinicia para el siguiente inquilino.
+
+También puedes devolver un puesto antes de tiempo desde el menú del Plot Warden.
+
+## Mostradores del puesto
+
+Un **mostrador** es un cartel sobre un cofre de tu puesto que vende a cualquiera que pase, sin tasa por anunciar y sin esperas. Puedes tener hasta **12 por puesto**.
+
+1. Coloca un cofre y ponle un cartel (en su cara o encima).
+2. Escribe `[Market]` en la **línea 1**.
+3. Escribe el precio en la **línea 2**, como un número de Coppets o en forma corta como `3v 12l 5c` (3 Verl Dors, 12 Licks y 5 Coppets, que son 13 061 Coppets).
+4. Si quieres, escribe en la **línea 3** cuántos objetos van en cada compra, de 1 a 64. Déjala vacía para 1.
+5. **Haz clic derecho en el cartel con el objeto que quieres vender en la mano.**
+
+El cartel se redibuja como **STALL COUNTER** con el objeto, el precio y tu nombre.
+
+| Acción | Resultado |
+|---|---|
+| Clic derecho con un objeto en la mano | Fija o cambia lo que vende |
+| Clic derecho con la mano vacía | Mira las existencias y el total vendido |
+| Agacharse + clic derecho | Cierra el mostrador |
+
+**El cofre es tu almacén.** Para reponer, mete más cosas. Cuando se vacía, el mostrador se queda agotado. Para cambiar un precio, rompe el cartel y vuelve a montarlo.
+
+Para comprar en un mostrador, haz clic derecho una vez en el cartel para ver el precio y **otra vez antes de 6 segundos** para pagar. Los objetos van directos a tus manos.
+
+Un mostrador deja de funcionar cuando desaparece su cartel, su cofre o el puesto.
+
+## ¿Cuánto cuesta?
+
+| Qué | Coste |
+|---|---|
+| Secret Entrance | Obsidiana, Fragmentos de eco y una Puerta de roble oscuro |
+| Anunciar un objeto | 2 % de tu precio (mínimo 1 Coppet) |
+| Vender un objeto | 8 % de la venta |
+| Comprar un objeto | El precio de la etiqueta |
+| Alquilar un puesto | 1 Verl Dor (4 096 Coppets) a la semana |
+| Entrega por mensajero | Gratis (el precio es el cuerno) |
+
+## Páginas relacionadas
+
+<CardGrid>
+  <Card title="Dinero y cartera" text="Monedas, /wallet y Fragmentos de Energía." icon="coin" href="/es/guides/economy/" />
+  <Card title="Mensajeros" text="Consigue un Horn of Summoning y envía objetos." icon="gift" href="/es/guides/couriers/" />
+  <Card title="Ciudades" text="Reclama terreno para esconder tu propia entrada." icon="shield" href="/es/guides/towns/" />
+</CardGrid>
