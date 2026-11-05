@@ -1,0 +1,132 @@
+---
+title: "Emporium brillant et récompenses quotidiennes"
+description: "L'Emporium brillant sur Mysterria : comment gagner des points d'Emporium avec les récompenses quotidiennes et les votes, ce que vend la boutique du jour, les prix, le stock et les Mystery Boxes."
+sidebar:
+    label: Emporium et récompenses quotidiennes
+    order: 22
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import dailyLogin from '~/assets/daily/daily.png';
+import hourly from '~/assets/daily/hourly.png';
+import emporiumMain from '~/assets/emporium/emporium-main.webp';
+import emporiumIngredients from '~/assets/emporium/emporium-ingredients.webp';
+
+L'**Emporium brillant** est une boutique quotidienne qui vend des ingrédients Beyonder, des potions, des formules, des livres enchantés et des Mystery Boxes contre des **points d'Emporium**. Ouvre-la avec `/emporium`.
+
+<Figure src={emporiumMain} alt="Le menu principal de l'Emporium avec six icônes de catégories sur deux étagères" caption="Le menu principal de l'Emporium. Chaque icône des étagères ouvre une catégorie ou tes récompenses quotidiennes." contain />
+
+Les points d'Emporium sont un solde séparé de l'argent. Tu ne peux pas les acheter avec des Coppets, et ils ne marchent que dans l'Emporium. Vérifie tes points avec `/emporium balance`.
+
+## Comment obtenir des points d'Emporium ?
+
+| Source | Points |
+|---|---|
+| [Récompenses quotidiennes](#récompenses-quotidiennes) (`/daily`) | Jusqu'à 180 par jour |
+| [Votes](#votes) (`/vote`) | 30 par jour en votant sur les deux sites |
+| Paliers du [Battle Pass](/fr/guides/battle-pass/) | 500 à 3 000 par palier de récompense |
+| Objet **Emporium Points Bundle** | Le montant écrit dessus. Fais un clic droit pour l'utiliser |
+| Un bug que tu as signalé est corrigé | Donnés par le staff |
+| Événements | Variable |
+
+## Récompenses quotidiennes
+
+Ouvre `/daily`, ou clique sur **Daily Rewards** dans le menu principal de l'Emporium. Il y a trois récompenses chaque jour :
+
+| Récompense | Comment la débloquer | Points |
+|---|---|---|
+| **Daily Login Reward** | Rejoindre le serveur | 10 + 2 par jour de série |
+| **1 Hour Playtime Reward** | Jouer 1 heure aujourd'hui, sans être AFK | 10 + 1 par jour de série |
+| **3 Hour Playtime Reward** | Jouer 3 heures aujourd'hui, sans être AFK | 10 + 1 par jour de série |
+
+Le bonus de série arrête de grandir à **+50** par récompense. La récompense de connexion atteint son maximum de 60 points avec une série de 25 jours, et chaque récompense de temps de jeu atteint 60 avec une série de 50 jours. Avec les trois au maximum, tu reçois **180 points par jour**.
+
+<CardGrid min={280}>
+  <Figure src={dailyLogin} alt="L'infobulle Daily Login Reward avec 14 points, bonus de série de +2 par jour, prête à être récupérée" caption="Récompense de connexion avec une série de 2 jours, soit 10 + 2 x 2 = 14 points." />
+  <Figure src={hourly} alt="L'infobulle 1 Hour Playtime Reward avec 12 points, bonus de série de +1 par jour, prête à être récupérée" caption="Récompense d'1 heure avec une série de 2 jours, soit 10 + 1 x 2 = 12 points." />
+</CardGrid>
+
+### Comment marche la série de connexions ?
+
+- Ta série augmente de 1 pour chaque jour du calendrier d'affilée où tu te connectes.
+- Si tu rates un jour, elle repart à 1.
+- Les jours suivent la date du serveur.
+
+### Récupérer les récompenses
+
+- **Récupère-les avant la fin de la journée.** Les récompenses non récupérées ne passent pas au lendemain.
+- Le temps AFK ne compte pas pour les récompenses d'1 heure et de 3 heures.
+- Tu reçois un rappel 5 minutes après ta connexion si ta récompense de connexion t'attend, et une ligne dans le chat quand tu as des récompenses non récupérées.
+
+## Votes
+
+Tape `/vote` pour voir les sites de vote. Tu peux voter sur chaque site une fois toutes les 24 heures.
+
+| Site | Points par vote |
+|---|---|
+| PlanetMinecraft | 20 |
+| crafty.gg | 10 |
+
+## Que vend l'Emporium ?
+
+La boutique a cinq catégories. Chaque jour à minuit, heure du serveur, elle choisit une nouvelle série d'objets dans la réserve de chaque catégorie, avec de nouveaux prix. Le chat l'annonce : *« The Emporium has refreshed with new items! »*
+
+| Catégorie | Objets en vente chaque jour | Stock par objet | Variation de prix par jour |
+|---|---|---|---|
+| Ingrédients | 90 | 5 | jusqu'à 15 % dans un sens ou dans l'autre |
+| Potions | 30 | 2 | jusqu'à 10 % dans un sens ou dans l'autre |
+| Formules magiques | 25 | 2 | jusqu'à 10 % dans un sens ou dans l'autre |
+| Enchantements | 20 | 2 | jusqu'à 20 % dans un sens ou dans l'autre |
+| Mystery Boxes | 4 | 10 | jusqu'à 20 % dans un sens ou dans l'autre |
+
+**Le stock est partagé par tout le monde.** Le menu affiche un exemplaire d'un objet pour chaque unité en stock. Chaque exemplaire acheté devient un emplacement **SOLD OUT** pour tous les joueurs jusqu'au lendemain.
+
+<Figure src={emporiumIngredients} alt="La page Ingredients de l'Emporium avec une infobulle pour un Reality Fragment à 1061 points" caption="La page des ingrédients. Survole un objet pour voir son prix en points." contain />
+
+### Combien coûtent les objets ?
+
+Chaque objet a son propre prix de base. Le prix affiché est ce prix de base augmenté ou baissé par la variation du jour. Les ingrédients, potions et formules vont jusqu'à la Séquence 4 et coûtent plus cher plus la Séquence est puissante :
+
+| Séquence | Ingrédient | Formule magique | Potion |
+|---|---|---|---|
+| 9 | 100 | 400 | 600 |
+| 8 | 200 | 650 | 1 200 |
+| 7 | 300 | 1 000 | 1 800 |
+| 6 | 380 | 1 800 | 2 600 |
+| 5 | 500 | 2 500 | 3 500 |
+| 4 | 1 000 | 5 000 | 7 000 |
+
+Les livres enchantés coûtent 25 à 40 points avant la variation du jour. On y trouve Raccommodage, Protection IV, Tranchant V, Efficacité V, Fortune III, Solidité III et d'autres.
+
+Les objets plus puissants apparaissent moins souvent dans la sélection du jour.
+
+## Que sont les Mystery Boxes ?
+
+Une Mystery Box donne des objets Beyonder au hasard dans une tranche de Séquences. Fais un clic droit en l'air ou sur un bloc pour l'ouvrir. Fais un clic droit sur une boîte dans la boutique pour voir ce qu'elle peut contenir.
+
+| Boîte | Prix de base | Récompenses | Contenu |
+|---|---|---|---|
+| Basic Mystery Box | 250 | 1 à 2 | Séquence 9 |
+| Rare Mystery Box | 500 | 1 à 2 | Séquences 8 et 7 |
+| Epic Mystery Box | 1 000 | 1 à 3 | Séquences 6 et 5 |
+| Legendary Mystery Box | 2 000 | 1 à 4 | Séquence 4 |
+
+Chaque boîte peut donner des ingrédients, des formules, des Caractéristiques Beyonder et des potions de n'importe laquelle des 22 Voies dans sa tranche. Les ingrédients sont le résultat le plus courant et les potions le plus rare.
+
+## Que sont les fragments de l'Emporium ?
+
+Certaines récompenses arrivent en morceaux. Un **Shard of Boon Token** ou un **Shard of Acting Bottle** est un fragment qui indique combien il en faut. Place ce nombre dans une grille d'artisanat pour obtenir l'objet complet :
+
+| Fragment | Il en faut | Donne |
+|---|---|---|
+| Shard of Boon Token | 10 | Un Jeton de Grâce (voir [Grâces](/fr/magic/boons/)) |
+| Shard of Acting Bottle | 2 | Une Acting Bottle (10 000 points d'Interprétation) |
+
+Ces fragments ont été distribués dans des boutiques saisonnières de l'Emporium et lors d'événements. Ce ne sont pas des Éclats d'énergie.
+
+## Pages liées
+
+<CardGrid>
+  <Card title="Battle Pass" text="Des paliers qui rapportent jusqu'à 3 000 points d'Emporium d'un coup." icon="scroll" href="/fr/guides/battle-pass/" />
+  <Card title="Argent et portefeuille" text="Coppets, Licks, Verl d'or et Éclats d'énergie." icon="coin" href="/fr/guides/economy/" />
+</CardGrid>

@@ -1,0 +1,235 @@
+---
+title: "Gestion de l'église"
+description: "Diriger une église sur Mysterria : branches, QG régionaux, rôles de site, offices, trésorerie, Church Vaults, liens avec les Lands et guerres d'églises sur ce serveur LOTM."
+sidebar:
+  label: Gestion de l'église
+  order: 34
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import blessedSettings from '~/assets/magic/church-blessed-settings.webp';
+import coreBroken from '~/assets/magic/church-core-broken.webp';
+import vaultRecipe from '~/assets/magic/church-vault-recipe.webp';
+import vaultMenu from '~/assets/magic/church-vault-menu.webp';
+
+Les chefs et les responsables d'une église la font grandir grâce à ses sites, ses offices, ses coffres, ses liens avec les Lands et ses guerres. Fonder et rejoindre une église est expliqué dans [Débuter avec les Églises](/fr/magic/churches/).
+
+## Sites d'église
+
+La présence d'une église vient de ses **sites**, chacun avec un Church Core posé et actif. Les avantages sont calculés selon la distance à tes sites actifs, pas par chunk.
+
+| Site | Ce que c'est |
+|---|---|
+| **Main Site** | Ton quartier général et ton ancre principale. Créé par ton premier noyau |
+| **Branch Site** | Des sites en plus qui agrandissent le réseau et le soutien local |
+| **Regional HQ** | Un site éloigné qui débloque plus de places de branche |
+
+Un site dont le noyau manque ou est inactif ne compte pas.
+
+### Et si le noyau principal est cassé ?
+
+<Figure src={coreBroken} alt="L'avertissement affiché dans le chat quand un Church Core principal est cassé" />
+
+- Sans noyau principal, **chaque avantage de l'église tourne à 50 %**.
+- Au bout de **14 jours** sans noyau, l'église est considérée comme abandonnée.
+- Au bout de **14 jours de plus**, tous les membres sont retirés et l'église est supprimée.
+
+Pour déplacer ton quartier général, casse ton noyau principal et pose-le à nouveau.
+
+## Comment ajouter une branche ?
+
+1. Sois le chef de l'église, avec ton noyau principal posé et actif.
+2. Vérifie que tu as une place de branche libre (tableau ci-dessous).
+3. Fabrique un autre [Church Core](/fr/magic/churches/#recette-du-church-core) et pose-le à au moins 16 blocs de tout autre noyau.
+4. Il est enregistré comme branche. Gère-le dans le menu de l'église, dans la partie des sites.
+
+| Séquence du chef | Places de branche | Places de QG régional |
+|---|---:|---:|
+| 4 | 0 | 0 |
+| 3 | 1 | 1 |
+| 2 | 3 | 1 |
+| 1 | 5 | 2 |
+| 0 | 8 | 3 |
+
+Si la pose d'un noyau échoue, il se peut que tu n'aies plus de place de branche, que ton noyau principal soit inactif, qu'il te faille d'abord un QG régional, ou que le noyau appartienne à quelqu'un d'autre.
+
+## QG régionaux
+
+Chaque QG régional actif ajoute **5 places de branche**. Pour en poser un :
+
+- Ta prochaine extension doit demander un QG régional.
+- Il doit se trouver à au moins **5 000 blocs** de ton site principal, de tes branches et des autres QG régionaux.
+- Il doit être dans le **même monde** que ton site principal.
+- Il lui faut un responsable, soit un co-chef, soit un Ange avec une piété maximale. Désigne-le avec `/coi church regional-manager set <siteId> <player>`.
+
+Le menu de l'église indique si ton emplacement actuel est valable.
+
+## Faire tourner un site
+
+Chaque site marche le mieux avec un **Head Deacon** actif et de haute Séquence, jusqu'à **2 Bishops**, et des prières et une présence régulières.
+
+| Head Deacon | Efficacité du site |
+|---|---:|
+| Séquence 0 à 4 | 100 % |
+| Séquence 5 | 70 % |
+| Séquence 6 | 55 % |
+| Séquence 7 | 45 % |
+| Séquence 8 | 35 % |
+| Séquence 9 | 25 % |
+| Non-Beyonder | 15 % |
+| Pas de Head Deacon | 65 % |
+
+Un responsable qui n'a pas prié récemment compte moins.
+
+| Activité du site | Valeur |
+|---|---|
+| Période d'activité récente | 7 jours |
+| Objectif de prières par semaine | 12 prières |
+| Objectif de présence par semaine | 8 participants |
+| Une branche dépérit après | 14 jours sans vraie activité |
+| Ranimer une branche dépérie | 20 de trésorerie et 12 de Spiritualité, en se tenant à moins de 12 blocs |
+
+Atteindre l'objectif de prières ou l'objectif de présence suffit pour compter comme pleinement actif.
+
+### Trésorerie, offrandes et améliorations
+
+Tiens un objet et utilise l'action d'offrande sur un site dans le menu de l'église (ou `/coi church offering donate <siteId>`) pour l'ajouter à sa trésorerie. La trésorerie paie les améliorations et les réanimations de site.
+
+Les améliorations commencent à **32 de trésorerie**, chaque niveau coûte 1,6 fois le précédent, et un site monte jusqu'au **niveau 5**. Chaque niveau augmente la capacité d'ancre du site de 12 %.
+
+Si ton église est liée à une Land, la trésorerie peut puiser dans la banque de la Land (voir [Lands](#lier-une-land)).
+
+## Offices d'église
+
+Les offices font grandir ta **Church Progress**, qui aide une jeune église à monter de palier.
+
+| Office | Recharge | Coût en Spiritualité | Force de prière | Effet en plus | Progression de base |
+|---|---:|---:|---:|---|---:|
+| Sermon | 60 min | 12 | +3,5 % | aucun | 6 |
+| Messe | 180 min | 16 | +4,5 % | 8 s de Régénération I | 8 |
+| Communion | 240 min | 18 | +5,0 % | 2 d'allègement de Folie récupérable | 7 |
+| Confession | 120 min | 10 | +3,0 % | 1 d'allègement de Folie récupérable | 5 |
+
+- Le chef, les co-chefs, les Anges ou le Head Deacon de ce site peuvent en célébrer un.
+- Le célébrant doit être à moins de **24 blocs** du site, et au moins un membre doit y assister.
+- Lance-en un depuis le menu de l'église ou avec `/coi church ritual <siteId> <sermon|mass|communion|confession>`.
+- Progression = (progression de base + 0,75 par participant, jusqu'à 12 participants) x activité du site, jamais comptée sous 25 %.
+
+Chaque présence compte pour le haut fait **Devout church service** (10 nécessaires) de la [Séquence 0](/fr/magic/sequence-zero/).
+
+## Coffres à artefacts
+
+Un **Church Vault** range des [Artefacts scellés](/fr/magic/sealed-artifacts/) pour l'église. Les membres les empruntent, et les responsables approuvent les prêts.
+
+### Recette du coffre
+
+<Figure src={vaultRecipe} alt="Recette de fabrication du Church Vault avec une balise au centre" caption="L'emplacement central montre une simple balise, mais un Church Core marche aussi." contain />
+
+| Rangée | Objets |
+|---|---|
+| Haut | Bloc de diamant, coffre, bloc de diamant |
+| Milieu | Coffre, balise (ou un Church Core), coffre |
+| Bas | Bloc de netherite, obsidienne, bloc de netherite |
+
+Seul le chef de l'église peut le fabriquer. Pose-le à moins de **16 blocs** d'un Church Core actif.
+
+### Comment marche l'emprunt
+
+1. Un responsable range au coffre un Artefact scellé qu'il tient en main.
+2. Un membre le demande depuis le menu du coffre (`/coi church artifact request <artifactId>`).
+3. Un responsable accepte ou refuse.
+4. Le membre doit le rendre avant la fin de la durée d'emprunt. Les artefacts en retard, rappelés ou lâchés retournent dans le stockage de l'église, tout comme un artefact dont l'emprunteur se déconnecte.
+
+<Figure src={vaultMenu} alt="Le menu Artifact Vault avec l'infobulle Vault Status qui affiche le nombre d'artefacts rangés, empruntés et en attente" caption="Le menu du coffre ouvert par /coi church vault. Survole le livre pour voir l'état du coffre." contain />
+
+Le joueur qui a rangé un artefact peut le reprendre avec `/coi church artifact withdraw` quand il n'est pas prêté et qu'il n'a pas de demande en attente.
+
+| Valeur du coffre | Valeur actuelle |
+|---|---|
+| Utiliser le coffre à moins de | 10 blocs |
+| Capacité | +1 par palier d'église, par coffre, par niveau de site et par lien de Land, jusqu'à **12** |
+| Durée d'emprunt | 2 heures, plus selon le palier, les coffres, les niveaux de site et les liens de Land, jusqu'à **4 heures** |
+| Artefact à distance | Chaque site peut garder un artefact empruntable à distance une fois qu'il est rangé depuis **7 jours** |
+
+Les capacités ne peuvent pas remplacer les noyaux ni les coffres, et Beyonder Characteristic Theft et Purification ne peuvent pas prendre de Caractéristiques Beyonder aux artefacts de l'église.
+
+## Lier une Land
+
+Les églises ne revendiquent pas de terrain. Si tu utilises les [Villes](/fr/guides/towns/), tu peux lier une Land qui contient l'un de tes sites actifs :
+
+1. Revendique la zone dans Lands et pose le noyau du site à l'intérieur.
+2. Près du site, lance `/coi church land request` (ou `/coi church land request <siteId>`).
+3. Le propriétaire de la Land lance `/coi church land approve <churchLeader>`.
+4. Vérifie avec `/coi church land`.
+
+Une église reçoit **3** places de lien de Land, plus 1 pour chaque tranche de 10 chunks revendiqués. Le propriétaire de la Land peut activer ou couper deux avantages avec `/coi church land perk <churchLeader> <treasury|artifacts> <true|false>` :
+
+- **Treasury** permet à la trésorerie de l'église d'utiliser la banque de la Land.
+- **Artifacts** donne un peu plus de capacité au coffre et de durée d'emprunt.
+
+Dans une Land revendiquée, ce sont les permissions de Lands qui décident qui peut casser les noyaux et les coffres (sauf pendant une guerre d'églises acceptée).
+
+## Guerres d'églises
+
+Marque les autres églises comme alliées, ennemies ou neutres dans le menu **Diplomacy & War**. Les guerres changent les avantages :
+
+| Situation | Avantages |
+|---|---|
+| Tu as déclaré la guerre, elle n'est pas acceptée | x0,5 pour l'église qui déclare |
+| Guerre acceptée, pendant qu'elle dure | x0 (tous les avantages suspendus) |
+| Vainqueur | x1,5 pendant 14 jours |
+| Perdant | x0,5 pendant 14 jours |
+| Match nul | x0,5 pendant 7 jours |
+| Allié du vainqueur | x1,2 |
+| Allié du perdant, ou en cas de match nul | x0,8 |
+
+- Une église peut avoir jusqu'à **3** guerres actives, avec **30 minutes** entre deux déclarations. Une guerre dure au plus **72 heures**.
+- Pendant une guerre acceptée, les ennemis de **Séquence 4 ou plus puissants** peuvent casser tes noyaux et tes coffres. Les joueurs plus faibles ne le peuvent pas.
+- Casser le **noyau principal** de l'ennemi met fin à la guerre en faveur de celui qui l'a cassé.
+
+| Commande de guerre | Ce qu'elle fait |
+|---|---|
+| `/coi church war` | Lister les guerres |
+| `/coi church war declare <leader>` | Déclarer la guerre à une église |
+| `/coi church war accept <leader>` | Accepter une déclaration |
+| `/coi church war join <attackerLeader> <defenderLeader> <attacker\|defender>` | Rejoindre une guerre comme allié |
+| `/coi church war surrender <leader>` | Se rendre |
+| `/coi church war draw <leader>` | Proposer ou accepter un match nul |
+
+## Alertes de danger et Divine Observation
+
+Le chef, les co-chefs, les Anges et les Head Deacons peuvent régler des alertes dans les réglages de surveillance du menu de l'église :
+
+- Des **alertes de danger** quand un membre (ou toute personne que tu marques comme Blessed) tombe à 6 de vie ou moins ou atteint 85 % de Folie, avec sa position exacte, au plus une fois toutes les 5 minutes.
+- Des **alertes de mutation** quand quelqu'un risque de perdre le contrôle, et des **alertes de mort**.
+- Des **avis de prière** pour les membres, les membres anciens ou les personnes extérieures qui prient.
+
+<Figure src={blessedSettings} alt="La page Blessed Settings du menu de l'église avec une rangée d'interrupteurs d'alertes et d'avis" caption="Blessed Settings dans le menu de l'église. Chaque icône active ou coupe une alerte ou un avis." contain />
+
+**Divine Observation** permet aux responsables de l'église d'observer un membre de près. Accroupis-toi pour arrêter d'observer. Un membre de Séquence égale ou supérieure doit d'abord donner sa permission. Les membres de confiance (co-chefs, Anges, Head Deacons ou membres anciens et actifs) peuvent être mis sur une liste d'observation à distance.
+
+## Commandes pour les chefs et les responsables
+
+| Commande | Ce qu'elle fait |
+|---|---|
+| `/coi church add <player>` | Inviter un joueur (chef et co-chefs) |
+| `/coi church remove <player>` | Retirer un membre |
+| `/coi church authority grant <player>` | Nommer un co-chef (2 au maximum) |
+| `/coi church authority revoke <player>` | Retirer un co-chef |
+| `/coi church angel promote <player>` | Nommer un Ange |
+| `/coi church angel demote <player>` | Retirer un Ange |
+| `/coi church role set <player> <follower\|angel>` | Fixer le rôle d'un membre |
+| `/coi church regional-manager set <siteId> <player>` | Désigner le responsable d'un QG régional |
+| `/coi church ownership handoff <player> confirm` | Confier l'église à quelqu'un d'autre |
+| `/coi church disband` | Dissoudre (tape le nom de l'église dans les 45 secondes pour confirmer) |
+| `/coi church bless <player>` | Bénir un membre |
+| `/coi church gift <player> <type>` | Offrir un don (voir les [dons](/fr/magic/church-perks/#dons)) |
+| `/coi church ritual <siteId> <service>` | Célébrer un office |
+| `/coi church offering donate <siteId>` | Offrir l'objet tenu en main à un site |
+| `/coi church artifact approve\|deny\|recall <artifactId>` | Gérer les prêts du coffre |
+| `/coi church artifact deposit` | Ranger l'artefact tenu en main |
+| `/coi church merge request <leader>` | Proposer de fusionner des églises |
+| `/coi church merge accept\|decline\|status\|cancel` | Répondre à une fusion ou vérifier où elle en est |
+| `/coi church support set <prayer\|ritual\|blessing> <true\|false>` | Activer ou couper le soutien partagé |
+
+La plupart sont aussi des boutons dans le menu de l'église.

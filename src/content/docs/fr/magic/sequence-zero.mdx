@@ -1,0 +1,242 @@
+---
+title: "Comment devenir un dieu à la Séquence 0"
+description: "Comment atteindre la Séquence 0 sur Mysterria : toutes les conditions, la veillée, le rite d'ascension, la Deity Authority et comment garder un trône. Un guide Lord of the Mysteries."
+sidebar:
+  label: Séquence 0
+  order: 36
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import pantheon from '~/assets/magic/sequence-zero-pantheon.webp';
+import leadImage from '~/assets/heroes/sequence-zero.jpg';
+import throneMenu from '~/assets/magic/sequence-zero-throne.webp';
+
+<Figure src={leadImage} eager alt="Un château en ruine sur une île flottante sous une lune rouge" />
+
+## Qu'est-ce qu'un trône ?
+
+Un **trône** fait du joueur qui l'occupe le **dieu** d'une Voie, à la Séquence 0 avec le rang de Divinité. Il y a **22 trônes**, un pour chaque Voie normale, et les Voies extérieures n'en ont pas.
+
+Un dieu reçoit un titre au-dessus de sa tête et une place dans le Panthéon public. Deux capacités n'appartiennent qu'aux dieux, **Deity Authority** et **Divine Presence**.
+
+Personne ne peut prendre le trône d'un dieu qui y siège. Il n'y a pas de guerre de siège pour la Séquence 0. Un trône ne se libère que quand son dieu cesse d'être de Séquence 0 sur cette Voie, le plus souvent parce qu'il a arrêté de venir (voir [Garder le trône](#garder-le-trône)). C'est pour ça que la course au trône, la **veillée**, a lieu *avant* que quiconque s'y assoie.
+
+Le [recensement des sièges](https://www.mysterria.net/en/ascension) sur le site principal montre qui occupe chaque trône et chaque autre haut siège.
+
+## Qui peut essayer ?
+
+Tu es refusé tout de suite si :
+
+- La Voie est une Voie extérieure.
+- Tu n'es pas de **Séquence 1** sur cette Voie.
+- Ce n'est pas ta Voie **principale** (celle sur laquelle tu es compté).
+- Tu fais déjà partie d'une veillée.
+
+## De quoi ai-je besoin pour revendiquer un trône ?
+
+`/coi ascend` ouvre le menu du trône. `/coi ascend status [pathway]` affiche la même liste de contrôle dans le chat. Elle compte **11 éléments**, sept conditions et quatre vérifications.
+
+<Figure src={throneMenu} alt="L'onglet Where you stand du menu du trône avec 5 éléments sur 11 remplis" caption="La liste de contrôle du menu du trône, montrée pour un personnage de test." />
+
+### Les sept conditions
+
+| | Condition | Ce qu'il faut |
+|---|---|---|
+| R1 | **Unicité détenue et accommodée** | Tu détiens l'[Unicité](/fr/magic/uniqueness/) de ta Voie **et** tu l'as accommodée à **95 %** ou plus |
+| R2 | **Ton église porte les ancres** | Ton [église](/fr/magic/churches/) a **20** de poids d'ancre effectif, et tu en es le chef, un co-chef ou un Ange. Les membres de toutes les Voies comptent, et ta propre Voie compte le plus. Un Red Priest peut utiliser une cohorte à la place (voir [plus bas](#les-cohortes-red-priest-à-la-place-dune-église)) |
+| R3 | **Tous les rituels de la dernière étape** | Une série de rituels de Séquence 0 qui vaut **30 points** (voir [Rituels](#la-série-de-rituels-de-30-points)) |
+| R3b | **Le rituel narratif certifié par le staff** | Un rituel narratif légendaire approuvé par le staff (voir [plus bas](#le-rituel-narratif)) |
+| R4 | **De l'Interprétation mise de côté pour la mise** | **31 104 d'Overflow**, soit une demi-barre de Séquence 1 (voir [Sièges et Usurpation](/fr/magic/usurpation/#quest-ce-que-loverflow-)). Un dieu déchu en période de grâce paie la moitié |
+| R5 | **Assez longtemps dans le siège** | **14 jours calendaires** à la Séquence 1 sur cette Voie depuis ta dernière progression ou ton arrivée. La période de grâce d'un dieu déchu supprime cette condition |
+| R6 | **La potion de Séquence 0 en main** | Préparée avec **trois Caractéristiques Beyonder de Séquence 1 de la même Voie**, sans rien d'autre |
+
+### Les quatre vérifications
+
+- Le trône est vide.
+- Tu es installé dans cette Voie, donc pas dans les 30 jours suivant une arrivée sur le côté (un changement, un transfert ou une prise de contrôle).
+- Tu n'es pas dans une guerre de siège.
+- Aucun délai de Voie ou personnel n'empêche une revendication.
+
+<Notice tone="info" title="Tu ne peux pas boire la potion de Séquence 0">
+La boire toute seule est refusé. Seul le rite d'ascension l'utilise.
+</Notice>
+
+`/coi ascend board` montre la progression de chacun sur le tableau public de la course. `/coi ascend private` cache ton nom sur le tableau, mais tu es quand même compté.
+
+## La série de rituels de 30 points
+
+R3 marche comme les rituels de toutes les autres Séquences (vérifie le tien avec `/ritual status`), avec l'objectif le plus élevé du jeu. Ta série est **distribuée** depuis toute la réserve de rituels, pas choisie. À partir de la Séquence 4, la réserve contient des entrées légendaires qui valent 10 points chacune, comme les progrès de défi Blaze et Cave (« Collect 64 nether stars », « Obtain all the items! ») et ces hauts faits du serveur, enregistrés automatiquement :
+
+| Haut fait | Comment l'obtenir | Nécessaire |
+|---|---|---:|
+| A seat war fought to its verdict | Mener une [guerre de siège](/fr/magic/usurpation/) jusqu'au bout, gagnée ou perdue | 1 |
+| A Uniqueness defended | Garder ton Unicité face à un défi payé | 1 |
+| Devout church service | Assister à des [offices d'église](/fr/magic/church-management/#offices-déglise) | 10 |
+| Your honorific invoked | Quelqu'un psalmodie ton [Nom honorifique](/fr/magic/honorific-names/) en entier | 1 |
+| An Ordeal survived | Traverser une Épreuve et garder ton Beyonder | 1 |
+| A pinnacle bounty | Terminer une prime en étant de Séquence 1 | 1 |
+| Diligence kept | Gagner de l'Interprétation sur 7 jours différents (chaque jour a une Marée) | 7 |
+
+Jusqu'à **10** des 30 points peuvent venir de crédits de service à la place :
+
+| Crédit de service | Points |
+|---|---:|
+| Un office d'église suivi | 1 |
+| Un objectif de prime | 1 |
+| Un rituel narratif approuvé par le staff | 2 |
+| Une guerre de siège menée | 3 |
+| Une Unicité défendue | 3 |
+
+Tu peux demander au staff un nouveau tirage pour une seule entrée de ta série.
+
+## Le rituel narratif
+
+Le rituel narratif est une **condition à part et obligatoire** (R3b), en plus des 30 points. Il sert pour ce que le serveur ne peut pas mesurer :
+
+> Organise un événement public, à l'échelle du serveur, qui met en scène le rôle de ta Voie dans le roman, et fais-le vivre au serveur.
+
+Une capture d'écran ou un effort en solo ne compte pas. Ce doit être un événement annoncé à l'avance, avec d'autres joueurs présents et de vraies conséquences, que seul un Beyonder de *ta* Voie aurait pu mener. Par exemple, le Fool pourrait réunir un Club du Tarot au-dessus de la brume grise, ou le Red Priest pourrait déclarer et mener une vraie guerre acceptée entre deux églises.
+
+Parle au staff **avant** de le lancer et dis-lui ce que tu prévois, quand et avec qui. Le staff te dira si ça compte. Une fois le rituel certifié, l'élément de la liste passe au vert. Une revendication déclarée sans lui est annulée, avec tout remboursé et aucun délai.
+
+## Déclarer et la veillée
+
+Quand chaque élément est au vert, tu **déclares**. Ta mise est dépensée, ta potion passe sous séquestre avec son expiration gelée, et tout le serveur est prévenu. Une fenêtre de **72 heures** s'ouvre.
+
+### Qui peut contester ?
+
+Un autre joueur de Séquence 1 sur la même Voie peut payer la même mise pour te contester, mais seulement s'il :
+
+- Est à la Séquence 1 depuis 14 jours, est installé dans la Voie, n'est pas dans une guerre de siège et n'est pas sous un délai de contestation.
+- A l'Overflow pour la mise.
+- Remplit déjà au moins **3 de ces 4** conditions, à savoir les ancres, les 30 points de rituel, le rituel narratif et une potion de Séquence 0.
+
+Avec seulement 3 sièges d'Archange par Voie, il peut y avoir au plus 2 rivaux. Si personne ne conteste, tu passes directement au rite.
+
+### Si quelqu'un conteste
+
+L'enchère la plus haute à la fermeture de la fenêtre conteste, et les autres enchères sont remboursées. Une contestation de **7 jours** suit, notée en War Points à partir de vrais gains d'Interprétation, comme dans une [guerre de siège](/fr/magic/usurpation/#étape-3--la-guerre). Ce sont des jours calendaires, et une absence rapporte simplement zéro. **En cas d'égalité, le prétendant l'emporte.**
+
+| Verdict | Le perdant paie | Le gagnant reçoit | Ensuite |
+|---|---|---|---|
+| **Le prétendant gagne** | Le rival brûle la moitié de sa mise | Le prétendant passe au rite | Le rival ne peut pas contester la veillée de cette Voie pendant 14 jours |
+| **Le rival gagne** | Le prétendant brûle la moitié de sa mise | **L'Unicité**, pas le trône. La mise du rival lui est rendue en entier | Personne ne peut déclarer sur la Voie pendant 7 jours. L'Unicité est protégée pendant 14 jours. Le prétendant a un délai de 24 heures avant de redéclarer |
+
+Un rival qui gagne ne devient **pas** un dieu. Il doit parcourir toute la route lui-même, y compris faire grandir l'accommodation de zéro à 95 %. Une contestation perdue rend toujours la potion.
+
+### Se retirer et autres sorties
+
+| Ce qui s'est passé | Mise | Potion | Délai |
+|---|---|---|---|
+| Retrait dans les 15 minutes | Remboursement complet | Rendue | Délai personnel de 24 heures avant de redéclarer |
+| Retrait après 15 minutes | Moitié brûlée | Rendue | Délai personnel de 24 heures avant de redéclarer |
+| Surenchéri, trône occupé, annulation, erreur | Remboursement complet | Rendue | Aucun |
+| Pas connecté dans les 48 heures après la victoire | Remboursement complet | Rendue | Délai personnel de 24 heures avant de redéclarer |
+| Convocation sans réponse pendant 7 jours | Remboursement complet | Rendue | Aucun |
+
+## La convocation, l'annonce et le rite
+
+Gagner la veillée te **convoque**. Tu as **24 heures** pour choisir ton moment avant que le rite ne commence tout seul, et une convocation sans réponse est rendue au bout de **7 jours**. Réponds avec `/coi ascension begin`.
+
+Le serveur est alors prévenu **10 minutes** à l'avance, avec une barre de boss, une carte dans le chat avec les coordonnées et un dernier appel une minute avant. Tout le monde peut vérifier l'endroit avec `/coi ascension where`. Tu peux encore marcher pendant ces 10 minutes, mais une fois le rite commencé, tu es immobilisé. Si deux rites sont convoqués à peu d'intervalle, le second attend son tour.
+
+### Pendant le rite
+
+Le rite dure environ **2 minutes et demie**, et chacune des 22 Voies a sa propre mise en scène.
+
+- **Les rivaux ne peuvent pas l'interrompre.** Tu es invulnérable et ne peux pas subir de contrôle fort. Il ne se termine plus tôt que si tu pars, si le staff l'arrête, ou si tu entres dans un état qu'aucun rite ne peut supporter.
+- **Rien n'est dépensé avant la moitié.** Avant ce point, un rite interrompu ne coûte rien et tu peux répondre de nouveau à la convocation. Le trône est pris à la moitié du rite.
+- **Les témoins sont récompensés.** Reste à moins de **24 blocs** et tu reçois **3 %** de ta propre barre d'Interprétation et 30 secondes de Régénération.
+- **La foule psalmodie.** Cinq fois, un appel s'élève dans le chat. Chaque réponse rapporte **1,5 %** de plus de ta barre. Les formulations dans toutes les langues sont acceptées.
+
+Quand le trône est pris, tout le serveur ressent un effet de la Voie pendant environ **3 minutes**, comme la Voie Sun qui change la nuit en lumière aveuglante. Rien de tout ça ne peut te tuer ni te prendre quelque chose de façon permanente, et rien ne survit à un redémarrage. L'endroit reste marqué sur la carte pour de bon.
+
+## Qu'est-ce qu'un dieu reçoit ?
+
+Un dieu garde ses capacités des Séquences 9 à 1 et en gagne deux de plus :
+
+**Deity Authority** (active). Clic gauche pour passer de Favor à Behest et à Ledger. Clic droit pour utiliser celle qui est choisie.
+
+- **Favor** donne à un croyant de ta Voie de l'Interprétation qui vaut **5 %** de *sa* barre. Tu as **60 %** de barre par semaine à distribuer (cumulable jusqu'à 2 semaines), et chaque croyant peut recevoir une Faveur par semaine. Elle coûte 10 % de Spiritualité, avec un temps de recharge de 60 secondes. La Faveur ne crée jamais d'Overflow, de War Points ni de progression d'Unicité, et n'aide jamais la revendication de trône de quiconque.
+- **Behest** demande à un membre dévoué de ton église de se présenter, de proclamer ton nom ou de faire un pèlerinage. Répondre lui rapporte une Faveur. Il a **30 minutes** pour répondre. Tu peux en avoir **3** ouverts à la fois et en envoyer **6** par jour, et chaque membre peut être sollicité une fois toutes les **72 heures**. Il coûte 10 % de Spiritualité, avec un temps de recharge de 5 minutes. Réponds-y avec `/coi deity answer <id>` ou refuse avec `/coi deity refuse <id>`.
+- **Ledger** est ton registre public.
+
+Refuser ou ignorer un Behest attire la **Disfavor**. Pendant **3 jours**, tu ne reçois ni Faveur ni Behest de ce dieu, tu as **-25 %** de gain d'Interprétation et tu prends **+5** de Folie une fois. Ça ne touche rien d'autre.
+
+**Divine Presence** (passive). Les croyants de ta Voie à moins de **24 blocs** subissent **10 % de Folie en moins** et gagnent **15 % de Fatigue en moins**.
+
+La Faveur et la Présence atteignent chaque croyant de ta Voie, membre d'une église ou non. Être membre d'une église permet seulement d'être sollicité par un Behest. Chaque membre a un interrupteur de dévotion. Le couper est immédiat, mais le rallumer prend 7 jours.
+
+Ton [Nom honorifique](/fr/magic/honorific-names/#que-se-passe-t-il-quand-on-psalmodie-le-nom-dun-dieu-) passe à 3 lignes, et toute personne qui le psalmodie en entier reçoit la bénédiction de ta Voie, même quand tu es hors ligne.
+
+<Notice tone="warn" title="Un dieu tout neuf a un plancher de Folie d'environ 30 %">
+Un dieu est mesuré sur **30** ancres d'église pour l'[allègement du plancher de Folie](/fr/magic/church-perks/#allègement-du-plancher-de-folie), plus que les 20 nécessaires pour l'ascension. Un nouveau dieu avec 20 ancres n'allège son plancher de 90 % que jusqu'à environ 30 %. Faire grandir la congrégation le baisse encore.
+</Notice>
+
+## Garder le trône
+
+> Sois en ligne et pas AFK pendant 20 minutes sur au moins 4 jours sur toute période de 30, sinon le trône se vide.
+
+Les jours se comptent à l'heure de Kyiv. Les capacités, les psalmodies et les ancres ne comptent pas. Un nouveau règne ne peut pas prendre fin avant ses 30 premiers jours.
+
+Pour t'absenter, `/coi god absence <days>` déclare un congé de **21 jours** au plus, utilisable une fois tous les **60 jours**. Ces jours sont retirés de la période.
+
+Tu es prévenu en privé quand il reste **14 jours**, puis publiquement à **7, 3 et 1**.
+
+Si le trône se vide quand même :
+
+- Tu redescends à la **Séquence 1** sur cette Voie avec **95 %** d'une barre pleine.
+- Le trône se vide et toute personne qui remplit les conditions peut le revendiquer.
+- Pendant **60 jours**, tu peux refaire l'ascension pour **la moitié de la mise**, avec tes 14 jours d'ancienneté déjà comptés.
+
+Un dieu qui cesse d'être de Séquence 0 sur cette Voie d'une autre façon, par exemple en changeant de Voie, perd aussi le trône.
+
+## Les cohortes Red Priest à la place d'une église
+
+La cohorte **Chain of Command** d'un commandant [Red Priest](https://www.mysterria.net/en/pathways/priest) n'est pas une église, mais elle peut remplir deux rôles d'église pour les joueurs qui n'ont pas d'église active.
+
+**Allègement du plancher de Folie.** À partir de la Séquence 4, une cohorte abaisse le [plancher de Folie](/fr/magic/church-perks/#allègement-du-plancher-de-folie) de divinité de son commandant, de ses Generals et de ses Soldiers :
+
+| Rang dans la cohorte | Part de l'allègement |
+|---|---:|
+| Commandant | 85 % |
+| General | 45 % |
+| Soldier | 30 % |
+
+- Allègement = (poids d'ancre de la cohorte / ancres nécessaires) x part de ton rang, au plus la part de ton rang.
+- Les ancres nécessaires viennent du tableau des églises, selon la Séquence du **commandant** (15 à la Séquence 4 jusqu'à 38 à la Séquence 1).
+- Le poids d'ancre de la cohorte utilise les mêmes poids par Séquence que les églises, sans bonus de Voie et avec la même diminution pour les hautes Séquences (à partir de 18, au plus 34). Le commandant ne compte pas.
+- Un membre ne compte que s'il a été actif dans les **14 derniers jours** et n'est pas dans une église active.
+- L'allègement de cohorte et celui d'église **ne se cumulent jamais**. Si tu as une église active, c'est l'allègement de l'église qui s'applique.
+
+**Les ancres de la Séquence 0.** Si tu n'as pas de rôle de chef, de co-chef ou d'Ange dans une église, la liste de contrôle du trône lit le poids d'ancre de ta cohorte pour R2 à la place.
+
+## Commandes
+
+| Commande | Ce qu'elle fait |
+|---|---|
+| `/coi ascend` | Ouvrir le menu du trône, ou répondre à une convocation en attente |
+| `/coi ascend status [pathway]` | La liste de contrôle de 11 éléments dans le chat |
+| `/coi ascend board` | Le tableau public de la course |
+| `/coi ascend declare` | Déclarer ta revendication |
+| `/coi ascend contest <pathway>` | Contester une veillée ouverte |
+| `/coi ascend withdraw` | Retirer ta mise |
+| `/coi ascend private` | Cacher ton nom sur le tableau (tu es quand même compté) |
+| `/coi ascension begin` | Répondre à une convocation |
+| `/coi ascension where` | Les coordonnées du rite annoncé |
+| `/coi ascension notify [on\|off]` | Couper le chat de la cérémonie (jamais la cloche ni la barre de boss) |
+| `/coi ascension status` | Le rite en cours et la file d'attente |
+| `/coi ascension gods` | La liste du Panthéon |
+| `/coi deity gods` | La fenêtre du Panthéon |
+| `/coi deity ledger <pathway>` | Le registre public d'un trône |
+| `/coi deity answer\|refuse <id>` | Répondre à un Behest ou le refuser |
+| `/coi god` | L'état de ton trône |
+| `/coi god absence <days>` | Déclarer un congé |
+| `/coi god thrones` | Les 22 trônes et qui y siège |
+| `/coi menu native` | Passer des écrans du Client Mod aux menus en coffre, et inversement (enregistré par personnage) |
+
+Le [Client Mod](/fr/guides/client-mod/) affiche les menus du trône et du Panthéon comme des écrans natifs. Sans lui, chaque fenêtre s'ouvre comme un menu en coffre.
+
+<Figure src={pantheon} alt="La fenêtre Thrones of the Twenty-Two qui liste chaque Voie avec No god et une mention Empty, 0 trône occupé sur 22" caption="La fenêtre du Panthéon ouverte par /coi deity gods en écran du Client Mod, avant qu'aucun trône ne soit occupé." />
+
+Quand l'époque se termine, les 22 trônes se vident et tout le monde recommence.

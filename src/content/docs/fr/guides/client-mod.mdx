@@ -1,0 +1,143 @@
+---
+title: "Client Mod"
+description: "Le mod Fabric facultatif coi-client pour Mysterria : menus Beyonder natifs, HUD, lancement par gestes, touches par défaut et le bonus de +2 % d'Interprétation quand tu l'utilises."
+sidebar:
+  label: Client Mod
+  order: 15
+---
+
+import {Figure} from '~/components/mdx';
+import titleScreen from '~/assets/client-mod/title-screen.webp';
+import dossier from '~/assets/start/beyonder-dossier.webp';
+import destinations from '~/assets/client-mod/dossier-destinations.webp';
+import catalogue from '~/assets/client-mod/ability-catalogue.webp';
+import uniqueness from '~/assets/magic/uniqueness-candidacy.webp';
+import mythicalForm from '~/assets/client-mod/mythical-form.webp';
+import selector from '~/assets/client-mod/ability-selector.webp';
+import characterPlate from '~/assets/client-mod/character-plate.webp';
+import hudArrange from '~/assets/client-mod/hud-arrange.webp';
+import hudSettingsAbility from '~/assets/client-mod/hud-settings-ability.webp';
+import hudSettingsElements from '~/assets/client-mod/hud-settings-elements.webp';
+
+**coi-client** est un mod Fabric facultatif conçu pour Mysterria. Il remplace les menus en coffre et
+l'encombrement de la barre d'action par des écrans natifs et des éléments de HUD, et il donne un petit bonus d'Interprétation.
+
+Rien sur le serveur n'a besoin du mod. Chaque écran qu'il dessine a une version en menu de coffre, que tu vois
+si tu ne l'installes pas, si tu joues sur Bedrock via Geyser, si tu as une version dépassée ou si tu désactives une fonction.
+
+<Figure src={titleScreen} alt="L'écran titre de coi-client, avec les 22 icônes de Voie en orbite autour du logo" />
+
+---
+
+### L'obtenir
+
+Le mod demande Fabric sur Java Edition. La dernière version est la **1.2.3**, faite pour Minecraft **26.2**.
+Télécharge-la sur [GitHub Releases](https://github.com/ikeepcalm/coi-client/releases),
+[Modrinth](https://modrinth.com/mod/coi-client) ou
+[CurseForge](https://www.curseforge.com/minecraft/mc-mods/coi-client).
+
+Chaque joueur reçoit un message unique sur le mod quelques secondes après son arrivée. Ensuite, seuls
+les Beyonders reçoivent des rappels, toutes les 6 heures sans le mod et toutes les 72 heures avec, pour confirmer que le
+bonus marche. Le mod est presque indispensable pour profiter de tous les effets visuels de la cérémonie d'ascension.
+
+---
+
+### Ce qu'il change
+
+Avec le mod installé et ses fonctions activées :
+
+- Ton Dossier Beyonder, ta liste de capacités, la visibilité sur la carte, les écrans du Panthéon et du trône et plus encore s'ouvrent
+  comme des **fenêtres natives** au lieu de grilles d'inventaire.
+- Le **Dossier Beyonder** montre la Séquence, la Spiritualité, la Folie, la progression d'Interprétation et ses sources dans
+  un seul panneau, à côté du modèle de ton personnage. Son onglet **Destinations** ouvre tous les autres écrans.
+- Un **sélecteur de capacités et un HUD de raccourcis** te permettent de lancer par catégorie et d'associer des capacités à des touches. Le
+  HUD de raccourcis peut être désactivé.
+- Une **barre de vie Beyonder** affiche tes vrais PV Beyonder au lieu de simples cœurs, dans les styles Hearts +
+  Numbers, Bar, Ornate Bar ou Segments. Le retour des dégâts en PvP est plus clair, et une **barre de Spiritualité
+  déplaçable** remplace la barre de boss vanilla. Voir [Santé](/fr/magic/health/).
+- Survoler n'importe quel ingrédient Beyonder affiche sa Voie, sa Séquence et s'il est principal ou
+  secondaire.
+- Des **barres de ressources** remplacent les barres en symboles des réserves et charges de capacités dans ta barre d'action.
+- Les changements physiques que donnent certaines Voies, comme les cornes d'Abyss ou les oreilles de Demoness, s'affichent comme de vrais
+  **traits d'apparence** cosmétiques.
+- Les **effets visuels de la cérémonie d'ascension** sont plus riches, et les **Impact Frames** ajoutent une image figée façon anime pour
+  les plus gros coups du jeu.
+- L'**icône de Voie quitte ton inventaire**, et le menu Beyonder passe sur la touche **M**.
+- Tu reçois aussi une notification avec la [Marée quotidienne](/fr/guides/tides/) du jour à la connexion, des sons sur les effets
+  visuels, des hallucinations quand ta Folie est haute, un tutoriel à la première connexion (rejoue-le avec **Show Tutorial
+  Again** dans les réglages) et la Rich Presence Discord.
+
+### Touches par défaut
+
+| Touche | Action |
+|---|---|
+| **M** | Ouvrir le menu Beyonder |
+| **K** | Ability Bindings |
+| **G** | Ability Wheel |
+| **Alt gauche** (maintenu) | Lancement par gestes |
+| **Z, X, C, V, B, N** | Emplacements de capacité 1 à 6 |
+
+Change-les dans les Commandes de Minecraft, où le mod a sa propre catégorie. Des touches qui ouvrent directement certains
+écrans, comme tes capacités, existent aussi mais ne sont pas attribuées tant que tu ne les règles pas.
+
+<Figure src={dossier} alt="Le Dossier Beyonder en écran natif" />
+
+<Figure src={destinations} alt="L'onglet Destinations du Dossier Beyonder, depuis lequel on atteint tous les autres écrans" />
+
+<Figure src={catalogue} alt="Le catalogue des capacités" />
+
+<Figure src={uniqueness} alt="L'écran de l'Unicité" />
+
+<Figure src={mythicalForm} alt="L'écran Mythical Creature Form" />
+
+Le catalogue des capacités liste pour chaque sort sa description, son type, sa catégorie, son coût en Spiritualité et son temps de recharge.
+Le sélecteur de capacités n'affiche que le nom et le type de chaque capacité, pour que tu en choisisses une vite.
+
+<Figure src={selector} alt="Le sélecteur de capacités" />
+
+La plaque de personnage du HUD remplace les barres séparées de Folie, de réserve et d'Interprétation par un seul panneau
+qui montre aussi ton skin, ta Voie et ta Séquence.
+
+<Figure src={characterPlate} alt="La plaque de personnage du HUD" contain />
+
+Tu peux déplacer chaque partie du HUD, y compris chaque raccourci de capacité, pour obtenir la disposition que tu veux.
+
+<Figure src={hudArrange} alt="Le HUD en mode Arrange on screen, avec chaque élément prêt à être déplacé" />
+
+L'écran des réglages ne garde que les options que tu risques de changer.
+
+<Figure src={hudSettingsAbility} alt="L'écran des réglages du mod" contain />
+
+<Figure src={hudSettingsElements} alt="D'autres réglages du mod" contain />
+
+---
+
+### Lancement par gestes
+
+Au lieu des raccourcis, tu peux associer une capacité à une forme et la lancer en dessinant cette forme pendant que tu
+maintiens **Alt gauche**. Les **9 formes** sont le cercle, le V, le Z, la ligne vers le bas, le chevron, le triangle, le carré, le crochet et l'arc.
+
+---
+
+### Menus natifs et `/coi menu native`
+
+Les menus natifs sont activés par défaut dès que le mod est connecté. Pour retrouver les menus en coffre, par exemple
+quand le mod ne sait pas encore dessiner un écran, lance cette commande.
+
+```
+/coi menu native
+```
+
+Elle bascule entre les écrans du mod et les menus en coffre. Le choix est enregistré sur le serveur, donc il
+te suit sur n'importe quel client.
+
+---
+
+### Le bonus de fidélité
+
+Une version à jour du mod donne **+2 % d'[Interprétation](/fr/magic/acting/)** de chaque source et des **temps de recharge
+5 % plus courts** pour les méthodes d'Interprétation. Une très vieille version qui ne termine pas son échange avec le serveur
+ne rapporte rien, alors garde le mod à jour.
+
+`/coi acting` indique le bonus du Client Mod quand il est actif. Si quelque chose te semble toujours bizarre, demande à un membre
+du staff. Il peut vérifier ce que le serveur voit de ton client.

@@ -1,0 +1,99 @@
+---
+title: "Rituels"
+description: "Comment marchent les rituels Beyonder sur Mysterria : scores de rituel des Séquences 8 à 0, /ritual status, nouveaux tirages, crédit de rituel, Ritual Books et ce que coûte un rituel sauté."
+sidebar:
+  label: Rituels
+  order: 6
+---
+
+import {Figure} from '~/components/mdx';
+import ritualStatus from '~/assets/magic/rituals-status.webp';
+import ritualTask from '~/assets/magic/rituals-task.webp';
+
+À partir de la Séquence 8, chaque progression a un **rituel**, une liste personnelle de **progrès** Minecraft à terminer avant de boire la potion suivante. Le sauter coûte de la Folie.
+
+Ta **première potion (Séquence 9) ne demande aucun rituel.**
+
+## Comment marche un rituel ?
+
+Quand tu atteins une Séquence, le jeu te donne une série de progrès au hasard pour la Séquence **suivante**. La difficulté de chaque progrès vaut un certain nombre de points, et ta série atteint le score dont cette Séquence a besoin. La série ne change pas quand tu te déconnectes.
+
+| Séquence suivante | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+|---|---|---|---|---|---|---|---|---|---|
+| **Score nécessaire** | 2 | 5 | 9 | 12 | 16 | 20 | 24 | 28 | 30 |
+
+| Difficulté | Points |
+|---|---:|
+| Trivial | 1 |
+| Easy | 2 |
+| Medium | 3 |
+| Hard | 4 |
+| Expert | 6 |
+| Master | 8 |
+| Legendary | 10 |
+| Exotic | 15 |
+| Mythic | 20 |
+
+Quelques règles façonnent ta série.
+
+- Les tâches **Trivial** n'apparaissent que pour les rituels jusqu'à la Séquence 5.
+- Les tâches **Legendary, Exotic et Mythic** n'apparaissent qu'à partir du rituel de la Séquence 4.
+- Les tâches dans **le Nether** n'apparaissent qu'une fois que tu es de Séquence 7 ou plus puissant, et celles dans **l'End** une fois que tu es de Séquence 4 ou plus puissant.
+
+## Comment vérifier mon rituel ?
+
+- `/ritual status` affiche ton score, par exemple « 7/9 ritual score completed ».
+- Pour voir **quels** progrès il te faut, porte sur toi la formule de ta prochaine Séquence. C'est soit une formule complète, soit sa **Recipe Page 3** (la page du rituel). Sans elle, tu ne vois que le score.
+- `/ritual view <sequence>` ouvre tes tâches dans un menu. Lire la page du rituel d'une formule te donne aussi un lien cliquable vers ce menu.
+
+<Figure src={ritualStatus} alt="Le résultat de /ritual status dans le chat pour un Fool en route vers la Séquence 3, avec 0/20 ritual score completed et un conseil pour obtenir le livre de formule" caption="Sans la formule, /ritual status n'affiche que ton score." contain />
+
+<Figure src={ritualTask} alt="Le menu de rituel pour Fool Séquence 8 avec l'infobulle de la tâche Boned, réduire des os en poudre d'os, non terminée, score de progression 0/2" caption="Avec la formule en main, /ritual view montre chaque tâche. Survole une tâche pour la lire." contain />
+
+## Puis-je retirer une tâche ?
+
+Si une tâche est impossible, buguée ou déraisonnable, tu peux demander au staff de la remplacer.
+
+1. Ouvre `/ritual view <next sequence>` en portant la formule ou la page 3.
+2. Fais **Maj + clic** sur la tâche.
+3. Choisis une raison (par exemple « Impossible on this server » ou « Appears to be bugged ») et envoie-la.
+
+Le staff examine la demande et l'accepte ou la refuse. Tu ne peux pas demander un nouveau tirage pour une tâche déjà terminée, et tu ne peux avoir qu'une seule demande en attente par tâche.
+
+## Crédit de rituel
+
+À partir du rituel de la Séquence 5, certaines activités comptent comme **crédit de rituel** et remplissent une partie de ton score sans progrès. Chaque type ne compte qu'une fois par rituel.
+
+| Activité | Points | Rituels |
+|---|---|---|
+| Assister à un office dans un site d'église actif | 1 | Séquences 5 à 0 |
+| Terminer une prime d'Interprétation | 1 | Séquences 5 à 0 |
+| Accomplir un rituel narratif approuvé par le staff | 2 | Séquences 5 à 0 |
+| Mener une guerre des sièges jusqu'à son verdict | 3 | Séquences 3 à 0 |
+| Garder ton Unicité face à un défi payé | 3 | Séquences 2 à 0 |
+
+Le crédit est plafonné par rituel, à 3 points à la Séquence 5, 4 à la 4, 5 à la 3, 6 à la 2, 7 à la 1 et 10 à la 0.
+
+L'ascension à la Séquence 0 demande aussi son propre **rituel narratif** certifié par le staff. Voir [Séquence 0](/fr/magic/sequence-zero/).
+
+## Ritual Books
+
+Un **Ritual Book** te permet de sauter des tâches de rituel. Fais un clic droit dessus et choisis la tâche à sauter.
+
+| Livre | Saute | Boutique des Ancres des Dieux Extérieurs (`/oga rewards`) |
+|---|---|---|
+| Ritual Book (Tier I) | 1 tâche | 160 points, 2 par semaine |
+| Ritual Book (Tier II) | 2 tâches | 300 points, 1 par semaine |
+| Ritual Book (Tier III) | Toutes les tâches du rituel | 550 points, 1 par mois |
+
+Les Ritual Books se trouvent aussi dans les échanges de Helping Cards des [donjons](/fr/guides/dungeons/).
+
+## Et si je saute le rituel ?
+
+Tu peux toujours boire sans terminer le rituel, mais la partie manquante coûte de la Folie en proportion de ce qui reste. Un rituel entièrement sauté coûte **40 % de Folie temporaire** et **10 % de Folie permanente**. Un rituel à moitié fait coûte la moitié, soit 20 % de temporaire et 5 % de permanente.
+
+L'écran de confirmation affiche le coût exact avant que tu boives. Un rituel incomplet annule aussi un [changement de Voie sûr](/fr/magic/pathways/#puis-je-changer-de-voie-). Plus de détails sur les coûts dans [Folie et Mutation](/fr/magic/mutation/#coûts-de-progression).
+
+:::caution[La Folie permanente s'accumule]
+La Folie permanente ne diminue jamais avec le temps. Quelques rituels sautés peuvent te laisser un plancher élevé qui rend chaque progression suivante plus dangereuse.
+:::

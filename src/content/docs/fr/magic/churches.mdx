@@ -1,0 +1,160 @@
+---
+title: "Débuter avec les Églises"
+description: "Comment fonder ou rejoindre une église sur Mysterria, comment prier, ce que fait chaque rôle d'église et les commandes utiles. Un guide des religions de Lord of the Mysteries (LOTM)."
+sidebar:
+  label: Pour commencer
+  order: 33
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import churchStatus from '~/assets/magic/church-status.webp';
+import corePlaced from '~/assets/magic/church-core-placed.webp';
+import coreRecipe from '~/assets/magic/church-core-recipe.webp';
+
+Une **église** est une religion menée par des joueurs, construite autour d'un chef, d'une Voie, de membres qui prient et de sites d'église bien réels. Ses membres reçoivent des bonus d'Interprétation et de Folie qui grandissent tant que l'église reste active.
+
+La gestion des sites, des branches et des guerres d'églises est expliquée dans [Gestion de l'église](/fr/magic/church-management/), et les chiffres exacts des bonus sont dans [Avantages et ancres des églises](/fr/magic/church-perks/).
+
+## Qu'apporte une église à ses membres ?
+
+- Un **bonus d'Interprétation** en plus de tes gains d'Interprétation normaux.
+- Un **bonus de récupération de Folie** qui aide la Folie récupérable à baisser plus vite.
+- Un **allègement du plancher de Folie** pour les Séquences 4 et plus puissantes (voir [plus bas](#allègement-du-plancher-de-folie)).
+- Des **bénédictions** et des **dons** des responsables de l'église, pour aider avec la Folie, la Fatigue et la Spiritualité.
+- Des **effets de prière** près des sites d'église.
+- Un **Church Vault** partagé pour les [Artefacts scellés](/fr/magic/sealed-artifacts/).
+- Des **alertes de danger** qui préviennent le chef, les co-chefs, les Anges et les Head Deacons quand un membre a des ennuis.
+
+Aucun de ces avantages n'est fixe. Ils grandissent avec les membres actifs, les prières récentes, l'activité des sites, la correspondance de Voie et d'autres signes d'une église en bonne santé.
+
+## Comment fonder une église ?
+
+Il te faut :
+
+| Condition | Valeur |
+|---|---|
+| Beyonder | Oui |
+| Séquence | **4 ou plus puissante** |
+| Église actuelle | Tu ne dois pas être membre, chef ou co-chef d'une autre église |
+| Délai | **14 jours** après avoir quitté une église, en avoir été retiré ou l'avoir dissoute |
+
+Chaque église commence avec un **Church Core**.
+
+1. Fabrique un Church Core (recette plus bas).
+2. Pose-le là où doit se trouver le site principal de ton église.
+3. Tape le nom de l'église dans le chat quand on te le demande.
+4. Gère l'église en cliquant sur le noyau ou avec `/coi church menu`.
+
+<Figure src={corePlaced} alt="Un Church Core posé" caption="Un Church Core posé." />
+
+### Recette du Church Core
+
+<Figure src={coreRecipe} alt="Recette de fabrication du Church Core" contain />
+
+| Rangée | Objets |
+|---|---|
+| Haut | Bloc de diamant, étoile du Nether, bloc de diamant |
+| Milieu | Balise, table d'enchantement, balise |
+| Bas | Bloc de netherite, obsidienne, bloc de netherite |
+
+Un Church Core est lié au joueur qui l'a fabriqué ou reçu, donc personne d'autre ne peut poser ton noyau. Ne le perds pas.
+
+## Comment rejoindre une église ?
+
+- Le chef ou un co-chef de l'église t'invite avec `/coi church add <player>`. Accepte avec `/coi church accept` dans les **5 minutes**.
+- Si tu psalmodies le [Nom honorifique](/fr/magic/honorific-names/) d'un membre de l'église, il peut aussi te proposer une invitation.
+
+Il n'y a pas de limite de membres. Tout le monde peut rejoindre, y compris les joueurs d'autres Voies et les non-Beyonders, mais ce sont les membres de la Voie de l'église qui comptent le plus. Le délai de 14 jours après avoir quitté une église s'applique aussi pour en rejoindre une nouvelle.
+
+Les nouveaux membres n'ont pas tout de suite tous les avantages. Tu commences à **20 %** et tu atteins la pleine valeur au bout de **14 jours** (21 jours si tu viens d'une autre église).
+
+### Partir
+
+Utilise `/coi church leave`. Un chef ne peut pas partir. Il doit d'abord confier l'église à quelqu'un d'autre avec `/coi church ownership handoff <player> confirm`, ou la dissoudre avec `/coi church disband` (tu as alors 45 secondes pour taper le nom exact de l'église dans le chat pour confirmer).
+
+## Comment prier ?
+
+La prière garde les bonus de l'église en vie. Un membre ne compte plus pour l'église après **14 jours** sans prier, ou 14 jours sans se connecter.
+
+Tu peux prier avec :
+
+- `/coi church pray`
+- le bouton de prière dans le menu de l'église
+- la psalmodie complète du [Nom honorifique](/fr/magic/honorific-names/) de n'importe quel membre de l'église, ligne par ligne dans le chat (ça compte comme une prière extérieure)
+
+| Règle de prière | Valeur |
+|---|---|
+| Portée à pleine force | À moins de **100 blocs** d'un site d'église actif |
+| Loin d'un site | Compte à **10 %** de sa force |
+| Durée du lien de prière | **30 minutes** |
+| Recharge des effets de prière | **12 heures** |
+
+Le message de prière t'indique exactement ce que tu as reçu. Si tes avantages te semblent faibles, la première chose à faire est de faire prier les membres près d'un site d'église.
+
+## Que font les rôles de l'église ?
+
+| Rôle | Ce qu'il fait |
+|---|---|
+| **Chef** | Possède l'église et fixe sa Voie. Pose les noyaux, gère les membres, les sites et les Anges. Ne compte pas comme une ancre pour sa propre église |
+| **Co-chef** | Une autorité proche de celle du chef sur la plupart des systèmes de l'église. **2** au maximum. Peut gérer un QG régional. Ne compte pas comme une ancre de membre |
+| **Ange** | Demande la **Séquence 3** ou plus puissante. Bénédictions et dons puissants, droits sur le coffre. Places : **3**, plus 1 par branche active. S'il y a plus d'Anges que de places, les effets des Anges sont mis en pause |
+| **Head Deacon** | Dirige un site d'église et veille à ce qu'il soit couvert |
+| **Bishop** | Soutient un site. **2** au maximum par site |
+| **Regional Manager** | Dirige un QG régional |
+| **Follower** | Prie et ajoute du poids d'ancre. Devient Junior Follower après 3 jours, Follower après 7 et Senior Follower après 14 |
+
+Les rôles de site sont expliqués dans [Gestion de l'église](/fr/magic/church-management/).
+
+## Chat de l'église
+
+Parle à toute ton église avec `/coi church chat <message>`, ou commence un message de chat normal par `!c`, `!cc` ou `!church`, par exemple `!c rendez-vous à la cathédrale`.
+
+## Allègement du plancher de Folie
+
+À partir de la Séquence 4, chaque Beyonder a un plancher de Folie de divinité, une Folie que la récupération ne peut pas retirer. Une église en bonne santé abaisse ce plancher pour ses membres, surtout pour les chefs et les co-chefs. Un dieu tout neuf, par exemple, reste à environ 30 % jusqu'à ce que sa congrégation grandisse.
+
+Les planchers, la formule de l'allègement et les plafonds par rôle sont dans [Avantages et ancres des églises](/fr/magic/church-perks/#allègement-du-plancher-de-folie). [Folie et Mutation](/fr/magic/mutation/) explique la Folie en général.
+
+<Notice tone="info" title="Cohortes Red Priest">
+La [cohorte Chain of Command](/fr/magic/sequence-zero/#les-cohortes-red-priest-à-la-place-dune-église) d'un Red Priest donne son propre allègement de plancher aux membres qui n'ont pas d'église active. Ce n'est pas un rôle d'église.
+</Notice>
+
+## Églises et dieux
+
+Une église compte énormément sur la route de la [Séquence 0](/fr/magic/sequence-zero/). Un prétendant a besoin que son église porte **20** ancres, et il doit en être le chef, un co-chef ou un Ange. Assister à **10** offices d'église fait partie des hauts faits légendaires.
+
+Une fois qu'un dieu siège sur un trône, être membre d'une église ne donne plus de bonus de statistiques en soi. Ça permet seulement au dieu de te joindre avec un **Behest**. Chaque membre a un interrupteur de dévotion. Le couper est immédiat, mais le rallumer prend une semaine.
+
+## Où trouver le menu de l'église ?
+
+- `/coi church menu`, ou clique sur ton Church Core
+- l'emplacement de l'église (une balise) dans le menu de ton personnage, `/coi menu character`
+- le menu Churches du [Client Mod](/fr/guides/client-mod/) (touche M par défaut)
+
+<Figure src={churchStatus} alt="Le menu de l'église avec l'infobulle Church Status qui liste la congrégation, la force des ancres, le rang et la stabilité" caption="Le menu de l'église. Survole la première icône pour voir l'état de ton église." contain />
+
+## Commandes pour les membres
+
+| Commande | Ce qu'elle fait |
+|---|---|
+| `/coi church menu` | Ouvrir le menu de l'église |
+| `/coi church accept` | Accepter la dernière invitation |
+| `/coi church leave` | Quitter ton église |
+| `/coi church pray` | Prier |
+| `/coi church chat <message>` | Chat de l'église (ou `!c <message>`) |
+| `/coi church info` | Les détails de ton église |
+| `/coi church members` | La liste des membres |
+| `/coi church status` | La santé de l'église en un coup d'œil |
+| `/coi church perks` | Tes avantages actuels et ce qui les limite |
+| `/coi church acting` | Ton bonus d'Interprétation d'église |
+| `/coi church pathway progress` | Le soutien pour ta propre Voie |
+| `/coi church pathway <pathway> progress` | Le soutien pour une autre Voie de ton église |
+| `/coi church my-site` | Le site d'église qui t'est attribué |
+| `/coi church cooldowns` | Tes temps de recharge d'église |
+| `/coi church top [pathway]` | Les églises les plus puissantes, en tout ou pour une Voie |
+| `/coi church vault` | Ouvrir le Church Vault |
+| `/coi church artifacts list` | Les artefacts rangés par ton église |
+| `/coi church artifact request <artifactId>` | Demander à emprunter un artefact |
+| `/coi church artifact return` | Rendre un artefact emprunté |
+
+Les commandes des chefs et des responsables sont sur [Gestion de l'église](/fr/magic/church-management/#commandes-pour-les-chefs-et-les-responsables).

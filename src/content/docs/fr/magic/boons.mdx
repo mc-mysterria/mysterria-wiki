@@ -1,0 +1,103 @@
+---
+title: "Grâces"
+description: "Les Grâces sur Mysterria, le serveur Minecraft LOTM : les dix Grâces des Dieux Extérieurs, comment obtenir un Jeton de Grâce et comment faire monter une Grâce jusqu'à la Séquence 5 par le sacrifice."
+sidebar:
+  order: 42
+---
+
+import {Figure} from '~/components/mdx';
+import boonShop from '~/assets/magic/boons-token-in-shop.webp';
+import altarMenu from '~/assets/magic/boons-sacrificial-altar.webp';
+
+Une Grâce est une seconde Voie, plus petite, accordée par un Dieu Extérieur. Tu la gardes à côté de ta Voie normale, et elle te donne ses propres capacités.
+
+Les Grâces ne marchent pas comme les Voies normales :
+
+- Une Grâce va de la **Séquence 9 à la Séquence 5**, jamais plus loin.
+- Elle n'a **ni barre d'Interprétation, ni potions, ni rituels**. Utiliser ses capacités ne la fait pas progresser.
+- Elle ne progresse qu'en **sacrifiant** des ingrédients sur un **Autel sacrificiel**.
+- Tu ne peux avoir **qu'une Grâce à la fois**.
+
+## Quelles Grâces existent ?
+
+Il y en a dix. La page de chacune sur le site principal liste ses capacités.
+
+| Grâce (nom en jeu) | Page du site principal |
+|---|---|
+| Aeon | [aeon](https://www.mysterria.net/en/pathways/aeon) |
+| Chaos Primogenitor | [chaos](https://www.mysterria.net/en/pathways/chaos) |
+| Chaos Mist | [chaosmist](https://www.mysterria.net/en/pathways/chaosmist) |
+| Condenser | [condenser](https://www.mysterria.net/en/pathways/condenser) |
+| Devouring | [devouring](https://www.mysterria.net/en/pathways/devouring) |
+| Eternal Edict | [edict](https://www.mysterria.net/en/pathways/edict) |
+| Everlasting | [everlasting](https://www.mysterria.net/en/pathways/everlasting) |
+| Patriarch | [patriarch](https://www.mysterria.net/en/pathways/patriarch) |
+| Second Law | [secondlaw](https://www.mysterria.net/en/pathways/secondlaw) |
+| Sublunary Eye | [sublunary](https://www.mysterria.net/en/pathways/sublunary) |
+
+## Comment obtenir une Grâce ?
+
+Fais un clic droit sur un **Jeton de Grâce** pour recevoir cette Grâce à la Séquence 9.
+
+| Source | Quelles Grâces | Détails |
+|---|---|---|
+| Boutique de récompenses des [Ancres des Dieux Extérieurs](/fr/guides/outer-gods-anchors/) (`/oga rewards`) | Les dix | 900 Contribution Points chacune, au plus 1 de chaque Grâce par mois |
+| Battle Pass, piste gratuite | Second Law | Palier 41 du pass actuel |
+| Battle Pass, piste premium | Devouring | Palier 37 du pass actuel |
+| Récompense de traducteur | N'importe laquelle | Les [traducteurs Weblate](https://www.mysterria.net/en/news/multilanguage-support-weblate-translator-bounties) acceptés peuvent choisir une Grâce |
+
+Il existe aussi des fragments de Jeton de Grâce. Dix fragments se combinent en un jeton.
+
+<Figure src={boonShop} alt="La boutique /oga rewards avec l'infobulle du Jeton de Grâce Aeon, prix 900, acheté 0/1, réapprovisionné le 1er à 00:00 UTC" caption="Un Jeton de Grâce dans la boutique /oga rewards, avec son prix et sa limite mensuelle." contain />
+
+### Et si j'ai déjà une Grâce ?
+
+Utiliser un second Jeton de Grâce ouvre un écran **Choose a Boon to Replace**, puis **Confirm Boon Replacement**. L'ancienne Grâce est **perdue pour de bon**, avec sa Séquence et sa progression de sacrifice. Tu ne peux pas utiliser un jeton pour la Grâce que tu as déjà.
+
+## Comment faire progresser ma Grâce ?
+
+1. **Construis un Autel sacrificiel.** Son plan vient d'un Parchemin d'autel trouvé dans le [butin](/fr/magic/loot/). Un plan trouvé est un autel de préparation ou un Autel sacrificiel avec autant de chances pour chacun, et il est Crude 65 % du temps, normal 25 % et Grand 10 %.
+2. **Ouvre l'autel** et places-y des ingrédients Beyonder ou des Caractéristiques Beyonder.
+3. **Confirme l'offrande.** Sa valeur s'ajoute à la barre de sacrifice de ta Grâce.
+4. Quand la barre est pleine, le Dieu Extérieur reconnaît ton tribut et ta Grâce monte d'une Séquence.
+
+<Figure src={altarMenu} alt="Le menu de l'Autel sacrificiel avec son infobulle de progression à 3148 sur 7871, 39 pour cent, Séquence visée 8" caption="Le menu de l'Autel sacrificiel. Survole la barre en haut pour voir ta progression." contain />
+
+### Que puis-je sacrifier ?
+
+Seulement des objets de la Séquence **vers laquelle** tu progresses, ou plus puissants. Si ta Grâce est de Séquence 9 et que tu vises la Séquence 8, les ingrédients de Séquence 9 sont refusés (« This ingredient is too weak for your current advancement »). Les ingrédients et Caractéristiques de **n'importe quelle** Voie comptent.
+
+Chaque objet vaut une valeur de base, plus **10 % pour chaque Séquence** au-dessus de ta cible :
+
+| Séquence de l'objet | Ingrédient | Caractéristique Beyonder |
+|---|---|---|
+| 8 | 100 | 400 |
+| 7 | 150 | 650 |
+| 6 | 200 | 800 |
+| 5 | 250 | 1 000 |
+| 4 | 300 | 1 200 |
+| 3 | 350 | 1 500 |
+| 2 | 400 | 1 800 |
+| 1 | 450 | 2 000 |
+
+### Combien de points faut-il pour chaque Séquence ?
+
+| Monter à | Séquence 8 | Séquence 7 | Séquence 6 | Séquence 5 |
+|---|---|---|---|---|
+| Points nécessaires | 7 871 | 13 824 | 21 073 | 33 177 |
+
+Par exemple, passer de la Séquence 9 à la 8 sur un Autel sacrificiel normal demande environ 79 ingrédients de Séquence 8 (100 chacun), ou 48 ingrédients de Séquence 7 (150 x 1,1 = 165 chacun).
+
+### Quel autel construire ?
+
+| Autel | Points | Risque |
+|---|---|---|
+| Crude Sacrificial Altar | x0,7 | Quand la barre se remplit, il y a **15 % de chances** que le rituel échoue. Tout ce que tu as offert est perdu et la barre repart à zéro |
+| Sacrificial Altar | x1,0 | Aucun |
+| Grand Sacrificial Altar | x1,3 | Aucun |
+
+Les Autels sacrificiels ne servent qu'aux Grâces. Tu ne peux pas y préparer de potions.
+
+:::danger[Ta Grâce ne peut pas dépasser ta Voie principale]
+Ta Grâce ne peut jamais être d'une Séquence plus puissante que ta Voie principale. Si la barre se remplit mais que la nouvelle Séquence de la Grâce serait plus puissante, la progression est refusée **et la barre repart à zéro**. Fais d'abord progresser ta Voie principale.
+:::

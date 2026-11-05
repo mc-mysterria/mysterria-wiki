@@ -1,0 +1,128 @@
+---
+title: "Ancres des Dieux Extérieurs"
+description: "Les Ancres des Dieux Extérieurs sur Mysterria, le serveur Minecraft LOTM : comment marche l'événement coopératif, la Corruption Pressure, les Contribution Points et la boutique /oga rewards."
+sidebar:
+  order: 38
+---
+
+import {Figure} from '~/components/mdx';
+import rewardShop from '~/assets/oga/reward-shop.webp';
+
+Les Ancres des Dieux Extérieurs (OGA) sont un événement coopératif pour tout le serveur, où les joueurs repoussent la corruption d'un Dieu Extérieur et brisent son Cœur. Les **Contribution Points** que tu gagnes achètent des récompenses dans `/oga rewards`, la seule boutique qui vend tous les Jetons de Grâce.
+
+Les autres joueurs ne peuvent pas te blesser dans une ancre et tu ne peux pas y mourir, donc c'est sûr pour toutes les Séquences.
+
+## Quels Dieux Extérieurs peuvent apparaître ?
+
+Chaque ancre appartient à l'un des cinq Dieux Extérieurs. Chaque dieu a son propre aspect, son propre malus et sa propre vitesse de croissance :
+
+- Circle of Inevitability
+- Monarch of Decay (grandit le plus lentement)
+- Mother Goddess of Depravity
+- Mother Tree of Desire (grandit vite)
+- Primordial Hunger (grandit le plus vite)
+
+## Quand une ancre apparaît-elle ?
+
+Le serveur essaie de planter une nouvelle ancre environ **tous les 3 jours** (à 12 heures près), et seulement quand au moins **5 joueurs** sont en ligne. Aucune tentative ne commence entre 02:00 et 08:00, heure du serveur.
+
+| Règle | Valeur |
+|---|---|
+| Où | Seulement dans le monde normal, entre 300 et 3 000 blocs de 0, 0, jamais dans les océans ni les rivières |
+| Distance des villes | 80 à 160 blocs du claim le plus proche |
+| Combien | Au plus 3 ancres à la fois |
+
+### Phase 1 : l'incubation
+
+Pendant environ **24 heures**, la graine est cachée. Toutes les 30 minutes, le chat fait circuler une rumeur qui nomme le dieu et le temps restant, avec une courte barre de compte à rebours. Les joueurs à moins de 40 blocs de la graine entendent son bruit ambiant.
+
+### Phase 2 : l'ancre s'éveille
+
+Quand l'incubation se termine, le chat annonce le dieu et les **coordonnées**. La graine devient un **Cœur**, un bloc de magma dans une coque de bedrock. La corruption s'étend à partir de lui en vrilles, jusqu'à 400 blocs, et des défenseurs apparaissent : des [Beyonders sauvages](/fr/magic/wild-beyonders/), des PNJ hostiles et, à partir de l'étape 2, des mini-boss.
+
+`/oga where` liste chaque ancre active avec ses coordonnées, son intégrité, son étape et sa direction par rapport à toi.
+
+## Comment vaincre une ancre ?
+
+L'ancre a une barre d'**Integrity**, affichée comme une barre de boss avec son étape de 1 à 5. Tu ne peux pas frapper le Cœur tant qu'il est protégé, donc tu uses l'Integrity depuis l'extérieur :
+
+| Action | Dégâts à l'Integrity |
+|---|---|
+| Tuer un défenseur | 0,1 |
+| Tuer un PNJ | 0,5 |
+| Tuer un mini-boss | 3 |
+| Détruire le Nexus d'un secteur | 5 |
+
+Si personne ne se bat, l'ancre se soigne lentement, mais jamais au-dessus de la meilleure étape que les joueurs ont atteinte. La progression est gardée d'une soirée à l'autre.
+
+### Phase 3 : le raid du Cœur
+
+Sous **10 % d'Integrity**, la coque se fissure avec des brèches de lave. Casse le Cœur de magma dans les **45 minutes**. Si tu échoues, le Cœur se protège pendant 2 minutes, regagne 15 d'Integrity et grandit plus vite pendant un moment.
+
+Quand le Cœur se brise, les défenseurs disparaissent et le terrain se restaure tout seul dans les 24 heures qui suivent.
+
+:::note[Tes constructions sont en sécurité]
+La corruption n'entre jamais dans les terrains revendiqués et ne touche jamais les conteneurs, panneaux, lits ou blocs semblables. Les constructions non revendiquées peuvent être envahies, mais tout est restauré une fois l'ancre vaincue.
+:::
+
+### Que devient une ancre que personne ne combat ?
+
+Après 72 heures sans que personne ne la combatte, le dieu s'affame. Il arrête de se soigner, perd de l'Integrity et finit par s'effondrer tout seul. Les participants ne reçoivent alors que **la moitié** de ce qu'une victoire aurait rapporté.
+
+## Quels outils aident contre la corruption ?
+
+| Outil | Comment il marche |
+|---|---|
+| **Nexus** | Le terrain est divisé en 5 secteurs, chacun avec un Nexus (un bloc d'obsidienne pleureuse) près du combat. Mine-le (en plusieurs coups) pour arrêter pour de bon la croissance dans cette direction et blesser l'ancre |
+| **Rituel** | 3 joueurs ou plus restent à moins de 6 blocs d'un Nexus pendant 20 secondes. La croissance ralentit à 40 % pendant 10 minutes. Chaque Nexus peut en accueillir un toutes les 15 minutes |
+| **Warding Pylon** | Pose une **magnétite** dans la zone, puis fais un clic droit dessus avec de la **poudre de pierre lumineuse** pour l'alimenter (1 minute par poudre, jusqu'à 30 minutes). Un Pylon alimenté retient la corruption dans sa direction, empêche les défenseurs d'apparaître à moins de 24 blocs et vide ta Corruption Pressure. Jusqu'à 3 par ancre |
+| **Censer** | S'achète dans `/oga rewards`. Fais un clic droit sur un bloc corrompu pour rendre le sol normal dans un petit rayon. 5 charges, espacées de 15 secondes. Assez de purification fait reculer la limite |
+
+Les Pylons et les Censers rapportent aussi des Contribution Points, donc tu peux aider sans te battre.
+
+## Qu'est-ce que la Corruption Pressure ?
+
+Dans la zone, une barre de **Corruption Pressure** se remplit. Les Séquences faibles la remplissent plus vite, donc un Beyonder de Séquence 9 la remplit environ dix fois plus vite qu'un Séquence 0.
+
+- Tuer des ennemis réduit la pression, et rester près d'un Pylon alimenté la vide.
+- Au-dessus de 50 %, le malus propre au dieu commence à t'affecter, de plus en plus fort à mesure que la barre se remplit.
+- À 100 %, tu subis 1 dégât par seconde (jamais mortel). Au bout de 8 secondes, tu es projeté à 15 blocs hors de la zone avec un peu de Folie (sans jamais dépasser 95), et ta pression repart à zéro.
+
+Sors pendant 30 secondes pour la laisser se vider.
+
+## Que se passe-t-il si je tombe au combat ?
+
+Des dégâts mortels dans une ancre te laissent **Downed** au lieu de mort. Tu ne peux ni bouger ni lancer de sorts, et tu brilles. Un allié qui reste accroupi à côté de toi pendant 5 secondes te relève avec 10 de vie. Si personne ne te relève dans les 45 secondes, tu es mis hors de la zone avec un court malus et tu perds 15 % de ton score pour cette ancre. Tu gardes tes objets.
+
+## Comment marchent les Contribution Points ?
+
+Tu gagnes des Contribution Points en tuant des ennemis et des mini-boss, en cassant un Nexus, en faisant des rituels, en alimentant des Pylons, en purifiant, en relevant des alliés et en tenant le terrain, avec un gros bonus pour avoir cassé le Cœur. Tenir le terrain ne compte que si tu t'es battu dans les 3 dernières minutes.
+
+Les Séquences faibles gagnent plus pour le même travail, de x1,3 à la Séquence 9 jusqu'à x0,85 à la Séquence 0. Il te faut au moins 10 points sur une ancre pour être payé. Les points sont gardés d'une ancre à l'autre, donc tu peux économiser.
+
+## Que puis-je acheter dans /oga rewards ?
+
+| Récompense | Prix | Limite |
+|---|---|---|
+| Jeton de Grâce, un pour chacune des dix [Grâces](/fr/magic/boons/) | 900 | 1 de chaque par mois |
+| [Pathway Transfer Token](/fr/guides/special-items/) | 1 200 | 1 par mois |
+| [Anti-Control Charm](/fr/guides/special-items/) | 200 | 1 par semaine |
+| Recipe Token (Séquence 9+ / 7+ / 5+ / 4+) | 50 / 110 / 220 / 380 | 4 / 3 / 2 / 1 par semaine |
+| Recipe Token (Séquence 3+) | 650 | 1 par mois |
+| Recipe Sheet Token (Séquence 7+ / 5+) | 140 / 300 | 2 / 1 par semaine |
+| Potion Token (Séquence 9+ / 7+ / 5+ / 4+) | 40 / 90 / 180 / 320 | 4 / 3 / 2 / 1 par semaine |
+| Ingredient Token | 45 | 6 par semaine |
+| Acting Bottle 500 | 15 | Pas de limite |
+| Acting Bottle 1 000 / 5 000 / 10 000 | 28 / 130 / 240 | 8 / 3 / 2 par semaine |
+| Ritual Book (Tier I / Tier II) | 160 / 300 | 2 / 1 par semaine |
+| Ritual Book (Tier III), saute tout le rituel | 550 | 1 par mois |
+| Censer | 60 | Pas de limite |
+| Warding Pylon Kit (une magnétite et 8 poudres de pierre lumineuse) | 40 | Pas de limite |
+
+La Séquence d'un jeton est la plus puissante que tu peux choisir. Un jeton « Séquence 5+ » te laisse choisir n'importe quoi de la Séquence 9 à la 5. Les limites hebdomadaires se rechargent le lundi à 00:00 UTC, les mensuelles le 1er du mois.
+
+<Figure src={rewardShop} alt="Le menu Reward Shop de /oga rewards, avec une rangée de Jetons de Grâce suivie de jetons, potions, livres et autres récompenses" caption="La boutique /oga rewards." contain />
+
+## Règles
+
+Le PvP, le vol et le grief pendant l'événement sont interdits par les [Règles](https://www.mysterria.net/en/rules). De toute façon, les tirs amis sont désactivés dans la zone corrompue, et la Folie venant des capacités des autres joueurs est bloquée.

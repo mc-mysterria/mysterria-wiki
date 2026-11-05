@@ -1,0 +1,220 @@
+---
+title: "Sièges et Usurpation"
+description: "Les limites de sièges par Voie sur Mysterria, comment l'Overflow d'Interprétation est mis de côté, et comment contester un siège de Séquence complet ou une Unicité sur ce serveur Lord of the Mysteries."
+sidebar:
+  label: Sièges et Usurpation
+  order: 30
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import leadImage from '~/assets/heroes/usurpation.webp';
+import seatReadiness from '~/assets/magic/usurpation-readiness.webp';
+
+<Figure src={leadImage} eager alt="Illustration de Lord of the Mysteries avec huit dieux côte à côte" />
+
+À partir de la Séquence 3, chaque Voie n'a que quelques sièges à chaque Séquence. Quand ils sont tous pris, la seule façon de monter est de dépenser de l'**Overflow** mis de côté pour contester un siège à son détenteur, et l'Overflow peut aussi payer le défi d'une [Unicité](/fr/magic/uniqueness/).
+
+## Combien de sièges a chaque Séquence ?
+
+Les limites sont par Voie. Les Séquences 4 et plus faibles n'ont pas de limite.
+
+| Séquence | Rang | Sièges par Voie |
+|---|---|---:|
+| 3 | Saint | 18 |
+| 2 | Ange | 9 |
+| 1 | Archange | 3 |
+| 0 | Divinité | 1 |
+
+Quand une tranche est complète, tu ne peux pas boire ta prochaine potion de la façon normale, même avec une barre d'Interprétation pleine et tous tes rituels faits. Tu peux attendre qu'un siège se libère, ou tu peux en contester un.
+
+Le [recensement des sièges](https://www.mysterria.net/en/ascension) sur le site principal montre qui occupe chaque siège en ce moment.
+
+La Séquence 0 ne se conteste jamais par une enchère de siège. Son unique trône ne s'ouvre que par la [veillée de la Séquence 0](/fr/magic/sequence-zero/).
+
+## Qu'est-ce que l'Overflow ?
+
+Une fois ta barre d'[Interprétation](/fr/magic/acting/) pleine, l'Interprétation en plus n'est pas perdue. Elle est mise de côté sous forme d'**Overflow**, une réserve séparée que tu dépenses pour l'Usurpation et pour une revendication de Séquence 0.
+
+- L'Overflow n'est pas de l'Interprétation. Il ne compte jamais pour progresser et ne s'affiche jamais dans ta barre.
+- Il n'est mis de côté que tant que ta Voie est à la **Séquence 3, 2 ou 1**. Les Séquences 4 et plus faibles ne mettent rien de côté, et un dieu de Séquence 0 n'a pas de barre du tout.
+- Ta réserve est plafonnée à **3,5 fois ta barre actuelle**.
+- Quand un gain est mis de côté, la barre d'action affiche `+N overflow`. `/coi usurp` affiche ta réserve pour chaque Voie.
+- Un jour de Tide of Diligence, l'Interprétation qui dépasserait le plafond d'une source est mise de côté en Overflow à la place (voir [Marées quotidiennes](/fr/guides/tides/)).
+
+<Notice tone="warn" title="Changer de Voie fait perdre ta réserve">
+Ton Overflow mis de côté appartient à la Voie sur laquelle tu l'as gagné. Si tu passes à une autre Voie, il est perdu.
+</Notice>
+
+### Limites hebdomadaires par source
+
+Chaque source d'Interprétation ne peut mettre de côté qu'une certaine quantité par semaine, en pourcentage de ta barre. Les limites repartent à zéro chaque lundi à 00:00 UTC.
+
+| Source | Limite hebdomadaire |
+|---|---:|
+| Jeu avec les capacités | 40 % |
+| Contenu du monde | 40 % |
+| Interaction entre joueurs | 25 % |
+| Interprétation volée | 25 % |
+| Événements | 25 % |
+| Passive | 5 % |
+| Acting Bottles | 0 % |
+| Faveur divine | 0 % |
+
+Les Acting Bottles peuvent s'acheter et s'échanger, donc elles remplissent ta barre mais ne mettent jamais d'Overflow de côté. La Faveur d'un dieu non plus.
+
+### Ce que coûtent les choses
+
+| Ta Séquence | Barre pleine | Plafond de réserve (3,5x) | Défi d'Unicité (50 %) | Enchère minimale de siège (1,75x) |
+|---|---:|---:|---:|---:|
+| 3 | 35 942 | 125 797 | 17 971 | 62 899 (pour un siège d'Ange) |
+| 2 | 47 001 | 164 503 | 23 501 | 82 252 (pour un siège d'Archange) |
+| 1 | 62 208 | 217 728 | 31 104 | aucune (la Séquence 0 passe par la veillée, mise de 31 104) |
+
+<Notice tone="info" title="Pourquoi les sièges de Saint sont durs à contester">
+Tu contestes la tranche juste au-dessus de toi, donc un siège de Saint (Séquence 3) se conteste depuis la Séquence 4. L'Overflow ne se met de côté qu'à partir de la Séquence 3, donc un joueur de Séquence 4 ne peut pas économiser pour une enchère sur un siège de Saint.
+</Notice>
+
+## Comment défier une Unicité ?
+
+Un défi d'Unicité force un nouveau calcul immédiat des scores entre toi et le détenteur actuel de l'[Unicité](/fr/magic/uniqueness/) de ta Voie. Il n'y a pas de guerre, et le verdict tombe dès que tu confirmes. Ouvre-le depuis le menu de l'Unicité (la partie **Usurpation**) ou avec `/coi usurp uniqueness <pathway>`.
+
+Pour défier, tu dois :
+
+- Être de Séquence 4 ou plus puissant sur cette Voie (en pratique de Séquence 3, puisqu'il te faut de l'Overflow).
+- Ne détenir toi-même aucune Unicité, et ne pas t'être retiré de l'évaluation des Unicités.
+- Être installé dans la Voie (voir [Tu as changé de Voie récemment ?](#tu-as-changé-de-voie-récemment-)).
+- Avoir assez d'Overflow pour la mise.
+
+La Voie doit avoir un détenteur, aucun autre défi en attente, aucun défi dans les 7 derniers jours et aucune veillée de Séquence 0 en cours pour elle.
+
+| Règle | Valeur actuelle |
+|---|---|
+| Mise | Exactement **50 %** de ta barre. Les mises plus hautes sont refusées, car elles n'apportent rien |
+| Ton multiplicateur de score | **x1,25** (le plafond) |
+| Score minimum | Ton score sans bonus doit valoir au moins **90 %** de celui du détenteur, sinon tu es remboursé en entier sans verdict |
+| Défense du détenteur | Le score du détenteur est augmenté par son accommodation, jusqu'à x1,25 à 100 % |
+| Pour gagner | Battre strictement le détenteur. En cas d'égalité, il la garde |
+| Si tu perds | 50 % de la mise brûle, le reste revient dans ta réserve |
+| Si tu gagnes | La mise est dépensée et l'Unicité passe à toi avec 0 % d'accommodation |
+| Délai | 7 jours sur cette Voie après tout verdict |
+
+L'écran de confirmation montre les deux scores, ton multiplicateur et le résultat avant que tu paies, calculés de la même façon que le vrai verdict. Si le défi ne peut pas aboutir à un verdict juste (par exemple si le détenteur n'est plus éligible, ou si le serveur redémarre avant), ta mise t'est entièrement remboursée et aucun délai ne commence.
+
+## Comment contester un siège complet ?
+
+Un défi de siège vise une tranche complète, pas un joueur précis. Tu dois déjà avoir tout ce que demande la progression, pour qu'il ne te manque qu'un siège libre. Ouvre **Contest a Seat** depuis le menu Beyonder (`/coi menu character`, ou la touche M avec le [Client Mod](/fr/guides/client-mod/)), ou utilise `/coi usurp seat <pathway>`.
+
+### La liste de contrôle
+
+Le menu les affiche comme une liste de contrôle en direct :
+
+1. Tous les sièges de la Séquence suivante sont pris.
+2. Ton Interprétation est à 100 % sur cette Voie.
+3. Tous les rituels sont terminés.
+4. La potion de la Séquence suivante est dans ton inventaire.
+5. Le limiteur de progression ne te freine pas.
+6. Tu es installé dans cette Voie.
+7. La tranche n'est pas protégée, c'est-à-dire qu'elle n'a eu aucun verdict dans les 14 derniers jours.
+8. Tu n'es pas sous un délai de nouvelle déclaration après un retrait.
+9. Tu as assez d'Overflow pour l'enchère.
+
+<Figure src={seatReadiness} alt="L'onglet Your readiness de Contest a Seat avec 5 éléments sur 9 remplis et les conditions de l'enchère en dessous" caption="La liste de contrôle et les conditions de l'enchère, montrées pour un personnage de test." />
+
+<Notice tone="info" title="Ta potion est en sécurité sous séquestre">
+Quand tu enchéris, ta potion est mise sous séquestre et son expiration s'arrête. Si tu es surenchéri, remboursé, si tu perds la guerre ou si tu te retires, elle te revient avec une expiration toute neuve, en attendant ta prochaine connexion si tu es hors ligne. Elle n'est utilisée que quand tu la bois pour entrer dans le siège que tu as gagné.
+</Notice>
+
+### L'enchère
+
+Enchère minimale = ta barre x 1,75, puis :
+
+- x1,5 pour chaque défi perdu récemment (ça s'efface au bout de 60 jours)
+- x0,5 si tu as été destitué dans les 60 derniers jours (une revanche)
+
+Tu peux enchérir plus que le minimum, jusqu'à ta réserve.
+
+### Étape 1 : la fenêtre de déclaration de 48 heures
+
+Ton enchère est payée au moment où tu la places, et le serveur est prévenu. Pendant 48 heures, toute autre personne qui remplit la liste de contrôle peut enchérir sur la même tranche. Quand la fenêtre se ferme, l'enchère la plus haute continue et toutes les autres sont remboursées en entier, potion comprise.
+
+Tu peux te retirer tant que la fenêtre est ouverte :
+
+- Dans les **15 minutes** qui suivent ta déclaration, c'est gratuit.
+- Après, **50 %** de ton enchère brûle.
+- Dans les deux cas, tu ne peux pas redéclarer sur cette tranche pendant **6 heures**.
+
+### Étape 2 : la nomination
+
+La tranche désigne le détenteur qui a le **Defense Score** le plus bas :
+
+| Partie | Poids |
+|---|---:|
+| Temps de jeu (tes 31 meilleurs jours sur les 60 derniers) | 40 % |
+| Score de religion de l'église (voir [Églises](/fr/magic/churches/)) | 25 % |
+| Capacités lancées dans les 31 derniers jours | 20 % |
+| Accommodation de l'Unicité | 15 % |
+
+Si le détenteur désigné a moins de **3 heures** de temps de jeu dans les **45 derniers jours**, il n'y a pas de guerre. Le siège est tout simplement pris.
+
+### Étape 3 : la guerre
+
+- La guerre dure **7 jours contestés**. Un jour ne compte que si le détenteur a été en ligne et présent pendant au moins **20 minutes**.
+- Les War Points viennent de vrais gains d'Interprétation, mesurés en pourcentage de la barre de chaque camp, donc des Séquences différentes s'affrontent sur l'effort fourni.
+- Le classement est annoncé une fois par jour.
+- Une limite de **21 jours** en temps réel empêche une guerre de durer pour toujours. Si le détenteur est absent depuis **48 heures** ou plus, le challenger peut se retirer gratuitement. Une guerre réellement disputée ne peut pas être abandonnée.
+- Les Marées quotidiennes ne gonflent jamais les War Points.
+
+| Source d'Interprétation | Poids en War Points |
+|---|---:|
+| Jeu avec les capacités, contenu du monde, interaction entre joueurs, événements | 1,0 |
+| Interprétation volée | 0,5 |
+| Acting Bottles, passive, Faveur divine | 0 |
+
+### Qui gagne ?
+
+| Comment la guerre s'est terminée | Résultat |
+|---|---|
+| Elle a duré ses 7 jours contestés | Le plus de War Points gagne. En cas d'égalité, le siège est conservé |
+| Limite de 21 jours atteinte, le challenger a marqué plus | Le challenger gagne |
+| Limite de 21 jours atteinte, égalité, et le challenger a marqué quelque chose | Le challenger gagne |
+| Limite de 21 jours atteinte, le détenteur n'est jamais apparu | Le challenger gagne |
+| Limite de 21 jours atteinte, le détenteur a marqué plus | Le détenteur garde le siège |
+
+### Étape 4 : après le verdict
+
+**Si le challenger gagne**, il doit se connecter dans les **48 heures** avec son Interprétation et ses rituels toujours en règle, et la potion est bue pour entrer dans le siège selon les règles normales de progression. S'il manque ce délai, le siège reste au détenteur.
+
+Le détenteur destitué alors :
+
+- Perd une Séquence, sur cette Voie seulement.
+- Garde **95 %** de la barre à la nouvelle Séquence.
+- Reçoit la **Caractéristique Beyonder** du siège qu'il a perdu, qui peut remplacer un ingrédient principal quand il prépare de nouveau une potion.
+- Peut enchérir pour une revanche à **moitié prix** pendant **60 jours**.
+
+**Si le challenger perd**, 50 % de l'enchère brûle, le reste revient, et la potion lui est rendue. La tranche est alors protégée pendant 14 jours, mais seulement si le challenger a gagné au moins 10 War Points, pour qu'un défi symbolique ne puisse pas protéger une tranche au profit d'un ami.
+
+Si une contestation se termine sans verdict (un siège se libère tout seul, l'un des deux camps change de Séquence, personne n'a enchéri, ou le staff l'annule), chaque enchère et chaque potion sont remboursées en entier et aucun délai ne commence.
+
+Mener une guerre de siège jusqu'à son verdict, gagnée ou perdue, compte comme un haut fait légendaire pour la [Séquence 0](/fr/magic/sequence-zero/).
+
+## Tu as changé de Voie récemment ?
+
+Une Voie que tu as rejointe sur le côté (une potion de changement, un transfert gratuit ou une prise de contrôle d'Avatar) au lieu de la parcourir depuis la Séquence 9 demande d'abord un temps d'installation :
+
+| Règle | Valeur |
+|---|---|
+| Blocage des défis | **30 jours** avant de pouvoir contester un siège ou une Unicité sur cette Voie |
+| Installation de l'Overflow | Mis de côté à **25 %** à l'arrivée, puis jusqu'à 100 % en **60 jours** |
+
+Les Voies sans trace d'arrivée, y compris pour chaque personnage qui existait avant cette règle, comptent comme parcourues.
+
+## Commandes
+
+| Tu veux | Commande |
+|---|---|
+| Voir ta réserve d'Overflow et tout défi en cours | `/coi usurp` |
+| Défier l'Unicité d'une Voie | `/coi usurp uniqueness <pathway>` |
+| Contester une tranche de sièges complète | `/coi usurp seat <pathway> [percent]` |
+| Te retirer d'une fenêtre ouverte ou d'une guerre bloquée | `/coi usurp withdraw` |
+
+Le `[percent]` est ton enchère en pourcentage de ta barre. Laisse-le de côté pour enchérir le minimum.

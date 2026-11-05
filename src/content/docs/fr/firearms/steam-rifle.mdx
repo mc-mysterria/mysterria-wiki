@@ -1,0 +1,56 @@
+---
+title: "Steam Rifle"
+description: "Le Steam Rifle sur Mysterria, le serveur LOTM : ses cinq pièces et où les trouver, les Rifle Rounds, la lunette et ses deux modes de rechargement."
+sidebar:
+    label: Steam Rifle
+    order: 6
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import rifleRounds from '~/assets/firearms/riflerounds.png';
+
+Le **Steam Rifle** est l'arme à longue portée avec une lunette. C'est celle qui frappe le plus fort, mais elle tire le plus lentement et ne contient que 5 balles.
+
+Ses [statistiques](/fr/firearms/#statistiques-des-armes) sont de 20 dégâts, 5 balles, 100 blocs de portée et 1,2 seconde entre deux tirs.
+
+## Comment en obtenir un ?
+
+Il te faut cinq pièces, et **aucune ne se fabrique** :
+
+- Steam Rifle Barrel
+- Steam Pipe Assembly
+- Mechanical Power Box
+- Military Rifle Stock
+- Sniper Scope
+
+Chaque fois qu'un coffre d'une structure vanilla du monde normal génère son butin, il a 25 % de chances de contenir aussi une pièce au hasard du Deathknell ou du Steam Rifle. Tu peux aussi échanger des pièces avec d'autres joueurs.
+
+Avec les cinq dans ton inventaire, fais un clic droit sur une [Weaponsmith Table](/fr/firearms/crafting/#comment-assembler-une-arme-) pour vérifier, puis Maj + clic droit pour assembler.
+
+## Quelles munitions utilise-t-il ?
+
+Seulement les **Rifle Rounds** et les Rifle Rounds spéciales faites à partir d'elles (13 types en tout).
+
+- 1 Rifle Cartridge Case, 1 Rifle Cartridge Core et 2 poudres à canon donnent **3 Rifle Rounds**.
+- 3 Brass, 1 lingot de fer et 12 poudres à canon donnent **18 balles**, les munitions qui consomment le plus de Brass.
+
+<Figure src={rifleRounds} alt="Grille de fabrication avec une Rifle Cartridge Case, un Rifle Cartridge Core et 2 poudres à canon qui donnent 3 Rifle Rounds" caption="Rifle Rounds." contain />
+
+La page [Munitions](/fr/firearms/ammunition/) donne les recettes des douilles et des noyaux, ainsi que toutes les munitions spéciales.
+
+## Comment utiliser la lunette ?
+
+Maintiens **S'accroupir** en tenant le fusil pour regarder dans la lunette, et relâche pour arrêter. Le zoom vient d'un effet de Lenteur, donc tu avances lentement en visant. La lunette n'améliore pas la [précision](/fr/firearms/#précision) à elle seule. Rester immobile, si.
+
+## Comment marche le rechargement ?
+
+Le fusil a deux modes de rechargement, selon qu'il lui reste des balles ou non.
+
+| Chargeur au moment de recharger | Ce qui se passe |
+|---|---|
+| Vide | Toutes les balles entrent ensemble au bout de **3,0 secondes**. Rien n'est utilisable avant. |
+| 1 à 4 balles restantes | La première balle entre au bout d'**1,0 seconde**, puis une de plus toutes les **0,75 seconde**. Compléter 4 balles prend 3,25 secondes. |
+
+Le tir est bloqué pendant le rechargement (« Weapon is reloading! »). Passer à un autre emplacement de la barre d'outils l'annule. En complétant, les balles déjà chargées restent dans l'arme. En rechargeant à vide, rien n'est chargé si tu annules avant la fin des 3 secondes. Il vaut donc souvent mieux compléter après un ou deux tirs plutôt que de tirer les 5 balles d'abord.
+
+Quand tu recharges à vide, le fusil prend la première pile de Rifle Rounds de ton inventaire. Quand il est en partie chargé, il ne complète qu'avec le même type de balle que celui déjà dedans.

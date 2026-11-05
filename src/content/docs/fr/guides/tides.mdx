@@ -1,0 +1,104 @@
+---
+title: "Marées quotidiennes"
+description: "Les Marées quotidiennes sur Mysterria, le serveur Minecraft Lord of the Mysteries : les sept Marées, le jour de la semaine de chacune, leurs bonus et les commandes /coi tide."
+sidebar:
+  order: 34
+---
+
+import {Figure} from '~/components/mdx';
+import bossBar from '~/assets/tides/boss-bar.webp';
+import tideStatus from '~/assets/tides/tide-status.webp';
+import tideCalendar from '~/assets/tides/tide-calendar.webp';
+
+Une Marée quotidienne est un bonus qui touche tout le serveur pendant une journée. Une seule Marée est active à la fois pour tous les joueurs, et elles suivent une rotation hebdomadaire fixe que tu peux prévoir.
+
+## Quand la Marée change-t-elle ?
+
+Une journée de Marée va de **00:00 à 24:00, heure de Kyiv** (Europe/Kyiv, soit UTC+2 en hiver et UTC+3 en été). À minuit, heure de Kyiv, la Marée suivante commence pour tout le monde, où que tu vives.
+
+## Quelles sont les sept Marées ?
+
+| Marée | Ce qu'elle fait | Multiplicateurs |
+|---|---|---|
+| **Tide of Diligence** | Chaque gain d'Interprétation est doublé | Gain d'Interprétation x2 |
+| **Hunting Tide** | Les créatures apparaissent et lâchent plus, et beaucoup plus d'ingrédients rares | Apparitions de créatures x2, butin des créatures x2, ingrédients rares x3 |
+| **Tide of Fortune** | Des coffres plus riches et une garantie plus rapide | Butin des coffres x2,5, garantie en deux fois moins d'ouvertures, butin rare x2,5 |
+| **Wild Tide** | Plus de [Beyonders sauvages](/fr/magic/wild-beyonders/) | Apparitions de Beyonders sauvages x2, limite de Beyonders sauvages x2 |
+| **Tide of Patience** | Les temps de recharge d'Interprétation sont divisés par deux | Temps de recharge d'Interprétation x0,5 |
+| **Deep Tide** | Plus de gisements à miner et d'ingrédients dans les coffres | Gisements à miner x2, ingrédients dans les coffres x2, ingrédients rares x2 |
+| **Crimson Tide** | Une [Lune cramoisie](/fr/magic/crimson-moon/) est cinq fois plus probable | Chance de Lune cramoisie x5, butin des créatures x1,5 |
+
+« Rare » veut dire **Séquence 3 ou plus puissante**, donc les Séquences 3, 2 et 1. Pendant la Hunting Tide et la Deep Tide, le bonus d'ingrédients rares s'applique au butin des créatures et aux ingrédients trouvés dans les coffres, mais pas aux gisements à miner.
+
+Pendant une Crimson Tide, chaque nuit a **50 %** de chances d'être une Lune cramoisie au lieu des 10 % habituels. Chaque nuit du monde normal principal fait son propre tirage, donc sur une journée entière de jeu tu en verras très probablement au moins une.
+
+### Quel jour de la semaine a quelle Marée ?
+
+La rotation suit l'ordre du tableau ci-dessus, donc chaque Marée tombe le même jour chaque semaine :
+
+| Jour (heure de Kyiv) | Marée |
+|---|---|
+| Lundi | Hunting Tide |
+| Mardi | Tide of Fortune |
+| Mercredi | Wild Tide |
+| Jeudi | Tide of Patience |
+| Vendredi | Deep Tide |
+| Samedi | Crimson Tide |
+| Dimanche | Tide of Diligence |
+
+Le staff peut changer la rotation ou fixer une autre Marée pour un jour, alors vérifie `/coi tide calendar` en jeu pour être sûr.
+
+### Y a-t-il des limites quand les bonus se cumulent ?
+
+Oui. Quand plusieurs bonus s'appliquent ensemble, comme une Marée plus une Lune cramoisie plus la Moon Authority de la Voie Moon, le total est plafonné.
+
+- Les apparitions de créatures sont plafonnées à **x4**.
+- Le gain d'Interprétation est plafonné à **x2,5**.
+
+Pendant la Tide of Diligence, une fois qu'une source d'Interprétation atteint son plafond, le surplus est mis de côté en Overflow au lieu de remplir ta barre. L'Overflow n'existe qu'à partir de la Séquence 3, comme l'explique [Usurpation](/fr/magic/usurpation/).
+
+## Quelle Marée m'aide le plus ?
+
+- **Séquences basses et moyennes.** Ta barre d'Interprétation est ce qui te freine, donc **Diligence** aide le plus. La **Wild Tide** aide aussi, car les Beyonders sauvages n'existent qu'aux Séquences 9 à 5.
+- **Séquence 3 et plus puissante.** Le temps de recharge de chaque méthode d'Interprétation te freine plus que la barre, donc **Patience** est ton jour. Hunting, Fortune et Deep Tide portent aussi les bonus de rang rare qui te visent.
+- **Pillage.** Garde tes tournées de coffres pour **Fortune** et ta chasse aux ingrédients pour **Hunting** ou **Deep Tide**.
+
+Le bonus de butin des créatures compte surtout pour les créatures à insigne et pour les ingrédients rares. Les [créatures Beyonder](/fr/magic/creatures/) personnalisées lâchent déjà leurs ingrédients courants presque à chaque fois.
+
+:::tip[Fortune et garantie]
+La garantie n'est vérifiée que quand tu ouvres un conteneur. Si tu es proche de ton seuil de garantie pendant la Tide of Fortune, ouvre un coffre de plus avant minuit. Ton compteur est gardé dans tous les cas, mais le seuil réduit de moitié s'arrête avec la journée.
+:::
+
+## Comment connaître la Marée du jour ?
+
+- **Carte de connexion.** Une carte dans le chat, quelques secondes après ton arrivée, montre la Marée, ce qu'elle fait et le temps restant.
+- **Notification du client.** La même carte apparaît en fenêtre surgissante si tu utilises le [Client Mod](/fr/guides/client-mod/).
+- **Rappel toutes les heures.** Une ligne dans le chat chaque heure, sautée si tu viens d'arriver ou si tu es AFK.
+- **Barre de boss.** Un compte à rebours jusqu'à la fin de la journée.
+- **Changement de jour.** Un titre et un son pour toutes les personnes en ligne quand la Marée change.
+
+<Figure src={bossBar} alt="La barre de boss de la Marée qui affiche Wild Tide avec 11 heures et 27 minutes restantes" caption="La barre de boss de la Marée fait le compte à rebours jusqu'à la fin de la journée." contain />
+
+## Quelles commandes existent ?
+
+| Commande | Ce qu'elle fait |
+|---|---|
+| `/coi tide` ou `/coi tide status` | La Marée du jour, ses multiplicateurs et le temps restant |
+| `/coi tide calendar [days]` | Les Marées à venir, à partir d'aujourd'hui (14 jours par défaut, jusqu'à 60) |
+| `/coi tide notify` | Couper ou rallumer ton rappel toutes les heures |
+| `/coi tide bar` | Couper ou rallumer ta barre de boss de Marée |
+
+<Figure src={tideStatus} alt="Le résultat de /coi tide dans le chat pour la Wild Tide, avec deux fois plus de Beyonders sauvages, apparitions x2 et limite x2, qui se termine dans 11 heures et 7 minutes" caption="/coi tide montre la Marée du jour et ce qu'elle change." contain />
+
+<Figure src={tideCalendar} alt="Une partie du résultat de /coi tide calendar, un jour de la semaine et une date par ligne avec sa Marée" caption="La fin d'une liste /coi tide calendar." contain />
+
+Si le staff a fixé la Marée du jour, `/coi tide status` affiche « Pinned by an administrator. »
+
+## Que ne changent jamais les Marées ?
+
+| Système | Pourquoi il n'est pas touché |
+|---|---|
+| Le calcul de l'[Unicité](/fr/magic/uniqueness/) | Il est mesuré sur 31 jours, donc les jours où tu joues ne doivent pas compter |
+| Les War Points de l'[Usurpation](/fr/magic/usurpation/) | Les points sont comptés à partir du montant avant le bonus de Marée |
+| Les Épreuves | Elles peuvent te coûter ton inventaire, donc un calendrier ne doit pas changer les chances |
+| Les dégâts en combat | L'équilibre reste le même chaque jour |

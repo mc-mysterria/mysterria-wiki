@@ -1,8 +1,9 @@
 ---
 title: Mysterria
+description: Le wiki de Mysterria, le serveur Minecraft Lord of the Mysteries (LOTM). Voies, potions, Interprétation, Grâces, villes, économie et Hautes Séquences.
 template: splash
 hero:
-  tagline: Serveur Minecraft inspiré de Lord of The Mysteries. Tout ce que tu dois savoir sur le serveur se trouve ici !
+  tagline: Tout ce qu'il faut savoir pour jouer sur Mysterria, le serveur Minecraft Lord of the Mysteries. De ta première potion jusqu'aux sièges des Hautes Séquences.
   actions:
     - text: Démarrage rapide
       link: /fr/general/start
