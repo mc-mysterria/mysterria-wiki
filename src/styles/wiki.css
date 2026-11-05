@@ -1957,3 +1957,10 @@ mobile-starlight-toc .isMobile a[aria-current="true"] {
         display: none;
     }
 }
+
+/* an old English anchor kept on a translated page (old /guides/shards links and the like): it sits
+   just above the translated heading, so it scrolls the same distance below the fixed header */
+.anchor-alias {
+    display: block;
+    scroll-margin-top: calc(var(--sl-nav-height) + var(--sl-mobile-toc-height, 0px) + 1.5rem);
+}

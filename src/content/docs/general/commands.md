@@ -51,7 +51,7 @@ High Sequence players also use `/coi usurp` ([Usurpation](/magic/usurpation/)), 
 | `/vote` | Vote for the server |
 | `/battlepass` (or `/bp`) | The Battle Pass |
 | `/calendar` | The reward calendar |
-| `/tradeall` | Sell all your ingredients to a villager for [Energy Shards](/guides/shards/) |
+| `/tradeall` | Sell all your ingredients to a villager for [Energy Shards](/guides/economy/#energy-shards) |
 | `/oga` | Outer Gods Anchors event and its reward shop (`/oga rewards`) |
 
 ## Towns, groups and chat
