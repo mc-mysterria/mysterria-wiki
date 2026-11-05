@@ -1,0 +1,120 @@
+---
+title: "Client-Mod"
+description: "Die optionale Fabric-Mod coi-client für Mysterria: eigene Beyonder-Menüs, HUD, Zaubern mit Gesten, Standardtasten und der Bonus von +2 % Schauspielen für ihre Nutzung."
+sidebar:
+  label: Client-Mod
+  order: 15
+---
+
+import {Figure} from '~/components/mdx';
+import titleScreen from '~/assets/client-mod/title-screen.webp';
+import dossier from '~/assets/start/beyonder-dossier.webp';
+import destinations from '~/assets/client-mod/dossier-destinations.webp';
+import catalogue from '~/assets/client-mod/ability-catalogue.webp';
+import uniqueness from '~/assets/magic/uniqueness-candidacy.webp';
+import mythicalForm from '~/assets/client-mod/mythical-form.webp';
+import selector from '~/assets/client-mod/ability-selector.webp';
+import characterPlate from '~/assets/client-mod/character-plate.webp';
+import hudArrange from '~/assets/client-mod/hud-arrange.webp';
+import hudSettingsAbility from '~/assets/client-mod/hud-settings-ability.webp';
+import hudSettingsElements from '~/assets/client-mod/hud-settings-elements.webp';
+
+**coi-client** ist eine optionale Fabric-Mod, die für Mysterria gemacht wurde. Sie ersetzt die Truhenmenüs und das Durcheinander in der Aktionsleiste durch eigene Bildschirme und HUD-Elemente, und sie gibt einen kleinen Bonus auf Schauspielen.
+
+Auf dem Server braucht nichts die Mod. Jeder Bildschirm, den sie zeichnet, hat eine Version als Truhenmenü. Die siehst du, wenn du sie nicht installierst, Bedrock über Geyser spielst, eine veraltete Version nutzt oder eine Funktion ausschaltest.
+
+<Figure src={titleScreen} alt="Der Titelbildschirm von coi-client, auf dem alle 22 Pfadsymbole um das Logo kreisen" />
+
+---
+
+### So bekommst du sie
+
+Die Mod braucht Fabric auf der Java Edition. Die neueste Version ist **1.2.3**, gebaut für Minecraft **26.2**.
+Lade sie von [GitHub Releases](https://github.com/ikeepcalm/coi-client/releases),
+[Modrinth](https://modrinth.com/mod/coi-client) oder
+[CurseForge](https://www.curseforge.com/minecraft/mc-mods/coi-client) herunter.
+
+Jeder Spieler bekommt ein paar Sekunden nach dem Beitritt einmal eine Nachricht zur Mod. Danach bekommen nur noch Beyonder Erinnerungen, alle 6 Stunden ohne die Mod und alle 72 Stunden mit ihr, um zu bestätigen, dass der Bonus wirkt. Für die vollen Effekte der Aufstiegszeremonie ist die Mod fast unverzichtbar.
+
+---
+
+### Was sie ändert
+
+Mit installierter Mod und eingeschalteten Funktionen ändert sich Folgendes.
+
+- Dein Beyonder-Dossier, die Liste deiner Fähigkeiten, deine Sichtbarkeit auf der Karte, die Bildschirme für Pantheon und Thron und mehr öffnen sich als **eigene Fenster** statt als Inventarraster.
+- Das **Beyonder-Dossier** zeigt Sequenz, Spiritualität, Wahnsinn, Schauspiel-Fortschritt und seine Quellen in einem Feld neben dem Modell deines Charakters. Sein Reiter **Destinations** öffnet jeden anderen Bildschirm.
+- Eine **Fähigkeitenauswahl und ein HUD für Tastenbelegungen** lassen dich nach Kategorie zaubern und Fähigkeiten auf Tasten legen. Das HUD für Tastenbelegungen lässt sich ausschalten.
+- Eine **Beyonder-Gesundheitsleiste** zeigt deine echten Beyonder-Lebenspunkte statt einfacher Herzen, in den Stilen Hearts + Numbers, Bar, Ornate Bar oder Segments. Rückmeldung zu Schaden im PvP ist klarer, und eine **verschiebbare Leiste für Spiritualität** ersetzt die Vanilla-Bossleiste. Siehe [Gesundheit](/de/magic/health/).
+- Fährst du mit der Maus über eine Beyonder-Zutat, siehst du ihren Pfad, ihre Sequenz und ob sie eine Haupt- oder Nebenzutat ist.
+- **Ressourcenleisten** ersetzen die Symbol-Leisten für Reserven und Ladungen von Fähigkeiten in deiner Aktionsleiste.
+- Körperliche Veränderungen, die manche Pfade geben, etwa die Hörner des Abyss oder die Ohren der Demoness, werden als echte kosmetische **Aussehensmerkmale** dargestellt.
+- Die **Effekte der Aufstiegszeremonie** sind reicher, und **Impact Frames** fügen für die größten Treffer im Spiel ein angehaltenes Bild im Anime-Stil hinzu.
+- Das **Pfadsymbol verschwindet aus deinem Inventar**, und das Beyonder-Menü liegt auf **M**.
+- Außerdem bekommst du beim Einloggen eine Meldung mit der [Täglichen Tide](/de/guides/tides/) des Tages, Töne zu visuellen Effekten, Halluzinationen bei hohem Wahnsinn, ein Tutorial beim ersten Beitritt (in den Einstellungen mit **Show Tutorial Again** wiederholbar) und Discord Rich Presence.
+
+### Standardtasten
+
+| Taste | Aktion |
+|---|---|
+| **M** | Das Beyonder-Menü öffnen |
+| **K** | Ability Bindings |
+| **G** | Ability Wheel |
+| **Linke Alt-Taste** (halten) | Zaubern mit Gesten |
+| **Z, X, C, V, B, N** | Fähigkeitsplätze 1 bis 6 |
+
+Du änderst sie in der Steuerung von Minecraft, wo die Mod eine eigene Kategorie hat. Es gibt auch Tasten, die einzelne Bildschirme direkt öffnen, etwa deine Fähigkeiten. Sie sind aber nicht belegt, bis du sie festlegst.
+
+<Figure src={dossier} alt="Das Beyonder-Dossier als eigener Bildschirm" />
+
+<Figure src={destinations} alt="Der Reiter Destinations im Beyonder-Dossier, von dem aus jeder andere Bildschirm erreichbar ist" />
+
+<Figure src={catalogue} alt="Der Fähigkeitenkatalog" />
+
+<Figure src={uniqueness} alt="Der Bildschirm der Einzigartigkeit" />
+
+<Figure src={mythicalForm} alt="Der Bildschirm Mythical Creature Form" />
+
+Der Fähigkeitenkatalog listet für jeden Zauber Beschreibung, Typ, Kategorie, Kosten an Spiritualität und Abklingzeit. Die Fähigkeitenauswahl zeigt nur Name und Typ jeder Fähigkeit, damit du schnell eine wählen kannst.
+
+<Figure src={selector} alt="Die Fähigkeitenauswahl" />
+
+Das HUD-Overlay der Charaktertafel ersetzt die einzelnen Leisten für Wahnsinn, Reserven und Schauspielen durch ein einziges Feld, das auch deinen Skin, deinen Pfad und deine Sequenz zeigt.
+
+<Figure src={characterPlate} alt="Das HUD-Overlay der Charaktertafel" contain />
+
+Du kannst jeden Teil des HUD in das Layout ziehen, das du willst, auch einzelne Tasten für Fähigkeiten.
+
+<Figure src={hudArrange} alt="Das HUD im Modus Arrange on screen, mit jedem Element bereit zum Verschieben" />
+
+Der Einstellungsbildschirm enthält nur die Optionen, die du wahrscheinlich ändern willst.
+
+<Figure src={hudSettingsAbility} alt="Der Einstellungsbildschirm der Mod" contain />
+
+<Figure src={hudSettingsElements} alt="Weitere Einstellungen der Mod" contain />
+
+---
+
+### Zaubern mit Gesten
+
+Statt mit Tasten kannst du eine Fähigkeit einer Form zuweisen und sie wirken, indem du diese Form zeichnest, während du die **linke Alt-Taste** hältst. Die **9 Formen** sind Kreis, V, Z, Linie nach unten, Dach, Dreieck, Quadrat, Haken und Bogen.
+
+---
+
+### Eigene Menüs und `/coi menu native`
+
+Eigene Menüs sind standardmäßig an, sobald die Mod verbunden ist. Um die Truhenmenüs zurückzubekommen, etwa wenn die Mod einen Bildschirm noch nicht zeichnen kann, führe diesen Befehl aus.
+
+```
+/coi menu native
+```
+
+Er wechselt zwischen den Bildschirmen der Mod und den Truhenmenüs. Die Wahl wird auf dem Server gespeichert und folgt dir also auf jeden Client.
+
+---
+
+### Der Treuebonus
+
+Eine aktuelle Version der Mod gibt **+2 % [Schauspielen](/de/magic/acting/)** aus jeder Quelle und **5 % kürzere Abklingzeiten** bei Schauspielmethoden. Eine sehr alte Version, die ihren Handshake mit dem Server nicht abschließt, bringt nichts. Halte die Mod also aktuell.
+
+`/coi acting` nennt den Bonus der Client-Mod, wenn er aktiv ist. Wirkt trotzdem etwas falsch, frag ein Teammitglied. Es kann prüfen, was der Server von deinem Client sieht.

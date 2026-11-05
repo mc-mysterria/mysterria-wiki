@@ -1,0 +1,121 @@
+---
+title: "Schnellstart"
+description: "So trittst du Mysterria bei, dem Lord of the Mysteries Minecraft-Server: Serveradresse, Ressourcenpaket, Verifizierung, Startbonus und dein erster Zaubertrank."
+sidebar:
+  label: Schnellstart
+  order: 1
+---
+
+import {Figure, Notice, CardGrid, Card} from '~/components/mdx';
+import banner from '~/assets/start/banner.png';
+import ipPreview from '~/assets/start/ip-preview.png';
+import generate from '~/assets/start/generate.png';
+import code from '~/assets/start/code.png';
+import pathways from '~/assets/start/pathways.png';
+import dossier from '~/assets/start/beyonder-dossier.webp';
+
+<Figure src={banner} alt="Ein Beyonder von Mysterria fliegt über die Welt" />
+
+Mysterria ist ein **Lord of the Mysteries (LOTM) Minecraft-Server**. Das Beyonder-System läuft in einem Plugin auf dem Server. Du trittst also mit einem ganz normalen Minecraft-Client bei und brauchst keine Mods.
+
+## 1. Mit dem Server verbinden
+
+| Was | Details |
+|---|---|
+| **Serveradresse** | `mc.mysterria.net` |
+| **Edition** | Java Edition. Bedrock kann über Geyser beitreten, aber manche eigenen Menüs und Symbole werden falsch dargestellt |
+| **Version** | Der [Spielerleitfaden](https://www.mysterria.net/en/guide/connect) empfiehlt Minecraft Java **26.2** |
+| **Mods** | Keine nötig. Die optionale [Client-Mod](/de/guides/client-mod/) bringt eigene Menüs und einen kleinen Bonus beim Schauspielen |
+
+<Figure src={ipPreview} alt="Der Bildschirm Serverinfo bearbeiten mit mc.mysterria.net als Serveradresse" caption="Füge mc.mysterria.net unter Mehrspieler hinzu." />
+
+1. Öffne **Mehrspieler**, füge `mc.mysterria.net` hinzu und tritt bei.
+2. **Akzeptiere das Server-Ressourcenpaket**, wenn Minecraft danach fragt.
+3. Wähle in der Serverauswahl der Lobby **Mysteries**.
+4. Lies, was der NPC in der Lobby sagt, bevor du gehst.
+
+<Notice tone="warn" title="Alles sieht wie normales Minecraft aus?">
+  Dann wurde das Ressourcenpaket nicht geladen. Bearbeite den Servereintrag, stelle **Server-Ressourcenpakete** auf **Aktiviert** und verbinde dich neu. Klappt es dann immer noch nicht, aktualisiere deinen Java-Client. Weitere Lösungen findest du in der [Fehlerbehebung](https://www.mysterria.net/en/guide/troubleshooting) auf der Hauptseite.
+</Notice>
+
+## 2. Registrieren (nur Offline-Konten)
+
+Offizielle (Premium-)Minecraft-Konten werden automatisch angemeldet und überspringen diesen Schritt.
+
+Offline-Konten tippen beim ersten Besuch `/register <password> <password>` und bei jedem weiteren Besuch `/login <password>`. Merk dir dein Passwort.
+
+## 3. Konto verifizieren
+
+Die Verifizierung verknüpft dein Minecraft-Konto mit deinem Discord-Konto und deinem Profil auf mysterria.net. Verifizierte Spieler bekommen exklusive Discord-Kanäle, ein eigenes Chat-Präfix mit Rolle und vollen Zugang zum Shop.
+
+1. Melde dich auf [mysterria.net](https://www.mysterria.net/en/profile) an und öffne dein **Profil**.
+2. Klicke unter **Link your Minecraft account** auf **Get a code**.
+3. Tippe im Spiel `/verify` und gib den 8-stelligen Code in das Fenster ein, das sich öffnet. Du kannst auch `/verify <code>` tippen.
+
+<Figure src={generate} alt="Das Feld Link your Minecraft account im Profil auf der Website, mit dem Knopf Get a code und dem Befehl /verify" caption="Den Code bekommst du in deinem Profil auf der Website." />
+
+<Figure src={code} alt="Das Verifizierungsfenster im Spiel, das nach dem Code fragt" caption="Dann gibst du ihn im Spiel ein." contain />
+
+Wenn der Code nicht funktioniert, erstelle einen neuen oder öffne ein Ticket auf Discord.
+
+## 4. Wähle deinen Startbonus
+
+Kurz nach dem Beitritt zeigt dir ein Menü alle 22 Pfade. Wähle einen aus und entscheide dich dann für einen von zwei Startboni.
+
+<Figure src={pathways} alt="Das Menü Choose Your Path mit den Symbolen der 22 Pfade" caption="Das Pfad-Menü, das du als neuer Spieler siehst." />
+
+| | Pfad der Abkürzung | Pfad der Entschlossenheit |
+|---|---|---|
+| **Du bekommst** | Sofort Sequenz 9 des gewählten Pfades | Deine Formelgarantie ist nur noch eine Truhe entfernt |
+| **Dauerhafte Kosten** | Deine maximale Spiritualität ist **für immer 10 % niedriger**, auf jeder Sequenz | Keine |
+| **Am besten für** | Wer heute schon mit Fähigkeiten spielen will | Wer das Brauen lernen und die volle Kraft behalten will |
+
+Für den Pfad der Entschlossenheit öffnest du `/magic`, klickst auf **Loot Focus**, wählst **Recipes** und lässt **Any Sequence** eingestellt. Deine nächste Beutetruhe gibt dir dann eine Formel für **einen beliebigen Pfad und eine beliebige Sequenz**. Sie passt also vielleicht nicht zu dem Pfad, den du angeklickt hast. Mehr dazu unter [Belohnungsfokus](/de/magic/loot/#belohnungsfokus-garantie).
+
+<Notice tone="info" title="Der angeklickte Pfad legt dich nicht fest">
+  Du gehörst zu dem Pfad, dessen Zaubertrank der Sequenz 9 du zuerst trinkst. Zeigte das Menü Fool, du trinkst aber einen Door-Zaubertrank, dann bist du Door. Den Startbonus kannst du nicht neu wählen. Bei einem echten Fehler als neuer Spieler setzt das Team ihn aber manchmal zurück. Öffne dafür ein Ticket auf Discord.
+</Notice>
+
+## 5. Braue und trink deinen ersten Zaubertrank
+
+Für Sequenz 9 brauchst du eine **Formel**, einen **Magischen Kessel** (einen Crude, Ritual oder Grand Altar) und die **Zutaten** der Formel. Dann muss das Brauen gelingen. Du brauchst weder Schauspielen noch ein Ritual, und es kostet keinen Wahnsinn. Gebraute Zaubertränke laufen nach 48 Stunden ab. Braue also erst, wenn du bereit bist zu trinken.
+
+<CardGrid>
+  <Card title="Brauen und Zaubertränke" text="Kessel, Formeln, das Brau-Minispiel und was ein misslungener Trank kostet." href="/de/magic/brewing/" />
+  <Card title="Beute und Belohnungsfokus" text="Woher Formeln und Zutaten kommen, und der Garantiezähler." href="/de/magic/loot/" />
+  <Card title="Pfade" text="Alle 22 Pfade, ihre Sequenzen und Nachbarn." href="/de/magic/pathways/" />
+</CardGrid>
+
+## 6. Deinen Charakter ansehen
+
+Sequenz, Schauspielen, Gesundheit, Spiritualität und Wahnsinn stehen auf deinem Charakterbildschirm. Öffne dein **Inventar**, klicke oben links auf das **Pfadsymbol** und fahre mit der Maus über den Kopf deines Charakters. Du kannst auch `/coi menu character` tippen. Mit der [Client-Mod](/de/guides/client-mod/) ist das Symbol im Inventar weg, und du drückst stattdessen **M**.
+
+<Figure src={dossier} alt="Das Beyonder-Dossier der Client-Mod für einen Spieler mit Fool Sequenz 9, mit Gesundheit, Spiritualität, Wahnsinn, Müdigkeit und Schauspiel-Fortschritt" caption="Das Beyonder-Dossier, das die Client-Mod mit M öffnet." />
+
+## Nützliche Befehle
+
+| Befehl | Was er tut |
+|---|---|
+| `/magic` | Neulingsleitfaden mit dem Belohnungsfokus |
+| `/guide`, `/faq`, `/hints` | Leitfaden-Buch im Spiel, häufige Fragen, Tipps |
+| `/bounty` | Schauspiel-Kopfgelder |
+| `/subspace` | Dungeons, ihre Eingänge und deine Abklingzeiten |
+| `/emporium`, `/daily`, `/vote` | Brilliant Emporium, tägliche Belohnungen, Abstimmen |
+| `/wallet` | Dein Geld |
+| `/lands` | Eine Stadt gründen oder verwalten |
+| `/msg <player>`, `/r` | Private Nachrichten |
+
+Es gibt **kein** `/home`, `/sethome`, `/spawn`, `/tpa`, `/rtp` oder `/back`. Die vollständige Liste steht unter [Befehle](/de/general/commands/).
+
+## Bevor du dich niederlässt
+
+- Ohne Teleport-Befehle solltest du deine Basis mit Bedacht wählen oder einer Stadt beitreten.
+- In den meisten Teilen der Welt ist PvP aus, und Griefing verstößt gegen die Regeln.
+- Jede Truhe in einer generierten Struktur ist eine Beyonder-Beutetruhe, und jede gibt **dir** einmal etwas.
+- Die Welt wird zwischen Epochen zurückgesetzt. Epoche II begann am 1. Mai 2026.
+
+Die Details stehen unter [Welt und Sicherheit](/de/general/world-and-safety/). Lies die [Serverregeln](https://www.mysterria.net/en/rules), bevor du spielst.
+
+## Brauchst du Hilfe?
+
+Frag im Chat oder auf dem [Mysterria-Discord](https://discord.com/invite/jc7GSxBWgb). Der [Spielerleitfaden](https://www.mysterria.net/en/guide) beantwortet die häufigsten Fragen.

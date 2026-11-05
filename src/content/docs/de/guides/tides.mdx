@@ -1,0 +1,104 @@
+---
+title: "Tägliche Tiden"
+description: "Tägliche Tiden auf Mysterria, dem Lord of the Mysteries Minecraft-Server: die sieben Tiden, auf welchen Wochentag jede fällt, ihre Boni und die Befehle /coi tide."
+sidebar:
+  order: 34
+---
+
+import {Figure} from '~/components/mdx';
+import bossBar from '~/assets/tides/boss-bar.webp';
+import tideStatus from '~/assets/tides/tide-status.webp';
+import tideCalendar from '~/assets/tides/tide-calendar.webp';
+
+Eine Tägliche Tide ist ein Bonus für den ganzen Server, der einen Tag lang hält. Für alle Spieler ist immer genau eine Tide aktiv, und sie folgen einem festen Wochenplan, nach dem du planen kannst.
+
+## Wann wechselt die Tide?
+
+Ein Tiden-Tag läuft von **00:00 bis 24:00 Uhr Kyjiwer Zeit** (Europe/Kyiv, also UTC+2 im Winter und UTC+3 im Sommer). Um Mitternacht Kyjiwer Zeit beginnt für alle die nächste Tide, egal wo du wohnst.
+
+## Was sind die sieben Tiden?
+
+| Tide | Was sie bewirkt | Faktoren |
+|---|---|---|
+| **Tide of Diligence** | Jeder Gewinn an Schauspielen wird verdoppelt | Schauspielen x2 |
+| **Hunting Tide** | Kreaturen spawnen öfter und lassen mehr fallen, seltene Zutaten viel mehr | Kreaturen-Spawns x2, Kreaturen-Drops x2, seltene Zutaten x3 |
+| **Tide of Fortune** | Reichere Truhen und schnellere Garantie | Truhenbeute x2,5, Garantie bei der Hälfte der Öffnungen, seltene Beute x2,5 |
+| **Wild Tide** | Mehr [Wilde Beyonder](/de/magic/wild-beyonders/) | Spawns von Wilden Beyondern x2, Limit für Wilde Beyonder x2 |
+| **Tide of Patience** | Abklingzeiten beim Schauspielen werden halbiert | Abklingzeit beim Schauspielen x0,5 |
+| **Deep Tide** | Mehr abbaubare Knoten und mehr Zutaten in Truhen | Abbaubare Knoten x2, Zutaten in Truhen x2, seltene Zutaten x2 |
+| **Crimson Tide** | Ein [Blutmond](/de/magic/crimson-moon/) ist fünfmal so wahrscheinlich | Chance auf Blutmond x5, Kreaturen-Drops x1,5 |
+
+„Selten“ heißt **Sequenz 3 oder stärker**, also Sequenz 3, 2 und 1. Bei Hunting und Deep Tide gilt der Bonus für seltene Zutaten bei Drops von Kreaturen und bei Zutaten aus Truhen, aber nicht bei abbaubaren Knoten.
+
+Bei einer Crimson Tide hat jede Nacht eine Chance von **50 %** auf einen Blutmond statt der üblichen 10 %. Jede Nacht in der Haupt-Oberwelt würfelt einzeln. Spielst du einen ganzen Tag, siehst du also sehr wahrscheinlich mindestens einen.
+
+### Welcher Wochentag hat welche Tide?
+
+Die Rotation folgt der Reihenfolge der Tabelle oben. Jede Tide fällt also jede Woche auf denselben Wochentag.
+
+| Tag (Kyjiwer Zeit) | Tide |
+|---|---|
+| Montag | Hunting Tide |
+| Dienstag | Tide of Fortune |
+| Mittwoch | Wild Tide |
+| Donnerstag | Tide of Patience |
+| Freitag | Deep Tide |
+| Samstag | Crimson Tide |
+| Sonntag | Tide of Diligence |
+
+Das Team kann die Rotation ändern oder für einen Tag eine andere Tide festlegen. Prüfe zur Sicherheit `/coi tide calendar` im Spiel.
+
+### Gibt es Grenzen, wenn Boni zusammenkommen?
+
+Ja. Wirken mehrere Boni zusammen, etwa eine Tide plus ein Blutmond plus Moon Authority des Moon-Pfades, ist die Summe begrenzt.
+
+- Kreaturen-Spawns sind auf **x4** begrenzt.
+- Schauspielen ist auf **x2,5** begrenzt.
+
+Bei der Tide of Diligence wird das Extra als Overflow angespart, sobald eine Quelle für Schauspielen ihre Grenze erreicht, statt deine Leiste zu füllen. Overflow gibt es nur ab Sequenz 3, wie unter [Usurpation](/de/magic/usurpation/) erklärt.
+
+## Welche Tide hilft mir am meisten?
+
+- **Frühe und mittlere Sequenzen.** Deine Schauspielleiste ist der Engpass, also hilft **Diligence** am meisten. **Wild Tide** hilft auch, weil es Wilde Beyonder nur auf Sequenz 9 bis 5 gibt.
+- **Sequenz 3 und stärker.** Die Abklingzeit jeder Schauspielmethode bremst dich mehr als die Leiste, also ist **Patience** dein Tag. Hunting, Fortune und Deep Tide haben außerdem die Boni für seltene Stufen, die auf dich zielen.
+- **Beute sammeln.** Heb dir deine Truhenrunden für **Fortune** auf und deine Zutatenjagd für **Hunting** oder **Deep Tide**.
+
+Der Bonus auf Drops von Kreaturen zählt am meisten bei Abzeichen-Kreaturen und bei seltenen Zutaten. Eigene [Beyonder-Kreaturen](/de/magic/creatures/) lassen ihre häufigen Zutaten sowieso fast jedes Mal fallen.
+
+:::tip[Fortune und Garantie]
+Die Garantie wird nur geprüft, wenn du einen Behälter öffnest. Bist du bei der Tide of Fortune kurz vor deiner Schwelle, öffne vor Mitternacht noch eine Truhe. Dein Zähler bleibt so oder so erhalten, aber die halbierte Schwelle endet mit dem Tag.
+:::
+
+## Wie finde ich die heutige Tide heraus?
+
+- **Karte beim Einloggen.** Eine Chatkarte ein paar Sekunden nach dem Beitritt zeigt die Tide, was sie bewirkt und die verbleibende Zeit.
+- **Meldung im Client.** Dieselbe Karte erscheint als Pop-up, wenn du die [Client-Mod](/de/guides/client-mod/) nutzt.
+- **Stündliche Erinnerung.** Jede Stunde eine Zeile im Chat. Sie fällt weg, wenn du gerade beigetreten oder AFK bist.
+- **Bossleiste.** Ein Countdown bis zum Ende des Tages.
+- **Wechsel.** Ein Titel und ein Ton für alle, die online sind, wenn die Tide wechselt.
+
+<Figure src={bossBar} alt="Die Tiden-Bossleiste mit Wild Tide und noch 11 Stunden und 27 Minuten" caption="Die Tiden-Bossleiste zählt bis zum Ende des Tages herunter." contain />
+
+## Welche Befehle gibt es?
+
+| Befehl | Was er tut |
+|---|---|
+| `/coi tide` oder `/coi tide status` | Die heutige Tide, ihre Faktoren und die verbleibende Zeit |
+| `/coi tide calendar [days]` | Die kommenden Tiden ab heute (standardmäßig 14 Tage, bis zu 60) |
+| `/coi tide notify` | Deine stündliche Erinnerung aus- oder einschalten |
+| `/coi tide bar` | Deine Tiden-Bossleiste aus- oder einschalten |
+
+<Figure src={tideStatus} alt="Chatausgabe von /coi tide für die Wild Tide, mit doppelt so vielen Wilden Beyondern, Spawns x2 und Limit x2, endet in 11 Stunden und 7 Minuten" caption="/coi tide zeigt die heutige Tide und was sie ändert." contain />
+
+<Figure src={tideCalendar} alt="Ein Teil der Ausgabe von /coi tide calendar, pro Zeile ein Wochentag und ein Datum mit seiner Tide" caption="Das Ende einer Liste von /coi tide calendar." contain />
+
+Hat das Team die heutige Tide festgelegt, steht bei `/coi tide status` „Pinned by an administrator.“
+
+## Was ändern Tiden nie?
+
+| System | Warum es unberührt bleibt |
+|---|---|
+| Wertung der [Einzigartigkeit](/de/magic/uniqueness/) | Sie wird über 31 Tage gemessen, also sollten die Tage, an denen du zufällig spielst, keine Rolle spielen |
+| War Points der [Usurpation](/de/magic/usurpation/) | Die Punkte werden aus der Menge vor dem Bonus der Tide berechnet |
+| Prüfungen | Sie können dich dein Inventar kosten, also soll ein Kalender die Chancen nicht ändern |
+| Kampfschaden | Das Gleichgewicht bleibt jeden Tag gleich |

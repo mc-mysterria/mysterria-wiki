@@ -1,0 +1,132 @@
+---
+title: "Geld, Wallet und Energiescherben"
+description: "Wie Geld auf Mysterria funktioniert, dem LOTM Minecraft-Server: Coppets, Licks und Verl Dors, die /wallet, Erze verkaufen und Energiescherben verdienen und ausgeben."
+sidebar:
+    label: Geld und Wallet
+    order: 21
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import shard from '~/assets/shards/shard.png';
+import walletBalance from '~/assets/economy/wallet-balance.webp';
+import walletVault from '~/assets/economy/wallet-vault.webp';
+import walletSell from '~/assets/economy/wallet-sell-ore.webp';
+
+Mysterria hat zwei Währungen. **Geld** (Coppets, Licks und Verl Dors) liegt in deiner `/wallet` und bezahlt Städte, die [Agora](/de/guides/agora/) und den Handel mit Wilden Beyondern. **Energiescherben** sind ein Gegenstand, den du bekommst, wenn du übrige Beyonder-Zutaten an Dorfbewohner verkaufst. Mit ihnen bezahlst du Stufen [Geheimer Orden](/de/guides/orders/) und den Handel mit Wilden Beyondern.
+
+[Emporium-Punkte](/de/guides/emporium/) sind ein eigenes Guthaben, das nur im Brilliant Emporium funktioniert.
+
+## Was sind Coppets, Licks und Verl Dors?
+
+| Münze | Wert |
+|---|---|
+| **Coppet** | Die Grundeinheit |
+| **Lick** | 64 Coppets |
+| **Verl Dor** | 64 Licks, also 4.096 Coppets |
+
+Dein Guthaben wird immer in Coppets gezählt. Zeigt ein Menü einen Preis mit einem `$`-Zeichen, etwa eine Stadtstufe, die `$5000` verlangt, sind 5.000 Coppets gemeint.
+
+## Wie benutze ich meine Wallet?
+
+Tippe `/wallet`. Das Menü der Wallet zeigt dein Guthaben und Links zum Server-Shop und zu Discord. Klicke auf **Balance**, um den Tresorbildschirm zu öffnen. Dort kannst du diese Dinge tun.
+
+- Eine Münze anklicken, um sie als Gegenstand abzuheben.
+- Eine Münze in deinem Inventar anklicken, um sie auf dein Guthaben einzuzahlen.
+- Einen verkaufbaren Gegenstand aus deinem Inventar anklicken, um seinen Preis zu sehen und den Verkauf zu bestätigen.
+
+Der Knopf **Settings** wechselt zwischen drei Ansichten für das Menü der Wallet.
+
+<Figure src={walletBalance} alt="Das Menü der Wallet mit dem Tooltip zu Balance, der 1,250.75$ zeigt" caption="Das Menü der Wallet. Fahre mit der Maus über Balance, um zu sehen, wie viel Geld du hast." contain />
+
+<Figure src={walletVault} alt="Der Tresorbildschirm mit dem Tooltip zu Balance, der 30.00 gelagert zeigt, und Erzen aus der Tasche, die zum Verkauf bereit sind" caption="Der Tresorbildschirm. Klicke eine Münze an, um sie abzuheben, oder einen Gegenstand aus der Tasche, um ihn zu verkaufen." contain />
+
+<Figure src={walletSell} alt="Der Verkaufsbildschirm für 8 Diamanterz mit dem Tooltip zu Sell, der einen Preis von 16 Coppets zeigt" caption="Erz verkaufen. Der Knopf Sell zeigt den Preis, bevor du bestätigst." contain />
+
+Mit Münzen als Gegenstand kannst du einen anderen Spieler von Hand bezahlen oder Handel machen, der eine Münze verlangt. Um eine Münze in kleinere zu wechseln, halte **eine** Münze in der Haupthand und tippe `/shatter`. Ein Verl Dor wird zu 64 Licks, und ein Lick wird zu 64 Coppets.
+
+## Wie verdiene ich Geld?
+
+- Verkauf Gegenstände anonym an andere Spieler in der [Agora](/de/guides/agora/), dem unterirdischen Markt.
+- Hol dir Stufen im [Battle Pass](/de/guides/battle-pass/). Kostenlose und Premium-Stufen zahlen je 100 bis 1.500 Coppets.
+- Verkauf Erz in der Wallet. Das ist wenig, aber regelmäßig.
+- Handle mit anderen Spielern und mach bei Events mit.
+
+### Welche Erze kann ich verkaufen?
+
+Nur drei Erze haben einen Preis. Alles andere bringt nichts.
+
+| Erz | Preis pro Block |
+|---|---|
+| Diamanterz (und Tiefenschiefer-Diamanterz) | 2 Coppets |
+| Smaragderz (und Tiefenschiefer-Smaragderz) | 3 Coppets |
+| Antiker Schrott | 5 Coppets |
+
+- Bau Diamant- und Smaragderz mit einer **Behutsamkeit**-Spitzhacke ab, damit das Erz als Block fällt, den du verkaufen kannst. Antiker Schrott fällt immer als er selbst.
+- Du kannst **pro Tag Erz im Wert von bis zu 512 Coppets** verkaufen. Ist das erreicht, zeigt der Verkaufsbildschirm **Cannot sell** und dein restliches Tageslimit.
+
+## Wofür braucht man Geld?
+
+- Um eine [Stadt](/de/guides/towns/) zu gründen und zu führen, mit zusätzlichen Claims, Unterhalt und Stufen.
+- Um in der [Agora](/de/guides/agora/) bei anderen Spielern zu kaufen und dort einen Stand zu mieten.
+- Für den Handel mit [Wilden Beyondern](/de/magic/wild-beyonders/), der Geld, Energiescherben **und** Verl Dor-Münzen als Gegenstand kostet.
+- Für manche Handel mit Dorfbewohnern (siehe unten).
+
+### Nehmen Dorfbewohner Münzen?
+
+Nur bei manchen Handeln. Handel um **verzauberte Bücher** und **Gegenstände mit Haltbarkeit** (Werkzeuge, Waffen, Rüstung) kosten Coppets statt Smaragden, und zwar 2 Coppets pro Smaragd des ursprünglichen Preises. Jeder andere Handel nutzt weiter Smaragde.
+
+Ein Dorfbewohner handelt erst, wenn seine KI ausgeschaltet ist. Sperr ihn in einen Raum von 2 mal 1 Block, aus dem er nicht herauslaufen kann.
+
+### Gibt es einen /shop?
+
+Nein. Baublöcke kaufst du beim **Quartermaster** in der [Agora](/de/guides/agora/).
+
+## Energiescherben
+
+<Figure src={shard} alt="Ein Stapel Energiescherben mit dem Tooltip des Gegenstands, ein Bruchstück mystischer Energie, das als Währung für Aufwertungen von Organisationen dient" caption="Energiescherben sind ein echter Gegenstand in deinem Inventar, kein Guthaben in der Wallet." />
+
+Energiescherben werden nicht in der `/wallet` gespeichert. Sie liegen in deinem Inventar oder in einer Truhe und können wie jeder andere Gegenstand verloren gehen oder gestohlen werden.
+
+### Wie bekomme ich Energiescherben?
+
+Verkauf übrige Beyonder-Zutaten an einen **Dorfbewohner ohne Beruf** oder einen **Nichtsnutz**.
+
+1. Trag die Zutaten bei dir, die du verkaufen willst.
+2. Rechtsklicke den Dorfbewohner. Eine Chatnachricht bietet an, sie zu kaufen: *„The wandering trader offers to buy N items for X Energy Shards“*.
+3. Klicke in dieser Nachricht auf **[Trade All]** oder tippe `/tradeall`.
+4. Ein Menü **Trade Preview** listet alles, was er kauft, und was jeder Stapel wert ist. Klicke einen Stapel an, um ihn aus dem Handel zu nehmen.
+5. Klicke auf **CONFIRM TRADE**. Die Zutaten werden genommen, und die Scherben kommen in dein Inventar.
+
+Trägst du nichts, was er will, meldet der Dorfbewohner *„finds nothing of interest in your pack“*.
+
+Der Dorfbewohner kauft **nur Pfad-Zutaten**, keine Formeln, Zaubertränke oder anderen Gegenstände. Stärkere Sequenzen sind mehr wert.
+
+| Sequenz der Zutat | Scherben pro Stück (fast alle Zutaten) |
+|---|---|
+| Sequenz 9 | 10 |
+| Sequenz 8 | 15 |
+| Sequenz 7 | 20 |
+| Sequenz 6 | 25 |
+| Sequenz 5 und stärker | 30 |
+
+<Notice tone="warn" title="Prüfe die Vorschau">
+Der Handel nimmt jeden passenden Stapel in deinem Inventar. Nimm in der Trade Preview alles heraus, was du behalten willst, bevor du bestätigst, oder leg es vorher in eine Truhe.
+</Notice>
+
+Energiescherben gibt es auch im [Battle Pass](/de/guides/battle-pass/) (200 bis 3.000 Scherben auf vielen Stufen) und bei Events.
+
+### Wofür braucht man Energiescherben?
+
+- Für Stufen [Geheimer Orden](/de/guides/orders/). Die Stufen 1 bis 4 kosten 50, 200, 1.000 und 5.000 Scherben, eingezahlt in die gemeinsame Kasse des Ordens.
+- Für Extras Geheimer Orden wie Battle Cry, dauerhafte Aufwertungen, die Gründung eines Geheimverstecks und dessen Teleport-Kristalle.
+- Für den Handel mit [Wilden Beyondern](/de/magic/wild-beyonders/), zusammen mit Geld und Verl Dor-Münzen als Gegenstand.
+
+Die Gegenstände **Shard of ...** aus dem Emporium, etwa *Shard of Boon Token*, sind keine Energiescherben. Das sind [Bruchstücke zum Herstellen](/de/guides/emporium/#was-sind-emporium-fragmente) einer bestimmten Belohnung.
+
+## Verwandte Seiten
+
+<CardGrid>
+  <Card title="Brilliant Emporium" text="Gib Emporium-Punkte aus täglichen Belohnungen und Abstimmungen aus." icon="star" href="/de/guides/emporium/" />
+  <Card title="Agora" text="Der anonyme unterirdische Markt für den Handel zwischen Spielern." icon="coin" href="/de/guides/agora/" />
+  <Card title="Battle Pass" text="Aufgaben, die Geld, Scherben, Punkte und Gnadenpfade bringen." icon="scroll" href="/de/guides/battle-pass/" />
+</CardGrid>

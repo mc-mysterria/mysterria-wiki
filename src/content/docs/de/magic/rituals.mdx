@@ -1,0 +1,99 @@
+---
+title: "Rituale"
+description: "Wie Beyonder-Rituale auf Mysterria funktionieren: Ritualpunkte für Sequenz 8 bis 0, /ritual status, Aufgaben neu würfeln, Ritualpunkte aus Aktivitäten, Ritualbücher und was das Auslassen kostet."
+sidebar:
+  label: Rituale
+  order: 6
+---
+
+import {Figure} from '~/components/mdx';
+import ritualStatus from '~/assets/magic/rituals-status.webp';
+import ritualTask from '~/assets/magic/rituals-task.webp';
+
+Ab Sequenz 8 hat jeder Aufstieg ein **Ritual**. Das ist eine persönliche Liste von Minecraft-**Fortschritten**, die du erledigen musst, bevor du den nächsten Zaubertrank trinkst. Lässt du es aus, kostet das Wahnsinn.
+
+Dein **erster Zaubertrank (Sequenz 9) braucht kein Ritual.**
+
+## Wie funktioniert ein Ritual?
+
+Erreichst du eine Sequenz, gibt dir das Spiel eine zufällige Auswahl an Fortschritten für die **nächste** Sequenz. Jeder Fortschritt bringt je nach Schwierigkeit Punkte, und zusammen ergeben sie die Punktzahl, die diese Sequenz braucht. Die Auswahl bleibt gleich, auch wenn du dich ausloggst.
+
+| Nächste Sequenz | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+|---|---|---|---|---|---|---|---|---|---|
+| **Benötigte Punkte** | 2 | 5 | 9 | 12 | 16 | 20 | 24 | 28 | 30 |
+
+| Schwierigkeit | Punkte |
+|---|---:|
+| Trivial | 1 |
+| Easy | 2 |
+| Medium | 3 |
+| Hard | 4 |
+| Expert | 6 |
+| Master | 8 |
+| Legendary | 10 |
+| Exotic | 15 |
+| Mythic | 20 |
+
+Ein paar Regeln bestimmen deine Auswahl.
+
+- Aufgaben der Stufe **Trivial** gibt es nur bei Ritualen bis Sequenz 5.
+- Aufgaben der Stufen **Legendary, Exotic und Mythic** gibt es erst ab dem Ritual für Sequenz 4.
+- Aufgaben im **Nether** gibt es erst ab Sequenz 7, und Aufgaben im **Ende** erst ab Sequenz 4.
+
+## Wie prüfe ich mein Ritual?
+
+- `/ritual status` zeigt deine Punktzahl, zum Beispiel „7/9 ritual score completed“.
+- Um zu sehen, **welche** Fortschritte du brauchst, trag die Formel für deine nächste Sequenz bei dir. Das ist entweder eine ganze Formel oder ihre **Formelseite 3** (die Ritualseite). Ohne sie siehst du nur die Punktzahl.
+- `/ritual view <sequence>` öffnet deine Aufgaben in einem Menü. Wenn du die Ritualseite einer Formel liest, bekommst du auch einen anklickbaren Link dorthin.
+
+<Figure src={ritualStatus} alt="Chatausgabe von /ritual status für einen Fool auf dem Weg zu Sequenz 3, mit 0/20 ritual score completed und dem Hinweis, das Formelbuch zu besorgen" caption="Ohne die Formel zeigt /ritual status nur deine Punktzahl." contain />
+
+<Figure src={ritualTask} alt="Das Ritualmenü für Fool Sequenz 8 mit dem Tooltip einer Aufgabe zu Boned, Knochen zu Knochenmehl mahlen, nicht erledigt, Fortschritt 0/2" caption="Mit der Formel in der Hand zeigt /ritual view jede Aufgabe. Fahre mit der Maus über eine Aufgabe, um sie zu lesen." contain />
+
+## Kann ich eine Aufgabe neu würfeln?
+
+Ist eine Aufgabe unmöglich, fehlerhaft oder unzumutbar, kannst du das Team bitten, sie zu ersetzen.
+
+1. Öffne `/ritual view <next sequence>`, während du die Formel oder Seite 3 bei dir trägst.
+2. **Shift-klicke** die Aufgabe.
+3. Wähle einen Grund (zum Beispiel „Impossible on this server“ oder „Appears to be bugged“) und schick ihn ab.
+
+Das Team prüft die Anfrage und nimmt sie an oder lehnt sie ab. Für eine Aufgabe, die du schon erledigt hast, kannst du kein Neuwürfeln anfragen, und pro Aufgabe kannst du nur eine offene Anfrage haben.
+
+## Ritualpunkte
+
+Ab dem Ritual für Sequenz 5 zählen manche Aktivitäten als **Ritualpunkte** und füllen einen Teil deiner Punktzahl ohne Fortschritte. Jede Art zählt einmal pro Ritual.
+
+| Aktivität | Punkte | Rituale |
+|---|---|---|
+| An einem Gottesdienst an einem aktiven Kirchenort teilnehmen | 1 | Sequenz 5 bis 0 |
+| Ein Schauspiel-Kopfgeld abschließen | 1 | Sequenz 5 bis 0 |
+| Ein vom Team genehmigtes Story-Ritual abschließen | 2 | Sequenz 5 bis 0 |
+| Einen Sitzkrieg bis zum Urteil ausfechten | 3 | Sequenz 3 bis 0 |
+| Deine Einzigartigkeit in einer bezahlten Herausforderung halten | 3 | Sequenz 2 bis 0 |
+
+Die Ritualpunkte aus Aktivitäten sind pro Ritual begrenzt, auf 3 Punkte bei Sequenz 5, 4 bei 4, 5 bei 3, 6 bei 2, 7 bei 1 und 10 bei 0.
+
+Der Aufstieg zu Sequenz 0 braucht außerdem ein eigenes, vom Team bestätigtes **Story-Ritual**. Siehe [Sequenz 0](/de/magic/sequence-zero/).
+
+## Ritualbücher
+
+Mit einem **Ritual Book** kannst du Ritualaufgaben überspringen. Rechtsklicke es und wähle die Aufgabe, die du überspringen willst.
+
+| Buch | Überspringt | Shop der Outer Gods Anchors (`/oga rewards`) |
+|---|---|---|
+| Ritual Book (Tier I) | 1 Aufgabe | 160 Punkte, 2 pro Woche |
+| Ritual Book (Tier II) | 2 Aufgaben | 300 Punkte, 1 pro Woche |
+| Ritual Book (Tier III) | Jede Aufgabe des Rituals | 550 Punkte, 1 pro Monat |
+
+Ritualbücher gibt es auch beim Tausch gegen Helping Cards in den [Dungeons](/de/guides/dungeons/).
+
+## Was passiert, wenn ich das Ritual auslasse?
+
+Du kannst immer trinken, ohne das Ritual abzuschließen. Der fehlende Teil kostet aber Wahnsinn, je nachdem, wie viel noch offen ist. Ein ganz ausgelassenes Ritual kostet **40 % vorübergehenden** und **10 % dauerhaften** Wahnsinn. Ein halb erledigtes Ritual kostet die Hälfte davon, also 20 % vorübergehenden und 5 % dauerhaften.
+
+Der Bestätigungsbildschirm zeigt dir die genauen Kosten, bevor du trinkst. Ein unvollständiges Ritual macht außerdem einen [sicheren Pfadwechsel](/de/magic/pathways/#kann-ich-den-pfad-wechseln) unmöglich. Mehr zu den Kosten unter [Wahnsinn und Mutation](/de/magic/mutation/#kosten-beim-aufstieg).
+
+:::caution[Dauerhafter Wahnsinn summiert sich]
+Dauerhafter Wahnsinn verschwindet nie mit der Zeit. Schon ein paar ausgelassene Rituale können dir eine hohe Untergrenze hinterlassen, die jeden späteren Aufstieg gefährlicher macht.
+:::

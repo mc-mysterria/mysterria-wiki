@@ -1,0 +1,187 @@
+---
+title: "Schauspielen"
+description: "Wie Schauspielen (das Verdauen des Zaubertranks) auf Mysterria funktioniert: Schauspielmethoden, Kopfgelder, Schauspiel-Flaschen, Grenzen pro Quelle, Abklingzeiten und die 95-%-Regel für deinen nächsten LOTM-Zaubertrank."
+sidebar:
+  label: Schauspielen
+  order: 5
+---
+
+import {Figure} from '~/components/mdx';
+import actingRecord from '~/assets/magic/acting-dossier.webp';
+import actingChat from '~/assets/magic/acting-cooldowns.webp';
+import bountyBoard from '~/assets/magic/bounty-board.webp';
+import bountyOffer from '~/assets/magic/bounty-offer-chat.webp';
+
+Ein Beyonder **verdaut** einen Zaubertrank, indem er die Rolle spielt, die seine Sequenz beschreibt. Auf Mysterria füllst du deine **Schauspielleiste**, indem du deine Sequenz so spielst, wie sie gedacht ist. Der nächste Zaubertrank wirkt erst, wenn die Leiste fast voll ist.
+
+## Warum ist Schauspielen wichtig?
+
+Der nächste Zaubertrank braucht mindestens **95 % Schauspielen**. Darunter wird er abgelehnt. Zwischen 95 % und 100 % kannst du aufsteigen, aber die Lücke kostet vorübergehenden Wahnsinn.
+
+| Schauspielen | 95 % | 96 % | 97 % | 98 % | 99 % | 100 % |
+|---|---|---|---|---|---|---|
+| Vorübergehender Wahnsinn | 30 % | 24 % | 18 % | 12 % | 6 % | 0 % |
+
+Schauspielen erhöht auch deine maximale [Spiritualität](/de/magic/spirituality/), von der Hälfte bei 0 % Schauspielen bis zum vollen Wert bei 100 %.
+
+:::danger[Trink einen abgelehnten Zaubertrank nicht immer wieder]
+Wird ein Zaubertrank abgelehnt, weil dein Schauspielen zu niedrig ist, trink ihn nicht sofort noch einmal. Ein zweiter Versuch innerhalb von 5 Sekunden würfelt einen Kontrollverlust mit nur 10 % Überlebenschance. Siehe [Prüfungen](/de/magic/ordeals/).
+:::
+
+## Wie sehe ich mein Schauspielen?
+
+Dein Charakterbildschirm zeigt die Leiste. Öffne das Pfadsymbol in deinem Inventar und fahre mit der Maus über deinen Kopf, oder tippe `/coi menu character`. Mit der [Client-Mod](/de/guides/client-mod/) drückst du **M**.
+
+`/coi acting` zeigt die Abklingzeiten deiner Schauspielmethoden und wie viel dir jede Quelle im Vergleich zu ihrer Grenze schon gegeben hat.
+
+<Figure src={actingRecord} alt="Der Reiter Acting record im Beyonder-Dossier der Client-Mod, mit einem Schauspiel-Fortschritt von 24 von 27.648 und einer Leiste für die Quelle Passive" caption="Der Reiter Acting record im Beyonder-Dossier der Client-Mod." />
+
+<Figure src={actingChat} alt="Chatausgabe von /coi acting mit dem aktuellen Stand, dem Bonus der Client-Mod, Abklingzeiten der Methoden und der Quelle Passive" caption="Was /coi acting im Chat ausgibt." contain />
+
+## Woher kommt Schauspielen?
+
+Schauspielen kommt aus mehreren **Quellen**. Jede Quelle hat ihre eigene **Grenze**. Das ist der Anteil der Leiste, den sie auf deiner aktuellen Sequenz füllen kann. Außer Stolen kann keine Quelle die Leiste allein füllen, also musst du sie mischen. Steigst du auf, beginnt jede Quelle wieder bei null.
+
+| Quelle | Angezeigt als | Was das ist |
+|---|---|---|
+| Schauspielmethoden | Abilities | Deine Fähigkeiten so nutzen, wie deine Sequenz es verlangt |
+| Spielerinteraktion | Interaction | PvP-Kopfgelder und ähnliches Spiel mit anderen Spielern |
+| Weltinhalte | World | PvE- und Sammel-Kopfgelder und andere Aktivitäten in der Welt |
+| Schauspiel-Flaschen | Bottles | Geworfene Flaschen mit Schauspielen |
+| Passiv | Passive | Ein kleiner Zufluss, während du spielst |
+| Events | Events | Bedwars, Duelle, FFA und Turniere |
+| Gestohlenes Schauspielen | Stolen | Kräfte des Abyss, die Schauspielen stehlen |
+| Gunst der Gottheit | (getrennt) | Ein Geschenk vom Gott deines Pfades |
+
+### Grenzen nach Sequenz
+
+Das sind die Standardgrenzen in Prozent deiner Leiste.
+
+| Sequenz | Bottles | Abilities | Interaction | World | Passive | Events | Gunst der Gottheit |
+|---|---|---|---|---|---|---|---|
+| 9 | 90 | 90 | 15 | 25 | 10 | 40 | 10 |
+| 8 | 80 | 80 | 15 | 25 | 10 | 40 | 10 |
+| 7 | 70 | 60 | 20 | 25 | 10 | 35 | 10 |
+| 6 | 55 | 70 | 20 | 30 | 10 | 30 | 15 |
+| 5 | 35 | 55 | 25 | 35 | 8 | 25 | 15 |
+| 4 | 20 | 50 | 30 | 40 | 5 | 15 | 15 |
+| 3 | 10 | 45 | 35 | 45 | 5 | 10 | 20 |
+| 2 | 8 | 45 | 30 | 50 | 5 | 20 | 20 |
+| 1 | 5 | 45 | 25 | 55 | 5 | 30 | 20 |
+
+Gestohlenes Schauspielen ist auf 100 % begrenzt. Am Anfang tragen Flaschen und Fähigkeiten den Großteil der Leiste. Ab Sequenz 5 zählen Flaschen weniger, und Kopfgelder und Weltinhalte zählen mehr.
+
+<details>
+<summary>Grenzen für deine Pfadgruppe (Bottles, Abilities, Interaction, World)</summary>
+
+Die Pfade sind in vier Gruppen eingeteilt, und jede Gruppe ändert einige Grenzen. Passive, Events und Gunst der Gottheit bleiben wie oben.
+
+| Gruppe | Pfade |
+|---|---|
+| Kampf | Tyrant, Twilight Giant, Red Priest, Hanged Man, Chained, Abyss, Death |
+| Sozial | Sun, Demoness, Visionary, Black Emperor, Justiciar |
+| Nutzen | Fool, Door, Error, Hermit, White Tower, Paragon, Wheel of Fortune |
+| Unterstützung | Moon, Mother, Darkness |
+
+| Sequenz | Kampf | Sozial | Nutzen | Unterstützung |
+|---|---|---|---|---|
+| 9 | 90 / 90 / 35 / 35 | 90 / 90 / 30 / 30 | 90 / 60 / 15 / 30 | 90 / 55 / 25 / 35 |
+| 8 | 80 / 80 / 35 / 35 | 80 / 80 / 30 / 30 | 80 / 60 / 15 / 30 | 80 / 55 / 25 / 35 |
+| 7 | 70 / 60 / 35 / 35 | 70 / 60 / 30 / 30 | 70 / 60 / 20 / 30 | 70 / 55 / 25 / 35 |
+| 6 | 55 / 70 / 35 / 35 | 55 / 70 / 30 / 30 | 55 / 60 / 20 / 30 | 55 / 55 / 25 / 35 |
+| 5 | 30 / 55 / 35 / 40 | 35 / 60 / 35 / 30 | 35 / 65 / 25 / 35 | 35 / 60 / 25 / 40 |
+| 4 | 15 / 50 / 40 / 45 | 20 / 55 / 40 / 30 | 20 / 60 / 30 / 40 | 20 / 55 / 25 / 45 |
+| 3 | 12 / 45 / 40 / 48 | 12 / 50 / 42 / 40 | 12 / 55 / 35 / 42 | 12 / 50 / 30 / 48 |
+| 2 | 10 / 45 / 35 / 52 | 10 / 48 / 38 / 45 | 10 / 52 / 30 / 48 | 10 / 48 / 28 / 52 |
+| 1 | 8 / 45 / 30 / 58 | 8 / 48 / 34 / 50 | 8 / 50 / 25 / 54 | 8 / 48 / 25 / 58 |
+
+Jede Zelle ist Bottles / Abilities / Interaction / World. `/coi acting` zeigt deine eigenen Grenzen, sobald eine Quelle dir etwas gegeben hat.
+
+</details>
+
+## Schauspielmethoden
+
+Zauber zu wirken bringt allein nichts. Jede Fähigkeit hat eine **Schauspielmethode**. Das ist eine bestimmte Art, sie zu nutzen, die zu deiner Sequenz passt, etwa einen Mob mit diesem Zauber töten, ihn gegen einen anderen Beyonder einsetzen oder damit etwas entdecken. Nur die Methoden deiner **aktuellen** Sequenz zählen.
+
+Gelingt eine Methode, meldet das deine Aktionsleiste, und die Methode hat eine **Abklingzeit**. Eine Chatzeile sagt dir, wann sie wieder bereit ist. Wiederholst du sie an derselben Stelle, ist das eine Weile gesperrt. Beweg dich also herum.
+
+Die Abklingzeit zählt **aktive Spielzeit**. Während du AFK bist, läuft sie mit halber Geschwindigkeit, und offline mit einem Fünftel.
+
+| Sequenz | Schauspielen pro Methode | Abklingzeit (aktives Spiel) |
+|---|---|---|
+| 9 | 20 % | 22 Min. |
+| 8 | 20 % | 1 Std. 6 Min. |
+| 7 | 10 % | 3 Std. 9 Min. |
+| 6 | 10 % | 6 Std. 45 Min. |
+| 5 | 5 % | 6 Std. 18 Min. |
+| 4 | 5 % | 9 Std. 54 Min. |
+| 3 | 4 % | 10 Std. 48 Min. |
+| 2 | 4 % | 12 Std. 36 Min. |
+| 1 | 4 % | 13 Std. 36 Min. |
+
+Sequenz 5 hat eine etwas kürzere Abklingzeit als Sequenz 6, aber jede Methode gibt nur halb so viel Schauspielen. Die Leiste zu füllen dauert trotzdem länger.
+
+Jede Fähigkeit hat ihre eigene Abklingzeit. Eine Sequenz mit mehreren Fähigkeiten kann also mit jeder davon abwechselnd schauspielen.
+
+:::note[Wiederholungen bringen weniger]
+Verdienst du Schauspielen aus Abilities, Interaction oder World innerhalb von 15 Minuten noch einmal auf dieselbe Weise, bringt jede Wiederholung 75 % der vorherigen, bis hinunter auf 25 %.
+:::
+
+## Kopfgelder
+
+Kopfgelder sind persönliche Aufgaben, die Schauspielen bringen. Du öffnest sie mit `/bounty` (oder `/coi bounty`).
+
+<Figure src={bountyBoard} alt="Die Kopfgeldtafel mit drei Angeboten und einem Tooltip für ein Angel-Kopfgeld" caption="Die Kopfgeldtafel. Fahre mit der Maus über ein Angebot, um zu sehen, was es verlangt." contain />
+
+- Du kannst bis zu **3** Kopfgelder gleichzeitig haben, einschließlich Angeboten, auf die du noch nicht geantwortet hast.
+- Alle **30 Minuten** kommt ein **neues Angebot**. Du bekommst eine Chatnachricht und kannst es annehmen oder ablehnen.
+- Jedes Kopfgeld hat eine **Frist** von 30 Minuten bis 8 Stunden.
+- PvE- und Sammel-Kopfgelder füllen deine Quelle **World**. PvP-Kopfgelder füllen **Interaction**.
+
+Zu den Kopfgeldern gehören Mobs in der Nähe eines Ortes jagen, Jagd auf Elite-Mobs (ab Sequenz 6), Begegnungen im Gelände, Jagd auf Wilde Beyonder, Mobs mit Zaubern töten, Jagden beim Blutmond, Gegenstände an einer Stelle opfern, eine Strecke oder eine lange Reise zurücklegen, einen Ort auskundschaften, mit einer Fähigkeit auskundschaften, Pflanzen ernten, Erze abbauen, abbaubare Zutaten ernten, angeln, Biome oder Rohstoffe erkunden, Fortschritte erreichen, Fähigkeiten unter verschiedenen Bedingungen meistern sowie einvernehmliche Duelle und Zauber-Herausforderungen mit anderen Spielern. Der andere Spieler muss einem Duell oder einer Zauber-Herausforderung zustimmen.
+
+Ziele werden um dich herum ausgewürfelt, mindestens 200 Blöcke entfernt und höchstens 250 Blöcke bei Sequenz 9, 500 bei 8, 1.000 bei 7, 2.000 bei 6, 3.500 bei 5, 6.000 bei 4 und 7.500 bei 3. Ab Sequenz 2 gibt es keine Grenze.
+
+Jedes Kopfgeld würfelt je nach Art eine Grundbelohnung zwischen 0,1 % und 5 % deiner Leiste. Sie wird dann mit dem Faktor deiner Sequenz multipliziert, x2 bei Sequenz 9, x1,5 bei 8, x1 bei 7, x0,8 bei 6, x0,6 bei 5, x0,45 bei 4, x0,3 bei 3, x0,2 bei 2 und x0,12 bei 1. Das Angebot zeigt die echte Menge, die du bekommst.
+
+Ein abgeschlossenes Kopfgeld zählt ab Sequenz 5 auch als **Ritualpunkte**. Siehe [Rituale](/de/magic/rituals/#ritualpunkte).
+
+<Figure src={bountyOffer} alt="Ein Kopfgeld-Angebot im Chat mit Aufgabe, Quelle, Kategorie und den Knöpfen Accept und Decline" caption="Ein Kopfgeld-Angebot im Chat." contain />
+
+## Schauspiel-Flaschen
+
+Eine **Schauspiel-Flasche** enthält eine feste Menge an Schauspielpunkten. **Wirf sie**, und sie gibt ihr Schauspielen dem nächsten Beyonder in bis zu 5 Blöcken Abstand von der Stelle, an der sie landet. Du kannst sie also auch einem Freund zuwerfen. Sie zählt für die **aktuelle** Sequenz des Ziels und für seine Grenze **Bottles**.
+
+Flaschen sind schwächer, je höher deine Sequenz ist. Die Beschreibung der Flasche zeigt, wie viel du wirklich bekommen würdest. Ist die Grenze Bottles des Ziels schon voll, zerbricht die Flasche ohne Wirkung. Prüfe also vorher `/coi acting`.
+
+Hier bekommst du sie.
+
+- Im **Battle Pass** (`/bp`) und im **Belohnungskalender** (`/calendar`).
+- Im [Brilliant Emporium](/de/guides/emporium/), wo zwei Splitter einer Schauspiel-Flasche eine ganze Flasche ergeben.
+- Im Shop der **Outer Gods Anchors** (`/oga rewards`), mit Flaschen zu 500, 1.000, 5.000 und 10.000 Punkten für 15, 28, 130 und 240 Punkte.
+- Bei den **Dungeon-Tauschhändlern**, bezahlt mit Helping Cards. Siehe [Dungeons](/de/guides/dungeons/).
+
+## Passives Schauspielen
+
+Solange du online und **nicht AFK** bist, bekommst du etwa alle 3 Minuten ein wenig Schauspielen, bis zur Grenze Passive (5 bis 10 % der Leiste). Eine Kirche kann einen Bonus darauf geben. AFK oder offline bekommst du kein passives Schauspielen.
+
+## Events und Gunst der Gottheit
+
+Bedwars, Duelle, FFA und Turniere zahlen Schauspielen in die Quelle **Events** ein. Du trittst mit `/bedwars` und `/pvpevent join` bei.
+
+Hat dein Pfad einen Gott der Sequenz 0, kann er dir **Gunst der Gottheit** schenken. Jedes Geschenk sind 5 % deiner Leiste, einmal pro Woche und Person, bis zu 10 % pro Sequenz bei Sequenz 9 bis 7, 15 % bei 6 bis 4 und 20 % bei 3 bis 1. Siehe [Sequenz 0](/de/magic/sequence-zero/).
+
+## Was beschleunigt oder bremst das Schauspielen?
+
+| Effekt | Wie stark |
+|---|---|
+| [Client-Mod](/de/guides/client-mod/) installiert | +2 % Schauspielen aus jeder Quelle, 5 % kürzere Abklingzeiten der Methoden |
+| **Tide of Diligence** (eine [Tägliche Tide](/de/guides/tides/)) | Doppeltes Schauspielen |
+| **Tide of Patience** (eine Tägliche Tide) | Halbe Abklingzeiten der Methoden |
+| Weit vor dem Rest des Servers | Halbes Schauspielen aus jeder Quelle |
+
+Die letzte Zeile ist die **Fortschrittsbremse**. Bist du 3 oder mehr Sequenzen vor dem durchschnittlichen aktiven Spieler (alle, die in den letzten 14 Tagen gespielt haben) oder auf **Sequenz 2 oder stärker**, verdienst du Schauspielen nur mit halber Geschwindigkeit.
+
+## Was passiert, wenn meine Leiste voll ist?
+
+Ab **Sequenz 3** wird Schauspielen, das du nach einer vollen Leiste verdienst, als **Overflow** angespart. Overflow zählt nie für einen Aufstieg. Damit bezahlst du Herausforderungen um Sitze und den Wettstreit um Sequenz 0. Flaschen und Gunst der Gottheit werden nie angespart. Siehe [Usurpation](/de/magic/usurpation/).

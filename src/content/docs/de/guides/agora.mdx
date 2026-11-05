@@ -1,0 +1,209 @@
+---
+title: "Agora, der unterirdische Spielermarkt"
+description: "Die Agora auf Mysterria: einen geheimen Eingang finden oder herstellen, anonym über The Fence verkaufen, kaufen, beim Ledger Keeper abholen und einen Stand mieten."
+sidebar:
+    label: Agora
+    order: 23
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import doorCraft from '~/assets/agora/door_craft.png';
+import fence from '~/assets/agora/fence.png';
+import selling from '~/assets/agora/selling.png';
+import sellingCoi from '~/assets/agora/selling_coi.png';
+import plots from '~/assets/agora/plots.png';
+
+Die **Agora** ist ein unterirdischer Markt hinter versteckten Türen, auf dem Spieler anonym voneinander kaufen und aneinander verkaufen. Angebote tragen keine Namen. Käufer und Verkäufer erfahren also nie, wer der andere ist.
+
+Für die Agora gibt es **keine Befehle**. Du gehst durch eine Tür hinein und rechtsklickst die Leute, die dort arbeiten.
+
+## Wie komme ich in die Agora?
+
+### Nutze den öffentlichen Eingang
+
+Der Server hat einen **öffentlichen Eingang bei den Koordinaten (0, 0)**. Jeder kann ihn nutzen. Rechtsklicke die Tür, um hinunterzugehen.
+
+### Stell deinen eigenen Secret Entrance her
+
+```
+O E O        O = Obsidian
+E D E        E = Echoscherbe
+O E O        D = Schwarzeichentür
+```
+
+<Figure src={doorCraft} alt="Obsidian und Echoscherben um eine Schwarzeichentür in einem Handwerksraster" caption="Das Rezept für den Secret Entrance." contain />
+
+Rechtsklicke mit dem **Secret Entrance** in der Hand einen Block, um daraus eine Karmesintür zu machen. Das klappt nur unter diesen Bedingungen.
+
+- über der Stelle sind **zwei Blöcke frei**
+- sie liegt im **beanspruchten Land** einer [Stadt](/de/guides/towns/), in dem du **vertrauenswürdig** bist
+- in diesem Land ist nicht schon eine Tür versteckt, denn jedes Land erlaubt **einen Eingang**
+
+Rechtsklicke die Tür, um hinunterzugehen.
+
+### Ein Geheimnis, kein Schloss
+
+Jeder, der deine Tür findet, kann hindurchgehen. Versteck sie gut.
+
+Die Tür lässt sich nicht abbauen, sprengen oder verschieben. Loswerden kannst du sie nur, indem du das Land freigibst, auf dem sie steht. Türen werden alle 30 Minuten geprüft, und eine Tür wird bei der dritten Prüfung entfernt, die ihr Land ohne Claim findet. Geprüft wird nur, solange ein Spieler diese Gegend geladen hat. Ein Eingang auf Land ohne Claim verschwindet also innerhalb von etwa anderthalb Stunden, solange jemand in der Nähe ist. Um deinen Eingang zu verlegen, gib diesen Chunk frei, beanspruche ihn später wieder und setz einen neu hergestellten Eingang. Die alte Tür kommt nie zurück.
+
+### Wieder hinaus
+
+Rechtsklicke die **Ausgangstür**. Du kommst an der Stelle heraus, an der du hinuntergegangen bist. Ist dieser Eingang weg oder unsicher, kommst du stattdessen am Weltspawn heraus.
+
+## Welche Regeln gelten drinnen?
+
+- **Niemand kann verletzt werden.** Kein PvP, keine Mobs, kein Fallschaden, keine Explosionen, kein Feuer.
+- **Keine Beyonder-Fähigkeiten.** Sie funktionieren in der Agora nicht.
+- **Keine Abkürzungen.** Enderperlen, Chorusfrüchte, Elytren und Fahrzeuge sind gesperrt. Du gehst durch die Ausgangstür hinaus.
+- **Dein Inventar gehört dir.** An der Tür wird nichts abgenommen, in keine Richtung.
+- **Kein Bauen** und kein Öffnen von Behältern, außer in einem [Stand](#stände), den du mietest.
+
+## Wer arbeitet in der Agora?
+
+Rechtsklicke jemanden, um mit ihm zu sprechen.
+
+| Wer | Wofür |
+|---|---|
+| **The Fence** | Deine Waren zum Verkauf anbieten |
+| **Bazaar Clerk** | Stöbern und kaufen |
+| **The Informant** | Nach Pfad und Sequenz suchen |
+| **Ledger Keeper** | Deine Käufe und dein Geld abholen |
+| **Courier Post** | Käufe zu dir liefern lassen |
+| **Plot Warden** | Einen Stand mieten |
+| **Stall Keeper** | Das eigene Schaufenster eines Mieters |
+| **Quartermaster** | Baublöcke (der alte `/shop`) |
+
+<Figure src={fence} alt="The Fence wartet hinter seiner Theke in der Agora" caption="The Fence nimmt deine Waren und bietet sie an." />
+
+## Wie werden Preise geschrieben?
+
+Preise nutzen die [drei Münzen](/de/guides/economy/) des Servers. 64 Coppets ergeben einen Lick, und 64 Licks (4.096 Coppets) ergeben einen Verl Dor.
+
+Preise werden in der kürzesten Mischung angezeigt, zum Beispiel `16 coppets 11 licks` statt 720 Coppets. Wo du selbst einen Preis eintippst, nutze `c` für Coppets, `l` für Licks und `v` für Verl Dors.
+
+## Wie verkaufe ich in der Agora?
+
+Gib deinen Gegenstand **The Fence** und nenne einen Preis. Er schlägt zuerst vor, was er wert ist. Beyonder-Materialien schätzt er nach ihrer Sequenz und gewöhnliche Waren danach, wofür Ähnliches verkauft wurde. Du kannst den Vorschlag ignorieren und jeden Preis festlegen.
+
+| Regel | Wert |
+|---|---|
+| Angebotsgebühr | **2 %** deines Preises (mindestens 1 Coppet) |
+| Verkaufssteuer | **8 %** des Verkaufs |
+| Preisspanne | 1 bis 1.000.000 Coppets |
+| Neue Angebote pro Tag | **3** |
+| Aktive Angebote gleichzeitig | **10** |
+| Ein Angebot läuft | **72 Stunden** |
+
+Die Angebotsgebühr wird **im Voraus** bezahlt und kommt nie zurück, egal ob der Gegenstand verkauft wird, abläuft oder abgebrochen wird.
+
+<CardGrid min={280}>
+  <Figure src={selling} alt="The Fence schätzt eine Echoscherbe auf 5 Coppets" caption="Ein gewöhnlicher Gegenstand, geschätzt nach den letzten Verkäufen." />
+  <Figure src={sellingCoi} alt="The Fence schätzt eine Zutat der Sequenz 5 auf 16 Coppets 11 Licks" caption="Eine Beyonder-Zutat, geschätzt nach ihrer Sequenz." />
+</CardGrid>
+
+### Was lässt sich nicht verkaufen?
+
+- Shulkerkisten, Bündel und alles andere, was Gegenstände enthält
+- Grundgestein
+- Gegenstände, die an dich gebunden sind
+- Steuergegenstände des Historical Pact
+
+### Wenn etwas verkauft wird
+
+Du bekommst nur eine Nachricht, dass *eine Münze in deinem Namen beiseitegelegt wurde*, ohne zu erfahren, was verkauft wurde oder für wie viel. Das Geld holst du beim **Ledger Keeper** ab. Verkäufe, während du offline warst, warten auf dich.
+
+### Wenn nicht
+
+Nach 72 Stunden läuft ein unverkauftes Angebot ab, und der Gegenstand kommt in dein **Lager** beim Ledger Keeper. Brichst du ein Angebot früher ab, landet er am selben Ort.
+
+## Wie kaufe ich in der Agora?
+
+Der **Bazaar Clerk** zeigt alles, was angeboten wird. Bei **The Informant** suchst du nach Pfad und Sequenz, wenn du weißt, was du willst.
+
+Du zahlst den Preis auf dem Schild und nichts weiter. Die Steuer geht vom Anteil des Verkäufers ab. Dein eigenes Angebot kannst du nicht kaufen.
+
+Käufe **kommen nicht in dein Inventar**. Sie warten beim Ledger Keeper, außer du hast ein Horn an der [Courier Post](#courier-post) hinterlegt.
+
+## Beim Ledger Keeper abholen
+
+Was der Markt dir schuldet, bleibt beim **Ledger Keeper**, bis du es abholst. Es läuft nie ab.
+
+- **Dein Lager** enthält Gegenstände, die du gekauft hast, abgelaufene oder abgebrochene Angebote und alles, was aus einem verlorenen Stand gerettet wurde. Nimm so viel, wie in dein Inventar passt, der Rest bleibt.
+- **Dein Kassenbuch** enthält das Geld aus jedem Verkauf nach Steuern. Beim Abholen wird alles auf einmal ausgezahlt.
+
+## Courier Post
+
+Hinterlege ein **Horn of Summoning** an der **Courier Post**, dann liefert dir dein [Kurier](/de/guides/couriers/) alles, was du **kaufst**, egal wo du bist.
+
+- Immer nur ein Horn. Nimm es zurück, wann du willst, dann hören die Lieferungen auf.
+- Die Lieferung ist kostenlos. Das Horn ist der Preis.
+- Geld aus deinen Verkäufen wird nicht geliefert. Das holst du beim Ledger Keeper ab.
+
+## Stände
+
+Ein **Stand** ist ein Raum auf dem Markt, den du mieten, in dem du bauen und aus dem du verkaufen kannst. Sprich mit dem **Plot Warden**, um einen zu bekommen.
+
+<Figure src={plots} alt="Das Viertel der Stände in der Agora, von Laternen beleuchtet" caption="Das Viertel der Stände." />
+
+| Regel | Wert |
+|---|---|
+| Miete | **1 Verl Dor** (4.096 Coppets) |
+| Zeitraum | **7 Tage** |
+| Stände pro Spieler | **1** |
+| Nachfrist | **48 Stunden** |
+
+Solange deine Miete bezahlt ist, kannst du **in deinem Stand** bauen, abbauen und Truhen nutzen. An deinem Schaufenster erscheint ein **Stall Keeper**. Besucher, die ihn anklicken, sehen, was du verkaufst, und du bekommst deine eigene Theke.
+
+### Deinen Stand behalten
+
+Bezahl den Plot Warden noch einmal, bevor die Woche abläuft, um für eine weitere Woche zu verlängern. Verpasst du das, bekommst du **48 Stunden Nachfrist** mit Erinnerungen und behältst alles.
+
+### Deinen Stand verlieren
+
+Nach der Nachfrist wirst du hinausgeworfen, aber **nichts wird zerstört**. Alles in deinen Truhen, Rahmen und Rüstungsständern und alles, was auf dem Boden liegt, kommt in dein Lager beim Ledger Keeper. Der Raum wird für den nächsten Mieter zurückgesetzt.
+
+Du kannst einen Stand auch früher über das Menü des Plot Warden zurückgeben.
+
+## Verkaufstheken
+
+Eine **Theke** ist ein Schild an einer Truhe in deinem Stand, das an alle verkauft, die vorbeikommen, ohne Angebotsgebühr und ohne Warten. Du kannst bis zu **12 pro Stand** haben.
+
+1. Stell eine Truhe hin und bring ein Schild daran an (vorne oder oben).
+2. Schreib `[Market]` in **Zeile 1**.
+3. Schreib den Preis in **Zeile 2**, als einfache Zahl in Coppets oder in Kurzform wie `3v 12l 5c` (3 Verl Dors, 12 Licks und 5 Coppets, also 13.061 Coppets).
+4. Schreib wenn du willst in **Zeile 3**, wie viele Gegenstände es pro Kauf gibt, von 1 bis 64. Leer bedeutet 1.
+5. **Rechtsklicke das Schild, während du den Gegenstand hältst, den du verkaufen willst.**
+
+Das Schild zeichnet sich neu als **STALL COUNTER** mit dem Gegenstand, dem Preis und deinem Namen.
+
+| Aktion | Ergebnis |
+|---|---|
+| Rechtsklick mit einem Gegenstand | Festlegen oder ändern, was verkauft wird |
+| Rechtsklick mit leerer Hand | Vorrat und Gesamtverkäufe prüfen |
+| Schleichen + Rechtsklick | Die Theke schließen |
+
+**Die Truhe ist dein Vorrat.** Zum Auffüllen leg mehr hinein. Ist sie leer, ist die Theke ausverkauft. Um einen Preis zu ändern, bau das Schild ab und richte es neu ein.
+
+Um an einer Theke zu kaufen, rechtsklicke das Schild einmal, um den Preis zu sehen, und dann **innerhalb von 6 Sekunden noch einmal**, um zu bezahlen. Die Gegenstände kommen direkt in deine Hände.
+
+Eine Theke endet, wenn ihr Schild, ihre Truhe oder der Stand weg ist.
+
+## Was kostet das?
+
+| Was | Kosten |
+|---|---|
+| Secret Entrance | Obsidian, Echoscherben und eine Schwarzeichentür |
+| Einen Gegenstand anbieten | 2 % deines Preises (mindestens 1 Coppet) |
+| Einen Gegenstand verkaufen | 8 % des Verkaufs |
+| Einen Gegenstand kaufen | Der Preis auf dem Schild |
+| Einen Stand mieten | 1 Verl Dor (4.096 Coppets) pro Woche |
+| Lieferung per Kurier | Kostenlos (das Horn ist der Preis) |
+
+## Verwandte Seiten
+
+<CardGrid>
+  <Card title="Geld und Wallet" text="Münzen, /wallet und Energiescherben." icon="coin" href="/de/guides/economy/" />
+  <Card title="Kuriere" text="Hol dir ein Horn of Summoning und verschick Gegenstände." icon="gift" href="/de/guides/couriers/" />
+  <Card title="Städte" text="Beanspruche Land, um deinen eigenen Eingang zu verstecken." icon="shield" href="/de/guides/towns/" />
+</CardGrid>

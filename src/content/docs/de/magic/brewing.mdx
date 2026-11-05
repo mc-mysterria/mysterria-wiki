@@ -1,0 +1,115 @@
+---
+title: "Brauen und Zaubertränke"
+description: "So braust du Beyonder-Zaubertränke auf Mysterria: der Magische Kessel und seine Altarstufen, Formeln und Seiten, Zutaten, das Brau-Minispiel und wann Zaubertränke ablaufen."
+sidebar:
+  label: Brauen und Zaubertränke
+  order: 3
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import cauldron from '~/assets/magic/cauldron.png';
+import practiceMenu from '~/assets/magic/brewing-practice-menu.webp';
+import practiceResult from '~/assets/magic/brewing-rehearsal-result.webp';
+import minigame from '~/assets/magic/brewing-minigame.webp';
+import drinkConfirm from '~/assets/magic/brewing-drink-confirm.webp';
+
+Jede Sequenz beginnt mit einem Zaubertrank, und du braust ihn selbst an einem Magischen Kessel. Das Brauen funktioniert für Sequenz 9 genauso wie für jeden späteren Zaubertrank.
+
+## Was brauche ich, um einen Zaubertrank zu brauen?
+
+- Eine **Formel** für den Pfad und die Sequenz des Zaubertranks oder einen vollständigen Satz ihrer **Formelseiten**.
+- Einen **Magischen Kessel**, den Brau-Altar, den du nach einer Blaupause baust.
+- Die **Haupt-** und **Nebenzutaten** der Formel. Eine **Beyonder-Charakteristik** desselben Pfades und derselben Sequenz kann alle Hauptzutaten ersetzen.
+
+Um etwas Stärkeres als Sequenz 9 zu trinken, brauchst du außerdem mindestens 95 % [Schauspielen](/de/magic/acting/), und dein [Ritual](/de/magic/rituals/) zählt.
+
+## Der Magische Kessel (Brau-Altar)
+
+Den Altar gibt es in drei Stufen, und die Stufe verschiebt dein Brau-Ergebnis um eine Note.
+
+| Altar | Wirkung auf das Brau-Minispiel |
+|---|---|
+| **Crude Altar** | Dein Ergebnis sinkt um eine Note (Excellent wird Good, Good wird Poor, Poor wird Failed) |
+| **Ritual Altar** | Keine Änderung |
+| **Grand Altar** | Dein Ergebnis steigt um eine Note (Failed wird Poor, Poor wird Good, Good wird Excellent) |
+
+Blaupausen kommen aus Beutetruhen als **Strange Scroll**. Das ist die Kategorie **Altarschriftrollen** im [Belohnungsfokus](/de/magic/loot/#belohnungsfokus-garantie). Halte die Schriftrolle und **rechtsklicke einen Block**, um eine Vorschau des Baus zu sehen. **Rechtsklicke noch einmal**, um ihn auf freier Fläche zu setzen. Linksklicken bewirkt nichts.
+
+<Notice tone="warn" title="Opferaltäre können nicht brauen">
+  Der **Crude Sacrificial Altar**, der **Sacrificial Altar** und der **Grand Sacrificial Altar** sehen ähnlich aus. Sie dienen aber dazu, [Gnadenpfade](/de/magic/boons/) zu steigern, und können keine Zaubertränke brauen. Prüfe den Namen der Schriftrolle, bevor du sie setzt.
+</Notice>
+
+## Formeln und Formelseiten
+
+Du kannst eine **ganze Formel** finden oder eine Formel, die in **Formelseiten** aufgeteilt ist. Diese heißen „Recipe Page *n* (Sequence *s*)“.
+
+| Seite | Enthält |
+|---|---|
+| Seite 1 | Die Hauptzutaten |
+| Seite 2 | Die Nebenzutaten |
+| Seite 3 | Die Anforderungen des Rituals |
+
+Sequenz 9 hat kein Ritual, deshalb haben ihre Formeln nur die Seiten 1 und 2. Rechtsklicke eine Seite, um sie zu lesen. Um aus Seiten eine Formel zu machen, lege **genau eine von jeder Seite** desselben Pfades und derselben Sequenz in ein Handwerksraster, und sonst nichts.
+
+Formeln können für jeden Pfad sein, nicht nur für deinen eigenen. Wie du mit einem Zaubertrank den Pfad wechselst, steht unter [Pfade](/de/magic/pathways/#kann-ich-den-pfad-wechseln).
+
+## Zutaten
+
+Jeder Zaubertrank hat eigene Haupt- und Nebenzutaten, und es gibt sie in drei Arten.
+
+- **Findbare** Zutaten kommen meist aus Beutetruhen.
+- **Fallengelassene** Zutaten kommen meist von [Beyonder-Kreaturen](/de/magic/creatures/).
+- **Abbaubare** Zutaten wachsen als rot leuchtende Knoten in der Welt. Rechtsklicke einen, um ihn zu ernten.
+
+Wilde Beyonder und Riss-Bosse sind weitere Quellen. Mehr dazu unter [Beute und Belohnungsfokus](/de/magic/loot/#zutaten). Mit der [Client-Mod](/de/guides/client-mod/) zeigt dir ein Mauszeiger über einer Zutat ihren Pfad, ihre Sequenz und ob sie eine Haupt- oder Nebenzutat ist.
+
+## Wie braue ich?
+
+Öffne deinen Magischen Kessel. Lege die **Hauptzutaten** (oder eine Beyonder-Charakteristik) in die roten Plätze **links**, die **Nebenzutaten** in die blauen Plätze **rechts** und die **Formel** in den gelben Platz **oben in der Mitte**.
+
+<Figure src={cauldron} alt="Das Menü des Magischen Kessels mit den Hauptplätzen links, den Nebenplätzen rechts und dem Formelplatz oben" caption="Hauptzutaten links, Nebenzutaten rechts, Formel oben." contain />
+
+Lege die Zutaten in derselben Reihenfolge hinein, in der die Formel sie aufführt. Stimmt etwas nicht, passiert nichts, und du behältst deine Gegenstände. Zusätzliche Exemplare einer Zutat bekommst du zurück.
+
+Wenn alles passt, startet ein kurzes **Brau-Minispiel**, und deine Note entscheidet über das Ergebnis.
+
+| Note | Ergebnis |
+|---|---|
+| **Excellent** | Du bekommst den Zaubertrank |
+| **Good** | Du bekommst den Zaubertrank |
+| **Poor** | 50 % Chance auf den Zaubertrank. Sonst misslingt der Trank |
+| **Failed** | Der Trank misslingt, mit einer kleinen Explosion und ein paar Sekunden Vergiftung |
+
+**Ein misslungener Trank** verbraucht die **Formel** und die **Nebenzutaten**. Deine Hauptzutaten verschmelzen zu einer **Beyonder-Charakteristik** dieses Pfades und dieser Sequenz, die du beim nächsten Mal als Hauptzutat nutzen kannst.
+
+Das Minispiel wird für stärkere Sequenzen schwerer, von sehr leicht bei Sequenz 9 bis am schwersten ab Sequenz 2. Beyonder des **Moon** haben es eine Stufe leichter.
+
+<Figure src={minigame} alt="Das Minispiel Focus your will, ein Truhenmenü mit drei Knöpfen, von denen einer grün leuchtet" caption="Focus your will, eines der Minispiele. Klicke den leuchtenden Knopf, bevor die Zeit abläuft." contain />
+
+Mit `/coi practice` übst du die Minispiele kostenlos, ohne dass etwas auf dem Spiel steht.
+
+<Figure src={practiceMenu} alt="Das Menü Choose a rehearsal mit sechs Symbolen für Minispiele" caption="Das Menü, das /coi practice öffnet. Wähle ein Minispiel, um es zu üben." contain />
+
+<Figure src={practiceResult} alt="Chatzeilen mit Rehearsal result Good 60 percent, nur zur Übung, nichts gewonnen oder verloren" caption="Eine Übungsrunde endet mit deiner Note im Chat." contain />
+
+## Den Zaubertrank trinken
+
+Wenn du trinkst, zeigt dir ein Bestätigungsbildschirm, was der Aufstieg kostet, etwa durch fehlendes Schauspielen, ein unvollständiges Ritual oder einen riskanten Pfadwechsel. Bis du bestätigst, passiert nichts, und beim Abbrechen bekommst du den Zaubertrank zurück.
+
+<Figure src={drinkConfirm} alt="Der Bildschirm Advancement Details mit einem grünen Knopf Confirm, dem Zaubertrank und einem Tooltip, laut dem es keine Nachteile gibt und der Aufstieg sicher ist" caption="Der Bestätigungsbildschirm für einen ersten Zaubertrank. Fehlt nichts, heißt es dort, dass der Aufstieg sicher ist." contain />
+
+Nach der Bestätigung läuft ein weiteres kurzes Minispiel. **Excellent** gibt dir kurz Regeneration und Schnelligkeit, und **Good** gibt nichts extra. **Poor** oder **Failed** bringt etwas vorübergehenden Wahnsinn (bei Failed mehr) und dazu ein paar Sekunden Übelkeit oder Blindheit.
+
+Ein Zaubertrank wirkt nur, wenn er **genau eine Sequenz stärker** ist als deine aktuelle Sequenz. Jeder andere Zaubertrank wird abgelehnt. Was ein Aufstieg kosten kann, steht unter [Wahnsinn und Mutation](/de/magic/mutation/#kosten-beim-aufstieg).
+
+## Wie lange hält ein Zaubertrank?
+
+Ein Zaubertrank hält **48 Stunden** ab dem Moment, in dem er hergestellt wurde, und seine Beschreibung zeigt die verbleibende Zeit. Läuft er ab, wird er zu einem **Versiegelten Artefakt** desselben Pfades und derselben Sequenz. Gibt es keins, wird er zu einer **Beyonder-Charakteristik** und, wenn auch das nicht geht, zu einem **Ruined Potion**. Ein abgelaufener Zaubertrank kann dich nicht mehr aufsteigen lassen.
+
+Ein Zaubertrank, den du als Belohnung bekommst, erhält frische 48 Stunden, sobald er zum ersten Mal in dein Inventar kommt.
+
+## Andere Wege zu einem Zaubertrank
+
+- Beutetruhen enthalten manchmal einen fertigen Zaubertrank, und die Kategorie **Zaubertränke** im [Belohnungsfokus](/de/magic/loot/#belohnungsfokus-garantie) garantiert dir einen.
+- Ein Beyonder des Sun auf Sequenz 4 kann mit **Beyonder Characteristic Purification** einen Zaubertrank oder ein Versiegeltes Artefakt in der Nebenhand zu seiner Beyonder-Charakteristik auflösen.
+- Der Zaubertrank der **Sequenz 0** wird aus der Formel der Sequenz 0 und **drei Beyonder-Charakteristika der Sequenz 1** desselben Pfades gebraut, und sonst nichts. Siehe [Sequenz 0](/de/magic/sequence-zero/).

@@ -1,0 +1,160 @@
+---
+title: "Erste Schritte mit Kirchen"
+description: "Wie du auf Mysterria eine Kirche gründest oder ihr beitrittst, wie du betest, was jede Kirchenrolle tut und welche Befehle du brauchst. Ein Leitfaden zu Religion in Lord of the Mysteries (LOTM)."
+sidebar:
+  label: Erste Schritte
+  order: 33
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import churchStatus from '~/assets/magic/church-status.webp';
+import corePlaced from '~/assets/magic/church-core-placed.webp';
+import coreRecipe from '~/assets/magic/church-core-recipe.webp';
+
+Eine **Kirche** ist eine Religion, die von Spielern geführt wird. Sie dreht sich um einen Anführer, einen Pfad, betende Mitglieder und echte Kirchenorte in der Welt. Ihre Mitglieder bekommen Boni auf Schauspielen und Wahnsinn, die wachsen, solange die Kirche aktiv bleibt.
+
+Wie du Orte, Zweigstellen und Kirchenkriege führst, steht unter [Kirchenverwaltung](/de/magic/church-management/), und die genauen Zahlen der Boni stehen unter [Kirchenvorteile und Anker](/de/magic/church-perks/).
+
+## Was gibt eine Kirche ihren Mitgliedern?
+
+- Einen **Bonus auf Schauspielen** zusätzlich zu deinen normalen Gewinnen beim Schauspielen.
+- Einen **Erholungsbonus gegen Wahnsinn**, der heilbaren Wahnsinn schneller sinken lässt.
+- **Linderung der Untergrenze des Wahnsinns** ab Sequenz 4 (siehe [unten](#linderung-der-untergrenze-des-wahnsinns)).
+- **Segen** und **Geschenke** von Kirchenoffizieren, als Hilfe gegen Wahnsinn und Müdigkeit und für Spiritualität.
+- **Gebetseffekte** in der Nähe von Kirchenorten.
+- Ein gemeinsames **Church Vault** für [Versiegelte Artefakte](/de/magic/sealed-artifacts/).
+- **Gefahrenwarnungen**, die dem Anführer, den Co-Anführern, Engeln und Oberdiakonen melden, wenn ein Mitglied in Not ist.
+
+Keiner dieser Werte ist fest. Sie wachsen mit aktiven Mitgliedern, kürzlichen Gebeten, Aktivität an den Orten, passendem Pfad und anderen Zeichen einer gesunden Kirche.
+
+## Wie gründe ich eine Kirche?
+
+Du brauchst Folgendes.
+
+| Voraussetzung | Wert |
+|---|---|
+| Beyonder | Ja |
+| Sequenz | **4 oder stärker** |
+| Aktuelle Kirche | Du darfst kein Mitglied, Anführer oder Co-Anführer einer anderen Kirche sein |
+| Abklingzeit | **14 Tage**, nachdem du zuletzt eine Kirche verlassen hast, aus einer entfernt wurdest oder eine aufgelöst hast |
+
+Jede Kirche beginnt mit einem **Church Core**.
+
+1. Stell einen Church Core her (Rezept unten).
+2. Setz ihn dort hin, wo dein Hauptort der Kirche sein soll.
+3. Tippe den Namen der Kirche in den Chat, wenn du gefragt wirst.
+4. Verwalte die Kirche, indem du den Core anklickst, oder mit `/coi church menu`.
+
+<Figure src={corePlaced} alt="Ein platzierter Church Core" caption="Ein platzierter Church Core." />
+
+### Rezept für den Church Core
+
+<Figure src={coreRecipe} alt="Rezept für den Church Core" contain />
+
+| Reihe | Gegenstände |
+|---|---|
+| Oben | Diamantblock, Netherstern, Diamantblock |
+| Mitte | Leuchtfeuer, Zaubertisch, Leuchtfeuer |
+| Unten | Netheritblock, Obsidian, Netheritblock |
+
+Ein Church Core ist an den Spieler gebunden, der ihn hergestellt oder bekommen hat. Niemand sonst kann deinen Core setzen. Verlier ihn nicht.
+
+## Wie trete ich einer Kirche bei?
+
+- Der Anführer der Kirche oder ein Co-Anführer lädt dich mit `/coi church add <player>` ein. Nimm innerhalb von **5 Minuten** mit `/coi church accept` an.
+- Sprichst du den [Ehrennamen](/de/magic/honorific-names/) eines Kirchenmitglieds, kann es dir ebenfalls eine Einladung anbieten.
+
+Es gibt keine Mitgliedergrenze. Jeder kann beitreten, auch Spieler anderer Pfade und Spieler, die keine Beyonder sind. Mitglieder vom eigenen Pfad der Kirche zählen aber am meisten. Die Abklingzeit von 14 Tagen nach dem Verlassen einer Kirche gilt auch für den Beitritt zu einer neuen.
+
+Neue Mitglieder bekommen nicht sofort die vollen Vorteile. Du startest bei **20 %** und erreichst den vollen Wert nach **14 Tagen** (21 Tagen, wenn du von einer anderen Kirche gewechselt bist).
+
+### Austreten
+
+Nutze `/coi church leave`. Ein Anführer kann nicht austreten. Er muss die Kirche zuerst mit `/coi church ownership handoff <player> confirm` an jemand anderen übergeben oder sie mit `/coi church disband` auflösen (danach hast du 45 Sekunden, um zur Bestätigung den genauen Namen der Kirche in den Chat zu tippen).
+
+## Wie bete ich?
+
+Gebete halten die Boni der Kirche am Leben. Ein Mitglied zählt nicht mehr für die Kirche, wenn es **14 Tage** lang nicht gebetet oder sich 14 Tage lang nicht eingeloggt hat.
+
+So kannst du beten.
+
+- `/coi church pray`
+- der Gebetsknopf im Kirchenmenü
+- den vollständigen [Ehrennamen](/de/magic/honorific-names/) eines beliebigen Mitglieds der Kirche sprechen, Zeile für Zeile im Chat (das zählt als Gebet von außen)
+
+| Gebetsregel | Wert |
+|---|---|
+| Reichweite mit voller Stärke | In bis zu **100 Blöcken** Abstand von einem aktiven Kirchenort |
+| Weiter weg von einem Ort | Zählt mit **10 %** Stärke |
+| Gebetsverbindung hält | **30 Minuten** |
+| Abklingzeit der Gebetseffekte | **12 Stunden** |
+
+Die Gebetsnachricht sagt dir genau, was du bekommen hast. Wirken deine Vorteile schwach, hilft als Erstes, dass Mitglieder in der Nähe eines Kirchenorts beten.
+
+## Was tun die Kirchenrollen?
+
+| Rolle | Was sie tut |
+|---|---|
+| **Anführer** | Besitzt die Kirche und legt ihren Pfad fest. Setzt Cores und verwaltet Mitglieder, Orte und Engel. Zählt für die eigene Kirche nicht als Anker |
+| **Co-Anführer** | Hat bei den meisten Kirchensystemen fast die Macht des Anführers. Höchstens **2**. Kann ein Regional HQ leiten. Zählt nicht als Mitgliederanker |
+| **Engel** | Braucht **Sequenz 3** oder stärker. Starke Segen, Geschenke und Rechte am Vault. Plätze **3**, plus 1 pro aktiver Zweigstelle. Gibt es mehr Engel als Plätze, pausieren die Effekte der Engel |
+| **Oberdiakon** | Führt einen Kirchenort und hält ihn besetzt |
+| **Bischof** | Unterstützt einen Ort. Höchstens **2** pro Ort |
+| **Regionalleiter** | Führt ein Regional HQ |
+| **Anhänger** | Betet und bringt Ankergewicht. Wird nach 3 Tagen zum jungen Anhänger, nach 7 zum Anhänger und nach 14 zum erfahrenen Anhänger |
+
+Die Rollen an den Orten werden unter [Kirchenverwaltung](/de/magic/church-management/) erklärt.
+
+## Kirchenchat
+
+Sprich mit deiner ganzen Kirche über `/coi church chat <message>`, oder beginne eine normale Chatnachricht mit `!c`, `!cc` oder `!church`, zum Beispiel `!c treffen an der Kathedrale`.
+
+## Linderung der Untergrenze des Wahnsinns
+
+Ab Sequenz 4 hat jeder Beyonder eine Untergrenze des Wahnsinns durch Göttlichkeit. Das ist Wahnsinn, den Erholung nicht entfernen kann. Eine gesunde Kirche senkt diese Untergrenze für ihre Mitglieder, am stärksten für Anführer und Co-Anführer. Ein frischer Gott liegt zum Beispiel bei etwa 30 %, bis seine Gemeinde wächst.
+
+Die Untergrenzen, die Formel für die Linderung und die Grenzen pro Rolle stehen unter [Kirchenvorteile und Anker](/de/magic/church-perks/#linderung-der-untergrenze-des-wahnsinns). [Wahnsinn und Mutation](/de/magic/mutation/) erklärt Wahnsinn allgemein.
+
+<Notice tone="info" title="Kohorten des Red Priest">
+Eine [Kohorte von Chain of Command](/de/magic/sequence-zero/#kohorten-des-red-priest-statt-einer-kirche) eines Red Priest gibt Mitgliedern ohne aktive Kirche ihre eigene Linderung der Untergrenze. Das ist keine Kirchenrolle.
+</Notice>
+
+## Kirchen und Götter
+
+Auf dem Weg zu [Sequenz 0](/de/magic/sequence-zero/) ist eine Kirche sehr wichtig. Wer Anspruch erhebt, braucht eine Kirche mit **20** Ankern und muss ihr Anführer, Co-Anführer oder Engel sein. An **10** Gottesdiensten teilzunehmen ist eine der legendären Taten.
+
+Sitzt ein Gott auf einem Thron, gibt die Mitgliedschaft in der Kirche keinen eigenen Bonus auf Werte. Sie erlaubt dem Gott nur, dich mit einem **Behest** zu erreichen. Jedes Mitglied hat einen Schalter für seine Hingabe. Ausschalten geht sofort, Wiedereinschalten dauert eine Woche.
+
+## Wo finde ich das Kirchenmenü?
+
+- `/coi church menu`, oder klicke deinen Church Core an
+- der Kirchenplatz (ein Leuchtfeuer) in deinem Charaktermenü, `/coi menu character`
+- das Menü Churches in der [Client-Mod](/de/guides/client-mod/) (Standardtaste M)
+
+<Figure src={churchStatus} alt="Das Kirchenmenü mit dem Tooltip Church Status, der Gemeinde, Ankerstärke, Ansehen und Stabilität auflistet" caption="Das Kirchenmenü. Fahre mit der Maus über das erste Symbol, um den Status deiner Kirche zu sehen." contain />
+
+## Befehle für Mitglieder
+
+| Befehl | Was er tut |
+|---|---|
+| `/coi church menu` | Das Kirchenmenü öffnen |
+| `/coi church accept` | Die neueste Einladung annehmen |
+| `/coi church leave` | Deine Kirche verlassen |
+| `/coi church pray` | Beten |
+| `/coi church chat <message>` | Kirchenchat (oder `!c <message>`) |
+| `/coi church info` | Die Details deiner Kirche |
+| `/coi church members` | Die Mitgliederliste |
+| `/coi church status` | Die Gesundheit der Kirche auf einen Blick |
+| `/coi church perks` | Deine aktuellen Vorteile und was sie begrenzt |
+| `/coi church acting` | Dein Bonus der Kirche auf Schauspielen |
+| `/coi church pathway progress` | Unterstützung für deinen eigenen Pfad |
+| `/coi church pathway <pathway> progress` | Unterstützung für einen anderen Pfad in deiner Kirche |
+| `/coi church my-site` | Dein zugewiesener Kirchenort |
+| `/coi church cooldowns` | Deine Abklingzeiten in der Kirche |
+| `/coi church top [pathway]` | Die stärksten Kirchen, insgesamt oder für einen Pfad |
+| `/coi church vault` | Das Church Vault öffnen |
+| `/coi church artifacts list` | Artefakte, die deine Kirche lagert |
+| `/coi church artifact request <artifactId>` | Darum bitten, ein Artefakt auszuleihen |
+| `/coi church artifact return` | Ein ausgeliehenes Artefakt zurückgeben |
+
+Befehle für Anführer und Verwalter stehen unter [Kirchenverwaltung](/de/magic/church-management/#befehle-für-anführer-und-verwalter).

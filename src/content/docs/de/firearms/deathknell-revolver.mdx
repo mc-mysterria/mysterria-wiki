@@ -1,0 +1,55 @@
+---
+title: "Deathknell"
+description: "Der Revolver Deathknell auf Mysterria, inspiriert von Lord of the Mysteries: wo seine Teile fallen, Deathknell Rounds und sein Nachladen Patrone für Patrone."
+sidebar:
+    label: Deathknell
+    order: 5
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import deathknellRounds from '~/assets/firearms/deathknellrounds.png';
+
+Die **Deathknell** ist ein schwerer Revolver, der fast doppelt so hart trifft wie Klein's Repeater. Er lädt eine Patrone nach der anderen. Du kannst das Nachladen also früher abbrechen und behältst, was schon geladen ist.
+
+Seine [Werte](/de/firearms/#werte-der-waffen) sind 12 Schaden, 6 Patronen, 60 Blöcke Reichweite, 0,6 Sekunden zwischen Schüssen und 0,7 Sekunden pro Patrone beim Nachladen.
+
+## Wie bekomme ich eine?
+
+Du brauchst vier Teile, und **keins davon lässt sich herstellen**.
+
+- Deathknell Barrel
+- Deathknell Cylinder
+- Deathknell Frame
+- Deathknell Grip
+
+Jedes Mal, wenn eine Truhe in einer Vanilla-Struktur der Oberwelt ihre Beute erzeugt, enthält sie mit 25 % Chance auch ein zufälliges Teil von Deathknell oder Steam Rifle. Du kannst Teile auch mit anderen Spielern tauschen.
+
+Hast du alle vier im Inventar, rechtsklicke einen [Weaponsmith Table](/de/firearms/crafting/#wie-baue-ich-eine-waffe) zum Prüfen und dann Shift + Rechtsklick zum Bauen.
+
+## Welche Munition nutzt sie?
+
+Nur **Deathknell Rounds** und die besonderen Deathknell Rounds, die daraus gemacht werden (insgesamt 13 Arten).
+
+- 1 Deathknell Cartridge Case + 1 Deathknell Cartridge Core + 2 Schwarzpulver = **3 Deathknell Rounds**.
+- 1 Brass + 7 Eisenklumpen + 12 Schwarzpulver ergeben **18 Patronen**.
+
+<Figure src={deathknellRounds} alt="Handwerksraster mit einer Deathknell Cartridge Case, einem Deathknell Cartridge Core und 2 Schwarzpulver, die 3 Deathknell Rounds ergeben" caption="Deathknell Rounds." contain />
+
+Die Seite [Munition](/de/firearms/ammunition/) hat die Rezepte für Hülsen und Kerne und alle besonderen Patronen.
+
+## Wie funktioniert das Nachladen?
+
+Linksklicke zum Nachladen. Alle **0,7 Sekunden** kommt eine Patrone hinein.
+
+| Geladene Patronen | Zeit |
+|---|---|
+| 1 | 0,7 s |
+| 2 | 1,4 s |
+| 3 | 2,1 s |
+| 4 | 2,8 s |
+| 5 | 3,5 s |
+| 6 | 4,2 s |
+
+Während des Nachladens ist Schießen gesperrt („Weapon is reloading!“). Um früher zu schießen, wechsle auf einen anderen Platz der Schnellleiste und zurück. Das bricht das Nachladen ab, aber jede schon geladene Patrone bleibt in der Waffe.
+
+Lädst du aus leerem Magazin nach, nimmt die Waffe den ersten Stapel Deathknell Rounds aus deinem Inventar. Ist sie teilweise geladen, füllt sie nur mit derselben Art Munition nach, die schon darin ist.

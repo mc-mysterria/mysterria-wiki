@@ -1,0 +1,103 @@
+---
+title: "Gnadenpfade"
+description: "Gnadenpfade auf Mysterria, dem LOTM Minecraft-Server: die zehn Gnadenpfade der Äußeren Götter, wie du ein Gnaden-Token bekommst und wie du einen Gnadenpfad durch Opfer bis Sequenz 5 steigerst."
+sidebar:
+  order: 42
+---
+
+import {Figure} from '~/components/mdx';
+import boonShop from '~/assets/magic/boons-token-in-shop.webp';
+import altarMenu from '~/assets/magic/boons-sacrificial-altar.webp';
+
+Ein Gnadenpfad ist ein zweiter, kleinerer Pfad, den dir ein Äußerer Gott gewährt. Du hältst ihn neben deinem normalen Pfad, und er gibt dir eigene Fähigkeiten.
+
+Gnadenpfade funktionieren anders als normale Pfade.
+
+- Ein Gnadenpfad reicht von **Sequenz 9 bis Sequenz 5**, nie weiter.
+- Er hat **keine Schauspielleiste, keine Zaubertränke und keine Rituale**. Seine Fähigkeiten zu nutzen bringt ihn nicht voran.
+- Er steigt nur, wenn du an einem **Opferaltar** Zutaten **opferst**.
+- Du kannst immer nur **einen Gnadenpfad** halten.
+
+## Welche Gnadenpfade gibt es?
+
+Es gibt zehn. Jede Seite auf der Hauptseite listet die Fähigkeiten dieses Gnadenpfades.
+
+| Gnadenpfad (Name im Spiel) | Seite auf der Hauptseite |
+|---|---|
+| Aeon | [aeon](https://www.mysterria.net/en/pathways/aeon) |
+| Chaos Primogenitor | [chaos](https://www.mysterria.net/en/pathways/chaos) |
+| Chaos Mist | [chaosmist](https://www.mysterria.net/en/pathways/chaosmist) |
+| Condenser | [condenser](https://www.mysterria.net/en/pathways/condenser) |
+| Devouring | [devouring](https://www.mysterria.net/en/pathways/devouring) |
+| Eternal Edict | [edict](https://www.mysterria.net/en/pathways/edict) |
+| Everlasting | [everlasting](https://www.mysterria.net/en/pathways/everlasting) |
+| Patriarch | [patriarch](https://www.mysterria.net/en/pathways/patriarch) |
+| Second Law | [secondlaw](https://www.mysterria.net/en/pathways/secondlaw) |
+| Sublunary Eye | [sublunary](https://www.mysterria.net/en/pathways/sublunary) |
+
+## Wie bekomme ich einen Gnadenpfad?
+
+Rechtsklicke ein **Gnaden-Token**, um diesen Gnadenpfad auf Sequenz 9 zu bekommen.
+
+| Quelle | Welche Gnadenpfade | Details |
+|---|---|---|
+| Belohnungsshop der [Outer Gods Anchors](/de/guides/outer-gods-anchors/) (`/oga rewards`) | Alle zehn | Je 900 Contribution Points, höchstens 1 von jedem Gnadenpfad pro Monat |
+| Battle Pass, kostenlose Spur | Second Law | Stufe 41 des aktuellen Passes |
+| Battle Pass, Premium-Spur | Devouring | Stufe 37 des aktuellen Passes |
+| Belohnung für Übersetzer | Beliebig | Angenommene [Übersetzer auf Weblate](https://www.mysterria.net/en/news/multilanguage-support-weblate-translator-bounties) dürfen sich einen Gnadenpfad aussuchen |
+
+Es gibt auch Splitter von Gnaden-Tokens. Zehn Splitter ergeben ein Token.
+
+<Figure src={boonShop} alt="Der Shop /oga rewards mit dem Tooltip zum Gnaden-Token Aeon, Preis 900, gekauft 0/1, füllt sich am 1. um 00:00 UTC wieder auf" caption="Ein Gnaden-Token im Shop /oga rewards, mit Preis und Monatslimit." contain />
+
+### Was, wenn ich schon einen Gnadenpfad habe?
+
+Nutzt du ein zweites Gnaden-Token, öffnet sich der Bildschirm **Choose a Boon to Replace** und danach **Confirm Boon Replacement**. Der alte Gnadenpfad ist dann **für immer weg**, mit seiner Sequenz und seinem Opferfortschritt. Für den Gnadenpfad, den du schon hast, kannst du kein Token nutzen.
+
+## Wie steigere ich meinen Gnadenpfad?
+
+1. **Baue einen Opferaltar.** Seine Blaupause kommt aus einer Altarschriftrolle, die du als [Beute](/de/magic/loot/) findest. Eine gefundene Blaupause ist mit gleicher Chance ein Brau-Altar oder ein Opferaltar. Sie ist in 65 % der Fälle Crude, in 25 % normal und in 10 % Grand.
+2. **Öffne den Altar** und lege Beyonder-Zutaten oder Beyonder-Charakteristika hinein.
+3. **Bestätige die Opfergabe.** Ihr Wert kommt zur Opferleiste deines Gnadenpfades hinzu.
+4. Ist die Leiste voll, erkennt der Äußere Gott deinen Tribut an, und dein Gnadenpfad steigt eine Sequenz auf.
+
+<Figure src={altarMenu} alt="Das Menü des Opferaltars mit seinem Fortschritts-Tooltip bei 3148 von 7871, 39 Prozent, Ziel Sequenz 8" caption="Das Menü des Opferaltars. Fahre mit der Maus über die Leiste oben, um deinen Fortschritt zu sehen." contain />
+
+### Was kann ich opfern?
+
+Nur Gegenstände der Sequenz, **auf** die du hinarbeitest, oder stärkere. Ist dein Gnadenpfad auf Sequenz 9 und du willst Sequenz 8 erreichen, werden Zutaten der Sequenz 9 abgelehnt („This ingredient is too weak for your current advancement“). Zutaten und Charakteristika von **jedem** Pfad zählen.
+
+Jeder Gegenstand hat einen Grundwert, plus **10 % für jede Sequenz**, die er stärker ist als dein Ziel.
+
+| Sequenz des Gegenstands | Zutat | Beyonder-Charakteristik |
+|---|---|---|
+| 8 | 100 | 400 |
+| 7 | 150 | 650 |
+| 6 | 200 | 800 |
+| 5 | 250 | 1.000 |
+| 4 | 300 | 1.200 |
+| 3 | 350 | 1.500 |
+| 2 | 400 | 1.800 |
+| 1 | 450 | 2.000 |
+
+### Wie viele Punkte braucht jede Sequenz?
+
+| Aufstieg zu | Sequenz 8 | Sequenz 7 | Sequenz 6 | Sequenz 5 |
+|---|---|---|---|---|
+| Benötigte Punkte | 7.871 | 13.824 | 21.073 | 33.177 |
+
+Von Sequenz 9 auf 8 brauchst du an einem normalen Opferaltar zum Beispiel etwa 79 Zutaten der Sequenz 8 (je 100) oder 48 Zutaten der Sequenz 7 (je 150 x 1,1 = 165).
+
+### Welchen Altar soll ich bauen?
+
+| Altar | Punkte | Risiko |
+|---|---|---|
+| Crude Sacrificial Altar | x0,7 | Wenn die Leiste voll ist, besteht eine **Chance von 15 %**, dass das Ritual misslingt. Alles, was du geopfert hast, ist weg, und die Leiste fällt auf null zurück |
+| Sacrificial Altar | x1,0 | Keins |
+| Grand Sacrificial Altar | x1,3 | Keins |
+
+Opferaltäre sind nur für Gnadenpfade. Du kannst darin keine Zaubertränke brauen.
+
+:::danger[Dein Gnadenpfad kann deinen Hauptpfad nicht überholen]
+Dein Gnadenpfad kann nie eine stärkere Sequenz haben als dein Hauptpfad. Ist die Leiste voll, aber die neue Sequenz des Gnadenpfades wäre stärker, wird der Aufstieg abgelehnt, **und die Leiste fällt auf null zurück**. Steigere zuerst deinen Hauptpfad.
+:::

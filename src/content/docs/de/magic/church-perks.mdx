@@ -1,0 +1,200 @@
+---
+title: "Kirchenvorteile und Anker"
+description: "Die Zahlen hinter den Kirchenvorteilen auf Mysterria: Ankergewicht, Stufen, Boni auf Schauspielen und Erholung, Linderung der Untergrenze des Wahnsinns, Segen und Geschenke. Ein LOTM-Leitfaden."
+sidebar:
+  label: Kirchenvorteile und Anker
+  order: 35
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import perksChat from '~/assets/magic/church-perks-chat.webp';
+
+Kirchenvorteile sind die Boni auf Schauspielen, die Erholung von Wahnsinn und die Unterstützung, die eine [Kirche](/de/magic/churches/) ihren Mitgliedern gibt. Wie stark sie sind, hängt davon ab, wie viel aktive, betende Unterstützung die Kirche hat.
+
+## Was macht Vorteile stärker oder schwächer?
+
+Die Vorteile verbinden all das gleichzeitig. Schon ein schwacher Faktor kann den Bonus am Ende viel kleiner machen.
+
+- **Ankergewicht** ist, wie viel aktive, betende Unterstützung die Kirche hat, im Vergleich zu dem, was die Sequenz des Anführers braucht.
+- **Dauer der Mitgliedschaft** zählt, weil neue Mitglieder bei 20 % starten und den vollen Wert nach 14 Tagen erreichen (21 Tagen nach einem Kirchenwechsel).
+- **Frömmigkeit und Aktivität** kommen von kürzlichen Gebeten und der Teilnahme an den Orten.
+- Das **Netz der Orte** braucht einen aktiven Hauptcore und gesunde Zweigstellen und Regional HQs. Verfallene Zweigstellen helfen nicht mehr.
+- **Leitung der Orte** heißt, dass ein Oberdiakon und Bischöfe jeden Ort betreuen.
+- Nach **Rolle** bekommen Anführer und Co-Anführer am meisten und neue Anhänger am wenigsten. Die Effekte der Engel pausieren, wenn es mehr Engel als Plätze für Engel gibt.
+- Nach **Pfad** hilft der eigene Pfad der Kirche am meisten, benachbarte Pfade etwas weniger und andere am wenigsten.
+- Stärkere Mitglieder bekommen durch **ihre Sequenz** etwas stärkere Effekte.
+- Ein angenommener [Kirchenkrieg](/de/magic/church-management/#kirchenkriege) oder eine Kriegsstrafe ändert die Vorteile.
+- Ohne **Hauptcore** läuft jeder Vorteil mit 50 %.
+
+Wirken deine Vorteile schwach, zeigen dir `/coi church status`, `/coi church perks`, `/coi church acting`, `/coi church pathway progress`, `/coi church my-site` und `/coi church cooldowns`, wo du stehst.
+
+<Figure src={perksChat} alt="Chatausgabe von /coi church perks für den Anführer einer neuen Kirche, mit den Vorteilen, die für dich gelten, und den Gründen dafür" caption="Was /coi church perks im Chat ausgibt." contain />
+
+## Ankergewicht
+
+Jedes aktive Mitglied bringt je nach Sequenz **Ankergewicht**.
+
+| Sequenz des Mitglieds | Ankergewicht |
+|---|---:|
+| 0 | 12,0 |
+| 1 | 9,0 |
+| 2 | 7,0 |
+| 3 | 5,0 |
+| 4 | 3,0 |
+| 5 | 0,75 |
+| 6 | 0,60 |
+| 7 | 0,45 |
+| 8 | 0,35 |
+| 9 | 0,25 |
+| Kein Beyonder | 0,15 |
+
+Dieses Gewicht wird dann je nach Pfad multipliziert.
+
+| Pfad des Mitglieds | Faktor |
+|---|---:|
+| Derselbe wie die Kirche | x1,5 |
+| Ein benachbarter Pfad | x1,25 |
+| Jeder andere | x1,0 |
+
+Ein Mitglied der Sequenz 4 gibt zum Beispiel 4,5 auf dem eigenen Pfad der Kirche, 3,75 von einem benachbarten Pfad und sonst 3,0. Ein Mitglied der Sequenz 9 vom selben Pfad gibt 0,375.
+
+### Wer zählt?
+
+- Ein Mitglied zählt nur, wenn es sich in den letzten **14 Tagen** eingeloggt **und** gebetet hat.
+- Der **Anführer zählt nie** als Anker für seine eigene Kirche.
+- **Co-Anführer zählen** ebenfalls **nicht** als Mitgliederanker.
+
+### Grenzen für das Ankergewicht
+
+- Gewicht von Mitgliedern ab Sequenz 4 wird ab **18** schwächer und kann nie über **34** steigen.
+- Je **10** aktive Mitglieder auf Sequenz 5 oder schwächer bringen einen Gruppenbonus von **+1,0**.
+- Jeder aktive Ort kann eine bestimmte Menge Gewicht halten, die sich nach der Sequenz des Anführers richtet. Gewicht über deiner gesamten **Kapazität der Orte** wird schwächer und hört bei etwa dem 1,35-Fachen der Kapazität auf.
+
+| Sequenz des Anführers | Kapazität des Hauptorts | Jede Zweigstelle |
+|---|---:|---:|
+| 4 | 12 | 8 |
+| 3 | 16 | 10 |
+| 2 | 20 | 12 |
+| 1 | 24 | 14 |
+| 0 | 28 | 16 |
+
+Die Kapazität eines Ortes sinkt, wenn er nicht aktiv genug ist oder einen schwachen oder fehlenden Oberdiakon hat. Jede Stufe der Aufwertung erhöht sie um 12 %. Ohne aktiven Hauptcore hat die ganze Kirche eine Kapazität von 6.
+
+## Wie viele Anker braucht eine Kirche?
+
+Für volle Unterstützung braucht es so viel wirksames Ankergewicht, festgelegt durch die Sequenz des **Anführers**. Jedes Mitglied wird an der Zeile des Anführers gemessen, egal welche Sequenz es selbst hat.
+
+| Sequenz des Anführers | Anker für volle Unterstützung |
+|---|---:|
+| 4 | 15 |
+| 3 | 25 |
+| 2 | 28 |
+| 1 | 38 |
+| 0 | 30 |
+
+Das sind Zielwerte für das Gewicht, keine Mitgliederzahlen. Ein Anführer der Sequenz 4 kann 15 mit wenigen starken Mitgliedern vom selben Pfad oder mit vielen schwächeren erreichen. Sein Hauptort hält nur 12, bevor das Gewicht schwächer wird. Er braucht also eine Zweigstelle oder eine Aufwertung.
+
+<Notice tone="info" title="Auch Sequenz 0 nutzt das">
+Um einen [Thron](/de/magic/sequence-zero/) zu beanspruchen, braucht deine Kirche **20** wirksame Anker, und du musst ihr Anführer, Co-Anführer oder Engel sein. Die Kirche eines sitzenden Gottes wird an **30** gemessen. Das ist absichtlich weniger als das Ziel für Sequenz 1. Ein neuer Gott bringt schon 20 Anker mit. Die Kirche muss also nur noch ein wenig wachsen, um volle Unterstützung zu haben.
+</Notice>
+
+## Kirchenstufen
+
+| Stufe | Anteil am Ankerziel | Bonus auf Schauspielen x | Erholungsbonus x | Segen x |
+|---|---:|---:|---:|---:|
+| 1 | unter 25 % | 1,00 | 1,00 | 1,00 |
+| 2 | 25 % | 1,03 | 1,15 | 1,12 |
+| 3 | 45 % | 1,06 | 1,32 | 1,28 |
+| 4 | 70 % | 1,09 | 1,52 | 1,45 |
+| 5 | 95 % | 1,12 | 1,75 | 1,65 |
+
+Bei einem Anführer der Sequenz 4 (Ziel 15) beginnt Stufe 2 bei etwa 3,75 Ankern, Stufe 3 bei etwa 6,75, Stufe 4 bei etwa 10,5 und Stufe 5 bei etwa 14,25.
+
+### Church Progress
+
+Wer [Gottesdienste](/de/magic/church-management/#gottesdienste) hält, baut **Church Progress** auf. Je **100** Fortschrittspunkte zählen als 1 zusätzlicher Anker für Stufe und Rangliste, bis zu **12**.
+
+## Rangliste der Religionen
+
+Mehrere Kirchen können demselben Pfad folgen, und die mit der höchsten Religionswertung führt ihn an. Eine Kirche hat einen offiziellen Pfad, nämlich den des Anführers.
+
+Die Wertung setzt sich zusammen aus wirksamem Ankergewicht, Church Progress, Stufe (+8 pro Stufe), aktiven Orten (je +2) und der aktuellen Gesundheit. Du siehst sie mit `/coi church top` oder `/coi church top <pathway>`.
+
+Die Religionswertung macht außerdem **25 %** des Defense Score eines Sitzinhabers in [Sitze und Usurpation](/de/magic/usurpation/#schritt-2-nominierung) aus.
+
+### Unterstützung für andere Pfade
+
+- Zwei oder mehr aktive, betende Mitglieder desselben Pfades bilden eine **Gruppe** und bekommen einen kleinen Bonus.
+- Aktive Co-Anführer, Leiter von Regional HQs und Engel eines anderen Pfades geben diesem Pfad begrenzte **Zusatzunterstützung** (bis zu 15 %).
+- Dadurch wird die Kirche nie zu einer zweiten offiziellen Religion.
+
+Jeden Pfad in deiner Kirche prüfst du mit `/coi church pathway <pathway> progress`.
+
+## Bonus auf Schauspielen
+
+Der Bonus der Kirche auf Schauspielen kommt zu deinen Gewinnen beim Schauspielen hinzu. Er erreicht bis zu etwa **16 %** und wird ab 14 % schwächer. Er ist am höchsten für den eigenen Pfad der Kirche sowie für Anführer und Engel und wächst mit Stufe, Gebeten und Dauer der Mitgliedschaft. Deinen siehst du mit `/coi church acting`.
+
+## Erholungsbonus gegen Wahnsinn
+
+Der Erholungsbonus lässt heilbaren Wahnsinn schneller sinken. Er kann **24** erreichen (wird ab 14 schwächer, feste Grenze 30) und wächst mit der Stufe. Dauerhaften Wahnsinn entfernt er nie.
+
+## Linderung der Untergrenze des Wahnsinns
+
+Ab Sequenz 4 haben Beyonder eine Untergrenze des Wahnsinns durch Göttlichkeit, unter die Erholung nicht kommt.
+
+| Sequenz | Untergrenze durch Göttlichkeit |
+|---|---:|
+| 0 | 90 % |
+| 1 | 75 % |
+| 2 | 60 % |
+| 3 | 40 % |
+| 4 | 25 % |
+| 5 bis 9 | 0 % |
+
+Eine Kirche kann einen Teil dieser Untergrenze lindern.
+
+> Dein minimaler Wahnsinn = dauerhafter Wahnsinn + Untergrenze durch Göttlichkeit x (1 - Linderung)
+
+Die Summe ist auf **95 %** begrenzt und erreicht also nie 100 %. Erholung, Geschenke, Segen und heilende Fähigkeiten hören alle an dieser Untergrenze auf.
+
+Die Linderung ist der Füllstand der Anker deiner Kirche (wirksame Anker geteilt durch das Ziel) mal dem Anteil deiner Rolle, bis zur Grenze deiner Rolle. Normale Mitglieder brauchen außerdem Dauer der Mitgliedschaft, Frömmigkeit und kürzliche Aktivität, um ihren vollen Anteil zu erreichen.
+
+| Rolle | Anteil | Grenze |
+|---|---:|---:|
+| Anführer | 100 % | 100 % |
+| Co-Anführer | 95 % | 100 % |
+| Engel | 75 % | 90 % |
+| Oberdiakon | 65 % | 80 % |
+| Bischof | 55 % | 70 % |
+| Erfahrener Anhänger | 45 % | 60 % |
+| Anhänger | 38 % | 55 % |
+| Junger Anhänger | 30 % | 45 % |
+| Neuer Anhänger | 20 % | 35 % |
+
+Ein neuer Gott wird an 30 Ankern gemessen, nicht an den 20, die er für den Aufstieg braucht. Bei 20 von 30 bekommt er zwei Drittel der Linderung. Seine Untergrenze von 90 % sinkt also nur auf etwa 30 %, bis die Gemeinde wächst.
+
+Red Priests ohne Kirche können stattdessen Linderung von ihrer [Kohorte von Chain of Command](/de/magic/sequence-zero/#kohorten-des-red-priest-statt-einer-kirche) bekommen. Linderung durch Kohorte und Kirche wird nie zusammengerechnet.
+
+## Segen
+
+Ein Segen ist eine schnelle Hilfe für ein Kirchenmitglied. Er senkt heilbaren Wahnsinn und Müdigkeit und gibt einen kurzen Hilfseffekt. Nutze `/coi church bless <player>` oder das Kirchenmenü. Dich selbst kannst du nicht segnen, und das Ziel sollte in der Nähe eines aktiven Ortes sein.
+
+| Wer segnet | Linderung von Wahnsinn | Linderung von Müdigkeit | Hilfseffekt | Kosten an Spiritualität |
+|---|---:|---:|---:|---:|
+| Offiziere an Orten (Oberdiakone, Bischöfe) | 4 | 6 | 6 s | 10 |
+| Anführer, Co-Anführer, aktive Engel | 6 | 10 | 10 s | 18 |
+
+Jedes Ziel kann einmal alle **10 Minuten** gesegnet werden. Nach **2** Segen in 30 Minuten verlieren weitere Segen für dieses Ziel an Stärke (bis auf 35 %).
+
+## Geschenke
+
+Geschenke sind stärkere Hilfe vom Anführer, von Co-Anführern und aktiven Engeln. Nutze `/coi church gift <player> <type>`. Sie kosten den Schenkenden Spiritualität und geben ihm etwas Wahnsinn. Dir selbst kannst du nichts schenken.
+
+| Geschenk | Wirkung | Kosten an Spiritualität | Wahnsinn des Schenkenden |
+|---|---|---:|---:|
+| `madness-relief` | Entfernt bis zu 10 heilbaren Wahnsinn | 30 | +1,0 |
+| `spirituality-restore` | Stellt bis zu 35 Spiritualität wieder her | 24 | +0,5 |
+| `tiredness-recovery` | Entfernt bis zu 20 Müdigkeit | 28 | +0,75 |
+| `sanctuary-renewal` | 20 s Regeneration II und 120 s Absorption I | 36 | +1,5 |
+
+Dasselbe Geschenk an dasselbe Ziel hat **5 Minuten** Abklingzeit. Ein zweites Geschenk an ein Ziel innerhalb einer Stunde ist schwächer (bis auf 40 %). Ein Geschenk wird abgelehnt, wenn es den Schenkenden über 95 % Wahnsinn bringen würde.

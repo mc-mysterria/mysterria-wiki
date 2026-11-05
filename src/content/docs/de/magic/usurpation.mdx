@@ -1,0 +1,220 @@
+---
+title: "Sitze und Usurpation"
+description: "Sitzlimits pro Pfad auf Mysterria, wie Overflow aus Schauspielen angespart wird und wie du auf diesem Lord of the Mysteries Server einen vollen Sitz einer Sequenz oder eine Einzigartigkeit anfechtest."
+sidebar:
+  label: Sitze und Usurpation
+  order: 30
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import leadImage from '~/assets/heroes/usurpation.webp';
+import seatReadiness from '~/assets/magic/usurpation-readiness.webp';
+
+<Figure src={leadImage} eager alt="Bild aus Lord of the Mysteries mit acht Göttern nebeneinander" />
+
+Ab Sequenz 3 hat jeder Pfad auf jeder Sequenz nur wenige Sitze. Sind alle besetzt, kommst du nur noch nach oben, indem du angesparten **Overflow** ausgibst, um einem Inhaber seinen Sitz streitig zu machen. Mit Overflow kannst du auch eine [Einzigartigkeit](/de/magic/uniqueness/) herausfordern.
+
+## Wie viele Sitze hat jede Sequenz?
+
+Die Limits gelten pro Pfad. Sequenz 4 und schwächer haben kein Limit.
+
+| Sequenz | Rang | Sitze pro Pfad |
+|---|---|---:|
+| 3 | Heiliger | 18 |
+| 2 | Engel | 9 |
+| 1 | Erzengel | 3 |
+| 0 | Gottheit | 1 |
+
+Ist eine Stufe voll, kannst du deinen nächsten Zaubertrank nicht auf normalem Weg trinken, selbst mit voller Schauspielleiste und allen Ritualen. Du kannst warten, bis ein Sitz frei wird, oder einen anfechten.
+
+Die [Sitzübersicht](https://www.mysterria.net/en/ascension) auf der Hauptseite zeigt, wer gerade jeden Sitz hält.
+
+Sequenz 0 wird nie über ein Gebot um einen Sitz angefochten. Ihr einziger Thron wird nur über die [Wache für Sequenz 0](/de/magic/sequence-zero/) frei.
+
+## Was ist Overflow?
+
+Ist deine [Schauspielleiste](/de/magic/acting/) voll, ist weiteres Schauspielen nicht verschwendet. Es wird als **Overflow** angespart, einem eigenen Vorrat, den du für Usurpation und einen Anspruch auf Sequenz 0 ausgibst.
+
+- Overflow ist kein Schauspielen. Er zählt nie für einen Aufstieg und erscheint nie in deiner Leiste.
+- Er wird nur angespart, solange dein Pfad auf **Sequenz 3, 2 oder 1** ist. Sequenz 4 und schwächer sparen nicht an, und ein Gott der Sequenz 0 hat gar keine Leiste.
+- Dein Vorrat ist auf das **3,5-Fache deiner aktuellen Leiste** begrenzt.
+- Wird etwas angespart, zeigt die Aktionsleiste `+N overflow`. `/coi usurp` zeigt deinen Vorrat für jeden Pfad.
+- An einem Tag der Tide of Diligence wird Schauspielen, das über die Grenze einer Quelle hinausgehen würde, stattdessen als Overflow angespart (siehe [Tägliche Tiden](/de/guides/tides/)).
+
+<Notice tone="warn" title="Ein Pfadwechsel kostet deinen Vorrat">
+Dein angesparter Overflow gehört zu dem Pfad, auf dem du ihn verdient hast. Wechselst du auf einen anderen Pfad, ist er weg.
+</Notice>
+
+### Wöchentliche Limits pro Quelle
+
+Jede Quelle für Schauspielen kann pro Woche nur einen bestimmten Anteil deiner Leiste ansparen. Die Limits werden jeden Montag um 00:00 UTC zurückgesetzt.
+
+| Quelle | Wöchentliches Limit |
+|---|---:|
+| Spiel mit Fähigkeiten | 40 % |
+| Weltinhalte | 40 % |
+| Spielerinteraktion | 25 % |
+| Gestohlenes Schauspielen | 25 % |
+| Events | 25 % |
+| Passiv | 5 % |
+| Schauspiel-Flaschen | 0 % |
+| Gunst der Gottheit | 0 % |
+
+Schauspiel-Flaschen kann man kaufen und handeln. Sie füllen deshalb deine Leiste, sparen aber nie Overflow an. Die Gunst eines Gottes spart ebenfalls nie Overflow an.
+
+### Was die Dinge kosten
+
+| Deine Sequenz | Volle Leiste | Grenze des Vorrats (3,5x) | Herausforderung einer Einzigartigkeit (50 %) | Mindestgebot für einen Sitz (1,75x) |
+|---|---:|---:|---:|---:|
+| 3 | 35.942 | 125.797 | 17.971 | 62.899 (für einen Sitz als Engel) |
+| 2 | 47.001 | 164.503 | 23.501 | 82.252 (für einen Sitz als Erzengel) |
+| 1 | 62.208 | 217.728 | 31.104 | keins (Sequenz 0 nutzt die Wache, Einsatz 31.104) |
+
+<Notice tone="info" title="Warum Sitze als Heiliger schwer anzufechten sind">
+Du fichtst die Stufe eine Sequenz über dir an. Einen Sitz als Heiliger (Sequenz 3) fichtst du also von Sequenz 4 aus an. Overflow wird erst ab Sequenz 3 angespart. Ein Spieler auf Sequenz 4 kann also kein Gebot für einen Sitz als Heiliger ansparen.
+</Notice>
+
+## Wie fordere ich eine Einzigartigkeit heraus?
+
+Eine Herausforderung um eine Einzigartigkeit erzwingt eine sofortige Neubewertung zwischen dir und dem aktuellen Inhaber der [Einzigartigkeit](/de/magic/uniqueness/) deines Pfades. Es gibt keinen Krieg, und das Ergebnis steht fest, sobald du bestätigst. Du öffnest sie im Menü der Einzigartigkeit (im Bereich **Usurpation**) oder mit `/coi usurp uniqueness <pathway>`.
+
+Für eine Herausforderung musst du diese Bedingungen erfüllen.
+
+- Du bist auf diesem Pfad Sequenz 4 oder stärker (in der Praxis Sequenz 3, weil du Overflow brauchst).
+- Du hältst selbst keine Einzigartigkeit und hast dich nicht aus der Bewertung für Einzigartigkeiten zurückgezogen.
+- Du bist auf dem Pfad angekommen (siehe [Kürzlich den Pfad gewechselt?](#kürzlich-den-pfad-gewechselt)).
+- Du hast genug Overflow für den Einsatz.
+
+Der Pfad muss einen Inhaber haben, keine andere offene Herausforderung, keine Herausforderung in den letzten 7 Tagen und keine laufende Wache für Sequenz 0.
+
+| Regel | Aktueller Wert |
+|---|---|
+| Einsatz | Genau **50 %** deiner Leiste. Höhere Einsätze werden abgelehnt, weil sie nichts bringen |
+| Dein Faktor auf die Wertung | **x1,25** (die Grenze) |
+| Mindestwertung | Deine Wertung ohne Bonus muss mindestens **90 %** der Wertung des Inhabers sein, sonst bekommst du alles zurück und es gibt kein Urteil |
+| Verteidigung des Inhabers | Die Wertung des Inhabers steigt mit seiner Akkommodation, bis x1,25 bei 100 % |
+| Zum Sieg | Du musst den Inhaber klar übertreffen. Bei Gleichstand behält er sie |
+| Wenn du verlierst | 50 % des Einsatzes verbrennen, der Rest kommt zurück in deinen Vorrat |
+| Wenn du gewinnst | Der Einsatz ist ausgegeben, und die Einzigartigkeit geht mit 0 % Akkommodation an dich |
+| Abklingzeit | 7 Tage auf diesem Pfad nach jedem Urteil |
+
+Der Bestätigungsbildschirm zeigt beide Wertungen, deinen Faktor und das Ergebnis, bevor du bezahlst, genauso berechnet wie das echte Urteil. Kann die Herausforderung kein faires Urteil erreichen (etwa weil der Inhaber nicht mehr berechtigt ist oder der Server vorher neu startet), bekommst du deinen Einsatz ganz zurück, und es beginnt keine Abklingzeit.
+
+## Wie fechte ich einen vollen Sitz an?
+
+Eine Herausforderung um einen Sitz zielt auf eine volle Stufe, nicht auf einen bestimmten Spieler. Du musst schon alles haben, was ein Aufstieg verlangt, sodass nur noch ein freier Sitz fehlt. Öffne **Contest a Seat** im Beyonder-Menü (`/coi menu character` oder die Taste M mit der [Client-Mod](/de/guides/client-mod/)) oder nutze `/coi usurp seat <pathway>`.
+
+### Die Checkliste
+
+Das Menü zeigt diese Punkte als aktuelle Checkliste.
+
+1. Jeder Sitz auf der nächsten Sequenz ist besetzt.
+2. Dein Schauspielen auf diesem Pfad ist bei 100 %.
+3. Alle Rituale sind abgeschlossen.
+4. Der Zaubertrank für die nächste Sequenz ist in deinem Inventar.
+5. Die Fortschrittsbremse drosselt dich nicht.
+6. Du bist auf diesem Pfad angekommen.
+7. Die Stufe ist nicht geschützt, hatte also in den letzten 14 Tagen kein Urteil.
+8. Du hast keine Abklingzeit für eine neue Erklärung, nachdem du dich zurückgezogen hast.
+9. Du hast genug Overflow für das Gebot.
+
+<Figure src={seatReadiness} alt="Der Reiter Your readiness von Contest a Seat mit 5 von 9 erfüllten Punkten und den Bedingungen des Gebots darunter" caption="Die Checkliste und die Bedingungen des Gebots, gezeigt für einen Testcharakter." />
+
+<Notice tone="info" title="Dein Zaubertrank ist sicher verwahrt">
+Gibst du ein Gebot ab, wird dein Zaubertrank verwahrt, und sein Ablauf stoppt. Wirst du überboten, bekommst du eine Erstattung, verlierst den Krieg oder ziehst dich zurück, bekommst du ihn mit frischer Ablaufzeit zurück. Bist du offline, wartet er bis zu deinem nächsten Login. Verbraucht wird er nur, wenn du ihn trinkst, um in den Sitz aufzusteigen, den du gewonnen hast.
+</Notice>
+
+### Das Gebot
+
+Mindestgebot = deine Leiste x 1,75, und dann gilt Folgendes.
+
+- x1,5 für jede kürzlich verlorene Herausforderung (das verblasst nach 60 Tagen)
+- x0,5, wenn du in den letzten 60 Tagen abgesetzt wurdest (eine Revanche)
+
+Du kannst mehr als das Minimum bieten, bis zu deinem Vorrat.
+
+### Schritt 1: Das Fenster von 48 Stunden
+
+Dein Gebot wird beim Abgeben bezahlt, und der Server wird informiert. 48 Stunden lang kann jeder andere, der die Checkliste erfüllt, auf dieselbe Stufe bieten. Schließt sich das Fenster, geht das höchste Gebot weiter, und jedes andere Gebot wird ganz erstattet, mit Zaubertrank.
+
+Solange das Fenster offen ist, kannst du dich zurückziehen.
+
+- Innerhalb von **15 Minuten** nach der Erklärung ist das kostenlos.
+- Danach verbrennen **50 %** deines Gebots.
+- So oder so kannst du **6 Stunden** lang nicht erneut auf diese Stufe bieten.
+
+### Schritt 2: Nominierung
+
+Die Stufe benennt den Inhaber mit dem niedrigsten **Defense Score**.
+
+| Teil | Gewicht |
+|---|---:|
+| Spielzeit (deine besten 31 Tage aus den letzten 60) | 40 % |
+| Religionswertung der Kirche (siehe [Kirchen](/de/magic/churches/)) | 25 % |
+| Gewirkte Fähigkeiten in den letzten 31 Tagen | 20 % |
+| Akkommodation der Einzigartigkeit | 15 % |
+
+Hat der benannte Inhaber in den letzten **45 Tagen** weniger als **3 Stunden** gespielt, gibt es keinen Krieg. Der Sitz wird einfach übernommen.
+
+### Schritt 3: Der Krieg
+
+- Der Krieg dauert **7 umkämpfte Tage**. Ein Tag zählt nur, wenn der Inhaber mindestens **20 Minuten** davon online und anwesend war.
+- War Points kommen aus echten Gewinnen an Schauspielen, gemessen in Prozent der eigenen Leiste jeder Seite. Verschiedene Sequenzen treten also über ihren Einsatz gegeneinander an.
+- Der Stand wird einmal am Tag verkündet.
+- Eine Grenze von **21 Tagen** Echtzeit verhindert, dass ein Krieg ewig dauert. Fehlt der Inhaber **48 Stunden** oder länger, kann sich der Herausforderer kostenlos zurückziehen. Ein Krieg, der wirklich ausgefochten wird, lässt sich nicht abbrechen.
+- Tägliche Tiden blähen War Points nie auf.
+
+| Quelle für Schauspielen | Gewicht für War Points |
+|---|---:|
+| Spiel mit Fähigkeiten, Weltinhalte, Spielerinteraktion, Events | 1,0 |
+| Gestohlenes Schauspielen | 0,5 |
+| Schauspiel-Flaschen, Passiv, Gunst der Gottheit | 0 |
+
+### Wer gewinnt?
+
+| Wie der Krieg endete | Ergebnis |
+|---|---|
+| Lief die vollen 7 umkämpften Tage | Die meisten War Points gewinnen. Bei Gleichstand bleibt der Sitz |
+| Grenze von 21 Tagen erreicht, Herausforderer hat mehr Punkte | Der Herausforderer gewinnt |
+| Grenze von 21 Tagen erreicht, Gleichstand, und der Herausforderer hat etwas gepunktet | Der Herausforderer gewinnt |
+| Grenze von 21 Tagen erreicht, der Inhaber ist nie aufgetaucht | Der Herausforderer gewinnt |
+| Grenze von 21 Tagen erreicht, der Inhaber hat mehr Punkte | Der Inhaber behält den Sitz |
+
+### Schritt 4: Nach dem Urteil
+
+**Gewinnt der Herausforderer**, muss er sich innerhalb von **48 Stunden** einloggen, mit Schauspielen und Ritualen weiter in Ordnung, und der Zaubertrank wird nach den normalen Regeln für Aufstiege in den Sitz getrunken. Verpasst er das, bleibt der Sitz beim Inhaber.
+
+Für den abgesetzten Inhaber gilt dann Folgendes.
+
+- Er fällt eine Sequenz zurück, nur auf diesem Pfad.
+- Er behält **95 %** der Leiste auf der neuen Sequenz.
+- Er bekommt die **Beyonder-Charakteristik** des Sitzes, den er verloren hat. Sie kann beim nächsten Brauen eine Hauptzutat ersetzen.
+- Er kann **60 Tage** lang zum **halben Preis** auf eine Revanche bieten.
+
+**Verliert der Herausforderer**, verbrennen 50 % des Gebots, der Rest kommt zurück, und der Zaubertrank auch. Die Stufe ist dann 14 Tage lang geschützt, aber nur wenn der Herausforderer mindestens 10 War Points verdient hat. So kann eine Schein-Herausforderung eine Stufe nicht für einen Freund schützen.
+
+Endet ein Wettstreit ohne Urteil (ein Sitz wird von selbst frei, eine Seite wechselt die Sequenz, niemand hat geboten oder das Team bricht ab), werden alle Gebote und Zaubertränke ganz erstattet, und es beginnt keine Abklingzeit.
+
+Einen Sitzkrieg bis zum Urteil auszufechten, ob gewonnen oder verloren, zählt als legendäre Tat für [Sequenz 0](/de/magic/sequence-zero/).
+
+## Kürzlich den Pfad gewechselt?
+
+Ein Pfad, den du seitlich erreicht hast (durch einen Wechsel per Zaubertrank, einen kostenlosen Wechsel oder eine Übernahme durch einen Avatar), statt ihn von Sequenz 9 an zu gehen, muss sich erst setzen.
+
+| Regel | Wert |
+|---|---|
+| Sperre für Herausforderungen | **30 Tage**, bevor du dort einen Sitz oder eine Einzigartigkeit anfechten kannst |
+| Overflow beim Ankommen | Wird anfangs zu **25 %** angespart und steigt über **60 Tage** auf den vollen Wert |
+
+Pfade ohne Ankunftseintrag zählen als gegangen, auch bei jedem Charakter, den es schon vor dieser Regel gab.
+
+## Befehle
+
+| Du willst | Befehl |
+|---|---|
+| Deinen Overflow-Vorrat und laufende Herausforderungen sehen | `/coi usurp` |
+| Die Einzigartigkeit eines Pfades herausfordern | `/coi usurp uniqueness <pathway>` |
+| Eine volle Stufe von Sitzen anfechten | `/coi usurp seat <pathway> [percent]` |
+| Dich aus einem offenen Fenster oder einem festgefahrenen Krieg zurückziehen | `/coi usurp withdraw` |
+
+`[percent]` ist dein Gebot in Prozent deiner Leiste. Lässt du es weg, bietest du das Minimum.
