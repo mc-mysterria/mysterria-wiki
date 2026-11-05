@@ -1,0 +1,134 @@
+---
+title: "Ehrennamen"
+description: "Wie du auf Mysterria ab Sequenz 4 einen Ehrennamen schreibst, prüfen lässt und sprichst, die Divine Response und der Segen jedes Gottes. Ein Leitfaden zu Lord of the Mysteries."
+sidebar:
+  label: Ehrennamen
+  order: 32
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import lotm from '~/assets/magic/lotm.jpg';
+import honorificEditor from '~/assets/magic/honorific-editor.webp';
+
+<Figure src={lotm} alt="Bild aus Lord of the Mysteries mit einer Gestalt auf einem Thron über dem grauen Nebel" />
+
+## Was ist ein Ehrenname?
+
+Ein **Ehrenname** ist eine kurze Folge von Zeilen, die andere Spieler im Chat sprechen, um dich zu erreichen, egal wo du bist. Jeder Beyonder ab **Sequenz 4** kann einen schreiben.
+
+Hier ist ein Beispiel mit fünf Zeilen. Es ist auf Englisch, weil das Spiel Namen von Pfaden, Sequenzen und Fähigkeiten auf Englisch und Ukrainisch erkennt.
+
+> *King of the Skies*
+>
+> *Emperor of the Seas*
+>
+> *Lord of the Calamity*
+>
+> *God of the Storms*
+>
+> *The Wanderer Known to Mysterria*
+
+## Wie lege ich meinen Ehrennamen fest?
+
+Öffne dein Charaktermenü (`/coi menu character` oder die Taste M mit der [Client-Mod](/de/guides/client-mod/)) und klicke auf den Platz für den Ehrennamen. Bis du einen festgelegt hast, bekommst du alle 30 Minuten eine Erinnerung im Chat mit einem Knopf, der den Editor öffnet.
+
+<Figure src={honorificEditor} alt="Der Editor für Ehrennamen mit drei ausgefüllten Zeilen und einem Status-Tooltip mit Complete und Active" caption="Der Editor für Ehrennamen. Das Buch oben zeigt, ob dein Name vollständig und aktiv ist." contain />
+
+Die Zahl der Zeilen hängt von deiner Sequenz ab.
+
+| Deine Sequenz | Zeilen |
+|---|---:|
+| 4 oder 3 | 5 |
+| 2 oder 1 | 4 |
+| 0 | 3 |
+
+Steigst du auf und der Name wird kürzer, bleibt die letzte Zeile erhalten. Der Name wird dann noch einmal geprüft und bleibt vielleicht inaktiv, bis seine Zeilen dein neues Selbst beschreiben.
+
+### Regeln für die Zeilen
+
+Jede Zeile muss diese Regeln erfüllen.
+
+- Sie ist 2 bis 80 Zeichen lang.
+- Sie beginnt nicht mit `!` oder `/`.
+- Sie besteht nicht nur aus Ziffern.
+- Sie hat keine doppelten Leerzeichen und keine Leerzeichen am Anfang oder Ende.
+- Sie nutzt nur Buchstaben (lateinisch oder kyrillisch), Ziffern und einfache Satzzeichen.
+
+### Was macht einen Namen gültig?
+
+Ein gültiger Name muss klar auf **dich** zeigen. Er braucht deinen Benutzernamen nicht. Der Editor zeigt, wie viele Hinweise auf deine Identität er gefunden hat, und du brauchst eine Wertung von **3**. Ein starkes persönliches Merkmal oder mehrere zusammenhängende Hinweise reichen. Diese Hinweise zählen.
+
+- Dein Benutzername oder ein sinnvoller Teil davon
+- Deine Stadt, Kirche, dein Kirchenort, dein verknüpftes Land oder deine Nation
+- Dein Pfad oder der Titel deiner aktuellen Sequenz
+- Eine Fähigkeit, die du auf deiner aktuellen Sequenz hast
+- Bekannte Begriffe von Pfaden und offizielle Wendungen
+- Ein persönliches Merkmal, das das Team genehmigt hat
+
+Beim Abgleich zählen Großbuchstaben, Satzzeichen, Leerzeichen, Apostrophe und Bindestriche nicht. Englische und ukrainische Namen für Pfade, Sequenzen und Fähigkeiten werden erkannt.
+
+Der Editor lehnt unvollständige Namen ab, ebenso falsche Zeilenzahlen, leere oder wiederholte Zeilen, gewöhnliche Chat-Floskeln, Füllwörter aus einem Wort und Namen, die schon zu jemand anderem gehören. Ein abgelehnter Name bleibt als Entwurf erhalten, aber ihn zu sprechen bewirkt nichts, bis er gültig ist.
+
+## Wie spreche ich den Namen von jemandem?
+
+Tippe jede Zeile seines Namens als normale Chatnachricht, in der richtigen Reihenfolge.
+
+- Zwischen den Zeilen hast du **15 Sekunden**.
+- Eine Zeile aus drei oder mehr Wörtern zählt auch dann, wenn sie in einem längeren Satz steht.
+- Deinen eigenen Namen kannst du nicht sprechen, außer über eine Puppe oder einen Avatar-Körper.
+
+Kommt die letzte Zeile an, passiert Folgendes.
+
+- Du hast **15 Minuten** Abklingzeit fürs Sprechen.
+- Ist der Besitzer online, sieht er deine Koordinaten und eine Aufforderung zu antworten, die nach **2 Minuten** abläuft.
+- Gehört der Besitzer zu einer Kirche, zählt das Sprechen als Gebet von außen für diese [Kirche](/de/magic/churches/), und der Besitzer kann dich einladen beizutreten.
+- Der Besitzer bekommt die legendäre Tat **Your honorific invoked** gutgeschrieben, die für [Sequenz 0](/de/magic/sequence-zero/) zählt.
+
+<Notice tone="info" title="Vorsicht vor Disguise">
+Die Fähigkeit Disguise des Error-Pfades kann heimlich den nächsten vollständigen Ruf eines Ehrennamens oder den nächsten Church Blessing einer Kirche abfangen. Der Besitzer der Kirche und die Engel werden gewarnt und können es stoppen, indem sie den Namen des Diebs im Chat sagen.
+</Notice>
+
+## Was kann ich tun, wenn mein Name gesprochen wird?
+
+Klicke auf die Aufforderung, um das Menü **Divine Response** zu öffnen.
+
+| Knopf | Was er tut |
+|---|---|
+| **Teleport** | Öffnet ein Portal und bringt dich zu dem, der gesprochen hat. Ihr müsst in derselben Welt sein, und in Dungeons geht es nicht |
+| **Smite** | Trifft den Sprecher mit einem Blitz für 4 Schaden (2 Herzen) |
+| **Gift Items** | Schickt dem Sprecher einen Gegenstand aus deinem Inventar, egal wie weit weg |
+
+Nutzt du einen davon, hast du als Besitzer **30 Minuten** Abklingzeit. Andere Spieler können deinen Namen in der Zwischenzeit trotzdem sprechen, und jeder Sprecher hat seine eigene Abklingzeit.
+
+## Was passiert, wenn du den Namen eines Gottes sprichst?
+
+Sprichst du den Namen eines Gottes der [Sequenz 0](/de/magic/sequence-zero/), öffnet sich wie gewohnt sein Menü Divine Response. Jedes vollständige Sprechen segnet außerdem sofort den **Sprecher**, auch wenn der Gott offline ist oder nicht antwortet.
+
+- Der Segen hält bis zu **2 Minuten** und zeigt sich mit den eigenen Partikeln und Klängen des Pfades.
+- Der Segen jedes Gottes hat **60 Minuten** Abklingzeit, die sich **alle Sprecher** dieses Gottes **teilen**. Hat ihn jemand anderes in der letzten Stunde gesprochen, erreicht dein Sprechen den Gott trotzdem, aber es gibt keinen Segen.
+- Der Segen wirkt nur auf den Sprecher. Er setzt nie Blöcke und berührt niemand anderen.
+
+| Pfad des Gottes | Segen |
+|---|---|
+| [Fool](https://www.mysterria.net/en/pathways/fool) | Glück II, Resistenz I |
+| [Error](https://www.mysterria.net/en/pathways/error) | Glück I, Schnelligkeit I |
+| [Door](https://www.mysterria.net/en/pathways/door) | Schnelligkeit II, Sprungkraft I |
+| [Sun](https://www.mysterria.net/en/pathways/sun) | Regeneration II, Feuerresistenz I |
+| [Visionary](https://www.mysterria.net/en/pathways/visionary) | Nachtsicht I, Glück I |
+| [Tyrant](https://www.mysterria.net/en/pathways/tyrant) | Meereskraft I, Gunst des Delfins I |
+| [White Tower](https://www.mysterria.net/en/pathways/tower) | Resistenz II, Sanfter Fall I |
+| [Hanged Man](https://www.mysterria.net/en/pathways/hanged) | Schnelligkeit II, Eile I |
+| [Red Priest](https://www.mysterria.net/en/pathways/priest) | Regeneration III, Stärke II, Feuerresistenz (ein eigenes Ritual mit Feuer und einem Roten Auge) |
+| [Demoness](https://www.mysterria.net/en/pathways/demoness) | Stärke I, Schnelligkeit II |
+| [Darkness](https://www.mysterria.net/en/pathways/darkness) | Nachtsicht I, Unsichtbarkeit I |
+| [Death](https://www.mysterria.net/en/pathways/death) | Resistenz I, Nachtsicht I |
+| [Twilight Giant](https://www.mysterria.net/en/pathways/giant) | Stärke II, Resistenz I |
+| [Paragon](https://www.mysterria.net/en/pathways/paragon) | Regeneration II, Absorption I |
+| [Hermit](https://www.mysterria.net/en/pathways/hermit) | Nachtsicht I, Eile I |
+| [Mother](https://www.mysterria.net/en/pathways/mother) | Regeneration II, Sättigung I |
+| [Moon](https://www.mysterria.net/en/pathways/moon) | Regeneration I, Stärke I |
+| [Abyss](https://www.mysterria.net/en/pathways/abyss) | Stärke II, Nachtsicht I |
+| [Chained](https://www.mysterria.net/en/pathways/chained) | Resistenz II, Sanfter Fall I |
+| [Black Emperor](https://www.mysterria.net/en/pathways/emperor) | Stärke II, Feuerresistenz I |
+| [Justiciar](https://www.mysterria.net/en/pathways/justiciar) | Resistenz II, Stärke I |
+| [Wheel of Fortune](https://www.mysterria.net/en/pathways/fortune) | Glück II, Schnelligkeit I |

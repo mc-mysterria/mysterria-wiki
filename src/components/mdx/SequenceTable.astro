@@ -1,0 +1,17 @@
+---
+/*
+ * A Pathway's Sequences as a table: wrap a Markdown table and it is laid out full width,
+ * the first column (the Sequence number) in the accent and tabular figures, the second
+ * (the Sequence's name) in strong ink, the rest as usual. See src/components/README.md.
+ */
+interface Props {
+	/** Names the table for screen readers; the frame then takes focus, so a wide table scrolls by keyboard. */
+	caption?: string;
+}
+
+const {caption} = Astro.props;
+---
+
+<div class="sequence-table" role={caption ? 'region' : undefined} aria-label={caption} tabindex={caption ? 0 : undefined}>
+	<slot/>
+</div>

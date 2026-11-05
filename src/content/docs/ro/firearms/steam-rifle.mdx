@@ -1,0 +1,56 @@
+---
+title: "Steam Rifle"
+description: "Steam Rifle pe Mysterria, serverul LOTM: cele cinci piese ale ei și de unde cad, Rifle Rounds, luneta și cum merg cele două moduri de reîncărcare."
+sidebar:
+    label: Steam Rifle
+    order: 6
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import rifleRounds from '~/assets/firearms/riflerounds.png';
+
+**Steam Rifle** este arma cu rază lungă și lunetă. Lovește cel mai tare, dar trage cel mai încet și ține doar 5 gloanțe.
+
+[Statisticile](/ro/firearms/#statisticile-armelor) ei sunt 20 de daune, 5 gloanțe, rază de 100 de blocuri și 1,2 secunde între focuri.
+
+## Cum obțin una?
+
+Ai nevoie de cinci piese și **niciuna nu se poate face**:
+
+- Steam Rifle Barrel
+- Steam Pipe Assembly
+- Mechanical Power Box
+- Military Rifle Stock
+- Sniper Scope
+
+De fiecare dată când un cufăr dintr-o structură vanilla din Overworld își generează prada, există 25% șanse să aibă și o piesă la întâmplare de Deathknell sau Steam Rifle. Poți obține piese și prin schimb cu alți jucători.
+
+Cu toate cinci în inventar, dă click dreapta pe o [Weaponsmith Table](/ro/firearms/crafting/#cum-construiesc-o-armă) ca să verifici, apoi Shift + click dreapta ca să construiești.
+
+## Ce muniție folosește?
+
+Doar **Rifle Rounds** și gloanțele Rifle speciale făcute din ele (13 feluri în total).
+
+- 1 Rifle Cartridge Case + 1 Rifle Cartridge Core + 2 Gunpowder = **3 Rifle Rounds**.
+- 3 Brass + 1 Iron Ingot + 12 Gunpowder fac **18 gloanțe**, muniția care cere cel mai mult Brass.
+
+<Figure src={rifleRounds} alt="Grila de crafting: un Rifle Cartridge Case, un Rifle Cartridge Core și 2 Gunpowder care fac 3 Rifle Rounds" caption="Rifle Rounds." contain />
+
+Pagina [Muniție](/ro/firearms/ammunition/) are rețetele pentru tuburi și miezuri și toate gloanțele speciale.
+
+## Cum folosesc luneta?
+
+Ține apăsat **Sneak** cât ții pușca în mână ca să te uiți prin lunetă și dă drumul ca să te oprești. Zoomul vine dintr-un efect de Încetinire, așa că te miști încet cât ochești. Luneta singură nu îți îmbunătățește [precizia](/ro/firearms/#precizie). Statul pe loc o îmbunătățește.
+
+## Cum funcționează reîncărcarea?
+
+Pușca are două moduri de reîncărcare, după cum mai are sau nu gloanțe.
+
+| Încărcătorul când reîncarci | Ce se întâmplă |
+|---|---|
+| Gol | Toate gloanțele intră deodată după **3,0 secunde**. Nimic nu se poate folosi înainte de asta. |
+| Mai are 1 până la 4 gloanțe | Primul glonț intră după **1,0 secundă**, apoi câte unul la fiecare **0,75 secunde**. Completarea a 4 gloanțe durează 3,25 secunde. |
+
+Nu poți trage cât rulează reîncărcarea („Weapon is reloading!”). Dacă treci pe alt slot din bara rapidă, o anulezi. La o completare, gloanțele deja încărcate rămân în armă. La o reîncărcare de la gol, nu se încarcă nimic dacă anulezi înainte să treacă cele 3 secunde. De aceea merită des să completezi după un foc sau două, în loc să tragi mai întâi toate cele 5.
+
+Când reîncarci de la gol, pușca ia prima stivă de Rifle Rounds din inventar. Când e încărcată pe jumătate, completează doar cu același fel de glonț care e deja înăuntru.

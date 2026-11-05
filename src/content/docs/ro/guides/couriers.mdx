@@ -1,0 +1,65 @@
+---
+title: "Cum trimiți obiecte altor jucători prin curieri"
+description: "Cum funcționează curierii pe Mysterria: construiești un Horn of Summoning, îi dai obiectele curierului, alegi destinatarul și cât durează livrarea, chiar și la jucători offline."
+sidebar:
+    label: Curieri
+    order: 34
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import hornCraft from '~/assets/couriers/courier_horn_craft.png';
+
+**Curierii** sunt mesageri strigoi care duc obiecte altor jucători, oriunde ar fi și chiar când sunt offline. Chemi unul cu un **Horn of Summoning**, îi dai obiectele și alegi destinatarul.
+
+## Cum obțin un Horn of Summoning?
+
+1. Găsește **Courier Horn Shards** în cuferele de pradă din Overworld. Fiecare cufăr nou generat are **15%** șanse să aibă unul.
+2. Strânge **3 bucăți** și pune-le în **formă de L** pe masa de crafting:
+
+<Figure src={hornCraft} alt="Trei Courier Horn Shards în formă de L pe grila de crafting, care fac un Horn of Summoning" caption="Rețeta pentru Horn of Summoning." contain />
+
+Cornul **nu se consumă**. Poți chema un curier cu el o dată la **5 minute**.
+
+## Tipuri de curieri
+
+Cornul tău cheamă mereu cel mai bun curier la care ai acces.
+
+| Curier | Câte obiecte duce | Timpul de livrare | Cât îți așteaptă obiectele | Cum îl obții |
+|---|---|---|---|---|
+| **Skeleton** (Bone Runner) | 1 | 5 minute | 5 minute | Orice Horn of Summoning |
+| **Jellyfish** | 2 | 5 minute | 5 minute | Jellyfish Courier din [magazin](https://www.mysterria.net/en/store) |
+| **Incinerated Courier** | 2 | 3 minute | 3 minute | Incinerated Courier din [magazin](https://www.mysterria.net/en/store) |
+
+Curierii duc **doar obiecte la bucată**, nu stive. O stivă de 64 e refuzată, așa că împarte-o înainte. Și **shulker boxes** sunt refuzate.
+
+## Cum trimit obiecte?
+
+1. Dă **click dreapta** cu Horn of Summoning. Curierul tău apare lângă tine.
+2. **Aruncă** fiecare obiect (apasă `Q`) la cel mult **3 blocuri** de curier. El ia obiectul și confirmă în chat.
+3. Când curierul e plin (1 obiect pentru Skeleton, 2 pentru ceilalți), meniul **Select Recipient** se deschide după vreo 2 secunde.
+4. Alege jucătorul, apoi apasă **Confirm Delivery**.
+
+Curierul pleacă cu obiectele tale. Și tu, și destinatarul primiți un mesaj în chat când pornește livrarea și când ajunge.
+
+Dacă nu termini la timp, curierul dispare după timpul lui de așteptare (5 minute sau 3 pentru Incinerated Courier), iar obiectele pe care le luase deja se întorc la tine.
+
+## Unde merg curierii?
+
+**Chemarea** merge în Overworld, în Nether, în Manipulation Pool, în Mirror Realm, în Nightmare Pool și într-un [Secret Lair](/ro/guides/orders/#secret-lair-nivelul-4). Nu merge în End.
+
+**Livrarea** are loc doar cât destinatarul e în **Overworld** sau în **Nether**. Dacă destinatarul e în altă parte, în modul spectator sau deasupra lui Y 320, curierul așteaptă și încearcă din nou la fiecare 5 secunde până se întoarce.
+
+## Pot trimite obiecte unui jucător offline?
+
+Da. Obiectele sunt păstrate și livrate data viitoare când intră jucătorul, după ce a trecut timpul de livrare. O livrare care tot așteaptă după **30 de zile** e ștearsă, așa că nu trimite obiecte jucătorilor care au plecat de pe server.
+
+## Curierii și Agora
+
+Lasă-ți Horn of Summoning la **Courier Post** din [Agora](/ro/guides/agora/#courier-post) și tot ce cumperi acolo îți e adus de curierul tău. Poți lua cornul înapoi oricând vrei.
+
+## Pagini înrudite
+
+<CardGrid>
+  <Card title="Agora" text="Primește cumpărăturile din piață prin curier." icon="coin" href="/ro/guides/agora/" />
+  <Card title="Ordine Secrete" text="Împarte obiecte cu Ordinul tău prin depozitul lui." icon="lock" href="/ro/guides/orders/" />
+</CardGrid>

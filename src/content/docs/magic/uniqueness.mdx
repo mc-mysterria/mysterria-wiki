@@ -1,0 +1,126 @@
+---
+title: "Uniqueness"
+description: "How Mysterria grants each Pathway's Uniqueness, how accommodation grows, what its four traits do, and how it can change hands. A Lord of the Mysteries guide."
+sidebar:
+  label: Uniqueness
+  order: 31
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import uniquenessMenu from '../../../assets/magic/uniqueness-menu.webp';
+import uniquenessCandidacy from '../../../assets/magic/uniqueness-candidacy.webp';
+
+## What is a Uniqueness?
+
+A **Uniqueness** is a Pathway's single authority, held by one Beyonder at a time. Holding your Pathway's Uniqueness and **accommodating** it to 95% is a requirement for [Sequence 0](/magic/sequence-zero/), and on the way it wakes four bonus traits.
+
+Each of the 22 normal Pathways has exactly one. Outer Pathways and Boons do not.
+
+## How do I open the Uniqueness menu?
+
+Open your character menu (`/coi menu character`, or the M key with the [Client Mod](/guides/client-mod/)) and choose **Uniqueness**. Without the mod it opens as a chest menu. Its five sections are **Where you stand**, **Candidacy score**, **Participation**, **Physical manifestation** and **Usurpation**.
+
+<Figure src={uniquenessCandidacy} alt="The Uniqueness menu in the Client Mod, showing the candidacy score cards" caption="The Uniqueness menu in the Client Mod. The numbers here come from a test character." />
+
+<Figure src={uniquenessMenu} alt="Where you stand section of the Uniqueness menu, Sun at 64 percent accommodation with two traits awake" caption="Where you stand, for a test holder of the Sun Uniqueness at 64% accommodation." />
+
+## How is a Uniqueness granted?
+
+Nobody buys or rolls a Uniqueness. Every 2 hours the server scores every eligible Beyonder on the Pathway and grants it to the strongest candidate.
+
+### Who can be a candidate?
+
+- **Sequence 4 or stronger** on that Pathway
+- an account at least **7 days** old
+- at least **10 hours** of playtime
+- an activity index of at least **1.5**
+- a total score of at least **40**
+- not withdrawn from evaluation
+
+You can hold only one Uniqueness at a time.
+
+### The candidacy score
+
+Each part is scored out of 100, then weighted:
+
+| Part | Weight | What it measures |
+|---|---:|---|
+| Sequence | 35% | Sequence 1 = 100, Sequence 2 = 90, Sequence 3 = 80, Sequence 4 = 60 |
+| Playtime | 25% | Total hours on the server, counted up to 100 |
+| Activity | 20% | How recently and regularly you play (index up to 5.0). This drops if you stop logging in |
+| Acting | 15% | How far along the whole Pathway you have acted, from Sequence 9 up. Advancing never lowers it |
+| Dedication | 5% | Half from days you played at least 30 minutes (up to 31), half from your average session length (up to 180 minutes) |
+
+Staff can add a **Manual adjustment** from -20 to +20 on top of the weighted total. It is shown in the menu.
+
+The current holder's whole score is multiplied by up to **x1.25** at 100% accommodation, which makes a settled holder harder to replace.
+
+Daily Tides never change Uniqueness scoring.
+
+## How can a Uniqueness change hands?
+
+Killing the holder does **not** move it. These five things do:
+
+1. The **automatic re-check** moves it to another candidate who scores at least **6 points** higher than the holder. A new holder is safe from this for **3 days**.
+2. Another player spends Overflow on a [paid challenge](/magic/usurpation/#how-do-i-challenge-a-uniqueness) to force a re-score.
+3. A rival who wins a [Sequence 0 vigil](/magic/sequence-zero/) against the holder takes the Uniqueness, but not the throne.
+4. If the holder withdraws from evaluation, it goes straight to the next candidate.
+5. Entering an [Ordeal](/magic/ordeals/) releases it automatically.
+
+<Notice tone="warn" title="A new holder always starts from 0%">
+When a Uniqueness changes hands, accommodation, the death count and the growth record all reset to zero.
+</Notice>
+
+## Can I opt out?
+
+Yes. Taking part is the default. Switch it off under **Participation** with **Withdraw from evaluation**. The button asks you to confirm twice.
+
+- If you hold the Uniqueness, it goes to the next candidate **immediately**.
+- Rejoining later puts you back in the queue. It does not give the Uniqueness back.
+- While withdrawn you are not scored and cannot challenge for a Uniqueness.
+
+## How does accommodation grow?
+
+Accommodation is how far the Uniqueness has settled into you, from 0% to 100%. It grows only while you hold it, from using your Pathway:
+
+| Source | Accommodation gained |
+|---|---|
+| Acting earned | +0.02 points per 100 Acting |
+| Spirituality spent | +0.001 points per 100 Spirituality |
+| Each ability cast | +0.00005 points |
+
+Acting is by far the biggest source. These amounts are then multiplied by your Sequence:
+
+| Sequence | Growth multiplier |
+|---|---:|
+| 1 | x1.2 |
+| 2 | x1.1 |
+| 3 | x1.0 |
+| 4 | x0.8 |
+
+### Dying costs accommodation
+
+Each death while holding a Uniqueness costs a flat **10 percentage points** (80% becomes 70%), whatever killed you. It never goes below **10%**. A death that is cancelled, for example by an artifact, costs nothing.
+
+## What does it give?
+
+### The four traits
+
+Each trait wakes at a set accommodation and then grows in a straight line with accommodation, reaching its full value at 100%.
+
+| Trait | Wakes at | Effect at 100% | Value when it wakes |
+|---|---:|---|---|
+| **Spiritual Dominance** | 25% | +50% Spirituality regeneration | +12.5% |
+| **Authority Amplification** | 50% | +30% ability power and damage | +15% |
+| **Divine Resilience** | 75% | +20% maximum Spirituality | +15% |
+| **Acting Acceleration** | 100% | +40% Acting gains | +40% |
+
+Pathway-specific traits are not in the game.
+
+### The road to Sequence 0
+
+To claim a throne you must hold your Pathway's Uniqueness **and** have it at **95%** accommodation or more. [Sequence 0](/magic/sequence-zero/) lists the other requirements.
+
+### Physical manifestation
+
+Each Uniqueness has a cosmetic item. You can take it out or hide it from the **Physical manifestation** section. It is bound to you and can never leave your inventory. Some can be worn on the head.

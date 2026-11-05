@@ -1,0 +1,284 @@
+---
+/*
+ * The main site's footer (mysteria-frontend src/components/layout/FooterItem.vue, the
+ * "full" variant), with the same columns and wording. Every main-site link goes to
+ * www.mysterria.net in the reader's language; the brand leads back to the main site's
+ * home, and Wiki to this wiki's home. Its seam (the fade into the deeper ground) and edges
+ * come from the copied arcana.css, as on the main site; the scoped rules below are
+ * FooterItem.vue's own. Keep the two in step.
+ */
+import logo from '../assets/brand/logo-128.webp';
+import {COMPANION_URL, DISCORD_URL, MAP_URL, SERVER_IP, mainUrl, wikiPath} from '../lib/site';
+
+const {locale} = Astro.locals.starlightRoute;
+const {t} = Astro.locals;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer full">
+	<div class="footer-shell">
+		<div class="footer-columns">
+			<div class="footer-identity">
+				<a href={mainUrl(locale, '')} class="footer-brand">
+					<img src={logo.src} alt="" width="34" height="34" decoding="async" loading="lazy"/>
+					<span>Mysterria</span>
+				</a>
+				<p class="footer-disclaimer">{t('footer.disclaimer')}</p>
+			</div>
+
+			<div class="footer-column footer-column--play">
+				<p class="footer-heading">{t('footer.playHeading')}</p>
+				<a href={mainUrl(locale, '/guide')}>{t('nav.guide')}</a>
+				<a href={mainUrl(locale, '/pathways')}>{t('nav.pathways')}</a>
+				<a href={mainUrl(locale, '/ascension')}>{t('footer.linkSeats')}</a>
+				<a href={mainUrl(locale, '/help')}>{t('footer.linkHelp')}</a>
+				<a href={mainUrl(locale, '/guide/lotm-in-minecraft')}>{t('footer.linkLotm')}</a>
+			</div>
+
+			<div class="footer-column footer-column--server">
+				<p class="footer-heading">{t('footer.serverHeading')}</p>
+				<a href={mainUrl(locale, '/news')}>{t('nav.news')}</a>
+				<a href={mainUrl(locale, '/news?type=changelog')}>{t('footer.changelog')}</a>
+				<a href={mainUrl(locale, '/rules')}>{t('nav.rules')}</a>
+				<a href={mainUrl(locale, '/staff')}>{t('footer.linkStaff')}</a>
+				<a href={mainUrl(locale, '/store')}>{t('nav.store')}</a>
+			</div>
+
+			<div class="footer-column footer-column--community">
+				<p class="footer-heading">{t('footer.communityHeading')}</p>
+				<a href={DISCORD_URL} rel="noopener noreferrer">{t('services.discord')}</a>
+				<a href={wikiPath(locale)} aria-current="true">{t('nav.wiki')}</a>
+				<a href={MAP_URL} rel="noopener noreferrer">{t('services.map')}</a>
+				<a href={COMPANION_URL} rel="noopener noreferrer">{t('footer.linkCompanion')}</a>
+			</div>
+		</div>
+
+		<div class="footer-baseline">
+			<span class="footer-copy">© {year} Mysterria † {SERVER_IP}</span>
+			<nav class="footer-legal" aria-label={t('footer.legalLabel')}>
+				<a href={mainUrl(locale, '')}>{t('wiki.mainSite')}</a>
+				<a href={mainUrl(locale, '/terms')}>{t('footer.terms')}</a>
+				<a href={mainUrl(locale, '/privacy')}>{t('footer.privacy')}</a>
+			</nav>
+		</div>
+	</div>
+</footer>
+
+<style>
+	/* FooterItem.vue's scoped rules (the ground, the seam and the edges are arcana.css's) */
+	/* the footer sits in the main column (beside the sidebar on docs pages): it steps down by its own width */
+	.site-footer {
+		container: site-footer / inline-size;
+	}
+
+	.footer-shell {
+		max-width: var(--myst-shell, 1180px);
+		margin: 0 auto;
+	}
+
+	.footer-columns {
+		display: grid;
+		grid-template-columns: 1.4fr 1fr 1fr 1fr;
+		gap: 48px;
+		padding-bottom: 48px;
+		border-bottom: 1px solid var(--myst-line-10);
+	}
+
+	.footer-brand {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-bottom: 18px;
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.footer-brand img {
+		width: 34px;
+		height: 34px;
+		object-fit: contain;
+	}
+
+	.footer-brand:hover {
+		color: inherit;
+	}
+
+	.footer-brand span {
+		font-family: var(--myst-font-display);
+		font-size: 18px;
+		font-weight: 700;
+		color: var(--myst-offwhite);
+	}
+
+	.footer-disclaimer {
+		margin: 0;
+		max-width: 34ch;
+		color: var(--myst-ink-muted);
+		font-size: 13px;
+		line-height: 1.7;
+	}
+
+	.footer-column {
+		display: flex;
+		flex-direction: column;
+		gap: 11px;
+	}
+
+	.footer-heading {
+		margin: 0 0 5px;
+		font-family: var(--myst-font-mono);
+		font-size: 11px;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--myst-gold);
+	}
+
+	.footer-column a {
+		display: flex;
+		align-items: center;
+		min-height: 24px;
+		gap: 10px;
+		margin: 0;
+		font-size: 14px;
+		color: var(--myst-ink-muted);
+		text-decoration: none;
+		transition: color 0.25s ease;
+	}
+
+	.footer-column a:hover {
+		color: var(--myst-gold);
+	}
+
+	.footer-baseline {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+		flex-wrap: wrap;
+	}
+
+	.site-footer.full .footer-baseline {
+		padding-top: 28px;
+	}
+
+	.footer-copy,
+	.footer-legal a {
+		font-family: var(--myst-font-mono);
+		font-size: 11px;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: color-mix(in srgb, var(--myst-ink-muted) 88%, transparent);
+	}
+
+	.footer-legal {
+		display: flex;
+		gap: 22px;
+		flex-wrap: wrap;
+	}
+
+	.footer-legal a:hover {
+		color: var(--myst-gold);
+	}
+
+	@container site-footer (max-width: 900px) {
+		.footer-columns {
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+			/* Community sits under Play, so the two columns end level instead of leaving a gap under Play */
+			grid-template-areas:
+				'identity identity'
+				'play server'
+				'community community';
+			gap: 22px 24px;
+			padding-bottom: 28px;
+		}
+
+		.footer-identity {
+			grid-area: identity;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 6px 14px;
+		}
+
+		.footer-brand {
+			margin-bottom: 0;
+		}
+
+		.footer-disclaimer {
+			flex: 1 1 260px;
+			max-width: none;
+			font-size: 12px;
+			line-height: 1.55;
+		}
+
+		.footer-column--play { grid-area: play; }
+		.footer-column--server { grid-area: server; }
+		/* Community spans both columns, its links two to a row in line with Play and Server */
+		.footer-column--community {
+			grid-area: community;
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+			column-gap: 24px;
+		}
+
+		.footer-column--community .footer-heading {
+			grid-column: 1 / -1;
+		}
+
+		/* .footer-column's gap below would shrink the column gap: keep it level with Play and Server */
+		.footer-columns .footer-column--community {
+			column-gap: 24px;
+		}
+
+		.footer-column {
+			gap: 9px;
+		}
+
+		.footer-column a {
+			font-size: 13.5px;
+		}
+
+		.site-footer.full .footer-baseline {
+			padding-top: 18px;
+		}
+	}
+
+	@container site-footer (min-width: 601px) and (max-width: 900px) {
+		.footer-columns {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			grid-template-areas:
+				'identity identity identity'
+				'play server community';
+		}
+
+		/* the disclaimer goes under the logo, as on the main site, not squeezed beside it */
+		.footer-disclaimer {
+			flex-basis: 100%;
+		}
+
+		/* three columns again: Community is one list like the others */
+		.footer-column--community {
+			display: flex;
+		}
+	}
+
+	@container site-footer (max-width: 560px) {
+		.footer-baseline {
+			justify-content: center;
+			gap: 10px 20px;
+			text-align: center;
+		}
+
+		/* the legal links stay one centred row under the copyright line */
+		.footer-legal {
+			justify-content: center;
+			gap: 8px 16px;
+		}
+
+		.footer-copy,
+		.footer-legal a {
+			letter-spacing: 0.1em;
+		}
+	}
+</style>

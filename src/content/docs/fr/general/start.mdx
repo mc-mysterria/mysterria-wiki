@@ -1,0 +1,121 @@
+---
+title: "Démarrage rapide"
+description: "Comment rejoindre Mysterria, le serveur Minecraft Lord of the Mysteries : adresse du serveur, pack de ressources, vérification, bonus de départ et première potion."
+sidebar:
+  label: Démarrage rapide
+  order: 1
+---
+
+import {Figure, Notice, CardGrid, Card} from '~/components/mdx';
+import banner from '~/assets/start/banner.png';
+import ipPreview from '~/assets/start/ip-preview.png';
+import generate from '~/assets/start/generate.png';
+import code from '~/assets/start/code.png';
+import pathways from '~/assets/start/pathways.png';
+import dossier from '~/assets/start/beyonder-dossier.webp';
+
+<Figure src={banner} alt="Un Beyonder de Mysterria qui vole au-dessus du monde" />
+
+Mysterria est un **serveur Minecraft Lord of the Mysteries (LOTM)**. Le système Beyonder tourne dans un plugin du serveur, donc tu rejoins avec un client Minecraft ordinaire, sans aucun mod.
+
+## 1. Se connecter au serveur
+
+| Quoi | Détails |
+|---|---|
+| **Adresse du serveur** | `mc.mysterria.net` |
+| **Édition** | Java Edition. Bedrock peut rejoindre via Geyser, mais certains menus et icônes personnalisés s'affichent mal |
+| **Version** | Le [guide du joueur](https://www.mysterria.net/en/guide/connect) recommande Minecraft Java **26.2** |
+| **Mods** | Aucun n'est requis. Le [Client Mod](/fr/guides/client-mod/) facultatif ajoute des menus natifs et un petit bonus d'Interprétation |
+
+<Figure src={ipPreview} alt="L'écran Modifier les infos du serveur avec mc.mysterria.net comme adresse" caption="Ajoute mc.mysterria.net dans Multijoueur." />
+
+1. Ouvre **Multijoueur**, ajoute `mc.mysterria.net` et rejoins le serveur.
+2. **Accepte le pack de ressources du serveur** quand Minecraft le demande.
+3. Dans le sélecteur de serveurs du lobby, choisis **Mysteries**.
+4. Lis ce que dit le PNJ du lobby avant de partir.
+
+<Notice tone="warn" title="Tout ressemble à du Minecraft ordinaire ?">
+  Alors le pack de ressources ne s'est pas chargé. Modifie l'entrée du serveur, règle **Packs de ressources du serveur** sur **Activé** et reconnecte-toi. Si ça échoue encore, mets ton client Java à jour. D'autres solutions se trouvent dans le [guide de dépannage](https://www.mysterria.net/en/guide/troubleshooting) du site principal.
+</Notice>
+
+## 2. S'inscrire (comptes hors ligne seulement)
+
+Les comptes Minecraft officiels (premium) se connectent automatiquement et sautent cette étape.
+
+Les comptes hors ligne tapent `/register <password> <password>` lors de la première visite, puis `/login <password>` à chaque visite suivante. Retiens bien ton mot de passe.
+
+## 3. Vérifier ton compte
+
+La vérification lie ton compte Minecraft à ton compte Discord et à ton profil sur mysterria.net. Les joueurs vérifiés obtiennent des salons Discord exclusifs, un préfixe et un rôle uniques dans le chat, et l'accès complet à la boutique.
+
+1. Connecte-toi sur [mysterria.net](https://www.mysterria.net/en/profile) et ouvre ton **profil**.
+2. Sous **Lier ton compte Minecraft**, clique sur **Obtenir un code**.
+3. En jeu, tape `/verify` et saisis le code de 8 caractères dans la fenêtre qui s'ouvre. Tu peux aussi taper `/verify <code>`.
+
+<Figure src={generate} alt="La case Lier ton compte Minecraft sur le profil du site, avec un bouton Obtenir un code et la commande /verify" caption="Obtiens le code sur ton profil du site." />
+
+<Figure src={code} alt="La fenêtre de vérification en jeu qui demande le code" caption="Puis saisis-le en jeu." contain />
+
+Si le code ne marche pas, génères-en un nouveau ou ouvre un ticket sur Discord.
+
+## 4. Choisis ton bonus de départ
+
+Peu après ton arrivée, un menu affiche les 22 Voies. Choisis-en une, puis l'un des deux bonus de départ.
+
+<Figure src={pathways} alt="Le menu Choose Your Path avec les emblèmes des 22 Voies" caption="Le menu des Voies que tu vois en tant que nouveau joueur." />
+
+| | Voie du Raccourci | Voie de la Résolution |
+|---|---|---|
+| **Tu reçois** | La Séquence 9 de la Voie choisie, tout de suite | Ta garantie de formule commence à un coffre près |
+| **Coût permanent** | Ta Spiritualité maximale est **10 % plus basse pour toujours**, à chaque Séquence | Aucun |
+| **Idéal pour** | Jouer avec des capacités dès maintenant | Apprendre la préparation et garder toute ta puissance |
+
+Pour profiter de la Voie de la Résolution, ouvre `/magic`, clique sur **Loot Focus**, choisis **Recipes** et garde **Any Sequence**. Ton prochain coffre de butin te donne alors une formule pour **n'importe quelle Voie et Séquence**, donc pas forcément la Voie sur laquelle tu as cliqué. Plus de détails dans [Focalisation du butin](/fr/magic/loot/#focalisation-du-butin-garantie).
+
+<Notice tone="info" title="La Voie sur laquelle tu cliques ne t'enferme pas">
+  Tu rejoins la Voie de la première potion de Séquence 9 que tu bois. Si le menu indiquait Fool mais que tu bois une potion Door, tu es Door. Le bonus de départ ne peut pas être choisi à nouveau, mais le staff accorde parfois une réinitialisation pour une vraie erreur de nouveau joueur. Ouvre un ticket sur Discord pour la demander.
+</Notice>
+
+## 5. Prépare et bois ta première potion
+
+La Séquence 9 demande une **formule**, un **Chaudron magique** (un autel Crude, Ritual ou Grand) et les **ingrédients** de la formule, puis une préparation réussie. Elle ne demande ni Interprétation ni rituel et ne coûte aucune Folie. Les potions préparées expirent au bout de 48 heures, alors prépare-la quand tu es prêt à la boire.
+
+<CardGrid>
+  <Card title="Préparation et potions" text="Les chaudrons, les formules, le mini-jeu de préparation et ce que coûte un échec." href="/fr/magic/brewing/" />
+  <Card title="Butin et focalisation" text="D'où viennent les formules et les ingrédients, et le compteur de garantie." href="/fr/magic/loot/" />
+  <Card title="Voies" text="Les 22 Voies, leurs Séquences et leurs voisines." href="/fr/magic/pathways/" />
+</CardGrid>
+
+## 6. Consulte ton personnage
+
+Ta Séquence, ton Interprétation, ta Santé, ta Spiritualité et ta Folie se trouvent sur l'écran de ton personnage. Ouvre ton **inventaire**, clique sur l'**icône de Voie** dans le coin supérieur gauche et survole la tête de ton personnage. Tu peux aussi taper `/coi menu character`. Avec le [Client Mod](/fr/guides/client-mod/), l'icône de l'inventaire disparaît et tu appuies sur **M** à la place.
+
+<Figure src={dossier} alt="Le Dossier Beyonder du Client Mod pour un joueur Fool de Séquence 9, avec la Santé, la Spiritualité, la Folie, la Fatigue et la progression d'Interprétation" caption="Le Dossier Beyonder que le Client Mod ouvre avec M." />
+
+## Commandes utiles
+
+| Commande | Ce qu'elle fait |
+|---|---|
+| `/magic` | Guide des nouveaux joueurs, avec la focalisation du butin |
+| `/guide`, `/faq`, `/hints` | Livre guide en jeu, questions fréquentes, astuces |
+| `/bounty` | Primes d'Interprétation |
+| `/subspace` | Les donjons, leurs entrées et tes temps de recharge |
+| `/emporium`, `/daily`, `/vote` | Emporium brillant, récompenses quotidiennes, votes |
+| `/wallet` | Ton argent |
+| `/lands` | Créer ou gérer une ville |
+| `/msg <player>`, `/r` | Messages privés |
+
+Il n'y a **pas** de `/home`, `/sethome`, `/spawn`, `/tpa`, `/rtp` ni `/back`. La liste complète se trouve sur [Commandes](/fr/general/commands/).
+
+## Avant de t'installer
+
+- Sans commandes de téléportation, choisis ta base avec soin ou rejoins une ville.
+- Le PvP est désactivé dans la plus grande partie du monde, et le grief est interdit par les règles.
+- Chaque coffre d'une structure générée est un coffre de butin Beyonder, et chacun **te** récompense une seule fois.
+- Le monde est réinitialisé entre les époques. L'Époque II a commencé le 1er mai 2026.
+
+Les détails sont sur [Monde et sécurité](/fr/general/world-and-safety/). Lis les [règles du serveur](https://www.mysterria.net/en/rules) avant de jouer.
+
+## Besoin d'aide ?
+
+Demande dans le chat ou sur le [Discord de Mysterria](https://discord.com/invite/jc7GSxBWgb). Le [guide du joueur](https://www.mysterria.net/en/guide) répond aux questions les plus fréquentes.

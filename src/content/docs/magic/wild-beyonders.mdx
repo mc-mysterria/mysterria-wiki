@@ -1,0 +1,118 @@
+---
+title: "Wild Beyonders"
+description: "Wild Beyonders on Mysterria, the LOTM Minecraft server: who is hostile, what they sell and for how much, what they drop, and how to fight them."
+sidebar:
+  order: 33
+---
+
+import {Figure} from '~/components/mdx';
+import leadImage from '~/assets/heroes/wild-beyonders.webp';
+import wbTrade from '../../../assets/magic/wild-beyonder-trade.webp';
+
+<Figure src={leadImage} eager alt="A Wild Beyonder" />
+
+Wild Beyonders are NPC Beyonders who wander the wilds, each with a Pathway and a Sequence from **Sequence 9 to Sequence 5**. Depending on your own Pathway they trade with you or attack on sight, and they fight with real Pathway abilities.
+
+## Will a Wild Beyonder attack me?
+
+It depends only on your Pathway compared with theirs:
+
+| You are | Their attitude | Trading |
+|---|---|---|
+| The **same Pathway** | Peaceful unless you attack | Normal prices |
+| A **neighbouring Pathway** (same group) | Peaceful unless you attack | Prices **x1.5** |
+| **Any other Pathway** | Hostile on sight | Not possible |
+| **Not a Beyonder yet** | Hostile on sight | Not possible |
+| Anyone who attacks first | Hostile | Not possible |
+
+Neighbouring Pathways are the ones in the same group, for example Fool, Error and Door. The [Pathways](/magic/pathways/) page lists the groups. Right-clicking a hostile one shows "This Wild Beyonder is hostile toward your pathway!".
+
+If you die or log out, the Wild Beyonder loses track of you and does not come after you when you return.
+
+## Where do Wild Beyonders spawn?
+
+They have no fixed places. They appear around players who are out exploring.
+
+| Rule | Value |
+|---|---|
+| Spawn check | Every 5 minutes, **5% chance** per online player |
+| Distance from you | 64 to 256 blocks |
+| Distance from world spawn | At least 200 blocks |
+| Distance from each other | At least 100 blocks |
+| Most at once | 20 on the whole server (40 on Wild Tide) |
+| Despawn | After 60 seconds with no player within 50 blocks |
+
+On **Wild Tide** days twice as many spawn and twice as many can exist at once. The [Daily Tides](/guides/tides/) page says when.
+
+### How strong are they?
+
+| Sequence | 9 | 8 | 7 | 6 | 5 |
+|---|---|---|---|---|---|
+| Share of spawns (about) | 32% | 21% | 19% | 18% | 11% |
+
+There are no wild ones at Sequence 4 or stronger.
+
+## How do I trade with a Wild Beyonder?
+
+Right-click a peaceful Wild Beyonder. The first time you meet one it greets you, and the trade menu opens about 10 seconds later. You cannot trade while it is fighting.
+
+Every offer costs the same number in money from your wallet, in **Energy Shards** and in **Verl Dor** coins, all paid at once. Energy Shards come from selling ingredients to nitwit and jobless villagers, as explained on [Energy Shards](/guides/economy/#energy-shards). Verl Dor is the largest coin in the wallet (see [Economy](/guides/economy/)).
+
+### What do they sell?
+
+A Wild Beyonder has at most 8 offers, all from its own Pathway:
+
+| Offer | When it appears |
+|---|---|
+| Ingredients | Always, with 1 or 2 ingredients for each Sequence from its own down to 9 |
+| A potion | 30% chance, only if the Wild Beyonder is Sequence 8 or stronger. The potion is its own Sequence or weaker |
+| A Beyonder Characteristic | 50% chance, only if it is Sequence 7 or stronger. Always its own Sequence |
+| A potion recipe | 20% chance, only if it is Sequence 6 or stronger. Its own Sequence or up to 2 weaker |
+
+### How much does it cost?
+
+The price grows by x1.5 for every Sequence above 9. Each number below is paid in money, **and** in Energy Shards, **and** in Verl Dor coins:
+
+| Item Sequence | Ingredient | Potion | Recipe | Characteristic |
+|---|---|---|---|---|
+| 9 | 100 | 500 | 1,500 | 2,000 |
+| 8 | 150 | 750 | 2,250 | 3,000 |
+| 7 | 225 | 1,125 | 3,375 | 4,500 |
+| 6 | 338 | 1,688 | 5,063 | 6,750 |
+| 5 | 507 | 2,532 | 7,594 | 10,125 |
+
+<Figure src={wbTrade} alt="A Wild Beyonder trade menu with a Brilliance Rock priced at 150 Money, 150 VerlDor and 150 Energy Shards" caption="Every offer lists its price in money, Verl Dor coins and Energy Shards." contain />
+
+If you are from a neighbouring Pathway, multiply by 1.5. A trade fails without taking anything if you cannot pay or have no room for the item.
+
+## What do I get for killing one?
+
+Only Wild Beyonders that spawned naturally give rewards. Ones summoned by abilities do not.
+
+| Reward | Chance |
+|---|---|
+| Beyonder Characteristic of its Sequence | 30% (Sequence 9), 25% (8), 20% (7), 15% (6), 10% (5) |
+| Ingredients | 15% for each Sequence from its own down to 9 |
+| [Sealed Artifact](/magic/sealed-artifacts/) | 5% (Sequence 6), 10% (Sequence 5) |
+| Acting | Through the World source, capped like all [Acting](/magic/acting/) |
+
+The bounty board (`/bounty`) sometimes offers a **Wild Beyonder Hunt** for Sequence 9 to 5 players, which pays extra Acting.
+
+## Which Pathway abilities work on Wild Beyonders?
+
+Many Acting methods ask you to hunt or control other Beyonders. Wild Beyonders let you do that without bothering real players. Confirmed examples:
+
+- **Hanged Man** can Graze their souls.
+- **Door** Replication can copy their abilities.
+- **Fool** can turn them into Marionettes.
+- **Abyss** Bloodlust counts a Wild Beyonder kill.
+
+Not every copying ability works on them, so test before you rely on it.
+
+:::caution[Abyss Acting]
+Killing Wild Beyonders does **not** digest the Abyss potion. Abyss Acting comes only from killing Beyonder players of a qualifying Sequence.
+:::
+
+## How dangerous are they in a fight?
+
+Wild Beyonders fight like players. They use their Pathway's abilities with **20% shorter cooldowns** than a player would have, and they retreat when their health runs low. Check the name and Pathway before you approach, and fight near cover with healing ready. Higher Sequences hit much harder but drop better rewards.

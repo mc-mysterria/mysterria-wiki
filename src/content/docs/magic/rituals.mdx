@@ -1,0 +1,99 @@
+---
+title: "Rituals"
+description: "How Beyonder rituals work on Mysterria: ritual scores for Sequence 8 to 0, /ritual status, rerolls, ritual credit, Ritual Books and what skipping costs."
+sidebar:
+  label: Rituals
+  order: 6
+---
+
+import {Figure} from '~/components/mdx';
+import ritualStatus from '../../../assets/magic/rituals-status.webp';
+import ritualTask from '../../../assets/magic/rituals-task.webp';
+
+From Sequence 8 on, every advancement has a **ritual**, a personal list of Minecraft **advancements** to finish before you drink the next potion. Skipping it costs Madness.
+
+Your **first potion (Sequence 9) needs no ritual.**
+
+## How does a ritual work?
+
+When you reach a Sequence, the game gives you a random set of advancements for the **next** Sequence. Each advancement's difficulty is worth some points, and your set adds up to the score that Sequence needs. The set stays the same when you log out.
+
+| Next Sequence | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+|---|---|---|---|---|---|---|---|---|---|
+| **Score needed** | 2 | 5 | 9 | 12 | 16 | 20 | 24 | 28 | 30 |
+
+| Difficulty | Points |
+|---|---:|
+| Trivial | 1 |
+| Easy | 2 |
+| Medium | 3 |
+| Hard | 4 |
+| Expert | 6 |
+| Master | 8 |
+| Legendary | 10 |
+| Exotic | 15 |
+| Mythic | 20 |
+
+A few rules shape your set.
+
+- **Trivial** tasks only appear for rituals up to Sequence 5.
+- **Legendary, Exotic and Mythic** tasks only appear from the Sequence 4 ritual on.
+- Tasks in **the Nether** only appear once you are Sequence 7 or stronger, and tasks in **the End** once you are Sequence 4 or stronger.
+
+## How do I check my ritual?
+
+- `/ritual status` shows your score, for example "7/9 ritual score completed".
+- To see **which** advancements you need, carry the recipe for your next Sequence. That is either a full recipe or its **Recipe Page 3** (the ritual page). Without it, you only see the score.
+- `/ritual view <sequence>` opens your tasks in a menu. Reading the ritual page of a recipe also gives you a clickable link to it.
+
+<Figure src={ritualStatus} alt="Chat output of /ritual status for a Fool heading to Sequence 3, with 0/20 ritual score completed and a hint to get the recipe book" caption="Without the recipe, /ritual status shows only your score." contain />
+
+<Figure src={ritualTask} alt="The ritual menu for Fool Sequence 8 with a task tooltip for Boned, grind up some bones into bonemeal, not completed, progress score 0/2" caption="With the recipe in hand, /ritual view shows each task. Hover a task to read it." contain />
+
+## Can I reroll a task?
+
+If a task is impossible, bugged or unreasonable, you can ask staff to replace it.
+
+1. Open `/ritual view <next sequence>` while carrying the recipe or page 3.
+2. **Shift-click** the task.
+3. Pick a reason (for example "Impossible on this server" or "Appears to be bugged") and send it.
+
+Staff review the request and approve or deny it. You cannot request a reroll for a task you have already completed, and you can have only one pending request per task.
+
+## Ritual credit
+
+From the Sequence 5 ritual on, some activities count as **ritual credit** and fill part of your score without advancements. Each kind counts once per ritual.
+
+| Activity | Points | Rituals |
+|---|---|---|
+| Attend a church service at an active church site | 1 | Sequence 5 to 0 |
+| Complete an Acting bounty | 1 | Sequence 5 to 0 |
+| Complete a staff-approved story ritual | 2 | Sequence 5 to 0 |
+| Fight a seat war to its verdict | 3 | Sequence 3 to 0 |
+| Hold your Uniqueness through a paid challenge | 3 | Sequence 2 to 0 |
+
+Credit is capped per ritual: 3 points at Sequence 5, 4 at 4, 5 at 3, 6 at 2, 7 at 1 and 10 at 0.
+
+The Sequence 0 ascension also needs a staff-certified **story ritual** of its own. See [Sequence 0](/magic/sequence-zero/).
+
+## Ritual Books
+
+A **Ritual Book** lets you skip ritual tasks. Right-click it and choose the task to skip.
+
+| Book | Skips | Outer Gods Anchors shop (`/oga rewards`) |
+|---|---|---|
+| Ritual Book (Tier I) | 1 task | 160 points, 2 a week |
+| Ritual Book (Tier II) | 2 tasks | 300 points, 1 a week |
+| Ritual Book (Tier III) | Every task of the ritual | 550 points, 1 a month |
+
+Ritual Books are also in the Helping Card exchanges of the [dungeons](/guides/dungeons/).
+
+## What if I skip the ritual?
+
+You can always drink without finishing the ritual, but the missing part costs Madness in proportion to how much is left. A fully skipped ritual costs **40% temporary** and **10% permanent** Madness. A half-finished ritual costs half of that, 20% temporary and 5% permanent.
+
+The confirmation screen shows the exact cost before you drink. An incomplete ritual also cancels a [safe Pathway switch](/magic/pathways/#can-i-change-pathways). More on costs in [Madness and Mutation](/magic/mutation/#advancement-costs).
+
+:::caution[Permanent Madness adds up]
+Permanent Madness never fades with time. A few skipped rituals can leave you with a high floor that makes every later advancement more dangerous.
+:::

@@ -1,0 +1,183 @@
+---
+title: "Orașe și avantajele lor"
+description: "Cum întemeiezi și conduci un oraș pe Mysterria: revendicarea terenului, roluri, întreținere, taxe, cele cinci niveluri de oraș și costurile lor și avantajele de oraș pentru construcții mărețe."
+sidebar:
+    label: Orașe și avantajele lor
+    order: 31
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import towns from '~/assets/towns/towns.jpg';
+import dragon from '~/assets/towns/dragon.jpeg';
+import hall from '~/assets/towns/hall.jpg';
+import landsLevel from '~/assets/towns/lands-level-menu.webp';
+
+<Figure src={towns} alt="Un oraș mare al jucătorilor noaptea, luminat de felinare, cu o catedrală cu cupolă în față" />
+
+Un **oraș** este un teren protejat pe care îl împarți cu prietenii. Nimeni din afara orașului nu poate construi, sparge sau deschide cufere acolo.
+
+Toate comenzile pentru oraș încep cu `/lands` (sau `/land`). Dacă scrii doar `/lands`, se deschide meniul orașului, unde poți face și acolo aproape totul.
+
+## Cum creez un oraș?
+
+```
+/lands create <name>
+```
+
+- Costă **32 de Coppets**, luați din [portofel](/ro/guides/economy/).
+- Revendică gratuit o zonă de 3 pe 3 chunkuri în jurul tău (chunkul în care stai plus câte unul în fiecare direcție).
+- Numele trebuie să aibă între 5 și 24 de litere latine sau cifre. Spațiile sunt permise.
+- Poți avea **un singur** oraș și poți fi de încredere (trusted) într-un singur oraș.
+
+## Cum revendic mai mult teren?
+
+```
+/lands claim       claim the chunk you are standing in
+/lands unclaim     unclaim it
+```
+
+| Ce | Cost |
+|---|---|
+| Fiecare chunk în plus | 10 Coppets |
+| Renunțarea la un chunk | Primești înapoi 15% |
+
+- Revendicările noi trebuie să **atingă terenul pe care îl ai deja**.
+- Nu poți revendica la mai puțin de **1 chunk** de alt oraș (3 chunkuri dacă orașul acela face parte dintr-o națiune), decât dacă orașul acela îi dă rolului tău voie să revendice la granița lui.
+- Un oraș începe cu loc pentru **100 de chunkuri**, plus încă **5 pentru fiecare membru de încredere**. [Nivelurile](#nivelurile-orașului) mai mari adaugă mai multe.
+- Implicit **doar Owner** poate revendica. Owner poate da această permisiune și altor roluri din setările rolurilor.
+
+Comenzile scurte `/claim` și `/unclaim` nu sunt disponibile pentru jucători.
+
+## Comenzile de bază ale orașului
+
+| Comandă | Ce face |
+|---|---|
+| `/lands` | Deschide meniul orașului |
+| `/lands trust <player>` | Invită un jucător. El acceptă cu `/lands accept` |
+| `/lands untrust <player>` | Scoate un jucător |
+| `/lands setrole <player> <role>` | Schimbă rolul unui membru |
+| `/lands ban <player>` | Interzice unui jucător accesul pe terenul tău |
+| `/lands deposit <amount>` | Pune bani în banca orașului |
+| `/lands withdraw <amount>` | Scoate bani (implicit doar Owner) |
+| `/lands rename <name>` | Schimbă numele orașului pentru 10.000 de Coppets, cel mult o dată pe zi |
+| `/lands setowner <player>` | Dă orașul altcuiva pentru 5.000 de Coppets din banca orașului |
+| `/lands upkeep`, `/lands taxes` | Vezi următoarele plăți de întreținere și de taxe |
+| `/lands delete` | Desființează orașul |
+
+**Mesajele de intrare și de ieșire** se setează din meniul orașului, cu obiectul **Enter Message**. Nu există comenzile `/lands greeting` sau `/lands farewell`.
+
+Teleportările de teren (`/lands spawn`, `/lands wild`, teleportarea la un chunk) costă atât de mult încât practic sunt oprite. Mysterria nu are `/home` sau `/tpa`.
+
+Pentru chatul orașului, scrie `!l`, `!land` sau `!lands` în fața mesajului.
+
+## Rolurile din oraș
+
+Fiecare rol stabilește ce au voie să facă jucătorii lui pe terenul tău. Owner poate schimba permisiunile fiecărui rol din meniul orașului.
+
+| Rol | Cine | Permisiuni implicite |
+|---|---|---|
+| **Owner** | Cel care a întemeiat orașul | Totul |
+| **Admin** | Ofițeri de încredere | Construiesc, sparg, folosesc containere și uși, dau și iau încrederea, interzic accesul și schimbă roluri, modifică setările terenului și ale rolurilor. Implicit nu pot revendica, scoate bani sau conduce războaie |
+| **Member** | Locuitori obișnuiți | Construiesc, sparg, cultivă, folosesc containere, depun bani |
+| **Tenant** | Jucători care închiriază o zonă | Construiesc și folosesc lucruri în zona închiriată și decid cine altcineva o mai poate folosi |
+| **Nation** | Membri din aceeași națiune | Folosesc uși și mecanisme, intră, ridică obiecte, revendică la granița ta |
+| **Ally** | Membri din orașe aliate | La fel ca Nation |
+| **Untrusted** | Orice vizitator | Intră, ridică obiecte, atacă monștri |
+
+**PvP-ul e oprit** implicit în orașe pentru fiecare rol. Owner îl poate porni pentru un anumit rol, de exemplu pentru o arenă.
+
+Dacă ataci alt jucător, ești marcat în luptă timp de **20 de secunde**. Dacă ieși din joc cât ești marcat, mori.
+
+## Cât costă să ții un oraș?
+
+### Întreținerea
+
+- Fiecare oraș plătește **3 Coppets pentru fiecare chunk revendicat** la fiecare **7 zile**, la ora 23:00. Banii ies din banca orașului și ajung în banca serverului, *The Narrator*.
+- Orașele noi nu plătesc nimic în primele **2 zile**.
+- Cu 2 zile înainte de plată, membrii care pot depune bani primesc un memento în fiecare oră dacă în bancă nu sunt destui bani.
+- Dacă banca nu poate plăti, chunkurile tale **nu** sunt șterse.
+- [Nivelurile](#nivelurile-orașului) mai mari scad întreținerea cu până la 40%.
+
+Orașele dintr-o națiune plătesc taxe națiunii în loc de întreținere serverului. Vezi [Națiuni și războaie](/ro/guides/nations-and-wars/).
+
+### Taxele
+
+Owner le poate cere membrilor de încredere o taxă la fiecare ciclu de plată, de cel mult **10 Coppets** pe zonă. Un membru care nu poate plăti își pierde automat încrederea.
+
+## Nivelurile orașului
+
+Un oraș urcă în nivel **automat** când îndeplinește cerințele și **coboară un nivel** dacă nu le mai îndeplinește, de exemplu când scad banii din bancă. Fiecare nivel cere **5 jucători de încredere** și un sold în **banca orașului** (`/lands deposit`).
+
+<Figure src={landsLevel} alt="Meniul Lands Level cu două lacăte, câte unul pentru fiecare cerință a nivelului următor" caption="Meniul Level din /lands. Fiecare lacăt e o cerință pentru nivelul următor." contain />
+
+| Nivel | Nume | Jucători de încredere | Banca orașului | Revendicări în plus | Locuri de membri în plus | Întreținere |
+|---|---|---|---|---|---|---|
+| 1 | **Shelter** | - | - | - | - | Întreagă |
+| 2 | **Hamlet** | 5 | 5.000 de Coppets | +50 | +25 | -10% |
+| 3 | **Parish** | 5 | 12.500 de Coppets | +100 | +50 | -20% |
+| 4 | **Borough** | 5 | 25.000 de Coppets | +150 | +75 | -30% |
+| 5 | **Domain** | 5 | 40.000 de Coppets | +200 | +100 | -40% |
+
+**Domain e cel mai înalt nivel.** Un oraș începe cu 26 de locuri de membri.
+
+Un Domain poate întemeia o [națiune](/ro/guides/nations-and-wars/).
+
+## De ce contează orașele pentru alte sisteme
+
+- Pe terenul revendicat de un oraș îți poți ascunde propria intrare în [Agora](/ro/guides/agora/).
+- [Bisericile](/ro/magic/churches/) își pot lega vistieria de un oraș.
+- Orașele mari cu construcții mărețe pot primi un [avantaj de oraș](#avantajele-orașului).
+
+<span id="town-perks" class="anchor-alias"></span>
+
+## Avantajele orașului
+
+Un **avantaj de oraș** (Town Perk) este un efect permanent pe o zonă, pe care staff-ul îl pune unui oraș după ce acesta termină un proiect mare de construcție. Nu îl poți cumpăra și nu îl poți lua printr-o comandă.
+
+### Cum obțin un avantaj de oraș?
+
+1. Construiește ceva impresionant care se potrivește cu avantajul pe care îl vrei, de exemplu o catedrală, o bibliotecă mare sau un zid de fortăreață.
+2. Deschide un tichet de suport pe Discord cu coordonatele și capturi de ecran.
+3. Staff-ul judecă calitatea construcției, nivelul orașului și câți locuitori are.
+4. Dacă o aprobă, staff-ul pune avantajul pe o zonă din orașul tău.
+
+### Ce avantaje există?
+
+| Avantaj | Ce face | Nivelul orașului | Jucători de încredere | Semizei |
+|---|---|---|---|---|
+| **Agriculture** | Recoltele cresc mult mai repede | Hamlet (2) | 5 | - |
+| **Mob Protection** | Mobii ostili nu apar în zonă | Borough (4) | 12 | - |
+| **Potion Effects** | Efecte de durată, cum ar fi Viteză, Grabă sau Vedere nocturnă | Domain (5) | 18 | - |
+| **Experience Boost** | Mai multă experiență cât ești în zonă | Domain (5) | 22 | - |
+| **Armor Repair** | Repară încet armura uzată | Domain (5) | 30 | - |
+| **Acting Boost** | Interpretare mai rapidă cât stai în zonă | Domain (5) | 40 | 3 |
+| **Spirituality** | Îți reface Spiritualitatea la intervale de timp | Domain (5) | 45 | 5 |
+
+- **Jucătorii de încredere** sunt membrii de încredere ai orașului. **Semizeii** sunt membrii de încredere de Secvența 4 sau mai puternici.
+- Experience Boost, Armor Repair, Acting Boost și Spirituality cereau înainte nivelurile de oraș 6, 8 și 10, care nu mai există. Pentru că acum **Domain** e cel mai înalt nivel, la aceste avantaje decid numărul de jucători și de Semizei și construcția.
+
+### Cât de puternice sunt avantajele?
+
+Fiecare avantaj e setat de staff pentru orașul lui, așa că numerele diferă. Printre avantajele active azi pe server sunt:
+
+- **Acting Boost** dă +18% viteză de Interpretare într-un oraș și +45% în altul, pentru jucătorii care stau în zonă.
+- **Spirituality** reface 50 de Spiritualitate la fiecare 20 de secunde în trei orașe, 50 la fiecare 10 secunde într-unul și 30 la fiecare 10 secunde în altul.
+- **Mob Protection** acoperă o rază de 100 de blocuri în jurul centrului unui oraș.
+
+Un avantaj acoperă un cerc în jurul unui monument, o cutie sau altă formă în jurul unei clădiri ori tot terenul revendicat al unui oraș.
+
+### Sfaturi ca să fii aprobat
+
+Construcția ar trebui să sugereze avantajul, așa cum o statuie de dragon se potrivește cu Mob Protection și o catedrală cu Spirituality. Casele mici nu se califică. Gândește-te la o minune a lumii care definește peisajul. Staff-ul verifică și înăuntru, și afară, așa că nu trimite construcții neterminate sau carcase goale.
+
+<CardGrid min={280}>
+  <Figure src={dragon} alt="O statuie uriașă de dragon construită deasupra unui oraș" caption="Un dragon atât de impunător încât monștrii ocolesc orașul. Acesta e genul de construcție potrivit pentru Mob Protection." />
+  <Figure src={hall} alt="O sală mare de catedrală cu ferestre înalte" caption="O catedrală în inima unui oraș. Acesta e genul de construcție potrivit pentru Spirituality." />
+</CardGrid>
+
+## Pagini înrudite
+
+<CardGrid>
+  <Card title="Națiuni și războaie" text="Unește orașe, deblochează efectele națiunii și declară război." icon="shield" href="/ro/guides/nations-and-wars/" />
+  <Card title="Bani și portofel" text="De unde vin banii orașului." icon="coin" href="/ro/guides/economy/" />
+</CardGrid>

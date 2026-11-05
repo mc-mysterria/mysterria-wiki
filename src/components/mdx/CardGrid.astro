@@ -1,0 +1,16 @@
+---
+/*
+ * A grid of cards (or anything): the main site's .arc-grid, columns of at least `min`
+ * wide that fill the line. See src/components/README.md.
+ */
+interface Props {
+	/** The narrowest a column may be, in px (default 260). */
+	min?: number;
+}
+
+const {min} = Astro.props;
+---
+
+<div class="card-grid not-content" style={min ? `--arc-grid-min: ${min}px` : undefined}>
+	<slot/>
+</div>

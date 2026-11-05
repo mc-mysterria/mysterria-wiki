@@ -1,0 +1,123 @@
+---
+title: "Geheime Orden"
+description: "Geheime Orden auf Mysterria, dem LOTM Minecraft-Server: einen privaten Orden gründen, ihn mit Energiescherben aufwerten und Lager, Beschwörung, Rituale und ein Versteck freischalten."
+sidebar:
+    label: Geheime Orden
+    order: 33
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import levelup from '~/assets/orders/levelup.png';
+
+Ein **Geheimer Orden** ist eine kleine private Organisation. Die Mitglieder teilen einen privaten Chat, ein Lager und Kräfte, die wachsen, wenn der Orden mit **Energiescherben** aufsteigt.
+
+Der Befehl ist `/o` (auch `/org` und `/organization`). Tippe `/o`, um das Menü des Ordens zu öffnen.
+
+## Wer kann einen Geheimen Orden gründen?
+
+Um einen Orden zu gründen und aufsteigen zu lassen, brauchst du den Supporter-Rang **Shepherd Subscription** aus dem [Server-Shop](https://www.mysterria.net/en/store). Einladen lassen kann sich jeder.
+
+Endet das Abo des Anführers, fällt der Orden auf Stufe 0. Kommt das Abo zurück, bekommt der Orden **seine vorherige Stufe zurück**.
+
+## Befehle
+
+| Befehl | Was er tut |
+|---|---|
+| `/o` | Das Menü des Ordens öffnen |
+| `/o create <name>` | Einen Orden gründen (braucht den Supporter-Rang) |
+| `/o invite <player>` | Einen Spieler einladen (Anführer oder Vize-Anführer) |
+| `/o kick <player>` | Ein Mitglied entfernen (Anführer oder Vize-Anführer) |
+| `/o vice set <player>`, `/o vice remove <player>` | Einen Vize-Anführer hinzufügen oder entfernen |
+| `/o levelup` | Den Orden aufsteigen lassen (Anführer, mit dem Supporter-Rang) |
+| `/o sos` | Deine Koordinaten in den Chat des Ordens schicken (ab Stufe 1) |
+| `/o rename <name>` | Den Orden umbenennen (nur der Anführer) |
+| `/o info [order]` | Informationen über einen Orden zeigen |
+| `/o leave` | Den Orden verlassen (der Anführer kann nicht gehen) |
+| `/o disband` | Den Orden auflösen |
+| `/o confirm` | Verlassen, Entfernen oder Auflösen bestätigen |
+| `/oc <message>` | Eine Nachricht in den Chat des Ordens schicken |
+
+Für den Chat des Ordens nutze `/oc <message>` oder schreib `!o`, `!oc`, `!org` oder `!order` vor eine Nachricht. Nachrichten erscheinen als `[ORG] Name: message`.
+
+## Wie funktionieren die Stufen eines Ordens?
+
+Mitglieder zahlen **Energiescherben** in die gemeinsame Kasse des Ordens ein, und der Anführer gibt die Kasse für Stufen aus.
+
+1. Öffne `/o` und nutze den Gegenstand **Your Shards**. Linksklick zahlt 1 Scherbe ein, Rechtsklick 10, und Shift mit Linksklick zahlt alle ein.
+2. Ist die Kasse groß genug, nutzt der Anführer **Level Up** im Menü oder tippt `/o levelup`.
+
+<Figure src={levelup} alt="Der Gegenstand Your Shards im Menü des Ordens, persönlich 0, Organisation 342, mit den Steuerungen zum Einzahlen" caption="Energiescherben in die Kasse des Ordens einzahlen." />
+
+| Stufe | Name | Max. Mitglieder | Kosten | Schaltet frei |
+|---|---|---|---|---|
+| 0 | **Whisper of Mist** | 3 | - | Einladungen, Vize-Anführer, Chat des Ordens |
+| 1 | **Shadow of Mist** | 4 | 50 Scherben | Organization Stash, `/o sos` |
+| 2 | **Gaze of Mist** | 5 | 200 Scherben | Pocket Dimension |
+| 3 | **Embrace of Mist** | 6 | 1.000 Scherben | Instant Summon, Growth Ritual |
+| 4 | **Heart of Mist** | 7 | 5.000 Scherben | Geheimversteck, Battle Cry, Global Announcement, dauerhafte Aufwertungen |
+
+[Energiescherben](/de/guides/economy/#energiescherben) bekommst du, wenn du übrige Zutaten an einen Dorfbewohner ohne Beruf oder einen Nichtsnutz verkaufst, oder aus dem Battle Pass.
+
+## Fähigkeiten des Ordens
+
+Du öffnest sie über den Gegenstand **Abilities** im Menü `/o`.
+
+### Organization Stash (Stufe 1)
+
+Ein gemeinsames Lager mit 27 Plätzen, das jedes Mitglied öffnen kann. Auf der höchsten Stufe kannst du weitere Seiten kaufen (siehe [Aufwertungen](#dauerhafte-aufwertungen)).
+
+### Pocket Dimension (Stufe 2)
+
+Ein privater Treffpunkt für den Orden.
+
+- Der Anführer oder ein Vize-Anführer öffnet eine Sitzung. Sie dauert **10 Minuten** und kann einmal alle **24 Stunden** geöffnet werden.
+- Mitglieder treten über das Fähigkeitenmenü bei, solange die Sitzung offen ist.
+- Während du drinnen bist, bleibt eine Kopie von dir an der Stelle, die du verlassen hast. Wird sie angegriffen, wirst du zurückgeholt.
+
+### Instant Summon (Stufe 3)
+
+Teleportiere dich zu einem Mitglied deines Ordens, das online ist.
+
+- Kostet **1,5 % bis 3 %** deines Schauspielens, zufällig gewählt. Du musst ein Beyonder sein.
+- **5 Sekunden** Vorbereitung. Bewegung oder Schaden bricht sie ab.
+- Funktioniert nur in derselben Dimension.
+- **30 Minuten** Abklingzeit.
+
+### Growth Ritual (Stufe 3)
+
+Der Anführer oder ein Vize-Anführer gibt jedem Mitglied, das **online** ist, **24 Stunden** lang **+20 % bis 25 % Schauspiel-Tempo**. Es kann **einmal pro Woche** genutzt werden.
+
+### Geheimversteck (Stufe 4)
+
+Eine dauerhafte private Welt für deinen Orden.
+
+- Der Anführer oder ein Vize-Anführer gründet es mit 50 Energiescherben, 20 Obsidian, 5 Enderperlen und 3 Diamanten aus dem eigenen Inventar.
+- Jeder Weg hinein verbraucht einen **Lair Teleportation Crystal**. Du stellst sie im Menü des Geheimverstecks her, jeden für 10 Energiescherben, 1 Enderperle und 2 Weinenden Obsidian.
+- Zwischen Teleports liegen 30 Minuten, und nach dem Verlassen dauert es 30 Minuten, bis du wieder hineinkannst.
+- Gehst du über die Grenze des Verstecks hinaus, wirst du zurück in die Mitte geschickt.
+
+### Battle Cry (Stufe 4)
+
+Der Anführer oder ein Vize-Anführer gibt jedem Mitglied, das online ist, 5 Minuten lang **Schnelligkeit II, Stärke II und Regeneration I**. Das kostet **50 Scherben** aus der Kasse des Ordens und geht einmal alle **12 Stunden**.
+
+### Global Announcement (Stufe 4)
+
+Der Anführer oder ein Vize-Anführer schickt im Namen des Ordens eine **anonyme Nachricht an den ganzen Server**, einmal alle **24 Stunden**.
+
+### Dauerhafte Aufwertungen
+
+Auf Stufe 4 kann der Anführer oder ein Vize-Anführer mit Scherben aus der Kasse des Ordens dauerhafte Aufwertungen kaufen.
+
+| Aufwertung | Kosten | Maximum |
+|---|---|---|
+| **Extra Member Slot** | 200, dann 400, dann 800 Scherben | +3 Mitglieder (insgesamt 10) |
+| **Extra Stash Page** | 300, dann 600, dann 1.200 Scherben | 4 Seiten |
+
+Remote Exchange und Unification Ritual gibt es nicht mehr. Um Gegenstände zwischen Mitgliedern weiterzugeben, nutze das gemeinsame Lager oder einen [Kurier](/de/guides/couriers/).
+
+## Verwandte Seiten
+
+<CardGrid>
+  <Card title="Energiescherben" text="So verdienst du die Scherben, von denen Orden leben." icon="coin" href="/de/guides/economy/#energiescherben" />
+  <Card title="Kuriere" text="Schick Gegenstände an jeden Spieler." icon="gift" href="/de/guides/couriers/" />
+</CardGrid>

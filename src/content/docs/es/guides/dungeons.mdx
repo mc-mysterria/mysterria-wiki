@@ -1,0 +1,137 @@
+---
+title: "Mazmorras"
+description: "Las mazmorras en Mysterria, el servidor de Minecraft de LOTM: las cuatro mazmorras, tamaño de grupo, niveles de poder y dificultad, tiempos de espera, Helping Cards y clases."
+sidebar:
+  order: 36
+---
+
+import {Figure} from '~/components/mdx';
+import subspaceMenu from '~/assets/dungeons/subspace-menu.webp';
+import chooseDifficulty from '~/assets/dungeons/choose-difficulty.webp';
+import cardShop from '~/assets/dungeons/helping-card-shop.webp';
+
+![La sala del jefe de una mazmorra](~/assets/dungeons/dungeons.png)
+
+Las mazmorras son mundos aparte a los que un grupo entra por una **Grieta** del Overworld. Avanzas por las salas hasta un jefe final con equipo de clase y sales con botín, Helping Cards y Actuación. Cada jugador tiene **una vida** por partida.
+
+## ¿Qué mazmorras hay?
+
+| Mazmorra | Tamaño de grupo | Poder de la mazmorra | Ambiente |
+|---|---|---|---|
+| **The Shivering Hollow** | 4 | 0 | Una caverna subterránea helada |
+| **Embers Resurgence** | 5 | 100 | Una fortaleza volcánica |
+| **Root of the Canopy** | 4 | 240 | Un laberinto de raíces gigantes |
+| **The Dust Citadel** | 3 | 450 | Una fortaleza del desierto enterrada |
+
+The Shivering Hollow y Embers Resurgence tienen dos entradas cada una, y las otras una. The Shivering Hollow está abierta a jugadores que todavía no son Trascendentes.
+
+## ¿Cómo encuentro una mazmorra?
+
+Escribe `/subspace`. El menú muestra todas las mazmorras con las coordenadas de la Grieta de cada entrada, tu poder comparado con el de la mazmorra y tus tiempos de espera y partidas de cartas que te quedan hoy.
+
+<Figure src={subspaceMenu} alt="El menú Ventures to the Subspace con la descripción de The Dust Citadel, nivel de poder 450 y una entrada" caption="El menú de /subspace. Pasa el ratón por una mazmorra para ver su nivel de poder y sus entradas." contain />
+
+![La entrada de una Grieta](~/assets/dungeons/entrance.png)
+
+Una Grieta es una columna de partículas brillantes. Entra en ella con tu grupo para empezar.
+
+## ¿Cómo entro en una mazmorra?
+
+1. **Haz un grupo** con `/party` e invita a tus amigos. `/ready` y `/leave` gestionan la cola.
+2. **Ve a la Grieta** y métete en ella.
+3. **Elige una dificultad** en la pantalla "Choose Difficulty".
+4. **Elige una clase** cuando cargue la mazmorra. Si no eliges a tiempo, se te asigna una.
+
+<Figure src={chooseDifficulty} alt="La pantalla Choose Difficulty con la descripción de Normal, que pide 450 de poder, con daño hecho y recibido a x1" caption="Choose Difficulty. Pasa el ratón por un nivel para ver el poder que necesita." contain />
+
+Si tu grupo es más pequeño que el de la mazmorra, te preguntan **Enter Understaffed?** Solo se permite si tu poder no supera en más de 150 al de la mazmorra. Los jugadores demasiado fuertes tienen que llevar un grupo completo.
+
+:::note[Vacía las manos]
+La mazmorra no empieza si alguien del grupo lleva ciertos recursos ("Someone in the party is carrying resources!"). Deja tus cosas de valor en casa.
+:::
+
+## ¿Qué es el poder de mazmorra?
+
+Tu poder depende de tu Secuencia.
+
+| Secuencia | 9 | 8 | 7 | 6 | 5 |
+|---|---|---|---|---|---|
+| Poder | 30 | 60 | 100 | 150 | 220 |
+
+| Secuencia | 4 | 3 | 2 | 1 | 0 |
+|---|---|---|---|---|---|
+| Poder | 320 | 450 | 600 | 800 | 999 |
+
+Solo puedes entrar en una mazmorra si tu poder está **como mucho 29 por debajo** del de la mazmorra. Tener poco poder también te debilita. Por escalones, a 10, 20 y 29 por debajo, el daño que haces baja (hasta x0,4) y el daño que recibes sube (hasta x1,6). Si igualas o superas el poder de la mazmorra no hay penalización.
+
+## ¿Qué niveles de dificultad hay?
+
+Cada mazmorra tiene cuatro niveles. Los más difíciles dan más Actuación y mejores Helping Cards.
+
+| Nivel | Poder necesario | Daño que haces | Daño que recibes |
+|---|---|---|---|
+| Normal | Poder de la mazmorra | x1,0 | x1,0 |
+| Advanced | Poder de la mazmorra + 50 | x0,7 | x1,5 |
+| Master | Poder de la mazmorra + 150 | x0,5 | x1,8 |
+| Grandmaster | 450 (Secuencia 3) o más | x0,3 | x2,5 |
+
+En Master y Grandmaster, además, siempre se te trata como si tuvieras un poco menos de poder del necesario.
+
+## ¿Cada cuánto puedo hacer una mazmorra?
+
+| Tipo de partida | Cada cuánto | Qué consigues |
+|---|---|---|
+| **Partida con botín real** | Una vez cada **72 horas** por mazmorra | El botín de los cofres y del jefe |
+| **Partida de cartas** | Hasta **2 por mazmorra al día** mientras estás en tiempo de espera | Los cofres están sellados. Recibes **1 Helping Card** al terminar |
+
+Casi todo el botín sale en forma de **fragmentos** ("Shard of ..."). Haz clic derecho con suficientes fragmentos en la mano para juntarlos en el objeto de verdad. Una receta o pócima de Secuencia 9 necesita 2 fragmentos, y los objetos más fuertes necesitan más, hasta 9 para la Secuencia 0.
+
+### ¿Qué son las llaves de mazmorra?
+
+| Llave | Efecto |
+|---|---|
+| **Llave simple** | Reinicia tu propio tiempo de espera de botín real en una mazmorra |
+| **Llave premium** | Reinicia el tiempo de espera de tu grupo (hasta el tamaño de grupo de la mazmorra), hace que la partida sea de botín real y duplica las Helping Cards |
+
+Haz clic derecho en una llave y elige la mazmorra. Las llaves salen del Pase de batalla y de la tienda.
+
+## ¿Para qué sirven las Helping Cards?
+
+Una **Helping Card** pertenece a una mazmorra y a un nivel. Haz clic derecho en ella para abrir la **Helping Card Shop** y cambiar cartas por recompensas. Por ejemplo, en Embers Resurgence en Master es así.
+
+<Figure src={cardShop} alt="La Helping Card Shop con la descripción de la Ingredient Exchange Token en Embers Resurgence en Master, que cuesta 8 Helping Cards" caption="La Helping Card Shop. Pasa el ratón por una recompensa para ver cuántas cartas cuesta." contain />
+
+| Recompensa | Cartas |
+|---|---|
+| Ficha de ingrediente | 8 |
+| Ficha de receta (Secuencia 6) | 12 |
+| Ficha de pócima (Secuencia 6) | 16 |
+| Frasco de Actuación (10 000) | 20 |
+| Anti-Control Charm | 24 |
+| Ritual Book (Tier I) | 32 |
+
+Root of the Canopy y The Dust Citadel dan las recompensas de su tienda como fragmentos de botín en vez de objetos enteros. Las tiendas Grandmaster de Embers Resurgence y Root of the Canopy también venden la [Pathway Transfer Token](/es/guides/special-items/).
+
+## ¿Cuánta Actuación dan las mazmorras?
+
+Terminar una mazmorra da Actuación por la fuente World. Los niveles más difíciles dan más (Advanced x1,25, Master x1,5, Grandmaster x2). La Actuación de mazmorras tiene un límite de **600 al día** sumando todas las mazmorras, y se reinicia a medianoche UTC.
+
+## ¿Qué clase elijo?
+
+| Clase | Daño mágico | Daño físico | Notas |
+|---|---|---|---|
+| **Tank** | x0,3 | x0,6 | Mucha defensa, atrae a los mobs |
+| **Mage** | x2,2 | x0,15 | Los hechizos pegan fuerte, a puñetazos no sirve de nada |
+| **Warrior** | x0,7 | x1,8 | Fuerte cuerpo a cuerpo, muere rápido |
+| **Archer** | x0,8 | x0,7 | Los arcos y ballestas hacen x2,2 |
+| **Support** | x1,0 | x0,8 | Mucha defensa mágica, acceso a todas las mejoras |
+
+Un grupo equilibrado tiene un Tank que aguante a los mobs, atacantes que encajen con vuestros Trascendentes y un Support si lo tenéis.
+
+### ¿Qué habilidades están prohibidas en las mazmorras?
+
+Estas habilidades no funcionan dentro de una mazmorra: Nightmare, Nightmare World, Traveler's Door, Exile, Thread Hands, Threads, Paper Figurine, Pocket Space, Holy Equipment, Lockpick, Wraith Transformation, Puppet Transformation y la posesión de marionetas. Algunas clases también bloquean ciertas habilidades ("Your class cannot use this ability in the dungeon!").
+
+## ¿Y las Grietas cerradas?
+
+Una Grieta puede estar cerrada hasta que los jugadores la debiliten juntos. Quédate cerca, acepta "The node is too strong. You can try to weaken it. [Try?]" y aguanta la defensa mientras absorbe tus fragmentos. Ahora mismo todas las Grietas de mazmorra están abiertas.

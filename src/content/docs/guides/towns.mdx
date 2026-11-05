@@ -1,0 +1,181 @@
+---
+title: "Towns and Town Perks"
+description: "How to found and run a town on Mysterria: claiming land, roles, upkeep, taxes, the five town levels and their costs, and Town Perks for great builds."
+sidebar:
+    label: Towns and Town Perks
+    order: 31
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import towns from '../../../assets/towns/towns.jpg';
+import dragon from '../../../assets/towns/dragon.jpeg';
+import hall from '../../../assets/towns/hall.jpg';
+import landsLevel from '../../../assets/towns/lands-level-menu.webp';
+
+<Figure src={towns} alt="A large player city at night, lit by lanterns, with a domed cathedral in front" />
+
+A **town** is protected land that you share with friends. Nobody outside the town can build, break or open chests there.
+
+Every town command starts with `/lands` (or `/land`). Typing `/lands` on its own opens the town menu, where you can do most things too.
+
+## How do I create a town?
+
+```
+/lands create <name>
+```
+
+- It costs **32 Coppets**, taken from your [wallet](/guides/economy/).
+- It claims a 3 by 3 area of chunks around you for free (the chunk you stand in plus one in every direction).
+- The name needs 5 to 24 Latin letters or numbers. Spaces are allowed.
+- You can own **one** town, and be trusted in one town.
+
+## How do I claim more land?
+
+```
+/lands claim       claim the chunk you are standing in
+/lands unclaim     unclaim it
+```
+
+| What | Cost |
+|---|---|
+| Each extra chunk | 10 Coppets |
+| Unclaiming a chunk | You get 15% back |
+
+- New claims must **touch your existing land**.
+- You cannot claim within **1 chunk** of another town (3 chunks if that town belongs to a nation), unless that town gives your role permission to claim on its border.
+- A town starts with room for **100 chunks**, plus **5 more for each trusted member**. Higher [levels](#town-levels) add more.
+- By default **only the Owner** can claim. The Owner can give that permission to other roles in the role settings.
+
+The short commands `/claim` and `/unclaim` are not available to players.
+
+## Basic town commands
+
+| Command | What it does |
+|---|---|
+| `/lands` | Open the town menu |
+| `/lands trust <player>` | Invite a player. They accept with `/lands accept` |
+| `/lands untrust <player>` | Remove a player |
+| `/lands setrole <player> <role>` | Change a member's role |
+| `/lands ban <player>` | Ban a player from your land |
+| `/lands deposit <amount>` | Put money into the town bank |
+| `/lands withdraw <amount>` | Take money out (Owner only by default) |
+| `/lands rename <name>` | Rename the town for 10,000 Coppets, at most once a day |
+| `/lands setowner <player>` | Hand the town to someone else for 5,000 Coppets from the town bank |
+| `/lands upkeep`, `/lands taxes` | See the next upkeep and tax payments |
+| `/lands delete` | Disband your town |
+
+**Enter and leave messages** are set in the town menu with the **Enter Message** item. There are no `/lands greeting` or `/lands farewell` commands.
+
+Land teleports (`/lands spawn`, `/lands wild`, teleporting to a chunk) cost so much that they are effectively switched off. Mysterria has no `/home` or `/tpa`.
+
+For town chat, type `!l`, `!land` or `!lands` in front of a message.
+
+## Town roles
+
+Each role controls what its players may do on your land. The Owner can change the permissions of every role in the town menu.
+
+| Role | Who | Default permissions |
+|---|---|---|
+| **Owner** | The founder | Everything |
+| **Admin** | Trusted officers | Build, break, use containers and doors, trust, untrust, ban and set roles, edit land and role settings. Cannot claim, withdraw money or manage wars by default |
+| **Member** | Regular residents | Build, break, farm, use containers, deposit money |
+| **Tenant** | Players renting an area | Build and use things in their rented area, and decide who else may use it |
+| **Nation** | Members of the same nation | Use doors and mechanisms, enter, pick up items, claim on your border |
+| **Ally** | Members of allied towns | The same as Nation |
+| **Untrusted** | Any visitor | Enter, pick up items, attack monsters |
+
+**PvP is off** in towns by default for every role. The Owner can turn it on per role, for example for an arena.
+
+If you attack another player, you are combat-tagged for **20 seconds**. Logging out while tagged kills you.
+
+## How much does a town cost to run?
+
+### Upkeep
+
+- Every town pays **3 Coppets per claimed chunk** every **7 days**, at 23:00. The money comes out of the town bank and goes to the server bank, *The Narrator*.
+- New towns pay nothing for their first **2 days**.
+- From 2 days before payment, members who can deposit get a reminder every hour if the bank is short.
+- If the bank cannot pay, your chunks are **not** removed.
+- Higher [levels](#town-levels) cut upkeep by up to 40%.
+
+Towns in a nation pay taxes to the nation instead of upkeep to the server. See [Nations and Wars](/guides/nations-and-wars/).
+
+### Taxes
+
+The Owner can charge trusted members a tax each payment cycle, up to **10 Coppets** per area. A member who cannot pay is untrusted automatically.
+
+## Town levels
+
+A town levels up **automatically** when it meets the requirements, and **drops a level** if it stops meeting them, for example when the bank balance falls. Every level needs **5 trusted players** and a balance in the **town bank** (`/lands deposit`).
+
+<Figure src={landsLevel} alt="The Lands Level menu with two padlocks, one for each requirement of the next level" caption="The Level menu in /lands. Each padlock is one requirement for the next level." contain />
+
+| Level | Name | Trusted players | Town bank | Extra claims | Extra member slots | Upkeep |
+|---|---|---|---|---|---|---|
+| 1 | **Shelter** | - | - | - | - | Full |
+| 2 | **Hamlet** | 5 | 5,000 Coppets | +50 | +25 | -10% |
+| 3 | **Parish** | 5 | 12,500 Coppets | +100 | +50 | -20% |
+| 4 | **Borough** | 5 | 25,000 Coppets | +150 | +75 | -30% |
+| 5 | **Domain** | 5 | 40,000 Coppets | +200 | +100 | -40% |
+
+**Domain is the highest level.** A town starts with 26 member slots.
+
+A Domain can found a [nation](/guides/nations-and-wars/).
+
+## Why towns matter for other systems
+
+- A town claim is where you can hide your own [Agora](/guides/agora/) entrance.
+- [Churches](/magic/churches/) can link their treasury to a town.
+- Large towns with great builds can earn a [Town Perk](#town-perks).
+
+## Town Perks
+
+A **Town Perk** is a permanent area effect that staff place on a town after it finishes a major building project. You cannot buy one or claim it by command.
+
+### How do I get a Town Perk?
+
+1. Build something impressive that fits the perk you want, for example a cathedral, a great library or a fortress wall.
+2. Open a support ticket on Discord with the coordinates and screenshots.
+3. Staff judge the build quality, the town's level and its population.
+4. If they approve it, staff place the perk on an area of your town.
+
+### Which perks exist?
+
+| Perk | What it does | Town level | Trusted players | Demigods |
+|---|---|---|---|---|
+| **Agriculture** | Crops grow much faster | Hamlet (2) | 5 | - |
+| **Mob Protection** | Hostile mobs do not spawn in the area | Borough (4) | 12 | - |
+| **Potion Effects** | Lasting effects such as Speed, Haste or Night Vision | Domain (5) | 18 | - |
+| **Experience Boost** | More experience while in the area | Domain (5) | 22 | - |
+| **Armor Repair** | Slowly repairs worn armour | Domain (5) | 30 | - |
+| **Acting Boost** | Faster Acting while you stand in the area | Domain (5) | 40 | 3 |
+| **Spirituality** | Restores Spirituality on a timer | Domain (5) | 45 | 5 |
+
+- **Trusted players** are the town's trusted members. **Demigods** are trusted members at Sequence 4 or stronger.
+- Experience Boost, Armor Repair, Acting Boost and Spirituality used to ask for town levels 6, 8 and 10, which no longer exist. Since **Domain** is now the highest level, the player and Demigod counts and the build decide for those perks.
+
+### How strong are the perks?
+
+Each perk is set up by staff for its town, so numbers differ. Perks active on the server today include:
+
+- **Acting Boost** gives +18% Acting speed in one town and +45% in another, for players standing in the area.
+- **Spirituality** restores 50 Spirituality every 20 seconds in three towns, 50 every 10 seconds in one, and 30 every 10 seconds in another.
+- **Mob Protection** covers a 100-block radius around one town's centre.
+
+A perk covers a circle around a monument, a box or other shape around a building, or a town's whole claim.
+
+### Tips for approval
+
+The build should suggest the perk, as a dragon statue fits Mob Protection and a cathedral fits Spirituality. Small houses will not qualify. Think of a world wonder that defines the landscape. Staff check inside and out, so do not submit unfinished builds or empty shells.
+
+<CardGrid min={280}>
+  <Figure src={dragon} alt="A huge dragon statue built over a town" caption="A dragon so imposing that monsters avoid the town. This is the kind of build that fits Mob Protection." />
+  <Figure src={hall} alt="A grand cathedral hall with tall windows" caption="A cathedral at the heart of a city. This is the kind of build that fits Spirituality." />
+</CardGrid>
+
+## Related pages
+
+<CardGrid>
+  <Card title="Nations and Wars" text="Unite towns, unlock nation effects and declare war." icon="shield" href="/guides/nations-and-wars/" />
+  <Card title="Money and Wallet" text="Where town money comes from." icon="coin" href="/guides/economy/" />
+</CardGrid>

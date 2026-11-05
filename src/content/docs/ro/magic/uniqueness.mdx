@@ -1,0 +1,126 @@
+---
+title: "Unicitate"
+description: "Cum dă Mysterria Unicitatea fiecărei Căi, cum crește acomodarea, ce fac cele patru trăsături ale ei și cum poate trece la altcineva. Un ghid Lord of the Mysteries."
+sidebar:
+  label: Unicitate
+  order: 31
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import uniquenessMenu from '~/assets/magic/uniqueness-menu.webp';
+import uniquenessCandidacy from '~/assets/magic/uniqueness-candidacy.webp';
+
+## Ce este o Unicitate?
+
+O **Unicitate** este singura autoritate a unei Căi, deținută de un singur Beyonder odată. Să deții Unicitatea Căii tale și s-o **acomodezi** până la 95% e o cerință pentru [Secvența 0](/ro/magic/sequence-zero/), iar pe drum trezește patru trăsături bonus.
+
+Fiecare dintre cele 22 de Căi obișnuite are exact una. Căile Exterioare și Harurile nu au.
+
+## Cum deschid meniul Unicității?
+
+Deschide meniul personajului (`/coi menu character` sau tasta M cu [Modul Client](/ro/guides/client-mod/)) și alege **Uniqueness**. Fără mod se deschide ca meniu tip cufăr. Are cinci secțiuni: **Where you stand**, **Candidacy score**, **Participation**, **Physical manifestation** și **Usurpation**.
+
+<Figure src={uniquenessCandidacy} alt="Meniul Unicității din Modul Client, cu cardurile scorului de candidatură" caption="Meniul Unicității din Modul Client. Numerele de aici vin de la un personaj de test." />
+
+<Figure src={uniquenessMenu} alt="Secțiunea Where you stand din meniul Unicității, Sun la 64 la sută acomodare, cu două trăsături trezite" caption="Where you stand, pentru un deținător de test al Unicității Sun la 64% acomodare." />
+
+## Cum se dă o Unicitate?
+
+Nimeni nu cumpără și nu trage la noroc o Unicitate. La fiecare 2 ore serverul dă un scor fiecărui Beyonder eligibil de pe Cale și i-o dă celui mai puternic candidat.
+
+### Cine poate fi candidat?
+
+- Cine e de **Secvența 4 sau mai puternic** pe acea Cale
+- cu un cont vechi de cel puțin **7 zile**
+- cu cel puțin **10 ore** de joc
+- cu un indice de activitate de cel puțin **1,5**
+- cu un scor total de cel puțin **40**
+- care nu s-a retras din evaluare
+
+Poți deține o singură Unicitate odată.
+
+### Scorul de candidatură
+
+Fiecare parte primește un scor din 100, apoi se ponderează:
+
+| Parte | Pondere | Ce măsoară |
+|---|---:|---|
+| Secvența | 35% | Secvența 1 = 100, Secvența 2 = 90, Secvența 3 = 80, Secvența 4 = 60 |
+| Timpul de joc | 25% | Totalul de ore pe server, socotit până la 100 |
+| Activitatea | 20% | Cât de recent și de regulat joci (indice până la 5,0). Scade dacă nu mai intri în joc |
+| Interpretarea | 15% | Cât ai interpretat pe toată Calea, de la Secvența 9 în sus. Avansarea nu o scade niciodată |
+| Dedicarea | 5% | Jumătate din zilele în care ai jucat cel puțin 30 de minute (până la 31), jumătate din durata medie a sesiunilor tale (până la 180 de minute) |
+
+Staff-ul poate adăuga o **ajustare manuală** de la -20 la +20 peste totalul ponderat. Ea apare în meniu.
+
+Tot scorul deținătorului actual se înmulțește cu până la **x1,25** la 100% acomodare, ceea ce face un deținător așezat mai greu de înlocuit.
+
+Mareele zilnice nu schimbă niciodată punctajul pentru Unicitate.
+
+## Cum poate trece o Unicitate la altcineva?
+
+Uciderea deținătorului **nu** o mută. Aceste cinci lucruri o mută:
+
+1. **Reverificarea automată** o mută la alt candidat care are cu cel puțin **6 puncte** mai mult decât deținătorul. Un deținător nou e ferit de asta timp de **3 zile**.
+2. Alt jucător cheltuie Overflow pe o [provocare plătită](/ro/magic/usurpation/#cum-provoc-o-unicitate) ca să forțeze un nou scor.
+3. Un rival care câștigă o [veghe pentru Secvența 0](/ro/magic/sequence-zero/) împotriva deținătorului ia Unicitatea, dar nu și tronul.
+4. Dacă deținătorul se retrage din evaluare, ea trece direct la următorul candidat.
+5. Intrarea într-o [Încercare](/ro/magic/ordeals/) o eliberează automat.
+
+<Notice tone="warn" title="Un deținător nou începe mereu de la 0%">
+Când o Unicitate trece la altcineva, acomodarea, numărul de morți și istoricul creșterii se resetează la zero.
+</Notice>
+
+## Pot renunța?
+
+Da. Participarea e implicită. O oprești la **Participation** cu **Withdraw from evaluation**. Butonul îți cere de două ori confirmarea.
+
+- Dacă deții Unicitatea, ea trece **imediat** la următorul candidat.
+- Dacă revii mai târziu, intri din nou la coadă. Nu primești Unicitatea înapoi.
+- Cât ești retras, nu primești scor și nu poți provoca pentru o Unicitate.
+
+## Cum crește acomodarea?
+
+Acomodarea arată cât de mult s-a așezat Unicitatea în tine, de la 0% la 100%. Crește doar cât o deții, din folosirea Căii tale:
+
+| Sursă | Acomodare câștigată |
+|---|---|
+| Interpretare câștigată | +0,02 puncte la fiecare 100 de Interpretare |
+| Spiritualitate cheltuită | +0,001 puncte la fiecare 100 de Spiritualitate |
+| Fiecare vrajă folosită | +0,00005 puncte |
+
+Interpretarea e de departe cea mai mare sursă. Aceste valori se înmulțesc apoi după Secvența ta:
+
+| Secvența | Multiplicator de creștere |
+|---|---:|
+| 1 | x1,2 |
+| 2 | x1,1 |
+| 3 | x1,0 |
+| 4 | x0,8 |
+
+### Moartea costă acomodare
+
+Fiecare moarte cât deții o Unicitate costă fix **10 puncte procentuale** (80% devine 70%), indiferent ce te-a omorât. Nu scade niciodată sub **10%**. O moarte anulată, de exemplu de un artefact, nu costă nimic.
+
+## Ce îți dă?
+
+### Cele patru trăsături
+
+Fiecare trăsătură se trezește la o anumită acomodare și apoi crește în linie dreaptă odată cu acomodarea, până la valoarea întreagă la 100%.
+
+| Trăsătură | Se trezește la | Efect la 100% | Valoarea când se trezește |
+|---|---:|---|---|
+| **Spiritual Dominance** | 25% | +50% refacerea Spiritualității | +12,5% |
+| **Authority Amplification** | 50% | +30% puterea și daunele abilităților | +15% |
+| **Divine Resilience** | 75% | +20% Spiritualitatea maximă | +15% |
+| **Acting Acceleration** | 100% | +40% câștigurile de Interpretare | +40% |
+
+Trăsăturile specifice unei Căi nu sunt în joc.
+
+### Drumul spre Secvența 0
+
+Ca să revendici un tron trebuie să deții Unicitatea Căii tale **și** s-o ai la **95%** acomodare sau mai mult. [Secvența 0](/ro/magic/sequence-zero/) arată celelalte cerințe.
+
+### Manifestarea fizică
+
+Fiecare Unicitate are un obiect cosmetic. Îl poți scoate sau ascunde din secțiunea **Physical manifestation**. E legat de tine și nu poate ieși niciodată din inventar. Unele pot fi purtate pe cap.

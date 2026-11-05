@@ -1,0 +1,134 @@
+---
+title: "金錢、錢包與能量碎片"
+description: "LOTM Minecraft 伺服器 Mysterria 上的金錢如何運作，包括科佩、里克和因蒂費爾，/wallet，出售礦石，以及獲取和使用能量碎片。"
+sidebar:
+    label: 金錢與錢包
+    order: 21
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import shard from '~/assets/shards/shard.png';
+import walletBalance from '~/assets/economy/wallet-balance.webp';
+import walletVault from '~/assets/economy/wallet-vault.webp';
+import walletSell from '~/assets/economy/wallet-sell-ore.webp';
+
+Mysterria 有兩種貨幣。**金錢**（科佩、里克和因蒂費爾）放在你的 `/wallet` 裡，用來支付城鎮、[集市](/zh-tw/guides/agora/)和野生非凡者交易的費用。**能量碎片**是一種物品，把多餘的非凡材料賣給村民就能得到，用來支付[秘密組織](/zh-tw/guides/orders/)的等級和野生非凡者交易。
+
+[商行點數](/zh-tw/guides/emporium/)是另一種獨立的餘額，只能在璀璨商行裡使用。
+
+## 科佩、里克和因蒂費爾是什麼？
+
+| 貨幣 | 價值 |
+|---|---|
+| **科佩**（Coppet） | 基本單位 |
+| **里克**（Lick） | 64 科佩 |
+| **因蒂費爾**（Verl Dor） | 64 里克，也就是 4,096 科佩 |
+
+你的餘額總是按科佩計算。當選單裡顯示帶 `$` 符號的價格時，例如某個城鎮等級需要 `$5000`，意思就是 5,000 科佩。
+
+## 怎樣使用錢包？
+
+輸入 `/wallet`。錢包選單會顯示你的餘額，還有通往伺服器商店和 Discord 的連結。點選 **Balance** 開啟金庫介面，在那裡你可以：
+
+- 點選一種貨幣，把它取出來變成實體物品。
+- 點選物品欄裡的貨幣物品，把它存進餘額。
+- 點選物品欄裡可以出售的物品，檢視價格並確認出售。
+
+**Settings** 按鈕可以在錢包選單的三種外觀之間切換。
+
+<Figure src={walletBalance} alt="錢包選單，Balance 提示框顯示 1,250.75$" caption="錢包選單。把滑鼠懸停在 Balance 上，可以看到你有多少錢。" contain />
+
+<Figure src={walletVault} alt="金庫介面，Balance 提示框顯示已存 30.00，背包裡的礦石可以出售" caption="金庫介面。點選貨幣可以取出，點選背包裡的物品可以出售。" contain />
+
+<Figure src={walletSell} alt="出售 8 個鑽石礦石的介面，Sell 提示框顯示價格為 16 科佩" caption="出售礦石。確認之前，Sell 按鈕會顯示價格。" contain />
+
+實體貨幣讓你可以親手付錢給其他玩家，或者進行需要貨幣的交易。想把一枚貨幣換成更小的貨幣，就在主手拿**一枚**貨幣並輸入 `/shatter`。一枚因蒂費爾會變成 64 里克，一枚里克會變成 64 科佩。
+
+## 怎樣賺錢？
+
+- 在地下市場[集市](/zh-tw/guides/agora/)裡匿名地把物品賣給其他玩家。
+- 領取[戰鬥通行證](/zh-tw/guides/battle-pass/)的等級獎勵。免費和高階等級每級給 100 到 1,500 科佩。
+- 在錢包裡賣礦石。錢不多，但很穩定。
+- 和其他玩家交易，參加活動。
+
+### 哪些礦石可以賣？
+
+只有三種礦石有價格。其他東西都賣不了錢。
+
+| 礦石 | 每個方塊的價格 |
+|---|---|
+| 鑽石礦石（以及深層鑽石礦石） | 2 科佩 |
+| 綠寶石礦石（以及深層綠寶石礦石） | 3 科佩 |
+| 遠古殘骸 | 5 科佩 |
+
+- 用帶**絲綢之觸**的鎬子開採鑽石礦石和綠寶石礦石，這樣礦石會以可以出售的方塊形式掉落。遠古殘骸總是以它本身掉落。
+- 你**每天最多可以賣 512 科佩**的礦石。達到上限後，出售介面會顯示 **Cannot sell** 和你當天剩餘的額度。
+
+## 金錢用來做什麼？
+
+- 創立和經營[城鎮](/zh-tw/guides/towns/)，包括額外領地、維護費和等級。
+- 在[集市](/zh-tw/guides/agora/)裡向其他玩家購買東西，以及在那裡租攤位。
+- [野生非凡者](/zh-tw/magic/wild-beyonders/)交易，它需要金錢、能量碎片**和**實體的因蒂費爾金幣。
+- 一部分村民交易（見下文）。
+
+### 村民收貨幣嗎？
+
+只有部分交易收。**附魔書**和**有耐久度的物品**（工具、武器、盔甲）的交易用科佩代替綠寶石，按原價每顆綠寶石 2 科佩計算。其他所有交易仍然使用綠寶石。
+
+村民只有在關閉 AI 之後才會交易。把它困在一個它走不出去的 2 乘 1 空間裡。
+
+### 有 /shop 嗎？
+
+沒有。在[集市](/zh-tw/guides/agora/)的**軍需官**那裡買建築方塊。
+
+<span id="energy-shards" class="anchor-alias"></span>
+
+## 能量碎片
+
+<Figure src={shard} alt="一組能量碎片，物品提示寫著一塊神秘能量的碎片，用作組織升級的貨幣" caption="能量碎片是物品欄裡的真實物品，不是錢包裡的餘額。" />
+
+能量碎片不儲存在 `/wallet` 裡。它們放在你的物品欄或箱子裡，和其他物品一樣可能丟失或被偷。
+
+### 怎樣獲得能量碎片？
+
+把多餘的非凡材料賣給**無職業村民**或**傻子村民**：
+
+1. 帶上你想賣的材料。
+2. 右鍵點選村民。聊天欄會出現一條收購的訊息，*"The wandering trader offers to buy N items for X Energy Shards"*。
+3. 點選訊息裡的 **[Trade All]**，或者輸入 `/tradeall`。
+4. **Trade Preview** 選單會列出它要買的所有東西，以及每組值多少。點選某一組，就能把它從交易中拿出來。
+5. 點選 **CONFIRM TRADE**。材料會被拿走，能量碎片會進入你的物品欄。
+
+如果你身上沒有它想要的東西，村民會*"finds nothing of interest in your pack"*。
+
+村民**只收途徑材料**，不收配方、魔藥或其他物品。序列越強越值錢：
+
+| 材料序列 | 每份的能量碎片（幾乎所有材料） |
+|---|---|
+| 序列9 | 10 |
+| 序列8 | 15 |
+| 序列7 | 20 |
+| 序列6 | 25 |
+| 序列5及更強 | 30 |
+
+<Notice tone="warn" title="看清預覽">
+交易會拿走你物品欄裡所有符合條件的物品組。確認之前，在 Trade Preview 裡把想保留的東西拿出來，或者先把它們放進箱子。
+</Notice>
+
+能量碎片也可以從[戰鬥通行證](/zh-tw/guides/battle-pass/)（很多等級給 200 到 3,000 能量碎片）和活動中獲得。
+
+### 能量碎片用來做什麼？
+
+- [秘密組織](/zh-tw/guides/orders/)的等級，1 到 4 級分別需要 50、200、1,000 和 5,000 能量碎片，存入組織的共享資金池。
+- 秘密組織的其他功能，例如戰吼、永久升級、建立秘密巢穴及其傳送水晶。
+- [野生非凡者](/zh-tw/magic/wild-beyonders/)交易，同時還需要金錢和實體的因蒂費爾金幣。
+
+璀璨商行裡的 **Shard of ...** 物品，例如 *Shard of Boon Token*，不是能量碎片。它們是用來合成某一種特定獎勵的[合成碎片](/zh-tw/guides/emporium/#商行碎片是什麼)。
+
+## 相關頁面
+
+<CardGrid>
+  <Card title="璀璨商行" text="花掉來自每日獎勵和投票的商行點數。" icon="star" href="/zh-tw/guides/emporium/" />
+  <Card title="集市" text="玩家匿名交易的地下市場。" icon="coin" href="/zh-tw/guides/agora/" />
+  <Card title="戰鬥通行證" text="能獲得金錢、能量碎片、點數和恩賜途徑的任務。" icon="scroll" href="/zh-tw/guides/battle-pass/" />
+</CardGrid>

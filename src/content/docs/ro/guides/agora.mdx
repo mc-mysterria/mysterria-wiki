@@ -1,0 +1,209 @@
+---
+title: "Agora, piața subterană a jucătorilor"
+description: "Agora pe Mysterria: găsește sau construiește o intrare secretă, vinde anonim prin Fence, cumpără, ridică-ți lucrurile de la Ledger Keeper și închiriază o tarabă."
+sidebar:
+    label: Agora
+    order: 23
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import doorCraft from '~/assets/agora/door_craft.png';
+import fence from '~/assets/agora/fence.png';
+import selling from '~/assets/agora/selling.png';
+import sellingCoi from '~/assets/agora/selling_coi.png';
+import plots from '~/assets/agora/plots.png';
+
+**Agora** este o piață subterană ascunsă după uși secrete, unde jucătorii cumpără și vând unii de la alții în mod anonim. Ofertele nu au nume, așa că cumpărătorii și vânzătorii nu află niciodată cine e celălalt.
+
+Agora **nu are comenzi**. Intri pe o ușă și dai click dreapta pe oamenii care lucrează acolo.
+
+## Cum intru în Agora?
+
+### Folosește intrarea publică
+
+Serverul are o **intrare publică la coordonatele (0, 0)**. Oricine o poate folosi. Dă click dreapta pe ușă ca să cobori.
+
+### Construiește-ți propria intrare secretă
+
+```
+O E O        O = Obsidian
+E D E        E = Echo Shard
+O E O        D = Dark Oak Door
+```
+
+<Figure src={doorCraft} alt="Obsidian și echo shards așezate în jurul unei uși de stejar închis în grila de crafting" caption="Rețeta pentru Secret Entrance." contain />
+
+Dă click dreapta pe un bloc cu **Secret Entrance** în mână ca să-l transformi într-o ușă stacojie (Crimson Door). Merge doar dacă:
+
+- locul are **două blocuri libere** deasupra
+- e pe **terenul revendicat** al unui [oraș](/ro/guides/towns/) unde ești **de încredere** (trusted)
+- terenul acela nu ascunde deja o ușă, pentru că fiecare teren are voie la **o singură intrare**
+
+Dă click dreapta pe ușă ca să cobori.
+
+### Un secret, nu un lacăt
+
+Oricine îți găsește ușa poate trece prin ea. Ascunde-o bine.
+
+Ușa nu poate fi spartă, aruncată în aer sau mutată. Singurul mod de a scăpa de ea e să renunți la revendicarea terenului pe care stă. Ușile sunt verificate la fiecare 30 de minute, iar o ușă dispare la a treia verificare care găsește terenul nerevendicat. Verificările au loc doar cât un jucător are zona aceea încărcată. Deci o intrare de pe un teren care nu mai e revendicat dispare în cam o oră și jumătate cât e cineva prin apropiere. Ca să-ți muți intrarea, renunță la chunkul acela, revendică-l din nou mai târziu și pune o intrare nouă. Ușa veche nu se mai întoarce.
+
+### Cum ieși
+
+Dă click dreapta pe **ușa de ieșire**. Ieși la suprafață în locul de unde ai coborât. Dacă intrarea aceea a dispărut sau nu e sigură, ieși la spawnul lumii.
+
+## Ce reguli sunt înăuntru?
+
+- **Nimeni nu poate fi rănit.** Fără PvP, fără mobi, fără daune din cădere, fără explozii, fără foc.
+- **Fără abilități Beyonder.** Nu funcționează în Agora.
+- **Fără scurtături.** Perlele ender, fructele chorus, elitrele și vehiculele sunt blocate. Ieși pe ușa de ieșire.
+- **Inventarul rămâne al tău.** Nu ți se ia nimic la ușă, în nicio direcție.
+- **Nu poți construi** și nu poți deschide containere, decât într-o [tarabă](#tarabe) pe care o închiriezi.
+
+## Cine lucrează în Agora?
+
+Dă click dreapta pe oricine ca să vorbești cu el.
+
+| Cine | Pentru ce |
+|---|---|
+| **The Fence** | Îți pune marfa la vânzare |
+| **Bazaar Clerk** | Răsfoiești și cumperi |
+| **The Informant** | Cauți după Cale și Secvență |
+| **Ledger Keeper** | Îți ridici cumpărăturile și banii |
+| **Courier Post** | Cumpărăturile îți sunt livrate |
+| **Plot Warden** | Închiriezi o tarabă |
+| **Stall Keeper** | Vitrina proprie a celui care închiriază |
+| **Quartermaster** | Blocuri de construcție (vechiul `/shop`) |
+
+<Figure src={fence} alt="Fence așteaptă în spatele tejghelei lui din Agora" caption="Fence îți ia marfa și o pune la vânzare." />
+
+## Cum sunt scrise prețurile?
+
+Prețurile folosesc cele [trei monede](/ro/guides/economy/) ale serverului. 64 de Coppets fac un Lick, iar 64 de Licks (4.096 de Coppets) fac un Verl Dor.
+
+Prețurile apar în combinația cea mai scurtă, de exemplu `16 coppets 11 licks` în loc de 720 de Coppets. Când scrii tu un preț, folosește `c` pentru Coppets, `l` pentru Licks și `v` pentru Verl Dors.
+
+## Cum vând în Agora?
+
+Dă obiectul lui **Fence** și spune un preț. El îți sugerează mai întâi cât valorează. Materialele Beyonder le judecă după Secvență, iar bunurile obișnuite după cât s-au vândut lucruri asemănătoare. Poți ignora sugestia și pui orice preț.
+
+| Regulă | Valoare |
+|---|---|
+| Taxa de listare | **2%** din prețul tău (minimum 1 Coppet) |
+| Impozitul pe vânzare | **8%** din vânzare |
+| Intervalul de preț | 1 până la 1.000.000 de Coppets |
+| Oferte noi pe zi | **3** |
+| Oferte active în același timp | **10** |
+| Cât durează o ofertă | **72 de ore** |
+
+Taxa de listare se plătește **dinainte** și nu se mai întoarce, fie că obiectul se vinde, expiră sau e anulat.
+
+<CardGrid min={280}>
+  <Figure src={selling} alt="Fence evaluează un Echo Shard la 5 Coppets" caption="Un obiect obișnuit, evaluat după vânzările recente." />
+  <Figure src={sellingCoi} alt="Fence evaluează un ingredient de Secvența 5 la 16 Coppets 11 Licks" caption="Un ingredient Beyonder, evaluat după Secvența lui." />
+</CardGrid>
+
+### Ce nu se poate vinde?
+
+- Shulker boxes, bundles și orice altceva care ține obiecte
+- Bedrock
+- Obiectele legate de tine
+- Obiectele de control Historical Pact
+
+### Când se vinde ceva
+
+Primești doar un mesaj că *o monedă a fost pusă deoparte pe numele tău*, fără să afli ce s-a vândut sau cu cât. Ridică banii de la **Ledger Keeper**. Vânzările făcute cât ai fost offline te așteaptă.
+
+### Când nu se vinde
+
+După 72 de ore o ofertă nevândută expiră și obiectul ajunge în **depozitul** tău de la Ledger Keeper. Dacă anulezi o ofertă mai devreme, ajunge în același loc.
+
+## Cum cumpăr în Agora?
+
+**Bazaar Clerk** îți arată tot ce e de vânzare. **The Informant** te lasă să cauți după Cale și Secvență când știi ce vrei.
+
+Plătești prețul de pe etichetă și nimic în plus. Impozitul iese din partea vânzătorului. Nu poți cumpăra propria ofertă.
+
+Cumpărăturile **nu ajung în inventar**. Te așteaptă la Ledger Keeper, dacă nu ai lăsat un corn la [Courier Post](#courier-post).
+
+## Cum ridici lucrurile de la Ledger Keeper
+
+Tot ce îți datorează piața rămâne la **Ledger Keeper** până le ridici. Nu expiră niciodată.
+
+- **Depozitul tău** ține obiectele cumpărate, ofertele expirate sau anulate și tot ce a fost salvat dintr-o tarabă pe care ai pierdut-o. Iei cât încape în inventar, iar restul rămâne.
+- **Registrul tău** ține banii din fiecare vânzare, după impozit. Când îi ridici, primești tot ce ți se datorează deodată.
+
+## Courier Post
+
+Lasă un **Horn of Summoning** la **Courier Post** și tot ce **cumperi** îți este adus de [curierul](/ro/guides/couriers/) tău, oriunde ai fi.
+
+- Un singur corn odată. Îl poți lua înapoi oricând vrei, iar livrările se opresc.
+- Livrarea e gratuită. Cornul e prețul.
+- Banii din vânzări nu se livrează. Ridică-i de la Ledger Keeper.
+
+## Tarabe
+
+O **tarabă** este o cameră din piață pe care o poți închiria, în care poți construi și din care poți vinde. Vorbește cu **Plot Warden** ca să iei una.
+
+<Figure src={plots} alt="Cartierul de tarabe din Agora, luminat de felinare" caption="Cartierul de tarabe." />
+
+| Regulă | Valoare |
+|---|---|
+| Chiria | **1 Verl Dor** (4.096 de Coppets) |
+| Perioada | **7 zile** |
+| Tarabe de jucător | **1** |
+| Perioada de grație | **48 de ore** |
+
+Cât timp ai chiria plătită, poți construi, sparge blocuri și folosi cufere **în taraba ta**. La vitrina ta apare un **Stall Keeper**. Vizitatorii care dau click pe el văd ce vinzi, iar tu ai propria tejghea.
+
+### Cum îți păstrezi taraba
+
+Plătește-l din nou pe Plot Warden înainte să se termine săptămâna ca să prelungești cu încă o săptămână. Dacă uiți, primești **48 de ore de grație**, cu mementouri, și îți păstrezi tot.
+
+### Cum îți pierzi taraba
+
+După perioada de grație ești evacuat, dar **nu se distruge nimic**. Tot ce e în cufere, rame și suporturi de armură, plus orice a rămas pe jos, ajunge în depozitul tău de la Ledger Keeper. Camera se resetează pentru următorul chiriaș.
+
+Poți să și predai taraba mai devreme din meniul lui Plot Warden.
+
+## Tejghele de tarabă
+
+O **tejghea** este o tăbliță pe un cufăr din taraba ta, care vinde oricui trece pe acolo, fără taxă de listare și fără așteptare. Poți avea până la **12 de tarabă**.
+
+1. Pune jos un cufăr și o tăbliță pe el (pe față sau deasupra).
+2. Scrie `[Market]` pe **rândul 1**.
+3. Scrie prețul pe **rândul 2**, ca număr simplu de Coppets sau prescurtat, de exemplu `3v 12l 5c` (3 Verl Dors, 12 Licks și 5 Coppets, adică 13.061 de Coppets).
+4. Dacă vrei, scrie pe **rândul 3** câte obiecte se dau la o cumpărare, de la 1 la 64. Lasă-l gol pentru 1.
+5. **Dă click dreapta pe tăbliță ținând în mână obiectul pe care vrei să-l vinzi.**
+
+Tăblița se redesenează ca **STALL COUNTER**, cu obiectul, prețul și numele tău.
+
+| Acțiune | Rezultat |
+|---|---|
+| Click dreapta cu un obiect în mână | Setezi sau schimbi ce vinde |
+| Click dreapta cu mâna goală | Vezi stocul și cât s-a vândut în total |
+| Shift + click dreapta | Închizi tejgheaua |
+
+**Cufărul e stocul tău.** Ca să-l reumpli, pune mai multe obiecte în el. Când e gol, tejgheaua e epuizată. Ca să schimbi un preț, sparge tăblița și pune-o din nou.
+
+Ca să cumperi de la o tejghea, dă click dreapta o dată pe tăbliță ca să vezi prețul, apoi **încă o dată în 6 secunde** ca să plătești. Obiectele îți ajung direct în mâini.
+
+O tejghea se termină când dispare tăblița, cufărul sau taraba.
+
+## Cât costă?
+
+| Ce | Cost |
+|---|---|
+| Secret Entrance | Obsidian, Echo Shards și o Dark Oak Door |
+| Listarea unui obiect | 2% din prețul tău (minimum 1 Coppet) |
+| Vânzarea unui obiect | 8% din vânzare |
+| Cumpărarea unui obiect | Prețul de pe etichetă |
+| Închirierea unei tarabe | 1 Verl Dor (4.096 de Coppets) pe săptămână |
+| Livrarea prin curier | Gratuită (cornul e prețul) |
+
+## Pagini înrudite
+
+<CardGrid>
+  <Card title="Bani și portofel" text="Monede, /wallet și Fragmente de Energie." icon="coin" href="/ro/guides/economy/" />
+  <Card title="Curieri" text="Ia un Horn of Summoning și trimite obiecte." icon="gift" href="/ro/guides/couriers/" />
+  <Card title="Orașe" text="Revendică teren ca să-ți ascunzi propria intrare." icon="shield" href="/ro/guides/towns/" />
+</CardGrid>

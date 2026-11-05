@@ -1,0 +1,104 @@
+---
+title: "Daily Tides"
+description: "Daily Tides on Mysterria, the Lord of the Mysteries Minecraft server: the seven Tides, which weekday each falls on, their bonuses and the /coi tide commands."
+sidebar:
+  order: 34
+---
+
+import {Figure} from '~/components/mdx';
+import bossBar from '../../../assets/tides/boss-bar.webp';
+import tideStatus from '../../../assets/tides/tide-status.webp';
+import tideCalendar from '../../../assets/tides/tide-calendar.webp';
+
+A Daily Tide is a server-wide bonus that lasts one day. One Tide is active at a time for every player, and they follow a fixed weekly rotation you can plan around.
+
+## When does the Tide change?
+
+A Tide day runs from **00:00 to 24:00 Kyiv time** (Europe/Kyiv, which is UTC+2 in winter and UTC+3 in summer). At midnight Kyiv time the next Tide starts for everyone, wherever you live.
+
+## What are the seven Tides?
+
+| Tide | What it does | Multipliers |
+|---|---|---|
+| **Tide of Diligence** | Every Acting gain is doubled | Acting gain x2 |
+| **Hunting Tide** | Creatures spawn and drop more, rare ingredients much more | Creature spawns x2, creature drops x2, rare ingredients x3 |
+| **Tide of Fortune** | Richer chests and faster pity | Chest loot x2.5, pity in half the opens, rare loot x2.5 |
+| **Wild Tide** | More [Wild Beyonders](/magic/wild-beyonders/) | Wild Beyonder spawns x2, Wild Beyonder limit x2 |
+| **Tide of Patience** | Acting cooldowns are halved | Acting cooldown x0.5 |
+| **Deep Tide** | More mineable nodes and ingredients in chests | Mineable nodes x2, ingredients in chests x2, rare ingredients x2 |
+| **Crimson Tide** | A [Crimson Moon](/magic/crimson-moon/) is five times as likely | Crimson Moon chance x5, creature drops x1.5 |
+
+"Rare" means **Sequence 3 or stronger**, so Sequence 3, 2 and 1. On Hunting and Deep Tide the rare-ingredient bonus applies to creature drops and to ingredients found in chests, but not to mineable nodes.
+
+On a Crimson Tide each night has a **50%** chance of a Crimson Moon instead of the usual 10%. Each night in the main Overworld rolls separately, so over a whole day of play you will very likely see at least one.
+
+### Which weekday has which Tide?
+
+The rotation follows the order of the table above, so each Tide lands on the same weekday every week:
+
+| Day (Kyiv time) | Tide |
+|---|---|
+| Monday | Hunting Tide |
+| Tuesday | Tide of Fortune |
+| Wednesday | Wild Tide |
+| Thursday | Tide of Patience |
+| Friday | Deep Tide |
+| Saturday | Crimson Tide |
+| Sunday | Tide of Diligence |
+
+Staff can change the rotation or pin a different Tide for a day, so check `/coi tide calendar` in game to be sure.
+
+### Are there limits when bonuses stack?
+
+Yes. When several bonuses apply together, such as a Tide plus a Crimson Moon plus the Moon Pathway's Moon Authority, the total has a cap.
+
+- Creature spawns are capped at **x4**.
+- Acting gain is capped at **x2.5**.
+
+On Tide of Diligence, once an Acting source reaches its cap the extra banks as Overflow instead of filling your bar. Overflow only exists at Sequence 3 and stronger, as explained on [Usurpation](/magic/usurpation/).
+
+## Which Tide helps me most?
+
+- **Early and mid Sequences.** Your Acting bar is the bottleneck, so **Diligence** helps most. **Wild Tide** helps too, because Wild Beyonders only exist at Sequence 9 to 5.
+- **Sequence 3 and stronger.** The cooldown on each Acting method holds you back more than the bar, so **Patience** is your day. Hunting, Fortune and Deep Tide also carry the rare-tier bonuses aimed at you.
+- **Looting.** Save your chest runs for **Fortune** and your ingredient hunting for **Hunting** or **Deep Tide**.
+
+The creature-drop bonus matters most on badge creatures and on rare ingredients. Custom [Beyonder Creatures](/magic/creatures/) already drop their common ingredients almost every time.
+
+:::tip[Fortune and pity]
+Pity is only checked when you open a container. If you are close to your pity threshold on Tide of Fortune, open one more chest before midnight. Your counter is kept either way, but the halved threshold ends with the day.
+:::
+
+## How do I find out today's Tide?
+
+- **Login card.** A chat card a few seconds after you join shows the Tide, what it does and the time left.
+- **Client toast.** The same card appears as a pop-up if you use the [Client Mod](/guides/client-mod/).
+- **Hourly reminder.** One line in chat every hour, skipped if you just joined or are AFK.
+- **Boss bar.** A countdown to the end of the day.
+- **Rollover.** A title and a sound for everyone online when the Tide changes.
+
+<Figure src={bossBar} alt="The Tide boss bar reading Wild Tide with 11 hours and 27 minutes left" caption="The Tide boss bar counts down to the end of the day." contain />
+
+## Which commands are there?
+
+| Command | What it does |
+|---|---|
+| `/coi tide` or `/coi tide status` | Today's Tide, its multipliers and the time left |
+| `/coi tide calendar [days]` | The coming Tides, starting today (14 days by default, up to 60) |
+| `/coi tide notify` | Turn your hourly reminder off or on |
+| `/coi tide bar` | Turn your Tide boss bar off or on |
+
+<Figure src={tideStatus} alt="Chat output of /coi tide for the Wild Tide, with twice as many Wild Beyonders, spawns x2 and limit x2, ending in 11 hours and 7 minutes" caption="/coi tide shows today's Tide and what it changes." contain />
+
+<Figure src={tideCalendar} alt="Part of the /coi tide calendar output, one weekday and date per line with its Tide" caption="The end of a /coi tide calendar list." contain />
+
+If staff have pinned today's Tide, `/coi tide status` says "Pinned by an administrator."
+
+## What do Tides never change?
+
+| System | Why it is left alone |
+|---|---|
+| [Uniqueness](/magic/uniqueness/) scoring | It is measured over 31 days, so the days you happen to play should not matter |
+| [Usurpation](/magic/usurpation/) War Points | Points are counted from the amount before the Tide bonus |
+| Ordeals | They can cost you your inventory, so a calendar should not change the odds |
+| Combat damage | Balance stays the same every day |

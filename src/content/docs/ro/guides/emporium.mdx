@@ -1,0 +1,134 @@
+---
+title: "Brilliant Emporium și recompensele zilnice"
+description: "Brilliant Emporium pe Mysterria: cum câștigi puncte Emporium din recompensele zilnice și din votare, ce vinde magazinul zilnic, prețuri, stoc și Mystery Boxes."
+sidebar:
+    label: Emporium și recompense zilnice
+    order: 22
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import dailyLogin from '~/assets/daily/daily.png';
+import hourly from '~/assets/daily/hourly.png';
+import emporiumMain from '~/assets/emporium/emporium-main.webp';
+import emporiumIngredients from '~/assets/emporium/emporium-ingredients.webp';
+
+**Brilliant Emporium** este un magazin zilnic care vinde ingrediente Beyonder, elixire, formule, cărți fermecate și Mystery Boxes pe **puncte Emporium**. Îl deschizi cu `/emporium`.
+
+<Figure src={emporiumMain} alt="Meniul principal Emporium cu șase pictograme de categorii pe două rafturi" caption="Meniul principal Emporium. Fiecare pictogramă de pe rafturi deschide o categorie sau recompensele tale zilnice." contain />
+
+Punctele Emporium sunt un sold separat de bani. Nu le poți cumpăra cu Coppets și merg doar în Emporium. Îți vezi punctele cu `/emporium balance`.
+
+## Cum obțin puncte Emporium?
+
+| Sursă | Puncte |
+|---|---|
+| [Recompense zilnice](#recompense-zilnice) (`/daily`) | Până la 180 pe zi |
+| [Votare](#votare) (`/vote`) | 30 pe zi dacă votezi pe ambele site-uri |
+| Niveluri din [Battle Pass](/ro/guides/battle-pass/) | 500 până la 3.000 pe fiecare nivel cu recompensă |
+| Obiectul **Emporium Points Bundle** | Suma scrisă pe el. Dă click dreapta ca s-o folosești |
+| Un bug raportat de tine e reparat | Le dă staff-ul |
+| Evenimente | Variază |
+
+<span id="daily-rewards" class="anchor-alias"></span>
+
+## Recompense zilnice
+
+Deschide `/daily` sau apasă **Daily Rewards** în meniul principal Emporium. În fiecare zi sunt trei recompense:
+
+| Recompensă | Cum o deblochezi | Puncte |
+|---|---|---|
+| **Daily Login Reward** | Intră pe server | 10 + 2 pentru fiecare zi din serie |
+| **1 Hour Playtime Reward** | Joacă 1 oră azi, fără AFK | 10 + 1 pentru fiecare zi din serie |
+| **3 Hour Playtime Reward** | Joacă 3 ore azi, fără AFK | 10 + 1 pentru fiecare zi din serie |
+
+Bonusul de serie nu mai crește după **+50** pe recompensă. Recompensa de intrare ajunge la maximul de 60 de puncte la o serie de 25 de zile, iar fiecare recompensă de timp de joc ajunge la 60 la o serie de 50 de zile. Cu toate trei la maxim primești **180 de puncte pe zi**.
+
+<CardGrid min={280}>
+  <Figure src={dailyLogin} alt="Descrierea Daily Login Reward: 14 puncte, bonus de serie +2 pe zi, gata de luat" caption="Recompensa de intrare la o serie de 2 zile: 10 + 2 x 2 = 14 puncte." />
+  <Figure src={hourly} alt="Descrierea 1 Hour Playtime Reward: 12 puncte, bonus de serie +1 pe zi, gata de luat" caption="Recompensa de 1 oră la o serie de 2 zile: 10 + 1 x 2 = 12 puncte." />
+</CardGrid>
+
+### Cum funcționează seria de intrări?
+
+- Seria crește cu 1 pentru fiecare zi la rând în care intri.
+- Dacă ratezi o zi, o iei de la 1.
+- Zilele urmează data serverului.
+
+### Cum iei recompensele
+
+- **Ia-le înainte să se termine ziua.** Recompensele neluate nu trec pe a doua zi.
+- Timpul AFK nu se pune la recompensele de 1 oră și 3 ore.
+- Primești un memento la 5 minute după ce intri dacă te așteaptă recompensa de intrare și un mesaj în chat când ai recompense neluate.
+
+## Votare
+
+Scrie `/vote` ca să vezi site-urile de votare. Pe fiecare site poți vota o dată la 24 de ore.
+
+| Site | Puncte pe vot |
+|---|---|
+| PlanetMinecraft | 20 |
+| crafty.gg | 10 |
+
+## Ce vinde Emporium?
+
+Magazinul are cinci categorii. În fiecare zi, la miezul nopții pe ora serverului, alege un set nou de obiecte din fiecare categorie, cu prețuri noi. Chatul anunță asta: *„The Emporium has refreshed with new items!”*
+
+| Categorie | Obiecte de vânzare pe zi | Stoc pe obiect | Schimbarea zilnică a prețului |
+|---|---|---|---|
+| Ingrediente | 90 | 5 | până la 15% în sus sau în jos |
+| Elixire | 30 | 2 | până la 10% în sus sau în jos |
+| Formule magice | 25 | 2 | până la 10% în sus sau în jos |
+| Farmece | 20 | 2 | până la 20% în sus sau în jos |
+| Mystery Boxes | 4 | 10 | până la 20% în sus sau în jos |
+
+**Stocul e comun pentru toată lumea.** Meniul arată câte o copie a obiectului pentru fiecare bucată din stoc. Fiecare copie cumpărată de cineva devine un slot **SOLD OUT** pentru toți jucătorii până a doua zi.
+
+<Figure src={emporiumIngredients} alt="Pagina Ingredients din Emporium cu descrierea unui Reality Fragment la prețul de 1061 de puncte" caption="Pagina de ingrediente. Ține mouse-ul pe un obiect ca să-i vezi prețul în puncte." contain />
+
+### Cât costă lucrurile?
+
+Fiecare obiect are prețul lui de bază. Prețul pe care îl vezi e prețul de bază urcat sau coborât de schimbarea din ziua aceea. Ingredientele, elixirele și formulele merg până la Secvența 4 și costă mai mult cu cât Secvența e mai puternică:
+
+| Secvența | Ingredient | Formulă magică | Elixir |
+|---|---|---|---|
+| 9 | 100 | 400 | 600 |
+| 8 | 200 | 650 | 1.200 |
+| 7 | 300 | 1.000 | 1.800 |
+| 6 | 380 | 1.800 | 2.600 |
+| 5 | 500 | 2.500 | 3.500 |
+| 4 | 1.000 | 5.000 | 7.000 |
+
+Cărțile fermecate costă 25 până la 40 de puncte înainte de schimbarea zilnică. Printre ele sunt Mending, Protection IV, Sharpness V, Efficiency V, Fortune III, Unbreaking III și altele.
+
+Obiectele mai puternice apar mai rar în alegerea zilnică.
+
+## Ce sunt Mystery Boxes?
+
+Un Mystery Box îți dă obiecte Beyonder la întâmplare dintr-un interval de Secvențe. Dă click dreapta cu el în aer sau pe un bloc ca să-l deschizi. Dă click dreapta pe o cutie din magazin ca să vezi ce poate conține.
+
+| Cutie | Preț de bază | Recompense | Conținut |
+|---|---|---|---|
+| Basic Mystery Box | 250 | 1 până la 2 | Secvența 9 |
+| Rare Mystery Box | 500 | 1 până la 2 | Secvențele 8 și 7 |
+| Epic Mystery Box | 1.000 | 1 până la 3 | Secvențele 6 și 5 |
+| Legendary Mystery Box | 2.000 | 1 până la 4 | Secvența 4 |
+
+Fiecare cutie poate da ingrediente, formule, Caracteristici Beyonder și elixire din oricare dintre cele 22 de Căi, în intervalul ei. Ingredientele ies cel mai des, iar elixirele cel mai rar.
+
+## Ce sunt fragmentele din Emporium?
+
+Unele recompense vin în bucăți. Un **Shard of Boon Token** sau un **Shard of Acting Bottle** e un fragment care îți spune de câte ai nevoie. Pune atâtea pe grila de crafting ca să faci obiectul întreg:
+
+| Fragment | Ai nevoie de | Face |
+|---|---|---|
+| Shard of Boon Token | 10 | Un Jeton de Har (vezi [Haruri](/ro/magic/boons/)) |
+| Shard of Acting Bottle | 2 | O Sticlă de Interpretare (10.000 de puncte de Interpretare) |
+
+Fragmentele acestea s-au dat în magazinele Emporium de sezon și la evenimente. Nu sunt Fragmente de Energie.
+
+## Pagini înrudite
+
+<CardGrid>
+  <Card title="Battle Pass" text="Niveluri care dau până la 3.000 de puncte Emporium odată." icon="scroll" href="/ro/guides/battle-pass/" />
+  <Card title="Bani și portofel" text="Coppets, Licks, Verl Dors și Fragmente de Energie." icon="coin" href="/ro/guides/economy/" />
+</CardGrid>

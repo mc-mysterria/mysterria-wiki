@@ -1,68 +1,61 @@
 ---
 title: "Crimson Moon"
-description: "Everything about the Crimson Moon event - what it is, what spawns, and how to fish during it"
+description: "The Crimson Moon on Mysterria, the Lord of the Mysteries Minecraft server: how often it rises, the boosted creature spawns, and fishing odds."
 sidebar:
-    label: 🌑 Crimson Moon
-    order: 11
+  order: 32
 ---
 
-![Helpful image](../../../assets/magic/lotm.jpg)
+The Crimson Moon is a red night in the main Overworld. [Beyonder Creatures](/magic/creatures/) spawn far more often, and fishing can pull up Beyonder ingredients or a hostile creature.
 
-### What is the Crimson Moon?
+## How often does the Crimson Moon happen?
 
-The **Crimson Moon** is a random world event that can occur on any night. Each qualifying night rolls independently with a **20% chance** of becoming a Crimson Moon - so on average you can expect one roughly every 5 nights, though the exact timing is never guaranteed and it can strike sooner or later without warning.
+At the start of every Minecraft night, the server rolls once. There is a **10% chance** that the night becomes a Crimson Moon, so roughly 1 night in 10. It cannot be predicted.
 
-When the Crimson Moon rises, the rules of the night change entirely.
+- It only happens in the main Overworld, not in the Nether, the End or other worlds.
+- A Minecraft night lasts about 8 real minutes and a full day about 20, so you can see several rolls in one evening of play.
+- On **Crimson Tide** days the chance is **50% per night**. The Crimson Tide normally comes round once a week, as listed on [Daily Tides](/guides/tides/).
 
-:::tip[The "Crimson" Daily Tide]
-One day in the weekly Daily Tide rotation is named Crimson, and it multiplies tonight's roll chance
-by 5x - effectively guaranteeing a Crimson Moon that night. See [Daily Tides](/guides/tides/) for
-when it's due.
+### How do I know it has started?
+
+Everyone in the Overworld sees this in chat:
+
+> The sky bleeds crimson... A Crimson Moon has risen! The night grows dangerous.
+
+Dark red particles drift around you, and the start is also announced on the Mysterria Discord. When dawn comes you see:
+
+> The crimson light fades as dawn breaks. The world feels safer once more.
+
+## What changes during a Crimson Moon?
+
+| Change | Details |
+|---|---|
+| No sleeping | Beds do not work. You get "The crimson moonlight pierces your mind, preventing restful sleep." |
+| More Beyonder Creatures | Beyonder Creature spawns are **x2.5** |
+| Fishing pays out | Each catch can be a Beyonder ingredient or a hostile creature (see below) |
+| Pathway effects | Some abilities react to it. For example, the Chained Pathway's Werewolf's Curse builds Madness and hunger on Crimson Moon nights |
+
+## What can I catch fishing under the Crimson Moon?
+
+Every successful catch rolls twice, in this order:
+
+| Roll | Chance | What happens |
+|---|---|---|
+| Hostile Beyonder Creature | 10% | Your catch is replaced by a creature that is thrown at you and attacks |
+| Beyonder ingredient | 10% (only if the first roll failed) | Your catch is replaced by a random ingredient, rarer ones less often |
+| Normal catch | the rest | An ordinary fish or item |
+
+So about 1 cast in 10 starts a fight and about 1 in 11 gives an ingredient. The chat says "The crimson waters yield a mysterious ingredient" or "Something sinister emerges from the cursed waters!".
+
+The creatures you can hook are the Red Wolf, Diviner's Spirit, Clockwork Automaton, Abyss Fish, Honeyguide Bird, Tree of Elders Spirit and Murloc.
+
+:::caution[Be ready before you reel in]
+A hooked creature lands next to you already angry. Fish near shelter with armour on and a weapon in reach. Young Beyonders should fish with friends.
 :::
 
----
+## Can a player call a Crimson Moon?
 
-### What changes during the event?
+Yes. A Moon Beyonder at Sequence 1 (Beauty Goddess) can raise one with **Moon Authority**. That Crimson Moon covers the whole world, but its stronger effects only reach players and creatures within 50 blocks of the Beauty Goddess. The [Moon Pathway](https://www.mysterria.net/en/pathways/moon) page on the main site has the details.
 
-**You cannot sleep.**
-Beds will not work for the duration of the event. You must survive until morning.
+## How do I make the most of it?
 
-**Creature spawn rates are significantly increased.**
-Both ordinary mobs and Beyonder Creatures appear far more frequently than usual - custom Beyonder Creature spawn rates are boosted roughly 2.5x for the duration. Do not underestimate the danger - what would normally be a quiet night can quickly become overwhelming.
-
-:::danger[Stay alert]
-The combination of no sleep and increased spawns makes the Crimson Moon one of the most dangerous times to be outside. Make sure you have armor, potions, and an escape route before nightfall if you plan to take advantage of this event.
-:::
-
----
-
-### Fishing during the Crimson Moon
-
-One of the unique features of the Crimson Moon is that **fishing becomes a source of Beyonder rewards**. Cast your fishing rod into any body of water and you may pull up something unusual.
-
-However, fishing during the Crimson Moon is **not without risk**.
-
-:::caution[You might fish out more than you bargained for]
-Alongside ingredients, you can also hook **Beyonder mobs** - creatures that will immediately attack you when reeled in. Always be ready to fight before you finish the cast.
-:::
-
-#### Fishing loot table
-
-Every catch during the event rolls independently, in this order:
-
-| Outcome | Chance | Notes |
-|---------|--------|-------|
-| Hostile Beyonder mob | 10% | Replaces the catch; attacks immediately when reeled in |
-| Beyonder ingredient | 15% | Replaces the catch; weighted toward common, low-Sequence ingredients, but rarer ones are possible |
-| Normal fish | Remainder | An ordinary vanilla catch |
-
-Fishing during the Crimson Moon is a high-risk, high-reward activity - not recommended for new Beyonders who aren't ready to fight what they catch.
-
----
-
-### Tips for surviving the Crimson Moon
-
-- **Stay near shelter** - if things get out of hand, having a safe retreat is essential
-- **Fish in groups** - if you catch a hostile creature, having backup can save your life
-- **Don't fish alone at low Sequences** - the mobs you can hook may be far above your current power level
-- **Use the increased spawns** - if you need acting points or Beyonder drops, this is an excellent time to hunt creatures
+A Crimson Moon is the best time to farm droppable ingredients, as listed on [Beyonder Creatures](/magic/creatures/). The bounty board (`/bounty`) can also offer a **Crimson Moon Hunt** that pays extra Acting. You cannot skip the night and spawns pile up fast, so go out prepared.

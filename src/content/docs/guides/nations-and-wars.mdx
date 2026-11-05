@@ -1,0 +1,135 @@
+---
+title: "Nations and Wars"
+description: "Nations and town wars on Mysterria: founding a nation, nation levels and effects, taxes, declaring war, capture flags, war modes and what the winner gets."
+sidebar:
+    label: Nations and Wars
+    order: 32
+---
+
+import {Card, CardGrid, Notice} from '~/components/mdx';
+
+Towns can join together into a **nation**, and towns and nations can **go to war** to take money or land from each other. Both need a [town](/guides/towns/) first.
+
+## Nations
+
+A **nation** is a union of towns under one banner. One town is the **capital**.
+
+### How do I found a nation?
+
+```
+/nations create <name>
+```
+
+- Your town must be at [level 5](/guides/towns/#town-levels), **Domain**.
+- It costs **20,000 Coppets**.
+- The name needs 5 to 24 characters, with no spaces.
+
+`/n` is a short form of `/nations`.
+
+### Nation commands
+
+| Command | What it does |
+|---|---|
+| `/nations` | Open the nation menu |
+| `/nations trust <town>` | Invite a town. Its owner accepts with `/nations accept` |
+| `/nations untrust <town>` | Remove a town |
+| `/nations leave` | Leave your nation |
+| `/nations level` | See progress to the next nation level |
+| `/nations setcapital <town>` | Move the capital |
+| `/nations rename <name>` | Rename for 10,000 Coppets, at most once a day |
+| `/nations delete` | Disband the nation (the towns stay) |
+
+For nation chat, type `!n`, `!nation` or `!nations` in front of a message.
+
+### Nation levels and effects
+
+A nation levels up automatically, counting all of its towns together.
+
+| Level | Name | Towns | Unique trusted players | Money across all towns | Effects unlocked | Active at once |
+|---|---|---|---|---|---|---|
+| 1 | **Covenant** | - | - | - | None | 0 |
+| 2 | **Order** | 3 | 100 | 60,000 Coppets | Jump Boost, Speed, Haste, Dolphin's Grace | 1 |
+| 3 | **Dominion** | 5 | 200 | 120,000 Coppets | Jump Boost II, Speed II, Haste II, Dolphin's Grace II, Absorption, Night Vision, Luck, Strength, Health Boost | 3 |
+
+Order also adds 50 claims and cuts nation upkeep by 10%. Dominion adds 100 claims and cuts it by 20%.
+
+### What does a nation cost?
+
+- Towns in a nation stop paying upkeep to the server. Instead they pay the nation a tax that the nation sets, up to **5 Coppets per chunk** each cycle. A town that cannot pay is removed from the nation.
+- The nation pays the server upkeep of **3 Coppets per chunk** every cycle. A nation that cannot pay is **deleted**, but its towns stay.
+- New nations pay no upkeep for their first 2 days.
+
+### Claiming near a nation
+
+Towns in a nation keep a **3-chunk** buffer, so other towns cannot claim within 3 chunks of them. Nation and Ally roles can claim on each other's borders by default.
+
+## Wars
+
+Any town or nation can declare war on another. The defender **does not have to accept**. The war begins after a **1-day preparation**.
+
+### Who can declare war?
+
+- The attacking town needs at least **5,000 Coppets** in its bank.
+- There is no minimum size, member count or age, and no level-difference rule. A Domain can declare on a brand-new Shelter.
+- A new town or nation gets a **1-day war shield**. Towns that just finished a war may have a longer shield (see [What does the winner get?](#what-does-the-winner-get)).
+- Inside a town, by default only the Owner can manage wars.
+
+### War commands
+
+| Command | What it does |
+|---|---|
+| `/wars` | Open the war menu |
+| `/wars declare <town or nation>` | Declare war |
+| `/wars info captureflag` | Show the Capture Flag recipe |
+
+Either side can surrender, during the preparation or during the war. Surrendering is usually milder than losing a fought war.
+
+### How is a war fought?
+
+Every war has a **war mode** (how it is scored) and a **war goal** (what the winner gets). New wars are a **Skirmish** fought for a **Raid** unless another mode or goal is chosen.
+
+| Mode | How it is won |
+|---|---|
+| **Skirmish** (default) | Points: 1 per kill, 5 per flag captured, 3 per flag broken, 5 per flag exploded. The first side to reach 5 points per player on the smaller team (at least **100**) wins. After **36 hours** the higher score wins |
+| **King of the Hill** | Hold a neutral arena point to score 5 points every 20 seconds. Kills give nothing. 100 points or 30 minutes. Only offered when staff have set up an arena |
+| **King of the Hill (player lands)** | Each side places a point in its own land and scores by holding the enemy's. 100 points or 30 minutes |
+
+During a war, enemies can enter your land, attack players and pick up items, and place or break ladders, vines and scaffolding. They can only do this while **at least one defender is online** in the land being invaded.
+
+You do **not** keep your inventory if you die in a war.
+
+### Capture Flags
+
+A **Capture Flag** takes enemy land in a Skirmish.
+
+```
+  .   R   .        R = Red Stained Glass Pane
+  .   B   .        B = Beacon
+  I   I   I        I = Iron Block
+```
+
+- Place it on enemy land between **Y 30 and Y 127**.
+- Hold it for **10 minutes** to capture. The captured land is **unclaimed** from the enemy.
+- Up to **3 flags** can be placed at once, with **10 minutes** between placements.
+- Breaking or exploding an enemy flag also scores points.
+
+### What does the winner get?
+
+| Goal | Winner gets | Peace shield afterwards |
+|---|---|---|
+| **Raid** (default) | For **1 hour**, the winner's members may open containers, doors and trapdoors, use mechanisms and pick up items in the loser's land, and break common building blocks (planks, logs, stone, cobblestone, dirt, sand, gravel, glass) to get in | None |
+| **Skirmish** | **75%** of the loser's town bank (40% if the loser surrenders). No land is lost | 7 days for both sides |
+| **Annex** | All of the loser's war land is unclaimed. The loser gets the usual unclaim refund | 3 days for the loser |
+| **Vassal** | The losing town joins the winner's nation as a restricted vassal. Only a nation can choose this goal | None |
+| **Independence** | A vassal fights its overlord to break free. If the vassal loses, it cannot try again for 7 days | 7 days for the winner |
+
+<Notice tone="warn" title="Raids hurt">
+In a Raid, the winners can empty your chests for an hour, even if nobody from your land is online. Keep valuables behind blocks that are not on that list.
+</Notice>
+
+## Related pages
+
+<CardGrid>
+  <Card title="Towns and Town Perks" text="Founding a town, levels and costs." icon="shield" href="/guides/towns/" />
+  <Card title="Money and Wallet" text="Where the money for wars and nations comes from." icon="coin" href="/guides/economy/" />
+</CardGrid>

@@ -1,0 +1,53 @@
+---
+title: "克莱恩连发枪"
+description: "Mysterria 上的克莱恩连发枪，唯一一把可以从零开始制作的 LOTM 枪械。包括零件、配方、克莱恩子弹、装弹，以及它在战斗中的表现。"
+sidebar:
+    label: 克莱恩连发枪
+    order: 4
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import kleinBarrel from '~/assets/firearms/kleinbarrel.png';
+import kleinCylinder from '~/assets/firearms/kleincylinder.png';
+import kleinFrame from '~/assets/firearms/kleinframe.png';
+import kleinGrip from '~/assets/firearms/kleingrip.png';
+import kleinRounds from '~/assets/firearms/kleinrounds.png';
+
+**克莱恩连发枪**是入门枪，也是唯一一把零件可以制作的枪。它是三把枪里射速最快的，装弹时一次就能装满整个弹匣。
+
+它的[数据](/zh-cn/firearms/#武器数据)是伤害 7，6 发子弹，射程 40 格，射击间隔 0.55 秒，装弹 2.8 秒。
+
+## 怎样制作它？
+
+在普通工作台上制作四个零件，然后在[武器锻造台](/zh-cn/firearms/crafting/#武器锻造台)上组装枪（右键查看，按住 Shift 右键组装）。
+
+| 零件 | 配方 |
+|---|---|
+| 连发枪枪管（Repeater Barrel） | 3 个铁锭 + 1 个青金石 |
+| 连发枪转轮（Repeater Cylinder） | 2 个铁锭 + 1 个红石粉 |
+| 连发枪枪身（Repeater Frame） | 2 个铁锭 + 1 个青金石 |
+| 连发枪握把（Repeater Grip） | 2 个铁锭 + 1 块深色橡木原木 |
+
+一把枪总共需要 9 个铁锭、2 个青金石、1 个红石粉和 1 块深色橡木原木。
+
+<Figure src={kleinBarrel} alt="连发枪枪管的合成格" caption="连发枪枪管。" contain />
+<Figure src={kleinCylinder} alt="连发枪转轮的合成格" caption="连发枪转轮。" contain />
+<Figure src={kleinFrame} alt="连发枪枪身的合成格" caption="连发枪枪身。" contain />
+<Figure src={kleinGrip} alt="连发枪握把的合成格" caption="连发枪握把。" contain />
+
+## 它用什么弹药？
+
+只用**克莱恩子弹**，以及用它们制作的特殊克莱恩子弹（一共 13 种）。
+
+- 1 个克莱恩弹壳 + 1 个克莱恩弹芯 + 1 个火药 = **4 发克莱恩子弹**。
+- 1 个黄铜 + 4 个铁粒 + 8 个火药可以做出 **32 发子弹**，是所有枪里最便宜的弹药。
+
+<Figure src={kleinRounds} alt="合成格，一个克莱恩弹壳、一个克莱恩弹芯和火药合成 4 发克莱恩子弹" caption="克莱恩子弹。" contain />
+
+弹壳和弹芯的配方以及所有特殊子弹，见[弹药](/zh-cn/firearms/ammunition/)页面。
+
+## 装弹是怎样进行的？
+
+左键装弹。**2.8 秒**后整个弹匣一次装满，最多 6 发。这 2.8 秒内你无法开火。
+
+切换快捷栏格子会取消装弹，而且**一发都不会装上**。已经在枪里的子弹会留着。因为装弹是要么全装要么不装，所以最好趁安全的时候装弹，不要等到出现 "No ammo!" 才装。

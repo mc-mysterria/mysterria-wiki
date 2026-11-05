@@ -1,0 +1,137 @@
+---
+title: "Dungeons"
+description: "Dungeons auf Mysterria, dem LOTM Minecraft-Server: die vier Dungeons, Gruppengrößen, Kraft und Schwierigkeitsstufen, Abklingzeiten, Helping Cards und Klassen."
+sidebar:
+  order: 36
+---
+
+import {Figure} from '~/components/mdx';
+import subspaceMenu from '~/assets/dungeons/subspace-menu.webp';
+import chooseDifficulty from '~/assets/dungeons/choose-difficulty.webp';
+import cardShop from '~/assets/dungeons/helping-card-shop.webp';
+
+![Ein Bossraum in einem Dungeon](~/assets/dungeons/dungeons.png)
+
+Dungeons sind eigene Welten, die eine Gruppe durch einen **Riss** in der Oberwelt betritt. Du kämpfst dich mit Klassenausrüstung durch Räume bis zu einem Endboss und gehst mit Beute, Helping Cards und Schauspielen wieder hinaus. Jeder Spieler hat pro Durchlauf **ein Leben**.
+
+## Welche Dungeons gibt es?
+
+| Dungeon | Gruppengröße | Dungeon-Kraft | Umgebung |
+|---|---|---|---|
+| **The Shivering Hollow** | 4 | 0 | Eine gefrorene Höhle unter der Erde |
+| **Embers Resurgence** | 5 | 100 | Eine Festung im Vulkan |
+| **Root of the Canopy** | 4 | 240 | Ein Labyrinth aus riesigen Wurzeln |
+| **The Dust Citadel** | 3 | 450 | Eine verschüttete Wüstenfestung |
+
+The Shivering Hollow und Embers Resurgence haben je zwei Eingänge, die anderen einen. The Shivering Hollow steht auch Spielern offen, die noch keine Beyonder sind.
+
+## Wie finde ich einen Dungeon?
+
+Tippe `/subspace`. Das Menü listet jeden Dungeon mit den Koordinaten jedes Eingangsrisses, deine Kraft im Vergleich zu der des Dungeons sowie deine Abklingzeiten und die heute übrigen Kartenläufe.
+
+<Figure src={subspaceMenu} alt="Das Menü Ventures to the Subspace mit einem Tooltip zu The Dust Citadel, Kraftstufe 450 und ein Eingang" caption="Das Menü /subspace. Fahre mit der Maus über einen Dungeon, um seine Kraftstufe und seine Eingänge zu sehen." contain />
+
+![Ein Riss als Eingang](~/assets/dungeons/entrance.png)
+
+Ein Riss ist eine Säule aus schimmernden Partikeln. Geh mit deiner Gruppe hinein, um zu starten.
+
+## Wie betrete ich einen Dungeon?
+
+1. **Bilde eine Gruppe** mit `/party` und lade deine Freunde ein. Mit `/ready` und `/leave` verwaltest du die Warteschlange.
+2. **Geh zum Riss** und tritt hinein.
+3. **Wähle eine Schwierigkeit** im Bildschirm „Choose Difficulty“.
+4. **Wähle eine Klasse**, wenn der Dungeon lädt. Wählst du nicht rechtzeitig, bekommst du eine zugeteilt.
+
+<Figure src={chooseDifficulty} alt="Der Bildschirm Choose Difficulty mit einem Tooltip zu Normal, das 450 Kraft braucht, mit ausgeteiltem und erlittenem Schaden bei x1" caption="Choose Difficulty. Fahre mit der Maus über eine Stufe, um zu sehen, wie viel Kraft sie braucht." contain />
+
+Ist deine Gruppe kleiner als die Gruppengröße des Dungeons, wirst du gefragt, ob du mit **Enter Understaffed?** unterbesetzt hineingehen willst. Das ist nur erlaubt, wenn deine Kraft höchstens 150 über der Kraft des Dungeons liegt. Zu starke Spieler müssen eine volle Gruppe mitbringen.
+
+:::note[Leere deine Hände]
+Der Dungeon startet nicht, wenn jemand in der Gruppe bestimmte Rohstoffe trägt („Someone in the party is carrying resources!“). Lass Wertsachen zu Hause.
+:::
+
+## Was ist Dungeon-Kraft?
+
+Deine Kraft ergibt sich aus deiner Sequenz.
+
+| Sequenz | 9 | 8 | 7 | 6 | 5 |
+|---|---|---|---|---|---|
+| Kraft | 30 | 60 | 100 | 150 | 220 |
+
+| Sequenz | 4 | 3 | 2 | 1 | 0 |
+|---|---|---|---|---|---|
+| Kraft | 320 | 450 | 600 | 800 | 999 |
+
+Du kannst einen Dungeon nur betreten, wenn deine Kraft **höchstens 29 unter** der Kraft des Dungeons liegt. Zu wenig Kraft schwächt dich außerdem. In Stufen bei 10, 20 und 29 darunter sinkt dein ausgeteilter Schaden (bis auf x0,4), und dein erlittener Schaden steigt (bis auf x1,6). Hast du die Kraft des Dungeons oder mehr, gibt es keinen Nachteil.
+
+## Was sind die Schwierigkeitsstufen?
+
+Jeder Dungeon hat vier Stufen. Schwerere Stufen bringen mehr Schauspielen und bessere Helping Cards.
+
+| Stufe | Benötigte Kraft | Dein ausgeteilter Schaden | Dein erlittener Schaden |
+|---|---|---|---|
+| Normal | Dungeon-Kraft | x1,0 | x1,0 |
+| Advanced | Dungeon-Kraft + 50 | x0,7 | x1,5 |
+| Master | Dungeon-Kraft + 150 | x0,5 | x1,8 |
+| Grandmaster | 450 (Sequenz 3) oder mehr | x0,3 | x2,5 |
+
+Auf Master und Grandmaster giltst du außerdem immer als etwas zu schwach.
+
+## Wie oft kann ich einen Dungeon spielen?
+
+| Art des Durchlaufs | Wie oft | Was du bekommst |
+|---|---|---|
+| **Echter Beutelauf** | Einmal alle **72 Stunden** pro Dungeon | Die Beute aus Truhen und vom Boss |
+| **Kartenlauf** | Bis zu **2 pro Dungeon und Tag**, solange du Abklingzeit hast | Die Truhen sind versiegelt. Am Ende bekommst du **1 Helping Card** |
+
+Die meiste Beute fällt als **Splitter** („Shard of ...“). Rechtsklicke, wenn du genug Splitter hältst, um sie zum echten Gegenstand zusammenzufügen. Eine Formel oder ein Zaubertrank der Sequenz 9 braucht 2 Splitter, stärkere Gegenstände brauchen mehr, bis zu 9 für Sequenz 0.
+
+### Was sind Dungeon-Schlüssel?
+
+| Schlüssel | Wirkung |
+|---|---|
+| **Simple Key** | Setzt deine eigene Abklingzeit für echte Beute in einem Dungeon zurück |
+| **Premium Key** | Setzt die Abklingzeit für deine Gruppe zurück (bis zur Gruppengröße des Dungeons), macht den Lauf zu einem echten Beutelauf und verdoppelt die Helping Cards |
+
+Rechtsklicke einen Schlüssel und wähle den Dungeon. Schlüssel gibt es im Battle Pass und im Shop.
+
+## Wofür sind Helping Cards?
+
+Eine **Helping Card** gehört zu einem Dungeon und einer Stufe. Rechtsklicke sie, um den **Helping Card Shop** zu öffnen und Karten gegen Belohnungen zu tauschen. Hier ein Beispiel aus Embers Resurgence auf Master.
+
+<Figure src={cardShop} alt="Der Helping Card Shop mit einem Tooltip zum Ingredient Exchange Token in Embers Resurgence auf Master, Preis 8 Helping Cards" caption="Der Helping Card Shop. Fahre mit der Maus über eine Belohnung, um ihren Preis in Karten zu sehen." contain />
+
+| Belohnung | Karten |
+|---|---|
+| Ingredient Token | 8 |
+| Recipe Token (Sequenz 6) | 12 |
+| Potion Token (Sequenz 6) | 16 |
+| Acting Bottle (10.000) | 20 |
+| Anti-Control Charm | 24 |
+| Ritual Book (Tier I) | 32 |
+
+Root of the Canopy und The Dust Citadel zahlen ihre Shop-Belohnungen als Beutesplitter statt als ganze Gegenstände aus. Die Shops auf Grandmaster in Embers Resurgence und Root of the Canopy verkaufen außerdem den [Pathway Transfer Token](/de/guides/special-items/).
+
+## Wie viel Schauspielen bringen Dungeons?
+
+Ein abgeschlossener Dungeon gibt Schauspielen über die Quelle World. Schwerere Stufen geben mehr (Advanced x1,25, Master x1,5, Grandmaster x2). Schauspielen aus Dungeons ist auf **600 pro Tag** über alle Dungeons begrenzt und wird um Mitternacht UTC zurückgesetzt.
+
+## Welche Klasse soll ich wählen?
+
+| Klasse | Magischer Schaden | Physischer Schaden | Hinweise |
+|---|---|---|---|
+| **Tank** | x0,3 | x0,6 | Hohe Verteidigung, zieht Mobs auf sich |
+| **Mage** | x2,2 | x0,15 | Zauber treffen hart, bloße Hände sind nutzlos |
+| **Warrior** | x0,7 | x1,8 | Stark im Nahkampf, stirbt schnell |
+| **Archer** | x0,8 | x0,7 | Bögen und Armbrüste machen x2,2 |
+| **Support** | x1,0 | x0,8 | Starke magische Verteidigung, voller Zugang zu Stärkungen |
+
+Eine ausgewogene Gruppe hat einen Tank, der die Mobs hält, Schadensverteiler, die zu euren Beyondern passen, und einen Support, wenn ihr einen habt.
+
+### Welche Fähigkeiten sind in Dungeons verboten?
+
+Diese Fähigkeiten funktionieren in einem Dungeon nicht: Nightmare, Nightmare World, Traveler's Door, Exile, Thread Hands, Threads, Paper Figurine, Pocket Space, Holy Equipment, Lockpick, Wraith Transformation, Puppet Transformation und das Besessenmachen von Puppen. Manche Klassen sperren außerdem bestimmte Fähigkeiten („Your class cannot use this ability in the dungeon!“).
+
+## Was ist mit geschlossenen Rissen?
+
+Ein Riss kann geschlossen sein, bis Spieler ihn gemeinsam schwächen. Stell dich in seine Nähe, nimm „The node is too strong. You can try to weaken it. [Try?]“ an und überlebe die Verteidigung, während er deine Splitter aufnimmt. Im Moment sind alle Dungeon-Risse offen.

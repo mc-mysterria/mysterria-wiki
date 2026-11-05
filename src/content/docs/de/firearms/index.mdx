@@ -1,0 +1,109 @@
+---
+title: "Feuerwaffen"
+description: "Waffen auf Mysterria, dem LOTM Minecraft-Server: Werte von Klein's Repeater, Deathknell und Steam Rifle, Steuerung, Nachladen, Treffsicherheit und wie du anfängst."
+sidebar:
+    label: Übersicht
+    order: 1
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import actionBar from '~/assets/firearms/action-bar.webp';
+
+Mysterria hat drei Waffen: **Klein's Repeater**, die **Deathknell** und das **Steam Rifle**. Du baust sie aus Teilen an einem **Weaponsmith Table** und lädst sie mit hergestellter Munition.
+
+## Wie bekomme ich meine erste Waffe?
+
+1. Stell einen [Weaponsmith Table](/de/firearms/crafting/#der-weaponsmith-table) her und platziere ihn.
+2. Stell die vier Teile von **Klein's Repeater** aus Eisen, Lapislazuli, Redstone und einem Schwarzeichenstamm her. Das ist die einzige Waffe, deren Teile du herstellen kannst.
+3. Trag die Teile bei dir, rechtsklicke den Tisch und dann **Shift + Rechtsklick**, um die Waffe zu bauen.
+4. Stell Brass her, danach Patronenhülsen, Kerne und [Klein Rounds](/de/firearms/ammunition/).
+
+Teile für **Deathknell** und **Steam Rifle** lassen sich nicht herstellen. Jedes Mal, wenn eine Truhe in einer Vanilla-Struktur der Oberwelt ihre Beute erzeugt, enthält sie mit 25 % Chance auch ein zufälliges Teil einer dieser beiden Waffen. Du kannst sie auch ertauschen.
+
+## Werte der Waffen
+
+Schaden ist in Lebenspunkten pro Treffer angegeben, vor Rüstung. Reichweite ist in Blöcken angegeben.
+
+| Waffe | Schaden | Magazin | Reichweite | Zwischen Schüssen | Nachladen |
+|---|---|---|---|---|---|
+| [Klein's Repeater](/de/firearms/kleins-repeater/) | 7 | 6 | 40 | 0,55 s | 2,8 s (alle auf einmal) |
+| [Deathknell](/de/firearms/deathknell-revolver/) | 12 | 6 | 60 | 0,6 s | 0,7 s pro Patrone |
+| [Steam Rifle](/de/firearms/steam-rifle/) | 20 | 5 | 100 | 1,2 s | 3,0 s aus leerem Magazin |
+
+Ein volles Nachladen der Deathknell dauert 4,2 Sekunden. Das Steam Rifle lädt aus leerem Magazin alle 5 Patronen auf einmal. Beim Nachfüllen lädt es die erste Patrone nach 1 Sekunde und danach eine alle 0,75 Sekunden.
+
+### Schaden nach Munitionsart
+
+Besondere Munition ändert den Schaden. Was jeder Effekt bewirkt, steht unter [Munition](/de/firearms/ammunition/).
+
+| Munition | Faktor | Klein's Repeater | Deathknell | Steam Rifle |
+|---|---|---|---|---|
+| Normale Munition | 100 % | 7 | 12 | 20 |
+| Fire, Poison, Aging, Spirit Control, Deceiving, Deprivation, Rotten, Weakening | 85 % | 5,95 | 10,2 | 17 |
+| Armor Piercing | 90 % | 6,3 | 10,8 | 18 |
+| Implosive | 125 % | 8,75 | 15 | 25 |
+| Exorcist gegen untote Mobs | 250 % | 17,5 | 30 | 50 |
+| Demon Hunter gegen Beyonder-Kreaturen | 250 % | 17,5 | 30 | 50 |
+
+Exorcist- und Demon-Hunter-Munition macht gegen alles andere 100 %.
+
+## Steuerung
+
+| Aktion | So geht's |
+|---|---|
+| Schießen | Rechtsklick |
+| Nachladen | Linksklick |
+| Nachladen abbrechen | Auf einen anderen Platz der Schnellleiste wechseln |
+| Zielfernrohr (nur Steam Rifle) | Schleichen gedrückt halten |
+
+Du **kannst nicht schießen, während du nachlädst**, und der Chat meldet „Weapon is reloading!“. Um zu schießen, wechsle den Platz in der Schnellleiste, um das Nachladen abzubrechen, und wechsle dann zurück.
+
+- **Klein's Repeater** lädt gar nichts, wenn du abbrichst.
+- **Deathknell** behält jede Patrone, die schon geladen ist.
+- **Steam Rifle** behält beim Nachfüllen die Patronen, die schon geladen sind. Ein Nachladen aus leerem Magazin lädt nichts, wenn du vor Ablauf der 3 Sekunden abbrichst.
+
+Waffen lassen sich nicht verzaubern, nicht im Amboss benutzen und nicht in die Nebenhand legen.
+
+## Die Aktionsleiste
+
+Solange du eine Waffe hältst, zeigt die Leiste über deiner Schnellleiste diese Dinge.
+
+- die Munitionsart und wie viele Patronen geladen sind, zum Beispiel „Klein Rounds 4/6“
+- ein gelbes **Reloading...**, während nachgeladen wird
+- ein rotes **No ammo!**, wenn das Magazin leer ist
+
+<Figure src={actionBar} alt="Die Aktionsleiste über der Schnellleiste mit Klein Rounds 6/6, während ein geladener Klein's Repeater gehalten wird" caption="Die Aktionsleiste mit einem geladenen Klein's Repeater in der Hand." contain />
+
+## Treffsicherheit
+
+| Du bist | Streuung |
+|---|---|
+| Stehst still | 0 Grad (perfekt genau) |
+| In Bewegung (irgendeine Bewegung in den letzten 0,3 Sekunden) | 4 Grad |
+| In der Luft | 8 Grad |
+
+Steh bei wichtigen Schüssen still. Schleichen verringert die Streuung nicht.
+
+## Wodurch Kugeln fliegen
+
+Kugeln fliegen durch Laub, Gras, Blumen, Feldfrüchte, Zuckerrohr, Bambus und Glas. Jeder Block, durch den sie fliegen, zieht 10 % vom Schaden ab, bis zu einem Minimum von 1. Glas und Glasscheiben, durch die eine Kugel fliegt, zerbrechen.
+
+Jeder Schuss hinterlässt eine farbige Spur, und Spieler in bis zu 10 Blöcken Abstand von einer vorbeifliegenden Kugel hören sie knallen.
+
+## Welche Munition lädt die Waffe?
+
+Klein Rounds passen nur in Klein's Repeater, Deathknell Rounds nur in die Deathknell und Rifle Rounds nur in das Steam Rifle. Besondere Munition gehört weiter zu der Waffe, aus deren Munition sie gemacht wurde.
+
+- Bei **leerem Magazin** nimmt das Nachladen den ersten Stapel passender Munition aus deinem Inventar, normal oder besonders.
+- Bei **teilweise geladenem Magazin** kannst du nur mit derselben Art Munition nachfüllen, die schon in der Waffe ist.
+- Um die **Munitionsart zu wechseln**, schieß das Magazin leer und lade dann mit der neuen Munition, die zuerst in deinem Inventar liegt.
+
+## Seiten zu Feuerwaffen
+
+<CardGrid>
+  <Card title="Weaponsmith Table und Waffenbau" text="Der Tisch, Brass und jedes Waffenteil." href="/de/firearms/crafting/" />
+  <Card title="Munition" text="Hülsen, Kerne, Patronen und die 12 besonderen Effekte." href="/de/firearms/ammunition/" />
+  <Card title="Klein's Repeater" text="Die Waffe, die du von Grund auf herstellen kannst." href="/de/firearms/kleins-repeater/" />
+  <Card title="Deathknell" text="Ein schwerer Revolver, der Patrone für Patrone nachlädt." href="/de/firearms/deathknell-revolver/" />
+  <Card title="Steam Rifle" text="Große Reichweite, hoher Schaden, mit Zielfernrohr." href="/de/firearms/steam-rifle/" />
+</CardGrid>

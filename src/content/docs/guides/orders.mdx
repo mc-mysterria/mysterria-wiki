@@ -1,0 +1,123 @@
+---
+title: "Secret Orders"
+description: "Secret Orders on Mysterria, the LOTM Minecraft server: create a private order, level it with Energy Shards, and unlock the stash, summons, rituals and a lair."
+sidebar:
+    label: Secret Orders
+    order: 33
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import levelup from '../../../assets/orders/levelup.png';
+
+A **Secret Order** is a small private organization. Members share a private chat, a stash and powers that grow as the Order levels up with **Energy Shards**.
+
+The command is `/o` (also `/org` and `/organization`). Type `/o` to open the Order menu.
+
+## Who can create a Secret Order?
+
+Creating an Order and levelling it up needs the **Shepherd Subscription** supporter rank from the [server store](https://www.mysterria.net/en/store). Anyone can be invited into an Order.
+
+If the leader's subscription ends, the Order drops to level 0. When the subscription comes back, the Order gets its **previous level back**.
+
+## Commands
+
+| Command | What it does |
+|---|---|
+| `/o` | Open the Order menu |
+| `/o create <name>` | Create an Order (needs the supporter rank) |
+| `/o invite <player>` | Invite a player (leader or vice leader) |
+| `/o kick <player>` | Remove a member (leader or vice leader) |
+| `/o vice set <player>`, `/o vice remove <player>` | Add or remove a vice leader |
+| `/o levelup` | Level up the Order (leader, with the supporter rank) |
+| `/o sos` | Send your coordinates to the Order chat (level 1 or higher) |
+| `/o rename <name>` | Rename the Order (leader only) |
+| `/o info [order]` | Show information about an Order |
+| `/o leave` | Leave the Order (the leader cannot leave) |
+| `/o disband` | Disband the Order |
+| `/o confirm` | Confirm a leave, kick or disband |
+| `/oc <message>` | Send a message to the Order chat |
+
+For Order chat, use `/oc <message>` or type `!o`, `!oc`, `!org` or `!order` in front of a message. Messages show as `[ORG] Name: message`.
+
+## How do Order levels work?
+
+Members put **Energy Shards** into the Order's shared pool, and the leader spends the pool on levels.
+
+1. Open `/o` and use the **Your Shards** item. Left-click deposits 1 shard, right-click deposits 10, and shift and left-click deposits all.
+2. When the pool is big enough, the leader uses **Level Up** in the menu or types `/o levelup`.
+
+<Figure src={levelup} alt="The Your Shards item in the Order menu: personal 0, organization 342, with the deposit controls" caption="Depositing Energy Shards into the Order's pool." />
+
+| Level | Name | Max members | Cost to reach | Unlocks |
+|---|---|---|---|---|
+| 0 | **Whisper of Mist** | 3 | - | Invites, vice leaders, Order chat |
+| 1 | **Shadow of Mist** | 4 | 50 shards | Organization Stash, `/o sos` |
+| 2 | **Gaze of Mist** | 5 | 200 shards | Pocket Dimension |
+| 3 | **Embrace of Mist** | 6 | 1,000 shards | Instant Summon, Growth Ritual |
+| 4 | **Heart of Mist** | 7 | 5,000 shards | Secret Lair, Battle Cry, Global Announcement, permanent upgrades |
+
+Get [Energy Shards](/guides/economy/#energy-shards) by selling spare ingredients to a jobless villager or nitwit, or from the Battle Pass.
+
+## Order abilities
+
+Open them from the **Abilities** item in the `/o` menu.
+
+### Organization Stash (level 1)
+
+A shared 27-slot storage that every member can open. Buy more pages at max level (see [upgrades](#permanent-upgrades)).
+
+### Pocket Dimension (level 2)
+
+A private meeting space for the Order.
+
+- The leader or a vice leader opens a session. It lasts **10 minutes** and can be opened once every **24 hours**.
+- Members join from the abilities menu while the session is open.
+- While you are inside, a copy of you stays where you left. If it is attacked, you are pulled back.
+
+### Instant Summon (level 3)
+
+Teleport yourself to an online member of your Order.
+
+- Costs **1.5% to 3%** of your Acting, picked at random. You must be a Beyonder.
+- **5-second** warm-up. Moving or taking damage cancels it.
+- Only works in the same dimension.
+- **30-minute** cooldown.
+
+### Growth Ritual (level 3)
+
+The leader or a vice leader gives every **online** member **+20% to 25% Acting speed** for **24 hours**. It can be used **once a week**.
+
+### Secret Lair (level 4)
+
+A permanent private world for your Order.
+
+- The leader or a vice leader founds it with 50 Energy Shards, 20 Obsidian, 5 Ender Pearls and 3 Diamonds from their own inventory.
+- Each trip in uses a **Lair Teleportation Crystal**. Craft them in the Secret Lair menu for 10 Energy Shards, 1 Ender Pearl and 2 Crying Obsidian each.
+- There are 30 minutes between teleports, and 30 minutes after you leave before you can enter again.
+- Walk past the lair's boundary and you are sent back to the centre.
+
+### Battle Cry (level 4)
+
+The leader or a vice leader gives every online member **Speed II, Strength II and Regeneration I** for 5 minutes. It costs **50 shards** from the Order's pool and works once every **12 hours**.
+
+### Global Announcement (level 4)
+
+The leader or a vice leader sends an **anonymous message to the whole server** in the Order's name, once every **24 hours**.
+
+### Permanent upgrades
+
+At level 4 the leader or a vice leader can buy permanent upgrades with shards from the Order's pool:
+
+| Upgrade | Costs | Maximum |
+|---|---|---|
+| **Extra Member Slot** | 200, then 400, then 800 shards | +3 members (10 in total) |
+| **Extra Stash Page** | 300, then 600, then 1,200 shards | 4 pages |
+
+There is no Remote Exchange or Unification Ritual any more. To pass items between members, use the shared stash or a [courier](/guides/couriers/).
+
+## Related pages
+
+<CardGrid>
+  <Card title="Energy Shards" text="How to earn the shards Orders run on." icon="coin" href="/guides/economy/#energy-shards" />
+  <Card title="Couriers" text="Send items to any player." icon="gift" href="/guides/couriers/" />
+</CardGrid>

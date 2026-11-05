@@ -1,0 +1,126 @@
+---
+title: "Battle Pass"
+description: "Der Battle Pass von Mysterria: tägliche und wöchentliche Aufgaben, Punkte pro Stufe und jede kostenlose und Premium-Belohnung, von Geld und Energiescherben bis zu Gnadenpfaden und Elytren."
+sidebar:
+    label: Battle Pass
+    order: 24
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import bpMain from '~/assets/battle-pass/battle-pass-main.webp';
+import bpRewards from '~/assets/battle-pass/battle-pass-rewards.webp';
+
+Der **Battle Pass** gibt Punkte für tägliche und wöchentliche Aufgaben, und die Punkte erhöhen deine Stufe. Viele Stufen haben eine Belohnung, etwa Geld, Energiescherben, Emporium-Punkte, Schauspiel-Flaschen, Dungeon-Schlüssel oder einen von zwei Gnadenpfaden.
+
+Du öffnest ihn mit `/battlepass` oder `/bp`.
+
+<Figure src={bpMain} alt="Das Menü des Battle Pass mit den Knöpfen Rewards, Premium, Quests und Info" caption="Das Menü des Battle Pass." contain />
+
+## Wie funktioniert der Battle Pass?
+
+1. Erledige **tägliche Aufgaben** und **wöchentliche Aufgaben**, um Punkte für den Battle Pass zu verdienen.
+2. Ist eine Stufe voller Punkte, steigst du in die nächste auf.
+3. Erreichst du eine Belohnungsstufe, öffne **Rewards** im Menü des Battle Pass und **klicke die Belohnung an, um sie abzuholen**. Belohnungen werden nicht automatisch vergeben.
+
+Jeder Spieler hat den **kostenlosen Pass**. Der **Premium-Pass** bringt eine zweite Belohnungsspur und zusätzliche Aufgaben nur für Premium.
+
+<Figure src={bpRewards} alt="Die Seite Rewards im Battle Pass mit dem Tooltip zu Tier 2, der $200 und eine Acting Bottle zeigt" caption="Die Seite Rewards. Fahre mit der Maus über eine Stufe, um ihre Belohnungen zu sehen und ob sie freigeschaltet ist." contain />
+
+## Aufgaben
+
+### Tägliche Aufgaben
+
+- Du hast immer **9 tägliche Aufgaben**, davon 4 leichte, 3 mittlere und 2 schwere.
+- Sie werden jeden Tag um **11:59 Uhr Kyjiwer Zeit** zurückgesetzt.
+- Jede ist **25 bis 50 Punkte** wert, zum Beispiel 3 Wölfe zähmen oder Erfahrungslevel 15 erreichen.
+
+### Wöchentliche Aufgaben
+
+- Alle **7 Tage** wird eine neue Woche an Aufgaben freigeschaltet, samstags um 07:00 Uhr Kyjiwer Zeit. Die aktuelle Saison begann am 16. Mai 2026 und hat **26 Wochen**. Die letzte Woche wird am 7. November 2026 freigeschaltet.
+- Frühere Wochen bleiben offen, und du musst eine Woche nicht beenden, um die nächste zu beginnen.
+- Die meisten wöchentlichen Aufgaben sind **95 Punkte** wert. Wöchentliche Aufgaben nur für Premium sind **112** wert.
+
+## Wie viele Punkte brauche ich?
+
+| Stufen | Punkte pro Stufe |
+|---|---|
+| Normale Stufen 1 bis 75 | 150 |
+| Belohnungsstufen 1 bis 75 | 200 |
+| Normale Stufen 76 bis 100 | 150 |
+| Belohnungsstufen 76 bis 100 | 350 |
+
+Das ergibt **11.750 Punkte bis Stufe 75** und **16.900 Punkte bis Stufe 100**, dem Ende des Passes. Die Stufen 76 bis 100 sind Bonusstufen. Der Premium-Pass hat seine Belohnungsstufen auf anderen Stufennummern, aber genauso viele davon. Die Summen sind also gleich.
+
+## Belohnungen im kostenlosen Pass
+
+| Stufe | Belohnungen |
+|---|---|
+| 2 | 200 Coppets, Schauspiel-Flasche (1.000 Schauspielpunkte) |
+| 9 | 200 Energiescherben, 250 Coppets |
+| 17 | 300 Coppets, 500 Emporium-Punkte |
+| 25 | 100 Coppets, 300 Energiescherben |
+| 33 | 1.000 Emporium-Punkte |
+| 41 | **Boon of the Second Law** (Sequenz 9), 500 Coppets |
+| 49 | 3 Recipe Sheets, 1 Universal Cosmetic Token |
+| 57 | Schauspiel-Flasche (5.000 Schauspielpunkte), 600 Coppets |
+| 65 | 2 Premium Keys, 500 Energiescherben, 650 Coppets |
+| 75 | **Elytren**, 1.000 Coppets, 2 Simple Keys, 500 Energiescherben |
+| 76 | 400 Coppets, 200 Energiescherben |
+| 80 | 500 Emporium-Punkte, 300 Energiescherben, Schauspiel-Flasche (10.000 Schauspielpunkte) |
+| 84 | 600 Coppets, Schauspiel-Flasche (2.000 Schauspielpunkte) |
+| 88 | 800 Emporium-Punkte, 500 Energiescherben |
+| 92 | 600 Coppets, 200 Energiescherben, Schauspiel-Flasche (10.000 Schauspielpunkte) |
+| 96 | 1.000 Emporium-Punkte, 500 Energiescherben, 1 Simple Key |
+| 100 | 2 Simple Keys, 1.000 Coppets, 2.000 Emporium-Punkte, 1.000 Energiescherben, 1 Potion Token |
+
+## Belohnungen im Premium-Pass
+
+| Stufe | Belohnungen |
+|---|---|
+| 5 | 250 Coppets, 800 Emporium-Punkte, 1 Universal Cosmetic Token |
+| 13 | Schauspiel-Flasche (2.000 Schauspielpunkte), 300 Energiescherben |
+| 21 | 500 Coppets, 1 Premium Key |
+| 29 | Chat Color Package (365 Tage), 500 Energiescherben |
+| 37 | **Boon of the Devouring** (Sequenz 9), Custom Join/Quit Message |
+| 45 | 1 Recipe Token (jede Formel bis Sequenz 4), 500 Coppets, 500 Energiescherben |
+| 53 | 2 Ingredient Tokens, 2.000 Emporium-Punkte, 650 Coppets, 500 Energiescherben |
+| 61 | 1 Premium Key, 800 Coppets |
+| 69 | 2 Ingredient Tokens, 1.200 Emporium-Punkte, 1.000 Energiescherben |
+| 75 | **Netherite Elytra**, 1.200 Coppets, 2 Premium Keys, 3.000 Energiescherben, 1 Boss Compass |
+| 78 | 500 Coppets, 500 Energiescherben, 1.000 Emporium-Punkte |
+| 82 | Schauspiel-Flasche (2.000 Schauspielpunkte), 1 Simple Key, 800 Emporium-Punkte, 650 Coppets |
+| 86 | 600 Coppets, 1.000 Energiescherben, 1 Universal Cosmetic Token |
+| 90 | 800 Coppets, 2.000 Emporium-Punkte, Schauspiel-Flasche (3.000 Schauspielpunkte) |
+| 94 | 1 Ingredient Token, 2.000 Energiescherben, 1.000 Coppets |
+| 98 | 1 Premium Key, 3.000 Emporium-Punkte, 650 Coppets |
+| 100 | 2 Premium Keys, 1.500 Coppets, 2.000 Energiescherben, 3.000 Emporium-Punkte, 1 Potion Token |
+
+## Was bringen die Belohnungen?
+
+| Belohnung | Was das ist |
+|---|---|
+| Coppets | [Geld](/de/guides/economy/), das auf deine `/wallet` kommt |
+| Energiescherben | [Währung als Gegenstand](/de/guides/economy/#energiescherben) für Geheime Orden und Wilde Beyonder |
+| Emporium-Punkte | Gibst du im [Brilliant Emporium](/de/guides/emporium/) aus |
+| Schauspiel-Flasche | Wirf sie, um [Schauspielpunkte](/de/magic/acting/) für deine aktuelle Sequenz zu bekommen |
+| Boon of the Second Law, Boon of the Devouring | Ein Gnaden-Token, das diesen [Gnadenpfad](/de/magic/boons/) auf Sequenz 9 freischaltet. Du steigerst ihn, indem du Beyonder-Gegenstände opferst |
+| Recipe Sheets | Sammle 3 oder 4 Blätter, um eine ganze Formel zu bilden |
+| Recipe Token | Tausch es gegen eine beliebige Formel bis Sequenz 4 |
+| Ingredient Token | Tausch es gegen eine beliebige bekannte Zutat |
+| Simple Key | Ein erneuter Eintritt allein in einen [Dungeon](/de/guides/dungeons/) |
+| Premium Key | Ein erneuter Eintritt für die ganze Gruppe in einen Dungeon |
+| Boss Compass | Zeigt auf den nächsten [Weltboss](/de/guides/bosses/) und wird beim Benutzen verbraucht |
+| Universal Cosmetic Token | Gibt einer Waffe oder einem Werkzeug einen eigenen Skin |
+| Chat Color Package | Farben und Formatierung in jedem Chatkanal für 365 Tage |
+
+## Wie bekomme ich den Premium-Pass?
+
+Der **Premium BattlePass** wird im [Server-Shop](https://www.mysterria.net/en/store) verkauft. Er schaltet die Premium-Belohnungsspur oben und die wöchentlichen Aufgaben nur für Premium frei.
+
+## Verwandte Seiten
+
+<CardGrid>
+  <Card title="Brilliant Emporium" text="Hier gibst du deine Emporium-Punkte aus." icon="star" href="/de/guides/emporium/" />
+  <Card title="Gnadenpfade" text="Was die Gnadenpfade Second Law und Devouring tun." icon="flame" href="/de/magic/boons/" />
+  <Card title="Geld und Wallet" text="Coppets, Licks, Verl Dors und Energiescherben." icon="coin" href="/de/guides/economy/" />
+</CardGrid>

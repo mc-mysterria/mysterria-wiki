@@ -1,0 +1,143 @@
+---
+title: "Modul Client"
+description: "Modul Fabric opțional coi-client pentru Mysterria: meniuri Beyonder native, HUD, vrăji prin gesturi, tastele implicite și bonusul de +2% la Interpretare pentru că îl folosești."
+sidebar:
+  label: Modul Client
+  order: 15
+---
+
+import {Figure} from '~/components/mdx';
+import titleScreen from '~/assets/client-mod/title-screen.webp';
+import dossier from '~/assets/start/beyonder-dossier.webp';
+import destinations from '~/assets/client-mod/dossier-destinations.webp';
+import catalogue from '~/assets/client-mod/ability-catalogue.webp';
+import uniqueness from '~/assets/magic/uniqueness-candidacy.webp';
+import mythicalForm from '~/assets/client-mod/mythical-form.webp';
+import selector from '~/assets/client-mod/ability-selector.webp';
+import characterPlate from '~/assets/client-mod/character-plate.webp';
+import hudArrange from '~/assets/client-mod/hud-arrange.webp';
+import hudSettingsAbility from '~/assets/client-mod/hud-settings-ability.webp';
+import hudSettingsElements from '~/assets/client-mod/hud-settings-elements.webp';
+
+**coi-client** este un mod Fabric opțional făcut pentru Mysterria. Înlocuiește meniurile tip cufăr
+și aglomerația din bara de acțiuni cu ecrane native și elemente de HUD și îți dă un mic bonus la Interpretare.
+
+Nimic de pe server nu are nevoie de mod. Fiecare ecran pe care îl desenează are și o variantă de meniu tip cufăr,
+pe care o vezi dacă nu îl instalezi, joci Bedrock prin Geyser, ai o versiune veche sau oprești o funcție.
+
+<Figure src={titleScreen} alt="Ecranul de start coi-client, cu pictogramele celor 22 de Căi rotindu-se în jurul logoului" />
+
+---
+
+### Cum îl obții
+
+Modul cere Fabric pe Java Edition. Ultima versiune este **1.2.3**, făcută pentru Minecraft **26.2**.
+Descarcă-l de pe [GitHub Releases](https://github.com/ikeepcalm/coi-client/releases),
+[Modrinth](https://modrinth.com/mod/coi-client) sau
+[CurseForge](https://www.curseforge.com/minecraft/mc-mods/coi-client).
+
+Fiecare jucător primește un singur mesaj despre mod la câteva secunde după ce intră. După aceea, doar
+Beyonderii primesc mementouri, la fiecare 6 ore fără mod și la fiecare 72 de ore cu mod, ca să confirme că
+bonusul merge. Modul e aproape obligatoriu dacă vrei toate efectele vizuale ale Ceremoniei de Ascensiune.
+
+---
+
+### Ce schimbă
+
+Cu modul instalat și funcțiile lui pornite:
+
+- Dosarul Beyonder, lista de abilități, vizibilitatea pe hartă, ecranele Pantheon și Throne și altele se deschid
+  ca **ferestre native** în loc de grile de inventar.
+- **Dosarul Beyonder** arată Secvența, Spiritualitatea, Nebunia, progresul de Interpretare și sursele lui într-un
+  singur panou, lângă modelul personajului tău. Fila **Destinations** deschide toate celelalte ecrane.
+- Un **selector de abilități și un HUD cu taste rapide** te lasă să folosești vrăji pe categorii și să legi abilități de taste.
+  HUD-ul cu taste rapide poate fi oprit.
+- O **bară de viață Beyonder** îți arată viața Beyonder reală în loc de inimi simple, în stilurile Hearts +
+  Numbers, Bar, Ornate Bar sau Segments. Daunele din PvP se văd mai clar, iar o **bară de Spiritualitate
+  pe care o poți muta** înlocuiește bara de boss vanilla. Vezi [Viață](/ro/magic/health/).
+- Când ții mouse-ul pe un ingredient Beyonder, vezi Calea lui, Secvența și dacă e ingredient principal sau
+  secundar.
+- **Barele de resurse** înlocuiesc barele din simboluri pentru rezervele și încărcările abilităților din bara de acțiuni.
+- Schimbările fizice pe care le dau unele Căi, cum ar fi coarnele de la Abyss sau urechile de la Demoness, apar
+  ca **trăsături de aspect** cosmetice reale.
+- **Efectele vizuale ale Ceremoniei de Ascensiune** sunt mai bogate, iar **Impact Frames** adaugă un cadru oprit în stil anime
+  la cele mai mari lovituri din joc.
+- **Pictograma Căii dispare din inventar**, iar meniul Beyonder se mută pe **M**.
+- Mai primești o notificare cu [Mareea Zilnică](/ro/guides/tides/) când intri, sunete la efectele
+  vizuale, halucinații la Nebunie mare, un tutorial la prima intrare (îl poți relua cu **Show Tutorial
+  Again** din setări) și Discord Rich Presence.
+
+### Tastele implicite
+
+| Tastă | Acțiune |
+|---|---|
+| **M** | Deschide meniul Beyonder |
+| **K** | Ability Bindings |
+| **G** | Ability Wheel |
+| **Left Alt** (ținută apăsat) | Vrăji prin gesturi |
+| **Z, X, C, V, B, N** | Sloturile de abilități 1 până la 6 |
+
+Le schimbi din Controls în Minecraft, unde modul are categoria lui. Există și taste care deschid direct
+un singur ecran, cum ar fi abilitățile tale, dar nu sunt legate până nu le setezi tu.
+
+<Figure src={dossier} alt="Dosarul Beyonder ca ecran nativ" />
+
+<Figure src={destinations} alt="Fila Destinations din Dosarul Beyonder, din care ajungi la orice alt ecran" />
+
+<Figure src={catalogue} alt="Catalogul de abilități" />
+
+<Figure src={uniqueness} alt="Ecranul Unicității" />
+
+<Figure src={mythicalForm} alt="Ecranul Formei de Creatură Mitică" />
+
+Catalogul de abilități arată pentru fiecare vrajă descrierea, tipul, categoria, costul de Spiritualitate și timpul de așteptare.
+Selectorul de abilități arată doar numele și tipul fiecărei abilități, ca să alegi una repede.
+
+<Figure src={selector} alt="Selectorul de abilități" />
+
+Plăcuța de personaj din HUD înlocuiește barele separate de Nebunie, rezervă și Interpretare cu un singur panou
+care îți arată și skinul, Calea și Secvența.
+
+<Figure src={characterPlate} alt="Plăcuța de personaj din HUD" contain />
+
+Poți trage orice parte a HUD-ului, inclusiv tastele rapide ale abilităților, acolo unde vrei.
+
+<Figure src={hudArrange} alt="HUD-ul în modul Arrange on screen, cu fiecare element gata să fie tras la locul lui" />
+
+Ecranul de setări păstrează doar opțiunile pe care e probabil să le schimbi.
+
+<Figure src={hudSettingsAbility} alt="Ecranul de setări al modului" contain />
+
+<Figure src={hudSettingsElements} alt="Mai multe setări ale modului" contain />
+
+---
+
+### Vrăji prin gesturi
+
+În loc de taste rapide, poți lega o abilitate de o formă și o folosești desenând forma cât ții apăsat
+**Left Alt**. Cele **9 forme** sunt cercul, V, Z, linia în jos, căciulița (^), triunghiul, pătratul, cârligul și arcul.
+
+---
+
+### Meniurile native și `/coi menu native`
+
+Meniurile native sunt pornite implicit după ce modul se conectează. Ca să revii la meniurile tip cufăr, de exemplu
+când modul încă nu poate desena un ecran, folosește comanda asta.
+
+```
+/coi menu native
+```
+
+Ea comută între ecranele modului și meniurile tip cufăr. Alegerea se salvează pe server, așa că
+te urmează pe orice client.
+
+---
+
+### Bonusul de fidelitate
+
+O versiune actuală a modului îți dă **+2% [Interpretare](/ro/magic/acting/)** din fiecare sursă și **timpi de așteptare
+cu 5% mai scurți** la metodele de Interpretare. O versiune foarte veche care nu termină legătura cu serverul
+nu primește nimic, așa că ține modul actualizat.
+
+`/coi acting` numește bonusul Modului Client când e activ. Dacă tot ți se pare ceva în neregulă, întreabă pe cineva din
+staff. Ei pot vedea ce primește serverul de la clientul tău.

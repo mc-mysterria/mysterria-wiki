@@ -1,0 +1,126 @@
+---
+title: "Battle Pass"
+description: "The Mysterria Battle Pass: daily and weekly quests, points per tier, and every free and premium reward, from money and Energy Shards to Boons and elytra."
+sidebar:
+    label: Battle Pass
+    order: 24
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import bpMain from '../../../assets/battle-pass/battle-pass-main.webp';
+import bpRewards from '../../../assets/battle-pass/battle-pass-rewards.webp';
+
+The **Battle Pass** gives points for daily and weekly quests, and the points raise your tier. Many tiers carry a reward, such as money, Energy Shards, Emporium points, Acting Bottles, dungeon keys or one of two Boons.
+
+Open it with `/battlepass` or `/bp`.
+
+<Figure src={bpMain} alt="The Battle Pass menu with Rewards, Premium, Quests and Info buttons" caption="The Battle Pass menu." contain />
+
+## How does the Battle Pass work?
+
+1. Complete **daily quests** and **weekly quests** to earn Battle Pass points.
+2. When a tier is full of points, you move to the next one.
+3. When you reach a reward tier, open **Rewards** in the Battle Pass menu and **click the reward to claim it**. Rewards are not given automatically.
+
+Every player has the **free pass**. The **premium pass** adds a second reward track and extra premium-only quests.
+
+<Figure src={bpRewards} alt="The Battle Pass Rewards page with the Tier 2 tooltip listing $200 and an Acting Bottle" caption="The Rewards page. Hover over a tier to see its rewards and whether it is unlocked." contain />
+
+## Quests
+
+### Daily quests
+
+- You have **9 daily quests** at a time: 4 easy, 3 medium and 2 hard.
+- They reset every day at **11:59 Kyiv time**.
+- Each is worth **25 to 50 points**, for example taming 3 wolves or reaching experience level 15.
+
+### Weekly quests
+
+- A new week of quests unlocks every **7 days**, on Saturday at 07:00 Kyiv time. The current season started on 16 May 2026 and has **26 weeks**. The last week unlocks on 7 November 2026.
+- Earlier weeks stay open, and you do not need to finish one week to start the next.
+- Most weekly quests are worth **95 points**. Premium-only weekly quests are worth **112**.
+
+## How many points do I need?
+
+| Tiers | Points per tier |
+|---|---|
+| Ordinary tiers 1 to 75 | 150 |
+| Reward tiers 1 to 75 | 200 |
+| Ordinary tiers 76 to 100 | 150 |
+| Reward tiers 76 to 100 | 350 |
+
+That adds up to **11,750 points to reach tier 75** and **16,900 points to reach tier 100**, the end of the pass. Tiers 76 to 100 are bonus tiers. The premium pass has its reward tiers on other tier numbers, but it has just as many, so the totals are the same.
+
+## Free pass rewards
+
+| Tier | Rewards |
+|---|---|
+| 2 | 200 Coppets, Acting Bottle (1,000 Acting points) |
+| 9 | 200 Energy Shards, 250 Coppets |
+| 17 | 300 Coppets, 500 Emporium points |
+| 25 | 100 Coppets, 300 Energy Shards |
+| 33 | 1,000 Emporium points |
+| 41 | **Boon of the Second Law** (Sequence 9), 500 Coppets |
+| 49 | 3 Recipe Sheets, 1 Universal Cosmetic Token |
+| 57 | Acting Bottle (5,000 Acting points), 600 Coppets |
+| 65 | 2 Premium Keys, 500 Energy Shards, 650 Coppets |
+| 75 | **Elytra**, 1,000 Coppets, 2 Simple Keys, 500 Energy Shards |
+| 76 | 400 Coppets, 200 Energy Shards |
+| 80 | 500 Emporium points, 300 Energy Shards, Acting Bottle (10,000 Acting points) |
+| 84 | 600 Coppets, Acting Bottle (2,000 Acting points) |
+| 88 | 800 Emporium points, 500 Energy Shards |
+| 92 | 600 Coppets, 200 Energy Shards, Acting Bottle (10,000 Acting points) |
+| 96 | 1,000 Emporium points, 500 Energy Shards, 1 Simple Key |
+| 100 | 2 Simple Keys, 1,000 Coppets, 2,000 Emporium points, 1,000 Energy Shards, 1 Potion Token |
+
+## Premium pass rewards
+
+| Tier | Rewards |
+|---|---|
+| 5 | 250 Coppets, 800 Emporium points, 1 Universal Cosmetic Token |
+| 13 | Acting Bottle (2,000 Acting points), 300 Energy Shards |
+| 21 | 500 Coppets, 1 Premium Key |
+| 29 | Chat Color Package (365 days), 500 Energy Shards |
+| 37 | **Boon of the Devouring** (Sequence 9), Custom Join/Quit Message |
+| 45 | 1 Recipe Token (any recipe up to Sequence 4), 500 Coppets, 500 Energy Shards |
+| 53 | 2 Ingredient Tokens, 2,000 Emporium points, 650 Coppets, 500 Energy Shards |
+| 61 | 1 Premium Key, 800 Coppets |
+| 69 | 2 Ingredient Tokens, 1,200 Emporium points, 1,000 Energy Shards |
+| 75 | **Netherite Elytra**, 1,200 Coppets, 2 Premium Keys, 3,000 Energy Shards, 1 Boss Compass |
+| 78 | 500 Coppets, 500 Energy Shards, 1,000 Emporium points |
+| 82 | Acting Bottle (2,000 Acting points), 1 Simple Key, 800 Emporium points, 650 Coppets |
+| 86 | 600 Coppets, 1,000 Energy Shards, 1 Universal Cosmetic Token |
+| 90 | 800 Coppets, 2,000 Emporium points, Acting Bottle (3,000 Acting points) |
+| 94 | 1 Ingredient Token, 2,000 Energy Shards, 1,000 Coppets |
+| 98 | 1 Premium Key, 3,000 Emporium points, 650 Coppets |
+| 100 | 2 Premium Keys, 1,500 Coppets, 2,000 Energy Shards, 3,000 Emporium points, 1 Potion Token |
+
+## What do the rewards do?
+
+| Reward | What it is |
+|---|---|
+| Coppets | [Money](/guides/economy/), added to your `/wallet` |
+| Energy Shards | [Item currency](/guides/economy/#energy-shards) for Secret Orders and Wild Beyonders |
+| Emporium points | Spend them in the [Brilliant Emporium](/guides/emporium/) |
+| Acting Bottle | Throw it to gain [Acting](/magic/acting/) points for your current Sequence |
+| Boon of the Second Law, Boon of the Devouring | A Boon Token that unlocks that [Boon](/magic/boons/) at Sequence 9. You advance it by sacrificing Beyonder items |
+| Recipe Sheets | Collect 3 or 4 sheets to form a full recipe |
+| Recipe Token | Exchange it for any recipe up to Sequence 4 |
+| Ingredient Token | Exchange it for any known ingredient |
+| Simple Key | One solo re-entry to a [dungeon](/guides/dungeons/) |
+| Premium Key | A full party re-entry to a dungeon |
+| Boss Compass | Points to the nearest [world boss](/guides/bosses/), used up on use |
+| Universal Cosmetic Token | Apply a custom skin to a weapon or tool |
+| Chat Color Package | Colours and formatting in every chat channel for 365 days |
+
+## How do I get the premium pass?
+
+The **Premium BattlePass** is sold in the [server store](https://www.mysterria.net/en/store). It unlocks the premium reward track above and the premium-only weekly quests.
+
+## Related pages
+
+<CardGrid>
+  <Card title="Brilliant Emporium" text="Where your Emporium points go." icon="star" href="/guides/emporium/" />
+  <Card title="Boons" text="What the Second Law and Devouring Boons do." icon="flame" href="/magic/boons/" />
+  <Card title="Money and Wallet" text="Coppets, Licks, Verl Dors and Energy Shards." icon="coin" href="/guides/economy/" />
+</CardGrid>

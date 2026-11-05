@@ -1,0 +1,110 @@
+---
+title: "Munitions"
+description: "Toutes les munitions d'armes à feu de Mysterria : recettes des Klein, Deathknell et Rifle Rounds, les 12 effets spéciaux, leurs matériaux et le vrai coût par balle."
+sidebar:
+    label: Munitions
+    order: 3
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import kleinCartridge from '~/assets/firearms/kleincartridge.png';
+import deathknellCartridge from '~/assets/firearms/deathknellcartridge.png';
+import rifleCartridge from '~/assets/firearms/riflecartridge.png';
+import kleinCore from '~/assets/firearms/kleincore.png';
+import deathknellCore from '~/assets/firearms/deathknellcore.png';
+import rifleCore from '~/assets/firearms/riflecore.png';
+import kleinRounds from '~/assets/firearms/kleinrounds.png';
+import deathknellRounds from '~/assets/firearms/deathknellrounds.png';
+import rifleRounds from '~/assets/firearms/riflerounds.png';
+import effectAmmo from '~/assets/firearms/effectammo.png';
+
+Chaque arme tire ses propres munitions : les **Klein Rounds** pour Klein's Repeater, les **Deathknell Rounds** pour le Deathknell et les **Rifle Rounds** pour le Steam Rifle. Tu fabriques les munitions standard à partir d'une douille, d'un noyau et de poudre à canon, et tu peux les transformer en l'un des 12 types de munitions spéciales.
+
+Les dégâts de chaque munition dans chaque arme sont listés dans [Dégâts selon le type de munition](/fr/firearms/#dégâts-selon-le-type-de-munition).
+
+## Étape 1 : le Brass
+
+3 lingots de cuivre et 1 lingot d'or donnent **4 Brass**, comme le montre [Fabrication d'armes](/fr/firearms/crafting/#brass).
+
+## Étape 2 : les douilles
+
+| Douille | Recette | Donne |
+|---|---|---|
+| Klein Cartridge Case | 1 Brass | 8 |
+| Deathknell Cartridge Case | 1 Brass et 1 pépite de fer | 6 |
+| Rifle Cartridge Case | 2 Brass | 6 |
+
+<Figure src={kleinCartridge} alt="Grille de fabrication avec 1 Brass qui donne 8 Klein Cartridge Cases" caption="Klein Cartridge Case." contain />
+<Figure src={deathknellCartridge} alt="Grille de fabrication avec du Brass et une pépite de fer qui donnent 6 Deathknell Cartridge Cases" caption="Deathknell Cartridge Case." contain />
+<Figure src={rifleCartridge} alt="Grille de fabrication avec 2 Brass qui donnent 6 Rifle Cartridge Cases" caption="Rifle Cartridge Case." contain />
+
+## Étape 3 : les noyaux
+
+| Noyau | Recette | Donne |
+|---|---|---|
+| Klein Cartridge Core | 4 pépites de fer en carré | 8 |
+| Deathknell Cartridge Core | 6 pépites de fer | 6 |
+| Rifle Cartridge Core | 1 lingot de fer et 1 Brass | 6 |
+
+<Figure src={kleinCore} alt="Grille de fabrication avec 4 pépites de fer qui donnent 8 Klein Cartridge Cores" caption="Klein Cartridge Core." contain />
+<Figure src={deathknellCore} alt="Grille de fabrication avec 6 pépites de fer qui donnent 6 Deathknell Cartridge Cores" caption="Deathknell Cartridge Core." contain />
+<Figure src={rifleCore} alt="Grille de fabrication avec un lingot de fer et du Brass qui donnent 6 Rifle Cartridge Cores" caption="Rifle Cartridge Core." contain />
+
+## Étape 4 : les munitions standard
+
+Les trois sont des recettes sans forme.
+
+| Munitions | Recette | Donne |
+|---|---|---|
+| Klein Rounds | 1 Klein Cartridge Case, 1 Klein Cartridge Core et 1 poudre à canon | 4 |
+| Deathknell Rounds | 1 Deathknell Cartridge Case, 1 Deathknell Cartridge Core et 2 poudres à canon | 3 |
+| Rifle Rounds | 1 Rifle Cartridge Case, 1 Rifle Cartridge Core et 2 poudres à canon | 3 |
+
+<Figure src={kleinRounds} alt="Grille de fabrication qui donne 4 Klein Rounds" caption="Klein Rounds." contain />
+<Figure src={deathknellRounds} alt="Grille de fabrication qui donne 3 Deathknell Rounds" caption="Deathknell Rounds." contain />
+<Figure src={rifleRounds} alt="Grille de fabrication qui donne 3 Rifle Rounds" caption="Rifle Rounds." contain />
+
+### Combien coûte une fournée complète ?
+
+Une fournée utilise toute une fabrication de douilles et de noyaux :
+
+| Munitions | Matériaux bruts | Donne |
+|---|---|---|
+| Klein Rounds | 1 Brass, 4 pépites de fer et 8 poudres à canon | 32 balles |
+| Deathknell Rounds | 1 Brass, 7 pépites de fer et 12 poudres à canon | 18 balles |
+| Rifle Rounds | 3 Brass, 1 lingot de fer et 12 poudres à canon | 18 balles |
+
+## Étape 5 : les munitions spéciales
+
+Place un matériau d'effet au centre d'un établi et entoure-le de **8 munitions standard du même type**. Tu obtiens **8 munitions spéciales** de ce type. Par exemple, 8 Klein Rounds autour d'une poudre de blaze donnent 8 **Fire Klein Rounds**, qui ne vont que dans Klein's Repeater.
+
+<Figure src={effectAmmo} alt="Grille de fabrication avec 8 Klein Rounds autour d'une poudre de blaze qui donnent 8 Fire Klein Rounds" caption="Fire Klein Rounds, soit 8 Klein Rounds autour d'une poudre de blaze." contain />
+
+Mélanger des Klein, Deathknell et Rifle Rounds autour du matériau ne fabrique rien.
+
+Les munitions spéciales s'appellent « *Effet* *Arme* Rounds », par exemple « Fire Deathknell Rounds » ou « Demon Hunter Rifle Rounds ». En comptant les munitions standard, chaque arme a 13 types de munitions.
+
+| Effet | Matériau au centre | Dégâts | Ce qu'il fait |
+|---|---|---|---|
+| Fire | Poudre de blaze | 85 % | Met le feu à la cible pendant 5 secondes |
+| Poison | Œil d'araignée | 85 % | Poison I pendant 8 secondes |
+| Armor Piercing | Lingot de fer | 90 % | Ignore l'armure |
+| Aging | Horloge | 85 % | Lenteur I et Wither II pendant 10 secondes |
+| Spirit Control | Sable des âmes | 85 % | Lenteur IV et Cécité pendant 5 secondes |
+| Deceiving | Œil de l'Ender | 85 % | Fait faire demi-tour à la cible (180 degrés) |
+| Deprivation | Seau de lait | 85 % | Retire les effets de potion positifs de la cible |
+| Exorcist | Poudre de pierre lumineuse | 100 %, ou 250 % contre les monstres morts-vivants | Aucun effet de statut |
+| Implosive | Diamant | 125 % | Aucun effet de statut, juste plus de dégâts |
+| Rotten | Chair putréfiée | 85 % | Faim III et Faiblesse I pendant 8 secondes |
+| Weakening | Œil d'araignée fermenté | 85 % | Faiblesse II et Fatigue de minage II pendant 10 secondes |
+| Demon Hunter | Étoile du Nether | 100 %, ou 250 % contre les créatures Beyonder | Aucun effet de statut |
+
+### Sur qui les munitions Exorcist et Demon Hunter marchent-elles ?
+
+Les munitions **Exorcist** marchent sur les zombies, zombies villageois, zombies momifiés, noyés, squelettes, vagabonds, squelettes wither, le Wither, les zoglins et les piglins zombifiés. Les autres monstres et les joueurs subissent des dégâts normaux.
+
+Les munitions **Demon Hunter** marchent sur les [créatures Beyonder](/fr/magic/creatures/) que le serveur fait apparaître. Elles ne donnent **aucun bonus contre les joueurs Beyonder**.
+
+## Charger les bonnes munitions
+
+Quand le chargeur est **vide**, un rechargement prend la première pile de munitions compatibles de ton inventaire, standard ou spéciales. Quand l'arme est **en partie chargée**, tu ne peux compléter qu'avec le même type de munition que celui déjà dedans. Pour passer des munitions standard aux spéciales, vide le chargeur en tirant et garde les munitions voulues en premier dans ton inventaire.

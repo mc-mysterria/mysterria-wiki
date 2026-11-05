@@ -1,0 +1,183 @@
+---
+title: "Städte und Stadtvorteile"
+description: "So gründest und führst du eine Stadt auf Mysterria: Land beanspruchen, Rollen, Unterhalt, Steuern, die fünf Stadtstufen und ihre Kosten und Stadtvorteile für große Bauwerke."
+sidebar:
+    label: Städte und Stadtvorteile
+    order: 31
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import towns from '~/assets/towns/towns.jpg';
+import dragon from '~/assets/towns/dragon.jpeg';
+import hall from '~/assets/towns/hall.jpg';
+import landsLevel from '~/assets/towns/lands-level-menu.webp';
+
+<Figure src={towns} alt="Eine große Spielerstadt bei Nacht, von Laternen beleuchtet, mit einer Kathedrale mit Kuppel im Vordergrund" />
+
+Eine **Stadt** ist geschütztes Land, das du mit Freunden teilst. Niemand außerhalb der Stadt kann dort bauen, abbauen oder Truhen öffnen.
+
+Jeder Stadtbefehl beginnt mit `/lands` (oder `/land`). Tippst du nur `/lands`, öffnet sich das Stadtmenü, in dem du auch das meiste erledigen kannst.
+
+## Wie gründe ich eine Stadt?
+
+```
+/lands create <name>
+```
+
+- Das kostet **32 Coppets**, die von deiner [Wallet](/de/guides/economy/) abgehen.
+- Es beansprucht kostenlos ein Gebiet von 3 mal 3 Chunks um dich herum (den Chunk, in dem du stehst, plus einen in jede Richtung).
+- Der Name braucht 5 bis 24 lateinische Buchstaben oder Ziffern. Leerzeichen sind erlaubt.
+- Du kannst **eine** Stadt besitzen und in einer Stadt vertrauenswürdig sein.
+
+## Wie beanspruche ich mehr Land?
+
+```
+/lands claim       den Chunk beanspruchen, in dem du stehst
+/lands unclaim     ihn freigeben
+```
+
+| Was | Kosten |
+|---|---|
+| Jeder zusätzliche Chunk | 10 Coppets |
+| Einen Chunk freigeben | Du bekommst 15 % zurück |
+
+- Neue Claims müssen **an dein bestehendes Land grenzen**.
+- Du kannst nicht innerhalb von **1 Chunk** um eine andere Stadt beanspruchen (3 Chunks, wenn diese Stadt zu einer Nation gehört), außer diese Stadt erlaubt deiner Rolle, an ihrer Grenze zu beanspruchen.
+- Eine Stadt startet mit Platz für **100 Chunks**, plus **5 weitere für jedes vertrauenswürdige Mitglied**. Höhere [Stufen](#stadtstufen) geben mehr.
+- Standardmäßig kann **nur der Owner** beanspruchen. Der Owner kann diese Berechtigung in den Rolleneinstellungen anderen Rollen geben.
+
+Die Kurzbefehle `/claim` und `/unclaim` stehen Spielern nicht zur Verfügung.
+
+## Grundlegende Stadtbefehle
+
+| Befehl | Was er tut |
+|---|---|
+| `/lands` | Das Stadtmenü öffnen |
+| `/lands trust <player>` | Einen Spieler einladen. Er nimmt mit `/lands accept` an |
+| `/lands untrust <player>` | Einen Spieler entfernen |
+| `/lands setrole <player> <role>` | Die Rolle eines Mitglieds ändern |
+| `/lands ban <player>` | Einen Spieler von deinem Land verbannen |
+| `/lands deposit <amount>` | Geld in die Stadtbank einzahlen |
+| `/lands withdraw <amount>` | Geld abheben (standardmäßig nur der Owner) |
+| `/lands rename <name>` | Die Stadt für 10.000 Coppets umbenennen, höchstens einmal am Tag |
+| `/lands setowner <player>` | Die Stadt für 5.000 Coppets aus der Stadtbank an jemand anderen übergeben |
+| `/lands upkeep`, `/lands taxes` | Die nächsten Zahlungen für Unterhalt und Steuern sehen |
+| `/lands delete` | Deine Stadt auflösen |
+
+**Nachrichten beim Betreten und Verlassen** legst du im Stadtmenü mit dem Gegenstand **Enter Message** fest. Befehle `/lands greeting` oder `/lands farewell` gibt es nicht.
+
+Teleports im Land (`/lands spawn`, `/lands wild`, Teleport zu einem Chunk) kosten so viel, dass sie praktisch abgeschaltet sind. Mysterria hat kein `/home` oder `/tpa`.
+
+Für den Stadtchat schreib `!l`, `!land` oder `!lands` vor eine Nachricht.
+
+## Stadtrollen
+
+Jede Rolle bestimmt, was ihre Spieler auf deinem Land dürfen. Der Owner kann die Berechtigungen jeder Rolle im Stadtmenü ändern.
+
+| Rolle | Wer | Standardberechtigungen |
+|---|---|---|
+| **Owner** | Der Gründer | Alles |
+| **Admin** | Vertrauenswürdige Offiziere | Bauen, abbauen, Behälter und Türen nutzen, Spieler einladen, entfernen und verbannen, Rollen vergeben, Einstellungen von Land und Rollen bearbeiten. Kann standardmäßig nicht beanspruchen, kein Geld abheben und keine Kriege verwalten |
+| **Member** | Normale Bewohner | Bauen, abbauen, Landwirtschaft betreiben, Behälter nutzen, Geld einzahlen |
+| **Tenant** | Spieler, die ein Gebiet mieten | In ihrem gemieteten Gebiet bauen und Dinge nutzen und entscheiden, wer es sonst noch nutzen darf |
+| **Nation** | Mitglieder derselben Nation | Türen und Mechanismen nutzen, eintreten, Gegenstände aufheben, an deiner Grenze beanspruchen |
+| **Ally** | Mitglieder verbündeter Städte | Dasselbe wie Nation |
+| **Untrusted** | Jeder Besucher | Eintreten, Gegenstände aufheben, Monster angreifen |
+
+**PvP ist in Städten** standardmäßig für jede Rolle **aus**. Der Owner kann es pro Rolle einschalten, zum Beispiel für eine Arena.
+
+Greifst du einen anderen Spieler an, bist du **20 Sekunden** lang im Kampf markiert. Loggst du dich in dieser Zeit aus, stirbst du.
+
+## Was kostet eine Stadt im Betrieb?
+
+### Unterhalt
+
+- Jede Stadt zahlt **alle 7 Tage** um 23:00 Uhr **3 Coppets pro beanspruchtem Chunk**. Das Geld kommt aus der Stadtbank und geht an die Serverbank *The Narrator*.
+- Neue Städte zahlen in ihren ersten **2 Tagen** nichts.
+- Ab 2 Tagen vor der Zahlung bekommen Mitglieder, die einzahlen dürfen, jede Stunde eine Erinnerung, wenn in der Bank zu wenig ist.
+- Kann die Bank nicht zahlen, werden deine Chunks **nicht** entfernt.
+- Höhere [Stufen](#stadtstufen) senken den Unterhalt um bis zu 40 %.
+
+Städte in einer Nation zahlen statt Unterhalt an den Server Steuern an die Nation. Siehe [Nationen und Kriege](/de/guides/nations-and-wars/).
+
+### Steuern
+
+Der Owner kann vertrauenswürdigen Mitgliedern in jedem Zahlungszyklus eine Steuer berechnen, bis zu **10 Coppets** pro Gebiet. Ein Mitglied, das nicht zahlen kann, verliert automatisch sein Vertrauen.
+
+## Stadtstufen
+
+Eine Stadt steigt **automatisch** auf, wenn sie die Voraussetzungen erfüllt, und **fällt eine Stufe zurück**, wenn sie sie nicht mehr erfüllt, etwa wenn das Guthaben der Bank sinkt. Jede Stufe braucht **5 vertrauenswürdige Spieler** und ein Guthaben in der **Stadtbank** (`/lands deposit`).
+
+<Figure src={landsLevel} alt="Das Menü Lands Level mit zwei Vorhängeschlössern, eins für jede Voraussetzung der nächsten Stufe" caption="Das Menü Level in /lands. Jedes Vorhängeschloss ist eine Voraussetzung für die nächste Stufe." contain />
+
+| Stufe | Name | Vertrauenswürdige Spieler | Stadtbank | Zusätzliche Claims | Zusätzliche Mitgliederplätze | Unterhalt |
+|---|---|---|---|---|---|---|
+| 1 | **Shelter** | - | - | - | - | Voll |
+| 2 | **Hamlet** | 5 | 5.000 Coppets | +50 | +25 | -10 % |
+| 3 | **Parish** | 5 | 12.500 Coppets | +100 | +50 | -20 % |
+| 4 | **Borough** | 5 | 25.000 Coppets | +150 | +75 | -30 % |
+| 5 | **Domain** | 5 | 40.000 Coppets | +200 | +100 | -40 % |
+
+**Domain ist die höchste Stufe.** Eine Stadt startet mit 26 Mitgliederplätzen.
+
+Eine Domain kann eine [Nation](/de/guides/nations-and-wars/) gründen.
+
+## Warum Städte für andere Systeme wichtig sind
+
+- In einem Stadt-Claim kannst du deinen eigenen Eingang zur [Agora](/de/guides/agora/) verstecken.
+- [Kirchen](/de/magic/churches/) können ihre Schatzkammer mit einer Stadt verbinden.
+- Große Städte mit beeindruckenden Bauwerken können sich einen [Stadtvorteil](#stadtvorteile) verdienen.
+
+<span id="town-perks" class="anchor-alias"></span>
+
+## Stadtvorteile
+
+Ein **Stadtvorteil** (Town Perk) ist ein dauerhafter Effekt in einem Gebiet, den das Team einer Stadt gibt, nachdem sie ein großes Bauprojekt abgeschlossen hat. Du kannst keinen kaufen und keinen per Befehl beanspruchen.
+
+### Wie bekomme ich einen Stadtvorteil?
+
+1. Bau etwas Beeindruckendes, das zu dem Vorteil passt, den du willst, zum Beispiel eine Kathedrale, eine große Bibliothek oder eine Festungsmauer.
+2. Öffne auf Discord ein Support-Ticket mit den Koordinaten und Screenshots.
+3. Das Team bewertet die Qualität des Bauwerks, die Stufe der Stadt und ihre Einwohnerzahl.
+4. Wird es angenommen, setzt das Team den Vorteil auf ein Gebiet deiner Stadt.
+
+### Welche Vorteile gibt es?
+
+| Vorteil | Was er tut | Stadtstufe | Vertrauenswürdige Spieler | Halbgötter |
+|---|---|---|---|---|
+| **Agriculture** | Pflanzen wachsen viel schneller | Hamlet (2) | 5 | - |
+| **Mob Protection** | Feindliche Mobs spawnen im Gebiet nicht | Borough (4) | 12 | - |
+| **Potion Effects** | Dauerhafte Effekte wie Schnelligkeit, Eile oder Nachtsicht | Domain (5) | 18 | - |
+| **Experience Boost** | Mehr Erfahrung im Gebiet | Domain (5) | 22 | - |
+| **Armor Repair** | Repariert abgenutzte Rüstung langsam | Domain (5) | 30 | - |
+| **Acting Boost** | Schnelleres Schauspielen, solange du im Gebiet stehst | Domain (5) | 40 | 3 |
+| **Spirituality** | Stellt in Abständen Spiritualität wieder her | Domain (5) | 45 | 5 |
+
+- **Vertrauenswürdige Spieler** sind die vertrauenswürdigen Mitglieder der Stadt. **Halbgötter** sind vertrauenswürdige Mitglieder ab Sequenz 4.
+- Experience Boost, Armor Repair, Acting Boost und Spirituality verlangten früher die Stadtstufen 6, 8 und 10, die es nicht mehr gibt. Weil **Domain** jetzt die höchste Stufe ist, entscheiden bei diesen Vorteilen die Zahl der Spieler und Halbgötter und das Bauwerk.
+
+### Wie stark sind die Vorteile?
+
+Jeder Vorteil wird vom Team für seine Stadt eingestellt, die Zahlen unterscheiden sich also. Zu den Vorteilen, die heute auf dem Server aktiv sind, gehören diese.
+
+- **Acting Boost** gibt in einer Stadt +18 % und in einer anderen +45 % Schauspiel-Tempo für Spieler, die im Gebiet stehen.
+- **Spirituality** stellt in drei Städten alle 20 Sekunden 50 Spiritualität wieder her, in einer alle 10 Sekunden 50 und in einer weiteren alle 10 Sekunden 30.
+- **Mob Protection** deckt in einer Stadt einen Radius von 100 Blöcken um das Zentrum ab.
+
+Ein Vorteil deckt einen Kreis um ein Denkmal, einen Quader oder eine andere Form um ein Gebäude oder den ganzen Claim einer Stadt ab.
+
+### Tipps für die Annahme
+
+Das Bauwerk sollte zum Vorteil passen, so wie eine Drachenstatue zu Mob Protection passt und eine Kathedrale zu Spirituality. Kleine Häuser reichen nicht. Denk an ein Weltwunder, das die Landschaft prägt. Das Team prüft innen und außen. Reich also keine unfertigen Bauwerke oder leeren Hüllen ein.
+
+<CardGrid min={280}>
+  <Figure src={dragon} alt="Eine riesige Drachenstatue über einer Stadt" caption="Ein Drache, so gewaltig, dass Monster die Stadt meiden. So ein Bauwerk passt zu Mob Protection." />
+  <Figure src={hall} alt="Eine prächtige Kathedrale mit hohen Fenstern" caption="Eine Kathedrale im Herzen einer Stadt. So ein Bauwerk passt zu Spirituality." />
+</CardGrid>
+
+## Verwandte Seiten
+
+<CardGrid>
+  <Card title="Nationen und Kriege" text="Städte vereinen, Effekte der Nation freischalten und Krieg erklären." icon="shield" href="/de/guides/nations-and-wars/" />
+  <Card title="Geld und Wallet" text="Woher das Geld der Stadt kommt." icon="coin" href="/de/guides/economy/" />
+</CardGrid>

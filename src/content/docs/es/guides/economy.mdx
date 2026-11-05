@@ -1,0 +1,134 @@
+---
+title: "Dinero, cartera y Fragmentos de Energía"
+description: "Cómo funciona el dinero en Mysterria, el servidor de Minecraft de LOTM: Coppets, Licks y Verl Dors, la /wallet, vender minerales y ganar y gastar Fragmentos de Energía."
+sidebar:
+    label: Dinero y cartera
+    order: 21
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import shard from '~/assets/shards/shard.png';
+import walletBalance from '~/assets/economy/wallet-balance.webp';
+import walletVault from '~/assets/economy/wallet-vault.webp';
+import walletSell from '~/assets/economy/wallet-sell-ore.webp';
+
+Mysterria tiene dos monedas. El **dinero** (Coppets, Licks y Verl Dors) está en tu `/wallet` y sirve para pagar ciudades, el [Agora](/es/guides/agora/) y los intercambios con Trascendentes Salvajes. Los **Fragmentos de Energía** son un objeto que consigues vendiendo a los aldeanos los ingredientes Trascendentes que te sobran, y sirven para pagar niveles de [Orden Secreta](/es/guides/orders/) e intercambios con Trascendentes Salvajes.
+
+Los [puntos del Emporio](/es/guides/emporium/) son un saldo aparte que solo funciona en el Emporio Brillante.
+
+## ¿Qué son los Coppets, Licks y Verl Dors?
+
+| Moneda | Valor |
+|---|---|
+| **Coppet** | La unidad básica |
+| **Lick** | 64 Coppets |
+| **Verl Dor** | 64 Licks, o 4 096 Coppets |
+
+Tu saldo siempre se cuenta en Coppets. Cuando un menú muestra un precio con el signo `$`, como un nivel de ciudad que pide `$5000`, significa 5 000 Coppets.
+
+## ¿Cómo uso mi cartera?
+
+Escribe `/wallet`. El menú de la cartera muestra tu saldo y tiene enlaces a la tienda del servidor y a Discord. Pulsa **Balance** para abrir la pantalla de la bóveda, donde puedes hacer esto.
+
+- Pulsar una moneda para sacarla como objeto físico.
+- Pulsar una moneda de tu inventario para ingresarla en tu saldo.
+- Pulsar un objeto vendible de tu inventario para ver su precio y confirmar la venta.
+
+El botón **Settings** cambia entre tres aspectos para el menú de la cartera.
+
+<Figure src={walletBalance} alt="El menú de la cartera con la descripción de Balance, que muestra 1,250.75$" caption="El menú de la cartera. Pasa el ratón por Balance para ver cuánto dinero tienes." contain />
+
+<Figure src={walletVault} alt="La pantalla de la bóveda con la descripción de Balance, que muestra 30.00 guardado, y minerales de la bolsa listos para vender" caption="La pantalla de la bóveda. Pulsa una moneda para sacarla, o un objeto de la bolsa para venderlo." contain />
+
+<Figure src={walletSell} alt="La pantalla de venta de 8 Menas de diamante con la descripción de Sell, que muestra un precio de 16 Coppets" caption="Vender minerales. El botón Sell muestra el precio antes de que confirmes." contain />
+
+Las monedas físicas te permiten pagar a otro jugador en mano o hacer intercambios que piden una moneda. Para partir una moneda en otras más pequeñas, lleva **una** sola moneda en la mano principal y escribe `/shatter`. Un Verl Dor se convierte en 64 Licks, y un Lick en 64 Coppets.
+
+## ¿Cómo gano dinero?
+
+- Vende objetos de forma anónima a otros jugadores en el [Agora](/es/guides/agora/), el mercado subterráneo.
+- Reclama niveles del [Pase de batalla](/es/guides/battle-pass/). Los niveles gratis y premium pagan de 100 a 1 500 Coppets cada uno.
+- Vende minerales en la cartera. Es poco, pero constante.
+- Comercia con otros jugadores y participa en eventos.
+
+### ¿Qué minerales puedo vender?
+
+Solo tres minerales tienen precio. Todo lo demás se vende por nada.
+
+| Mineral | Precio por bloque |
+|---|---|
+| Mena de diamante (y Mena de diamante de pizarra profunda) | 2 Coppets |
+| Mena de esmeralda (y Mena de esmeralda de pizarra profunda) | 3 Coppets |
+| Escombros ancestrales | 5 Coppets |
+
+- Pica las menas de diamante y esmeralda con un pico con **Toque de seda**, para que caigan como un bloque que puedas vender. Los Escombros ancestrales siempre caen tal cual.
+- Puedes vender hasta **512 Coppets al día**. Cuando llegas, la pantalla de venta muestra **Cannot sell** y lo que te queda del límite diario.
+
+## ¿Para qué sirve el dinero?
+
+- Fundar y mantener una [ciudad](/es/guides/towns/), con terrenos extra, mantenimiento y niveles.
+- Comprar a otros jugadores en el [Agora](/es/guides/agora/) y alquilar allí un puesto.
+- Los intercambios con [Trascendentes Salvajes](/es/magic/wild-beyonders/), que cuestan dinero, Fragmentos de Energía **y** monedas físicas de Verl Dor.
+- Algunos intercambios con aldeanos (más abajo).
+
+### ¿Los aldeanos aceptan monedas?
+
+Solo en algunos intercambios. Los intercambios de **libros encantados** y de **objetos con durabilidad** (herramientas, armas y armaduras) cuestan Coppets en vez de esmeraldas, a 2 Coppets por cada esmeralda del precio original. Todos los demás intercambios siguen usando esmeraldas.
+
+Un aldeano solo comercia cuando tiene la IA desactivada. Enciérralo en un hueco de 2 por 1 del que no pueda salir.
+
+### ¿Hay /shop?
+
+No. Compra bloques de construcción al **Quartermaster** del [Agora](/es/guides/agora/).
+
+<span id="energy-shards" class="anchor-alias"></span>
+
+## Fragmentos de Energía
+
+<Figure src={shard} alt="Un montón de Fragmentos de Energía con la descripción del objeto, un fragmento de energía mística que se usa como moneda para las mejoras de organización" caption="Los Fragmentos de Energía son un objeto real de tu inventario, no un saldo de la cartera." />
+
+Los Fragmentos de Energía no se guardan en `/wallet`. Están en tu inventario o en un cofre y se pueden perder o robar como cualquier otro objeto.
+
+### ¿Cómo consigo Fragmentos de Energía?
+
+Vende los ingredientes Trascendentes que te sobran a un **aldeano sin profesión** o a un **aldeano simplón** (nitwit).
+
+1. Lleva encima los ingredientes que quieres vender.
+2. Haz clic derecho en el aldeano. Un mensaje del chat te ofrece comprarlos, *"The wandering trader offers to buy N items for X Energy Shards"*.
+3. Pulsa **[Trade All]** en ese mensaje o escribe `/tradeall`.
+4. Un menú **Trade Preview** muestra todo lo que va a comprar y lo que vale cada montón. Pulsa un montón para sacarlo del trato.
+5. Pulsa **CONFIRM TRADE**. Se llevan los ingredientes y los fragmentos van a tu inventario.
+
+Si no llevas nada que le interese, el aldeano *"finds nothing of interest in your pack"*.
+
+El aldeano compra **solo ingredientes de Sendero**, no recetas, pócimas ni otros objetos. Las Secuencias más fuertes valen más.
+
+| Secuencia del ingrediente | Fragmentos por unidad (casi todos los ingredientes) |
+|---|---|
+| Secuencia 9 | 10 |
+| Secuencia 8 | 15 |
+| Secuencia 7 | 20 |
+| Secuencia 6 | 25 |
+| Secuencia 5 o superior | 30 |
+
+<Notice tone="warn" title="Revisa la vista previa">
+El intercambio se lleva todos los montones compatibles de tu inventario. Quita en el Trade Preview todo lo que quieras conservar antes de confirmar, o déjalo antes en un cofre.
+</Notice>
+
+Los Fragmentos de Energía también salen del [Pase de batalla](/es/guides/battle-pass/) (de 200 a 3 000 fragmentos en muchos niveles) y de los eventos.
+
+### ¿Para qué sirven los Fragmentos de Energía?
+
+- Los niveles de [Orden Secreta](/es/guides/orders/), que cuestan 50, 200, 1 000 y 5 000 fragmentos para los niveles 1 a 4, pagados al fondo común de la Orden.
+- Extras de la Orden Secreta como Battle Cry, las mejoras permanentes, fundar una Secret Lair y sus cristales de teletransporte.
+- Los intercambios con [Trascendentes Salvajes](/es/magic/wild-beyonders/), junto con dinero y monedas físicas de Verl Dor.
+
+Los objetos **Shard of ...** del Emporio, como *Shard of Boon Token*, no son Fragmentos de Energía. Son [fragmentos de fabricación](/es/guides/emporium/#qué-son-los-fragmentos-del-emporio) de una recompensa concreta.
+
+## Páginas relacionadas
+
+<CardGrid>
+  <Card title="Emporio Brillante" text="Gasta los puntos del Emporio que ganas con las recompensas diarias y votando." icon="star" href="/es/guides/emporium/" />
+  <Card title="Agora" text="El mercado subterráneo y anónimo para comerciar entre jugadores." icon="coin" href="/es/guides/agora/" />
+  <Card title="Pase de batalla" text="Misiones que pagan dinero, fragmentos, puntos y Gracias." icon="scroll" href="/es/guides/battle-pass/" />
+</CardGrid>

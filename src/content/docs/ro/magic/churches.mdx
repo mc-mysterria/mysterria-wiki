@@ -1,0 +1,160 @@
+---
+title: "Primii pași cu bisericile"
+description: "Cum întemeiezi o biserică sau intri în una pe Mysterria, cum te rogi, ce face fiecare rol din biserică și comenzile de care ai nevoie. Un ghid despre religie în Lord of the Mysteries (LOTM)."
+sidebar:
+  label: Primii pași
+  order: 33
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import churchStatus from '~/assets/magic/church-status.webp';
+import corePlaced from '~/assets/magic/church-core-placed.webp';
+import coreRecipe from '~/assets/magic/church-core-recipe.webp';
+
+O **biserică** este o religie condusă de jucători, construită în jurul unui lider, al unei Căi, al membrilor care se roagă și al sediilor fizice ale bisericii. Membrii ei primesc bonusuri de Interpretare și de Nebunie care cresc cât timp biserica rămâne activă.
+
+Despre sedii, filiale și războaiele între biserici afli la [Conducerea bisericii](/ro/magic/church-management/), iar numerele exacte ale bonusurilor sunt la [Avantajele bisericii și ancorele](/ro/magic/church-perks/).
+
+## Ce le dă o biserică membrilor ei?
+
+- Un **bonus de Interpretare** peste câștigurile tale obișnuite de Interpretare.
+- Un **bonus de recuperare din Nebunie** care ajută Nebunia recuperabilă să scadă mai repede.
+- **Alinarea pragului de Nebunie** pentru Secvența 4 și mai puternice (vezi [mai jos](#alinarea-pragului-de-nebunie)).
+- **Binecuvântări** și **daruri** de la ofițerii bisericii, ca sprijin pentru Nebunie, Oboseală și Spiritualitate.
+- **Efecte ale rugăciunii** lângă sediile bisericii.
+- Un **Church Vault** comun pentru [Artefacte Sigilate](/ro/magic/sealed-artifacts/).
+- **Alerte de pericol** care îi anunță pe lider, colideri, Îngeri și Diaconii-șefi când un membru e în necaz.
+
+Niciunul nu e fix. Toate cresc cu membrii activi, rugăciunile recente, activitatea sediilor, potrivirea Căii și alte semne că biserica e sănătoasă.
+
+## Cum întemeiez o biserică?
+
+Ai nevoie de:
+
+| Cerință | Valoare |
+|---|---|
+| Beyonder | Da |
+| Secvența | **4 sau mai puternică** |
+| Biserica actuală | Nu trebuie să fii membru, lider sau colider al altei biserici |
+| Timp de așteptare | **14 zile** de când ai ieșit, ai fost scos dintr-o biserică sau ai desființat-o |
+
+Fiecare biserică începe cu un **Church Core**.
+
+1. Fă un Church Core (rețeta e mai jos).
+2. Pune-l acolo unde vrei să fie sediul principal al bisericii.
+3. Scrie numele bisericii în chat când ți se cere.
+4. Conduci biserica dând click pe nucleu sau cu `/coi church menu`.
+
+<Figure src={corePlaced} alt="Un Church Core pus în lume" caption="Un Church Core pus în lume." />
+
+### Rețeta pentru Church Core
+
+<Figure src={coreRecipe} alt="Rețeta pentru Church Core" contain />
+
+| Rând | Obiecte |
+|---|---|
+| Sus | Diamond Block, Nether Star, Diamond Block |
+| Mijloc | Beacon, Enchanting Table, Beacon |
+| Jos | Netherite Block, Obsidian, Netherite Block |
+
+Un Church Core e legat de jucătorul care l-a făcut sau l-a primit, așa că nimeni altcineva nu-ți poate pune nucleul. Nu-l pierde.
+
+## Cum intru într-o biserică?
+
+- Liderul bisericii sau un colider te invită cu `/coi church add <player>`. Accepți cu `/coi church accept` în **5 minute**.
+- Dacă rostești [Numele Onorific](/ro/magic/honorific-names/) al unui membru al bisericii, și el îți poate trimite o invitație.
+
+Nu există limită de membri. Oricine poate intra, inclusiv jucători de pe alte Căi și cei care nu sunt Beyonderi, dar membrii de pe Calea bisericii contează cel mai mult. Timpul de așteptare de 14 zile după ce ieși dintr-o biserică se aplică și când intri în una nouă.
+
+Membrii noi nu primesc imediat avantajele întregi. Începi de la **20%** și ajungi la valoarea întreagă după **14 zile** (21 de zile dacă ai venit din altă biserică).
+
+### Cum ieși
+
+Folosește `/coi church leave`. Un lider nu poate ieși. Mai întâi trebuie să dea biserica altcuiva cu `/coi church ownership handoff <player> confirm` sau s-o desființeze cu `/coi church disband` (apoi ai 45 de secunde să scrii exact numele bisericii în chat ca să confirmi).
+
+## Cum mă rog?
+
+Rugăciunea ține bonusurile bisericii în viață. Un membru nu mai contează pentru biserică după **14 zile** fără să se roage sau 14 zile fără să intre în joc.
+
+Te poți ruga cu:
+
+- `/coi church pray`
+- butonul de rugăciune din meniul bisericii
+- rostind [Numele Onorific](/ro/magic/honorific-names/) întreg al oricărui membru al bisericii, rând cu rând în chat (contează ca rugăciune din afară)
+
+| Regula rugăciunii | Valoare |
+|---|---|
+| Raza pentru putere întreagă | La cel mult **100 de blocuri** de un sediu activ al bisericii |
+| Departe de un sediu | Contează cu **10%** din putere |
+| Legătura rugăciunii ține | **30 de minute** |
+| Timpul de așteptare al efectelor rugăciunii | **12 ore** |
+
+Mesajul rugăciunii îți spune exact ce ai primit. Dacă avantajele tale par slabe, primul pas e ca membrii să se roage lângă un sediu al bisericii.
+
+## Ce fac rolurile din biserică?
+
+| Rol | Ce face |
+|---|---|
+| **Lider** (Leader) | Deține biserica și îi stabilește Calea. Pune nuclee, conduce membrii, sediile și Îngerii. Nu contează ca ancoră pentru propria biserică |
+| **Colider** (Co-leader) | Are o autoritate asemănătoare liderului asupra majorității sistemelor bisericii. Cel mult **2**. Poate conduce un sediu regional. Nu contează ca ancoră de membru |
+| **Înger** (Angel) | Cere **Secvența 3** sau mai puternică. Binecuvântări puternice, daruri și drepturi la seif. Locuri: **3**, plus 1 pentru fiecare filială activă. Dacă sunt mai mulți Îngeri decât locuri, efectele Îngerilor se opresc |
+| **Diacon-șef** (Head Deacon) | Conduce un sediu al bisericii și îl ține acoperit |
+| **Episcop** (Bishop) | Sprijină un sediu. Cel mult **2** pe sediu |
+| **Administrator regional** (Regional Manager) | Conduce un sediu regional |
+| **Adept** (Follower) | Se roagă și adaugă greutate de ancoră. Devine Junior Follower după 3 zile, Follower după 7 și Senior Follower după 14 |
+
+Rolurile din sedii sunt explicate la [Conducerea bisericii](/ro/magic/church-management/).
+
+## Chatul bisericii
+
+Vorbești cu toată biserica cu `/coi church chat <message>` sau începi un mesaj obișnuit cu `!c`, `!cc` ori `!church`, de exemplu `!c meet at the cathedral`.
+
+## Alinarea pragului de Nebunie
+
+De la Secvența 4, fiecare Beyonder are un prag de Nebunie al divinității, adică Nebunie pe care recuperarea nu o poate șterge. O biserică sănătoasă coboară acest prag pentru membrii ei, mai ales pentru lideri și colideri. Un zeu proaspăt, de exemplu, stă pe la 30% până îi crește congregația.
+
+Pragurile, formula alinării și limitele pe roluri sunt la [Avantajele bisericii și ancorele](/ro/magic/church-perks/#alinarea-pragului-de-nebunie). [Nebunie și mutație](/ro/magic/mutation/) explică Nebunia în general.
+
+<Notice tone="info" title="Cohortele Red Priest">
+[Cohorta Chain of Command](/ro/magic/sequence-zero/#cohortele-red-priest-în-locul-unei-biserici) a unui Red Priest le dă propria alinare a pragului membrilor care nu au o biserică activă. Nu e un rol din biserică.
+</Notice>
+
+## Bisericile și zeii
+
+O biserică contează foarte mult pe drumul spre [Secvența 0](/ro/magic/sequence-zero/). Un pretendent are nevoie ca biserica lui să aibă **20** de ancore, iar el trebuie să fie liderul, coliderul sau un Înger al ei. Participarea la **10** slujbe ale bisericii e una dintre faptele legendare.
+
+După ce un zeu stă pe tron, apartenența la biserică nu mai dă niciun bonus de statistici în sine. Doar îi permite zeului să ajungă la tine cu un **Behest**. Fiecare membru are un comutator de devotament. Oprirea lui e imediată, dar repornirea durează o săptămână.
+
+## Unde găsesc meniul bisericii?
+
+- `/coi church menu` sau click pe Church Core
+- slotul bisericii (un Beacon) din meniul personajului, `/coi menu character`
+- meniul Churches din [Modul Client](/ro/guides/client-mod/) (tasta implicită M)
+
+<Figure src={churchStatus} alt="Meniul bisericii cu descrierea Church Status, care arată congregația, puterea ancorelor, poziția și stabilitatea" caption="Meniul bisericii. Ține mouse-ul pe prima pictogramă ca să vezi starea bisericii tale." contain />
+
+## Comenzi pentru membri
+
+| Comandă | Ce face |
+|---|---|
+| `/coi church menu` | Deschide meniul bisericii |
+| `/coi church accept` | Acceptă ultima invitație |
+| `/coi church leave` | Ieși din biserica ta |
+| `/coi church pray` | Roagă-te |
+| `/coi church chat <message>` | Chatul bisericii (sau `!c <message>`) |
+| `/coi church info` | Detaliile bisericii tale |
+| `/coi church members` | Lista membrilor |
+| `/coi church status` | Sănătatea bisericii dintr-o privire |
+| `/coi church perks` | Avantajele tale actuale și ce le limitează |
+| `/coi church acting` | Bonusul tău de Interpretare de la biserică |
+| `/coi church pathway progress` | Sprijinul pentru propria ta Cale |
+| `/coi church pathway <pathway> progress` | Sprijinul pentru altă Cale din biserica ta |
+| `/coi church my-site` | Sediul bisericii la care ești repartizat |
+| `/coi church cooldowns` | Timpii tăi de așteptare din biserică |
+| `/coi church top [pathway]` | Cele mai puternice biserici, în total sau pentru o Cale |
+| `/coi church vault` | Deschide Church Vault |
+| `/coi church artifacts list` | Artefactele păstrate de biserica ta |
+| `/coi church artifact request <artifactId>` | Cere să împrumuți un artefact |
+| `/coi church artifact return` | Dă înapoi un artefact împrumutat |
+
+Comenzile pentru lideri și administratori sunt la [Conducerea bisericii](/ro/magic/church-management/#comenzi-pentru-lideri-și-administratori).

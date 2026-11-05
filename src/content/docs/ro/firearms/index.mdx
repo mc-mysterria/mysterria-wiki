@@ -1,0 +1,109 @@
+---
+title: "Arme de foc"
+description: "Armele de foc pe Mysterria, serverul de Minecraft LOTM: statisticile pentru Klein's Repeater, Deathknell și Steam Rifle, controale, reîncărcare, precizie și cum începi."
+sidebar:
+    label: Prezentare generală
+    order: 1
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import actionBar from '~/assets/firearms/action-bar.webp';
+
+Pe Mysterria există trei arme de foc: **Klein's Repeater**, **Deathknell** și **Steam Rifle**. Le construiești din piese la o **Weaponsmith Table** și le încarci cu gloanțe pe care le faci tu.
+
+## Cum obțin prima armă?
+
+1. Fă o [Weaponsmith Table](/ro/firearms/crafting/#weaponsmith-table) și pune-o jos.
+2. Fă cele patru piese pentru **Klein's Repeater** din fier, lapis, redstone și un buștean de dark oak. E singura armă ale cărei piese le poți face.
+3. Ia piesele la tine, dă click dreapta pe masă, apoi **Shift + click dreapta** ca să construiești arma.
+4. Fă Brass, apoi tuburi de cartuș, miezuri și [Klein Rounds](/ro/firearms/ammunition/).
+
+Piesele pentru **Deathknell** și **Steam Rifle** nu se pot face. De fiecare dată când un cufăr dintr-o structură vanilla din Overworld își generează prada, există 25% șanse să aibă și o piesă la întâmplare de la una dintre aceste două arme. Le poți obține și prin schimb.
+
+## Statisticile armelor
+
+Daunele sunt în puncte de viață pe lovitură, înainte de armură. Raza e în blocuri.
+
+| Armă | Daune | Încărcător | Rază | Între focuri | Reîncărcare |
+|---|---|---|---|---|---|
+| [Klein's Repeater](/ro/firearms/kleins-repeater/) | 7 | 6 | 40 | 0,55 s | 2,8 s (toate deodată) |
+| [Deathknell](/ro/firearms/deathknell-revolver/) | 12 | 6 | 60 | 0,6 s | 0,7 s pe glonț |
+| [Steam Rifle](/ro/firearms/steam-rifle/) | 20 | 5 | 100 | 1,2 s | 3,0 s de la gol |
+
+O reîncărcare completă la Deathknell durează 4,2 secunde. Steam Rifle reîncarcă toate cele 5 gloanțe deodată când e goală, dar când completezi, pune primul glonț după 1 secundă și apoi câte unul la fiecare 0,75 secunde.
+
+### Daune după tipul de muniție
+
+Gloanțele speciale schimbă daunele. La [Muniție](/ro/firearms/ammunition/) afli ce face fiecare efect.
+
+| Muniție | Multiplicator | Klein's Repeater | Deathknell | Steam Rifle |
+|---|---|---|---|---|
+| Gloanțe standard | 100% | 7 | 12 | 20 |
+| Fire, Poison, Aging, Spirit Control, Deceiving, Deprivation, Rotten, Weakening | 85% | 5,95 | 10,2 | 17 |
+| Armor Piercing | 90% | 6,3 | 10,8 | 18 |
+| Implosive | 125% | 8,75 | 15 | 25 |
+| Exorcist împotriva mobilor strigoi | 250% | 17,5 | 30 | 50 |
+| Demon Hunter împotriva Creaturilor Beyonder | 250% | 17,5 | 30 | 50 |
+
+Gloanțele Exorcist și Demon Hunter dau 100% împotriva oricui altcuiva.
+
+## Controale
+
+| Acțiune | Cum |
+|---|---|
+| Tragi | Click dreapta |
+| Reîncarci | Click stânga |
+| Anulezi o reîncărcare | Treci pe alt slot din bara rapidă |
+| Ochești prin lunetă (doar Steam Rifle) | Ții apăsat Sneak |
+
+**Nu poți trage cât rulează o reîncărcare**, iar chatul spune „Weapon is reloading!”. Ca să tragi, schimbă slotul din bara rapidă ca să anulezi reîncărcarea, apoi revino:
+
+- **Klein's Repeater** nu încarcă nimic dacă anulezi.
+- **Deathknell** păstrează fiecare glonț pe care l-a încărcat deja.
+- **Steam Rifle** păstrează gloanțele deja încărcate când completezi. O reîncărcare de la gol nu încarcă nimic dacă o anulezi înainte să treacă cele 3 secunde.
+
+Armele de foc nu pot fi fermecate, folosite într-o nicovală sau mutate în mâna a doua.
+
+## Bara de acțiuni
+
+Cât ții o armă, bara de deasupra barei rapide îți arată:
+
+- tipul de glonț și câte sunt încărcate, de exemplu „Klein Rounds 4/6”
+- un **Reloading...** galben cât reîncarcă
+- un **No ammo!** roșu când încărcătorul e gol
+
+<Figure src={actionBar} alt="Bara de acțiuni de deasupra barei rapide arată Klein Rounds 6/6 cât ții un Klein's Repeater încărcat" caption="Bara de acțiuni cât ții un Klein's Repeater încărcat." contain />
+
+## Precizie
+
+| Tu | Împrăștierea gloanțelor |
+|---|---|
+| Stai pe loc | 0 grade (precizie perfectă) |
+| Te miști (orice mișcare în ultimele 0,3 secunde) | 4 grade |
+| Ești în aer | 8 grade |
+
+Stai pe loc la loviturile importante. Ghemuitul nu strânge împrăștierea.
+
+## Prin ce trec gloanțele
+
+Gloanțele trec prin frunze, iarbă, flori, culturi, trestie de zahăr, bambus și sticlă. Fiecare bloc prin care trec scade daunele cu 10%, până la minimum 1. Sticla și geamurile prin care trece un glonț se sparg.
+
+Fiecare foc lasă o dâră colorată, iar jucătorii aflați la cel mult 10 blocuri de un glonț care trece îl aud cum pocnește.
+
+## Ce muniție încarcă arma?
+
+Klein Rounds merg doar în Klein's Repeater, Deathknell Rounds doar în Deathknell, iar Rifle Rounds doar în Steam Rifle. Gloanțele speciale păstrează tipul de armă din care au fost făcute.
+
+- Cu **încărcătorul gol**, reîncărcarea ia prima stivă de gloanțe potrivite din inventar, standard sau speciale.
+- Când e **încărcat pe jumătate**, poți completa doar cu același fel de glonț care e deja în armă.
+- Ca să **schimbi tipul de muniție**, golește încărcătorul trăgând, apoi reîncarcă având gloanțele noi primele în inventar.
+
+## Paginile despre arme de foc
+
+<CardGrid>
+  <Card title="Weaponsmith Table și construcția armelor" text="Masa, Brass și fiecare piesă de armă." href="/ro/firearms/crafting/" />
+  <Card title="Muniție" text="Tuburi, miezuri, gloanțe și cele 12 efecte speciale." href="/ro/firearms/ammunition/" />
+  <Card title="Klein's Repeater" text="Arma pe care o poți face de la zero." href="/ro/firearms/kleins-repeater/" />
+  <Card title="Deathknell" text="Un revolver greu care se reîncarcă glonț cu glonț." href="/ro/firearms/deathknell-revolver/" />
+  <Card title="Steam Rifle" text="Rază mare, daune mari, cu lunetă." href="/ro/firearms/steam-rifle/" />
+</CardGrid>

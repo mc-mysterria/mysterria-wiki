@@ -1,0 +1,81 @@
+---
+title: "Versiegelte Artefakte"
+description: "Versiegelte Artefakte auf Mysterria, dem Lord of the Mysteries Minecraft-Server: wie du eins bekommst, wie du es benutzt, die Grade der Artefakte und ihre Nachteile."
+sidebar:
+  order: 41
+---
+
+import {Figure} from '~/components/mdx';
+import artifactTooltip from '~/assets/magic/sealed-artifact-tooltip.webp';
+
+Ein Versiegeltes Artefakt ist ein Gegenstand, der eine Beyonder-Fähigkeit enthält. Jeder kann ihn benutzen, auch wer kein Beyonder ist oder zu einem anderen Pfad gehört. Dafür hat jedes Artefakt **Nachteile**, die der Person schaden, die es benutzt.
+
+## Wie bekomme ich ein Versiegeltes Artefakt?
+
+| Quelle | So funktioniert es |
+|---|---|
+| **Abgelaufener Zaubertrank** | Ein Sequenz-Zaubertrank, der nicht innerhalb von **48 Stunden** getrunken wird, wird zu einem Versiegelten Artefakt desselben Pfades und derselben Sequenz. Die Fähigkeit darin ist zufällig. Lässt sich daraus kein Artefakt machen, bekommst du stattdessen eine Beyonder-Charakteristik und, wenn auch das nicht geht, einen Ruined Potion |
+| **Herstellung durch Paragon** | Beyonder des Paragon stellen sie gezielt her (siehe unten) |
+| **Wilde Beyonder** | Ein natürlich gespawnter [Wilder Beyonder](/de/magic/wild-beyonders/) lässt auf Sequenz 6 in 5 % der Fälle eins fallen und auf Sequenz 5 in 10 % |
+| **Kirchengewölbe** | Eine [Kirche](/de/magic/churches/) kann Artefakte in ihrem Church Vault lagern, und Mitglieder können anfragen, eins auszuleihen |
+| **Andere Spieler** | Artefakte sind gewöhnliche Gegenstände. Du kannst sie also ertauschen |
+
+Zaubertränke, die als Einsatz in einer Usurpation hinterlegt sind, laufen nicht ab.
+
+### Wie stellt der Paragon-Pfad Artefakte her?
+
+Nur der [Paragon-Pfad](https://www.mysterria.net/en/pathways/paragon) kann Versiegelte Artefakte herstellen.
+
+| Sequenz | Fähigkeit | Was sie tut |
+|---|---|---|
+| 6 | Artifact Crafting | Verbindet eine Beyonder-Charakteristik mit Zutaten zu einem Artefakt. Bessere Materialien geben ein besseres Ergebnis. Misslingt die Herstellung, sind die Charakteristik und alle Zutaten verbraucht |
+| 3 | Dual Artifact Crafting | Legt **zwei** Fähigkeiten in ein Artefakt, mit doppelter Grundchance auf Erfolg. Rechtsklick nutzt die erste Fähigkeit, Linksklick die zweite |
+| 2 | Manufacturing Authority | Stellt ein vorübergehendes Artefakt von einem beliebigen Pfad oder einer beliebigen Sequenz her, das keine Nachteile hat und 18 Minuten hält |
+
+## Wie benutze ich ein Versiegeltes Artefakt?
+
+Halte es in der Hand und rechtsklicke, um seine Fähigkeit zu nutzen. Bei einem doppelten Artefakt nutzt Linksklick die zweite Fähigkeit.
+
+- **Abklingzeiten sind geteilt.** Nutzt du ein Artefakt, bekommt jedes Artefakt mit derselben Fähigkeit eine Abklingzeit, nicht nur das in deiner Hand.
+- **Beyonder zahlen Spiritualität**, um eins zu nutzen, wie bei ihren eigenen Fähigkeiten. Wer kein Beyonder ist, zahlt nichts.
+- **Dauerhaft aktivierte Fähigkeiten kosten [Wahnsinn](/de/magic/mutation/).** Solange die dauerhaft aktivierte Fähigkeit eines Artefakts eingeschaltet ist, bekommst du jede Sekunde 0,05 Wahnsinn.
+
+### Welche Fähigkeiten lassen sich in ein Artefakt versiegeln?
+
+Die meisten aktiven Fähigkeiten. Passive Fähigkeiten, Verträge und Deity Authority lassen sich nie versiegeln. **Recording** des Door-Pfades kann einen Zauber aus einem Artefakt in deiner Nebenhand kopieren, aber nur mit der halben üblichen Erfolgschance.
+
+## Was sind die Nachteile?
+
+Jedes Artefakt hat einen **Grad**, der sich nach der Sequenz seiner Fähigkeit richtet. Je stärker die Fähigkeit, desto schlimmer die Nachteile.
+
+| Grad | Sequenz der Fähigkeit | Nachteile |
+|---|---|---|
+| Grad 3 | 9 bis 8 | 1 leichter |
+| Grad 2 | 7 bis 6 | 1 mittlerer |
+| Grad 1 | 5 bis 4 | 1 mittlerer und 2 leichte |
+| Grad 0 | 3 bis 0 | 2 schwere und 2 mittlere |
+
+Die erste Zahl in der Zeile **Artifact** seiner Beschreibung ist sein Grad. **Artifact: 2-990025** ist also Grad 2. Die Beschreibung listet auch seine Nachteile. Es gibt Dutzende Nachteile, die meisten passend zum Pfad des Artefakts.
+
+<Figure src={artifactTooltip} alt="Tooltip eines versiegelten Artefakts mit seiner ID, der Fähigkeit Prohibition und dem Nachteil Law Restriction" caption="Der Tooltip eines Artefakts nennt seine Fähigkeit und listet seine Nachteile." />
+
+Es gibt zwei Arten von Nachteilen.
+
+- **Einmalige** Nachteile lösen **jedes Mal** aus, wenn du die Fähigkeit nutzt.
+- **Dauerhafte** Nachteile wirken so lange weiter, wie ein aktiviertes Artefakt in deinem Inventar ist. Sie hören auf, wenn es dein Inventar verlässt.
+
+:::danger[Lies zuerst die Nachteile]
+Ein Artefakt mit Grad 0 kann für seinen eigenen Benutzer tödlich sein. Prüfe die Liste der Nachteile in der Beschreibung, bevor du ein Artefakt im Kampf einsetzt.
+:::
+
+### Wie kann ich die Nachteile verringern?
+
+| Pfad | Sequenz | Fähigkeit | Wirkung |
+|---|---|---|---|
+| [Twilight Giant](https://www.mysterria.net/en/pathways/giant) | 7 | Artifact Mastery | 25 % Chance, jeden Nachteil aufzuheben |
+| Paragon | 7 | Mastery Shield | Ein persönlicher Schild, der Nachteile je nach ihrer Gefahr verringert oder blockiert |
+| Paragon | 3 | Arcane Scholar Complete Mastery | Immun gegen Nachteile von Grad 3, 2 und 1, teilweise widerstandsfähig gegen Grad 0 |
+| [Death](https://www.mysterria.net/en/pathways/death) | 4 | Artifact Sealing | Versiegelt die Nachteile eines Artefakts für bis zu 24 Stunden |
+| [Tyrant](https://www.mysterria.net/en/pathways/tyrant) | 4 | Artifact Sealing | Unterdrückt 30 Sekunden lang die Nachteile aller Artefakte in der Nähe oder versiegelt ihre Fähigkeiten |
+
+**Beyonder Characteristic Purification** auf Sequenz 4 des [Sun-Pfades](https://www.mysterria.net/en/pathways/sun) kann außerdem ein Artefakt in deiner Nebenhand wieder in seine Beyonder-Charakteristik auflösen.

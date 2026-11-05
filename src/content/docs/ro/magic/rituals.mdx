@@ -1,0 +1,99 @@
+---
+title: "Ritualuri"
+description: "Cum funcționează ritualurile Beyonder pe Mysterria: scorurile de ritual pentru Secvențele 8 până la 0, /ritual status, reextrageri, creditul de ritual, Ritual Books și ce costă dacă sari peste ritual."
+sidebar:
+  label: Ritualuri
+  order: 6
+---
+
+import {Figure} from '~/components/mdx';
+import ritualStatus from '~/assets/magic/rituals-status.webp';
+import ritualTask from '~/assets/magic/rituals-task.webp';
+
+De la Secvența 8 în sus, fiecare avansare are un **ritual**, o listă personală de **realizări** (advancements) din Minecraft pe care trebuie să le termini înainte să bei următorul elixir. Dacă sari peste el, te costă Nebunie.
+
+**Primul tău elixir (Secvența 9) nu are nevoie de ritual.**
+
+## Cum funcționează un ritual?
+
+Când ajungi la o Secvență, jocul îți dă un set de realizări la întâmplare pentru Secvența **următoare**. Fiecare realizare valorează niște puncte după dificultate, iar setul tău adună scorul de care are nevoie acea Secvență. Setul rămâne același când ieși din joc.
+
+| Următoarea Secvență | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+|---|---|---|---|---|---|---|---|---|---|
+| **Scor necesar** | 2 | 5 | 9 | 12 | 16 | 20 | 24 | 28 | 30 |
+
+| Dificultate | Puncte |
+|---|---:|
+| Trivial | 1 |
+| Easy | 2 |
+| Medium | 3 |
+| Hard | 4 |
+| Expert | 6 |
+| Master | 8 |
+| Legendary | 10 |
+| Exotic | 15 |
+| Mythic | 20 |
+
+Câteva reguli îți formează setul.
+
+- Sarcinile **Trivial** apar doar la ritualurile până la Secvența 5.
+- Sarcinile **Legendary, Exotic și Mythic** apar doar de la ritualul pentru Secvența 4 în sus.
+- Sarcinile din **Nether** apar doar după ce ești de Secvența 7 sau mai puternic, iar cele din **End** după ce ești de Secvența 4 sau mai puternic.
+
+## Cum îmi verific ritualul?
+
+- `/ritual status` îți arată scorul, de exemplu „7/9 ritual score completed”.
+- Ca să vezi **ce** realizări îți trebuie, ia la tine formula pentru următoarea Secvență. Asta înseamnă fie o formulă întreagă, fie **Recipe Page 3** a ei (pagina ritualului). Fără ea vezi doar scorul.
+- `/ritual view <sequence>` îți deschide sarcinile într-un meniu. Când citești pagina de ritual a unei formule, primești și un link pe care poți da click.
+
+<Figure src={ritualStatus} alt="Rezultatul /ritual status în chat pentru un Fool care merge spre Secvența 3, cu 0/20 scor de ritual și un indiciu să ia cartea de formule" caption="Fără formulă, /ritual status îți arată doar scorul." contain />
+
+<Figure src={ritualTask} alt="Meniul ritualului pentru Fool Secvența 8, cu descrierea sarcinii Boned, macină niște oase în bonemeal, neterminată, scor 0/2" caption="Cu formula în mână, /ritual view îți arată fiecare sarcină. Ține mouse-ul pe o sarcină ca s-o citești." contain />
+
+## Pot reextrage o sarcină?
+
+Dacă o sarcină e imposibilă, are un bug sau nu e rezonabilă, poți cere staff-ului s-o înlocuiască.
+
+1. Deschide `/ritual view <next sequence>` având la tine formula sau pagina 3.
+2. Dă **Shift + click** pe sarcină.
+3. Alege un motiv (de exemplu „Impossible on this server” sau „Appears to be bugged”) și trimite-l.
+
+Staff-ul se uită la cerere și o aprobă sau o refuză. Nu poți cere o reextragere pentru o sarcină pe care ai terminat-o deja și poți avea o singură cerere în așteptare pentru fiecare sarcină.
+
+## Creditul de ritual
+
+De la ritualul pentru Secvența 5 în sus, unele activități contează ca **credit de ritual** și îți umplu o parte din scor fără realizări. Fiecare fel contează o singură dată pe ritual.
+
+| Activitate | Puncte | Ritualuri |
+|---|---|---|
+| Participi la o slujbă la un sediu activ al bisericii | 1 | Secvențele 5 până la 0 |
+| Termini o recompensă pentru Interpretare | 1 | Secvențele 5 până la 0 |
+| Termini un ritual de poveste aprobat de staff | 2 | Secvențele 5 până la 0 |
+| Lupți un război pentru un loc până la verdict | 3 | Secvențele 3 până la 0 |
+| Îți păstrezi Unicitatea după o provocare plătită | 3 | Secvențele 2 până la 0 |
+
+Creditul are o limită pe ritual: 3 puncte la Secvența 5, 4 la 4, 5 la 3, 6 la 2, 7 la 1 și 10 la 0.
+
+Ascensiunea la Secvența 0 are nevoie și de propriul **ritual de poveste** certificat de staff. Vezi [Secvența 0](/ro/magic/sequence-zero/).
+
+## Ritual Books
+
+Un **Ritual Book** te lasă să sari peste sarcini de ritual. Dă click dreapta pe el și alege sarcina peste care sari.
+
+| Carte | Sare peste | Magazinul Ancorelor Zeilor Exteriori (`/oga rewards`) |
+|---|---|---|
+| Ritual Book (Tier I) | 1 sarcină | 160 de puncte, 2 pe săptămână |
+| Ritual Book (Tier II) | 2 sarcini | 300 de puncte, 1 pe săptămână |
+| Ritual Book (Tier III) | Toate sarcinile ritualului | 550 de puncte, 1 pe lună |
+
+Ritual Books sunt și în schimburile Helping Card din [temnițe](/ro/guides/dungeons/).
+
+## Ce se întâmplă dacă sar peste ritual?
+
+Poți bea oricând fără să termini ritualul, dar partea care lipsește costă Nebunie, după cât a mai rămas. Un ritual sărit complet costă **40% Nebunie temporară** și **10% permanentă**. Un ritual terminat pe jumătate costă jumătate din asta, 20% temporară și 5% permanentă.
+
+Ecranul de confirmare îți arată costul exact înainte să bei. Un ritual neterminat anulează și o [schimbare de Cale sigură](/ro/magic/pathways/#pot-schimba-calea). Mai multe despre costuri găsești la [Nebunie și mutație](/ro/magic/mutation/#costurile-avansării).
+
+:::caution[Nebunia permanentă se adună]
+Nebunia permanentă nu trece niciodată cu timpul. Câteva ritualuri sărite te pot lăsa cu un prag mare care face fiecare avansare de după mai periculoasă.
+:::

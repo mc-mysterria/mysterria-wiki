@@ -1,0 +1,209 @@
+---
+title: "L'Agora, le marché souterrain des joueurs"
+description: "L'Agora sur Mysterria : trouver ou fabriquer une entrée secrète, vendre anonymement par le Fence, acheter, récupérer ses gains auprès du Ledger Keeper et louer un étal."
+sidebar:
+    label: Agora
+    order: 23
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import doorCraft from '~/assets/agora/door_craft.png';
+import fence from '~/assets/agora/fence.png';
+import selling from '~/assets/agora/selling.png';
+import sellingCoi from '~/assets/agora/selling_coi.png';
+import plots from '~/assets/agora/plots.png';
+
+L'**Agora** est un marché souterrain caché derrière des portes secrètes, où les joueurs achètent et vendent entre eux de façon anonyme. Les annonces ne portent aucun nom, donc les acheteurs et les vendeurs ne savent jamais qui est l'autre.
+
+Il n'y a **aucune commande** pour l'Agora. Tu entres par une porte et tu fais un clic droit sur les personnes qui y travaillent.
+
+## Comment entrer dans l'Agora ?
+
+### Utilise l'entrée publique
+
+Le serveur garde une **entrée publique aux coordonnées (0, 0)**. Tout le monde peut l'utiliser. Fais un clic droit sur la porte pour descendre.
+
+### Fabrique ta propre Secret Entrance
+
+```
+O E O        O = Obsidienne
+E D E        E = Éclat d'écho
+O E O        D = Porte en chêne noir
+```
+
+<Figure src={doorCraft} alt="De l'obsidienne et des éclats d'écho disposés autour d'une porte en chêne noir dans une grille de fabrication" caption="La recette de la Secret Entrance." contain />
+
+Fais un clic droit sur un bloc avec la **Secret Entrance** en main pour le transformer en porte cramoisie. Ça ne marche que si :
+
+- l'endroit a **deux blocs d'espace libre** au-dessus
+- il se trouve dans le **terrain revendiqué** d'une [ville](/fr/guides/towns/) où tu as la **confiance**
+- ce terrain ne cache pas déjà une porte, car chaque terrain n'autorise **qu'une entrée**
+
+Fais un clic droit sur la porte pour descendre.
+
+### Un secret, pas une serrure
+
+Toute personne qui trouve ta porte peut la franchir. Cache-la bien.
+
+La porte ne peut pas être cassée, ni détruite par une explosion, ni déplacée. La seule façon de s'en débarrasser est de libérer le terrain où elle se trouve. Les portes sont vérifiées toutes les 30 minutes, et une porte est retirée à la troisième vérification qui trouve son terrain non revendiqué. Les vérifications n'ont lieu que tant qu'un joueur a cette zone chargée. Donc une entrée sur un terrain qui n'est plus revendiqué disparaît en environ une heure et demie quand quelqu'un est à proximité. Pour déplacer ton entrée, libère ce chunk, revendique-le de nouveau plus tard et pose une entrée nouvellement fabriquée. L'ancienne porte ne revient jamais.
+
+### Ressortir
+
+Fais un clic droit sur la **porte de sortie**. Tu remontes à l'endroit où tu es descendu. Si cette entrée a disparu ou n'est pas sûre, tu remontes plutôt au spawn du monde.
+
+## Quelles sont les règles à l'intérieur ?
+
+- **Personne ne peut être blessé.** Pas de PvP, pas de monstres, pas de dégâts de chute, pas d'explosions, pas de feu.
+- **Pas de capacités Beyonder.** Elles ne marchent pas dans l'Agora.
+- **Pas de raccourcis.** Les perles de l'Ender, les chorus, les élytres et les véhicules sont bloqués. Tu sors par la porte de sortie.
+- **Ton inventaire t'appartient.** Rien n'est pris à la porte, dans un sens comme dans l'autre.
+- **Pas de construction**, et pas d'ouverture de conteneurs, sauf dans un [étal](#étals) que tu loues.
+
+## Qui travaille dans l'Agora ?
+
+Fais un clic droit sur n'importe qui pour lui parler.
+
+| Qui | Pour quoi |
+|---|---|
+| **The Fence** | Mettre tes marchandises en vente |
+| **Bazaar Clerk** | Parcourir et acheter |
+| **The Informant** | Chercher par Voie et Séquence |
+| **Ledger Keeper** | Récupérer tes achats et ton argent |
+| **Courier Post** | Te faire livrer tes achats |
+| **Plot Warden** | Louer un étal |
+| **Stall Keeper** | La vitrine personnelle d'un locataire |
+| **Quartermaster** | Des blocs de construction (l'ancien `/shop`) |
+
+<Figure src={fence} alt="Le Fence qui attend derrière son comptoir dans l'Agora" caption="Le Fence prend tes marchandises et les met en vente." />
+
+## Comment les prix sont-ils écrits ?
+
+Les prix utilisent les [trois pièces](/fr/guides/economy/) du serveur. 64 Coppets font un Lick, et 64 Licks (4 096 Coppets) font un Verl d'or.
+
+Les prix sont affichés dans le mélange le plus court à lire, par exemple `16 coppets 11 licks` au lieu de 720 Coppets. Quand tu tapes toi-même un prix, utilise `c` pour les Coppets, `l` pour les Licks et `v` pour les Verl d'or.
+
+## Comment vendre dans l'Agora ?
+
+Donne ton objet au **Fence** et fixe un prix. Il propose d'abord ce que l'objet vaut, en jugeant les matériaux Beyonder selon leur Séquence et les marchandises ordinaires selon le prix de vente d'objets semblables. Tu peux ignorer sa proposition et fixer n'importe quel prix.
+
+| Règle | Valeur |
+|---|---|
+| Frais de mise en vente | **2 %** de ton prix (au moins 1 Coppet) |
+| Taxe sur la vente | **8 %** de la vente |
+| Fourchette de prix | 1 à 1 000 000 Coppets |
+| Nouvelles annonces par jour | **3** |
+| Annonces actives en même temps | **10** |
+| Durée d'une annonce | **72 heures** |
+
+Les frais de mise en vente sont payés **d'avance** et ne sont jamais rendus, que l'objet se vende, expire ou que l'annonce soit annulée.
+
+<CardGrid min={280}>
+  <Figure src={selling} alt="Le Fence qui estime un éclat d'écho à 5 Coppets" caption="Un objet ordinaire, estimé selon les ventes récentes." />
+  <Figure src={sellingCoi} alt="Le Fence qui estime un ingrédient de Séquence 5 à 16 Coppets 11 Licks" caption="Un ingrédient Beyonder, estimé selon sa Séquence." />
+</CardGrid>
+
+### Qu'est-ce qui ne peut pas être vendu ?
+
+- Les boîtes de Shulker, les sacs et tout ce qui contient des objets
+- La bedrock
+- Les objets liés à toi
+- Les objets de contrôle des Historical Pacts
+
+### Quand quelque chose se vend
+
+Tu reçois seulement un message qui dit qu'*une pièce a été mise de côté à ton nom*, sans dire ce qui s'est vendu ni à quel prix. Récupère l'argent auprès du **Ledger Keeper**. Les ventes faites pendant que tu étais hors ligne t'attendent.
+
+### Quand rien ne se vend
+
+Au bout de 72 heures, une annonce invendue expire et l'objet va dans ta **réserve** chez le Ledger Keeper. Si tu annules une annonce plus tôt, l'objet va au même endroit.
+
+## Comment acheter dans l'Agora ?
+
+Le **Bazaar Clerk** montre tout ce qui est en vente. **The Informant** te permet de chercher par Voie et Séquence quand tu sais ce que tu veux.
+
+Tu paies le prix affiché et rien de plus. La taxe est prise sur la part du vendeur. Tu ne peux pas acheter ta propre annonce.
+
+Les achats **ne vont pas dans ton inventaire**. Ils t'attendent chez le Ledger Keeper, sauf si tu as laissé une corne au [Courier Post](#courier-post).
+
+## Récupérer ses gains chez le Ledger Keeper
+
+Tout ce que le marché te doit reste chez le **Ledger Keeper** jusqu'à ce que tu le récupères. Ça n'expire jamais.
+
+- **Ta réserve** contient les objets que tu as achetés, les annonces expirées ou annulées, et tout ce qui a été sauvé d'un étal que tu as perdu. Prends autant que ton inventaire peut en contenir, le reste reste là.
+- **Ton registre** contient l'argent de chaque vente après la taxe. Le récupérer te verse tout ce qui t'est dû d'un coup.
+
+## Courier Post
+
+Laisse un **Horn of Summoning** au **Courier Post** et tout ce que tu **achètes** te sera livré par ton [Courrier](/fr/guides/couriers/), où que tu sois.
+
+- Une seule corne à la fois. Reprends-la quand tu veux, et les livraisons s'arrêtent.
+- La livraison est gratuite. La corne est le prix à payer.
+- L'argent de tes ventes n'est pas livré. Récupère-le chez le Ledger Keeper.
+
+## Étals
+
+Un **étal** est une pièce du marché que tu peux louer, aménager et où tu peux vendre. Parle au **Plot Warden** pour en prendre un.
+
+<Figure src={plots} alt="Le quartier des étals de l'Agora, éclairé par des lanternes" caption="Le quartier des étals." />
+
+| Règle | Valeur |
+|---|---|
+| Loyer | **1 Verl d'or** (4 096 Coppets) |
+| Durée | **7 jours** |
+| Étals par joueur | **1** |
+| Délai de grâce | **48 heures** |
+
+Tant que ton loyer est payé, tu peux construire, casser et utiliser des coffres **dans ton étal**. Un **Stall Keeper** apparaît à ta vitrine. Les visiteurs qui cliquent dessus voient ce que tu vends, et tu as ton propre comptoir.
+
+### Garder ton étal
+
+Paie de nouveau le Plot Warden avant la fin de la semaine pour renouveler pour une semaine de plus. Si tu oublies, tu as **48 heures de grâce**, avec des rappels, et tu gardes tout.
+
+### Perdre ton étal
+
+Après le délai de grâce, tu es expulsé, mais **rien n'est détruit**. Tout ce qui est dans tes coffres, tes cadres et tes porte-armures, et tout ce qui traîne au sol, va dans ta réserve chez le Ledger Keeper. La pièce est remise à neuf pour le prochain locataire.
+
+Tu peux aussi rendre un étal plus tôt depuis le menu du Plot Warden.
+
+## Comptoirs d'étal
+
+Un **comptoir** est un panneau sur un coffre de ton étal qui vend à toute personne qui passe, sans frais de mise en vente et sans attente. Tu peux en avoir jusqu'à **12 par étal**.
+
+1. Pose un coffre, et un panneau dessus (sur sa face ou sur le dessus).
+2. Écris `[Market]` sur la **ligne 1**.
+3. Écris le prix sur la **ligne 2**, soit en nombre de Coppets, soit en abrégé comme `3v 12l 5c` (3 Verl d'or, 12 Licks et 5 Coppets, soit 13 061 Coppets).
+4. Si tu veux, écris combien d'objets par achat sur la **ligne 3**, de 1 à 64. Laisse vide pour 1.
+5. **Fais un clic droit sur le panneau en tenant l'objet que tu veux vendre.**
+
+Le panneau se redessine en **STALL COUNTER** avec l'objet, le prix et ton nom.
+
+| Action | Résultat |
+|---|---|
+| Clic droit en tenant un objet | Choisir ou changer ce qu'il vend |
+| Clic droit les mains vides | Voir le stock et le total vendu |
+| Accroupi + clic droit | Fermer le comptoir |
+
+**Le coffre est ton stock.** Pour réapprovisionner, ajoute des objets dedans. Quand il est vide, le comptoir est en rupture. Pour changer un prix, casse le panneau et refais-le.
+
+Pour acheter à un comptoir, fais un clic droit sur le panneau une fois pour voir le prix, puis **une deuxième fois dans les 6 secondes** pour payer. Les objets arrivent directement dans tes mains.
+
+Un comptoir prend fin quand son panneau, son coffre ou l'étal disparaît.
+
+## Combien ça coûte ?
+
+| Quoi | Coût |
+|---|---|
+| Secret Entrance | Obsidienne, éclats d'écho et une porte en chêne noir |
+| Mettre un objet en vente | 2 % de ton prix (au moins 1 Coppet) |
+| Vendre un objet | 8 % de la vente |
+| Acheter un objet | Le prix affiché |
+| Louer un étal | 1 Verl d'or (4 096 Coppets) par semaine |
+| Livraison par Courrier | Gratuite (la corne est le prix à payer) |
+
+## Pages liées
+
+<CardGrid>
+  <Card title="Argent et portefeuille" text="Les pièces, /wallet et les Éclats d'énergie." icon="coin" href="/fr/guides/economy/" />
+  <Card title="Courriers" text="Obtenir un Horn of Summoning et envoyer des objets." icon="gift" href="/fr/guides/couriers/" />
+  <Card title="Villes" text="Revendique un terrain pour y cacher ta propre entrée." icon="shield" href="/fr/guides/towns/" />
+</CardGrid>

@@ -1,0 +1,53 @@
+---
+title: "Klein's Repeater"
+description: "Klein's Repeater sur Mysterria : la seule arme à feu LOTM que tu peux fabriquer de zéro. Pièces, recettes, Klein Rounds, rechargement et comportement en combat."
+sidebar:
+    label: Klein's Repeater
+    order: 4
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import kleinBarrel from '~/assets/firearms/kleinbarrel.png';
+import kleinCylinder from '~/assets/firearms/kleincylinder.png';
+import kleinFrame from '~/assets/firearms/kleinframe.png';
+import kleinGrip from '~/assets/firearms/kleingrip.png';
+import kleinRounds from '~/assets/firearms/kleinrounds.png';
+
+**Klein's Repeater** est l'arme de départ, la seule dont tu peux fabriquer les pièces. C'est la plus rapide à tirer des trois armes, et elle recharge tout son chargeur d'un coup.
+
+Ses [statistiques](/fr/firearms/#statistiques-des-armes) sont de 7 dégâts, 6 balles, 40 blocs de portée, 0,55 seconde entre deux tirs et un rechargement de 2,8 secondes.
+
+## Comment la fabriquer ?
+
+Fabrique les quatre pièces sur un établi normal, puis assemble l'arme sur une [Weaponsmith Table](/fr/firearms/crafting/#la-weaponsmith-table) (clic droit pour vérifier, Maj + clic droit pour assembler).
+
+| Pièce | Recette |
+|---|---|
+| Repeater Barrel | 3 lingots de fer et 1 lapis-lazuli |
+| Repeater Cylinder | 2 lingots de fer et 1 poudre de redstone |
+| Repeater Frame | 2 lingots de fer et 1 lapis-lazuli |
+| Repeater Grip | 2 lingots de fer et 1 bûche de chêne noir |
+
+Une arme demande en tout 9 lingots de fer, 2 lapis-lazuli, 1 poudre de redstone et 1 bûche de chêne noir.
+
+<Figure src={kleinBarrel} alt="Grille de fabrication du Repeater Barrel" caption="Repeater Barrel." contain />
+<Figure src={kleinCylinder} alt="Grille de fabrication du Repeater Cylinder" caption="Repeater Cylinder." contain />
+<Figure src={kleinFrame} alt="Grille de fabrication du Repeater Frame" caption="Repeater Frame." contain />
+<Figure src={kleinGrip} alt="Grille de fabrication du Repeater Grip" caption="Repeater Grip." contain />
+
+## Quelles munitions utilise-t-elle ?
+
+Seulement les **Klein Rounds** et les Klein Rounds spéciales faites à partir d'elles (13 types en tout).
+
+- 1 Klein Cartridge Case, 1 Klein Cartridge Core et 1 poudre à canon donnent **4 Klein Rounds**.
+- 1 Brass, 4 pépites de fer et 8 poudres à canon donnent **32 balles**, les munitions les moins chères de toutes les armes.
+
+<Figure src={kleinRounds} alt="Grille de fabrication avec une Klein Cartridge Case, un Klein Cartridge Core et de la poudre à canon qui donnent 4 Klein Rounds" caption="Klein Rounds." contain />
+
+La page [Munitions](/fr/firearms/ammunition/) donne les recettes des douilles et des noyaux, ainsi que toutes les munitions spéciales.
+
+## Comment marche le rechargement ?
+
+Fais un clic gauche pour recharger. Au bout de **2,8 secondes**, tout le chargeur se remplit d'un coup, jusqu'à 6 balles. Tu ne peux pas tirer pendant ces 2,8 secondes.
+
+Changer d'emplacement dans la barre d'outils annule le rechargement, et **rien n'est chargé**. Les balles déjà dans l'arme y restent. Comme le rechargement se fait en entier ou pas du tout, recharge quand tu as un moment tranquille au lieu d'attendre « No ammo! ».

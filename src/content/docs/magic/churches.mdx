@@ -1,0 +1,160 @@
+---
+title: "Getting Started with Churches"
+description: "How to found or join a church on Mysterria, how to pray, what each church role does, and the commands you need. A Lord of the Mysteries (LOTM) religion guide."
+sidebar:
+  label: Getting Started
+  order: 33
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import churchStatus from '../../../assets/magic/church-status.webp';
+import corePlaced from '../../../assets/magic/church-core-placed.webp';
+import coreRecipe from '../../../assets/magic/church-core-recipe.webp';
+
+A **church** is a player-run religion built around a leader, a Pathway, praying members and physical church sites. Its members get Acting and Madness bonuses that grow as the church stays active.
+
+Running sites, branches and church wars is covered in [Church Management](/magic/church-management/), and the exact bonus numbers are in [Church Perks and Anchors](/magic/church-perks/).
+
+## What does a church give its members?
+
+- An **Acting bonus** on top of your normal Acting gains.
+- A **Madness recovery bonus** that helps recoverable Madness fall faster.
+- **Madness floor relief** for Sequence 4 and stronger (see [below](#madness-floor-relief)).
+- **Blessings** and **gifts** from church officers, for Madness, Tiredness and Spirituality support.
+- **Prayer effects** near church sites.
+- A shared **Church Vault** for [Sealed Artifacts](/magic/sealed-artifacts/).
+- **Danger alerts** that tell the leader, co-leaders, Angels and Head Deacons when a member is in trouble.
+
+None of these are flat. They grow with active members, recent prayer, site activity, Pathway match and other signs of a healthy church.
+
+## How do I found a church?
+
+You need:
+
+| Requirement | Value |
+|---|---|
+| Beyonder | Yes |
+| Sequence | **4 or stronger** |
+| Current church | You must not be a member, leader or co-leader of another church |
+| Cooldown | **14 days** after you last left, were removed from, or disbanded a church |
+
+Every church starts with a **Church Core**.
+
+1. Craft a Church Core (recipe below).
+2. Place it where your main church site should be.
+3. Type the church name in chat when asked.
+4. Manage the church by clicking the core or with `/coi church menu`.
+
+<Figure src={corePlaced} alt="A placed Church Core" caption="A placed Church Core." />
+
+### Church Core recipe
+
+<Figure src={coreRecipe} alt="Church Core crafting recipe" contain />
+
+| Row | Items |
+|---|---|
+| Top | Diamond Block, Nether Star, Diamond Block |
+| Middle | Beacon, Enchanting Table, Beacon |
+| Bottom | Netherite Block, Obsidian, Netherite Block |
+
+A Church Core is bound to the player who crafted or received it, so nobody else can place your core. Do not lose it.
+
+## How do I join a church?
+
+- The church leader or a co-leader invites you with `/coi church add <player>`. Accept with `/coi church accept` within **5 minutes**.
+- If you chant the [Honorific Name](/magic/honorific-names/) of a church member, they can also offer you an invitation.
+
+There is no member limit. Anyone can join, including players of other Pathways and non-Beyonders, but members of the church's own Pathway count for the most. The 14-day cooldown after leaving a church also applies to joining a new one.
+
+New members do not get full perks straight away. You start at **20%** and reach full value after **14 days** (21 days if you switched from another church).
+
+### Leaving
+
+Use `/coi church leave`. A leader cannot leave. They must first hand the church to someone else with `/coi church ownership handoff <player> confirm`, or disband it with `/coi church disband` (you then have 45 seconds to type the exact church name in chat to confirm).
+
+## How do I pray?
+
+Prayer keeps church bonuses alive. A member stops counting toward the church after **14 days** without praying, or 14 days without logging in.
+
+You can pray with:
+
+- `/coi church pray`
+- the prayer button in the church menu
+- chanting the complete [Honorific Name](/magic/honorific-names/) of any member of the church, line by line in chat (this counts as an outside prayer)
+
+| Prayer rule | Value |
+|---|---|
+| Full-strength range | Within **100 blocks** of an active church site |
+| Away from a site | Counts at **10%** strength |
+| Prayer connection lasts | **30 minutes** |
+| Prayer effects cooldown | **12 hours** |
+
+The prayer message tells you exactly what you received. If your perks feel weak, the first fix is to get members praying near a church site.
+
+## What do the church roles do?
+
+| Role | What it does |
+|---|---|
+| **Leader** | Owns the church and sets its Pathway. Places cores, manages members, sites and Angels. Does not count as an anchor for their own church |
+| **Co-leader** | Leader-like authority over most church systems. At most **2**. Can manage a Regional HQ. Does not count as a member anchor |
+| **Angel** | Needs **Sequence 3** or stronger. Strong blessings, gifts and vault rights. Slots: **3**, plus 1 per active branch. If there are more Angels than slots, Angel effects pause |
+| **Head Deacon** | Runs one church site and keeps it covered |
+| **Bishop** | Supports a site. At most **2** per site |
+| **Regional Manager** | Runs a Regional HQ |
+| **Follower** | Prays and adds anchor weight. Becomes Junior Follower after 3 days, Follower after 7 and Senior Follower after 14 |
+
+Site roles are explained in [Church Management](/magic/church-management/).
+
+## Church chat
+
+Talk to your whole church with `/coi church chat <message>`, or start a normal chat message with `!c`, `!cc` or `!church`, for example `!c meet at the cathedral`.
+
+## Madness floor relief
+
+From Sequence 4, every Beyonder has a godhood Madness floor, which is Madness that recovery cannot remove. A healthy church lowers that floor for its members, most of all for leaders and co-leaders. A fresh god, for example, sits at about 30% until their congregation grows.
+
+The floors, the relief formula and the role caps are on [Church Perks and Anchors](/magic/church-perks/#madness-floor-relief). [Madness and Mutation](/magic/mutation/) explains Madness in general.
+
+<Notice tone="info" title="Red Priest cohorts">
+A Red Priest's [Chain of Command cohort](/magic/sequence-zero/#red-priest-cohorts-instead-of-a-church) gives its own floor relief to members who have no active church. That is not a church role.
+</Notice>
+
+## Churches and gods
+
+A church matters a great deal on the road to [Sequence 0](/magic/sequence-zero/). A claimant needs their church to carry **20** anchors, and they must be its leader, co-leader or Angel. Attending **10** church services is one of the legendary deeds.
+
+Once a god sits a throne, church membership gives no stat bonus of its own. It only lets the god reach you with a **Behest**. Each member has a devotion toggle. Turning it off is instant, but turning it back on takes a week.
+
+## Where do I find the church menu?
+
+- `/coi church menu`, or click your Church Core
+- the church slot (a Beacon) in your character menu, `/coi menu character`
+- the Churches menu in the [Client Mod](/guides/client-mod/) (default key M)
+
+<Figure src={churchStatus} alt="The church menu with the Church Status tooltip listing congregation, anchor strength, standing and stability" caption="The church menu. Hover over the first icon to see your church status." contain />
+
+## Commands for members
+
+| Command | What it does |
+|---|---|
+| `/coi church menu` | Open the church menu |
+| `/coi church accept` | Accept the latest invite |
+| `/coi church leave` | Leave your church |
+| `/coi church pray` | Pray |
+| `/coi church chat <message>` | Church chat (or `!c <message>`) |
+| `/coi church info` | Your church's details |
+| `/coi church members` | The member list |
+| `/coi church status` | Church health at a glance |
+| `/coi church perks` | Your current perks and what limits them |
+| `/coi church acting` | Your church Acting bonus |
+| `/coi church pathway progress` | Support for your own Pathway |
+| `/coi church pathway <pathway> progress` | Support for another Pathway in your church |
+| `/coi church my-site` | Your assigned church site |
+| `/coi church cooldowns` | Your church cooldowns |
+| `/coi church top [pathway]` | The strongest churches, overall or for one Pathway |
+| `/coi church vault` | Open the Church Vault |
+| `/coi church artifacts list` | Artifacts stored by your church |
+| `/coi church artifact request <artifactId>` | Ask to borrow an artifact |
+| `/coi church artifact return` | Return a borrowed artifact |
+
+Leader and manager commands are on [Church Management](/magic/church-management/#commands-for-leaders-and-managers).

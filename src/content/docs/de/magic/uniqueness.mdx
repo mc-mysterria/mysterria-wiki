@@ -1,0 +1,126 @@
+---
+title: "Einzigartigkeit"
+description: "Wie Mysterria die Einzigartigkeit jedes Pfades vergibt, wie die Akkommodation wächst, was ihre vier Eigenschaften bewirken und wie sie den Besitzer wechseln kann. Ein Leitfaden zu Lord of the Mysteries."
+sidebar:
+  label: Einzigartigkeit
+  order: 31
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import uniquenessMenu from '~/assets/magic/uniqueness-menu.webp';
+import uniquenessCandidacy from '~/assets/magic/uniqueness-candidacy.webp';
+
+## Was ist eine Einzigartigkeit?
+
+Eine **Einzigartigkeit** ist die einzige Autorität eines Pfades, die immer nur ein Beyonder hält. Die Einzigartigkeit deines Pfades zu halten und sie zu 95 % zu **akkommodieren** ist eine Voraussetzung für [Sequenz 0](/de/magic/sequence-zero/). Auf dem Weg dahin weckt sie vier Bonuseigenschaften.
+
+Jeder der 22 normalen Pfade hat genau eine. Äußere Pfade und Gnadenpfade haben keine.
+
+## Wie öffne ich das Menü der Einzigartigkeit?
+
+Öffne dein Charaktermenü (`/coi menu character` oder die Taste M mit der [Client-Mod](/de/guides/client-mod/)) und wähle **Uniqueness**. Ohne die Mod öffnet es sich als Truhenmenü. Seine fünf Bereiche sind **Where you stand**, **Candidacy score**, **Participation**, **Physical manifestation** und **Usurpation**.
+
+<Figure src={uniquenessCandidacy} alt="Das Menü der Einzigartigkeit in der Client-Mod mit den Karten der Kandidatenwertung" caption="Das Menü der Einzigartigkeit in der Client-Mod. Die Zahlen stammen von einem Testcharakter." />
+
+<Figure src={uniquenessMenu} alt="Der Bereich Where you stand im Menü der Einzigartigkeit, Sun mit 64 Prozent Akkommodation und zwei geweckten Eigenschaften" caption="Where you stand für einen Test-Inhaber der Einzigartigkeit des Sun mit 64 % Akkommodation." />
+
+## Wie wird eine Einzigartigkeit vergeben?
+
+Niemand kauft oder erwürfelt eine Einzigartigkeit. Alle 2 Stunden bewertet der Server jeden berechtigten Beyonder des Pfades und gibt sie dem stärksten Kandidaten.
+
+### Wer kann Kandidat sein?
+
+- **Sequenz 4 oder stärker** auf diesem Pfad
+- ein Konto, das mindestens **7 Tage** alt ist
+- mindestens **10 Stunden** Spielzeit
+- ein Aktivitätsindex von mindestens **1,5**
+- eine Gesamtwertung von mindestens **40**
+- nicht aus der Bewertung zurückgezogen
+
+Du kannst immer nur eine Einzigartigkeit halten.
+
+### Die Kandidatenwertung
+
+Jeder Teil wird mit bis zu 100 Punkten bewertet und dann gewichtet.
+
+| Teil | Gewicht | Was er misst |
+|---|---:|---|
+| Sequenz | 35 % | Sequenz 1 = 100, Sequenz 2 = 90, Sequenz 3 = 80, Sequenz 4 = 60 |
+| Spielzeit | 25 % | Gesamte Stunden auf dem Server, gezählt bis 100 |
+| Aktivität | 20 % | Wie kürzlich und regelmäßig du spielst (Index bis 5,0). Er sinkt, wenn du dich nicht mehr einloggst |
+| Schauspielen | 15 % | Wie weit du den ganzen Pfad von Sequenz 9 an geschauspielt hast. Ein Aufstieg senkt das nie |
+| Hingabe | 5 % | Zur Hälfte aus Tagen, an denen du mindestens 30 Minuten gespielt hast (bis 31), zur Hälfte aus deiner durchschnittlichen Sitzungsdauer (bis 180 Minuten) |
+
+Das Team kann zur gewichteten Summe eine **Manual adjustment** von -20 bis +20 hinzufügen. Sie wird im Menü angezeigt.
+
+Die ganze Wertung des aktuellen Inhabers wird bei 100 % Akkommodation mit bis zu **x1,25** multipliziert. Ein gut eingelebter Inhaber ist also schwerer zu ersetzen.
+
+Tägliche Tiden ändern die Wertung der Einzigartigkeit nie.
+
+## Wie kann eine Einzigartigkeit den Besitzer wechseln?
+
+Den Inhaber zu töten bewegt sie **nicht**. Diese fünf Dinge tun es.
+
+1. Die **automatische Neuprüfung** gibt sie einem anderen Kandidaten, der mindestens **6 Punkte** mehr hat als der Inhaber. Ein neuer Inhaber ist davor **3 Tage** lang geschützt.
+2. Ein anderer Spieler gibt Overflow für eine [bezahlte Herausforderung](/de/magic/usurpation/#wie-fordere-ich-eine-einzigartigkeit-heraus) aus, um eine Neubewertung zu erzwingen.
+3. Ein Rivale, der eine [Wache für Sequenz 0](/de/magic/sequence-zero/) gegen den Inhaber gewinnt, nimmt die Einzigartigkeit, aber nicht den Thron.
+4. Zieht sich der Inhaber aus der Bewertung zurück, geht sie direkt an den nächsten Kandidaten.
+5. Kommt der Inhaber in eine [Prüfung](/de/magic/ordeals/), wird sie automatisch frei.
+
+<Notice tone="warn" title="Ein neuer Inhaber startet immer bei 0 %">
+Wechselt eine Einzigartigkeit den Besitzer, fallen Akkommodation, Todeszähler und Wachstumsverlauf auf null zurück.
+</Notice>
+
+## Kann ich aussteigen?
+
+Ja. Mitmachen ist der Standard. Schalte es unter **Participation** mit **Withdraw from evaluation** ab. Der Knopf fragt zweimal nach einer Bestätigung.
+
+- Hältst du die Einzigartigkeit, geht sie **sofort** an den nächsten Kandidaten.
+- Steigst du später wieder ein, kommst du zurück in die Warteschlange. Die Einzigartigkeit bekommst du dadurch nicht zurück.
+- Solange du zurückgezogen bist, wirst du nicht bewertet und kannst keine Einzigartigkeit herausfordern.
+
+## Wie wächst die Akkommodation?
+
+Akkommodation ist, wie weit sich die Einzigartigkeit in dir eingelebt hat, von 0 % bis 100 %. Sie wächst nur, solange du sie hältst, indem du deinen Pfad nutzt.
+
+| Quelle | Gewonnene Akkommodation |
+|---|---|
+| Verdientes Schauspielen | +0,02 Punkte pro 100 Schauspielen |
+| Ausgegebene Spiritualität | +0,001 Punkte pro 100 Spiritualität |
+| Jede gewirkte Fähigkeit | +0,00005 Punkte |
+
+Schauspielen ist die mit Abstand größte Quelle. Diese Mengen werden dann mit deiner Sequenz multipliziert.
+
+| Sequenz | Wachstumsfaktor |
+|---|---:|
+| 1 | x1,2 |
+| 2 | x1,1 |
+| 3 | x1,0 |
+| 4 | x0,8 |
+
+### Sterben kostet Akkommodation
+
+Jeder Tod, während du eine Einzigartigkeit hältst, kostet pauschal **10 Prozentpunkte** (aus 80 % werden 70 %), egal was dich getötet hat. Sie fällt nie unter **10 %**. Ein Tod, der verhindert wird, etwa durch ein Artefakt, kostet nichts.
+
+## Was bringt sie?
+
+### Die vier Eigenschaften
+
+Jede Eigenschaft erwacht bei einer bestimmten Akkommodation und wächst dann gleichmäßig mit der Akkommodation, bis sie bei 100 % ihren vollen Wert erreicht.
+
+| Eigenschaft | Erwacht bei | Wirkung bei 100 % | Wert beim Erwachen |
+|---|---:|---|---|
+| **Spiritual Dominance** | 25 % | +50 % Regeneration der Spiritualität | +12,5 % |
+| **Authority Amplification** | 50 % | +30 % Stärke und Schaden von Fähigkeiten | +15 % |
+| **Divine Resilience** | 75 % | +20 % maximale Spiritualität | +15 % |
+| **Acting Acceleration** | 100 % | +40 % Gewinne beim Schauspielen | +40 % |
+
+Eigenschaften speziell für einzelne Pfade gibt es im Spiel nicht.
+
+### Der Weg zu Sequenz 0
+
+Um einen Thron zu beanspruchen, musst du die Einzigartigkeit deines Pfades halten **und** sie zu **95 %** oder mehr akkommodiert haben. Die anderen Voraussetzungen stehen unter [Sequenz 0](/de/magic/sequence-zero/).
+
+### Physische Erscheinung
+
+Jede Einzigartigkeit hat einen kosmetischen Gegenstand. Im Bereich **Physical manifestation** kannst du ihn herausnehmen oder verstecken. Er ist an dich gebunden und kann dein Inventar nie verlassen. Manche lassen sich auf dem Kopf tragen.

@@ -1,0 +1,120 @@
+---
+title: "Incursiunile Cosmosului"
+description: "Incursiunile Cosmosului pe Mysterria, serverul de Minecraft LOTM: când încep, culorile zonelor și regulile morții, Spirit Beacons, recompensele pentru orașe și zonele de extracție."
+sidebar:
+  order: 37
+---
+
+import {Figure} from '~/components/mdx';
+import cosmosShop from '~/assets/cosmos/cosmos-shop.webp';
+
+Incursiunile Cosmosului sunt evenimentele PvP ale serverului. În lume se deschid zone colorate, iar orașele se luptă pentru **Spirit Beacons** din ele. În afara evenimentelor, **zonele de extracție** permanente te lasă să aduni resurse pentru orașul tău, în timp ce alți jucători te vânează.
+
+## Când începe o Incursiune?
+
+O Incursiune începe singură când sunt online **25 de jucători**:
+
+| Regulă | Valoare |
+|---|---|
+| Numărătoarea inversă | 3 minute după ce se atinge numărul de jucători |
+| Durata | 30 de minute |
+| Pauza | Cel puțin 2 ore până la următoarea |
+| Zone | 2 la 25 până la 32 de jucători online, 3 la 33 până la 40, 4 la 41 sau mai mulți |
+| Mărimea zonei | Rază de 150 de blocuri, la cel puțin 500 de blocuri una de alta, la cel puțin 50 de blocuri de orice teren revendicat de un oraș |
+
+Zonele sunt marcate de ziduri de particule colorate. Începutul e anunțat și pe Discord, iar `/cosmos status` îți arată ce e în desfășurare.
+
+## Cât de periculoasă e fiecare zonă?
+
+Culorile zonelor se dau în ordinea Verde, Galben, Roșu, Death. Cu 2 zone ai Verde și Galben, cu 3 se adaugă o zonă Roșie, iar o zonă Death se deschide doar când sunt online 41 de jucători sau mai mulți. Un ecran de acord îți explică regulile înainte să intri.
+
+| Zonă | Când mori | Echilibrarea PvP |
+|---|---|---|
+| **Verde** | Îți păstrezi toate obiectele | Daunele sunt echilibrate după rezervele de viață, Forma Mitică e blocată, Nebunia de la alții e anulată |
+| **Galben** | Fiecare obiect are **33%** șanse să cadă | Daunele sunt echilibrate doar pe jumătate, Forma Mitică e blocată, Nebunia de la alții e înjumătățită |
+| **Roșu** | Cad **toate** obiectele | Nicio echilibrare |
+| **Death** | Cad **toate** obiectele, plus penalizarea de Secvență de mai jos | Nicio echilibrare |
+
+Zonele Verzi și Galbene sunt locul unde înveți PvP-ul din Incursiuni, pentru că acolo un Semizeu nu poate pur și simplu să șteargă un Beyonder nou.
+
+### Ce se întâmplă dacă mor într-o zonă Death?
+
+Beyonderii de **Secvența 4 sau mai puternici** pățesc asta la **orice** moarte într-o zonă Death, oricine sau orice i-ar fi ucis:
+
+- Dacă ai **cel puțin 50%** din bara de Interpretare, pierzi acele 50% și îți păstrezi Secvența.
+- Dacă ai **sub 50%**, cobori **o Secvență**. Începi noua Secvență cu 99% din bara ei de Interpretare, iar Caracteristica ta Beyonder cade acolo unde ai murit.
+- După o penalizare ești ferit de alta timp de **20 de secunde**.
+
+Beyonderii de Secvența 5 și mai slabi riscă doar obiectele.
+
+:::caution[Activează un Paper Angel]
+Un **Paper Angel** îți protejează Secvența. Dă click dreapta pe el ca să-l activezi. Apoi preia o penalizare de zonă Death și se consumă. Îl primești de la evenimente și de la staff.
+:::
+
+### Ce este Spirit Weight?
+
+Beyonderii de Secvența 4 și mai puternici poartă **Spirit Weight** într-o zonă. Strălucesc, deci nu se pot ascunde, și primesc 1 daună la fiecare 5 secunde.
+
+### Ce se întâmplă dacă ies din joc într-o zonă?
+
+Rămâne în urmă un corp numit „Hollow \<numele tău\>” timp de **5 minute**. Dacă cineva îl ucide, suporți toate regulile morții.
+
+## Cum câștigă orașele o Incursiune?
+
+Fiecare zonă are **Spirit Beacons**. Stai la cel mult 20 de blocuri de un beacon ca să-l cucerești pentru orașul tău. Mai mulți jucători îl cuceresc mai repede, iar un beacon lăsat gol se întoarce încet la neutru. Orașele primesc puncte pentru **ținerea** beaconurilor, **ținerea lor sub atac** (care valorează dublu) și **cucerirea** lor. Zonele mai periculoase valorează mai mult (Galben x1,25, Roșu x1,5, Death x2).
+
+Când se termină Incursiunea:
+
+| Recompensă | Cine o primește |
+|---|---|
+| **+10% viteză de Interpretare timp de 3 ore** | Orașul de pe locul 1. Fiecare victorie la rând adaugă +2%, până la +6% |
+| **+5% viteză de Interpretare timp de 2 ore** | Orașul de pe locul 2 |
+| **Resurse** (Aur, Argint, Pietre prețioase) | Împărțite între toate orașele care au făcut cel puțin 5% din scorul câștigătorului, după cât au luptat. Orașele din aceeași națiune care participă toate primesc până la +30% |
+| **Recompensa MVP** | Primii 3 jucători primesc Interpretare și bani, indiferent de locul orașului lor |
+| Interpretare | Toți cei prezenți când orașul lor cucerește un beacon |
+
+Și uciderile din PvP din zone dau Interpretare, mai multă în zonele mai periculoase. Dacă ucizi același jucător din nou, nu primești Interpretare timp de 20 de minute.
+
+### Primesc pradă dacă ucid jucători?
+
+Primești o **ladă PvP** doar când uciderea ta declanșează o penalizare de zonă Death. Asta înseamnă că victima era de Secvența 4 sau mai puternică, nu avea Paper Angel și nu era în pauza de după o penalizare.
+
+:::caution[Nu-i vâna pe cei slabi]
+Dacă ucizi 3 jucători mai slabi cu 3 sau mai multe Secvențe decât tine în 10 minute, devii **Corrupted Monster** timp de 15 minute, iar uciderile de tip grief nu dau ladă.
+:::
+
+## Ce sunt zonele de extracție?
+
+Zonele de extracție sunt zone PvP **permanente** desenate pe hartă și marcate de ziduri de particule roșu închis. PvP e mereu activ înăuntru.
+
+1. **Aduni** la un **Point of Interest**, o rază de lumină cu o resursă care plutește. Stai la cel mult 8 blocuri ca să aduni Aur, Argint sau Pietre prețioase. Cu cât stai mai mult, cu atât aduni mai repede. Punctele de interes se mută la fiecare 15 minute.
+2. **Extragi** la un **punct de extracție** de lângă margine. Stai în cercul lui 10 secunde. Dacă ieși din el, extracția se anulează, dar daunele primite nu o anulează. Punctele de extracție se mută la fiecare 30 de minute.
+3. Resursele tale ajung în **soldul orașului** și ești teleportat în siguranță afară.
+
+Dacă mori înainte să extragi, pierzi tot ce ai adunat. Zonele au trei niveluri:
+
+| Nivel | Obiecte pierdute la moarte | Resurse |
+|---|---|---|
+| Sigur | Niciunul | Aur și Argint |
+| Mediu | 33% pe obiect | Aur, Argint și câteva Pietre prețioase |
+| Greu | Toate obiectele | Cele mai multe din fiecare, inclusiv Pietre prețioase |
+
+Fiecare zonă are o limită zilnică de resurse, așa că cele mai bune puncte de interes se golesc dacă le exploatează mulți jucători.
+
+### Ce poate cumpăra orașul meu?
+
+Orașul tău cheltuie Aurul, Argintul și Pietrele prețioase în `/cosmos shop`. `/cosmos balance` îți arată ce are orașul tău.
+
+<Figure src={cosmosShop} alt="Meniul Zone Shop din /cosmos shop, cu trei rânduri de obiecte de vânzare" caption="Meniul /cosmos shop." contain />
+
+## Ce comenzi există?
+
+| Comandă | Ce face |
+|---|---|
+| `/cosmos guide` | Ghidul din joc |
+| `/cosmos status` | Incursiunea în desfășurare și zonele ei |
+| `/cosmos leaderboard` | Scorurile orașelor după un eveniment |
+| `/cosmos balance` | Aurul, Argintul și Pietrele prețioase ale orașului tău |
+| `/cosmos shop` | Cheltuie resursele orașului tău |
+
+`/cosmos guide` din joc mai arată niște numere vechi (bonusuri de 24 de ore și o regulă de regresie la Secvența 6). Ai încredere în numerele de aici.

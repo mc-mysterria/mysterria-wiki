@@ -1,0 +1,120 @@
+---
+title: "Cosmos Incursions"
+description: "Cosmos Incursions on Mysterria, the LOTM Minecraft server: when they start, zone colours and death rules, Spirit Beacons, town rewards and extraction zones."
+sidebar:
+  order: 37
+---
+
+import {Figure} from '~/components/mdx';
+import cosmosShop from '../../../assets/cosmos/cosmos-shop.webp';
+
+Cosmos Incursions are the server's PvP events, where coloured zones open in the world and towns fight over the **Spirit Beacons** inside them. Outside the events, permanent **extraction zones** let you gather resources for your town while other players hunt you.
+
+## When does an Incursion start?
+
+An Incursion starts on its own when **25 players** are online:
+
+| Rule | Value |
+|---|---|
+| Countdown | 3 minutes after the player count is reached |
+| Length | 30 minutes |
+| Cooldown | At least 2 hours before the next one |
+| Zones | 2 at 25 to 32 players online, 3 at 33 to 40, 4 at 41 or more |
+| Zone size | Radius 150 blocks, at least 500 blocks apart, at least 50 blocks from any town claim |
+
+Zones are marked by walls of coloured particles. The start is also announced on Discord, and `/cosmos status` shows what is running.
+
+## How dangerous is each zone?
+
+Zone colours are given out in the order Green, Yellow, Red, Death. With 2 zones you get Green and Yellow, with 3 a Red zone is added, and a Death zone only opens when 41 or more players are online. A consent screen explains the rules before you enter.
+
+| Zone | When you die | PvP balancing |
+|---|---|---|
+| **Green** | You keep all your items | Damage is evened out by HP pools, Mythical Form is blocked, Madness from others is cancelled |
+| **Yellow** | Each item has a **33%** chance to drop | Damage is half evened out, Mythical Form is blocked, Madness from others is halved |
+| **Red** | **All** items drop | None |
+| **Death** | **All** items drop, plus the Sequence penalty below | None |
+
+Green and Yellow zones are the place to learn Incursion PvP, because a Demigod cannot simply delete a fresh Beyonder there.
+
+### What happens if I die in a Death zone?
+
+Beyonders at **Sequence 4 or stronger** face this on **any** death in a Death zone, whoever or whatever killed them:
+
+- If you have **at least 50%** of your Acting bar, you lose that 50% and keep your Sequence.
+- If you have **less than 50%**, you drop **one Sequence**. You start the new Sequence with 99% of its Acting bar, and your Beyonder Characteristic drops where you died.
+- After a penalty you are safe from another one for **20 seconds**.
+
+Sequence 5 and weaker Beyonders only risk their items.
+
+:::caution[Arm a Paper Angel]
+A **Paper Angel** protects your Sequence. Right-click it to arm it. It then absorbs one Death-zone penalty and is used up. It comes from events and staff.
+:::
+
+### What is Spirit Weight?
+
+Beyonders at Sequence 4 and stronger carry **Spirit Weight** inside a zone. They glow so they cannot hide, and they take 1 damage every 5 seconds.
+
+### What if I log out in a zone?
+
+A body called "Hollow \<your name\>" stays behind for **5 minutes**. If someone kills it, you suffer the full death rules.
+
+## How do towns win an Incursion?
+
+Every zone has **Spirit Beacons**. Stand within 20 blocks of a beacon to capture it for your town. More players capture faster, and an empty beacon slowly decays back. Towns score for **holding**, **holding under attack** (worth double) and **capturing** beacons. Deadlier zones count for more (Yellow x1.25, Red x1.5, Death x2).
+
+When the Incursion ends:
+
+| Reward | Who gets it |
+|---|---|
+| **+10% Acting speed for 3 hours** | The town in 1st place. Winning again in a row adds +2% per win, up to +6% |
+| **+5% Acting speed for 2 hours** | The town in 2nd place |
+| **Resources** (Gold, Silver, Gems) | Split between all towns that scored at least 5% of the winner's score, by how much they fought. Towns from the same nation that all take part get up to +30% |
+| **MVP reward** | The top 3 players get Acting and money, whatever their town's place |
+| Acting | Everyone present when their town captures a beacon |
+
+PvP kills inside zones also give Acting, more in deadlier zones. A repeat kill of the same player gives no Acting for 20 minutes.
+
+### Do I get loot for killing players?
+
+You get a **PvP crate** only when your kill triggers a Death-zone penalty. That means the victim was Sequence 4 or stronger, had no Paper Angel and was not on penalty cooldown.
+
+:::caution[Do not hunt the weak]
+Killing 3 players who are 3 or more Sequences weaker than you within 10 minutes makes you a **Corrupted Monster** for 15 minutes, and griefing kills give no crate.
+:::
+
+## What are extraction zones?
+
+Extraction zones are **permanent** PvP areas drawn on the map, marked by dark red particle walls. PvP is always on inside.
+
+1. **Gather** at a **Point of Interest**, a beam of light with a floating resource. Stand within 8 blocks to collect Gold, Silver or Gems. The longer you stay, the faster you collect. Points of Interest move every 15 minutes.
+2. **Extract** at an **extraction point** near the edge. Stand inside its ring for 10 seconds. Moving out cancels it, taking damage does not. Extraction points move every 30 minutes.
+3. Your resources go into your **town's balance** and you are teleported safely outside.
+
+If you die before extracting, you lose everything in your buffer. Zones come in three tiers:
+
+| Tier | Item drops on death | Resources |
+|---|---|---|
+| Safe | None | Gold and Silver |
+| Medium | 33% per item | Gold, Silver and some Gems |
+| Hard | All items | The most of each, including Gems |
+
+Each zone has a daily resource budget, so the best Points of Interest run dry if many players farm them.
+
+### What can my town buy?
+
+Your town spends Gold, Silver and Gems in `/cosmos shop`. `/cosmos balance` shows what your town has.
+
+<Figure src={cosmosShop} alt="The Zone Shop menu from /cosmos shop with three rows of items for sale" caption="The /cosmos shop menu." contain />
+
+## Which commands are there?
+
+| Command | What it does |
+|---|---|
+| `/cosmos guide` | The in-game guide |
+| `/cosmos status` | The current Incursion and its zones |
+| `/cosmos leaderboard` | Town scores after an event |
+| `/cosmos balance` | Your town's Gold, Silver and Gems |
+| `/cosmos shop` | Spend your town's resources |
+
+The in-game `/cosmos guide` still shows some old numbers (24-hour buffs and a Sequence 6 regression rule). Trust the numbers here instead.

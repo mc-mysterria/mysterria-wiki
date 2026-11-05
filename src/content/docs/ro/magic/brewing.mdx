@@ -1,0 +1,115 @@
+---
+title: "Preparare și elixire"
+description: "Cum prepari elixire Beyonder pe Mysterria: Cazanul Magic și nivelurile de altar, formule și pagini de formulă, ingrediente, minijocul de preparare și expirarea elixirelor."
+sidebar:
+  label: Preparare și elixire
+  order: 3
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import cauldron from '~/assets/magic/cauldron.png';
+import practiceMenu from '~/assets/magic/brewing-practice-menu.webp';
+import practiceResult from '~/assets/magic/brewing-rehearsal-result.webp';
+import minigame from '~/assets/magic/brewing-minigame.webp';
+import drinkConfirm from '~/assets/magic/brewing-drink-confirm.webp';
+
+Fiecare Secvență începe cu un elixir, iar tu îl prepari singur la un Cazan Magic. Prepararea merge la fel pentru Secvența 9 și pentru fiecare elixir de după.
+
+## De ce am nevoie ca să prepar un elixir?
+
+- O **formulă** pentru Calea și Secvența elixirului sau un set complet de **Recipe Pages** ale ei.
+- Un **Cazan Magic**, altarul de preparare pe care îl construiești după un plan.
+- **Ingredientele principale** și **secundare** din formulă. O **Caracteristică Beyonder** de aceeași Cale și Secvență poate înlocui toate ingredientele principale.
+
+Ca să bei ceva mai puternic decât Secvența 9, îți trebuie și cel puțin 95% [Interpretare](/ro/magic/acting/), iar [ritualul](/ro/magic/rituals/) tău contează.
+
+## Cazanul Magic (altarul de preparare)
+
+Altarul are trei niveluri, iar nivelul îți mută rezultatul preparării cu o treaptă.
+
+| Altar | Efectul asupra minijocului de preparare |
+|---|---|
+| **Crude Altar** | Rezultatul tău scade cu o treaptă (Excellent devine Good, Good devine Poor, Poor devine Failed) |
+| **Ritual Altar** | Nicio schimbare |
+| **Grand Altar** | Rezultatul tău crește cu o treaptă (Failed devine Poor, Poor devine Good, Good devine Excellent) |
+
+Planurile vin din cuferele de pradă ca **Strange Scroll**, categoria **Altar Scrolls** din [Loot Focus](/ro/magic/loot/#loot-focus-garanția). Ține sulul în mână și **dă click dreapta pe un bloc** ca să vezi construcția, apoi **încă un click dreapta** ca s-o pui într-un loc liber. Click stânga nu face nimic.
+
+<Notice tone="warn" title="Sacrificial Altars nu pot prepara">
+  **Crude Sacrificial Altar**, **Sacrificial Altar** și **Grand Sacrificial Altar** arată asemănător, dar sunt pentru avansarea [Harurilor](/ro/magic/boons/) și nu pot prepara elixire. Verifică numele sulului înainte să-l pui.
+</Notice>
+
+## Formule și pagini de formulă
+
+Poți găsi o **formulă întreagă** sau o formulă împărțită în **Recipe Pages** numite „Recipe Page *n* (Sequence *s*)”.
+
+| Pagină | Conține |
+|---|---|
+| Pagina 1 | Ingredientele principale |
+| Pagina 2 | Ingredientele secundare |
+| Pagina 3 | Cerințele ritualului |
+
+Secvența 9 nu are ritual, așa că formulele ei au doar paginile 1 și 2. Dă click dreapta pe o pagină ca s-o citești. Ca să faci o formulă din pagini, pune **exact câte una din fiecare pagină** pentru aceeași Cale și Secvență pe grila de crafting, fără nimic altceva.
+
+Formulele pot fi pentru orice Cale, nu doar pentru a ta. Ca să schimbi Calea cu un elixir, vezi [Căi](/ro/magic/pathways/#pot-schimba-calea).
+
+## Ingrediente
+
+Fiecare elixir are propriile ingrediente principale și secundare, iar ele sunt de trei feluri.
+
+- Ingredientele **de găsit** vin mai ales din cuferele de pradă.
+- Ingredientele **care cad** vin mai ales de la [Creaturile Beyonder](/ro/magic/creatures/).
+- Ingredientele **de minat** cresc în lume ca noduri roșii strălucitoare. Dă click dreapta pe unul ca să-l recoltezi.
+
+Beyonderii Sălbatici și Bossii Fisurilor sunt alte surse, despre care afli la [Pradă și Loot Focus](/ro/magic/loot/#ingrediente). Cu [Modul Client](/ro/guides/client-mod/), când ții mouse-ul pe un ingredient vezi Calea lui, Secvența și dacă e principal sau secundar.
+
+## Cum prepar?
+
+Deschide Cazanul Magic. Pune **ingredientele principale** (sau o Caracteristică Beyonder) în sloturile roșii din **stânga**, **ingredientele secundare** în sloturile albastre din **dreapta** și **formula** în slotul galben din **mijlocul de sus**.
+
+<Figure src={cauldron} alt="Meniul Cazanului Magic cu sloturile principale în stânga, cele secundare în dreapta și slotul formulei sus" caption="Ingredientele principale în stânga, cele secundare în dreapta, formula sus." contain />
+
+Pune ingredientele în aceeași ordine în care le scrie formula. Dacă ceva e greșit, nu se întâmplă nimic și îți păstrezi obiectele. Copiile în plus ale unui ingredient îți sunt date înapoi.
+
+Când totul se potrivește, pornește un scurt **minijoc de preparare**, iar nota ta decide rezultatul.
+
+| Notă | Rezultat |
+|---|---|
+| **Excellent** | Primești elixirul |
+| **Good** | Primești elixirul |
+| **Poor** | 50% șanse să primești elixirul. Altfel prepararea eșuează |
+| **Failed** | Prepararea eșuează, cu o mică explozie și câteva secunde de Otrăvire |
+
+**O preparare eșuată** consumă **formula** și **ingredientele secundare**. Ingredientele principale se topesc într-o **Caracteristică Beyonder** a acelei Căi și Secvențe, pe care o poți folosi data viitoare ca ingredient principal.
+
+Minijocul devine mai greu la Secvențele mai puternice, de la foarte ușor la Secvența 9 până la cel mai greu la Secvența 2 și mai sus. Beyonderii **Moon** îl primesc cu o treaptă mai ușor.
+
+<Figure src={minigame} alt="Minijocul Focus your will, un meniu tip cufăr cu trei butoane, dintre care unul strălucește verde" caption="Focus your will, unul dintre minijocuri. Apasă butonul care strălucește înainte să se termine timpul." contain />
+
+`/coi practice` te lasă să exersezi minijocurile gratuit, fără să riști nimic.
+
+<Figure src={practiceMenu} alt="Meniul Choose a rehearsal cu șase pictograme de minijocuri" caption="Meniul pe care îl deschide /coi practice. Alege un minijoc ca să-l exersezi." contain />
+
+<Figure src={practiceResult} alt="Rânduri în chat care spun Rehearsal result Good 60 la sută, doar exercițiu, nu s-a câștigat și nu s-a pierdut nimic" caption="Un exercițiu se termină cu nota ta în chat." contain />
+
+## Cum bei elixirul
+
+Când bei, un ecran de confirmare îți arată ce te va costa avansarea, fie din cauza Interpretării care lipsește, a unui ritual neterminat sau a unei schimbări riscante de Cale. Nu se întâmplă nimic până nu confirmi, iar dacă anulezi primești elixirul înapoi.
+
+<Figure src={drinkConfirm} alt="Ecranul Advancement Details cu un buton verde Confirm, elixirul și o descriere care spune că nu există dezavantaje și avansarea e sigură" caption="Ecranul de confirmare pentru un prim elixir. Când nu lipsește nimic, îți spune că avansarea e sigură." contain />
+
+După ce confirmi, mai rulează un scurt minijoc. **Excellent** îți dă un scurt val de Regenerare și Viteză, iar **Good** nu dă nimic în plus. **Poor** sau **Failed** adaugă puțină Nebunie temporară (mai multă la Failed), plus Greață sau Orbire timp de câteva secunde.
+
+Un elixir funcționează doar dacă e **exact cu o Secvență mai puternic** decât Secvența ta actuală. Orice alt elixir e refuzat. Vezi [Nebunie și mutație](/ro/magic/mutation/#costurile-avansării) ca să afli ce te poate costa avansarea.
+
+## Cât ține un elixir?
+
+Un elixir ține **48 de ore** din momentul în care e făcut, iar descrierea lui arată cât timp a mai rămas. Când expiră, se transformă într-un **Artefact Sigilat** de aceeași Cale și Secvență. Dacă nu există unul, devine o **Caracteristică Beyonder**, iar dacă nici asta nu se poate, un **Ruined Potion**. Un elixir expirat nu te mai poate avansa.
+
+Un elixir primit ca recompensă primește 48 de ore noi când intră prima dată în inventarul tău.
+
+## Alte moduri de a obține un elixir
+
+- Cuferele de pradă au uneori un elixir gata făcut, iar categoria **Potions** din [Loot Focus](/ro/magic/loot/#loot-focus-garanția) îți garantează unul.
+- Un Beyonder Sun de Secvența 4 poate topi un elixir sau un Artefact Sigilat ținut în mâna a doua în Caracteristica lui Beyonder, cu **Beyonder Characteristic Purification**.
+- Elixirul de **Secvența 0** se prepară din formula de Secvența 0 și **trei Caracteristici Beyonder de Secvența 1** de aceeași Cale, fără nimic altceva. Vezi [Secvența 0](/ro/magic/sequence-zero/).

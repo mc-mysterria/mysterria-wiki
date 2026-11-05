@@ -1,0 +1,109 @@
+---
+title: "Armas de fuego"
+description: "Las armas de Mysterria, el servidor de Minecraft de LOTM: estadísticas de Klein's Repeater, Deathknell y Steam Rifle, controles, recarga, precisión y cómo empezar."
+sidebar:
+    label: Resumen
+    order: 1
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import actionBar from '~/assets/firearms/action-bar.webp';
+
+Mysterria tiene tres armas: **Klein's Repeater**, la **Deathknell** y el **Steam Rifle**. Las montas con piezas en una **Weaponsmith Table** y las cargas con balas fabricadas.
+
+## ¿Cómo consigo mi primera arma?
+
+1. Fabrica una [Weaponsmith Table](/es/firearms/crafting/#la-weaponsmith-table) y colócala.
+2. Fabrica las cuatro piezas de **Klein's Repeater** con hierro, lapislázuli, redstone y un tronco de roble oscuro. Es la única arma cuyas piezas se pueden fabricar.
+3. Lleva las piezas encima, haz clic derecho en la mesa y después **Mayús + clic derecho** para montar el arma.
+4. Fabrica Brass y luego casquillos, núcleos y [Klein Rounds](/es/firearms/ammunition/).
+
+Las piezas de **Deathknell** y **Steam Rifle** no se pueden fabricar. Cada vez que un cofre de una estructura vanilla del Overworld genera su botín, hay un 25 % de probabilidad de que también traiga una pieza al azar de una de esas dos armas. También puedes conseguirlas comerciando.
+
+## Estadísticas de las armas
+
+El daño está en puntos de vida por disparo, antes de la armadura. El alcance está en bloques.
+
+| Arma | Daño | Cargador | Alcance | Entre disparos | Recarga |
+|---|---|---|---|---|---|
+| [Klein's Repeater](/es/firearms/kleins-repeater/) | 7 | 6 | 40 | 0,55 s | 2,8 s (todo de una vez) |
+| [Deathknell](/es/firearms/deathknell-revolver/) | 12 | 6 | 60 | 0,6 s | 0,7 s por bala |
+| [Steam Rifle](/es/firearms/steam-rifle/) | 20 | 5 | 100 | 1,2 s | 3,0 s desde vacío |
+
+Una recarga completa de la Deathknell tarda 4,2 segundos. El Steam Rifle recarga las 5 balas de golpe si está vacío, pero al rellenarlo carga la primera bala tras 1 segundo y luego una cada 0,75 segundos.
+
+### Daño según la munición
+
+Las balas especiales cambian el daño. [Munición](/es/firearms/ammunition/) explica qué hace cada efecto.
+
+| Munición | Multiplicador | Klein's Repeater | Deathknell | Steam Rifle |
+|---|---|---|---|---|
+| Balas normales | 100 % | 7 | 12 | 20 |
+| Fire, Poison, Aging, Spirit Control, Deceiving, Deprivation, Rotten, Weakening | 85 % | 5,95 | 10,2 | 17 |
+| Armor Piercing | 90 % | 6,3 | 10,8 | 18 |
+| Implosive | 125 % | 8,75 | 15 | 25 |
+| Exorcist contra mobs no muertos | 250 % | 17,5 | 30 | 50 |
+| Demon Hunter contra criaturas Trascendentes | 250 % | 17,5 | 30 | 50 |
+
+Las balas Exorcist y Demon Hunter hacen el 100 % contra todo lo demás.
+
+## Controles
+
+| Acción | Cómo |
+|---|---|
+| Disparar | Clic derecho |
+| Recargar | Clic izquierdo |
+| Cancelar una recarga | Cambia a otra casilla de la barra rápida |
+| Apuntar con mira (solo Steam Rifle) | Mantén Agacharse |
+
+**No puedes disparar mientras recargas**, y el chat dice "Weapon is reloading!". Para disparar, cambia de casilla para cancelar la recarga y vuelve a la del arma.
+
+- **Klein's Repeater** no carga nada si cancelas.
+- **Deathknell** conserva todas las balas que ya había cargado.
+- **Steam Rifle** conserva las balas ya cargadas cuando rellenas. Una recarga desde vacío no carga nada si la cancelas antes de que pasen los 3 segundos.
+
+Las armas no se pueden encantar, usar en un yunque ni pasar a la mano secundaria.
+
+## La barra de acción
+
+Mientras llevas un arma en la mano, la barra que hay encima de tu barra rápida muestra esto.
+
+- El tipo de bala y cuántas hay cargadas, por ejemplo "Klein Rounds 4/6"
+- Un **Reloading...** amarillo mientras recarga
+- Un **No ammo!** rojo cuando el cargador está vacío
+
+<Figure src={actionBar} alt="La barra de acción encima de la barra rápida con el texto Klein Rounds 6/6 mientras se lleva un Klein's Repeater cargado" caption="La barra de acción con un Klein's Repeater cargado en la mano." contain />
+
+## Precisión
+
+| Estás | Dispersión de la bala |
+|---|---|
+| Quieto | 0 grados (precisión total) |
+| En movimiento (cualquier movimiento en los últimos 0,3 segundos) | 4 grados |
+| En el aire | 8 grados |
+
+Quédate quieto para los disparos importantes. Agacharte no reduce la dispersión.
+
+## Qué atraviesan las balas
+
+Las balas atraviesan hojas, hierba, flores, cultivos, caña de azúcar, bambú y cristal. Cada bloque que atraviesan resta un 10 % al daño, hasta un mínimo de 1. El cristal y los paneles de cristal que atraviesa una bala se rompen.
+
+Cada disparo deja una estela de color, y los jugadores a menos de 10 bloques de una bala que pasa la oyen silbar.
+
+## ¿Qué munición carga el arma?
+
+Las Klein Rounds solo sirven para Klein's Repeater, las Deathknell Rounds solo para la Deathknell y las Rifle Rounds solo para el Steam Rifle. Las balas especiales siguen siendo del tipo de arma con el que se hicieron.
+
+- Con el **cargador vacío**, la recarga toma el primer montón de balas compatibles de tu inventario, normales o especiales.
+- Si está **medio cargado**, solo puedes rellenarlo con el mismo tipo de bala que ya tiene el arma.
+- Para **cambiar de munición**, vacía el cargador disparando y luego recarga con las balas nuevas en primer lugar de tu inventario.
+
+## Páginas de armas de fuego
+
+<CardGrid>
+  <Card title="Weaponsmith Table y fabricación de armas" text="La mesa, el Brass y todas las piezas de armas." href="/es/firearms/crafting/" />
+  <Card title="Munición" text="Casquillos, núcleos, balas y los 12 efectos especiales." href="/es/firearms/ammunition/" />
+  <Card title="Klein's Repeater" text="El arma que puedes fabricar desde cero." href="/es/firearms/kleins-repeater/" />
+  <Card title="Deathknell" text="Un revólver pesado que recarga bala a bala." href="/es/firearms/deathknell-revolver/" />
+  <Card title="Steam Rifle" text="Largo alcance y mucho daño, con mira telescópica." href="/es/firearms/steam-rifle/" />
+</CardGrid>

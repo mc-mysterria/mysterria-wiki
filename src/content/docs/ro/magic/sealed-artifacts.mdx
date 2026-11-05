@@ -1,0 +1,81 @@
+---
+title: "Artefacte Sigilate"
+description: "Artefactele Sigilate pe Mysterria, serverul de Minecraft Lord of the Mysteries: cum obții unul, cum îl folosești, gradele artefactelor și dezavantajele lor."
+sidebar:
+  order: 41
+---
+
+import {Figure} from '~/components/mdx';
+import artifactTooltip from '~/assets/magic/sealed-artifact-tooltip.webp';
+
+Un Artefact Sigilat este un obiect care ține o abilitate Beyonder și poate fi folosit de oricine, chiar și de cineva care nu e Beyonder sau de un Beyonder de pe altă Cale. În schimb, fiecare artefact are **dezavantaje** care îl rănesc pe cel care îl folosește.
+
+## Cum obțin un Artefact Sigilat?
+
+| Sursă | Cum merge |
+|---|---|
+| **Elixir expirat** | Un elixir de Secvență care nu e băut în **48 de ore** se transformă într-un Artefact Sigilat de aceeași Cale și Secvență. Abilitatea din el e aleasă la întâmplare. Dacă nu se poate face un artefact pentru el, primești în schimb o Caracteristică Beyonder, iar dacă nici asta nu se poate, un Ruined Potion |
+| **Construit de Paragon** | Beyonderii Paragon le fac intenționat (vezi mai jos) |
+| **Beyonderii Sălbatici** | Un [Beyonder Sălbatic](/ro/magic/wild-beyonders/) apărut natural dă unul în 5% din cazuri la Secvența 6 și în 10% la Secvența 5 |
+| **Seiful bisericii** | O [biserică](/ro/magic/churches/) poate păstra artefacte în Church Vault, iar membrii pot cere să împrumute unul |
+| **Alți jucători** | Artefactele sunt obiecte obișnuite, așa că le poți obține prin schimb |
+
+Elixirele puse miză într-o Uzurpare nu expiră.
+
+### Cum construiește Calea Paragon artefacte?
+
+Doar [Calea Paragon](https://www.mysterria.net/en/pathways/paragon) poate construi Artefacte Sigilate:
+
+| Secvența | Abilitate | Ce face |
+|---|---|---|
+| 6 | Artifact Crafting | Combină o Caracteristică Beyonder cu ingrediente ca să faci un artefact. Materialele mai bune dau un rezultat mai bun. O construcție eșuată consumă Caracteristica și toate ingredientele |
+| 3 | Dual Artifact Crafting | Pune **două** abilități într-un singur artefact, cu șansa de bază de reușită dublă. Click dreapta folosește prima abilitate, click stânga pe a doua |
+| 2 | Manufacturing Authority | Face un artefact temporar din orice Cale sau Secvență, fără dezavantaje, care ține 18 minute |
+
+## Cum folosesc un Artefact Sigilat?
+
+Ține-l în mână și dă click dreapta ca să-i folosești abilitatea. Click stânga folosește a doua abilitate la un artefact dublu.
+
+- **Timpii de așteptare sunt comuni.** Când folosești un artefact, toate artefactele cu aceeași abilitate intră în timpul de așteptare, nu doar cel din mâna ta.
+- **Beyonderii plătesc Spiritualitate** ca să folosească unul, ca la propriile abilități. Cei care nu sunt Beyonderi nu plătesc nimic.
+- **Abilitățile care se pornesc și se opresc costă [Nebunie](/ro/magic/mutation/).** Cât e pornită o astfel de abilitate a unui artefact, primești 0,05 Nebunie în fiecare secundă.
+
+### Ce abilități pot fi sigilate într-un artefact?
+
+Majoritatea abilităților active. Abilitățile pasive, Contracts și Deity Authority nu pot fi sigilate niciodată. **Recording** de pe Calea Door poate copia o vrajă dintr-un artefact pe care îl ții în mâna a doua, dar cu jumătate din șansa obișnuită de reușită.
+
+## Care sunt dezavantajele?
+
+Fiecare artefact are un **grad** stabilit de Secvența abilității lui. Cu cât abilitatea e mai puternică, cu atât dezavantajele sunt mai grele:
+
+| Grad | Secvența abilității | Dezavantaje |
+|---|---|---|
+| Gradul 3 | 9 până la 8 | 1 ușor |
+| Gradul 2 | 7 până la 6 | 1 mediu |
+| Gradul 1 | 5 până la 4 | 1 mediu și 2 ușoare |
+| Gradul 0 | 3 până la 0 | 2 grave și 2 medii |
+
+Primul număr de pe rândul **Artifact** din descrierea lui e gradul, deci **Artifact: 2-990025** e de Gradul 2. Descrierea arată și dezavantajele. Există zeci de dezavantaje, cele mai multe legate de Calea artefactului.
+
+<Figure src={artifactTooltip} alt="Descrierea unui artefact sigilat cu ID-ul lui, abilitatea Prohibition și dezavantajul Law Restriction" caption="Descrierea unui artefact numește abilitatea lui și îi arată dezavantajele." />
+
+Dezavantajele sunt de două feluri:
+
+- Dezavantajele **de o clipă** se declanșează **de fiecare dată** când folosești abilitatea.
+- Dezavantajele **permanente** merg încontinuu cât ai în inventar un artefact activat. Se opresc când iese din inventar.
+
+:::danger[Citește întâi dezavantajele]
+Un artefact de Gradul 0 îl poate omorî chiar pe cel care îl folosește. Verifică lista de dezavantaje din descrierea obiectului înainte să folosești un artefact într-o luptă.
+:::
+
+### Cum pot reduce dezavantajele?
+
+| Cale | Secvența | Abilitate | Efect |
+|---|---|---|---|
+| [Twilight Giant](https://www.mysterria.net/en/pathways/giant) | 7 | Artifact Mastery | 25% șanse să anuleze fiecare dezavantaj |
+| Paragon | 7 | Mastery Shield | Un scut personal care reduce sau blochează dezavantajele, după cât de periculoase sunt |
+| Paragon | 3 | Arcane Scholar Complete Mastery | Imun la dezavantajele de Gradul 3, 2 și 1, parțial rezistent la Gradul 0 |
+| [Death](https://www.mysterria.net/en/pathways/death) | 4 | Artifact Sealing | Sigilează dezavantajele unui artefact până la 24 de ore |
+| [Tyrant](https://www.mysterria.net/en/pathways/tyrant) | 4 | Artifact Sealing | Oprește dezavantajele tuturor artefactelor din apropiere timp de 30 de secunde sau le sigilează abilitățile |
+
+**Beyonder Characteristic Purification** de Secvența 4 de pe [Calea Sun](https://www.mysterria.net/en/pathways/sun) poate și ea să topească un artefact ținut în mâna a doua înapoi în Caracteristica lui Beyonder.

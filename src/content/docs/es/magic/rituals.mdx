@@ -1,0 +1,99 @@
+---
+title: "Rituales"
+description: "Cómo funcionan los rituales Trascendentes en Mysterria: puntuaciones de ritual de la Secuencia 8 a la 0, /ritual status, cambios de tarea, crédito de ritual, Ritual Books y lo que cuesta saltárselos."
+sidebar:
+  label: Rituales
+  order: 6
+---
+
+import {Figure} from '~/components/mdx';
+import ritualStatus from '~/assets/magic/rituals-status.webp';
+import ritualTask from '~/assets/magic/rituals-task.webp';
+
+Desde la Secuencia 8, cada avance tiene un **ritual**, una lista personal de **logros** de Minecraft que tienes que terminar antes de beber la siguiente pócima. Saltártelo cuesta Locura.
+
+Tu **primera pócima (Secuencia 9) no necesita ritual.**
+
+## ¿Cómo funciona un ritual?
+
+Cuando llegas a una Secuencia, el juego te da un grupo de logros al azar para la Secuencia **siguiente**. La dificultad de cada logro vale unos puntos, y tu grupo suma la puntuación que necesita esa Secuencia. El grupo no cambia aunque te desconectes.
+
+| Siguiente Secuencia | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+|---|---|---|---|---|---|---|---|---|---|
+| **Puntuación necesaria** | 2 | 5 | 9 | 12 | 16 | 20 | 24 | 28 | 30 |
+
+| Dificultad | Puntos |
+|---|---:|
+| Trivial | 1 |
+| Easy | 2 |
+| Medium | 3 |
+| Hard | 4 |
+| Expert | 6 |
+| Master | 8 |
+| Legendary | 10 |
+| Exotic | 15 |
+| Mythic | 20 |
+
+Unas pocas reglas dan forma a tu grupo.
+
+- Las tareas **Trivial** solo salen en los rituales hasta la Secuencia 5.
+- Las tareas **Legendary, Exotic y Mythic** solo salen desde el ritual de la Secuencia 4.
+- Las tareas en **el Nether** solo salen cuando eres de Secuencia 7 o superior, y las tareas en **el End** cuando eres de Secuencia 4 o superior.
+
+## ¿Cómo miro mi ritual?
+
+- `/ritual status` muestra tu puntuación, por ejemplo "7/9 ritual score completed".
+- Para ver **qué** logros necesitas, lleva encima la receta de tu siguiente Secuencia. Puede ser una receta completa o su **página de receta 3** (la página del ritual). Sin ella, solo ves la puntuación.
+- `/ritual view <secuencia>` abre tus tareas en un menú. Leer la página del ritual de una receta también te da un enlace en el que puedes hacer clic.
+
+<Figure src={ritualStatus} alt="El resultado de /ritual status en el chat para un Fool que va hacia la Secuencia 3, con 0/20 de puntuación de ritual y una pista para conseguir el libro de recetas" caption="Sin la receta, /ritual status solo muestra tu puntuación." contain />
+
+<Figure src={ritualTask} alt="El menú del ritual de Fool Secuencia 8 con la descripción de la tarea Boned, moler huesos para hacer polvo de hueso, sin completar, puntuación 0/2" caption="Con la receta en la mano, /ritual view muestra cada tarea. Pasa el ratón por una tarea para leerla." contain />
+
+## ¿Puedo cambiar una tarea?
+
+Si una tarea es imposible, tiene un fallo o no es razonable, puedes pedir al staff que la cambie.
+
+1. Abre `/ritual view <siguiente secuencia>` llevando la receta o la página 3.
+2. Haz **Mayús + clic** en la tarea.
+3. Elige un motivo (por ejemplo "Impossible on this server" o "Appears to be bugged") y envíalo.
+
+El staff revisa la petición y la aprueba o la deniega. No puedes pedir que se cambie una tarea que ya has completado, y solo puedes tener una petición pendiente por tarea.
+
+## Crédito de ritual
+
+Desde el ritual de la Secuencia 5, algunas actividades cuentan como **crédito de ritual** y llenan parte de tu puntuación sin logros. Cada tipo cuenta una vez por ritual.
+
+| Actividad | Puntos | Rituales |
+|---|---|---|
+| Asistir a un oficio en una sede activa de una iglesia | 1 | Secuencia 5 a 0 |
+| Completar una recompensa de Actuación | 1 | Secuencia 5 a 0 |
+| Completar un ritual de historia aprobado por el staff | 2 | Secuencia 5 a 0 |
+| Luchar una guerra por un puesto hasta el veredicto | 3 | Secuencia 3 a 0 |
+| Conservar tu Unicidad durante un desafío pagado | 3 | Secuencia 2 a 0 |
+
+El crédito tiene un tope por ritual. Son 3 puntos en la Secuencia 5, 4 en la 4, 5 en la 3, 6 en la 2, 7 en la 1 y 10 en la 0.
+
+La ascensión a la Secuencia 0 también necesita un **ritual de historia** propio certificado por el staff. Mira [Secuencia 0](/es/magic/sequence-zero/).
+
+## Ritual Books
+
+Un **Ritual Book** te deja saltarte tareas del ritual. Haz clic derecho en él y elige la tarea que quieres saltarte.
+
+| Libro | Se salta | Tienda de Outer Gods Anchors (`/oga rewards`) |
+|---|---|---|
+| Ritual Book (Tier I) | 1 tarea | 160 puntos, 2 a la semana |
+| Ritual Book (Tier II) | 2 tareas | 300 puntos, 1 a la semana |
+| Ritual Book (Tier III) | Todas las tareas del ritual | 550 puntos, 1 al mes |
+
+Los Ritual Books también están en los intercambios de Helping Cards de las [mazmorras](/es/guides/dungeons/).
+
+## ¿Y si me salto el ritual?
+
+Siempre puedes beber sin terminar el ritual, pero la parte que falta cuesta Locura en proporción a lo que quede. Un ritual saltado entero cuesta un **40 % de Locura temporal** y un **10 % de permanente**. Un ritual hecho a medias cuesta la mitad, un 20 % temporal y un 5 % permanente.
+
+La pantalla de confirmación muestra el coste exacto antes de beber. Un ritual incompleto también anula un [cambio de Sendero seguro](/es/magic/pathways/#puedo-cambiar-de-sendero). Hay más sobre los costes en [Locura y mutación](/es/magic/mutation/#lo-que-cuesta-avanzar).
+
+:::caution[La Locura permanente se acumula]
+La Locura permanente nunca baja con el tiempo. Unos pocos rituales saltados pueden dejarte un mínimo alto que hace más peligroso cada avance posterior.
+:::

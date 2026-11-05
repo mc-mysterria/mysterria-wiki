@@ -1,0 +1,65 @@
+---
+title: "Gegenstände mit Kurieren an Spieler schicken"
+description: "Wie Kuriere auf Mysterria funktionieren: ein Horn of Summoning herstellen, deinem Kurier Gegenstände geben, einen Empfänger wählen und wie lange die Lieferung dauert, auch an Spieler, die offline sind."
+sidebar:
+    label: Kuriere
+    order: 34
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import hornCraft from '~/assets/couriers/courier_horn_craft.png';
+
+**Kuriere** sind untote Boten, die Gegenstände zu anderen Spielern tragen, egal wo diese sind, und sogar wenn sie offline sind. Ruf einen mit einem **Horn of Summoning**, gib ihm deine Gegenstände und wähle den Empfänger.
+
+## Wie bekomme ich ein Horn of Summoning?
+
+1. Finde **Courier Horn Shards** in Beutetruhen in der Oberwelt. Jede neu erzeugte Truhe enthält mit **15 %** Chance eins.
+2. Sammle **3 Splitter** und leg sie in einer **L-Form** in eine Werkbank.
+
+<Figure src={hornCraft} alt="Drei Courier Horn Shards in L-Form in einem Handwerksraster, die ein Horn of Summoning ergeben" caption="Das Rezept für das Horn of Summoning." contain />
+
+Das Horn wird **nicht verbraucht**. Du kannst damit alle **5 Minuten** einen Kurier rufen.
+
+## Arten von Kurieren
+
+Dein Horn ruft immer den besten Kurier, auf den du Zugriff hast.
+
+| Kurier | Getragene Gegenstände | Lieferzeit | Wartet auf deine Gegenstände | So bekommst du ihn |
+|---|---|---|---|---|
+| **Skeleton** (Bone Runner) | 1 | 5 Minuten | 5 Minuten | Jedes Horn of Summoning |
+| **Jellyfish** | 2 | 5 Minuten | 5 Minuten | Jellyfish Courier im [Shop](https://www.mysterria.net/en/store) |
+| **Incinerated Courier** | 2 | 3 Minuten | 3 Minuten | Incinerated Courier im [Shop](https://www.mysterria.net/en/store) |
+
+Kuriere tragen **nur einzelne Gegenstände**, keine Stapel. Ein Stapel von 64 wird abgelehnt. Teil ihn also vorher auf. **Shulkerkisten** werden ebenfalls abgelehnt.
+
+## Wie verschicke ich Gegenstände?
+
+1. **Rechtsklicke** mit dem Horn of Summoning. Dein Kurier erscheint neben dir.
+2. **Wirf** jeden Gegenstand (Taste `Q`) in bis zu **3 Blöcken** Abstand vom Kurier. Er nimmt den Gegenstand und bestätigt es im Chat.
+3. Ist der Kurier voll (1 Gegenstand beim Skeleton, 2 bei den anderen), öffnet sich nach etwa 2 Sekunden das Menü **Select Recipient**.
+4. Wähle den Spieler und klicke dann auf **Confirm Delivery**.
+
+Der Kurier geht mit deinen Gegenständen los. Du und der Empfänger bekommt beide eine Chatnachricht, wenn die Lieferung startet und wenn sie ankommt.
+
+Wirst du nicht rechtzeitig fertig, verschwindet der Kurier nach seiner Wartezeit (5 Minuten, oder 3 beim Incinerated Courier), und alle Gegenstände, die er schon genommen hat, kommen zu dir zurück.
+
+## Wo funktionieren Kuriere?
+
+**Rufen** funktioniert in der Oberwelt, im Nether, im Manipulation Pool, im Mirror Realm, im Nightmare Pool und in einem [Geheimversteck](/de/guides/orders/#geheimversteck-stufe-4). Im Ende funktioniert es nicht.
+
+**Geliefert** wird nur, solange der Empfänger in der **Oberwelt** oder im **Nether** ist. Ist der Empfänger woanders, im Zuschauermodus oder über Y 320, wartet der Kurier und versucht es alle 5 Sekunden erneut, bis er zurück ist.
+
+## Kann ich Gegenstände an einen Spieler schicken, der offline ist?
+
+Ja. Die Gegenstände werden aufbewahrt und beim nächsten Einloggen des Spielers geliefert, sobald die Lieferzeit vorbei ist. Eine Lieferung, die nach **30 Tagen** noch wartet, wird gelöscht. Schick also keine Gegenstände an Spieler, die den Server verlassen haben.
+
+## Kuriere und die Agora
+
+Hinterlege dein Horn of Summoning an der **Courier Post** in der [Agora](/de/guides/agora/#courier-post), dann liefert dein Kurier alles, was du dort kaufst. Du kannst das Horn jederzeit zurücknehmen.
+
+## Verwandte Seiten
+
+<CardGrid>
+  <Card title="Agora" text="Lass dir deine Käufe auf dem Markt liefern." icon="coin" href="/de/guides/agora/" />
+  <Card title="Geheime Orden" text="Teil Gegenstände über das Lager deines Ordens." icon="lock" href="/de/guides/orders/" />
+</CardGrid>

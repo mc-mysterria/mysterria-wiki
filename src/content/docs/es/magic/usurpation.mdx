@@ -1,0 +1,220 @@
+---
+title: "Puestos y Usurpación"
+description: "Los límites de puestos por Sendero en Mysterria, cómo se guarda la Actuación de Overflow y cómo disputar un puesto de Secuencia lleno o una Unicidad en este servidor de Lord of the Mysteries."
+sidebar:
+  label: Puestos y Usurpación
+  order: 30
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import leadImage from '~/assets/heroes/usurpation.webp';
+import seatReadiness from '~/assets/magic/usurpation-readiness.webp';
+
+<Figure src={leadImage} eager alt="Ilustración de Lord of the Mysteries con ocho dioses uno al lado del otro" />
+
+Desde la Secuencia 3 hacia arriba, cada Sendero tiene solo unos pocos puestos en cada Secuencia. Cuando están todos ocupados, la única forma de subir es gastar **Overflow** guardado para disputarle un puesto a quien lo ocupa, y el Overflow también sirve para pagar el desafío por una [Unicidad](/es/magic/uniqueness/).
+
+## ¿Cuántos puestos tiene cada Secuencia?
+
+Los límites son por Sendero. La Secuencia 4 y las inferiores no tienen límite.
+
+| Secuencia | Rango | Puestos por Sendero |
+|---|---|---:|
+| 3 | Santo | 18 |
+| 2 | Ángel | 9 |
+| 1 | Arcángel | 3 |
+| 0 | Deidad | 1 |
+
+Cuando un nivel está lleno, no puedes beber tu siguiente pócima de la forma normal, aunque tengas la barra de Actuación llena y todos los rituales hechos. Puedes esperar a que quede un puesto libre o puedes disputar uno.
+
+El [censo de puestos](https://www.mysterria.net/en/ascension) del sitio principal muestra quién ocupa cada puesto ahora mismo.
+
+La Secuencia 0 nunca se disputa con una puja por un puesto. Su único trono solo se abre con la [vigilia de Secuencia 0](/es/magic/sequence-zero/).
+
+## ¿Qué es el Overflow?
+
+Cuando tu barra de [Actuación](/es/magic/acting/) está llena, la Actuación que ganas no se pierde. Se guarda como **Overflow**, una reserva aparte que gastas en la Usurpación y en reclamar la Secuencia 0.
+
+- El Overflow no es Actuación. Nunca cuenta para avanzar y nunca aparece en tu barra.
+- Solo se guarda mientras tu Sendero está en la **Secuencia 3, 2 o 1**. La Secuencia 4 y las inferiores no guardan, y un dios de Secuencia 0 no tiene barra.
+- Tu reserva tiene un tope de **3,5 veces tu barra actual**.
+- Cuando se guarda algo, la barra de acción muestra `+N overflow`. `/coi usurp` muestra tu reserva de cada Sendero.
+- Un día de Tide of Diligence, la Actuación que pasaría del tope de una fuente se guarda como Overflow (mira [Mareas diarias](/es/guides/tides/)).
+
+<Notice tone="warn" title="Cambiar de Sendero te hace perder la reserva">
+Tu Overflow guardado pertenece al Sendero donde lo ganaste. Si te cambias a otro Sendero, se pierde.
+</Notice>
+
+### Límites semanales por fuente
+
+Cada fuente de Actuación solo puede guardar cierta cantidad por semana, como porcentaje de tu barra. Los límites se reinician cada lunes a las 00:00 UTC.
+
+| Fuente | Límite semanal |
+|---|---:|
+| Juego con habilidades | 40 % |
+| Contenido del mundo | 40 % |
+| Interacción con jugadores | 25 % |
+| Actuación robada | 25 % |
+| Eventos | 25 % |
+| Pasiva | 5 % |
+| Frascos de Actuación | 0 % |
+| Favor de la Deidad | 0 % |
+
+Los Frascos de Actuación se pueden comprar y comerciar, así que llenan tu barra pero nunca guardan Overflow. El Favor de un dios tampoco guarda nunca Overflow.
+
+### Lo que cuestan las cosas
+
+| Tu Secuencia | Barra completa | Tope de reserva (3,5x) | Desafío por Unicidad (50 %) | Puja mínima por puesto (1,75x) |
+|---|---:|---:|---:|---:|
+| 3 | 35 942 | 125 797 | 17 971 | 62 899 (por un puesto de Ángel) |
+| 2 | 47 001 | 164 503 | 23 501 | 82 252 (por un puesto de Arcángel) |
+| 1 | 62 208 | 217 728 | 31 104 | Ninguna (la Secuencia 0 usa la vigilia, apuesta de 31 104) |
+
+<Notice tone="info" title="Por qué es difícil disputar un puesto de Santo">
+Disputas el nivel que está una Secuencia por encima de ti, así que un puesto de Santo (Secuencia 3) se disputa desde la Secuencia 4. El Overflow solo se guarda desde la Secuencia 3, así que un jugador de Secuencia 4 no puede ahorrar para pujar por un puesto de Santo.
+</Notice>
+
+## ¿Cómo desafío una Unicidad?
+
+Un desafío por Unicidad fuerza una nueva puntuación inmediata entre tú y quien tiene ahora la [Unicidad](/es/magic/uniqueness/) de tu Sendero. No hay guerra, y se resuelve en cuanto confirmas. Ábrelo desde el menú de Unicidad (el apartado **Usurpation**) o con `/coi usurp uniqueness <sendero>`.
+
+Para desafiar tienes que cumplir esto.
+
+- Ser de Secuencia 4 o superior en ese Sendero (en la práctica Secuencia 3, porque necesitas Overflow).
+- No tener ninguna Unicidad y no estar retirado de la evaluación de Unicidad.
+- Estar asentado en el Sendero (mira [¿Has cambiado de Sendero hace poco?](#has-cambiado-de-sendero-hace-poco)).
+- Tener suficiente Overflow para la apuesta.
+
+El Sendero tiene que tener portador, ningún otro desafío pendiente, ningún desafío en los últimos 7 días y ninguna vigilia de Secuencia 0 en marcha.
+
+| Regla | Valor actual |
+|---|---|
+| Apuesta | Exactamente el **50 %** de tu barra. Las apuestas más altas se rechazan, porque no compran nada |
+| Tu multiplicador de puntuación | **x1,25** (el tope) |
+| Puntuación mínima | Tu puntuación sin multiplicar tiene que ser al menos el **90 %** de la del portador. Si no, se te devuelve todo y no hay veredicto |
+| Defensa del portador | La puntuación del portador sube según su acomodación, hasta x1,25 al 100 % |
+| Para ganar | Supera estrictamente al portador. En caso de empate se la queda él |
+| Si pierdes | Se quema el 50 % de la apuesta y el resto vuelve a tu reserva |
+| Si ganas | La apuesta se gasta y la Unicidad pasa a ti con un 0 % de acomodación |
+| Tiempo de espera | 7 días en ese Sendero después de cualquier veredicto |
+
+La pantalla de confirmación muestra las dos puntuaciones, tu multiplicador y el resultado antes de pagar, calculados igual que el veredicto real. Si el desafío no puede llegar a un veredicto justo (por ejemplo, el portador deja de poder optar o el servidor se reinicia antes), se te devuelve la apuesta entera y no empieza ningún tiempo de espera.
+
+## ¿Cómo disputo un puesto lleno?
+
+Un desafío por puesto apunta a un nivel lleno, no a un jugador concreto. Tienes que tener ya todo lo que pide el avance, de modo que lo único que falte sea un puesto libre. Abre **Contest a Seat** desde el menú Trascendente (`/coi menu character`, o la tecla M con el [Client Mod](/es/guides/client-mod/)) o usa `/coi usurp seat <sendero>`.
+
+### La lista de requisitos
+
+El menú los muestra como una lista que se actualiza al momento.
+
+1. Todos los puestos de la siguiente Secuencia están ocupados.
+2. Tu Actuación está al 100 % en ese Sendero.
+3. Todos los rituales están completos.
+4. Tienes en el inventario la pócima de la siguiente Secuencia.
+5. El limitador de progreso no te está frenando.
+6. Estás asentado en este Sendero.
+7. El nivel no está protegido, es decir, no tuvo ningún veredicto en los últimos 14 días.
+8. No estás en tiempo de espera para volver a declarar tras retirarte.
+9. Tienes suficiente Overflow para la puja.
+
+<Figure src={seatReadiness} alt="La pestaña Your readiness de Contest a Seat con 5 de 9 requisitos cumplidos y las condiciones de la puja debajo" caption="La lista de requisitos y las condiciones de la puja, de un personaje de prueba." />
+
+<Notice tone="info" title="Tu pócima está a salvo en depósito">
+Cuando pujas, tu pócima queda en depósito y deja de caducar. Si te superan la puja, se te devuelve, pierdes la guerra o te retiras, vuelve con una caducidad nueva, y si no estás conectado te espera hasta que entres. Solo se usa cuando la bebes para entrar en el puesto que has ganado.
+</Notice>
+
+### La puja
+
+Puja mínima = tu barra x 1,75, y luego esto.
+
+- x1,5 por cada desafío perdido hace poco (se va pasados 60 días)
+- x0,5 si te quitaron el puesto en los últimos 60 días (una revancha)
+
+Puedes pujar más del mínimo, hasta lo que tengas en la reserva.
+
+### Paso 1. La ventana de declaración de 48 horas
+
+Tu puja se paga al hacerla, y se avisa al servidor. Durante 48 horas, cualquier otro que cumpla la lista de requisitos puede pujar por el mismo nivel. Cuando se cierra la ventana, la puja más alta sigue adelante y todas las demás se devuelven enteras, pócima incluida.
+
+Puedes retirarte mientras la ventana está abierta.
+
+- En los **15 minutos** siguientes a declarar, es gratis.
+- Después, se quema el **50 %** de tu puja.
+- En los dos casos, no puedes volver a declarar en ese nivel durante **6 horas**.
+
+### Paso 2. Nominación
+
+El nivel señala al portador con la **Defense Score** más baja.
+
+| Parte | Peso |
+|---|---:|
+| Tiempo de juego (tus mejores 31 días de los últimos 60) | 40 % |
+| Puntuación de religión de la iglesia (mira [Iglesias](/es/magic/churches/)) | 25 % |
+| Habilidades lanzadas en los últimos 31 días | 20 % |
+| Acomodación de la Unicidad | 15 % |
+
+Si el portador señalado tiene menos de **3 horas** de juego en los últimos **45 días**, no hay guerra. Simplemente se le quita el puesto.
+
+### Paso 3. La guerra
+
+- La guerra dura **7 días disputados**. Un día solo cuenta si el portador estuvo conectado y presente al menos **20 minutos**.
+- Los War Points salen de la Actuación real ganada, medida como porcentaje de la barra de cada bando, así que Secuencias distintas compiten por el esfuerzo.
+- La clasificación se anuncia una vez al día.
+- Un tope de **21 días** reales impide que una guerra dure para siempre. Si el portador lleva **48 horas** o más sin aparecer, el aspirante puede retirarse gratis. Una guerra que se está luchando de verdad no se puede abandonar.
+- Las Mareas diarias nunca inflan los War Points.
+
+| Fuente de Actuación | Peso en War Points |
+|---|---:|
+| Juego con habilidades, contenido del mundo, interacción con jugadores, eventos | 1,0 |
+| Actuación robada | 0,5 |
+| Frascos de Actuación, pasiva, Favor de la Deidad | 0 |
+
+### ¿Quién gana?
+
+| Cómo terminó la guerra | Resultado |
+|---|---|
+| Duró sus 7 días disputados completos | Gana quien tenga más War Points. En caso de empate se conserva el puesto |
+| Llegó al tope de 21 días y el aspirante puntuó más | Gana el aspirante |
+| Llegó al tope de 21 días empatada y el aspirante puntuó algo | Gana el aspirante |
+| Llegó al tope de 21 días y el portador nunca apareció | Gana el aspirante |
+| Llegó al tope de 21 días y el portador puntuó más | El portador conserva el puesto |
+
+### Paso 4. Después del veredicto
+
+**Si gana el aspirante**, tiene que conectarse en menos de **48 horas** con la Actuación y los rituales todavía en orden, y la pócima se bebe para entrar en el puesto según las reglas normales de avance. Si no lo hace, el puesto se queda con el portador.
+
+Al portador que pierde el puesto le pasa esto.
+
+- Baja una Secuencia, solo en ese Sendero.
+- Conserva el **95 %** de la barra en la nueva Secuencia.
+- Recibe la **Característica Trascendente** del puesto que perdió, que le puede servir como ingrediente principal cuando vuelva a preparar la pócima.
+- Puede pujar por una revancha a **mitad de precio** durante **60 días**.
+
+**Si pierde el aspirante**, se quema el 50 % de la puja, el resto vuelve y la pócima se le devuelve. El nivel queda entonces protegido durante 14 días, pero solo si el aspirante consiguió al menos 10 War Points, para que un desafío de mentira no pueda proteger un nivel en favor de un amigo.
+
+Si una disputa termina sin veredicto (un puesto se libera solo, cualquiera de los dos cambia de Secuencia, nadie pujó o el staff la cancela), todas las pujas y pócimas se devuelven enteras y no empieza ningún tiempo de espera.
+
+Luchar una guerra por un puesto hasta el veredicto, ganes o pierdas, cuenta como una hazaña legendaria para la [Secuencia 0](/es/magic/sequence-zero/).
+
+## ¿Has cambiado de Sendero hace poco?
+
+Un Sendero al que llegaste de lado (con una pócima de cambio, un cambio gratis o la toma de un Avatar), en vez de recorrerlo desde la Secuencia 9, necesita asentarse primero.
+
+| Regla | Valor |
+|---|---|
+| Bloqueo de desafíos | **30 días** antes de poder disputar en él un puesto o una Unicidad |
+| Asentamiento del Overflow | Se guarda al **25 %** al llegar, y sube hasta el total en **60 días** |
+
+Los Senderos sin registro de llegada, incluidos todos los personajes que existían antes de esta regla, cuentan como recorridos.
+
+## Comandos
+
+| Quieres | Comando |
+|---|---|
+| Ver tu reserva de Overflow y cualquier desafío activo | `/coi usurp` |
+| Desafiar la Unicidad de un Sendero | `/coi usurp uniqueness <sendero>` |
+| Disputar un nivel de puestos lleno | `/coi usurp seat <sendero> [porcentaje]` |
+| Retirarte de una ventana abierta o de una guerra parada | `/coi usurp withdraw` |
+
+El `[porcentaje]` es tu puja como porcentaje de tu barra. Si no lo pones, pujas el mínimo.

@@ -1,0 +1,132 @@
+---
+title: "Money, Wallet and Energy Shards"
+description: "How money works on Mysterria, the LOTM Minecraft server: Coppets, Licks and Verl Dors, the /wallet, selling ores, and earning and spending Energy Shards."
+sidebar:
+    label: Money and Wallet
+    order: 21
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import shard from '../../../assets/shards/shard.png';
+import walletBalance from '../../../assets/economy/wallet-balance.webp';
+import walletVault from '../../../assets/economy/wallet-vault.webp';
+import walletSell from '../../../assets/economy/wallet-sell-ore.webp';
+
+Mysterria has two currencies. **Money** (Coppets, Licks and Verl Dors) sits in your `/wallet` and pays for towns, the [Agora](/guides/agora/) and Wild Beyonder trades. **Energy Shards** are an item you get by selling spare Beyonder ingredients to villagers, and they pay for [Secret Order](/guides/orders/) levels and Wild Beyonder trades.
+
+[Emporium points](/guides/emporium/) are a separate balance that only works in the Brilliant Emporium.
+
+## What are Coppets, Licks and Verl Dors?
+
+| Coin | Worth |
+|---|---|
+| **Coppet** | The base unit |
+| **Lick** | 64 Coppets |
+| **Verl Dor** | 64 Licks, or 4,096 Coppets |
+
+Your balance is always counted in Coppets. When a menu shows a price with a `$` sign, such as a town level that asks for `$5000`, it means 5,000 Coppets.
+
+## How do I use my wallet?
+
+Type `/wallet`. The wallet menu shows your balance and links to the server store and Discord. Click **Balance** to open the vault screen, where you can:
+
+- Click a coin to withdraw it as a physical item.
+- Click a coin item in your inventory to deposit it into your balance.
+- Click a sellable item from your inventory to see its price and confirm the sale.
+
+The **Settings** button switches between three looks for the wallet menu.
+
+<Figure src={walletBalance} alt="The wallet menu with the Balance tooltip showing 1,250.75$" caption="The wallet menu. Hover over Balance to see how much money you hold." contain />
+
+<Figure src={walletVault} alt="The vault screen with the Balance tooltip showing 30.00 stored and ores from the bag ready to sell" caption="The vault screen. Click a coin to withdraw it, or a bag item to sell it." contain />
+
+<Figure src={walletSell} alt="The sell screen for 8 Diamond Ore with the Sell tooltip showing a price of 16 Coppets" caption="Selling ore. The Sell button shows the price before you confirm." contain />
+
+Physical coins let you pay another player by hand or make trades that ask for a coin. To break a coin into smaller ones, hold **one** coin in your main hand and type `/shatter`. A Verl Dor becomes 64 Licks, and a Lick becomes 64 Coppets.
+
+## How do I make money?
+
+- Sell items anonymously to other players in the [Agora](/guides/agora/), the underground market.
+- Claim [Battle Pass](/guides/battle-pass/) tiers. Free and premium tiers pay from 100 to 1,500 Coppets each.
+- Sell ore in the wallet. It is small but steady.
+- Trade with other players and take part in events.
+
+### Which ores can I sell?
+
+Only three ores have a price. Everything else sells for nothing.
+
+| Ore | Price per block |
+|---|---|
+| Diamond Ore (and Deepslate Diamond Ore) | 2 Coppets |
+| Emerald Ore (and Deepslate Emerald Ore) | 3 Coppets |
+| Ancient Debris | 5 Coppets |
+
+- Mine diamond and emerald ore with a **Silk Touch** pickaxe, so the ore drops as a block you can sell. Ancient Debris always drops as itself.
+- You can sell up to **512 Coppets' worth per day**. The sell screen shows **Cannot sell** and your remaining daily limit once you reach it.
+
+## What is money used for?
+
+- Founding and running a [town](/guides/towns/), including extra claims, upkeep and levels.
+- Buying from other players in the [Agora](/guides/agora/) and renting a stall there.
+- [Wild Beyonder](/magic/wild-beyonders/) trades, which cost money, Energy Shards **and** physical Verl Dor coins.
+- Some villager trades (below).
+
+### Do villagers take coins?
+
+Only for some trades. Trades for **enchanted books** and **items with durability** (tools, weapons, armour) cost Coppets instead of emeralds, at 2 Coppets per emerald of the original price. Every other trade still uses emeralds.
+
+A villager only trades once its AI is switched off. Trap it in a 2 by 1 space it cannot walk out of.
+
+### Is there a /shop?
+
+No. Buy building blocks from the **Quartermaster** in the [Agora](/guides/agora/).
+
+## Energy Shards
+
+<Figure src={shard} alt="A stack of Energy Shards with the item tooltip: a fragment of mystical energy, used as currency for organization upgrades" caption="Energy Shards are a real item in your inventory, not a wallet balance." />
+
+Energy Shards are not stored in `/wallet`. They sit in your inventory or a chest and can be lost or stolen like any other item.
+
+### How do I get Energy Shards?
+
+Sell spare Beyonder ingredients to a **villager with no profession** or a **nitwit**:
+
+1. Carry the ingredients you want to sell.
+2. Right-click the villager. A chat message offers to buy them: *"The wandering trader offers to buy N items for X Energy Shards"*.
+3. Click **[Trade All]** in that message, or type `/tradeall`.
+4. A **Trade Preview** menu lists everything it will buy and what each stack is worth. Click a stack to take it out of the deal.
+5. Click **CONFIRM TRADE**. The ingredients are taken and the shards go into your inventory.
+
+If you carry nothing it wants, the villager *"finds nothing of interest in your pack"*.
+
+The villager buys **Pathway ingredients only**, not recipes, potions or other items. Stronger Sequences are worth more:
+
+| Ingredient Sequence | Shards each (almost all ingredients) |
+|---|---|
+| Sequence 9 | 10 |
+| Sequence 8 | 15 |
+| Sequence 7 | 20 |
+| Sequence 6 | 25 |
+| Sequence 5 and stronger | 30 |
+
+<Notice tone="warn" title="Check the preview">
+The trade takes every matching stack in your inventory. Remove anything you want to keep in the Trade Preview before you confirm, or leave it in a chest first.
+</Notice>
+
+Energy Shards also come from the [Battle Pass](/guides/battle-pass/) (200 to 3,000 shards on many tiers) and from events.
+
+### What are Energy Shards used for?
+
+- [Secret Order](/guides/orders/) levels, which cost 50, 200, 1,000 and 5,000 shards for levels 1 to 4, paid into the Order's shared pool.
+- Secret Order extras such as Battle Cry, permanent upgrades, founding a Secret Lair and its teleport crystals.
+- [Wild Beyonder](/magic/wild-beyonders/) trades, together with money and physical Verl Dor coins.
+
+The Emporium's **Shard of ...** items, such as *Shard of Boon Token*, are not Energy Shards. They are [crafting fragments](/guides/emporium/#what-are-emporium-fragments) for one specific reward.
+
+## Related pages
+
+<CardGrid>
+  <Card title="Brilliant Emporium" text="Spend Emporium points from daily rewards and voting." icon="star" href="/guides/emporium/" />
+  <Card title="Agora" text="The anonymous underground market for player trading." icon="coin" href="/guides/agora/" />
+  <Card title="Battle Pass" text="Quests that pay money, shards, points and Boons." icon="scroll" href="/guides/battle-pass/" />
+</CardGrid>

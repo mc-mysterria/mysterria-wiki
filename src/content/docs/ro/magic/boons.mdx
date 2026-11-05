@@ -1,0 +1,103 @@
+---
+title: "Haruri"
+description: "Harurile pe Mysterria, serverul de Minecraft LOTM: cele zece Haruri ale Zeilor Exteriori, cum obții un Jeton de Har și cum avansezi un Har până la Secvența 5 prin sacrificiu."
+sidebar:
+  order: 42
+---
+
+import {Figure} from '~/components/mdx';
+import boonShop from '~/assets/magic/boons-token-in-shop.webp';
+import altarMenu from '~/assets/magic/boons-sacrificial-altar.webp';
+
+Un Har este o a doua Cale, mai mică, dăruită de un Zeu Exterior. Îl ții lângă Calea ta obișnuită și îți dă propriile lui abilități.
+
+Harurile funcționează altfel decât Căile obișnuite:
+
+- Un Har merge de la **Secvența 9 la Secvența 5**, niciodată mai departe.
+- **Nu are bară de Interpretare, elixire sau ritualuri**. Folosirea abilităților lui nu îl avansează.
+- Avansează doar prin **sacrificarea** ingredientelor la un **Sacrificial Altar**.
+- Poți avea **un singur Har odată**.
+
+## Ce Haruri există?
+
+Sunt zece. Fiecare pagină de pe site-ul principal arată abilitățile acelui Har.
+
+| Har (numele din joc) | Pagina de pe site-ul principal |
+|---|---|
+| Aeon | [aeon](https://www.mysterria.net/en/pathways/aeon) |
+| Chaos Primogenitor | [chaos](https://www.mysterria.net/en/pathways/chaos) |
+| Chaos Mist | [chaosmist](https://www.mysterria.net/en/pathways/chaosmist) |
+| Condenser | [condenser](https://www.mysterria.net/en/pathways/condenser) |
+| Devouring | [devouring](https://www.mysterria.net/en/pathways/devouring) |
+| Eternal Edict | [edict](https://www.mysterria.net/en/pathways/edict) |
+| Everlasting | [everlasting](https://www.mysterria.net/en/pathways/everlasting) |
+| Patriarch | [patriarch](https://www.mysterria.net/en/pathways/patriarch) |
+| Second Law | [secondlaw](https://www.mysterria.net/en/pathways/secondlaw) |
+| Sublunary Eye | [sublunary](https://www.mysterria.net/en/pathways/sublunary) |
+
+## Cum obțin un Har?
+
+Dă click dreapta pe un **Jeton de Har** (Boon Token) ca să primești acel Har la Secvența 9.
+
+| Sursă | Ce Haruri | Detalii |
+|---|---|---|
+| Magazinul de recompense al [Ancorelor Zeilor Exteriori](/ro/guides/outer-gods-anchors/) (`/oga rewards`) | Toate zece | 900 de Contribution Points fiecare, cel mult 1 din fiecare Har pe lună |
+| Battle Pass, șirul gratuit | Second Law | Nivelul 41 din pass-ul actual |
+| Battle Pass, șirul premium | Devouring | Nivelul 37 din pass-ul actual |
+| Recompensă pentru traducători | Oricare | [Traducătorii Weblate](https://www.mysterria.net/en/news/multilanguage-support-weblate-translator-bounties) acceptați pot alege un Har |
+
+Există și bucăți de Jeton de Har. Zece bucăți se unesc într-un jeton.
+
+<Figure src={boonShop} alt="Magazinul /oga rewards cu descrierea Jetonului de Har Aeon, preț 900, cumpărate 0/1, se reîncarcă pe 1 ale lunii la 00:00 UTC" caption="Un Jeton de Har în magazinul /oga rewards, cu prețul și limita lunară." contain />
+
+### Ce se întâmplă dacă am deja un Har?
+
+Dacă folosești un al doilea Jeton de Har, se deschide ecranul **Choose a Boon to Replace**, apoi **Confirm Boon Replacement**. Harul vechi se **pierde pentru totdeauna**, cu tot cu Secvența și progresul de sacrificiu. Nu poți folosi un jeton pentru Harul pe care îl ai deja.
+
+## Cum îmi avansez Harul?
+
+1. **Construiește un Sacrificial Altar.** Planul lui vine dintr-un Altar Scroll găsit ca [pradă](/ro/magic/loot/). Un plan găsit e cu șanse egale un altar de preparare sau un Sacrificial Altar și iese Crude în 65% din cazuri, normal în 25% și Grand în 10%.
+2. **Deschide altarul** și pune înăuntru ingrediente Beyonder sau Caracteristici Beyonder.
+3. **Confirmă ofranda.** Valoarea ei se adaugă la bara de sacrificiu a Harului.
+4. Când bara e plină, Zeul Exterior îți recunoaște tributul, iar Harul tău urcă o Secvență.
+
+<Figure src={altarMenu} alt="Meniul Sacrificial Altar cu descrierea progresului la 3148 din 7871, 39 la sută, ținta Secvența 8" caption="Meniul Sacrificial Altar. Ține mouse-ul pe bara de sus ca să-ți vezi progresul." contain />
+
+### Ce pot sacrifica?
+
+Doar obiecte din Secvența **spre care** avansezi sau mai puternice. Dacă Harul tău e de Secvența 9 și lucrezi spre Secvența 8, ingredientele de Secvența 9 sunt refuzate („This ingredient is too weak for your current advancement”). Contează ingredientele și Caracteristicile din **orice** Cale.
+
+Fiecare obiect valorează o valoare de bază, plus **10% pentru fiecare Secvență** cu care e mai puternic decât ținta ta:
+
+| Secvența obiectului | Ingredient | Caracteristică Beyonder |
+|---|---|---|
+| 8 | 100 | 400 |
+| 7 | 150 | 650 |
+| 6 | 200 | 800 |
+| 5 | 250 | 1.000 |
+| 4 | 300 | 1.200 |
+| 3 | 350 | 1.500 |
+| 2 | 400 | 1.800 |
+| 1 | 450 | 2.000 |
+
+### De câte puncte are nevoie fiecare Secvență?
+
+| Avansezi la | Secvența 8 | Secvența 7 | Secvența 6 | Secvența 5 |
+|---|---|---|---|---|
+| Puncte necesare | 7.871 | 13.824 | 21.073 | 33.177 |
+
+De exemplu, ca să treci de la Secvența 9 la 8 la un Sacrificial Altar normal îți trebuie cam 79 de ingrediente de Secvența 8 (100 fiecare) sau 48 de ingrediente de Secvența 7 (150 x 1,1 = 165 fiecare).
+
+### Ce altar să construiesc?
+
+| Altar | Puncte | Risc |
+|---|---|---|
+| Crude Sacrificial Altar | x0,7 | Când se umple bara, există **15% șanse** ca ritualul să dea greș. Tot ce ai oferit dispare, iar bara se resetează la zero |
+| Sacrificial Altar | x1,0 | Niciunul |
+| Grand Sacrificial Altar | x1,3 | Niciunul |
+
+Sacrificial Altars sunt doar pentru Haruri. Nu poți prepara elixire în ele.
+
+:::danger[Harul tău nu poate trece de Calea ta principală]
+Harul tău nu poate fi niciodată de o Secvență mai puternică decât Calea ta principală. Dacă bara se umple, dar noua Secvență a Harului ar fi mai puternică, avansarea e refuzată **și bara se resetează la zero**. Avansează mai întâi pe Calea principală.
+:::

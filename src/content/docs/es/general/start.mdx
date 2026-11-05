@@ -1,0 +1,121 @@
+---
+title: "Inicio rápido"
+description: "Cómo entrar en Mysterria, el servidor de Minecraft de Lord of the Mysteries: dirección del servidor, paquete de recursos, verificación, bonificación inicial y tu primera pócima."
+sidebar:
+  label: Inicio rápido
+  order: 1
+---
+
+import {Figure, Notice, CardGrid, Card} from '~/components/mdx';
+import banner from '~/assets/start/banner.png';
+import ipPreview from '~/assets/start/ip-preview.png';
+import generate from '~/assets/start/generate.png';
+import code from '~/assets/start/code.png';
+import pathways from '~/assets/start/pathways.png';
+import dossier from '~/assets/start/beyonder-dossier.webp';
+
+<Figure src={banner} alt="Un Trascendente de Mysterria volando sobre el mundo" />
+
+Mysterria es un **servidor de Minecraft de Lord of the Mysteries (LOTM)**. El sistema de Trascendentes funciona con un plugin del servidor, así que entras con un cliente normal de Minecraft y sin mods.
+
+## 1. Conéctate al servidor
+
+| Qué | Detalles |
+|---|---|
+| **Dirección del servidor** | `mc.mysterria.net` |
+| **Edición** | Java Edition. Bedrock puede entrar con Geyser, aunque algunos menús e iconos personalizados se ven mal |
+| **Versión** | La [guía del jugador](https://www.mysterria.net/en/guide/connect) recomienda Minecraft Java **26.2** |
+| **Mods** | No hacen falta. El [Client Mod](/es/guides/client-mod/) opcional añade menús nativos y una pequeña bonificación de Actuación |
+
+<Figure src={ipPreview} alt="La pantalla Editar información del servidor con mc.mysterria.net como dirección" caption="Añade mc.mysterria.net en Multijugador." />
+
+1. Abre **Multijugador**, añade `mc.mysterria.net` y entra.
+2. **Acepta el paquete de recursos del servidor** cuando Minecraft te lo pregunte.
+3. En el selector de servidores del lobby, elige **Mysteries**.
+4. Lee lo que dice el NPC del lobby antes de salir.
+
+<Notice tone="warn" title="¿Todo se ve como Minecraft normal?">
+  Entonces el paquete de recursos no se ha cargado. Edita la entrada del servidor, pon **Paquetes de recursos del servidor** en **Activado** y vuelve a conectarte. Si sigue fallando, actualiza tu cliente de Java. Hay más soluciones en la [guía de problemas](https://www.mysterria.net/en/guide/troubleshooting) del sitio principal.
+</Notice>
+
+## 2. Regístrate (solo cuentas offline)
+
+Las cuentas oficiales (premium) de Minecraft inician sesión solas y se saltan este paso.
+
+Con una cuenta offline escribe `/register <contraseña> <contraseña>` la primera vez y `/login <contraseña>` cada vez que vuelvas. No olvides tu contraseña.
+
+## 3. Verifica tu cuenta
+
+Al verificarte, tu cuenta de Minecraft queda unida a tu cuenta de Discord y a tu perfil de mysterria.net. Los jugadores verificados tienen canales exclusivos en Discord, un prefijo y un rol únicos en el chat y acceso completo a la tienda.
+
+1. Inicia sesión en [mysterria.net](https://www.mysterria.net/en/profile) y abre tu **perfil**.
+2. En **Vincula tu cuenta de Minecraft**, pulsa **Obtener un código**.
+3. En el juego, escribe `/verify` y pon el código de 8 caracteres en la ventana que se abre. También puedes escribir `/verify <código>`.
+
+<Figure src={generate} alt="El recuadro Vincula tu cuenta de Minecraft en el perfil web, con un botón Obtener un código y el comando /verify" caption="Consigue el código en tu perfil de la web." />
+
+<Figure src={code} alt="La ventana de verificación del juego pidiendo el código" caption="Después escríbelo en el juego." contain />
+
+Si el código no funciona, genera uno nuevo o abre un ticket en Discord.
+
+## 4. Elige tu bonificación inicial
+
+Poco después de entrar, un menú te muestra los 22 Senderos. Elige uno y luego una de las dos bonificaciones iniciales.
+
+<Figure src={pathways} alt="El menú Elige tu camino con los emblemas de los 22 Senderos" caption="El menú de Senderos que ves como jugador nuevo." />
+
+| | Path of Shortcut | Path of Resolve |
+|---|---|---|
+| **Recibes** | La Secuencia 9 del Sendero elegido, al momento | Tu receta garantizada empieza a un cofre de distancia |
+| **Coste permanente** | Tu Espiritualidad máxima es **un 10 % menor para siempre**, en cada Secuencia | Ninguno |
+| **Ideal para** | Jugar con habilidades desde hoy | Aprender a preparar pócimas y conservar todo tu poder |
+
+Para reclamar Path of Resolve, abre `/magic`, pulsa **Loot Focus**, elige **Recipes** y deja **Any Sequence**. Tu siguiente cofre de botín te dará una receta de **cualquier Sendero y Secuencia**, así que puede no coincidir con el Sendero que elegiste. Tienes más detalles en [Loot Focus](/es/magic/loot/#loot-focus-garantía).
+
+<Notice tone="info" title="El Sendero que eliges en el menú no te ata">
+  Te unes al Sendero de la primera pócima de Secuencia 9 que bebas. Si el menú decía Fool pero bebes una pócima de Door, eres Door. La bonificación inicial no se puede volver a elegir, aunque el staff a veces la reinicia si un jugador nuevo se equivocó de verdad. Abre un ticket en Discord para pedirlo.
+</Notice>
+
+## 5. Prepara y bebe tu primera pócima
+
+La Secuencia 9 necesita una **receta**, un **Caldero Mágico** (un altar Crude, Ritual o Grand) y los **ingredientes** de la receta, y después una preparación con éxito. No necesita Actuación ni ritual y no cuesta Locura. Las pócimas preparadas caducan a las 48 horas, así que prepárala cuando vayas a beberla.
+
+<CardGrid>
+  <Card title="Preparación y pócimas" text="Calderos, recetas, el minijuego de preparación y lo que cuesta fallar." href="/es/magic/brewing/" />
+  <Card title="Botín y Loot Focus" text="De dónde salen las recetas y los ingredientes, y el contador de garantía." href="/es/magic/loot/" />
+  <Card title="Senderos" text="Los 22 Senderos, sus Secuencias y sus vecinos." href="/es/magic/pathways/" />
+</CardGrid>
+
+## 6. Mira tu personaje
+
+Tu Secuencia, Actuación, Salud, Espiritualidad y Locura aparecen en la pantalla de personaje. Abre tu **inventario**, pulsa el **icono del Sendero** en la esquina superior izquierda y pasa el ratón por la cabeza de tu personaje. También puedes escribir `/coi menu character`. Con el [Client Mod](/es/guides/client-mod/) el icono del inventario desaparece y en su lugar pulsas **M**.
+
+<Figure src={dossier} alt="El Expediente de Trascendente del Client Mod de un jugador Fool de Secuencia 9, con Salud, Espiritualidad, Locura, Cansancio y progreso de Actuación" caption="El Expediente de Trascendente que abre el Client Mod con M." />
+
+## Comandos útiles
+
+| Comando | Qué hace |
+|---|---|
+| `/magic` | Guía para novatos, con Loot Focus |
+| `/guide`, `/faq`, `/hints` | Libro guía del juego, preguntas frecuentes y consejos |
+| `/bounty` | Recompensas de Actuación |
+| `/subspace` | Mazmorras, sus entradas y tus tiempos de espera |
+| `/emporium`, `/daily`, `/vote` | Emporio Brillante, recompensas diarias y votar |
+| `/wallet` | Tu dinero |
+| `/lands` | Crear o gestionar una ciudad |
+| `/msg <jugador>`, `/r` | Mensajes privados |
+
+**No** existen `/home`, `/sethome`, `/spawn`, `/tpa`, `/rtp` ni `/back`. La lista completa está en [Comandos](/es/general/commands/).
+
+## Antes de instalarte
+
+- Como no hay comandos de teletransporte, elige bien dónde vivir o únete a una ciudad.
+- El PvP está desactivado en casi todo el mundo y el griefing va contra las reglas.
+- Cada cofre de una estructura generada es un cofre de botín Trascendente, y cada uno te paga **a ti** una sola vez.
+- El mundo se reinicia entre épocas. La Época II empezó el 1 de mayo de 2026.
+
+Los detalles están en [Mundo y seguridad](/es/general/world-and-safety/). Lee las [reglas del servidor](https://www.mysterria.net/en/rules) antes de jugar.
+
+## ¿Necesitas ayuda?
+
+Pregunta en el chat o en el [Discord de Mysterria](https://discord.com/invite/jc7GSxBWgb). La [guía del jugador](https://www.mysterria.net/en/guide) responde a las preguntas más comunes.

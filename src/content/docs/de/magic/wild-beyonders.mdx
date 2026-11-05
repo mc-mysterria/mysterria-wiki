@@ -1,0 +1,118 @@
+---
+title: "Wilde Beyonder"
+description: "Wilde Beyonder auf Mysterria, dem LOTM Minecraft-Server: wer feindlich ist, was sie verkaufen und zu welchem Preis, was sie fallen lassen und wie du gegen sie kämpfst."
+sidebar:
+  order: 33
+---
+
+import {Figure} from '~/components/mdx';
+import leadImage from '~/assets/heroes/wild-beyonders.webp';
+import wbTrade from '~/assets/magic/wild-beyonder-trade.webp';
+
+<Figure src={leadImage} eager alt="Ein Wilder Beyonder" />
+
+Wilde Beyonder sind NPC-Beyonder, die durch die Wildnis ziehen, jeder mit einem Pfad und einer Sequenz von **Sequenz 9 bis Sequenz 5**. Je nach deinem eigenen Pfad handeln sie mit dir oder greifen dich sofort an, und sie kämpfen mit echten Fähigkeiten ihres Pfades.
+
+## Greift mich ein Wilder Beyonder an?
+
+Das hängt nur davon ab, wie dein Pfad zu seinem steht.
+
+| Du bist | Seine Haltung | Handel |
+|---|---|---|
+| **Derselbe Pfad** | Friedlich, solange du nicht angreifst | Normale Preise |
+| **Ein benachbarter Pfad** (gleiche Gruppe) | Friedlich, solange du nicht angreifst | Preise **x1,5** |
+| **Jeder andere Pfad** | Greift sofort an | Nicht möglich |
+| **Noch kein Beyonder** | Greift sofort an | Nicht möglich |
+| Jeder, der zuerst angreift | Feindlich | Nicht möglich |
+
+Benachbarte Pfade sind die aus derselben Gruppe, zum Beispiel Fool, Error und Door. Die Seite [Pfade](/de/magic/pathways/) listet die Gruppen auf. Rechtsklickst du einen feindlichen, siehst du „This Wild Beyonder is hostile toward your pathway!“.
+
+Stirbst du oder loggst du dich aus, verliert der Wilde Beyonder deine Spur und verfolgt dich nicht, wenn du zurückkommst.
+
+## Wo spawnen Wilde Beyonder?
+
+Sie haben keine festen Orte. Sie erscheinen um Spieler herum, die unterwegs sind und erkunden.
+
+| Regel | Wert |
+|---|---|
+| Spawn-Prüfung | Alle 5 Minuten, **5 % Chance** pro Spieler online |
+| Abstand zu dir | 64 bis 256 Blöcke |
+| Abstand zum Weltspawn | Mindestens 200 Blöcke |
+| Abstand untereinander | Mindestens 100 Blöcke |
+| Höchstens gleichzeitig | 20 auf dem ganzen Server (40 bei Wild Tide) |
+| Verschwinden | Nach 60 Sekunden ohne Spieler in 50 Blöcken Umkreis |
+
+An Tagen der **Wild Tide** spawnen doppelt so viele, und doppelt so viele können gleichzeitig existieren. Wann das ist, steht unter [Tägliche Tiden](/de/guides/tides/).
+
+### Wie stark sind sie?
+
+| Sequenz | 9 | 8 | 7 | 6 | 5 |
+|---|---|---|---|---|---|
+| Anteil der Spawns (etwa) | 32 % | 21 % | 19 % | 18 % | 11 % |
+
+Wilde Beyonder auf Sequenz 4 oder stärker gibt es nicht.
+
+## Wie handle ich mit einem Wilden Beyonder?
+
+Rechtsklicke einen friedlichen Wilden Beyonder. Beim ersten Treffen begrüßt er dich, und das Handelsmenü öffnet sich etwa 10 Sekunden später. Während er kämpft, kannst du nicht handeln.
+
+Jedes Angebot kostet dieselbe Zahl an Geld aus deiner Wallet, an **Energiescherben** und an **Verl Dor**-Münzen, alles auf einmal bezahlt. Energiescherben bekommst du, wenn du Zutaten an Nichtsnutze und Dorfbewohner ohne Beruf verkaufst, wie unter [Energiescherben](/de/guides/economy/#energiescherben) erklärt. Verl Dor ist die größte Münze in der Wallet (siehe [Wirtschaft](/de/guides/economy/)).
+
+### Was verkaufen sie?
+
+Ein Wilder Beyonder hat höchstens 8 Angebote, alle von seinem eigenen Pfad.
+
+| Angebot | Wann es erscheint |
+|---|---|
+| Zutaten | Immer, mit 1 oder 2 Zutaten für jede Sequenz von seiner eigenen bis hinunter zu 9 |
+| Ein Zaubertrank | 30 % Chance, nur wenn der Wilde Beyonder Sequenz 8 oder stärker ist. Der Zaubertrank hat seine eigene Sequenz oder eine schwächere |
+| Eine Beyonder-Charakteristik | 50 % Chance, nur wenn er Sequenz 7 oder stärker ist. Immer seine eigene Sequenz |
+| Eine Zaubertrank-Formel | 20 % Chance, nur wenn er Sequenz 6 oder stärker ist. Seine eigene Sequenz oder bis zu 2 schwächer |
+
+### Was kostet es?
+
+Der Preis wächst für jede Sequenz über 9 um x1,5. Jede Zahl unten wird in Geld bezahlt, **und** in Energiescherben, **und** in Verl Dor-Münzen.
+
+| Sequenz des Gegenstands | Zutat | Zaubertrank | Formel | Charakteristik |
+|---|---|---|---|---|
+| 9 | 100 | 500 | 1.500 | 2.000 |
+| 8 | 150 | 750 | 2.250 | 3.000 |
+| 7 | 225 | 1.125 | 3.375 | 4.500 |
+| 6 | 338 | 1.688 | 5.063 | 6.750 |
+| 5 | 507 | 2.532 | 7.594 | 10.125 |
+
+<Figure src={wbTrade} alt="Ein Handelsmenü eines Wilden Beyonders mit einem Brilliance Rock zum Preis von 150 Money, 150 VerlDor und 150 Energy Shards" caption="Jedes Angebot zeigt seinen Preis in Geld, Verl Dor-Münzen und Energiescherben." contain />
+
+Bist du von einem benachbarten Pfad, multipliziere mit 1,5. Kannst du nicht bezahlen oder hast du keinen Platz für den Gegenstand, scheitert der Handel, ohne dir etwas abzunehmen.
+
+## Was bekomme ich, wenn ich einen töte?
+
+Nur Wilde Beyonder, die natürlich gespawnt sind, geben Belohnungen. Solche, die durch Fähigkeiten beschworen wurden, nicht.
+
+| Belohnung | Chance |
+|---|---|
+| Beyonder-Charakteristik seiner Sequenz | 30 % (Sequenz 9), 25 % (8), 20 % (7), 15 % (6), 10 % (5) |
+| Zutaten | 15 % für jede Sequenz von seiner eigenen bis hinunter zu 9 |
+| [Versiegeltes Artefakt](/de/magic/sealed-artifacts/) | 5 % (Sequenz 6), 10 % (Sequenz 5) |
+| Schauspielen | Über die Quelle World, begrenzt wie jedes [Schauspielen](/de/magic/acting/) |
+
+Die Kopfgeldtafel (`/bounty`) bietet Spielern der Sequenz 9 bis 5 manchmal eine **Wild Beyonder Hunt** an, die zusätzliches Schauspielen bringt.
+
+## Welche Fähigkeiten von Pfaden wirken auf Wilde Beyonder?
+
+Viele Schauspielmethoden verlangen, dass du andere Beyonder jagst oder kontrollierst. Mit Wilden Beyondern geht das, ohne echte Spieler zu stören. Das sind bestätigte Beispiele.
+
+- **Hanged Man** kann ihre Seelen mit Graze hüten.
+- **Door** kann mit Replication ihre Fähigkeiten kopieren.
+- **Fool** kann sie zu Marionetten machen.
+- **Abyss** zählt mit Bloodlust einen getöteten Wilden Beyonder.
+
+Nicht jede Kopierfähigkeit wirkt auf sie. Teste es also, bevor du dich darauf verlässt.
+
+:::caution[Schauspielen beim Abyss]
+Wilde Beyonder zu töten verdaut den Zaubertrank des Abyss **nicht**. Schauspielen für den Abyss kommt nur vom Töten von Beyonder-Spielern einer passenden Sequenz.
+:::
+
+## Wie gefährlich sind sie im Kampf?
+
+Wilde Beyonder kämpfen wie Spieler. Sie nutzen die Fähigkeiten ihres Pfades mit **20 % kürzeren Abklingzeiten**, als ein Spieler sie hätte, und sie ziehen sich zurück, wenn ihre Gesundheit knapp wird. Sieh dir Name und Pfad an, bevor du dich näherst, und kämpf in der Nähe von Deckung mit Heilung zur Hand. Höhere Sequenzen schlagen viel härter zu, lassen aber auch bessere Belohnungen fallen.

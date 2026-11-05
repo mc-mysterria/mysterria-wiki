@@ -1,0 +1,53 @@
+---
+title: "克萊恩連發槍"
+description: "Mysterria 上的克萊恩連發槍，唯一一把可以從零開始製作的 LOTM 槍械。包括零件、配方、克萊恩子彈、裝彈，以及它在戰鬥中的表現。"
+sidebar:
+    label: 克萊恩連發槍
+    order: 4
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import kleinBarrel from '~/assets/firearms/kleinbarrel.png';
+import kleinCylinder from '~/assets/firearms/kleincylinder.png';
+import kleinFrame from '~/assets/firearms/kleinframe.png';
+import kleinGrip from '~/assets/firearms/kleingrip.png';
+import kleinRounds from '~/assets/firearms/kleinrounds.png';
+
+**克萊恩連發槍**是入門槍，也是唯一一把零件可以製作的槍。它是三把槍裡射速最快的，裝彈時一次就能裝滿整個彈匣。
+
+它的[數據](/zh-tw/firearms/#武器數據)是傷害 7，6 發子彈，射程 40 格，射擊間隔 0.55 秒，裝彈 2.8 秒。
+
+## 怎樣製作它？
+
+在普通工作台上製作四個零件，然後在[武器鍛造台](/zh-tw/firearms/crafting/#武器鍛造台)上組裝槍（右鍵檢視，按住 Shift 右鍵組裝）。
+
+| 零件 | 配方 |
+|---|---|
+| 連發槍槍管（Repeater Barrel） | 3 個鐵錠 + 1 個青金石 |
+| 連發槍轉輪（Repeater Cylinder） | 2 個鐵錠 + 1 個紅石粉 |
+| 連發槍槍身（Repeater Frame） | 2 個鐵錠 + 1 個青金石 |
+| 連發槍握把（Repeater Grip） | 2 個鐵錠 + 1 塊深色橡木原木 |
+
+一把槍總共需要 9 個鐵錠、2 個青金石、1 個紅石粉和 1 塊深色橡木原木。
+
+<Figure src={kleinBarrel} alt="連發槍槍管的合成格" caption="連發槍槍管。" contain />
+<Figure src={kleinCylinder} alt="連發槍轉輪的合成格" caption="連發槍轉輪。" contain />
+<Figure src={kleinFrame} alt="連發槍槍身的合成格" caption="連發槍槍身。" contain />
+<Figure src={kleinGrip} alt="連發槍握把的合成格" caption="連發槍握把。" contain />
+
+## 它用什麼彈藥？
+
+只用**克萊恩子彈**，以及用它們製作的特殊克萊恩子彈（一共 13 種）。
+
+- 1 個克萊恩彈殼 + 1 個克萊恩彈芯 + 1 個火藥 = **4 發克萊恩子彈**。
+- 1 個黃銅 + 4 個鐵粒 + 8 個火藥可以做出 **32 發子彈**，是所有槍裡最便宜的彈藥。
+
+<Figure src={kleinRounds} alt="合成格，一個克萊恩彈殼、一個克萊恩彈芯和火藥合成 4 發克萊恩子彈" caption="克萊恩子彈。" contain />
+
+彈殼和彈芯的配方以及所有特殊子彈，見[彈藥](/zh-tw/firearms/ammunition/)頁面。
+
+## 裝彈是怎樣進行的？
+
+左鍵裝彈。**2.8 秒**後整個彈匣一次裝滿，最多 6 發。這 2.8 秒內你無法開火。
+
+切換快捷欄格子會取消裝彈，而且**一發都不會裝上**。已經在槍裡的子彈會留著。因為裝彈是要麼全裝要麼不裝，所以最好趁安全的時候裝彈，不要等到出現 "No ammo!" 才裝。

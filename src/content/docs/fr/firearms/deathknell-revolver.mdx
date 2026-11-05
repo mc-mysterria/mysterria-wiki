@@ -1,0 +1,55 @@
+---
+title: "Deathknell"
+description: "Le revolver Deathknell sur Mysterria, inspiré de Lord of the Mysteries : où trouver ses pièces, les Deathknell Rounds et son rechargement balle par balle."
+sidebar:
+    label: Deathknell
+    order: 5
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import deathknellRounds from '~/assets/firearms/deathknellrounds.png';
+
+Le **Deathknell** est un lourd revolver qui frappe presque deux fois plus fort que Klein's Repeater. Il se recharge une balle à la fois, donc tu peux arrêter un rechargement plus tôt et garder ce qui est déjà chargé.
+
+Ses [statistiques](/fr/firearms/#statistiques-des-armes) sont de 12 dégâts, 6 balles, 60 blocs de portée, 0,6 seconde entre deux tirs et 0,7 seconde par balle pour recharger.
+
+## Comment en obtenir un ?
+
+Il te faut quatre pièces, et **aucune ne se fabrique** :
+
+- Deathknell Barrel
+- Deathknell Cylinder
+- Deathknell Frame
+- Deathknell Grip
+
+Chaque fois qu'un coffre d'une structure vanilla du monde normal génère son butin, il a 25 % de chances de contenir aussi une pièce au hasard du Deathknell ou du Steam Rifle. Tu peux aussi échanger des pièces avec d'autres joueurs.
+
+Avec les quatre dans ton inventaire, fais un clic droit sur une [Weaponsmith Table](/fr/firearms/crafting/#comment-assembler-une-arme-) pour vérifier, puis Maj + clic droit pour assembler.
+
+## Quelles munitions utilise-t-il ?
+
+Seulement les **Deathknell Rounds** et les Deathknell Rounds spéciales faites à partir d'elles (13 types en tout).
+
+- 1 Deathknell Cartridge Case, 1 Deathknell Cartridge Core et 2 poudres à canon donnent **3 Deathknell Rounds**.
+- 1 Brass, 7 pépites de fer et 12 poudres à canon donnent **18 balles**.
+
+<Figure src={deathknellRounds} alt="Grille de fabrication avec une Deathknell Cartridge Case, un Deathknell Cartridge Core et 2 poudres à canon qui donnent 3 Deathknell Rounds" caption="Deathknell Rounds." contain />
+
+La page [Munitions](/fr/firearms/ammunition/) donne les recettes des douilles et des noyaux, ainsi que toutes les munitions spéciales.
+
+## Comment marche le rechargement ?
+
+Fais un clic gauche pour recharger. Une balle entre toutes les **0,7 seconde** :
+
+| Balles chargées | Temps |
+|---|---|
+| 1 | 0,7 s |
+| 2 | 1,4 s |
+| 3 | 2,1 s |
+| 4 | 2,8 s |
+| 5 | 3,5 s |
+| 6 | 4,2 s |
+
+Le tir est bloqué pendant le rechargement (« Weapon is reloading! »). Pour tirer plus tôt, passe à un autre emplacement de la barre d'outils puis reviens. Ça annule le rechargement, mais chaque balle déjà chargée reste dans l'arme.
+
+Quand tu recharges à vide, l'arme prend la première pile de Deathknell Rounds de ton inventaire. Quand elle est en partie chargée, elle ne complète qu'avec le même type de balle que celui déjà dedans.

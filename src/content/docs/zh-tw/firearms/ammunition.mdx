@@ -1,0 +1,110 @@
+---
+title: "彈藥"
+description: "Mysterria 的每一種槍彈，包括克萊恩子彈、喪鐘子彈和步槍子彈的配方，12 種特殊效果、它們的材料，以及每發子彈的實際成本。"
+sidebar:
+    label: 彈藥
+    order: 3
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import kleinCartridge from '~/assets/firearms/kleincartridge.png';
+import deathknellCartridge from '~/assets/firearms/deathknellcartridge.png';
+import rifleCartridge from '~/assets/firearms/riflecartridge.png';
+import kleinCore from '~/assets/firearms/kleincore.png';
+import deathknellCore from '~/assets/firearms/deathknellcore.png';
+import rifleCore from '~/assets/firearms/riflecore.png';
+import kleinRounds from '~/assets/firearms/kleinrounds.png';
+import deathknellRounds from '~/assets/firearms/deathknellrounds.png';
+import rifleRounds from '~/assets/firearms/riflerounds.png';
+import effectAmmo from '~/assets/firearms/effectammo.png';
+
+每把槍都發射自己的子彈，克萊恩連發槍用**克萊恩子彈**（Klein Rounds），喪鐘用**喪鐘子彈**（Deathknell Rounds），蒸汽步槍用**步槍子彈**（Rifle Rounds）。你用彈殼、彈芯和火藥製作標準子彈，還可以把它們變成 12 種特殊子彈之一。
+
+每種子彈在每把槍裡的傷害，列在[不同彈藥的傷害](/zh-tw/firearms/#不同彈藥的傷害)裡。
+
+## 第一步，黃銅
+
+3 個銅錠 + 1 個金錠 = **4 個黃銅**，見[槍械製作](/zh-tw/firearms/crafting/#黃銅)。
+
+## 第二步，彈殼
+
+| 彈殼 | 配方 | 產出 |
+|---|---|---|
+| 克萊恩彈殼 | 1 個黃銅 | 8 |
+| 喪鐘彈殼 | 1 個黃銅 + 1 個鐵粒 | 6 |
+| 步槍彈殼 | 2 個黃銅 | 6 |
+
+<Figure src={kleinCartridge} alt="合成格，1 個黃銅合成 8 個克萊恩彈殼" caption="克萊恩彈殼。" contain />
+<Figure src={deathknellCartridge} alt="合成格，黃銅和一個鐵粒合成 6 個喪鐘彈殼" caption="喪鐘彈殼。" contain />
+<Figure src={rifleCartridge} alt="合成格，2 個黃銅合成 6 個步槍彈殼" caption="步槍彈殼。" contain />
+
+## 第三步，彈芯
+
+| 彈芯 | 配方 | 產出 |
+|---|---|---|
+| 克萊恩彈芯 | 4 個鐵粒擺成正方形 | 8 |
+| 喪鐘彈芯 | 6 個鐵粒 | 6 |
+| 步槍彈芯 | 1 個鐵錠 + 1 個黃銅 | 6 |
+
+<Figure src={kleinCore} alt="合成格，4 個鐵粒合成 8 個克萊恩彈芯" caption="克萊恩彈芯。" contain />
+<Figure src={deathknellCore} alt="合成格，6 個鐵粒合成 6 個喪鐘彈芯" caption="喪鐘彈芯。" contain />
+<Figure src={rifleCore} alt="合成格，一個鐵錠和黃銅合成 6 個步槍彈芯" caption="步槍彈芯。" contain />
+
+## 第四步，標準子彈
+
+三種都是無序配方。
+
+| 子彈 | 配方 | 產出 |
+|---|---|---|
+| 克萊恩子彈 | 1 個克萊恩彈殼 + 1 個克萊恩彈芯 + 1 個火藥 | 4 |
+| 喪鐘子彈 | 1 個喪鐘彈殼 + 1 個喪鐘彈芯 + 2 個火藥 | 3 |
+| 步槍子彈 | 1 個步槍彈殼 + 1 個步槍彈芯 + 2 個火藥 | 3 |
+
+<Figure src={kleinRounds} alt="合成 4 發克萊恩子彈的合成格" caption="克萊恩子彈。" contain />
+<Figure src={deathknellRounds} alt="合成 3 發喪鍾子彈的合成格" caption="喪鐘子彈。" contain />
+<Figure src={rifleRounds} alt="合成 3 發步槍子彈的合成格" caption="步槍子彈。" contain />
+
+### 一整批要花多少？
+
+一批會用完一整次合成得到的彈殼和彈芯：
+
+| 子彈 | 原材料 | 產出 |
+|---|---|---|
+| 克萊恩子彈 | 1 個黃銅 + 4 個鐵粒 + 8 個火藥 | 32 發 |
+| 喪鐘子彈 | 1 個黃銅 + 7 個鐵粒 + 12 個火藥 | 18 發 |
+| 步槍子彈 | 3 個黃銅 + 1 個鐵錠 + 12 個火藥 | 18 發 |
+
+## 第五步，特殊子彈
+
+在工作台中間放一份效果材料，周圍放 **8 發同一種的標準子彈**。你會得到這一種的 **8 發特殊子彈**。例如，8 發克萊恩子彈圍著烈焰粉，可以合成 8 發**火焰克萊恩子彈**，它只適用於克萊恩連發槍。
+
+<Figure src={effectAmmo} alt="合成格，8 發克萊恩子彈圍著烈焰粉，合成 8 發火焰克萊恩子彈" caption="火焰克萊恩子彈，8 發克萊恩子彈圍著烈焰粉。" contain />
+
+把克萊恩子彈、喪鐘子彈和步槍子彈混在一起圍著材料，什麼也合成不出來。
+
+特殊子彈的名字是“*效果* *槍型* Rounds”，例如 "Fire Deathknell Rounds" 或 "Demon Hunter Rifle Rounds"。算上標準子彈，每把槍有 13 種彈藥。
+
+| 效果 | 中間的材料 | 傷害 | 作用 |
+|---|---|---|---|
+| 火焰（Fire） | 烈焰粉 | 85% | 讓目標著火 5 秒 |
+| 劇毒（Poison） | 蜘蛛眼 | 85% | 中毒 I，持續 8 秒 |
+| 穿甲（Armor Piercing） | 鐵錠 | 90% | 無視盔甲 |
+| 衰老（Aging） | 時鐘 | 85% | 緩慢 I 和凋零 II，持續 10 秒 |
+| 靈體控制（Spirit Control） | 靈魂沙 | 85% | 緩慢 IV 和失明，持續 5 秒 |
+| 欺詐（Deceiving） | 末影之眼 | 85% | 讓目標轉身 180 度 |
+| 剝奪（Deprivation） | 牛奶桶 | 85% | 移除目標的正面藥水效果 |
+| 驅魔（Exorcist） | 熒石粉 | 100%，對亡靈怪物 250% | 沒有狀態效果 |
+| 內爆（Implosive） | 鑽石 | 125% | 沒有狀態效果，只是傷害更高 |
+| 腐爛（Rotten） | 腐肉 | 85% | 飢餓 III 和虛弱 I，持續 8 秒 |
+| 削弱（Weakening） | 發酵蛛眼 | 85% | 虛弱 II 和挖掘疲勞 II，持續 10 秒 |
+| 獵魔（Demon Hunter） | 下界之星 | 100%，對非凡生物 250% | 沒有狀態效果 |
+
+### 驅魔子彈和獵魔子彈對誰有效？
+
+**驅魔**子彈對殭屍、殭屍村民、屍殼、溺屍、骷髏、流浪者、凋靈骷髏、凋靈、殭屍疣豬獸和殭屍豬靈有效。其他怪物和玩家受到正常傷害。
+
+**獵魔**子彈對伺服器生成的[非凡生物](/zh-tw/magic/creatures/)有效。它們**對非凡者玩家沒有任何加成**。
+
+## 裝上正確的子彈
+
+彈匣**空了**時，裝彈會從你的物品欄裡拿第一組匹配的子彈，標準子彈或特殊子彈都可以。槍**部分裝填**時，你只能補充和槍裡同一種的子彈。想在標準子彈和特殊子彈之間切換，就先把彈匣打空，並讓你想用的子彈排在物品欄的最前面。

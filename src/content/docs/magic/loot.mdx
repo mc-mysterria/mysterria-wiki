@@ -1,0 +1,159 @@
+---
+title: "Beyonder Loot and Loot Focus"
+description: "Where to find Beyonder recipes, pages, potions and ingredients on Mysterria, how loot chests refill, and how Loot Focus (pity) guarantees what you need."
+sidebar:
+  label: Loot and Loot Focus
+  order: 4
+---
+
+import {Figure} from '~/components/mdx';
+import lootFocus from '../../../assets/magic/loot-focus-menu.webp';
+import sequenceFocus from '../../../assets/magic/loot-sequence-focus.webp';
+import pityBar from '../../../assets/magic/loot-pity-action-bar.webp';
+
+Recipes, Recipe Pages, potions, altar blueprints and many ingredients come from **loot chests** in the world. **Loot Focus**, the pity system, makes sure bad luck never lasts forever.
+
+## Where are the loot chests?
+
+**Every chest in a naturally generated structure is a Beyonder loot chest.** That includes villages, mineshafts, dungeons, temples, shipwrecks, buried treasure, bastions and ruined portals. There is no special glowing Beyonder chest to look for.
+
+When you open one and Beyonder loot drops, it **pops out next to the chest** and glows for a few seconds. A chat message tells you something has appeared.
+
+:::note[Each chest pays you only once]
+Each player gets a given chest's loot **once**. After **12 hours to 2 days** the chest refills, but only for players who have not looted it yet. Your action bar shows "Refill in ..." when you open it. A chest someone else emptied still pays you, but your own old chests do not.
+:::
+
+## What can a chest give?
+
+Each chest you open rolls for Beyonder loot.
+
+| Loot | Chance per chest | Notes |
+|---|---|---|
+| Recipe | 1% | A full recipe for one potion |
+| Recipe Page | 3% | One page of a recipe. See [Brewing](/magic/brewing/#recipes-and-recipe-pages) |
+| Potion | 1% | A finished potion. It expires 48 hours after it is made |
+| Altar Scroll | 2% | A **Strange Scroll**, the blueprint for a brewing altar or a Sacrificial Altar |
+
+Most loot is for low Sequences. The rough odds are below.
+
+| Sequence | Share |
+|---|---:|
+| 9 | about 44% |
+| 8 | 22% |
+| 7 | 15% |
+| 6 | 10% |
+| 5 | 7% |
+| 4 | 1% |
+| 3 | 0.5% |
+| 2 | 0.2% |
+| 1 | 0.1% |
+| 0 | 0.05% |
+
+The **Law of Convergence** favours your own Pathway. In 60% of chests the item follows your own Pathway (70% of those) or one of your [neighbours](/magic/pathways/#neighbouring-pathways). Otherwise it is a random Pathway.
+
+Chests in Ancient Cities also have a 7.5% chance to hold a custom music disc.
+
+:::tip[Daily Tides]
+On a **Tide of Fortune** day, chests give loot 2.5 times as often, pity fills in half the chests, and rare loot is 2.5 times as likely. On a **Deep Tide** day there are twice as many mineable nodes and chests find ingredients twice as often. See [Daily Tides](/guides/tides/).
+:::
+
+## Ingredients
+
+Ingredients come in three kinds, and **none of them can be focused** with Loot Focus.
+
+### Foundable ingredients
+
+These turn up in loot chests, next to the chest like other loot, so explore new structures.
+
+### Droppable ingredients
+
+These drop from [Beyonder Creatures](/magic/creatures/). Hunt the right creature in the right biome. A [Crimson Moon](/magic/crimson-moon/) brings far more creatures.
+
+### Mineable ingredients
+
+These appear in the world as **nodes** that **glow red** and send up a **beam** you can spot from a distance. **Right-click** a node to harvest it.
+
+- A new set of nodes is placed **every day**, near where players are active.
+- Common ingredients get about 3 nodes a day. Rarer ones get fewer, and the rarest have a 15% chance of a single node each day.
+- Beyonders with a Divination ability can use **Vein Divination** to find a node, once every 5 minutes.
+- The "mineable ingredients" [bounty](/magic/acting/#bounties) points you to a live node too.
+
+### Other sources
+
+- [Wild Beyonders](/magic/wild-beyonders/) trade Pathway goods and can drop ingredients.
+- [Rift Bosses](/guides/bosses/) pay out in a roulette that can hold ingredients, recipes, potions and Beyonder Characteristics.
+- The [Brilliant Emporium](/guides/emporium/) sells some ingredients.
+- Spare ingredients can be sold to nitwit and jobless villagers for [Energy Shards](/guides/economy/#energy-shards).
+
+## Loot Focus (pity)
+
+**Loot Focus** guarantees the loot you need. You pick one type of loot, and every loot chest you open adds 1 to its counter. When the counter reaches the **threshold**, that chest is guaranteed to give you the focused loot.
+
+### How do I set my Loot Focus?
+
+1. Type `/magic`.
+2. Click **Loot Focus** (the hopper).
+3. Pick one type: **Recipes**, **Pages**, **Potions** or **Altar Scrolls**.
+4. Optionally pick a **Sequence bracket** (see below), or keep **Any Sequence**.
+
+<Figure src={lootFocus} alt="The Loot Focus menu with the Recipes tooltip showing 0 of 150 chests" caption="The Loot Focus menu. Hover over a type to see your progress toward it." contain />
+
+After each chest, your action bar shows your progress as "Pity: X/Y".
+
+<Figure src={pityBar} alt="The action bar reading Pity: 1/150 and Refill in 1d 16h after opening a loot chest" caption="The action bar after opening a loot chest with a Loot Focus set." contain />
+
+### How many chests does it take?
+
+With **Any Sequence**, the thresholds are below.
+
+| Focus | Chests |
+|---|---|
+| Altar Scrolls | 50 |
+| Pages | 100 |
+| Recipes | 150 |
+| Potions | 200 |
+
+Recipes and Pages have separate counters. Focus Pages if you are collecting pages, and Recipes if you want a finished recipe.
+
+### Sequence brackets
+
+You can narrow the reward to a bracket of Sequences. The threshold is then multiplied by the bracket's multiplier, and again by **x1.5 for every Sequence** between your own Sequence and the strongest Sequence in the bracket. A Sequence 9 player aiming at the High bracket (9 to 7) pays x1.5 twice.
+
+| Bracket | Sequences | Multiplier |
+|---|---|---|
+| High Sequences | 9 to 7 | x2 |
+| Middle Sequences | 6 to 4 | x4 |
+| Low Sequences | 3 to 1 | x8 |
+| Peak | 0 | x15 |
+
+Example thresholds for **Recipes**:
+
+| Your Sequence | High (9 to 7) | Middle (6 to 4) | Low (3 to 1) | Peak (0) |
+|---|---|---|---|---|
+| 9 | 675 | 4,557 | 30,755 | 86,498 |
+| 7 | 300 | 2,025 | 13,669 | 38,444 |
+| 4 | 300 | 600 | 4,050 | 11,391 |
+
+Aim at brackets close to your own Sequence. The menu shows your real threshold for each bracket before you pick it.
+
+<Figure src={sequenceFocus} alt="The Sequence Focus menu with one icon for each bracket" caption="Click a focused type again to open the Sequence Focus menu and pick a bracket." contain />
+
+### Pinning your next potion
+
+When you focus **Potions**, you can also click **Aim at your next Sequence** and pin one exact potion (a Pathway and a Sequence).
+
+- A pin on a Pathway **you already walk** costs the same as its bracket.
+- A pin on **another Pathway** costs twice as much, and is refused if that Sequence's seats are full.
+- If a pin can no longer be delivered, your progress is **kept**, not spent. Pin another target to claim it.
+
+Even without a pin, a potion paid out by pity aims at a Pathway you walk, at your next Sequence.
+
+### When does the counter reset?
+
+- A pity payout always resets the counter to 0.
+- Finding the focused loot naturally resets it only if it falls inside your bracket (or is your pinned potion). A lower-tier natural drop keeps your progress.
+- Changing your focus to another type drops a bracket that the new type cannot pay out in.
+
+:::note[Path of Resolve]
+New players who chose **Path of Resolve** start with their Recipes counter one chest short of the guarantee. Focus **Recipes** with **Any Sequence** and the next chest gives a recipe, for any Pathway and Sequence. See [Quick Start](/general/start/#4-choose-your-starter-bonus).
+:::

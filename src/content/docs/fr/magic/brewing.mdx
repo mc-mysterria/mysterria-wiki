@@ -1,0 +1,115 @@
+---
+title: "Préparation et potions"
+description: "Comment préparer les potions Beyonder sur Mysterria : le Chaudron magique et ses niveaux d'autel, formules et pages, ingrédients, mini-jeu de préparation et expiration des potions."
+sidebar:
+  label: Préparation et potions
+  order: 3
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import cauldron from '~/assets/magic/cauldron.png';
+import practiceMenu from '~/assets/magic/brewing-practice-menu.webp';
+import practiceResult from '~/assets/magic/brewing-rehearsal-result.webp';
+import minigame from '~/assets/magic/brewing-minigame.webp';
+import drinkConfirm from '~/assets/magic/brewing-drink-confirm.webp';
+
+Chaque Séquence commence par une potion, et tu la prépares toi-même dans un Chaudron magique. La préparation marche de la même façon pour la Séquence 9 et pour chaque potion suivante.
+
+## De quoi ai-je besoin pour préparer une potion ?
+
+- Une **formule** pour la Voie et la Séquence de la potion, ou un jeu complet de ses **pages de formule**.
+- Un **Chaudron magique**, l'autel de préparation que tu construis à partir d'un plan.
+- Les **ingrédients principaux** et **secondaires** de la formule. Une **Caractéristique Beyonder** de la même Voie et de la même Séquence peut remplacer tous les ingrédients principaux.
+
+Pour boire une potion plus puissante que la Séquence 9, il te faut aussi au moins 95 % d'[Interprétation](/fr/magic/acting/), et ton [rituel](/fr/magic/rituals/) compte.
+
+## Le Chaudron magique (autel de préparation)
+
+L'autel existe en trois niveaux, et le niveau décale le résultat de ta préparation d'un cran.
+
+| Autel | Effet sur le mini-jeu de préparation |
+|---|---|
+| **Crude Altar** | Ton résultat baisse d'un cran (Excellent devient Good, Good devient Poor, Poor devient Failed) |
+| **Ritual Altar** | Aucun changement |
+| **Grand Altar** | Ton résultat monte d'un cran (Failed devient Poor, Poor devient Good, Good devient Excellent) |
+
+Les plans viennent des coffres de butin sous forme de **Strange Scroll**, la catégorie **Altar Scrolls** de la [focalisation du butin](/fr/magic/loot/#focalisation-du-butin-garantie). Tiens le parchemin et fais un **clic droit sur un bloc** pour prévisualiser la structure, puis **refais un clic droit** pour la poser dans un endroit dégagé. Le clic gauche ne fait rien.
+
+<Notice tone="warn" title="Les Autels sacrificiels ne préparent pas de potions">
+  Le **Crude Sacrificial Altar**, le **Sacrificial Altar** et le **Grand Sacrificial Altar** se ressemblent, mais ils servent à faire progresser les [Grâces](/fr/magic/boons/) et ne peuvent pas préparer de potions. Vérifie le nom du parchemin avant de le poser.
+</Notice>
+
+## Formules et pages de formule
+
+Tu peux trouver une **formule complète**, ou une formule découpée en **pages de formule** nommées « Recipe Page *n* (Sequence *s*) ».
+
+| Page | Contient |
+|---|---|
+| Page 1 | Les ingrédients principaux |
+| Page 2 | Les ingrédients secondaires |
+| Page 3 | Les conditions du rituel |
+
+La Séquence 9 n'a pas de rituel, donc ses formules n'ont que les pages 1 et 2. Fais un clic droit sur une page pour la lire. Pour transformer des pages en formule, place **exactement une page de chaque sorte** pour la même Voie et la même Séquence dans une grille d'artisanat, sans rien d'autre.
+
+Les formules peuvent concerner n'importe quelle Voie, pas seulement la tienne. Pour changer de Voie avec une potion, voir [Voies](/fr/magic/pathways/#puis-je-changer-de-voie-).
+
+## Ingrédients
+
+Chaque potion a ses propres ingrédients principaux et secondaires, et ils sont de trois sortes.
+
+- Les ingrédients **à trouver** viennent surtout des coffres de butin.
+- Les ingrédients **à récupérer** viennent surtout des [créatures Beyonder](/fr/magic/creatures/).
+- Les ingrédients **à miner** poussent dans le monde sous forme de gisements rouges lumineux. Fais un clic droit sur l'un d'eux pour le récolter.
+
+Les Beyonders sauvages et les boss de Faille sont d'autres sources, présentées dans [Butin et focalisation](/fr/magic/loot/#ingrédients). Avec le [Client Mod](/fr/guides/client-mod/), survoler un ingrédient affiche sa Voie, sa Séquence et s'il est principal ou secondaire.
+
+## Comment préparer une potion ?
+
+Ouvre ton Chaudron magique. Place les **ingrédients principaux** (ou une Caractéristique Beyonder) dans les emplacements rouges à **gauche**, les **ingrédients secondaires** dans les emplacements bleus à **droite**, et la **formule** dans l'emplacement jaune **en haut au centre**.
+
+<Figure src={cauldron} alt="Le menu du Chaudron magique avec les emplacements principaux à gauche, les secondaires à droite et l'emplacement de la formule en haut" caption="Ingrédients principaux à gauche, secondaires à droite, formule en haut." contain />
+
+Place les ingrédients dans l'ordre où la formule les liste. Si quelque chose ne va pas, rien ne se passe et tu gardes tes objets. Les exemplaires en trop d'un ingrédient te sont rendus.
+
+Quand tout correspond, un court **mini-jeu de préparation** commence, et ta note décide du résultat.
+
+| Note | Résultat |
+|---|---|
+| **Excellent** | Tu obtiens la potion |
+| **Good** | Tu obtiens la potion |
+| **Poor** | 50 % de chances d'obtenir la potion. Sinon la préparation échoue |
+| **Failed** | La préparation échoue, avec une petite explosion et quelques secondes de Poison |
+
+**Une préparation ratée** consomme la **formule** et les **ingrédients secondaires**. Tes ingrédients principaux fusionnent en une **Caractéristique Beyonder** de cette Voie et de cette Séquence, que tu peux utiliser comme ingrédient principal la prochaine fois.
+
+Le mini-jeu devient plus dur pour les Séquences plus puissantes, de très facile à la Séquence 9 à le plus dur à partir de la Séquence 2. Les Beyonders **Moon** l'ont un cran plus facile.
+
+<Figure src={minigame} alt="Le mini-jeu Focus your will, un menu en coffre avec trois boutons dont un brille en vert" caption="Focus your will, l'un des mini-jeux. Clique sur le bouton qui brille avant la fin du temps." contain />
+
+`/coi practice` te permet de t'entraîner aux mini-jeux gratuitement, sans rien risquer.
+
+<Figure src={practiceMenu} alt="Le menu Choose a rehearsal avec six icônes de mini-jeux" caption="Le menu qu'ouvre /coi practice. Choisis un mini-jeu pour t'y entraîner." contain />
+
+<Figure src={practiceResult} alt="Des lignes de chat qui affichent Rehearsal result Good 60 percent, practice only, nothing was gained or lost" caption="Un entraînement se termine avec ta note dans le chat." contain />
+
+## Boire la potion
+
+Quand tu bois, un écran de confirmation montre ce que la progression va coûter en Interprétation manquante, en rituel incomplet ou en changement de Voie risqué. Rien ne se passe tant que tu ne confirmes pas, et annuler te rend la potion.
+
+<Figure src={drinkConfirm} alt="L'écran Advancement Details avec un bouton vert Confirm, la potion et une infobulle qui dit qu'il n'y a aucun inconvénient et que la progression est sûre" caption="L'écran de confirmation pour une première potion. Quand rien ne manque, il indique que la progression est sûre." contain />
+
+Après ta confirmation, un autre court mini-jeu se lance. **Excellent** donne une courte poussée de Régénération et de Vitesse, et **Good** ne donne rien de plus. **Poor** ou **Failed** ajoute un peu de Folie temporaire (plus avec Failed), ainsi que Nausée ou Cécité pendant quelques secondes.
+
+Une potion ne marche que si elle est **exactement une Séquence plus puissante** que ta Séquence actuelle. Toute autre potion est refusée. Voir [Folie et Mutation](/fr/magic/mutation/#coûts-de-progression) pour ce que peut coûter une progression.
+
+## Combien de temps dure une potion ?
+
+Une potion dure **48 heures** à partir du moment où elle est faite, et sa description affiche le temps restant. Quand elle expire, elle se transforme en **Artefact scellé** de la même Voie et de la même Séquence. S'il n'y en a pas, elle devient une **Caractéristique Beyonder**, et à défaut une **Ruined Potion**. Une potion expirée ne peut plus te faire progresser.
+
+Une potion que tu reçois en récompense obtient 48 heures toutes neuves quand elle entre pour la première fois dans ton inventaire.
+
+## Autres façons d'obtenir une potion
+
+- Les coffres de butin contiennent parfois une potion terminée, et la catégorie **Potions** de la [focalisation du butin](/fr/magic/loot/#focalisation-du-butin-garantie) t'en garantit une.
+- Un Beyonder Sun de Séquence 4 peut dissoudre une potion ou un Artefact scellé tenu en seconde main en sa Caractéristique Beyonder, avec **Beyonder Characteristic Purification**.
+- La potion de **Séquence 0** se prépare avec la formule de Séquence 0 et **trois Caractéristiques Beyonder de Séquence 1** de la même Voie, sans rien d'autre. Voir [Séquence 0](/fr/magic/sequence-zero/).

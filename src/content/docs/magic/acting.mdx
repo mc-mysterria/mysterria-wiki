@@ -1,0 +1,187 @@
+---
+title: "Acting"
+description: "How Acting (potion digestion) works on Mysterria: Acting methods, bounties, Acting Bottles, source caps, cooldowns and the 95% rule for your next LOTM potion."
+sidebar:
+  label: Acting
+  order: 5
+---
+
+import {Figure} from '~/components/mdx';
+import actingRecord from '../../../assets/magic/acting-dossier.webp';
+import actingChat from '../../../assets/magic/acting-cooldowns.webp';
+import bountyBoard from '../../../assets/magic/bounty-board.webp';
+import bountyOffer from '../../../assets/magic/bounty-offer-chat.webp';
+
+A Beyonder **digests** a potion by acting out the role its Sequence describes. On Mysterria you fill your **Acting bar** by playing your Sequence the way it is meant to be played, and the next potion only works once the bar is nearly full.
+
+## Why does Acting matter?
+
+The next potion needs at least **95% Acting**. Below that, the potion is refused. Between 95% and 100% you can advance, but the gap costs temporary Madness.
+
+| Acting | 95% | 96% | 97% | 98% | 99% | 100% |
+|---|---|---|---|---|---|---|
+| Temporary Madness | 30% | 24% | 18% | 12% | 6% | 0% |
+
+Acting also raises your maximum [Spirituality](/magic/spirituality/), from half at 0% Acting to full at 100%.
+
+:::danger[Do not spam a refused potion]
+If a potion is refused because your Acting is too low, do not drink it again straight away. A second try within 5 seconds rolls a loss of control with only a 10% chance to survive. See [Ordeals](/magic/ordeals/).
+:::
+
+## How do I see my Acting?
+
+Your character screen shows the bar. Open the Pathway icon in your inventory and hover your head, or type `/coi menu character`. With the [Client Mod](/guides/client-mod/), press **M**.
+
+`/coi acting` shows your Acting method cooldowns and how much each source has given you against its cap.
+
+<Figure src={actingRecord} alt="The Acting record tab of the Client Mod's Beyonder Dossier, with acting progress of 24 out of 27,648 and a bar for the Passive source" caption="The Acting record tab in the Client Mod's Beyonder Dossier." />
+
+<Figure src={actingChat} alt="Chat output of /coi acting with the current state, the Client Mod bonus, method cooldowns and the Passive acting source" caption="What /coi acting prints in chat." contain />
+
+## Where does Acting come from?
+
+Acting comes from several **sources**. Each source has its own **cap**, which is the share of the bar it can fill at your current Sequence. No source except Stolen can fill the bar alone, so you have to mix them. When you advance, every source starts again from zero.
+
+| Source | Shown as | What it is |
+|---|---|---|
+| Acting methods | Abilities | Using your abilities in the way your Sequence asks |
+| Player interaction | Interaction | PvP bounties and similar play with other players |
+| World content | World | PvE and gathering bounties, and other world activities |
+| Acting Bottles | Bottles | Thrown bottles of Acting |
+| Passive | Passive | A small trickle while you play |
+| Events | Events | Bedwars, Duels, FFA and tournaments |
+| Stolen Acting | Stolen | Abyss powers that steal Acting |
+| Deity Favor | (separate) | A gift from the god of your Pathway |
+
+### Caps by Sequence
+
+These are the default caps, as a percentage of your bar.
+
+| Sequence | Bottles | Abilities | Interaction | World | Passive | Events | Deity Favor |
+|---|---|---|---|---|---|---|---|
+| 9 | 90 | 90 | 15 | 25 | 10 | 40 | 10 |
+| 8 | 80 | 80 | 15 | 25 | 10 | 40 | 10 |
+| 7 | 70 | 60 | 20 | 25 | 10 | 35 | 10 |
+| 6 | 55 | 70 | 20 | 30 | 10 | 30 | 15 |
+| 5 | 35 | 55 | 25 | 35 | 8 | 25 | 15 |
+| 4 | 20 | 50 | 30 | 40 | 5 | 15 | 15 |
+| 3 | 10 | 45 | 35 | 45 | 5 | 10 | 20 |
+| 2 | 8 | 45 | 30 | 50 | 5 | 20 | 20 |
+| 1 | 5 | 45 | 25 | 55 | 5 | 30 | 20 |
+
+Stolen Acting is capped at 100%. Early on, bottles and abilities carry most of the bar. From Sequence 5 on, bottles matter less and bounties and world content matter more.
+
+<details>
+<summary>Caps for your Pathway group (Bottles, Abilities, Interaction, World)</summary>
+
+Pathways are sorted into four groups, and each group changes some caps. Passive, Events and Deity Favor stay as above.
+
+| Group | Pathways |
+|---|---|
+| Combat | Tyrant, Twilight Giant, Red Priest, Hanged Man, Chained, Abyss, Death |
+| Social | Sun, Demoness, Visionary, Black Emperor, Justiciar |
+| Utility | Fool, Door, Error, Hermit, White Tower, Paragon, Wheel of Fortune |
+| Support | Moon, Mother, Darkness |
+
+| Sequence | Combat | Social | Utility | Support |
+|---|---|---|---|---|
+| 9 | 90 / 90 / 35 / 35 | 90 / 90 / 30 / 30 | 90 / 60 / 15 / 30 | 90 / 55 / 25 / 35 |
+| 8 | 80 / 80 / 35 / 35 | 80 / 80 / 30 / 30 | 80 / 60 / 15 / 30 | 80 / 55 / 25 / 35 |
+| 7 | 70 / 60 / 35 / 35 | 70 / 60 / 30 / 30 | 70 / 60 / 20 / 30 | 70 / 55 / 25 / 35 |
+| 6 | 55 / 70 / 35 / 35 | 55 / 70 / 30 / 30 | 55 / 60 / 20 / 30 | 55 / 55 / 25 / 35 |
+| 5 | 30 / 55 / 35 / 40 | 35 / 60 / 35 / 30 | 35 / 65 / 25 / 35 | 35 / 60 / 25 / 40 |
+| 4 | 15 / 50 / 40 / 45 | 20 / 55 / 40 / 30 | 20 / 60 / 30 / 40 | 20 / 55 / 25 / 45 |
+| 3 | 12 / 45 / 40 / 48 | 12 / 50 / 42 / 40 | 12 / 55 / 35 / 42 | 12 / 50 / 30 / 48 |
+| 2 | 10 / 45 / 35 / 52 | 10 / 48 / 38 / 45 | 10 / 52 / 30 / 48 | 10 / 48 / 28 / 52 |
+| 1 | 8 / 45 / 30 / 58 | 8 / 48 / 34 / 50 | 8 / 50 / 25 / 54 | 8 / 48 / 25 / 58 |
+
+Each cell is Bottles / Abilities / Interaction / World. `/coi acting` shows your own caps once a source has given you something.
+
+</details>
+
+## Acting methods
+
+Casting your spells gives nothing on its own. Each ability has an **Acting method**, a specific way of using it that fits your Sequence, such as killing a mob with that spell, using it on another Beyonder or discovering something with it. Only the methods of your **current** Sequence count.
+
+When a method succeeds, your action bar says so and the method goes on **cooldown**. A chat line tells you when it is ready again. Repeating it in the same spot is blocked for a while, so move around.
+
+The cooldown counts **active play time**. It runs at half speed while you are AFK and at a fifth of the speed while you are offline.
+
+| Sequence | Acting per method | Cooldown (active play) |
+|---|---|---|
+| 9 | 20% | 22 min |
+| 8 | 20% | 1 h 6 min |
+| 7 | 10% | 3 h 9 min |
+| 6 | 10% | 6 h 45 min |
+| 5 | 5% | 6 h 18 min |
+| 4 | 5% | 9 h 54 min |
+| 3 | 4% | 10 h 48 min |
+| 2 | 4% | 12 h 36 min |
+| 1 | 4% | 13 h 36 min |
+
+Sequence 5 has a slightly shorter cooldown than Sequence 6, but each method gives half as much Acting. Filling the bar still takes longer.
+
+Each ability has its own cooldown, so a Sequence with several abilities can act with each of them in turn.
+
+:::note[Repeating yourself pays less]
+If you earn Abilities, Interaction or World Acting the same way again within 15 minutes, each repeat pays 75% of the one before, down to 25%.
+:::
+
+## Bounties
+
+Bounties are personal tasks that pay Acting. Open them with `/bounty` (or `/coi bounty`).
+
+<Figure src={bountyBoard} alt="The bounty board with three offers and a tooltip for a fishing bounty" caption="The bounty board. Hover over an offer to see what it asks." contain />
+
+- You can hold up to **3** bounties at once, including offers you have not answered yet.
+- A **new offer** arrives every **30 minutes**. You get a chat message and can accept or decline it.
+- Each bounty has a **deadline**, from 30 minutes to 8 hours.
+- PvE and gathering bounties fill your **World** source. PvP bounties fill **Interaction**.
+
+Bounties include hunting mobs near a location, elite mob hunts (Sequence 6 and stronger), field encounters, Wild Beyonder hunts, killing mobs with spells, Crimson Moon hunts, sacrificing items at a spot, travelling a distance or a long journey, scouting a location, scouting with an ability, harvesting crops, mining ores, harvesting mineable ingredients, fishing, surveying biomes or resources, earning advancements, ability mastery in different conditions, and consensual duels and spell challenges with other players. The other player must agree to a duel or spell challenge.
+
+Destinations are rolled around you, at least 200 blocks away and at most 250 blocks at Sequence 9, 500 at 8, 1,000 at 7, 2,000 at 6, 3,500 at 5, 6,000 at 4 and 7,500 at 3. From Sequence 2 there is no limit.
+
+Each bounty rolls a base reward between 0.1% and 5% of your bar, depending on the kind. It is then multiplied by your Sequence, x2 at Sequence 9, x1.5 at 8, x1 at 7, x0.8 at 6, x0.6 at 5, x0.45 at 4, x0.3 at 3, x0.2 at 2 and x0.12 at 1. The offer shows the real amount you will get.
+
+Completing a bounty also counts as **ritual credit** for Sequence 5 and stronger. See [Rituals](/magic/rituals/#ritual-credit).
+
+<Figure src={bountyOffer} alt="A bounty offer in chat with its task, source, category and Accept and Decline buttons" caption="A bounty offer in chat." contain />
+
+## Acting Bottles
+
+An **Acting Bottle** holds a fixed amount of Acting points. **Throw it** and it gives its Acting to the nearest Beyonder within 5 blocks of where it lands, so you can throw it at a friend. It counts towards the target's **current** Sequence and **Bottles** cap.
+
+Bottles are weaker the higher your Sequence. The bottle's description shows how much you would really get. If the target's Bottles cap is already full, the bottle breaks for nothing, so check `/coi acting` first.
+
+You can get them from these places.
+
+- The **Battle Pass** (`/bp`) and the reward **calendar** (`/calendar`).
+- The [Brilliant Emporium](/guides/emporium/), where two Acting Bottle shards make a bottle.
+- The **Outer Gods Anchors** shop (`/oga rewards`), with bottles of 500, 1,000, 5,000 and 10,000 points for 15, 28, 130 and 240 points.
+- **Dungeon exchanges**, paid with Helping Cards. See [Dungeons](/guides/dungeons/).
+
+## Passive Acting
+
+While you are online and **not AFK**, you get a small amount of Acting about every 3 minutes, up to the Passive cap (5 to 10% of the bar). A church can add a bonus to this. Being AFK or offline gives no passive Acting.
+
+## Events and Deity Favor
+
+Bedwars, Duels, FFA and tournaments pay Acting into the **Events** source. Join with `/bedwars` and `/pvpevent join`.
+
+If your Pathway has a Sequence 0 god, they can grant you **Deity Favor**. Each grant is 5% of your bar, once a week per person, up to 10% per Sequence at Sequence 9 to 7, 15% at 6 to 4 and 20% at 3 to 1. See [Sequence 0](/magic/sequence-zero/).
+
+## What speeds Acting up or slows it down?
+
+| Effect | How much |
+|---|---|
+| [Client Mod](/guides/client-mod/) installed | +2% Acting from every source, 5% shorter method cooldowns |
+| **Tide of Diligence** (a [Daily Tide](/guides/tides/)) | Acting gains doubled |
+| **Tide of Patience** (a Daily Tide) | Method cooldowns halved |
+| Far ahead of the server | Half Acting from every source |
+
+The last row is the **progression limiter**. If you are 3 or more Sequences ahead of the average active player (anyone who played in the last 14 days), or at **Sequence 2 or stronger**, you earn Acting at half speed.
+
+## What happens when my bar is full?
+
+At **Sequence 3 and stronger**, Acting you earn after your bar is full is banked as **Overflow**. Overflow never counts towards advancement. It pays for seat challenges and the Sequence 0 contest. Bottles and Deity Favor never bank. See [Usurpation](/magic/usurpation/).

@@ -1,0 +1,159 @@
+---
+title: "Butin Beyonder et focalisation du butin"
+description: "Où trouver les formules, pages, potions et ingrédients Beyonder sur Mysterria, comment les coffres de butin se remplissent, et comment la focalisation du butin (garantie) t'assure ce qu'il te faut."
+sidebar:
+  label: Butin et focalisation
+  order: 4
+---
+
+import {Figure} from '~/components/mdx';
+import lootFocus from '~/assets/magic/loot-focus-menu.webp';
+import sequenceFocus from '~/assets/magic/loot-sequence-focus.webp';
+import pityBar from '~/assets/magic/loot-pity-action-bar.webp';
+
+Les formules, les pages de formule, les potions, les plans d'autel et beaucoup d'ingrédients viennent des **coffres de butin** du monde. La **focalisation du butin**, le système de garantie, fait en sorte que la malchance ne dure jamais éternellement.
+
+## Où sont les coffres de butin ?
+
+**Chaque coffre d'une structure générée naturellement est un coffre de butin Beyonder.** Ça comprend les villages, les mines abandonnées, les donjons, les temples, les épaves, les trésors enfouis, les bastions et les portails en ruine. Il n'existe pas de coffre Beyonder lumineux spécial à chercher.
+
+Quand tu en ouvres un et que du butin Beyonder tombe, il **apparaît à côté du coffre** et brille pendant quelques secondes. Un message dans le chat te prévient que quelque chose est apparu.
+
+:::note[Chaque coffre ne te récompense qu'une fois]
+Chaque joueur reçoit le butin d'un coffre donné **une seule fois**. Après **12 heures à 2 jours**, le coffre se remplit à nouveau, mais seulement pour les joueurs qui ne l'ont pas encore pillé. Ta barre d'action affiche « Refill in ... » quand tu l'ouvres. Un coffre vidé par quelqu'un d'autre te récompense quand même, mais pas tes propres anciens coffres.
+:::
+
+## Que peut donner un coffre ?
+
+Chaque coffre que tu ouvres fait un tirage de butin Beyonder.
+
+| Butin | Chance par coffre | Notes |
+|---|---|---|
+| Formule | 1 % | Une formule complète pour une potion |
+| Page de formule | 3 % | Une page d'une formule. Voir [Préparation](/fr/magic/brewing/#formules-et-pages-de-formule) |
+| Potion | 1 % | Une potion terminée. Elle expire 48 heures après sa création |
+| Parchemin d'autel | 2 % | Un **Strange Scroll**, le plan d'un autel de préparation ou d'un Autel sacrificiel |
+
+La plupart du butin concerne les basses Séquences. Les chances approximatives sont ci-dessous.
+
+| Séquence | Part |
+|---|---:|
+| 9 | environ 44 % |
+| 8 | 22 % |
+| 7 | 15 % |
+| 6 | 10 % |
+| 5 | 7 % |
+| 4 | 1 % |
+| 3 | 0,5 % |
+| 2 | 0,2 % |
+| 1 | 0,1 % |
+| 0 | 0,05 % |
+
+La **Loi de Convergence** favorise ta propre Voie. Dans 60 % des coffres, l'objet suit ta propre Voie (70 % de ces cas) ou l'une de tes [Voies voisines](/fr/magic/pathways/#voies-voisines). Sinon, c'est une Voie au hasard.
+
+Les coffres des cités antiques ont aussi 7,5 % de chances de contenir un disque de musique personnalisé.
+
+:::tip[Marées quotidiennes]
+Un jour de **Tide of Fortune**, les coffres donnent du butin 2,5 fois plus souvent, la garantie se remplit en deux fois moins de coffres et le butin rare est 2,5 fois plus probable. Un jour de **Deep Tide**, il y a deux fois plus de gisements à miner et les coffres trouvent des ingrédients deux fois plus souvent. Voir [Marées quotidiennes](/fr/guides/tides/).
+:::
+
+## Ingrédients
+
+Les ingrédients sont de trois sortes, et **aucun ne peut être visé** avec la focalisation du butin.
+
+### Ingrédients à trouver
+
+Ils apparaissent dans les coffres de butin, à côté du coffre comme le reste du butin, alors explore de nouvelles structures.
+
+### Ingrédients à récupérer sur les créatures
+
+Ils tombent des [créatures Beyonder](/fr/magic/creatures/). Chasse la bonne créature dans le bon biome. Une [Lune cramoisie](/fr/magic/crimson-moon/) amène bien plus de créatures.
+
+### Ingrédients à miner
+
+Ils apparaissent dans le monde sous forme de **gisements** qui **brillent en rouge** et lancent un **rayon** visible de loin. Fais un **clic droit** sur un gisement pour le récolter.
+
+- Une nouvelle série de gisements est placée **chaque jour**, près des endroits où les joueurs sont actifs.
+- Les ingrédients courants ont environ 3 gisements par jour. Les plus rares en ont moins, et les plus rares de tous ont 15 % de chances d'avoir un seul gisement par jour.
+- Les Beyonders qui ont une capacité de divination peuvent utiliser **Vein Divination** pour trouver un gisement, une fois toutes les 5 minutes.
+- La [prime](/fr/magic/acting/#primes) « ingrédients à miner » t'indique aussi un gisement actif.
+
+### Autres sources
+
+- Les [Beyonders sauvages](/fr/magic/wild-beyonders/) vendent des marchandises de Voie et peuvent lâcher des ingrédients.
+- Les [boss de Faille](/fr/guides/bosses/) paient avec une roulette qui peut contenir des ingrédients, des formules, des potions et des Caractéristiques Beyonder.
+- L'[Emporium brillant](/fr/guides/emporium/) vend certains ingrédients.
+- Les ingrédients en trop peuvent être vendus aux villageois simplets et sans profession contre des [Éclats d'énergie](/fr/guides/economy/#éclats-dénergie).
+
+## Focalisation du butin (garantie)
+
+La **focalisation du butin** te garantit le butin dont tu as besoin. Tu choisis un type de butin, et chaque coffre de butin que tu ouvres ajoute 1 à son compteur. Quand le compteur atteint le **seuil**, ce coffre te donne à coup sûr le butin visé.
+
+### Comment régler ma focalisation ?
+
+1. Tape `/magic`.
+2. Clique sur **Loot Focus** (l'entonnoir).
+3. Choisis un type parmi **Recipes**, **Pages**, **Potions** ou **Altar Scrolls**.
+4. Si tu veux, choisis une **tranche de Séquences** (voir plus bas), ou garde **Any Sequence**.
+
+<Figure src={lootFocus} alt="Le menu Loot Focus avec l'infobulle Recipes qui affiche 0 coffre sur 150" caption="Le menu Loot Focus. Survole un type pour voir ta progression." contain />
+
+Après chaque coffre, ta barre d'action affiche ta progression sous la forme « Pity: X/Y ».
+
+<Figure src={pityBar} alt="La barre d'action qui affiche Pity: 1/150 et Refill in 1d 16h après l'ouverture d'un coffre de butin" caption="La barre d'action après l'ouverture d'un coffre de butin avec une focalisation réglée." contain />
+
+### Combien de coffres faut-il ?
+
+Avec **Any Sequence**, les seuils sont les suivants.
+
+| Focalisation | Coffres |
+|---|---|
+| Parchemins d'autel | 50 |
+| Pages | 100 |
+| Formules | 150 |
+| Potions | 200 |
+
+Les formules et les pages ont des compteurs séparés. Vise les pages si tu collectionnes des pages, et les formules si tu veux une formule complète.
+
+### Tranches de Séquences
+
+Tu peux limiter la récompense à une tranche de Séquences. Le seuil est alors multiplié par le multiplicateur de la tranche, puis encore par **x1,5 pour chaque Séquence** entre ta propre Séquence et la Séquence la plus puissante de la tranche. Un joueur de Séquence 9 qui vise la tranche High (9 à 7) paie x1,5 deux fois.
+
+| Tranche | Séquences | Multiplicateur |
+|---|---|---|
+| High Sequences | 9 à 7 | x2 |
+| Middle Sequences | 6 à 4 | x4 |
+| Low Sequences | 3 à 1 | x8 |
+| Peak | 0 | x15 |
+
+Exemples de seuils pour les **formules** :
+
+| Ta Séquence | High (9 à 7) | Middle (6 à 4) | Low (3 à 1) | Peak (0) |
+|---|---|---|---|---|
+| 9 | 675 | 4 557 | 30 755 | 86 498 |
+| 7 | 300 | 2 025 | 13 669 | 38 444 |
+| 4 | 300 | 600 | 4 050 | 11 391 |
+
+Vise des tranches proches de ta propre Séquence. Le menu affiche ton vrai seuil pour chaque tranche avant que tu la choisisses.
+
+<Figure src={sequenceFocus} alt="Le menu Sequence Focus avec une icône pour chaque tranche" caption="Clique de nouveau sur un type visé pour ouvrir le menu Sequence Focus et choisir une tranche." contain />
+
+### Épingler ta prochaine potion
+
+Quand tu vises les **potions**, tu peux aussi cliquer sur **Aim at your next Sequence** et épingler une potion précise (une Voie et une Séquence).
+
+- Une potion épinglée sur une Voie **que tu suis déjà** coûte autant que sa tranche.
+- Une potion épinglée sur **une autre Voie** coûte deux fois plus, et elle est refusée si les sièges de cette Séquence sont complets.
+- Si une potion épinglée ne peut plus être livrée, ta progression est **conservée**, pas dépensée. Épingle une autre cible pour la réclamer.
+
+Même sans épingle, une potion obtenue par la garantie vise une Voie que tu suis, à ta prochaine Séquence.
+
+### Quand le compteur repart-il à zéro ?
+
+- Une récompense de garantie remet toujours le compteur à 0.
+- Trouver naturellement le butin visé ne le remet à zéro que s'il est dans ta tranche (ou si c'est ta potion épinglée). Un butin naturel d'un niveau inférieur garde ta progression.
+- Passer ta focalisation à un autre type retire une tranche que le nouveau type ne peut pas récompenser.
+
+:::note[Voie de la Résolution]
+Les nouveaux joueurs qui ont choisi la **Voie de la Résolution** commencent avec leur compteur de formules à un coffre de la garantie. Vise **Recipes** avec **Any Sequence** et le prochain coffre te donne une formule, pour n'importe quelle Voie et Séquence. Voir [Démarrage rapide](/fr/general/start/#4-choisis-ton-bonus-de-départ).
+:::
