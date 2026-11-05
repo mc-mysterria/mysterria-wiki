@@ -10,8 +10,11 @@
  * and reads that first, so the choice carries over as soon as the main site does the same
  * (two lines in its useTheme.ts and index.html). Until then each site remembers its own.
  *
- * Also marks the accent as plain (std-acc-plain, as std/accents.ts paintAccent does for
- * Bone): the std set then adds an underline to focus, since Bone is nearly the text colour.
+ * The reader's drawn card follows them here too: the main site keeps its accent in a
+ * `myst-accent` cookie on .mysterria.net as "acc,deep,fill,plain" (src/utils/sharedLook.ts there),
+ * the four values its paintAccent() uses, and this paints them before the first frame. Without
+ * a card the wiki keeps Bone, marked plain (std-acc-plain): the std set then adds an underline
+ * to focus, since Bone is nearly the text colour.
  */
 ---
 
@@ -40,7 +43,22 @@
 			const domain = location.hostname.endsWith('mysterria.net') ? '; domain=.mysterria.net' : '';
 			document.cookie = `${KEY}=${theme}; path=/; max-age=31536000; SameSite=Lax${domain}`;
 		};
-		root.classList.add('std-acc-plain');
+		const paintAccent = () => {
+			let plain = true;
+			try {
+				const shared = document.cookie.match(/(?:^|;\s*)myst-accent=([^;]+)/);
+				const parts = shared ? decodeURIComponent(shared[1]).split(',') : [];
+				const hex = /^#[0-9a-f]{6}$/i;
+				if (parts.length === 4 && parts.slice(0, 3).every(part => hex.test(part))) {
+					root.style.setProperty('--acc', parts[0]);
+					root.style.setProperty('--acc-deep', parts[1]);
+					root.style.setProperty('--acc-fill', parts[2]);
+					plain = parts[3] === '1';
+				}
+			} catch (e) {}
+			root.classList.toggle('std-acc-plain', plain);
+		};
+		paintAccent();
 		apply(read());
 		return {
 			get: () => root.dataset.theme,
