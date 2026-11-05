@@ -99,6 +99,8 @@ const jsonLd = JSON.stringify({'@context': 'https://schema.org', '@graph': graph
 
 <Default/>
 <meta name="theme-color" content="#05070a"/>
+{/* let Google show a page's pictures large in results; the 404 page stays out of the index */}
+<meta name="robots" content={isNotFound ? 'noindex, follow' : 'max-image-preview:large'}/>
 <link rel="preload" href={latin} as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href={latinExt} as="font" type="font/woff2" crossorigin/>
 {lang === 'uk' && <link rel="preload" href={cyrillic} as="font" type="font/woff2" crossorigin/>}
