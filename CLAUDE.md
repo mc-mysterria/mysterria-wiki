@@ -87,12 +87,15 @@ When working with content:
 - Follow existing frontmatter patterns for consistency
 - Images should be placed in appropriate `src/assets/` subdirectories
 - Use MDX for content requiring React-like components
-- Maintain consistent navigation structure through directory organization
+- A new page goes in a folder (its URL), and must also be listed in `src/lib/sidebar.mjs` in the section where it belongs. Pages not listed there do not show in the sidebar, the landing page or the quick search
+- Images: import a file from `src/assets/` with the `~/assets/...` alias and show it with `<Figure src={...} alt="..." caption="..."/>` from `~/components/mdx`. Plain Markdown images still work
+- Asides: `:::note`, `:::tip`, `:::caution` and `:::danger` work as in any Starlight site. A warning about losing items, progress or Madness is caution or danger, never tip
 - Links should include the locale prefix (e.g., /uk/general/start/); English has no prefix (/general/start/)
 
 ## Development Notes
 
-- The site uses auto-generated sidebar navigation based on directory structure
+- The sidebar is an explicit list in `src/lib/sidebar.mjs` (nine sections, each folded except the current one), shared with the search index in `src/pages/search/[lang].json.ts`. It is not generated from folders
+- Removing or merging a page needs a redirect in both `astro.config.mjs` (redirects) and `nginx.conf` (Docker)
 - Custom styling heavily customizes the default Starlight appearance
 - The landing page is drawn by `src/components/starlight/Hero.astro` from the index pages' frontmatter
 - Remote images get their size from `src/data/remote-image-sizes.json` (`node scripts/measure-remote-images.mjs`)
