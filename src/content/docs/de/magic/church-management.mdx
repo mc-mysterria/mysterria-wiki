@@ -1,0 +1,235 @@
+---
+title: "Kirchenverwaltung"
+description: "Eine Kirche auf Mysterria führen: Zweigstellen, Regional HQs, Rollen an den Orten, Gottesdienste, Schatzkammer, Church Vaults, Verknüpfung mit Lands und Kirchenkriege auf diesem LOTM-Server."
+sidebar:
+  label: Kirchenverwaltung
+  order: 34
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import blessedSettings from '~/assets/magic/church-blessed-settings.webp';
+import coreBroken from '~/assets/magic/church-core-broken.webp';
+import vaultRecipe from '~/assets/magic/church-vault-recipe.webp';
+import vaultMenu from '~/assets/magic/church-vault-menu.webp';
+
+Anführer und Offiziere lassen eine Kirche über ihre Orte, Gottesdienste, Vaults, Verknüpfungen mit Lands und Kriege wachsen. Wie du eine Kirche gründest und ihr beitrittst, steht unter [Erste Schritte mit Kirchen](/de/magic/churches/).
+
+## Kirchenorte
+
+Die Präsenz einer Kirche kommt von **Orten**, jeder mit einem gesetzten, aktiven Church Core. Vorteile werden nach dem Abstand zu deinen aktiven Orten geprüft, nicht nach Chunk.
+
+| Ort | Was das ist |
+|---|---|
+| **Main Site** | Dein Hauptquartier und Hauptanker. Entsteht durch deinen ersten Core |
+| **Branch Site** | Weitere Orte, die das Netz und die Unterstützung vor Ort wachsen lassen |
+| **Regional HQ** | Ein weit entfernter Ort, der mehr Plätze für Zweigstellen freischaltet |
+
+Ein Ort, dessen Core fehlt oder inaktiv ist, zählt nicht.
+
+### Was, wenn der Hauptcore zerbricht?
+
+<Figure src={coreBroken} alt="Warnung im Chat, wenn ein Haupt-Church-Core zerstört wurde" />
+
+- Ohne Hauptcore laufen **alle Vorteile der Kirche mit 50 %**.
+- Nach **14 Tagen** ohne Hauptcore gilt die Kirche als verlassen.
+- Nach **weiteren 14 Tagen** werden alle Mitglieder entfernt, und die Kirche wird gelöscht.
+
+Um dein Hauptquartier zu verlegen, bau deinen Hauptcore ab und setz ihn neu.
+
+## Wie füge ich eine Zweigstelle hinzu?
+
+1. Sei der Anführer der Kirche, mit gesetztem und aktivem Hauptcore.
+2. Prüfe, ob du einen freien Platz für eine Zweigstelle hast (Tabelle unten).
+3. Stell einen weiteren [Church Core](/de/magic/churches/#rezept-für-den-church-core) her und setz ihn mindestens 16 Blöcke von jedem anderen Core entfernt.
+4. Er wird als Zweigstelle registriert. Verwalte ihn im Kirchenmenü unter den Orten.
+
+| Sequenz des Anführers | Plätze für Zweigstellen | Plätze für Regional HQs |
+|---|---:|---:|
+| 4 | 0 | 0 |
+| 3 | 1 | 1 |
+| 2 | 3 | 1 |
+| 1 | 5 | 2 |
+| 0 | 8 | 3 |
+
+Klappt das Setzen eines Cores nicht, sind vielleicht keine Plätze für Zweigstellen mehr frei, dein Hauptcore ist inaktiv, du brauchst zuerst ein Regional HQ, oder der Core gehört jemand anderem.
+
+## Regional HQs
+
+Jedes aktive Regional HQ gibt **5 Plätze für Zweigstellen**. Um eins zu setzen, muss Folgendes stimmen.
+
+- Deine nächste Erweiterung muss ein Regional HQ brauchen.
+- Es muss mindestens **5.000 Blöcke** von deinem Hauptort, deinen Zweigstellen und anderen Regional HQs entfernt sein.
+- Es muss in **derselben Welt** wie dein Hauptort liegen.
+- Es braucht einen Leiter, entweder einen Co-Anführer oder einen Engel mit maximaler Frömmigkeit. Leg ihn mit `/coi church regional-manager set <siteId> <player>` fest.
+
+Das Kirchenmenü zeigt dir, ob deine aktuelle Stelle passt.
+
+## Einen Ort führen
+
+Jeder Ort funktioniert am besten mit einem aktiven **Oberdiakon** hoher Sequenz, bis zu **2 Bischöfen** und regelmäßigen Gebeten und Besuchen.
+
+| Oberdiakon | Wirksamkeit des Ortes |
+|---|---:|
+| Sequenz 0 bis 4 | 100 % |
+| Sequenz 5 | 70 % |
+| Sequenz 6 | 55 % |
+| Sequenz 7 | 45 % |
+| Sequenz 8 | 35 % |
+| Sequenz 9 | 25 % |
+| Kein Beyonder | 15 % |
+| Kein Oberdiakon | 65 % |
+
+Ein Oberdiakon, der nicht kürzlich gebetet hat, zählt weniger.
+
+| Aktivität am Ort | Wert |
+|---|---|
+| Zeitfenster für kürzliche Aktivität | 7 Tage |
+| Wöchentliches Gebetsziel | 12 Gebete |
+| Wöchentliches Besuchsziel | 8 Besucher |
+| Eine Zweigstelle verfällt nach | 14 Tagen ohne echte Aktivität |
+| Eine verfallene Zweigstelle wiederbeleben | 20 Schatzkammer und 12 Spiritualität, in bis zu 12 Blöcken Abstand |
+
+Erreichst du entweder das Gebetsziel oder das Besuchsziel, gilt der Ort als voll aktiv.
+
+### Schatzkammer, Opfergaben und Aufwertungen
+
+Halte einen Gegenstand und nutze im Kirchenmenü die Aktion für Opfergaben an einem Ort (oder `/coi church offering donate <siteId>`), um ihn der Schatzkammer des Ortes hinzuzufügen. Die Schatzkammer bezahlt Aufwertungen und Wiederbelebungen von Orten.
+
+Aufwertungen beginnen bei **32 Schatzkammer**, jede Stufe kostet 1,6-mal so viel wie die vorherige, und ein Ort geht bis **Stufe 5**. Jede Stufe erhöht die Ankerkapazität des Ortes um 12 %.
+
+Ist deine Kirche mit einem Land verknüpft, kann die Schatzkammer auf die Bank des Landes zugreifen (siehe [Lands](#ein-land-verknüpfen)).
+
+## Gottesdienste
+
+Gottesdienste lassen deinen **Church Progress** wachsen. Das hilft einer jungen Kirche, Stufen aufzusteigen.
+
+| Gottesdienst | Abklingzeit | Kosten an Spiritualität | Gebetsstärke | Zusätzlicher Effekt | Grundfortschritt |
+|---|---:|---:|---:|---|---:|
+| Predigt | 60 Min. | 12 | +3,5 % | keiner | 6 |
+| Messe | 180 Min. | 16 | +4,5 % | 8 s Regeneration I | 8 |
+| Kommunion | 240 Min. | 18 | +5,0 % | 2 Linderung von heilbarem Wahnsinn | 7 |
+| Beichte | 120 Min. | 10 | +3,0 % | 1 Linderung von heilbarem Wahnsinn | 5 |
+
+- Der Anführer, die Co-Anführer, Engel oder der Oberdiakon dieses Ortes können einen leiten.
+- Wer den Gottesdienst hält, muss in bis zu **24 Blöcken** Abstand vom Ort stehen, und mindestens ein Mitglied muss teilnehmen.
+- Starte einen über das Kirchenmenü oder mit `/coi church ritual <siteId> <sermon|mass|communion|confession>`.
+- Fortschritt = (Grundfortschritt + 0,75 pro Teilnehmer, bis zu 12 Teilnehmer) x Aktivität des Ortes, nie unter 25 % gerechnet.
+
+Jede Teilnahme zählt für die Tat **Devout church service** (10 nötig) für [Sequenz 0](/de/magic/sequence-zero/).
+
+## Artefakt-Vaults
+
+Ein **Church Vault** lagert [Versiegelte Artefakte](/de/magic/sealed-artifacts/) für die Kirche. Mitglieder leihen sie aus, und Verwalter genehmigen die Ausleihe.
+
+### Rezept für das Vault
+
+<Figure src={vaultRecipe} alt="Rezept für das Church Vault mit einem Leuchtfeuer in der Mitte" caption="Der mittlere Platz zeigt ein einfaches Leuchtfeuer, aber ein Church Core geht auch." contain />
+
+| Reihe | Gegenstände |
+|---|---|
+| Oben | Diamantblock, Truhe, Diamantblock |
+| Mitte | Truhe, Leuchtfeuer (oder ein Church Core), Truhe |
+| Unten | Netheritblock, Obsidian, Netheritblock |
+
+Nur der Anführer der Kirche kann es herstellen. Setz es in bis zu **16 Blöcken** Abstand von einem aktiven Church Core.
+
+### So funktioniert das Ausleihen
+
+1. Ein Verwalter lagert ein Versiegeltes Artefakt, das er hält, im Vault.
+2. Ein Mitglied fordert es über das Menü des Vaults an (`/coi church artifact request <artifactId>`).
+3. Ein Verwalter genehmigt oder lehnt ab.
+4. Das Mitglied muss es zurückgeben, bevor die Leihzeit abläuft. Verspätete, zurückgerufene oder fallengelassene Artefakte werden zurück ins Kirchenlager geholt, und ebenso jedes Artefakt, dessen Ausleiher sich ausloggt.
+
+<Figure src={vaultMenu} alt="Das Menü Artifact Vault mit dem Tooltip Vault Status, der gelagerte, verliehene und offene Anfragen zählt" caption="Das Menü des Vaults aus /coi church vault. Fahre mit der Maus über das Buch, um den Status des Vaults zu sehen." contain />
+
+Der Spieler, der ein Artefakt eingelagert hat, kann es mit `/coi church artifact withdraw` zurücknehmen, wenn es nicht verliehen ist und keine offene Anfrage hat.
+
+| Wert des Vaults | Aktueller Wert |
+|---|---|
+| Vault nutzen in | 10 Blöcken |
+| Kapazität | +1 pro Stufe der Kirche, pro Vault, pro Stufe eines Ortes und pro Land-Verknüpfung, bis zu **12** |
+| Leihzeit | 2 Stunden, steigt mit Stufe, Vaults, Stufen der Orte und Land-Verknüpfungen, bis zu **4 Stunden** |
+| Artefakt aus der Ferne | Jeder Ort kann ein Artefakt zum Ausleihen aus der Ferne bereithalten, sobald es **7 Tage** gelagert ist |
+
+Fähigkeiten können Cores oder Vaults nicht ersetzen, und Beyonder Characteristic Theft und Purification können Artefakten im Besitz der Kirche keine Beyonder-Charakteristika nehmen.
+
+## Ein Land verknüpfen
+
+Kirchen beanspruchen kein Land. Nutzt du [Städte](/de/guides/towns/), kannst du ein Land verknüpfen, in dem einer deiner aktiven Orte liegt.
+
+1. Beanspruche das Gebiet in Lands und setz den Core des Ortes hinein.
+2. Führe in der Nähe des Ortes `/coi church land request` aus (oder `/coi church land request <siteId>`).
+3. Der Besitzer des Landes führt `/coi church land approve <churchLeader>` aus.
+4. Prüfe es mit `/coi church land`.
+
+Eine Kirche hat **3** Plätze für Land-Verknüpfungen, plus 1 für je 10 beanspruchte Chunks. Der Besitzer des Landes kann mit `/coi church land perk <churchLeader> <treasury|artifacts> <true|false>` zwei Vorteile ein- und ausschalten.
+
+- **Treasury** lässt die Schatzkammer der Kirche die Bank des Landes nutzen.
+- **Artifacts** gibt etwas mehr Kapazität im Vault und längere Leihzeit.
+
+In einem beanspruchten Land entscheiden die Berechtigungen von Lands, wer Cores und Vaults abbauen darf (außer in einem angenommenen Kirchenkrieg).
+
+## Kirchenkriege
+
+Markiere andere Kirchen im Menü **Diplomacy & War** als Verbündete, Feinde oder neutral. Kriege ändern die Vorteile.
+
+| Lage | Vorteile |
+|---|---|
+| Du hast erklärt, sie haben nicht angenommen | x0,5 für die erklärende Kirche |
+| Angenommener Krieg, solange er läuft | x0 (alle Vorteile ausgesetzt) |
+| Sieger | x1,5 für 14 Tage |
+| Verlierer | x0,5 für 14 Tage |
+| Unentschieden | x0,5 für 7 Tage |
+| Verbündeter des Siegers | x1,2 |
+| Verbündeter des Verlierers oder bei Unentschieden | x0,8 |
+
+- Eine Kirche kann bis zu **3** aktive Kriege haben, mit **30 Minuten** zwischen Erklärungen. Ein Krieg dauert höchstens **72 Stunden**.
+- In einem angenommenen Krieg können Gegner ab **Sequenz 4** deine Cores und Vaults abbauen. Schwächere Spieler können das nicht.
+- Wer den **Hauptcore** des Gegners zerstört, beendet den Krieg zu seinen Gunsten.
+
+| Kriegsbefehl | Was er tut |
+|---|---|
+| `/coi church war` | Kriege auflisten |
+| `/coi church war declare <leader>` | Einer Kirche den Krieg erklären |
+| `/coi church war accept <leader>` | Eine Erklärung annehmen |
+| `/coi church war join <attackerLeader> <defenderLeader> <attacker\|defender>` | Einem Krieg als Verbündeter beitreten |
+| `/coi church war surrender <leader>` | Aufgeben |
+| `/coi church war draw <leader>` | Ein Unentschieden anbieten oder annehmen |
+
+## Gefahrenwarnungen und Divine Observation
+
+Der Anführer, die Co-Anführer, Engel und Oberdiakone können in den Beobachtungseinstellungen des Kirchenmenüs Warnungen einrichten.
+
+- **Gefahrenwarnungen**, wenn ein Mitglied (oder jemand, den du als Blessed markierst) auf 6 Gesundheit oder weniger fällt oder 85 % Wahnsinn erreicht, mit seinem genauen Ort, höchstens einmal alle 5 Minuten.
+- **Mutationswarnungen**, wenn jemand Gefahr läuft, die Kontrolle zu verlieren, und **Todesmeldungen**.
+- **Gebetsmeldungen** für Mitglieder, erfahrene Mitglieder oder Außenstehende, die beten.
+
+<Figure src={blessedSettings} alt="Die Seite Blessed Settings im Kirchenmenü mit einer Reihe von Schaltern für Warnungen und Meldungen" caption="Blessed Settings im Kirchenmenü. Jedes Symbol schaltet eine Warnung oder Meldung ein oder aus." contain />
+
+Mit **Divine Observation** können Kirchenoffiziere ein Mitglied aus der Nähe beobachten. Schleiche, um aufzuhören. Ein Mitglied mit gleicher oder höherer Sequenz muss vorher zustimmen. Vertrauenswürdige Mitglieder (Co-Anführer, Engel, Oberdiakone oder erfahrene aktive Mitglieder) können auf eine Liste für Beobachtung aus der Ferne gesetzt werden.
+
+## Befehle für Anführer und Verwalter
+
+| Befehl | Was er tut |
+|---|---|
+| `/coi church add <player>` | Einen Spieler einladen (Anführer und Co-Anführer) |
+| `/coi church remove <player>` | Ein Mitglied entfernen |
+| `/coi church authority grant <player>` | Einen Co-Anführer ernennen (höchstens 2) |
+| `/coi church authority revoke <player>` | Einen Co-Anführer absetzen |
+| `/coi church angel promote <player>` | Einen Engel ernennen |
+| `/coi church angel demote <player>` | Einen Engel absetzen |
+| `/coi church role set <player> <follower\|angel>` | Die Rolle eines Mitglieds festlegen |
+| `/coi church regional-manager set <siteId> <player>` | Einen Leiter für ein Regional HQ festlegen |
+| `/coi church ownership handoff <player> confirm` | Die Kirche an jemand anderen übergeben |
+| `/coi church disband` | Auflösen (zur Bestätigung den Namen der Kirche innerhalb von 45 Sekunden tippen) |
+| `/coi church bless <player>` | Ein Mitglied segnen |
+| `/coi church gift <player> <type>` | Ein Geschenk machen (siehe [Geschenke](/de/magic/church-perks/#geschenke)) |
+| `/coi church ritual <siteId> <service>` | Einen Gottesdienst halten |
+| `/coi church offering donate <siteId>` | Den gehaltenen Gegenstand einem Ort opfern |
+| `/coi church artifact approve\|deny\|recall <artifactId>` | Ausleihen aus dem Vault verwalten |
+| `/coi church artifact deposit` | Das gehaltene Artefakt einlagern |
+| `/coi church merge request <leader>` | Eine Vereinigung von Kirchen vorschlagen |
+| `/coi church merge accept\|decline\|status\|cancel` | Auf eine Vereinigung antworten oder sie prüfen |
+| `/coi church support set <prayer\|ritual\|blessing> <true\|false>` | Gemeinsame Unterstützung ein- oder ausschalten |
+
+Die meisten davon gibt es auch als Knöpfe im Kirchenmenü.

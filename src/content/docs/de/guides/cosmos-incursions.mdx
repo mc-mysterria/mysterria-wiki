@@ -1,0 +1,120 @@
+---
+title: "Cosmos Incursions"
+description: "Cosmos Incursions auf Mysterria, dem LOTM Minecraft-Server: wann sie starten, Zonenfarben und Regeln beim Tod, Leuchtfeuer, Belohnungen für Städte und Extraktionszonen."
+sidebar:
+  order: 37
+---
+
+import {Figure} from '~/components/mdx';
+import cosmosShop from '~/assets/cosmos/cosmos-shop.webp';
+
+Cosmos Incursions sind die PvP-Events des Servers. Dabei öffnen sich farbige Zonen in der Welt, und Städte kämpfen um die **Leuchtfeuer** darin. Außerhalb der Events gibt es dauerhafte **Extraktionszonen**, in denen du Rohstoffe für deine Stadt sammelst, während andere Spieler Jagd auf dich machen.
+
+## Wann startet eine Incursion?
+
+Eine Incursion startet von selbst, sobald **25 Spieler** online sind.
+
+| Regel | Wert |
+|---|---|
+| Countdown | 3 Minuten, nachdem die Spielerzahl erreicht ist |
+| Dauer | 30 Minuten |
+| Abklingzeit | Mindestens 2 Stunden bis zur nächsten |
+| Zonen | 2 bei 25 bis 32 Spielern online, 3 bei 33 bis 40, 4 ab 41 |
+| Zonengröße | Radius 150 Blöcke, mindestens 500 Blöcke voneinander und mindestens 50 Blöcke von jedem Stadt-Claim entfernt |
+
+Die Zonen sind durch Wände aus farbigen Partikeln markiert. Der Start wird auch auf Discord angekündigt, und `/cosmos status` zeigt, was gerade läuft.
+
+## Wie gefährlich ist jede Zone?
+
+Die Zonenfarben werden in der Reihenfolge Grün, Gelb, Rot, Tod vergeben. Bei 2 Zonen gibt es Grün und Gelb, bei 3 kommt eine rote Zone dazu, und eine Todeszone öffnet sich nur, wenn 41 oder mehr Spieler online sind. Ein Zustimmungsbildschirm erklärt die Regeln, bevor du hineingehst.
+
+| Zone | Wenn du stirbst | Ausgleich im PvP |
+|---|---|---|
+| **Grün** | Du behältst alle deine Gegenstände | Schaden wird nach Lebenspunkten angeglichen, Mythical Form ist gesperrt, Wahnsinn von anderen wird aufgehoben |
+| **Gelb** | Jeder Gegenstand fällt mit einer Chance von **33 %** | Schaden wird zur Hälfte angeglichen, Mythical Form ist gesperrt, Wahnsinn von anderen wird halbiert |
+| **Rot** | **Alle** Gegenstände fallen | Keiner |
+| **Tod** | **Alle** Gegenstände fallen, dazu die Strafe auf die Sequenz unten | Keiner |
+
+Grüne und gelbe Zonen sind der Ort, um PvP in Incursions zu lernen. Dort kann ein Halbgott einen frischen Beyonder nicht einfach auslöschen.
+
+### Was passiert, wenn ich in einer Todeszone sterbe?
+
+Beyonder ab **Sequenz 4** trifft das bei **jedem** Tod in einer Todeszone, egal wer oder was sie getötet hat.
+
+- Hast du **mindestens 50 %** deiner Schauspielleiste, verlierst du diese 50 % und behältst deine Sequenz.
+- Hast du **weniger als 50 %**, fällst du **eine Sequenz** zurück. Du startest die neue Sequenz mit 99 % ihrer Schauspielleiste, und deine Beyonder-Charakteristik fällt dort, wo du gestorben bist.
+- Nach einer Strafe bist du **20 Sekunden** lang vor einer weiteren geschützt.
+
+Beyonder auf Sequenz 5 und schwächer riskieren nur ihre Gegenstände.
+
+:::caution[Mach einen Paper Angel scharf]
+Ein **Paper Angel** schützt deine Sequenz. Rechtsklicke ihn, um ihn scharf zu machen. Dann fängt er eine Strafe in der Todeszone ab und ist verbraucht. Es gibt ihn bei Events und vom Team.
+:::
+
+### Was ist Spirit Weight?
+
+Beyonder ab Sequenz 4 tragen in einer Zone **Spirit Weight**. Sie leuchten, damit sie sich nicht verstecken können, und nehmen alle 5 Sekunden 1 Schaden.
+
+### Was, wenn ich mich in einer Zone auslogge?
+
+Ein Körper namens „Hollow \<dein Name\>“ bleibt **5 Minuten** lang zurück. Tötet ihn jemand, gelten für dich die vollen Regeln beim Tod.
+
+## Wie gewinnen Städte eine Incursion?
+
+Jede Zone hat **Leuchtfeuer**. Stell dich in bis zu 20 Blöcken Abstand an ein Leuchtfeuer, um es für deine Stadt einzunehmen. Mehr Spieler nehmen es schneller ein, und ein leeres Leuchtfeuer fällt langsam wieder zurück. Städte bekommen Punkte für das **Halten**, das **Halten unter Angriff** (doppelt so viel wert) und das **Einnehmen** von Leuchtfeuern. Tödlichere Zonen zählen mehr (Gelb x1,25, Rot x1,5, Tod x2).
+
+Am Ende der Incursion gibt es diese Belohnungen.
+
+| Belohnung | Wer sie bekommt |
+|---|---|
+| **+10 % Schauspiel-Tempo für 3 Stunden** | Die Stadt auf Platz 1. Jeder weitere Sieg in Folge gibt +2 %, bis zu +6 % |
+| **+5 % Schauspiel-Tempo für 2 Stunden** | Die Stadt auf Platz 2 |
+| **Rohstoffe** (Gold, Silber, Edelsteine) | Aufgeteilt unter allen Städten mit mindestens 5 % der Punkte des Siegers, je nachdem, wie viel sie gekämpft haben. Städte derselben Nation, die alle teilnehmen, bekommen bis zu +30 % |
+| **MVP-Belohnung** | Die besten 3 Spieler bekommen Schauspielen und Geld, egal auf welchem Platz ihre Stadt ist |
+| Schauspielen | Alle, die dabei sind, wenn ihre Stadt ein Leuchtfeuer einnimmt |
+
+Getötete Spieler in Zonen geben ebenfalls Schauspielen, in tödlicheren Zonen mehr. Tötest du denselben Spieler noch einmal, bekommst du 20 Minuten lang kein Schauspielen dafür.
+
+### Bekomme ich Beute, wenn ich Spieler töte?
+
+Eine **PvP-Kiste** bekommst du nur, wenn dein Kill eine Strafe in der Todeszone auslöst. Das Opfer muss also Sequenz 4 oder stärker gewesen sein, keinen Paper Angel gehabt haben und nicht unter der Schutzzeit nach einer Strafe gestanden haben.
+
+:::caution[Jag nicht die Schwachen]
+Tötest du innerhalb von 10 Minuten 3 Spieler, die 3 oder mehr Sequenzen schwächer sind als du, wirst du für 15 Minuten zu einem **Corrupted Monster**, und Kills aus Griefing bringen keine Kiste.
+:::
+
+## Was sind Extraktionszonen?
+
+Extraktionszonen sind **dauerhafte** PvP-Gebiete, die auf der Karte eingezeichnet und durch dunkelrote Partikelwände markiert sind. Dort ist PvP immer an.
+
+1. **Sammle** an einem **Interessenpunkt**, einem Lichtstrahl mit einem schwebenden Rohstoff. Stell dich in bis zu 8 Blöcken Abstand hin, um Gold, Silber oder Edelsteine zu sammeln. Je länger du bleibst, desto schneller sammelst du. Interessenpunkte wandern alle 15 Minuten.
+2. **Extrahiere** an einem **Extraktionspunkt** in der Nähe des Rands. Steh 10 Sekunden lang in seinem Ring. Gehst du hinaus, bricht das ab, Schaden zu nehmen aber nicht. Extraktionspunkte wandern alle 30 Minuten.
+3. Deine Rohstoffe gehen auf das **Konto deiner Stadt**, und du wirst sicher nach draußen teleportiert.
+
+Stirbst du vor dem Extrahieren, verlierst du alles in deinem Beutel. Es gibt drei Stufen von Zonen.
+
+| Stufe | Gegenstände, die beim Tod fallen | Rohstoffe |
+|---|---|---|
+| Sicher | Keine | Gold und Silber |
+| Mittel | 33 % pro Gegenstand | Gold, Silber und ein paar Edelsteine |
+| Schwer | Alle Gegenstände | Von allem am meisten, auch Edelsteine |
+
+Jede Zone hat ein tägliches Budget an Rohstoffen. Die besten Interessenpunkte versiegen also, wenn viele Spieler sie abfarmen.
+
+### Was kann meine Stadt kaufen?
+
+Deine Stadt gibt Gold, Silber und Edelsteine in `/cosmos shop` aus. `/cosmos balance` zeigt, was deine Stadt hat.
+
+<Figure src={cosmosShop} alt="Das Menü Zone Shop aus /cosmos shop mit drei Reihen von Gegenständen zum Verkauf" caption="Das Menü /cosmos shop." contain />
+
+## Welche Befehle gibt es?
+
+| Befehl | Was er tut |
+|---|---|
+| `/cosmos guide` | Der Leitfaden im Spiel |
+| `/cosmos status` | Die aktuelle Incursion und ihre Zonen |
+| `/cosmos leaderboard` | Die Punkte der Städte nach einem Event |
+| `/cosmos balance` | Gold, Silber und Edelsteine deiner Stadt |
+| `/cosmos shop` | Die Rohstoffe deiner Stadt ausgeben |
+
+Der Leitfaden `/cosmos guide` im Spiel zeigt noch ein paar alte Zahlen (Boni für 24 Stunden und eine Regel zum Zurückfallen ab Sequenz 6). Verlass dich stattdessen auf die Zahlen hier.

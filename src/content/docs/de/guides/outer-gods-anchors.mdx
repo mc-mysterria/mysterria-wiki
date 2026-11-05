@@ -1,0 +1,128 @@
+---
+title: "Outer Gods Anchors"
+description: "Outer Gods Anchors auf Mysterria, dem LOTM Minecraft-Server: wie das Koop-Event funktioniert, Corruption Pressure, Contribution Points und der Shop /oga rewards."
+sidebar:
+  order: 38
+---
+
+import {Figure} from '~/components/mdx';
+import rewardShop from '~/assets/oga/reward-shop.webp';
+
+Outer Gods Anchors (OGA) ist ein Koop-Event für den ganzen Server. Die Spieler drängen die Verderbnis eines Äußeren Gottes zurück und zerbrechen sein Herz. Mit den **Contribution Points**, die du dabei verdienst, kaufst du Belohnungen in `/oga rewards`. Das ist der einzige Shop, der jedes Gnaden-Token verkauft.
+
+In einem Anker können andere Spieler dir nicht schaden, und du kannst dort nicht sterben. Er ist also für jede Sequenz sicher.
+
+## Welche Äußeren Götter können erscheinen?
+
+Jeder Anker gehört zu einem von fünf Äußeren Göttern. Jeder Gott hat sein eigenes Aussehen, seinen eigenen Schwächungseffekt und sein eigenes Wachstumstempo.
+
+- Circle of Inevitability
+- Monarch of Decay (wächst am langsamsten)
+- Mother Goddess of Depravity
+- Mother Tree of Desire (wächst schnell)
+- Primordial Hunger (wächst am schnellsten)
+
+## Wann erscheint ein Anker?
+
+Der Server versucht etwa **alle 3 Tage** (plus oder minus 12 Stunden), einen neuen Anker zu setzen, und nur wenn mindestens **5 Spieler** online sind. Zwischen 02:00 und 08:00 Uhr Serverzeit startet kein Versuch.
+
+| Regel | Wert |
+|---|---|
+| Wo | Nur in der Oberwelt, 300 bis 3.000 Blöcke von 0, 0, nie in Ozeanen oder Flüssen |
+| Abstand zu Städten | 80 bis 160 Blöcke vom nächsten Claim |
+| Wie viele | Höchstens 3 Anker gleichzeitig |
+
+### Phase 1: Brutzeit
+
+Etwa **24 Stunden** lang ist der Samen versteckt. Alle 30 Minuten bringt der Chat ein Gerücht, das den Gott nennt und sagt, wie lange es noch dauert, mit einer kurzen Countdown-Leiste. Spieler in bis zu 40 Blöcken Abstand vom Samen hören sein Umgebungsgeräusch.
+
+### Phase 2: Der Anker erwacht
+
+Endet die Brutzeit, verkündet der Chat den Gott und die **Koordinaten**. Der Samen wird zu einem **Herz**, einem Magmablock in einer Hülle aus Grundgestein. Die Verderbnis breitet sich in Ranken von ihm aus, bis zu 400 Blöcke weit, und Verteidiger spawnen: [Wilde Beyonder](/de/magic/wild-beyonders/), feindliche NPCs und ab Stufe 2 auch Mini-Bosse.
+
+`/oga where` listet jeden aktiven Anker mit Koordinaten, Integrität, Stufe und Richtung von dir aus.
+
+## Wie besiegen wir einen Anker?
+
+Der Anker hat eine **Integritätsleiste**, die als Bossleiste mit ihrer Stufe von 1 bis 5 angezeigt wird. Solange das Herz geschützt ist, kannst du es nicht treffen. Du trägst die Integrität also von außen ab.
+
+| Aktion | Schaden an der Integrität |
+|---|---|
+| Einen Verteidiger töten | 0,1 |
+| Einen NPC töten | 0,5 |
+| Einen Mini-Boss töten | 3 |
+| Einen Nexus eines Sektors zerstören | 5 |
+
+Kämpft niemand, heilt sich der Anker langsam, aber nie über die beste Stufe hinaus, bis zu der die Spieler ihn gedrückt haben. Der Fortschritt bleibt von Abend zu Abend erhalten.
+
+### Phase 3: Angriff auf das Herz
+
+Unter **10 % Integrität** bricht die Hülle mit Lavadurchbrüchen auf. Zerbrich das Magmaherz innerhalb von **45 Minuten**. Schaffst du es nicht, schirmt sich das Herz 2 Minuten lang ab, bekommt 15 Integrität zurück und wächst eine Weile schneller.
+
+Zerbricht das Herz, verschwinden die Verteidiger, und das Land stellt sich in den nächsten 24 Stunden wieder her.
+
+:::note[Deine Bauten sind sicher]
+Die Verderbnis dringt nie in Claims ein und berührt nie Behälter, Schilder, Betten oder ähnliche Blöcke. Bauten ohne Claim können überwuchert werden, aber alles wird wiederhergestellt, sobald der Anker besiegt ist.
+:::
+
+### Was passiert mit einem Anker, gegen den niemand kämpft?
+
+Nach 72 Stunden ohne Kampf verhungert der Gott. Er heilt sich nicht mehr, verliert Integrität und bricht schließlich von selbst zusammen. Wer beigetragen hat, bekommt dann nur die **Hälfte** dessen, was ein Sieg gebracht hätte.
+
+## Welche Werkzeuge helfen gegen die Verderbnis?
+
+| Werkzeug | So funktioniert es |
+|---|---|
+| **Nexus** | Das Feld ist in 5 Sektoren geteilt, jeder mit einem Nexus (einem Block aus weinendem Obsidian) in der Nähe des Kampfs. Bau ihn ab (mehrere Schläge), um das Wachstum in diese Richtung für immer zu stoppen und dem Anker zu schaden |
+| **Ritual** | 3 oder mehr Spieler stehen 20 Sekunden lang in bis zu 6 Blöcken Abstand an einem Nexus. Das Wachstum sinkt 10 Minuten lang auf 40 %. Jeder Nexus kann alle 15 Minuten ein Ritual haben |
+| **Warding Pylon** | Setz einen **Leitstein** ins Feld und rechtsklicke ihn dann mit **Glowstonestaub**, um ihn zu befeuern (1 Minute pro Staub, bis zu 30 Minuten). Ein befeuerter Pylon hält die Verderbnis in seiner Richtung zurück, verhindert Verteidiger-Spawns in bis zu 24 Blöcken und baut deine Corruption Pressure ab. Bis zu 3 pro Anker |
+| **Censer** | Gibt es in `/oga rewards`. Rechtsklicke einen verdorbenen Block, um den Boden in einem kleinen Umkreis wieder normal zu machen. 5 Ladungen, je 15 Sekunden auseinander. Genug Reinigung drängt den Rand zurück |
+
+Pylone und Censer bringen auch Contribution Points. Du kannst also helfen, ohne zu kämpfen.
+
+## Was ist Corruption Pressure?
+
+Im Feld füllt sich eine Leiste für **Corruption Pressure**. Schwächere Sequenzen füllen sie schneller. Ein Beyonder der Sequenz 9 füllt sie etwa zehnmal so schnell wie einer der Sequenz 0.
+
+- Kills senken den Druck, und neben einem befeuerten Pylon baut er sich ab.
+- Über 50 % wirkt der eigene Schwächungseffekt des Gottes auf dich, umso stärker, je voller die Leiste ist.
+- Bei 100 % nimmst du 1 Schaden pro Sekunde (nie tödlich). Nach 8 Sekunden wirst du 15 Blöcke aus dem Feld geworfen, mit ein wenig Wahnsinn (nie über 95), und dein Druck wird zurückgesetzt.
+
+Geh 30 Sekunden lang hinaus, damit er sich abbaut.
+
+## Was passiert, wenn ich im Kampf falle?
+
+Tödlicher Schaden in einem Anker macht dich **kampfunfähig** statt tot. Du kannst dich nicht bewegen und nicht zaubern, und du leuchtest. Ein Verbündeter, der 5 Sekunden lang neben dir schleicht, belebt dich mit 10 Gesundheit wieder. Belebt dich innerhalb von 45 Sekunden niemand, wirst du mit einem kurzen Schwächungseffekt aus dem Feld gesetzt und verlierst 15 % deiner Punkte für diesen Anker. Deine Gegenstände behältst du.
+
+## Wie funktionieren Contribution Points?
+
+Contribution Points verdienst du für Kills, Mini-Bosse, einen zerstörten Nexus, Rituale, das Befeuern von Pylonen, Reinigung, das Wiederbeleben von Verbündeten und das Halten von Boden, mit einem großen Bonus für das Zerbrechen des Herzens. Boden halten zählt nur, wenn du in den letzten 3 Minuten gekämpft hast.
+
+Schwächere Sequenzen verdienen für dieselbe Arbeit mehr, von x1,3 auf Sequenz 9 bis x0,85 auf Sequenz 0. Du brauchst mindestens 10 Punkte an einem Anker, um bezahlt zu werden. Punkte bleiben zwischen Ankern gespeichert, du kannst also sparen.
+
+## Was kann ich in /oga rewards kaufen?
+
+| Belohnung | Preis | Limit |
+|---|---|---|
+| Gnaden-Token, eins für jeden der zehn [Gnadenpfade](/de/magic/boons/) | 900 | 1 von jedem pro Monat |
+| [Pathway Transfer Token](/de/guides/special-items/) | 1.200 | 1 pro Monat |
+| [Anti-Control Charm](/de/guides/special-items/) | 200 | 1 pro Woche |
+| Recipe Token (Sequenz 9+ / 7+ / 5+ / 4+) | 50 / 110 / 220 / 380 | 4 / 3 / 2 / 1 pro Woche |
+| Recipe Token (Sequenz 3+) | 650 | 1 pro Monat |
+| Recipe Sheet Token (Sequenz 7+ / 5+) | 140 / 300 | 2 / 1 pro Woche |
+| Potion Token (Sequenz 9+ / 7+ / 5+ / 4+) | 40 / 90 / 180 / 320 | 4 / 3 / 2 / 1 pro Woche |
+| Ingredient Token | 45 | 6 pro Woche |
+| Acting Bottle 500 | 15 | Kein Limit |
+| Acting Bottle 1.000 / 5.000 / 10.000 | 28 / 130 / 240 | 8 / 3 / 2 pro Woche |
+| Ritual Book (Tier I / Tier II) | 160 / 300 | 2 / 1 pro Woche |
+| Ritual Book (Tier III), überspringt das ganze Ritual | 550 | 1 pro Monat |
+| Censer | 60 | Kein Limit |
+| Warding Pylon Kit (Leitstein und 8 Glowstonestaub) | 40 | Kein Limit |
+
+Die Sequenz eines Tokens ist die stärkste, die du wählen kannst. Mit einem Token „Sequenz 5+“ wählst du alles von Sequenz 9 bis 5. Wöchentliche Limits füllen sich montags um 00:00 UTC wieder auf, monatliche am 1.
+
+<Figure src={rewardShop} alt="Das Menü Reward Shop aus /oga rewards, mit einer Reihe von Gnaden-Tokens und danach Tokens, Zaubertränken, Büchern und anderen Belohnungen" caption="Der Shop /oga rewards." contain />
+
+## Regeln
+
+PvP, Diebstahl und Griefing während des Events verstoßen gegen die [Regeln](https://www.mysterria.net/en/rules). Im verdorbenen Gebiet ist Eigenbeschuss sowieso aus, und Wahnsinn aus den Fähigkeiten anderer Spieler wird blockiert.

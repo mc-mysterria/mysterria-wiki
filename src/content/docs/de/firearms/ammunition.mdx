@@ -1,0 +1,110 @@
+---
+title: "Munition"
+description: "Jede Munition für Waffen auf Mysterria: Rezepte für Klein, Deathknell und Rifle Rounds, die 12 besonderen Effekte, ihre Materialien und die echten Kosten pro Patrone."
+sidebar:
+    label: Munition
+    order: 3
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import kleinCartridge from '~/assets/firearms/kleincartridge.png';
+import deathknellCartridge from '~/assets/firearms/deathknellcartridge.png';
+import rifleCartridge from '~/assets/firearms/riflecartridge.png';
+import kleinCore from '~/assets/firearms/kleincore.png';
+import deathknellCore from '~/assets/firearms/deathknellcore.png';
+import rifleCore from '~/assets/firearms/riflecore.png';
+import kleinRounds from '~/assets/firearms/kleinrounds.png';
+import deathknellRounds from '~/assets/firearms/deathknellrounds.png';
+import rifleRounds from '~/assets/firearms/riflerounds.png';
+import effectAmmo from '~/assets/firearms/effectammo.png';
+
+Jede Waffe verschießt ihre eigene Munition: **Klein Rounds** für Klein's Repeater, **Deathknell Rounds** für die Deathknell und **Rifle Rounds** für das Steam Rifle. Normale Munition stellst du aus einer Hülse, einem Kern und Schwarzpulver her. Daraus kannst du eine von 12 Arten besonderer Munition machen.
+
+Den Schaden jeder Munition in jeder Waffe findest du unter [Schaden nach Munitionsart](/de/firearms/#schaden-nach-munitionsart).
+
+## Schritt 1: Brass
+
+3 Kupferbarren + 1 Goldbarren = **4 Brass**, wie unter [Waffenbau](/de/firearms/crafting/#brass) gezeigt.
+
+## Schritt 2: Patronenhülsen
+
+| Hülse | Rezept | Ergibt |
+|---|---|---|
+| Klein Cartridge Case | 1 Brass | 8 |
+| Deathknell Cartridge Case | 1 Brass + 1 Eisenklumpen | 6 |
+| Rifle Cartridge Case | 2 Brass | 6 |
+
+<Figure src={kleinCartridge} alt="Handwerksraster mit 1 Brass, das 8 Klein Cartridge Cases ergibt" caption="Klein Cartridge Case." contain />
+<Figure src={deathknellCartridge} alt="Handwerksraster mit Brass und einem Eisenklumpen, die 6 Deathknell Cartridge Cases ergeben" caption="Deathknell Cartridge Case." contain />
+<Figure src={rifleCartridge} alt="Handwerksraster mit 2 Brass, die 6 Rifle Cartridge Cases ergeben" caption="Rifle Cartridge Case." contain />
+
+## Schritt 3: Patronenkerne
+
+| Kern | Rezept | Ergibt |
+|---|---|---|
+| Klein Cartridge Core | 4 Eisenklumpen im Quadrat | 8 |
+| Deathknell Cartridge Core | 6 Eisenklumpen | 6 |
+| Rifle Cartridge Core | 1 Eisenbarren + 1 Brass | 6 |
+
+<Figure src={kleinCore} alt="Handwerksraster mit 4 Eisenklumpen, die 8 Klein Cartridge Cores ergeben" caption="Klein Cartridge Core." contain />
+<Figure src={deathknellCore} alt="Handwerksraster mit 6 Eisenklumpen, die 6 Deathknell Cartridge Cores ergeben" caption="Deathknell Cartridge Core." contain />
+<Figure src={rifleCore} alt="Handwerksraster mit einem Eisenbarren und Brass, die 6 Rifle Cartridge Cores ergeben" caption="Rifle Cartridge Core." contain />
+
+## Schritt 4: Normale Munition
+
+Alle drei sind formlose Rezepte.
+
+| Munition | Rezept | Ergibt |
+|---|---|---|
+| Klein Rounds | 1 Klein Cartridge Case + 1 Klein Cartridge Core + 1 Schwarzpulver | 4 |
+| Deathknell Rounds | 1 Deathknell Cartridge Case + 1 Deathknell Cartridge Core + 2 Schwarzpulver | 3 |
+| Rifle Rounds | 1 Rifle Cartridge Case + 1 Rifle Cartridge Core + 2 Schwarzpulver | 3 |
+
+<Figure src={kleinRounds} alt="Handwerksraster, das 4 Klein Rounds ergibt" caption="Klein Rounds." contain />
+<Figure src={deathknellRounds} alt="Handwerksraster, das 3 Deathknell Rounds ergibt" caption="Deathknell Rounds." contain />
+<Figure src={rifleRounds} alt="Handwerksraster, das 3 Rifle Rounds ergibt" caption="Rifle Rounds." contain />
+
+### Was kostet eine ganze Ladung?
+
+Eine Ladung verbraucht eine ganze Herstellung von Hülsen und Kernen.
+
+| Munition | Rohstoffe | Ergibt |
+|---|---|---|
+| Klein Rounds | 1 Brass + 4 Eisenklumpen + 8 Schwarzpulver | 32 Patronen |
+| Deathknell Rounds | 1 Brass + 7 Eisenklumpen + 12 Schwarzpulver | 18 Patronen |
+| Rifle Rounds | 3 Brass + 1 Eisenbarren + 12 Schwarzpulver | 18 Patronen |
+
+## Schritt 5: Besondere Munition
+
+Leg ein Effektmaterial in die Mitte einer Werkbank und umgib es mit **8 normalen Patronen derselben Art**. Du bekommst **8 besondere Patronen** dieser Art. Zum Beispiel ergeben 8 Klein Rounds um Lohenstaub herum 8 **Fire Klein Rounds**, die nur in Klein's Repeater passen.
+
+<Figure src={effectAmmo} alt="Handwerksraster mit 8 Klein Rounds um Lohenstaub, die 8 Fire Klein Rounds ergeben" caption="Fire Klein Rounds aus 8 Klein Rounds um Lohenstaub." contain />
+
+Mischst du Klein, Deathknell und Rifle Rounds um das Material, entsteht nichts.
+
+Besondere Munition heißt „*Effekt* *Waffe* Rounds“, zum Beispiel „Fire Deathknell Rounds“ oder „Demon Hunter Rifle Rounds“. Mit der normalen Munition hat jede Waffe 13 Arten von Munition.
+
+| Effekt | Material in der Mitte | Schaden | Was er tut |
+|---|---|---|---|
+| Fire | Lohenstaub | 85 % | Setzt das Ziel 5 Sekunden lang in Brand |
+| Poison | Spinnenauge | 85 % | Vergiftung I für 8 Sekunden |
+| Armor Piercing | Eisenbarren | 90 % | Ignoriert Rüstung |
+| Aging | Uhr | 85 % | Langsamkeit I und Ausdörrung II für 10 Sekunden |
+| Spirit Control | Seelensand | 85 % | Langsamkeit IV und Blindheit für 5 Sekunden |
+| Deceiving | Enderauge | 85 % | Dreht das Ziel um 180 Grad |
+| Deprivation | Milcheimer | 85 % | Entfernt die positiven Trankeffekte des Ziels |
+| Exorcist | Glowstonestaub | 100 %, oder 250 % gegen untote Mobs | Kein Statuseffekt |
+| Implosive | Diamant | 125 % | Kein Statuseffekt, nur mehr Schaden |
+| Rotten | Verrottetes Fleisch | 85 % | Hunger III und Schwäche I für 8 Sekunden |
+| Weakening | Fermentiertes Spinnenauge | 85 % | Schwäche II und Abbaulähmung II für 10 Sekunden |
+| Demon Hunter | Netherstern | 100 %, oder 250 % gegen Beyonder-Kreaturen | Kein Statuseffekt |
+
+### Gegen wen wirkt Exorcist- und Demon-Hunter-Munition?
+
+**Exorcist**-Munition wirkt gegen Zombies, Zombiedorfbewohner, Wüstenzombies, Ertrunkene, Skelette, Eiswanderer, Witherskelette, den Wither, Zoglins und zombifizierte Piglins. Andere Mobs und Spieler nehmen normalen Schaden.
+
+**Demon Hunter**-Munition wirkt gegen die [Beyonder-Kreaturen](/de/magic/creatures/), die der Server spawnt. Gegen **Beyonder-Spieler gibt sie keinen Bonus**.
+
+## Die richtige Munition laden
+
+Ist das Magazin **leer**, nimmt das Nachladen den ersten Stapel passender Munition aus deinem Inventar, normal oder besonders. Ist die Waffe **teilweise geladen**, kannst du nur mit derselben Art Munition nachfüllen, die schon darin ist. Um zwischen normaler und besonderer Munition zu wechseln, schieß das Magazin leer und leg die Munition, die du willst, zuerst in dein Inventar.

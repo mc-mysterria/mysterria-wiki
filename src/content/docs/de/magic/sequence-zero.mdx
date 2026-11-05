@@ -1,0 +1,242 @@
+---
+title: "So wirst du ein Gott auf Sequenz 0"
+description: "So erreichst du auf Mysterria Sequenz 0: jede Voraussetzung, die Wache, das Aufstiegsritual, Deity Authority und wie du einen Thron behältst. Ein Leitfaden zu Lord of the Mysteries."
+sidebar:
+  label: Sequenz 0
+  order: 36
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import pantheon from '~/assets/magic/sequence-zero-pantheon.webp';
+import leadImage from '~/assets/heroes/sequence-zero.jpg';
+import throneMenu from '~/assets/magic/sequence-zero-throne.webp';
+
+<Figure src={leadImage} eager alt="Eine zerfallene Burg auf einer schwebenden Insel unter einem roten Mond" />
+
+## Was ist ein Thron?
+
+Ein **Thron** macht den Spieler darauf zum **Gott** eines Pfades, auf Sequenz 0 mit dem Rang Gottheit. Es gibt **22 Throne**, einen für jeden normalen Pfad. Äußere Pfade haben keinen.
+
+Ein Gott bekommt einen Titel über dem Kopf und einen Platz im öffentlichen Pantheon. Zwei Fähigkeiten gehören allein den Göttern, **Deity Authority** und **Divine Presence**.
+
+Niemand kann einem sitzenden Gott den Thron nehmen. Für Sequenz 0 gibt es keinen Sitzkrieg. Ein Thron wird nur frei, wenn sein Gott auf diesem Pfad nicht mehr Sequenz 0 ist, meistens weil er nicht mehr erscheint (siehe [Den Thron behalten](#den-thron-behalten)). Deshalb findet der Wettstreit um einen Thron, die **Wache**, statt, *bevor* jemand darauf sitzt.
+
+Die [Sitzübersicht](https://www.mysterria.net/en/ascension) auf der Hauptseite zeigt, wer auf jedem Thron und jedem anderen hohen Sitz sitzt.
+
+## Wer kann es versuchen?
+
+Du wirst sofort abgewiesen, wenn einer dieser Punkte zutrifft.
+
+- Der Pfad ist ein äußerer Pfad.
+- Du bist darauf nicht **Sequenz 1**.
+- Es ist nicht dein **Hauptpfad** (der, auf dem du gezählt wirst).
+- Du bist schon Teil einer Wache.
+
+## Was brauche ich, um einen Thron zu beanspruchen?
+
+`/coi ascend` öffnet das Thronmenü. `/coi ascend status [pathway]` gibt dieselbe Checkliste im Chat aus. Sie hat **11 Punkte**, nämlich sieben Voraussetzungen und vier Prüfungen.
+
+<Figure src={throneMenu} alt="Der Reiter Where you stand im Thronmenü mit 5 von 11 erfüllten Punkten" caption="Die Checkliste im Thronmenü, gezeigt für einen Testcharakter." />
+
+### Die sieben Voraussetzungen
+
+| | Voraussetzung | Was es braucht |
+|---|---|---|
+| R1 | **Einzigartigkeit gehalten und akkommodiert** | Du hältst die [Einzigartigkeit](/de/magic/uniqueness/) deines Pfades **und** hast sie zu **95 %** oder mehr akkommodiert |
+| R2 | **Deine Kirche trägt die Anker** | Deine [Kirche](/de/magic/churches/) hat **20** wirksames Ankergewicht, und du bist ihr Anführer, Co-Anführer oder Engel. Mitglieder jedes Pfades zählen, dein eigener Pfad am meisten. Ein Red Priest kann stattdessen eine Kohorte nutzen (siehe [unten](#kohorten-des-red-priest-statt-einer-kirche)) |
+| R3 | **Jedes Ritual des letzten Schritts** | Ein Ritualset für Sequenz 0 im Wert von **30 Punkten** (siehe [Rituale](#das-ritualset-mit-30-punkten)) |
+| R3b | **Das vom Team bestätigte Story-Ritual** | Ein legendäres Story-Ritual, das das Team genehmigt hat (siehe [unten](#das-story-ritual)) |
+| R4 | **Angespartes Schauspielen für den Einsatz** | **31.104 Overflow**, also eine halbe Leiste der Sequenz 1 (siehe [Sitze und Usurpation](/de/magic/usurpation/#was-ist-overflow)). Ein gefallener Gott in seiner Gnadenfrist zahlt die Hälfte |
+| R5 | **Lange genug auf dem Sitz** | **14 Kalendertage** auf Sequenz 1 auf diesem Pfad seit deinem letzten Aufstieg oder deiner Ankunft. Die Gnadenfrist eines gefallenen Gottes erlässt das |
+| R6 | **Zaubertrank der Sequenz 0 in der Hand** | Gebraut aus **drei Beyonder-Charakteristika der Sequenz 1 desselben Pfades**, und sonst nichts |
+
+### Die vier Prüfungen
+
+- Der Thron steht leer.
+- Du bist auf diesem Pfad angekommen, also nicht innerhalb von 30 Tagen, nachdem du ihn seitlich erreicht hast (durch einen Wechsel, eine Übertragung oder eine Übernahme).
+- Du bist in keinem Sitzkrieg.
+- Keine Abklingzeit für den Pfad oder für dich persönlich verhindert einen Anspruch.
+
+<Notice tone="info" title="Den Zaubertrank der Sequenz 0 kannst du nicht trinken">
+Ihn einfach zu trinken wird abgelehnt. Nur das Aufstiegsritual verbraucht ihn.
+</Notice>
+
+`/coi ascend board` zeigt den Fortschritt aller auf der öffentlichen Tafel des Wettlaufs. `/coi ascend private` versteckt deinen Namen auf der Tafel, aber du wirst trotzdem gezählt.
+
+## Das Ritualset mit 30 Punkten
+
+R3 funktioniert wie die Rituale jeder anderen Sequenz (prüfe deins mit `/ritual status`), mit dem höchsten Ziel im Spiel. Dein Set wird aus dem ganzen Ritualvorrat **ausgeteilt**, nicht gewählt. Ab Sequenz 4 enthält der Vorrat legendäre Einträge, die je 10 Punkte wert sind, etwa Herausforderungen von Blaze und Cave („Collect 64 nether stars“, „Obtain all the items!“) und diese Taten auf dem Server, die automatisch erfasst werden.
+
+| Tat | So verdienst du sie | Nötig |
+|---|---|---:|
+| Ein Sitzkrieg bis zum Urteil | Kämpfe in einem [Sitzkrieg](/de/magic/usurpation/) bis zum Ende, ob Sieg oder Niederlage | 1 |
+| Eine verteidigte Einzigartigkeit | Behalte deine Einzigartigkeit in einer bezahlten Herausforderung | 1 |
+| Frommer Gottesdienst | Nimm an [Gottesdiensten](/de/magic/church-management/#gottesdienste) teil | 10 |
+| Dein Ehrenname gerufen | Jemand spricht deinen [Ehrennamen](/de/magic/honorific-names/) vollständig | 1 |
+| Eine überstandene Prüfung | Komm durch eine Prüfung und behalte deinen Beyonder | 1 |
+| Ein Kopfgeld auf dem Gipfel | Schließ ein Kopfgeld auf Sequenz 1 ab | 1 |
+| Bewahrter Fleiß | Verdiene an 7 verschiedenen Tagen Schauspielen (jeder Tag hat eine Tide) | 7 |
+
+Bis zu **10** der 30 Punkte können stattdessen aus Dienstpunkten kommen.
+
+| Dienstpunkt | Punkte |
+|---|---:|
+| Ein besuchter Gottesdienst | 1 |
+| Ein Ziel aus einem Kopfgeld | 1 |
+| Ein vom Team genehmigtes Story-Ritual | 2 |
+| Ein ausgefochtener Sitzkrieg | 3 |
+| Eine verteidigte Einzigartigkeit | 3 |
+
+Du kannst das Team bitten, einen einzelnen Eintrag in deinem Set neu zu würfeln.
+
+## Das Story-Ritual
+
+Das Story-Ritual ist eine **eigene, harte Voraussetzung** (R3b), zusätzlich zu den 30 Punkten. Es geht um Dinge, die der Server nicht messen kann.
+
+> Veranstalte ein öffentliches Event für den ganzen Server, das die Rolle deines Pfades aus dem Roman nachspielt, und lass den Server es miterleben.
+
+Ein Screenshot oder Grinden allein zählt nicht. Es muss ein vorher angekündigtes Event sein, bei dem andere Spieler dabei sind, mit echten Folgen, das nur ein Beyonder *deines* Pfades hätte veranstalten können. Der Fool könnte zum Beispiel einen Tarot Club über dem grauen Nebel versammeln, oder der Red Priest könnte einen echten, vereinbarten Krieg zwischen zwei Kirchen erklären und ausfechten.
+
+Sprich **vorher** mit dem Team und sag, was du planst, wann und mit wem. Das Team sagt dir, ob es zählt. Sobald das Team es bestätigt, wird der Punkt auf der Checkliste grün. Ein Anspruch, der ohne das erklärt wird, wird abgebrochen, mit voller Erstattung und ohne Abklingzeit.
+
+## Der Anspruch und die Wache
+
+Ist jeder Punkt grün, **erklärst** du deinen Anspruch. Dein Einsatz wird ausgegeben, dein Zaubertrank wird mit angehaltener Ablaufzeit verwahrt, und der ganze Server erfährt davon. Ein Fenster von **72 Stunden** öffnet sich.
+
+### Wer darf anfechten?
+
+Ein anderer Spieler auf Sequenz 1 desselben Pfades kann denselben Einsatz zahlen, um dich anzufechten, aber nur wenn er diese Bedingungen erfüllt.
+
+- Er ist seit 14 Tagen auf Sequenz 1, ist auf dem Pfad angekommen, ist in keinem Sitzkrieg und hat keine Abklingzeit für Anfechtungen.
+- Er hat den Overflow für den Einsatz.
+- Er erfüllt schon mindestens **3 dieser 4** Punkte, nämlich die Anker, die 30 Ritualpunkte, das Story-Ritual und einen Zaubertrank der Sequenz 0.
+
+Mit nur 3 Sitzen als Erzengel pro Pfad kann es höchstens 2 Rivalen geben. Ficht niemand an, gehst du direkt zum Ritual.
+
+### Wenn jemand anficht
+
+Das höchste Gebot beim Schließen des Fensters ficht an, und andere Gebote werden erstattet. Es folgt ein Wettstreit von **7 Tagen**, gewertet in War Points aus echten Gewinnen an Schauspielen, wie in einem [Sitzkrieg](/de/magic/usurpation/#schritt-3-der-krieg). Das sind Kalendertage, und Abwesenheit bringt einfach null Punkte. **Bei Gleichstand gewinnt, wer den Anspruch erklärt hat.**
+
+| Urteil | Der Verlierer zahlt | Der Sieger bekommt | Danach |
+|---|---|---|---|
+| **Der Anspruchsteller gewinnt** | Beim Rivalen verbrennt die Hälfte seines Einsatzes | Der Anspruchsteller geht weiter zum Ritual | Der Rivale kann die Wache dieses Pfades 14 Tage lang nicht anfechten |
+| **Der Rivale gewinnt** | Beim Anspruchsteller verbrennt die Hälfte seines Einsatzes | **Die Einzigartigkeit**, nicht den Thron. Der Rivale bekommt seinen eigenen Einsatz ganz zurück | 7 Tage lang kann niemand einen Anspruch auf den Pfad erklären. Die Einzigartigkeit ist 14 Tage lang geschützt. Der Anspruchsteller hat 24 Stunden Abklingzeit für eine neue Erklärung |
+
+Ein siegreicher Rivale wird **nicht** zum Gott. Er muss den ganzen Weg selbst gehen, auch die 95 % Akkommodation von null an aufbauen. Ein verlorener Wettstreit gibt den Zaubertrank immer zurück.
+
+### Zurückziehen und andere Ausgänge
+
+| Was passiert ist | Einsatz | Zaubertrank | Abklingzeit |
+|---|---|---|---|
+| Innerhalb von 15 Minuten zurückgezogen | Volle Erstattung | Zurück | 24 Stunden persönliche Abklingzeit für eine neue Erklärung |
+| Nach 15 Minuten zurückgezogen | Hälfte verbrannt | Zurück | 24 Stunden persönliche Abklingzeit für eine neue Erklärung |
+| Überboten, Thron besetzt, abgebrochen, Fehler | Volle Erstattung | Zurück | Keine |
+| Nach dem Sieg das Fenster von 48 Stunden verpasst, um online zu sein | Volle Erstattung | Zurück | 24 Stunden persönliche Abklingzeit für eine neue Erklärung |
+| Auf den Ruf 7 Tage lang nie geantwortet | Volle Erstattung | Zurück | Keine |
+
+## Der Ruf, die Ankündigung und das Ritual
+
+Gewinnst du die Wache, wirst du **gerufen**. Du hast **24 Stunden**, um deinen Moment zu wählen, bevor das Ritual von selbst beginnt, und ein unbeantworteter Ruf verfällt nach **7 Tagen**. Antworte mit `/coi ascension begin`.
+
+Der Server wird dann **10 Minuten** vorher gewarnt, mit einer Bossleiste, einer Chatkarte mit den Koordinaten und einem Aufruf eine Minute vorher. Jeder kann den Ort mit `/coi ascension where` nachsehen. In diesen 10 Minuten kannst du noch laufen, aber sobald das Ritual beginnt, stehst du fest. Werden zwei Rituale kurz nacheinander gerufen, wartet das zweite, bis es an der Reihe ist.
+
+### Während des Rituals
+
+Das Ritual dauert etwa **zweieinhalb Minuten**, und jeder der 22 Pfade hat seine eigene Szene.
+
+- **Rivalen können es nicht unterbrechen.** Du bist unverwundbar und kannst nicht hart kontrolliert werden. Es endet nur früher, wenn du gehst, das Team es stoppt oder du in einen Zustand kommst, den kein Ritual überlebt.
+- **Bis zur Hälfte wird nichts ausgegeben.** Vorher kostet ein abgebrochenes Ritual nichts, und du kannst erneut auf den Ruf antworten. Zur Hälfte wird der Thron eingenommen.
+- **Zeugen werden belohnt.** Stehst du in bis zu **24 Blöcken** Abstand, bekommst du **3 %** deiner eigenen Schauspielleiste und 30 Sekunden Regeneration.
+- **Die Menge ruft mit.** Fünfmal ertönt ein Ruf im Chat. Jede Antwort bringt weitere **1,5 %** deiner Leiste. Die Worte werden in jeder Sprache angenommen.
+
+Wird der Thron eingenommen, spürt der ganze Server etwa **3 Minuten** lang einen Effekt des Pfades, etwa wenn der Sun die Nacht in grelles Licht verwandelt. Nichts davon kann dich töten oder dir dauerhaft etwas nehmen, und nichts davon übersteht einen Neustart. Der Ort bleibt für immer auf der Karte markiert.
+
+## Was bekommt ein Gott?
+
+Ein Gott behält seine Fähigkeiten der Sequenzen 9 bis 1 und bekommt zwei dazu.
+
+**Deity Authority** (aktiv). Linksklick wechselt zwischen Favor, Behest und Ledger. Rechtsklick nutzt das Gewählte.
+
+- **Favor** gibt einem Gläubigen deines Pfades Schauspielen im Wert von **5 %** *seiner* Leiste. Du hast pro Woche **60 %** einer Leiste zu verteilen (ansparbar bis 2 Wochen), und jeder Gläubige kann pro Woche einen Favor bekommen. Das kostet 10 % Spiritualität, mit 60 Sekunden Abklingzeit. Favor erzeugt nie Overflow, War Points oder Fortschritt für eine Einzigartigkeit und hilft nie beim eigenen Anspruch von jemandem auf einen Thron.
+- **Behest** bittet ein ergebenes Mitglied deiner Kirche, zu erscheinen, deinen Namen zu verkünden oder eine Pilgerreise zu machen. Wer antwortet, bekommt einen Favor. Dafür hat er **30 Minuten**. Du kannst **3** gleichzeitig offen haben und **6** am Tag schicken, und jedes Mitglied kann einmal alle **72 Stunden** gefragt werden. Das kostet 10 % Spiritualität, mit 5 Minuten Abklingzeit. Antworten geht mit `/coi deity answer <id>`, ablehnen mit `/coi deity refuse <id>`.
+- **Ledger** ist deine öffentliche Chronik.
+
+Wer einen Behest ablehnt oder ignoriert, bekommt **Disfavor**. **3 Tage** lang gibt es dann von diesem Gott keinen Favor und keinen Behest, **-25 %** Gewinn an Schauspielen und einmalig **+5** Wahnsinn. Sonst ändert das nichts.
+
+**Divine Presence** (passiv). Gläubige deines Pfades in bis zu **24 Blöcken** Abstand bekommen **10 % weniger** Wahnsinn und **15 % weniger** Müdigkeit.
+
+Favor und Presence erreichen jeden Gläubigen deines Pfades, ob Kirchenmitglied oder nicht. Die Mitgliedschaft in der Kirche macht dich nur für einen Behest erreichbar. Jedes Mitglied hat einen Schalter für seine Hingabe. Ausschalten geht sofort, Wiedereinschalten dauert 7 Tage.
+
+Dein [Ehrenname](/de/magic/honorific-names/#was-passiert-wenn-du-den-namen-eines-gottes-sprichst) schrumpft auf 3 Zeilen, und jeder, der ihn vollständig spricht, bekommt den Segen deines Pfades, auch während du offline bist.
+
+<Notice tone="warn" title="Ein frischer Gott liegt bei etwa 30 % Untergrenze des Wahnsinns">
+Ein Gott wird für die [Linderung der Untergrenze des Wahnsinns](/de/magic/church-perks/#linderung-der-untergrenze-des-wahnsinns) an **30** Kirchenankern gemessen, mehr als die 20, die er für den Aufstieg braucht. Ein neuer Gott mit 20 Ankern senkt seine Untergrenze von 90 % nur auf etwa 30 %. Wächst die Gemeinde, sinkt sie weiter.
+</Notice>
+
+## Den Thron behalten
+
+> Sei an mindestens 4 von je 30 Tagen 20 Minuten online und nicht AFK, sonst wird der Thron frei.
+
+Die Tage werden nach Kyjiwer Zeit gezählt. Fähigkeiten, gesprochene Namen und Anker zählen dafür nicht. Eine neue Herrschaft kann vor ihren ersten 30 Tagen nicht verfallen.
+
+Willst du weg, erklärst du mit `/coi god absence <days>` eine Abwesenheit von bis zu **21 Tagen**, nutzbar einmal alle **60 Tage**. Diese Tage werden aus dem Zeitraum herausgenommen.
+
+Bei noch **14 Tagen** wirst du privat gewarnt, dann öffentlich bei **7, 3 und 1**.
+
+Verfällt er trotzdem, passiert Folgendes.
+
+- Du fällst auf diesem Pfad auf **Sequenz 1** zurück, mit **95 %** einer vollen Leiste.
+- Der Thron wird frei, und jeder, der die Voraussetzungen erfüllt, kann ihn beanspruchen.
+- **60 Tage** lang kannst du für den **halben Einsatz** wieder aufsteigen, und deine 14 Tage auf dem Sitz zählen schon.
+
+Ein Gott, der auf diesem Pfad auf andere Weise nicht mehr Sequenz 0 ist, etwa durch einen Pfadwechsel, verliert den Thron ebenfalls.
+
+## Kohorten des Red Priest statt einer Kirche
+
+Die Kohorte von **Chain of Command** eines Befehlshabers des [Red Priest](https://www.mysterria.net/en/pathways/priest) ist keine Kirche, kann aber für Spieler ohne aktive Kirche zwei Aufgaben einer Kirche übernehmen.
+
+**Linderung der Untergrenze des Wahnsinns.** Ab Sequenz 4 senkt eine Kohorte die [Untergrenze des Wahnsinns](/de/magic/church-perks/#linderung-der-untergrenze-des-wahnsinns) durch Göttlichkeit für ihren Befehlshaber, ihre Generäle und Soldaten.
+
+| Rang in der Kohorte | Anteil an der Linderung |
+|---|---:|
+| Befehlshaber | 85 % |
+| General | 45 % |
+| Soldat | 30 % |
+
+- Linderung = (Ankergewicht der Kohorte / benötigte Anker) x Anteil deines Rangs, höchstens der Anteil deines Rangs.
+- Die benötigten Anker kommen aus der Tabelle der Kirchen, mit der Sequenz des **Befehlshabers** (15 auf Sequenz 4 bis 38 auf Sequenz 1).
+- Das Ankergewicht der Kohorte nutzt dieselben Gewichte pro Sequenz wie Kirchen, ohne Bonus für den Pfad und mit derselben Abschwächung bei hohen Sequenzen (ab 18, höchstens 34). Der Befehlshaber zählt nicht.
+- Ein Mitglied zählt nur, wenn es in den letzten **14 Tagen** aktiv war und in keiner aktiven Kirche ist.
+- Linderung durch Kohorte und Kirche wird **nie zusammengerechnet**. Hast du eine aktive Kirche, gilt stattdessen die Linderung der Kirche.
+
+**Die Anker für Sequenz 0.** Hast du in einer Kirche keine Rolle als Anführer, Co-Anführer oder Engel, liest die Checkliste für den Thron bei R2 stattdessen das Ankergewicht deiner Kohorte.
+
+## Befehle
+
+| Befehl | Was er tut |
+|---|---|
+| `/coi ascend` | Das Thronmenü öffnen oder auf einen wartenden Ruf antworten |
+| `/coi ascend status [pathway]` | Die Checkliste mit 11 Punkten im Chat |
+| `/coi ascend board` | Die öffentliche Tafel des Wettlaufs |
+| `/coi ascend declare` | Deinen Anspruch erklären |
+| `/coi ascend contest <pathway>` | Eine offene Wache anfechten |
+| `/coi ascend withdraw` | Deinen Einsatz zurückziehen |
+| `/coi ascend private` | Deinen Namen auf der Tafel verstecken (du wirst trotzdem gezählt) |
+| `/coi ascension begin` | Auf einen Ruf antworten |
+| `/coi ascension where` | Koordinaten des angekündigten Rituals |
+| `/coi ascension notify [on\|off]` | Den Chat der Zeremonie stumm schalten (nie die Glocke oder die Bossleiste) |
+| `/coi ascension status` | Das aktuelle Ritual und die Warteschlange |
+| `/coi ascension gods` | Die Liste des Pantheons |
+| `/coi deity gods` | Das Fenster des Pantheons |
+| `/coi deity ledger <pathway>` | Die öffentliche Chronik eines Throns |
+| `/coi deity answer\|refuse <id>` | Einen Behest annehmen oder ablehnen |
+| `/coi god` | Der Status deines Throns |
+| `/coi god absence <days>` | Eine Abwesenheit erklären |
+| `/coi god thrones` | Alle 22 Throne und wer darauf sitzt |
+| `/coi menu native` | Zwischen den Bildschirmen der Client-Mod und Truhenmenüs wechseln (pro Charakter gespeichert) |
+
+Die [Client-Mod](/de/guides/client-mod/) zeigt das Thronmenü und das Pantheon als eigene Bildschirme. Ohne sie öffnet sich jedes Fenster als Truhenmenü.
+
+<Figure src={pantheon} alt="Das Fenster Thrones of the Twenty-Two mit jedem Pfad, No god und einer Markierung Empty, 0 von 22 Thronen besetzt" caption="Das Fenster des Pantheons aus /coi deity gods als Bildschirm der Client-Mod, bevor ein Thron besetzt ist." />
+
+Endet die Epoche, werden alle 22 Throne frei, und alle fangen von vorn an.

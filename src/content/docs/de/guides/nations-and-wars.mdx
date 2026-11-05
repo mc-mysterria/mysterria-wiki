@@ -1,0 +1,135 @@
+---
+title: "Nationen und Kriege"
+description: "Nationen und Stadtkriege auf Mysterria: eine Nation gründen, Stufen und Effekte der Nation, Steuern, Krieg erklären, Capture Flags, Kriegsmodi und was der Sieger bekommt."
+sidebar:
+    label: Nationen und Kriege
+    order: 32
+---
+
+import {Card, CardGrid, Notice} from '~/components/mdx';
+
+Städte können sich zu einer **Nation** zusammenschließen, und Städte und Nationen können **Krieg führen**, um einander Geld oder Land abzunehmen. Für beides brauchst du zuerst eine [Stadt](/de/guides/towns/).
+
+## Nationen
+
+Eine **Nation** ist ein Bund von Städten unter einem Banner. Eine Stadt ist die **Hauptstadt**.
+
+### Wie gründe ich eine Nation?
+
+```
+/nations create <name>
+```
+
+- Deine Stadt muss auf [Stufe 5](/de/guides/towns/#stadtstufen) sein, **Domain**.
+- Das kostet **20.000 Coppets**.
+- Der Name braucht 5 bis 24 Zeichen, ohne Leerzeichen.
+
+`/n` ist eine Kurzform von `/nations`.
+
+### Befehle für Nationen
+
+| Befehl | Was er tut |
+|---|---|
+| `/nations` | Das Menü der Nation öffnen |
+| `/nations trust <town>` | Eine Stadt einladen. Ihr Owner nimmt mit `/nations accept` an |
+| `/nations untrust <town>` | Eine Stadt entfernen |
+| `/nations leave` | Deine Nation verlassen |
+| `/nations level` | Den Fortschritt zur nächsten Stufe der Nation sehen |
+| `/nations setcapital <town>` | Die Hauptstadt verlegen |
+| `/nations rename <name>` | Für 10.000 Coppets umbenennen, höchstens einmal am Tag |
+| `/nations delete` | Die Nation auflösen (die Städte bleiben) |
+
+Für den Chat der Nation schreib `!n`, `!nation` oder `!nations` vor eine Nachricht.
+
+### Stufen und Effekte der Nation
+
+Eine Nation steigt automatisch auf. Dabei zählen alle ihre Städte zusammen.
+
+| Stufe | Name | Städte | Verschiedene vertrauenswürdige Spieler | Geld in allen Städten | Freigeschaltete Effekte | Gleichzeitig aktiv |
+|---|---|---|---|---|---|---|
+| 1 | **Covenant** | - | - | - | Keine | 0 |
+| 2 | **Order** | 3 | 100 | 60.000 Coppets | Sprungkraft, Schnelligkeit, Eile, Gunst des Delfins | 1 |
+| 3 | **Dominion** | 5 | 200 | 120.000 Coppets | Sprungkraft II, Schnelligkeit II, Eile II, Gunst des Delfins II, Absorption, Nachtsicht, Glück, Stärke, Extraenergie | 3 |
+
+Order gibt außerdem 50 Claims und senkt den Unterhalt der Nation um 10 %. Dominion gibt 100 Claims und senkt ihn um 20 %.
+
+### Was kostet eine Nation?
+
+- Städte in einer Nation zahlen keinen Unterhalt mehr an den Server. Stattdessen zahlen sie der Nation in jedem Zyklus eine Steuer, die die Nation festlegt, bis zu **5 Coppets pro Chunk**. Eine Stadt, die nicht zahlen kann, wird aus der Nation entfernt.
+- Die Nation zahlt dem Server in jedem Zyklus einen Unterhalt von **3 Coppets pro Chunk**. Eine Nation, die nicht zahlen kann, wird **gelöscht**, aber ihre Städte bleiben.
+- Neue Nationen zahlen in ihren ersten 2 Tagen keinen Unterhalt.
+
+### Beanspruchen in der Nähe einer Nation
+
+Städte in einer Nation haben einen Puffer von **3 Chunks**. Andere Städte können also nicht innerhalb von 3 Chunks um sie herum beanspruchen. Die Rollen Nation und Ally können standardmäßig an den Grenzen der anderen beanspruchen.
+
+## Kriege
+
+Jede Stadt oder Nation kann einer anderen den Krieg erklären. Der Verteidiger **muss nicht zustimmen**. Der Krieg beginnt nach **1 Tag Vorbereitung**.
+
+### Wer kann Krieg erklären?
+
+- Die angreifende Stadt braucht mindestens **5.000 Coppets** in ihrer Bank.
+- Es gibt keine Mindestgröße, keine Mindestzahl an Mitgliedern, kein Mindestalter und keine Regel zum Stufenunterschied. Eine Domain kann einem brandneuen Shelter den Krieg erklären.
+- Eine neue Stadt oder Nation bekommt **1 Tag Kriegsschutz**. Städte, die gerade einen Krieg beendet haben, haben vielleicht einen längeren Schutz (siehe [Was bekommt der Sieger?](#was-bekommt-der-sieger)).
+- In einer Stadt kann standardmäßig nur der Owner Kriege verwalten.
+
+### Kriegsbefehle
+
+| Befehl | Was er tut |
+|---|---|
+| `/wars` | Das Kriegsmenü öffnen |
+| `/wars declare <town or nation>` | Krieg erklären |
+| `/wars info captureflag` | Das Rezept für die Capture Flag zeigen |
+
+Beide Seiten können aufgeben, während der Vorbereitung oder während des Kriegs. Aufgeben ist meist milder, als einen ausgefochtenen Krieg zu verlieren.
+
+### Wie wird ein Krieg geführt?
+
+Jeder Krieg hat einen **Kriegsmodus** (wie gezählt wird) und ein **Kriegsziel** (was der Sieger bekommt). Neue Kriege sind ein **Skirmish** um einen **Raid**, außer es wird ein anderer Modus oder ein anderes Ziel gewählt.
+
+| Modus | So wird er gewonnen |
+|---|---|
+| **Skirmish** (Standard) | Punkte. 1 pro Kill, 5 pro eroberter Flagge, 3 pro abgebauter Flagge, 5 pro gesprengter Flagge. Die erste Seite, die 5 Punkte pro Spieler des kleineren Teams erreicht (mindestens **100**), gewinnt. Nach **36 Stunden** gewinnt die höhere Punktzahl |
+| **King of the Hill** | Halte einen neutralen Punkt in einer Arena, um alle 20 Sekunden 5 Punkte zu bekommen. Kills bringen nichts. 100 Punkte oder 30 Minuten. Nur verfügbar, wenn das Team eine Arena eingerichtet hat |
+| **King of the Hill (player lands)** | Jede Seite setzt einen Punkt auf ihr eigenes Land und bekommt Punkte, indem sie den des Gegners hält. 100 Punkte oder 30 Minuten |
+
+Während eines Kriegs können Gegner dein Land betreten, Spieler angreifen, Gegenstände aufheben und Leitern, Ranken und Gerüste setzen oder abbauen. Das geht nur, solange **mindestens ein Verteidiger online** im angegriffenen Land ist.
+
+Stirbst du in einem Krieg, behältst du dein Inventar **nicht**.
+
+### Capture Flags
+
+Eine **Capture Flag** nimmt in einem Skirmish gegnerisches Land ein.
+
+```
+  .   R   .        R = Rote Glasscheibe
+  .   B   .        B = Leuchtfeuer
+  I   I   I        I = Eisenblock
+```
+
+- Setz sie auf gegnerisches Land zwischen **Y 30 und Y 127**.
+- Halte sie **10 Minuten**, um es einzunehmen. Das eroberte Land wird dem Gegner **entzogen** und ist dann ohne Claim.
+- Bis zu **3 Flaggen** können gleichzeitig stehen, mit **10 Minuten** zwischen dem Setzen.
+- Eine gegnerische Flagge abzubauen oder zu sprengen bringt ebenfalls Punkte.
+
+### Was bekommt der Sieger?
+
+| Ziel | Der Sieger bekommt | Friedensschutz danach |
+|---|---|---|
+| **Raid** (Standard) | **1 Stunde** lang dürfen die Mitglieder des Siegers im Land des Verlierers Behälter, Türen und Falltüren öffnen, Mechanismen nutzen und Gegenstände aufheben. Um hineinzukommen, dürfen sie auch einfache Baublöcke abbauen (Bretter, Stämme, Stein, Bruchstein, Erde, Sand, Kies, Glas) | Keiner |
+| **Skirmish** | **75 %** der Stadtbank des Verlierers (40 %, wenn der Verlierer aufgibt). Es geht kein Land verloren | 7 Tage für beide Seiten |
+| **Annex** | Das ganze Kriegsland des Verlierers wird freigegeben. Der Verlierer bekommt die übliche Erstattung fürs Freigeben | 3 Tage für den Verlierer |
+| **Vassal** | Die verlierende Stadt tritt der Nation des Siegers als eingeschränkter Vasall bei. Nur eine Nation kann dieses Ziel wählen | Keiner |
+| **Independence** | Ein Vasall kämpft gegen seinen Oberherrn, um frei zu werden. Verliert der Vasall, kann er es 7 Tage lang nicht noch einmal versuchen | 7 Tage für den Sieger |
+
+<Notice tone="warn" title="Raids tun weh">
+Bei einem Raid können die Sieger eine Stunde lang deine Truhen leeren, auch wenn niemand aus deinem Land online ist. Schütz Wertsachen mit Blöcken, die nicht auf dieser Liste stehen.
+</Notice>
+
+## Verwandte Seiten
+
+<CardGrid>
+  <Card title="Städte und Stadtvorteile" text="Eine Stadt gründen, Stufen und Kosten." icon="shield" href="/de/guides/towns/" />
+  <Card title="Geld und Wallet" text="Woher das Geld für Kriege und Nationen kommt." icon="coin" href="/de/guides/economy/" />
+</CardGrid>
