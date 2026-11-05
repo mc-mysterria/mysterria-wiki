@@ -1,0 +1,56 @@
+---
+title: "Steam Rifle"
+description: "El Steam Rifle en Mysterria, el servidor de LOTM: sus cinco piezas y dónde salen, las Rifle Rounds, la mira y cómo funcionan sus dos modos de recarga."
+sidebar:
+    label: Steam Rifle
+    order: 6
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import rifleRounds from '~/assets/firearms/riflerounds.png';
+
+El **Steam Rifle** es el arma de largo alcance con mira telescópica. Es la que más daño hace, pero la que dispara más despacio, y solo lleva 5 balas.
+
+Sus [estadísticas](/es/firearms/#estadísticas-de-las-armas) son 20 de daño, 5 balas, 100 bloques de alcance y 1,2 segundos entre disparos.
+
+## ¿Cómo consigo uno?
+
+Necesitas cinco piezas, y **ninguna se puede fabricar**.
+
+- Steam Rifle Barrel
+- Steam Pipe Assembly
+- Mechanical Power Box
+- Military Rifle Stock
+- Sniper Scope
+
+Cada vez que un cofre de una estructura vanilla del Overworld genera su botín, hay un 25 % de probabilidad de que también traiga una pieza al azar de Deathknell o de Steam Rifle. También puedes conseguir piezas comerciando con otros jugadores.
+
+Con las cinco en tu inventario, haz clic derecho en una [Weaponsmith Table](/es/firearms/crafting/#cómo-monto-un-arma) para comprobarlo y luego Mayús + clic derecho para montarlo.
+
+## ¿Qué munición usa?
+
+Solo **Rifle Rounds** y las Rifle Rounds especiales que se hacen con ellas (13 tipos en total).
+
+- 1 Rifle Cartridge Case + 1 Rifle Cartridge Core + 2 Pólvora = **3 Rifle Rounds**.
+- 3 Brass + 1 Lingote de hierro + 12 Pólvora dan **18 balas**, la munición que más Brass gasta.
+
+<Figure src={rifleRounds} alt="Cuadrícula de fabricación con una Rifle Cartridge Case, un Rifle Cartridge Core y 2 Pólvora que dan 3 Rifle Rounds" caption="Rifle Rounds." contain />
+
+La página de [Munición](/es/firearms/ammunition/) tiene las recetas de casquillos y núcleos y todas las balas especiales.
+
+## ¿Cómo uso la mira?
+
+Mantén **Agacharse** con el rifle en la mano para mirar por la mira, y suéltalo para dejar de apuntar. El zoom viene de un efecto de Lentitud, así que te mueves despacio mientras apuntas. Apuntar con la mira no mejora la [precisión](/es/firearms/#precisión) por sí solo. Lo que la mejora es estar quieto.
+
+## ¿Cómo funciona la recarga?
+
+El rifle tiene dos modos de recarga, según le queden balas o no.
+
+| Cargador al recargar | Qué pasa |
+|---|---|
+| Vacío | Todas las balas entran juntas tras **3,0 segundos**. Antes de eso no puedes usar ninguna. |
+| Quedan de 1 a 4 balas | La primera bala entra tras **1,0 segundo** y luego una más cada **0,75 segundos**. Rellenar 4 balas tarda 3,25 segundos. |
+
+No puedes disparar mientras dura la recarga ("Weapon is reloading!"). Cambiar a otra casilla de la barra rápida la cancela. Al rellenar, las balas ya cargadas se quedan en el arma. Al recargar desde vacío, no se carga nada si cancelas antes de los 3 segundos. Por eso suele compensar rellenar tras uno o dos disparos en vez de gastar antes las 5.
+
+Cuando recargas desde vacío, el rifle toma el primer montón de Rifle Rounds de tu inventario. Cuando está medio cargado, solo se rellena con el mismo tipo de bala que ya tiene dentro.

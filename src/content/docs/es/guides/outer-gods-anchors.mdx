@@ -1,0 +1,128 @@
+---
+title: "Outer Gods Anchors"
+description: "Los Outer Gods Anchors en Mysterria, el servidor de Minecraft de LOTM: cómo funciona el evento cooperativo, la Presión de Corrupción, los Puntos de Contribución y la tienda /oga rewards."
+sidebar:
+  order: 38
+---
+
+import {Figure} from '~/components/mdx';
+import rewardShop from '~/assets/oga/reward-shop.webp';
+
+Outer Gods Anchors (OGA) es un evento cooperativo de todo el servidor en el que los jugadores hacen retroceder la corrupción de un Dios Exterior y rompen su Corazón. Los **Puntos de Contribución** que ganas compran recompensas en `/oga rewards`, la única tienda que vende todas las fichas de Gracia.
+
+Dentro de un ancla los demás jugadores no pueden hacerte daño y tú no puedes morir, así que es seguro para cualquier Secuencia.
+
+## ¿Qué Dioses Exteriores pueden aparecer?
+
+Cada ancla pertenece a uno de cinco Dioses Exteriores. Cada dios tiene su propio aspecto, su propio efecto negativo y su propia velocidad de crecimiento.
+
+- Circle of Inevitability
+- Monarch of Decay (el que crece más despacio)
+- Mother Goddess of Depravity
+- Mother Tree of Desire (crece rápido)
+- Primordial Hunger (el que crece más rápido)
+
+## ¿Cuándo aparece un ancla?
+
+El servidor intenta plantar un ancla nueva más o menos **cada 3 días** (12 horas arriba o abajo), y solo cuando hay al menos **5 jugadores** conectados. Entre las 02:00 y las 08:00 hora del servidor no empieza ningún intento.
+
+| Regla | Valor |
+|---|---|
+| Dónde | Solo en el Overworld, de 300 a 3 000 bloques de 0, 0, nunca en océanos ni ríos |
+| Distancia a las ciudades | De 80 a 160 bloques del terreno reclamado más cercano |
+| Cuántas | Como mucho 3 anclas a la vez |
+
+### Fase 1. Incubación
+
+Durante unas **24 horas** la semilla está escondida. Cada 30 minutos el chat trae un rumor que nombra al dios y el tiempo que queda, con una pequeña barra de cuenta atrás. Los jugadores a menos de 40 bloques de la semilla oyen su sonido ambiental.
+
+### Fase 2. El ancla despierta
+
+Cuando termina la incubación, el chat anuncia el dios y las **coordenadas**. La semilla se convierte en un **Corazón**, un bloque de Magma dentro de una coraza de Roca madre. La corrupción se extiende desde él en tentáculos, hasta 400 bloques, y aparecen defensores. Son [Trascendentes Salvajes](/es/magic/wild-beyonders/), NPC hostiles y, desde la etapa 2, minijefes.
+
+`/oga where` muestra todas las anclas activas con sus coordenadas, su integridad, su etapa y su dirección desde donde estás.
+
+## ¿Cómo derrotamos un ancla?
+
+El ancla tiene una barra de **Integridad**, que se ve como una barra de jefe con su etapa del 1 al 5. No puedes golpear el Corazón mientras tiene escudo, así que vas desgastando la Integridad desde fuera.
+
+| Acción | Daño a la Integridad |
+|---|---|
+| Matar a un defensor | 0,1 |
+| Matar a un NPC | 0,5 |
+| Matar a un minijefe | 3 |
+| Destruir el Nexus de un sector | 5 |
+
+Si nadie lucha, el ancla se cura poco a poco, pero nunca por encima de la mejor etapa a la que la hayan llevado los jugadores. El progreso se mantiene de una tarde a otra.
+
+### Fase 3. Asalto al Corazón
+
+Por debajo del **10 % de Integridad** la coraza se abre con grietas de lava. Rompe el Corazón de Magma en menos de **45 minutos**. Si no lo consigues, el Corazón se protege con un escudo durante 2 minutos, recupera 15 de Integridad y crece más rápido durante un tiempo.
+
+Cuando el Corazón se rompe, los defensores desaparecen y el terreno se recupera solo en las 24 horas siguientes.
+
+:::note[Tus construcciones están a salvo]
+La corrupción nunca entra en terrenos reclamados y nunca toca contenedores, carteles, camas ni bloques parecidos. Las construcciones sin reclamar pueden quedar cubiertas, pero todo se restaura cuando se derrota el ancla.
+:::
+
+### ¿Qué pasa con un ancla contra la que nadie lucha?
+
+Tras 72 horas sin que nadie luche contra ella, el dios se muere de hambre. Deja de curarse, pierde Integridad y al final se derrumba sola. Los que contribuyeron reciben entonces solo **la mitad** de lo que habría pagado una victoria.
+
+## ¿Qué herramientas ayudan contra la corrupción?
+
+| Herramienta | Cómo funciona |
+|---|---|
+| **Nexus** | El campo se divide en 5 sectores, cada uno con un Nexus (un bloque de obsidiana llorosa) cerca del combate. Pícalo (hacen falta varios golpes) para frenar para siempre el crecimiento en esa dirección y dañar el ancla |
+| **Ritual** | 3 o más jugadores se quedan a menos de 6 bloques de un Nexus durante 20 segundos. El crecimiento baja al 40 % durante 10 minutos. Cada Nexus admite uno cada 15 minutos |
+| **Warding Pylon** | Coloca una **Magnetita** dentro del campo y luego haz clic derecho en ella con **Polvo de piedra luminosa** para alimentarla (1 minuto por cada polvo, hasta 30 minutos). Un Pylon alimentado frena la corrupción en su dirección, impide que aparezcan defensores a menos de 24 bloques y vacía tu Presión de Corrupción. Hasta 3 por ancla |
+| **Censer** | Se compra en `/oga rewards`. Haz clic derecho en un bloque corrupto para devolver el suelo a la normalidad en un radio pequeño. 5 cargas, con 15 segundos entre una y otra. Si limpias lo suficiente, el borde retrocede |
+
+Los Pylons y los Censers también dan Puntos de Contribución, así que puedes ayudar sin luchar.
+
+## ¿Qué es la Presión de Corrupción?
+
+Dentro del campo se va llenando una barra de **Presión de Corrupción**. Las Secuencias más débiles la llenan más rápido, así que un Trascendente de Secuencia 9 la llena unas diez veces más rápido que uno de Secuencia 0.
+
+- Las muertes de enemigos alivian la presión, y quedarte junto a un Pylon alimentado la vacía.
+- Por encima del 50 %, el efecto negativo propio del dios empieza a afectarte, y es más fuerte cuanto más llena está la barra.
+- Al 100 % recibes 1 de daño por segundo (nunca mortal). Pasados 8 segundos te lanzan 15 bloques fuera del campo con un poco de Locura (nunca te sube por encima de 95), y tu presión se reinicia.
+
+Sal fuera 30 segundos para que se vacíe.
+
+## ¿Qué pasa si caigo en combate?
+
+Un daño mortal dentro de un ancla te deja **Derribado** en lugar de muerto. No puedes moverte ni lanzar hechizos, y brillas. Un aliado que se agache a tu lado durante 5 segundos te revive con 10 de vida. Si nadie te revive en 45 segundos, te sacan del campo con un efecto negativo corto y pierdes el 15 % de tu puntuación en esa ancla. Conservas tus objetos.
+
+## ¿Cómo funcionan los Puntos de Contribución?
+
+Ganas Puntos de Contribución por matar enemigos, por los minijefes, por romper un Nexus, por los rituales, por alimentar Pylons, por limpiar, por revivir a aliados y por mantener la posición, con una gran bonificación por romper el Corazón. Mantener la posición solo cuenta si has luchado en los últimos 3 minutos.
+
+Las Secuencias más débiles ganan más por el mismo trabajo, desde x1,3 en la Secuencia 9 hasta x0,85 en la Secuencia 0. Necesitas al menos 10 puntos en un ancla para cobrar. Los puntos se guardan entre anclas, así que puedes ahorrar.
+
+## ¿Qué puedo comprar en /oga rewards?
+
+| Recompensa | Precio | Límite |
+|---|---|---|
+| Ficha de Gracia, una por cada una de las diez [Gracias](/es/magic/boons/) | 900 | 1 de cada al mes |
+| [Pathway Transfer Token](/es/guides/special-items/) | 1 200 | 1 al mes |
+| [Anti-Control Charm](/es/guides/special-items/) | 200 | 1 a la semana |
+| Ficha de receta (Secuencia 9+ / 7+ / 5+ / 4+) | 50 / 110 / 220 / 380 | 4 / 3 / 2 / 1 a la semana |
+| Ficha de receta (Secuencia 3+) | 650 | 1 al mes |
+| Ficha de hoja de receta (Secuencia 7+ / 5+) | 140 / 300 | 2 / 1 a la semana |
+| Ficha de pócima (Secuencia 9+ / 7+ / 5+ / 4+) | 40 / 90 / 180 / 320 | 4 / 3 / 2 / 1 a la semana |
+| Ficha de ingrediente | 45 | 6 a la semana |
+| Frasco de Actuación de 500 | 15 | Sin límite |
+| Frasco de Actuación de 1 000 / 5 000 / 10 000 | 28 / 130 / 240 | 8 / 3 / 2 a la semana |
+| Ritual Book (Tier I / Tier II) | 160 / 300 | 2 / 1 a la semana |
+| Ritual Book (Tier III), se salta el ritual entero | 550 | 1 al mes |
+| Censer | 60 | Sin límite |
+| Warding Pylon Kit (Magnetita y 8 Polvo de piedra luminosa) | 40 | Sin límite |
+
+La Secuencia de una ficha es la más fuerte que puedes elegir. Una ficha de "Secuencia 5+" te deja elegir cualquier cosa de la Secuencia 9 a la 5. Los límites semanales se rellenan el lunes a las 00:00 UTC, y los mensuales el día 1.
+
+<Figure src={rewardShop} alt="El menú Reward Shop de /oga rewards, con una fila de fichas de Gracia seguida de fichas, pócimas, libros y otras recompensas" caption="La tienda /oga rewards." contain />
+
+## Reglas
+
+El PvP, el robo y el griefing durante el evento van contra las [Reglas](https://www.mysterria.net/en/rules). De todos modos, el fuego amigo está desactivado dentro de la zona corrupta, y la Locura que causan las habilidades de otros jugadores está bloqueada.

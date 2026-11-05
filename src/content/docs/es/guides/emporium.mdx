@@ -1,0 +1,132 @@
+---
+title: "Emporio Brillante y recompensas diarias"
+description: "El Emporio Brillante en Mysterria: cómo ganar puntos del Emporio con las recompensas diarias y votando, qué vende la tienda diaria, precios, existencias y Mystery Boxes."
+sidebar:
+    label: Emporio y recompensas diarias
+    order: 22
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import dailyLogin from '~/assets/daily/daily.png';
+import hourly from '~/assets/daily/hourly.png';
+import emporiumMain from '~/assets/emporium/emporium-main.webp';
+import emporiumIngredients from '~/assets/emporium/emporium-ingredients.webp';
+
+El **Emporio Brillante** es una tienda diaria que vende ingredientes Trascendentes, pócimas, recetas, libros encantados y Mystery Boxes a cambio de **puntos del Emporio**. Ábrelo con `/emporium`.
+
+<Figure src={emporiumMain} alt="El menú principal del Emporio con seis iconos de categoría en dos estanterías" caption="El menú principal del Emporio. Cada icono de las estanterías abre una categoría o tus recompensas diarias." contain />
+
+Los puntos del Emporio son un saldo aparte del dinero. No se pueden comprar con Coppets y solo funcionan en el Emporio. Mira tus puntos con `/emporium balance`.
+
+## ¿Cómo consigo puntos del Emporio?
+
+| Fuente | Puntos |
+|---|---|
+| [Recompensas diarias](#recompensas-diarias) (`/daily`) | Hasta 180 al día |
+| [Votar](#votar) (`/vote`) | 30 al día por votar en las dos webs |
+| Niveles del [Pase de batalla](/es/guides/battle-pass/) | De 500 a 3 000 por nivel con recompensa |
+| Objeto **Emporium Points Bundle** | La cantidad que lleva escrita. Haz clic derecho para canjearlo |
+| Un bug que reportaste se arregla | Los da el staff |
+| Eventos | Varía |
+
+## Recompensas diarias
+
+Abre `/daily` o pulsa **Daily Rewards** en el menú principal del Emporio. Cada día hay tres recompensas.
+
+| Recompensa | Cómo se desbloquea | Puntos |
+|---|---|---|
+| **Daily Login Reward** | Entra en el servidor | 10 + 2 por cada día de racha |
+| **1 Hour Playtime Reward** | Juega 1 hora hoy, sin estar AFK | 10 + 1 por cada día de racha |
+| **3 Hour Playtime Reward** | Juega 3 horas hoy, sin estar AFK | 10 + 1 por cada día de racha |
+
+La bonificación de racha deja de crecer en **+50** por recompensa. La recompensa de entrada llega a su máximo de 60 puntos con una racha de 25 días, y cada recompensa de tiempo de juego llega a 60 con una racha de 50 días. Con las tres al máximo consigues **180 puntos al día**.
+
+<CardGrid min={280}>
+  <Figure src={dailyLogin} alt="La descripción de Daily Login Reward con 14 puntos, bonificación de racha de +2 por día y lista para reclamar" caption="Recompensa de entrada con una racha de 2 días, 10 + 2 x 2 = 14 puntos." />
+  <Figure src={hourly} alt="La descripción de 1 Hour Playtime Reward con 12 puntos, bonificación de racha de +1 por día y lista para reclamar" caption="Recompensa de 1 hora con una racha de 2 días, 10 + 1 x 2 = 12 puntos." />
+</CardGrid>
+
+### ¿Cómo funciona la racha de entradas?
+
+- Tu racha sube 1 por cada día natural seguido en que entras.
+- Si fallas un día, vuelve a empezar en 1.
+- Los días siguen la fecha del servidor.
+
+### Reclamar las recompensas
+
+- **Reclámalas antes de que acabe el día.** Las recompensas sin reclamar no pasan al día siguiente.
+- El tiempo AFK no cuenta para las recompensas de 1 hora y 3 horas.
+- Si tu recompensa de entrada te está esperando, recibes un aviso 5 minutos después de entrar, y una línea en el chat cuando tienes recompensas sin reclamar.
+
+## Votar
+
+Escribe `/vote` para ver las webs de votación. Puedes votar en cada web una vez cada 24 horas.
+
+| Web | Puntos por voto |
+|---|---|
+| PlanetMinecraft | 20 |
+| crafty.gg | 10 |
+
+## ¿Qué vende el Emporio?
+
+La tienda tiene cinco categorías. Cada día, a la medianoche del servidor, elige un nuevo grupo de objetos de cada categoría con precios nuevos. El chat lo anuncia con *"The Emporium has refreshed with new items!"*
+
+| Categoría | Objetos a la venta cada día | Existencias por objeto | Cambio diario de precio |
+|---|---|---|---|
+| Ingredientes | 90 | 5 | Hasta un 15 % arriba o abajo |
+| Pócimas | 30 | 2 | Hasta un 10 % arriba o abajo |
+| Recetas mágicas | 25 | 2 | Hasta un 10 % arriba o abajo |
+| Encantamientos | 20 | 2 | Hasta un 20 % arriba o abajo |
+| Mystery Boxes | 4 | 10 | Hasta un 20 % arriba o abajo |
+
+**Las existencias son compartidas por todos.** El menú muestra una copia de un objeto por cada unidad en existencia. Cada copia que alguien compra se convierte en una casilla **SOLD OUT** para todos los jugadores hasta el día siguiente.
+
+<Figure src={emporiumIngredients} alt="La página de ingredientes del Emporio con la descripción de un Reality Fragment que cuesta 1061 puntos" caption="La página de ingredientes. Pasa el ratón por un objeto para ver su precio en puntos." contain />
+
+### ¿Cuánto cuestan las cosas?
+
+Cada objeto tiene su propio precio base. El precio que ves es el precio base subido o bajado según el cambio de ese día. Los ingredientes, pócimas y recetas llegan hasta la Secuencia 4 y cuestan más cuanto más fuerte es la Secuencia.
+
+| Secuencia | Ingrediente | Receta mágica | Pócima |
+|---|---|---|---|
+| 9 | 100 | 400 | 600 |
+| 8 | 200 | 650 | 1 200 |
+| 7 | 300 | 1 000 | 1 800 |
+| 6 | 380 | 1 800 | 2 600 |
+| 5 | 500 | 2 500 | 3 500 |
+| 4 | 1 000 | 5 000 | 7 000 |
+
+Los libros encantados cuestan de 25 a 40 puntos antes del cambio diario. Hay Reparación, Protección IV, Filo V, Eficiencia V, Fortuna III, Irrompibilidad III y otros.
+
+Los objetos más fuertes salen menos en la selección diaria.
+
+## ¿Qué son las Mystery Boxes?
+
+Una Mystery Box da objetos Trascendentes al azar de un rango de Secuencias. Haz clic derecho con ella al aire o sobre un bloque para abrirla. Haz clic derecho en una caja de la tienda para ver lo que puede traer.
+
+| Caja | Precio base | Recompensas | Contenido |
+|---|---|---|---|
+| Basic Mystery Box | 250 | De 1 a 2 | Secuencia 9 |
+| Rare Mystery Box | 500 | De 1 a 2 | Secuencias 8 y 7 |
+| Epic Mystery Box | 1 000 | De 1 a 3 | Secuencias 6 y 5 |
+| Legendary Mystery Box | 2 000 | De 1 a 4 | Secuencia 4 |
+
+Cada caja puede dar ingredientes, recetas, Características Trascendentes y pócimas de cualquiera de los 22 Senderos dentro de su rango. Lo más común son los ingredientes y lo más raro las pócimas.
+
+## ¿Qué son los fragmentos del Emporio?
+
+Algunas recompensas vienen en trozos. Un **Shard of Boon Token** o un **Shard of Acting Bottle** es un fragmento que dice cuántos necesitas. Pon esa cantidad en una cuadrícula de fabricación para hacer el objeto completo.
+
+| Fragmento | Necesitas | Da |
+|---|---|---|
+| Shard of Boon Token | 10 | Una ficha de Gracia (mira [Gracias](/es/magic/boons/)) |
+| Shard of Acting Bottle | 2 | Un Frasco de Actuación (10 000 puntos de Actuación) |
+
+Estos fragmentos se repartieron en tiendas de temporada del Emporio y en eventos. No son Fragmentos de Energía.
+
+## Páginas relacionadas
+
+<CardGrid>
+  <Card title="Pase de batalla" text="Niveles que pagan hasta 3 000 puntos del Emporio de golpe." icon="scroll" href="/es/guides/battle-pass/" />
+  <Card title="Dinero y cartera" text="Coppets, Licks, Verl Dors y Fragmentos de Energía." icon="coin" href="/es/guides/economy/" />
+</CardGrid>

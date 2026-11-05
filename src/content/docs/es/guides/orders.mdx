@@ -1,0 +1,123 @@
+---
+title: "Órdenes Secretas"
+description: "Las Órdenes Secretas en Mysterria, el servidor de Minecraft de LOTM: crea una orden privada, súbela de nivel con Fragmentos de Energía y desbloquea el alijo, las invocaciones, los rituales y una guarida."
+sidebar:
+    label: Órdenes Secretas
+    order: 33
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import levelup from '~/assets/orders/levelup.png';
+
+Una **Orden Secreta** es una pequeña organización privada. Sus miembros comparten un chat privado, un alijo y poderes que crecen a medida que la Orden sube de nivel con **Fragmentos de Energía**.
+
+El comando es `/o` (también `/org` y `/organization`). Escribe `/o` para abrir el menú de la Orden.
+
+## ¿Quién puede crear una Orden Secreta?
+
+Para crear una Orden y subirla de nivel hace falta el rango de apoyo **Shepherd Subscription** de la [tienda del servidor](https://www.mysterria.net/en/store). A una Orden se puede invitar a cualquiera.
+
+Si la suscripción del líder se acaba, la Orden baja al nivel 0. Cuando vuelve la suscripción, la Orden **recupera su nivel anterior**.
+
+## Comandos
+
+| Comando | Qué hace |
+|---|---|
+| `/o` | Abre el menú de la Orden |
+| `/o create <nombre>` | Crea una Orden (necesita el rango de apoyo) |
+| `/o invite <jugador>` | Invita a un jugador (líder o vicelíder) |
+| `/o kick <jugador>` | Expulsa a un miembro (líder o vicelíder) |
+| `/o vice set <jugador>`, `/o vice remove <jugador>` | Añade o quita un vicelíder |
+| `/o levelup` | Sube de nivel la Orden (el líder, con el rango de apoyo) |
+| `/o sos` | Envía tus coordenadas al chat de la Orden (nivel 1 o superior) |
+| `/o rename <nombre>` | Cambia el nombre de la Orden (solo el líder) |
+| `/o info [orden]` | Muestra información sobre una Orden |
+| `/o leave` | Sal de la Orden (el líder no puede salir) |
+| `/o disband` | Disuelve la Orden |
+| `/o confirm` | Confirma una salida, una expulsión o una disolución |
+| `/oc <mensaje>` | Envía un mensaje al chat de la Orden |
+
+Para el chat de la Orden, usa `/oc <mensaje>` o escribe `!o`, `!oc`, `!org` o `!order` delante de un mensaje. Los mensajes se ven como `[ORG] Nombre: mensaje`.
+
+## ¿Cómo funcionan los niveles de la Orden?
+
+Los miembros meten **Fragmentos de Energía** en el fondo común de la Orden, y el líder gasta ese fondo en niveles.
+
+1. Abre `/o` y usa el objeto **Your Shards**. Clic izquierdo ingresa 1 fragmento, clic derecho ingresa 10, y Mayús + clic izquierdo los ingresa todos.
+2. Cuando el fondo es suficiente, el líder usa **Level Up** en el menú o escribe `/o levelup`.
+
+<Figure src={levelup} alt="El objeto Your Shards del menú de la Orden con 0 personales y 342 de la organización, y los controles para ingresar" caption="Ingresar Fragmentos de Energía en el fondo de la Orden." />
+
+| Nivel | Nombre | Máximo de miembros | Coste para llegar | Desbloquea |
+|---|---|---|---|---|
+| 0 | **Whisper of Mist** | 3 | - | Invitaciones, vicelíderes, chat de la Orden |
+| 1 | **Shadow of Mist** | 4 | 50 fragmentos | Organization Stash, `/o sos` |
+| 2 | **Gaze of Mist** | 5 | 200 fragmentos | Pocket Dimension |
+| 3 | **Embrace of Mist** | 6 | 1 000 fragmentos | Instant Summon, Growth Ritual |
+| 4 | **Heart of Mist** | 7 | 5 000 fragmentos | Secret Lair, Battle Cry, Global Announcement, mejoras permanentes |
+
+Consigue [Fragmentos de Energía](/es/guides/economy/#fragmentos-de-energía) vendiendo los ingredientes que te sobran a un aldeano sin profesión o a un aldeano simplón, o con el Pase de batalla.
+
+## Habilidades de la Orden
+
+Ábrelas desde el objeto **Abilities** del menú `/o`.
+
+### Organization Stash (nivel 1)
+
+Un almacén compartido de 27 casillas que puede abrir cualquier miembro. En el nivel máximo puedes comprar más páginas (mira las [mejoras](#mejoras-permanentes)).
+
+### Pocket Dimension (nivel 2)
+
+Un espacio privado de reunión para la Orden.
+
+- El líder o un vicelíder abre una sesión. Dura **10 minutos** y se puede abrir una vez cada **24 horas**.
+- Los miembros entran desde el menú de habilidades mientras la sesión está abierta.
+- Mientras estás dentro, una copia tuya se queda donde estabas. Si la atacan, te devuelven de golpe.
+
+### Instant Summon (nivel 3)
+
+Teletranspórtate hasta un miembro conectado de tu Orden.
+
+- Cuesta entre el **1,5 % y el 3 %** de tu Actuación, al azar. Tienes que ser Trascendente.
+- Tarda **5 segundos** en cargar. Moverte o recibir daño lo cancela.
+- Solo funciona en la misma dimensión.
+- Tiempo de espera de **30 minutos**.
+
+### Growth Ritual (nivel 3)
+
+El líder o un vicelíder da a todos los miembros **conectados** entre un **+20 % y un +25 % de velocidad de Actuación** durante **24 horas**. Se puede usar **una vez a la semana**.
+
+### Secret Lair (nivel 4)
+
+Un mundo privado y permanente para tu Orden.
+
+- El líder o un vicelíder la funda con 50 Fragmentos de Energía, 20 Obsidiana, 5 Perlas de ender y 3 Diamantes de su propio inventario.
+- Cada entrada gasta un **Lair Teleportation Crystal**. Se fabrican en el menú de la Secret Lair por 10 Fragmentos de Energía, 1 Perla de ender y 2 Obsidiana llorosa cada uno.
+- Hay 30 minutos entre teletransportes, y 30 minutos después de salir antes de poder volver a entrar.
+- Si cruzas el límite de la guarida, te devuelven al centro.
+
+### Battle Cry (nivel 4)
+
+El líder o un vicelíder da a todos los miembros conectados **Velocidad II, Fuerza II y Regeneración I** durante 5 minutos. Cuesta **50 fragmentos** del fondo de la Orden y funciona una vez cada **12 horas**.
+
+### Global Announcement (nivel 4)
+
+El líder o un vicelíder envía un **mensaje anónimo a todo el servidor** en nombre de la Orden, una vez cada **24 horas**.
+
+### Mejoras permanentes
+
+En el nivel 4, el líder o un vicelíder puede comprar mejoras permanentes con fragmentos del fondo de la Orden.
+
+| Mejora | Coste | Máximo |
+|---|---|---|
+| **Extra Member Slot** | 200, luego 400 y luego 800 fragmentos | +3 miembros (10 en total) |
+| **Extra Stash Page** | 300, luego 600 y luego 1 200 fragmentos | 4 páginas |
+
+Ya no existen Remote Exchange ni Unification Ritual. Para pasaros objetos entre miembros, usad el alijo compartido o un [mensajero](/es/guides/couriers/).
+
+## Páginas relacionadas
+
+<CardGrid>
+  <Card title="Fragmentos de Energía" text="Cómo ganar los fragmentos que mueven las Órdenes." icon="coin" href="/es/guides/economy/#fragmentos-de-energía" />
+  <Card title="Mensajeros" text="Envía objetos a cualquier jugador." icon="gift" href="/es/guides/couriers/" />
+</CardGrid>

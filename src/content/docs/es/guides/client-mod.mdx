@@ -1,0 +1,117 @@
+---
+title: "Client Mod"
+description: "El mod opcional de Fabric coi-client para Mysterria: menús Trascendentes nativos, HUD, lanzamiento por gestos, teclas por defecto y la bonificación de +2 % de Actuación por usarlo."
+sidebar:
+  label: Client Mod
+  order: 15
+---
+
+import {Figure} from '~/components/mdx';
+import titleScreen from '~/assets/client-mod/title-screen.webp';
+import dossier from '~/assets/start/beyonder-dossier.webp';
+import destinations from '~/assets/client-mod/dossier-destinations.webp';
+import catalogue from '~/assets/client-mod/ability-catalogue.webp';
+import uniqueness from '~/assets/magic/uniqueness-candidacy.webp';
+import mythicalForm from '~/assets/client-mod/mythical-form.webp';
+import selector from '~/assets/client-mod/ability-selector.webp';
+import characterPlate from '~/assets/client-mod/character-plate.webp';
+import hudArrange from '~/assets/client-mod/hud-arrange.webp';
+import hudSettingsAbility from '~/assets/client-mod/hud-settings-ability.webp';
+import hudSettingsElements from '~/assets/client-mod/hud-settings-elements.webp';
+
+**coi-client** es un mod opcional de Fabric hecho para Mysterria. Cambia los menús de cofre y el desorden de la barra de acción por pantallas y elementos de HUD nativos, y da una pequeña bonificación de Actuación.
+
+El servidor no necesita el mod para nada. Cada pantalla que dibuja tiene una versión en menú de cofre, que es la que ves si no lo instalas, si juegas en Bedrock con Geyser, si usas una versión vieja o si desactivas una función.
+
+<Figure src={titleScreen} alt="La pantalla de título de coi-client, con los iconos de los 22 Senderos girando alrededor del logo" />
+
+---
+
+### Cómo conseguirlo
+
+El mod necesita Fabric en Java Edition. La última versión es la **1.2.3**, hecha para Minecraft **26.2**. Descárgalo desde [GitHub Releases](https://github.com/ikeepcalm/coi-client/releases), [Modrinth](https://modrinth.com/mod/coi-client) o [CurseForge](https://www.curseforge.com/minecraft/mc-mods/coi-client).
+
+Todos los jugadores reciben un único mensaje sobre el mod unos segundos después de entrar. Después, solo los Trascendentes reciben recordatorios, cada 6 horas si no tienen el mod y cada 72 horas si lo tienen, para confirmar que la bonificación funciona. El mod es casi imprescindible para ver la Ceremonia de Ascensión con todos sus efectos.
+
+---
+
+### Qué cambia
+
+Con el mod instalado y sus funciones activadas, pasa todo esto.
+
+- Tu Expediente de Trascendente, la lista de habilidades, la visibilidad en el mapa, las pantallas del Panteón y del Trono y más se abren como **ventanas nativas** en lugar de cuadrículas de inventario.
+- El **Expediente de Trascendente** muestra en un solo panel tu Secuencia, Espiritualidad, Locura, progreso de Actuación y sus fuentes, junto al modelo de tu personaje. Su pestaña **Destinations** abre todas las demás pantallas.
+- Un **selector de habilidades y un HUD de atajos** te dejan lanzar por categorías y asignar habilidades a teclas. El HUD de atajos se puede desactivar.
+- Una **barra de vida Trascendente** muestra tu vida Trascendente real en lugar de simples corazones, con los estilos Hearts + Numbers, Bar, Ornate Bar o Segments. Se entiende mejor el daño recibido en PvP, y una **barra de Espiritualidad que puedes mover** sustituye a la barra de jefe vanilla. Mira [Salud](/es/magic/health/).
+- Al pasar el ratón por cualquier ingrediente Trascendente ves su Sendero, su Secuencia y si es un ingrediente principal o secundario.
+- Las **barras de recursos** sustituyen a las barras de símbolos para las reservas y cargas de habilidades en tu barra de acción.
+- Los cambios físicos que dan algunos Senderos, como los cuernos de Abyss o las orejas de Demoness, se ven como **rasgos de apariencia** cosméticos de verdad.
+- Los efectos de la **Ceremonia de Ascensión** son más ricos, y los **Impact Frames** añaden un fotograma congelado al estilo anime en los golpes más fuertes del juego.
+- El **icono del Sendero desaparece de tu inventario** y el menú Trascendente pasa a la tecla **M**.
+- Además, al entrar recibes un aviso con la [Marea diaria](/es/guides/tides/) del día, sonidos en los efectos visuales, alucinaciones con mucha Locura, un tutorial la primera vez que entras (lo puedes repetir con **Show Tutorial Again** en los ajustes) y Discord Rich Presence.
+
+### Teclas por defecto
+
+| Tecla | Acción |
+|---|---|
+| **M** | Abre el menú Trascendente |
+| **K** | Asignación de habilidades |
+| **G** | Rueda de habilidades |
+| **Alt izquierdo** (mantener) | Lanzamiento por gestos |
+| **Z, X, C, V, B, N** | Casillas de habilidad de la 1 a la 6 |
+
+Puedes cambiarlas en los Controles de Minecraft, donde el mod tiene su propia categoría. También hay teclas que abren directamente pantallas sueltas, como tus habilidades, pero no tienen tecla asignada hasta que tú se la pongas.
+
+<Figure src={dossier} alt="El Expediente de Trascendente como pantalla nativa" />
+
+<Figure src={destinations} alt="La pestaña Destinations del Expediente de Trascendente, desde la que se llega a todas las demás pantallas" />
+
+<Figure src={catalogue} alt="El catálogo de habilidades" />
+
+<Figure src={uniqueness} alt="La pantalla de Unicidad" />
+
+<Figure src={mythicalForm} alt="La pantalla de Forma de Criatura Mítica" />
+
+El catálogo de habilidades muestra la descripción, el tipo, la categoría, el coste de Espiritualidad y el tiempo de espera de cada hechizo. El selector de habilidades solo muestra el nombre y el tipo de cada habilidad, para que elijas una rápido.
+
+<Figure src={selector} alt="El selector de habilidades" />
+
+La placa de personaje del HUD sustituye las barras sueltas de Locura, reserva y Actuación por un solo panel que también muestra tu skin, tu Sendero y tu Secuencia.
+
+<Figure src={characterPlate} alt="La placa de personaje del HUD" contain />
+
+Puedes arrastrar cada parte del HUD, incluidos los atajos de habilidad sueltos, para colocarla como quieras.
+
+<Figure src={hudArrange} alt="El HUD en el modo Arrange on screen, con cada elemento listo para arrastrarlo a su sitio" />
+
+La pantalla de ajustes solo tiene las opciones que seguramente vas a cambiar.
+
+<Figure src={hudSettingsAbility} alt="La pantalla de ajustes del mod" contain />
+
+<Figure src={hudSettingsElements} alt="Más ajustes del mod" contain />
+
+---
+
+### Lanzamiento por gestos
+
+En lugar de usar atajos, puedes asignar una habilidad a una forma y lanzarla dibujando esa forma mientras mantienes **Alt izquierdo**. Las **9 formas** son círculo, V, Z, línea hacia abajo, acento circunflejo, triángulo, cuadrado, gancho y arco.
+
+---
+
+### Menús nativos y `/coi menu native`
+
+Los menús nativos están activados por defecto en cuanto el mod se conecta. Para volver a los menús de cofre, por ejemplo cuando el mod todavía no puede dibujar una pantalla, usa este comando.
+
+```
+/coi menu native
+```
+
+Cambia entre las pantallas del mod y los menús de cofre. La elección se guarda en el servidor, así que te sigue a cualquier cliente.
+
+---
+
+### La bonificación por fidelidad
+
+Una versión actual del mod da **+2 % de [Actuación](/es/magic/acting/)** de cualquier fuente y **tiempos de espera un 5 % más cortos** en los métodos de Actuación. Una versión muy antigua que no completa su conexión con el servidor no da nada, así que mantén el mod actualizado.
+
+`/coi acting` nombra la bonificación del Client Mod cuando está activa. Si algo sigue sin cuadrar, pregunta a alguien del staff. Pueden ver lo que el servidor recibe de tu cliente.

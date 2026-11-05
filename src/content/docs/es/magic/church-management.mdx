@@ -1,0 +1,235 @@
+---
+title: "Gestión de la Iglesia"
+description: "Cómo llevar una iglesia en Mysterria: filiales, sedes regionales, cargos de sede, oficios, tesoro, Cámaras de Iglesia, vínculos con Lands y guerras entre iglesias en este servidor de LOTM."
+sidebar:
+  label: Gestión de la Iglesia
+  order: 34
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import blessedSettings from '~/assets/magic/church-blessed-settings.webp';
+import coreBroken from '~/assets/magic/church-core-broken.webp';
+import vaultRecipe from '~/assets/magic/church-vault-recipe.webp';
+import vaultMenu from '~/assets/magic/church-vault-menu.webp';
+
+Los líderes y oficiales de una iglesia la hacen crecer con sus sedes, oficios, cámaras, vínculos con Lands y guerras. Cómo fundar una iglesia y cómo unirse a una se explica en [Primeros pasos con las Iglesias](/es/magic/churches/).
+
+## Sedes de la iglesia
+
+La presencia de una iglesia viene de sus **sedes**, cada una con un Núcleo de Iglesia colocado y activo. Las ventajas se comprueban por la distancia a tus sedes activas, no por chunks.
+
+| Sede | Qué es |
+|---|---|
+| **Sede principal** | Tu cuartel general y tu ancla principal. La crea tu primer núcleo |
+| **Filial** | Sedes extra que hacen crecer la red y el apoyo local |
+| **Sede regional** | Una sede lejana que desbloquea más huecos para filiales |
+
+Una sede cuyo núcleo falta o está inactivo no cuenta.
+
+### ¿Y si se rompe el núcleo principal?
+
+<Figure src={coreBroken} alt="El aviso del chat que aparece cuando se rompe un Núcleo de Iglesia principal" />
+
+- Sin núcleo principal, **todas las ventajas de la iglesia funcionan al 50 %**.
+- Tras **14 días** sin él, la iglesia se considera abandonada.
+- Tras **otros 14 días**, se expulsa a todos los miembros y la iglesia se borra.
+
+Para mover tu cuartel general, rompe tu núcleo principal y vuelve a colocarlo.
+
+## ¿Cómo añado una filial?
+
+1. Sé el líder de la iglesia, con tu núcleo principal colocado y activo.
+2. Comprueba que tienes un hueco libre para filiales (tabla de abajo).
+3. Fabrica otro [Núcleo de Iglesia](/es/magic/churches/#receta-del-núcleo-de-iglesia) y colócalo a 16 bloques como mínimo de cualquier otro núcleo.
+4. Queda registrado como filial. Gestiónalo en el menú de la iglesia, en el apartado de sedes.
+
+| Secuencia del líder | Huecos para filiales | Huecos para sedes regionales |
+|---|---:|---:|
+| 4 | 0 | 0 |
+| 3 | 1 | 1 |
+| 2 | 3 | 1 |
+| 1 | 5 | 2 |
+| 0 | 8 | 3 |
+
+Si no se puede colocar un núcleo, puede que no te queden huecos para filiales, que tu núcleo principal esté inactivo, que primero necesites una sede regional o que el núcleo sea de otra persona.
+
+## Sedes regionales
+
+Cada sede regional activa añade **5 huecos para filiales**. Para colocar una se tiene que cumplir todo esto.
+
+- Tu siguiente ampliación tiene que necesitar una sede regional.
+- Tiene que estar a **5 000 bloques** como mínimo de tu sede principal, de tus filiales y de otras sedes regionales.
+- Tiene que estar en el **mismo mundo** que tu sede principal.
+- Necesita un encargado, que puede ser un colíder o un Ángel con la devoción al máximo. Ponlo con `/coi church regional-manager set <siteId> <jugador>`.
+
+El menú de la iglesia te dice si el sitio donde estás es válido.
+
+## Llevar una sede
+
+Cada sede funciona mejor con un **Head Deacon** activo y de Secuencia alta, hasta **2 Bishops** y oración y asistencia regulares.
+
+| Head Deacon | Eficacia de la sede |
+|---|---:|
+| Secuencia 0 a 4 | 100 % |
+| Secuencia 5 | 70 % |
+| Secuencia 6 | 55 % |
+| Secuencia 7 | 45 % |
+| Secuencia 8 | 35 % |
+| Secuencia 9 | 25 % |
+| No Trascendente | 15 % |
+| Sin Head Deacon | 65 % |
+
+Un responsable que no ha rezado hace poco cuenta menos.
+
+| Actividad de la sede | Valor |
+|---|---|
+| Periodo de actividad reciente | 7 días |
+| Objetivo semanal de oración | 12 oraciones |
+| Objetivo semanal de asistencia | 8 asistentes |
+| Una filial decae tras | 14 días sin actividad real |
+| Revivir una filial decaída | 20 de tesoro y 12 de Espiritualidad, a menos de 12 bloques |
+
+Basta con cumplir el objetivo de oración o el de asistencia para contar como totalmente activa.
+
+### Tesoro, ofrendas y mejoras
+
+Sujeta un objeto y usa la acción de ofrenda sobre una sede en el menú de la iglesia (o `/coi church offering donate <siteId>`) para sumarlo a su tesoro. El tesoro paga las mejoras y las reactivaciones de las sedes.
+
+Las mejoras empiezan en **32 de tesoro**, cada nivel cuesta 1,6 veces el anterior y una sede llega hasta el **nivel 5**. Cada nivel sube un 12 % la capacidad de ancla de la sede.
+
+Si tu iglesia está vinculada a una Land, el tesoro puede tirar del banco de esa Land (mira [Lands](#vincular-una-land)).
+
+## Oficios de la iglesia
+
+Los oficios hacen crecer tu **Church Progress**, que ayuda a una iglesia joven a subir de rango.
+
+| Oficio | Tiempo de espera | Coste de Espiritualidad | Fuerza de oración | Efecto extra | Progreso base |
+|---|---:|---:|---:|---|---:|
+| Sermon | 60 min | 12 | +3,5 % | Ninguno | 6 |
+| Mass | 180 min | 16 | +4,5 % | 8 s de Regeneración I | 8 |
+| Communion | 240 min | 18 | +5,0 % | 2 de alivio de Locura recuperable | 7 |
+| Confession | 120 min | 10 | +3,0 % | 1 de alivio de Locura recuperable | 5 |
+
+- Pueden dirigirlo el líder, los colíderes, los Ángeles o el Head Deacon de esa sede.
+- El oficiante tiene que estar a menos de **24 bloques** de la sede, y al menos un miembro tiene que asistir.
+- Empieza uno desde el menú de la iglesia o con `/coi church ritual <siteId> <sermon|mass|communion|confession>`.
+- Progreso = (progreso base + 0,75 por participante, hasta 12 participantes) x la actividad de la sede, nunca contada por debajo del 25 %.
+
+Cada asistencia cuenta para la hazaña **Devout church service** (hacen falta 10) de la [Secuencia 0](/es/magic/sequence-zero/).
+
+## Cámaras de artefactos
+
+Una **Cámara de Iglesia** (Church Vault) guarda [Artefactos Sellados](/es/magic/sealed-artifacts/) para la iglesia. Los miembros los toman prestados y los encargados aprueban los préstamos.
+
+### Receta de la cámara
+
+<Figure src={vaultRecipe} alt="La receta de fabricación de la Cámara de Iglesia con un Faro en el centro" caption="La casilla del centro muestra un Faro normal, pero también sirve un Núcleo de Iglesia." contain />
+
+| Fila | Objetos |
+|---|---|
+| Arriba | Bloque de diamante, Cofre, Bloque de diamante |
+| Medio | Cofre, Faro (o un Núcleo de Iglesia), Cofre |
+| Abajo | Bloque de netherita, Obsidiana, Bloque de netherita |
+
+Solo el líder de la iglesia puede fabricarla. Colócala a menos de **16 bloques** de un Núcleo de Iglesia activo.
+
+### Cómo funcionan los préstamos
+
+1. Un encargado guarda en la cámara un Artefacto Sellado que lleva en la mano.
+2. Un miembro lo pide desde el menú de la cámara (`/coi church artifact request <artifactId>`).
+3. Un encargado lo aprueba o lo deniega.
+4. El miembro tiene que devolverlo antes de que acabe el tiempo de préstamo. Los artefactos devueltos tarde, reclamados o tirados vuelven solos al almacén de la iglesia, igual que cualquier artefacto cuyo prestatario se desconecta.
+
+<Figure src={vaultMenu} alt="El menú Artifact Vault con la descripción de Vault Status, que muestra cuántos hay guardados, prestados y pendientes" caption="El menú de la cámara de /coi church vault. Pasa el ratón por el libro para ver el estado de la cámara." contain />
+
+El jugador que guardó un artefacto puede recuperarlo con `/coi church artifact withdraw` cuando no está prestado y no tiene ninguna petición pendiente.
+
+| Dato de la cámara | Valor actual |
+|---|---|
+| Distancia para usar la cámara | 10 bloques |
+| Capacidad | +1 por rango de la iglesia, por cámara, por nivel de sede y por vínculo con una Land, hasta **12** |
+| Tiempo de préstamo | 2 horas, que suben con el rango, las cámaras, los niveles de sede y los vínculos con Lands, hasta **4 horas** |
+| Artefacto a distancia | Cada sede puede reservar un artefacto para préstamos a distancia cuando lleva **7 días** guardado |
+
+Las habilidades no pueden sustituir núcleos ni cámaras, y Beyonder Characteristic Theft y Purification no pueden sacar Características Trascendentes de los artefactos de la iglesia.
+
+## Vincular una Land
+
+Las iglesias no reclaman terreno. Si usas [Ciudades](/es/guides/towns/), puedes vincular una Land que contenga una de tus sedes activas.
+
+1. Reclama la zona en Lands y coloca dentro el núcleo de la sede.
+2. Cerca de la sede, usa `/coi church land request` (o `/coi church land request <siteId>`).
+3. El dueño de la Land usa `/coi church land approve <líderDeLaIglesia>`.
+4. Compruébalo con `/coi church land`.
+
+Una iglesia tiene **3** huecos para vínculos con Lands, más 1 por cada 10 chunks reclamados. El dueño de la Land puede activar o desactivar dos ventajas con `/coi church land perk <líderDeLaIglesia> <treasury|artifacts> <true|false>`.
+
+- **Treasury** deja que el tesoro de la iglesia use el banco de la Land.
+- **Artifacts** da algo más de capacidad a la cámara y más tiempo de préstamo.
+
+Dentro de una Land reclamada, los permisos de Lands deciden quién puede romper núcleos y cámaras (salvo en una guerra entre iglesias aceptada).
+
+## Guerras entre iglesias
+
+Marca a otras iglesias como aliadas, enemigas o neutrales en el menú **Diplomacy & War**. Las guerras cambian las ventajas.
+
+| Situación | Ventajas |
+|---|---|
+| Has declarado la guerra y no la han aceptado | x0,5 para la iglesia que la declara |
+| Guerra aceptada, mientras dura | x0 (todas las ventajas suspendidas) |
+| Vencedora | x1,5 durante 14 días |
+| Perdedora | x0,5 durante 14 días |
+| Empate | x0,5 durante 7 días |
+| Aliada de la vencedora | x1,2 |
+| Aliada de la perdedora, o en un empate | x0,8 |
+
+- Una iglesia puede tener hasta **3** guerras activas, con **30 minutos** entre declaraciones. Una guerra dura como mucho **72 horas**.
+- En una guerra aceptada, los enemigos de **Secuencia 4 o superior** pueden romper tus núcleos y cámaras. Los jugadores más débiles no.
+- Romper el **núcleo principal** del enemigo termina la guerra a favor de quien lo rompe.
+
+| Comando de guerra | Qué hace |
+|---|---|
+| `/coi church war` | Muestra las guerras |
+| `/coi church war declare <líder>` | Declara la guerra a una iglesia |
+| `/coi church war accept <líder>` | Acepta una declaración |
+| `/coi church war join <líderAtacante> <líderDefensor> <attacker\|defender>` | Únete a una guerra como aliado |
+| `/coi church war surrender <líder>` | Ríndete |
+| `/coi church war draw <líder>` | Ofrece o acepta un empate |
+
+## Alertas de peligro y Divine Observation
+
+El líder, los colíderes, los Ángeles y los Head Deacons pueden poner alertas en los ajustes de vigilancia del menú de la iglesia.
+
+- **Alertas de peligro** cuando un miembro (o cualquiera que marques como Blessed) baja a 6 de vida o menos o llega al 85 % de Locura, con su ubicación exacta, como mucho una vez cada 5 minutos.
+- **Alertas de mutación** cuando alguien corre el riesgo de perder el control, y **alertas de muerte**.
+- **Avisos de oración** cuando rezan miembros, miembros veteranos o gente de fuera.
+
+<Figure src={blessedSettings} alt="La página Blessed Settings del menú de la iglesia con una fila de interruptores de alertas y avisos" caption="Blessed Settings en el menú de la iglesia. Cada icono activa o desactiva una alerta o un aviso." contain />
+
+**Divine Observation** permite a los oficiales de la iglesia observar a un miembro desde cerca. Agáchate para dejar de observar. Un miembro de Secuencia igual o superior tiene que dar permiso antes. Los miembros de confianza (colíderes, Ángeles, Head Deacons o miembros veteranos activos) se pueden poner en una lista de observación a distancia.
+
+## Comandos para líderes y encargados
+
+| Comando | Qué hace |
+|---|---|
+| `/coi church add <jugador>` | Invita a un jugador (líder y colíderes) |
+| `/coi church remove <jugador>` | Expulsa a un miembro |
+| `/coi church authority grant <jugador>` | Nombra a un colíder (como mucho 2) |
+| `/coi church authority revoke <jugador>` | Quita a un colíder |
+| `/coi church angel promote <jugador>` | Nombra a un Ángel |
+| `/coi church angel demote <jugador>` | Quita a un Ángel |
+| `/coi church role set <jugador> <follower\|angel>` | Pone el cargo de un miembro |
+| `/coi church regional-manager set <siteId> <jugador>` | Pone al encargado de una sede regional |
+| `/coi church ownership handoff <jugador> confirm` | Pasa la iglesia a otra persona |
+| `/coi church disband` | Disuelve la iglesia (escribe el nombre de la iglesia en menos de 45 segundos para confirmar) |
+| `/coi church bless <jugador>` | Bendice a un miembro |
+| `/coi church gift <jugador> <tipo>` | Da un regalo (mira los [regalos](/es/magic/church-perks/#regalos)) |
+| `/coi church ritual <siteId> <oficio>` | Celebra un oficio |
+| `/coi church offering donate <siteId>` | Ofrece a una sede el objeto que llevas en la mano |
+| `/coi church artifact approve\|deny\|recall <artifactId>` | Gestiona los préstamos de la cámara |
+| `/coi church artifact deposit` | Guarda el artefacto que llevas en la mano |
+| `/coi church merge request <líder>` | Propone fusionar iglesias |
+| `/coi church merge accept\|decline\|status\|cancel` | Responde a una fusión o mira su estado |
+| `/coi church support set <prayer\|ritual\|blessing> <true\|false>` | Activa o desactiva el apoyo compartido |
+
+Casi todos también son botones del menú de la iglesia.

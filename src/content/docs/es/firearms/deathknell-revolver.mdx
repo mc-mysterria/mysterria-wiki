@@ -1,0 +1,55 @@
+---
+title: "Deathknell"
+description: "El revólver Deathknell en Mysterria, inspirado en Lord of the Mysteries: dónde salen sus piezas, las Deathknell Rounds y su recarga bala a bala."
+sidebar:
+    label: Deathknell
+    order: 5
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import deathknellRounds from '~/assets/firearms/deathknellrounds.png';
+
+La **Deathknell** es un revólver pesado que pega casi el doble que Klein's Repeater. Recarga bala a bala, así que puedes cortar una recarga antes de tiempo y quedarte con lo que ya está cargado.
+
+Sus [estadísticas](/es/firearms/#estadísticas-de-las-armas) son 12 de daño, 6 balas, 60 bloques de alcance, 0,6 segundos entre disparos y 0,7 segundos por bala al recargar.
+
+## ¿Cómo consigo una?
+
+Necesitas cuatro piezas, y **ninguna se puede fabricar**.
+
+- Deathknell Barrel
+- Deathknell Cylinder
+- Deathknell Frame
+- Deathknell Grip
+
+Cada vez que un cofre de una estructura vanilla del Overworld genera su botín, hay un 25 % de probabilidad de que también traiga una pieza al azar de Deathknell o de Steam Rifle. También puedes conseguir piezas comerciando con otros jugadores.
+
+Con las cuatro en tu inventario, haz clic derecho en una [Weaponsmith Table](/es/firearms/crafting/#cómo-monto-un-arma) para comprobarlo y luego Mayús + clic derecho para montarla.
+
+## ¿Qué munición usa?
+
+Solo **Deathknell Rounds** y las Deathknell Rounds especiales que se hacen con ellas (13 tipos en total).
+
+- 1 Deathknell Cartridge Case + 1 Deathknell Cartridge Core + 2 Pólvora = **3 Deathknell Rounds**.
+- 1 Brass + 7 Pepitas de hierro + 12 Pólvora dan **18 balas**.
+
+<Figure src={deathknellRounds} alt="Cuadrícula de fabricación con una Deathknell Cartridge Case, un Deathknell Cartridge Core y 2 Pólvora que dan 3 Deathknell Rounds" caption="Deathknell Rounds." contain />
+
+La página de [Munición](/es/firearms/ammunition/) tiene las recetas de casquillos y núcleos y todas las balas especiales.
+
+## ¿Cómo funciona la recarga?
+
+Haz clic izquierdo para recargar. Entra una bala cada **0,7 segundos**.
+
+| Balas cargadas | Tiempo |
+|---|---|
+| 1 | 0,7 s |
+| 2 | 1,4 s |
+| 3 | 2,1 s |
+| 4 | 2,8 s |
+| 5 | 3,5 s |
+| 6 | 4,2 s |
+
+No puedes disparar mientras dura la recarga ("Weapon is reloading!"). Para disparar antes, cambia a otra casilla de la barra rápida y vuelve. Eso cancela la recarga, pero todas las balas ya cargadas se quedan en el arma.
+
+Cuando recargas desde vacío, el arma toma el primer montón de Deathknell Rounds de tu inventario. Cuando está medio cargada, solo se rellena con el mismo tipo de bala que ya tiene dentro.

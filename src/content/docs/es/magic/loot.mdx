@@ -1,0 +1,159 @@
+---
+title: "Botín Trascendente y Loot Focus"
+description: "Dónde encontrar recetas, páginas, pócimas e ingredientes Trascendentes en Mysterria, cómo se rellenan los cofres de botín y cómo Loot Focus (la garantía) te asegura lo que necesitas."
+sidebar:
+  label: Botín y Loot Focus
+  order: 4
+---
+
+import {Figure} from '~/components/mdx';
+import lootFocus from '~/assets/magic/loot-focus-menu.webp';
+import sequenceFocus from '~/assets/magic/loot-sequence-focus.webp';
+import pityBar from '~/assets/magic/loot-pity-action-bar.webp';
+
+Las recetas, las páginas de receta, las pócimas, los planos de altar y muchos ingredientes salen de los **cofres de botín** del mundo. **Loot Focus**, el sistema de garantía, se asegura de que la mala suerte no dure para siempre.
+
+## ¿Dónde están los cofres de botín?
+
+**Cada cofre de una estructura generada de forma natural es un cofre de botín Trascendente.** Eso incluye aldeas, minas abandonadas, mazmorras, templos, naufragios, tesoros enterrados, bastiones y portales en ruinas. No hay que buscar ningún cofre Trascendente especial que brille.
+
+Cuando abres uno y sale botín Trascendente, **aparece junto al cofre** y brilla unos segundos. Un mensaje en el chat te avisa de que ha aparecido algo.
+
+:::note[Cada cofre te paga una sola vez]
+Cada jugador recibe el botín de un cofre **una vez**. Tras **12 horas a 2 días** el cofre se rellena, pero solo para los jugadores que aún no lo han saqueado. Tu barra de acción muestra "Refill in ..." cuando lo abres. Un cofre que vació otra persona te sigue pagando, pero tus propios cofres viejos no.
+:::
+
+## ¿Qué puede dar un cofre?
+
+Cada cofre que abres hace una tirada de botín Trascendente.
+
+| Botín | Probabilidad por cofre | Notas |
+|---|---|---|
+| Receta | 1 % | Una receta completa de una pócima |
+| Página de receta | 3 % | Una página de una receta. Mira [Preparación](/es/magic/brewing/#recetas-y-páginas-de-receta) |
+| Pócima | 1 % | Una pócima ya hecha. Caduca 48 horas después de prepararse |
+| Altar Scroll | 2 % | Un **Strange Scroll**, el plano de un altar de preparación o de un Sacrificial Altar |
+
+Casi todo el botín es de Secuencias bajas. Estas son las probabilidades aproximadas.
+
+| Secuencia | Parte |
+|---|---:|
+| 9 | más o menos el 44 % |
+| 8 | 22 % |
+| 7 | 15 % |
+| 6 | 10 % |
+| 5 | 7 % |
+| 4 | 1 % |
+| 3 | 0,5 % |
+| 2 | 0,2 % |
+| 1 | 0,1 % |
+| 0 | 0,05 % |
+
+La **Ley de Convergencia** favorece a tu propio Sendero. En el 60 % de los cofres el objeto sigue tu propio Sendero (el 70 % de esas veces) o uno de tus [vecinos](/es/magic/pathways/#senderos-vecinos). Si no, es de un Sendero al azar.
+
+Los cofres de las Ciudades antiguas también tienen un 7,5 % de probabilidad de traer un disco de música personalizado.
+
+:::tip[Mareas diarias]
+Un día de **Tide of Fortune**, los cofres dan botín 2,5 veces más a menudo, la garantía se llena en la mitad de cofres y el botín raro es 2,5 veces más probable. Un día de **Deep Tide** hay el doble de nodos y los cofres encuentran ingredientes el doble de a menudo. Mira [Mareas diarias](/es/guides/tides/).
+:::
+
+## Ingredientes
+
+Hay tres tipos de ingredientes, y **ninguno se puede fijar** con Loot Focus.
+
+### Ingredientes encontrables
+
+Salen en los cofres de botín, junto al cofre como el resto del botín, así que explora estructuras nuevas.
+
+### Ingredientes de botín de criaturas
+
+Los sueltan las [criaturas Trascendentes](/es/magic/creatures/). Caza la criatura adecuada en el bioma adecuado. Una [Luna Carmesí](/es/magic/crimson-moon/) trae muchas más criaturas.
+
+### Ingredientes minables
+
+Aparecen en el mundo como **nodos** que **brillan en rojo** y lanzan un **rayo** que se ve desde lejos. Haz **clic derecho** en un nodo para recogerlo.
+
+- **Cada día** se coloca un grupo nuevo de nodos, cerca de donde hay jugadores activos.
+- Los ingredientes comunes tienen unos 3 nodos al día. Los más raros tienen menos, y los rarísimos tienen un 15 % de probabilidad de un único nodo al día.
+- Los Trascendentes con una habilidad de Adivinación pueden usar **Vein Divination** para encontrar un nodo, una vez cada 5 minutos.
+- La [recompensa](/es/magic/acting/#recompensas) de "ingredientes minables" también te lleva a un nodo activo.
+
+### Otras fuentes
+
+- Los [Trascendentes Salvajes](/es/magic/wild-beyonders/) comercian con productos de Sendero y pueden soltar ingredientes.
+- Los [jefes de Grieta](/es/guides/bosses/) pagan con una ruleta que puede dar ingredientes, recetas, pócimas y Características Trascendentes.
+- El [Emporio Brillante](/es/guides/emporium/) vende algunos ingredientes.
+- Los ingredientes que te sobran se pueden vender a aldeanos simplones y sin profesión por [Fragmentos de Energía](/es/guides/economy/#fragmentos-de-energía).
+
+## Loot Focus (garantía)
+
+**Loot Focus** te garantiza el botín que necesitas. Eliges un tipo de botín, y cada cofre de botín que abres suma 1 a su contador. Cuando el contador llega al **umbral**, ese cofre te da seguro el botín fijado.
+
+### ¿Cómo pongo mi Loot Focus?
+
+1. Escribe `/magic`.
+2. Pulsa **Loot Focus** (la tolva).
+3. Elige un tipo, **Recipes**, **Pages**, **Potions** o **Altar Scrolls**.
+4. Si quieres, elige un **rango de Secuencias** (mira abajo), o deja **Any Sequence**.
+
+<Figure src={lootFocus} alt="El menú Loot Focus con la descripción de Recipes, que muestra 0 de 150 cofres" caption="El menú Loot Focus. Pasa el ratón por un tipo para ver tu progreso." contain />
+
+Después de cada cofre, tu barra de acción muestra tu progreso como "Pity: X/Y".
+
+<Figure src={pityBar} alt="La barra de acción con el texto Pity: 1/150 y Refill in 1d 16h después de abrir un cofre de botín" caption="La barra de acción después de abrir un cofre de botín con un Loot Focus puesto." contain />
+
+### ¿Cuántos cofres hacen falta?
+
+Con **Any Sequence**, los umbrales son estos.
+
+| Fijación | Cofres |
+|---|---|
+| Altar Scrolls | 50 |
+| Pages | 100 |
+| Recipes | 150 |
+| Potions | 200 |
+
+Recipes y Pages tienen contadores separados. Fija Pages si estás juntando páginas, y Recipes si quieres una receta completa.
+
+### Rangos de Secuencias
+
+Puedes limitar la recompensa a un rango de Secuencias. Entonces el umbral se multiplica por el multiplicador del rango, y otra vez por **x1,5 por cada Secuencia** que haya entre tu propia Secuencia y la Secuencia más fuerte del rango. Un jugador de Secuencia 9 que apunta al rango High (9 a 7) paga x1,5 dos veces.
+
+| Rango | Secuencias | Multiplicador |
+|---|---|---|
+| High Sequences | 9 a 7 | x2 |
+| Middle Sequences | 6 a 4 | x4 |
+| Low Sequences | 3 a 1 | x8 |
+| Peak | 0 | x15 |
+
+Umbrales de ejemplo para **Recipes**.
+
+| Tu Secuencia | High (9 a 7) | Middle (6 a 4) | Low (3 a 1) | Peak (0) |
+|---|---|---|---|---|
+| 9 | 675 | 4 557 | 30 755 | 86 498 |
+| 7 | 300 | 2 025 | 13 669 | 38 444 |
+| 4 | 300 | 600 | 4 050 | 11 391 |
+
+Apunta a rangos cercanos a tu propia Secuencia. El menú te muestra tu umbral real de cada rango antes de elegirlo.
+
+<Figure src={sequenceFocus} alt="El menú Sequence Focus con un icono por cada rango" caption="Vuelve a pulsar un tipo fijado para abrir el menú Sequence Focus y elegir un rango." contain />
+
+### Fijar tu siguiente pócima
+
+Cuando fijas **Potions**, también puedes pulsar **Aim at your next Sequence** y fijar una pócima exacta (un Sendero y una Secuencia).
+
+- Fijar un Sendero **que ya recorres** cuesta lo mismo que su rango.
+- Fijar **otro Sendero** cuesta el doble, y se rechaza si los puestos de esa Secuencia están llenos.
+- Si ya no se puede entregar lo que fijaste, tu progreso **se conserva**, no se gasta. Fija otro objetivo para reclamarlo.
+
+Aunque no fijes nada, una pócima que te da la garantía apunta a un Sendero que recorres, en tu siguiente Secuencia.
+
+### ¿Cuándo se reinicia el contador?
+
+- Un pago de la garantía siempre pone el contador a 0.
+- Encontrar el botín fijado de forma natural solo lo reinicia si cae dentro de tu rango (o si es la pócima que fijaste). Un botín natural de nivel inferior conserva tu progreso.
+- Si cambias la fijación a otro tipo, se quita un rango que el nuevo tipo no pueda pagar.
+
+:::note[Path of Resolve]
+Los jugadores nuevos que eligieron **Path of Resolve** empiezan con su contador de Recipes a un cofre de la garantía. Fija **Recipes** con **Any Sequence** y el siguiente cofre te dará una receta, de cualquier Sendero y Secuencia. Mira [Inicio rápido](/es/general/start/#4-elige-tu-bonificación-inicial).
+:::

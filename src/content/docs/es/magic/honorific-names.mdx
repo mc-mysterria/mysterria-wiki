@@ -1,0 +1,134 @@
+---
+title: "Nombres Honoríficos"
+description: "Cómo escribir, validar y recitar un Nombre Honorífico en Mysterria desde la Secuencia 4, la Divine Response y la bendición de cada dios. Una guía de Lord of the Mysteries."
+sidebar:
+  label: Nombres Honoríficos
+  order: 32
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import lotm from '~/assets/magic/lotm.jpg';
+import honorificEditor from '~/assets/magic/honorific-editor.webp';
+
+<Figure src={lotm} alt="Ilustración de Lord of the Mysteries de una figura sentada en un trono sobre la niebla gris" />
+
+## ¿Qué es un Nombre Honorífico?
+
+Un **Nombre Honorífico** es un pequeño conjunto de líneas que otros jugadores recitan en el chat para llegar hasta ti, estés donde estés. Todo Trascendente de **Secuencia 4 o superior** puede escribir uno.
+
+Aquí tienes un ejemplo de cinco líneas.
+
+> *Rey de los Cielos*
+>
+> *Emperador de los Mares*
+>
+> *Señor de la Calamidad*
+>
+> *Dios de las Tormentas*
+>
+> *El Errante conocido en Mysterria*
+
+## ¿Cómo pongo mi Nombre Honorífico?
+
+Abre tu menú de personaje (`/coi menu character`, o la tecla M con el [Client Mod](/es/guides/client-mod/)) y haz clic en la casilla del Nombre Honorífico. Hasta que pongas uno, recibes un recordatorio en el chat cada 30 minutos con un botón que abre el editor.
+
+<Figure src={honorificEditor} alt="El editor de Nombre Honorífico con tres líneas escritas y una descripción de estado que dice Complete y Active" caption="El editor de Nombre Honorífico. El libro de arriba muestra si tu nombre está completo y activo." contain />
+
+El número de líneas depende de tu Secuencia.
+
+| Tu Secuencia | Líneas |
+|---|---:|
+| 4 o 3 | 5 |
+| 2 o 1 | 4 |
+| 0 | 3 |
+
+Cuando avanzas y el nombre se acorta, se conserva la última línea. Después el nombre se vuelve a revisar y puede quedarse inactivo hasta que sus líneas describan a tu nuevo yo.
+
+### Reglas de las líneas
+
+Cada línea tiene que cumplir esto.
+
+- Tener de 2 a 80 caracteres.
+- No empezar por `!` ni por `/`.
+- No ser solo números.
+- No tener espacios dobles ni espacios al principio o al final.
+- Usar solo letras (latinas o cirílicas), números y puntuación básica.
+
+### ¿Qué hace válido un nombre?
+
+Un nombre válido tiene que señalar claramente **a ti**. No hace falta que lleve tu nombre de usuario. El editor muestra cuántas pruebas de identidad ha encontrado, y necesitas una puntuación de **3**. Basta con un descriptor personal fuerte o con varias pistas relacionadas. Estas pruebas cuentan.
+
+- Tu nombre de usuario o una parte que tenga sentido
+- Tu ciudad, tu iglesia, la sede de tu iglesia, tu terreno vinculado o tu nación
+- Tu Sendero o el título de tu Secuencia actual
+- Una habilidad que tengas en tu Secuencia actual
+- Conceptos de Sendero reconocidos y frases oficiales
+- Un descriptor personal aprobado por el staff
+
+La comparación no tiene en cuenta mayúsculas, puntuación, espacios, apóstrofos ni guiones. Se reconocen los nombres en inglés y en ucraniano de los Senderos, las Secuencias y las habilidades.
+
+El editor rechaza nombres incompletos, con un número de líneas equivocado, con líneas vacías o repetidas, frases normales de chat, palabras de relleno sueltas y nombres que ya responden a otra persona. Un nombre rechazado se guarda como borrador, pero recitarlo no hace nada hasta que sea válido.
+
+## ¿Cómo recito el nombre de alguien?
+
+Escribe cada línea de su nombre como un mensaje normal del chat, en orden.
+
+- Tienes **15 segundos** entre línea y línea.
+- Una línea de tres palabras o más sigue contando aunque esté dentro de una frase más larga.
+- No puedes recitar tu propio nombre, salvo a través de una marioneta o de un cuerpo Avatar.
+
+Cuando llega la última línea, pasa esto.
+
+- Entras en un tiempo de espera de recitado de **15 minutos**.
+- Si el dueño está conectado, ve tus coordenadas y un aviso para responder, que caduca a los **2 minutos**.
+- Si el dueño pertenece a una iglesia, el recitado cuenta como una oración de fuera a esa [iglesia](/es/magic/churches/), y el dueño puede invitarte a unirte.
+- Al dueño se le apunta la hazaña legendaria **Your honorific invoked**, que cuenta para la [Secuencia 0](/es/magic/sequence-zero/).
+
+<Notice tone="info" title="Cuidado con Disguise">
+La habilidad Disguise del Sendero Error puede interceptar en secreto la siguiente llamada completa de Nombre Honorífico o la siguiente Church Blessing de una iglesia. El dueño de la iglesia y los Ángeles reciben un aviso y pueden pararlo diciendo en el chat el nombre del ladrón.
+</Notice>
+
+## ¿Qué puedo hacer cuando recitan mi nombre?
+
+Haz clic en el aviso para abrir el menú **Divine Response**.
+
+| Botón | Qué hace |
+|---|---|
+| **Teleport** | Abre un portal y te lleva hasta quien recita. Tienes que estar en el mismo mundo, y no funciona en mazmorras |
+| **Smite** | Golpea a quien recita con un rayo de 4 de daño (2 corazones) |
+| **Gift Items** | Envía un objeto de tu inventario a quien recita, a cualquier distancia |
+
+Usar cualquiera de ellos te pone, como dueño, un tiempo de espera de **30 minutos**. Mientras tanto otros jugadores pueden seguir recitando tu nombre, y cada uno tiene su propio tiempo de espera.
+
+## ¿Qué pasa cuando recitas el nombre de un dios?
+
+Recitar el nombre de un dios de [Secuencia 0](/es/magic/sequence-zero/) abre su menú de Divine Response como siempre. Además, cada recitado completo bendice al momento **a quien recita**, aunque el dios no esté conectado o no responda.
+
+- La bendición dura hasta **2 minutos** y se ve con las partículas y el sonido propios del Sendero.
+- La bendición de cada dios tiene un tiempo de espera de **60 minutos** que **comparten todos los que recitan** a ese dios. Si otra persona lo recitó en la última hora, tu recitado sigue llegando al dios, pero no sale ninguna bendición.
+- La bendición solo afecta a quien recita. Nunca coloca bloques ni toca a nadie más.
+
+| Sendero del dios | Bendición |
+|---|---|
+| [Fool](https://www.mysterria.net/en/pathways/fool) | Suerte II, Resistencia I |
+| [Error](https://www.mysterria.net/en/pathways/error) | Suerte I, Velocidad I |
+| [Door](https://www.mysterria.net/en/pathways/door) | Velocidad II, Supersalto I |
+| [Sun](https://www.mysterria.net/en/pathways/sun) | Regeneración II, Resistencia al fuego I |
+| [Visionary](https://www.mysterria.net/en/pathways/visionary) | Visión nocturna I, Suerte I |
+| [Tyrant](https://www.mysterria.net/en/pathways/tyrant) | Poder del conducto I, Gracia de delfín I |
+| [White Tower](https://www.mysterria.net/en/pathways/tower) | Resistencia II, Caída lenta I |
+| [Hanged Man](https://www.mysterria.net/en/pathways/hanged) | Velocidad II, Prisa I |
+| [Red Priest](https://www.mysterria.net/en/pathways/priest) | Regeneración III, Fuerza II, Resistencia al fuego (un rito propio con fuego y un Ojo Rojo) |
+| [Demoness](https://www.mysterria.net/en/pathways/demoness) | Fuerza I, Velocidad II |
+| [Darkness](https://www.mysterria.net/en/pathways/darkness) | Visión nocturna I, Invisibilidad I |
+| [Death](https://www.mysterria.net/en/pathways/death) | Resistencia I, Visión nocturna I |
+| [Twilight Giant](https://www.mysterria.net/en/pathways/giant) | Fuerza II, Resistencia I |
+| [Paragon](https://www.mysterria.net/en/pathways/paragon) | Regeneración II, Absorción I |
+| [Hermit](https://www.mysterria.net/en/pathways/hermit) | Visión nocturna I, Prisa I |
+| [Mother](https://www.mysterria.net/en/pathways/mother) | Regeneración II, Saturación I |
+| [Moon](https://www.mysterria.net/en/pathways/moon) | Regeneración I, Fuerza I |
+| [Abyss](https://www.mysterria.net/en/pathways/abyss) | Fuerza II, Visión nocturna I |
+| [Chained](https://www.mysterria.net/en/pathways/chained) | Resistencia II, Caída lenta I |
+| [Black Emperor](https://www.mysterria.net/en/pathways/emperor) | Fuerza II, Resistencia al fuego I |
+| [Justiciar](https://www.mysterria.net/en/pathways/justiciar) | Resistencia II, Fuerza I |
+| [Wheel of Fortune](https://www.mysterria.net/en/pathways/fortune) | Suerte II, Velocidad I |

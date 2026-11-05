@@ -1,0 +1,242 @@
+---
+title: "Cómo convertirte en dios en la Secuencia 0"
+description: "Cómo llegar a la Secuencia 0 en Mysterria: todos los requisitos, la vigilia, el rito de ascensión, la Deity Authority y cómo conservar un trono. Una guía de Lord of the Mysteries."
+sidebar:
+  label: Secuencia 0
+  order: 36
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import pantheon from '~/assets/magic/sequence-zero-pantheon.webp';
+import leadImage from '~/assets/heroes/sequence-zero.jpg';
+import throneMenu from '~/assets/magic/sequence-zero-throne.webp';
+
+<Figure src={leadImage} eager alt="Un castillo en ruinas sobre una isla flotante bajo una luna roja" />
+
+## ¿Qué es un trono?
+
+Un **trono** convierte al jugador que lo ocupa en el **dios** de un Sendero, en la Secuencia 0 y con el rango de Deidad. Hay **22 tronos**, uno por cada Sendero normal, y los Senderos Exteriores no tienen ninguno.
+
+Un dios recibe un título sobre la cabeza y un sitio en el Panteón público. Hay dos habilidades que solo tienen los dioses, **Deity Authority** y **Divine Presence**.
+
+Nadie puede quitarle el trono a un dios que lo ocupa. No hay guerra de puestos para la Secuencia 0. Un trono solo se vacía cuando su dios deja de ser Secuencia 0 en ese Sendero, casi siempre porque dejó de aparecer (mira [Conservar el trono](#conservar-el-trono)). Por eso la disputa por un trono, la **vigilia**, ocurre *antes* de que nadie se siente en él.
+
+El [censo de puestos](https://www.mysterria.net/en/ascension) del sitio principal muestra quién ocupa cada trono y cada uno de los demás puestos altos.
+
+## ¿Quién puede intentarlo?
+
+Te rechazan al momento si pasa cualquiera de estas cosas.
+
+- El Sendero es un Sendero Exterior.
+- No eres de **Secuencia 1** en él.
+- No es tu Sendero **principal** (el que cuenta para ti).
+- Ya formas parte de una vigilia.
+
+## ¿Qué necesito para reclamar un trono?
+
+`/coi ascend` abre el menú del Trono. `/coi ascend status [sendero]` muestra la misma lista en el chat. Tiene **11 puntos**, siete requisitos y cuatro comprobaciones.
+
+<Figure src={throneMenu} alt="La pestaña Where you stand del menú del Trono con 5 de 11 puntos cumplidos" caption="La lista del menú del Trono, de un personaje de prueba." />
+
+### Los siete requisitos
+
+| | Requisito | Lo que hace falta |
+|---|---|---|
+| R1 | **Unicidad en tu poder y acomodada** | Tienes la [Unicidad](/es/magic/uniqueness/) de tu Sendero **y** la tienes al **95 %** de acomodación o más |
+| R2 | **Tu iglesia tiene las anclas** | Tu [iglesia](/es/magic/churches/) tiene **20** de peso de ancla efectivo, y tú eres su líder, colíder o Ángel. Cuentan miembros de cualquier Sendero, y el tuyo es el que más cuenta. Un Red Priest puede usar una cohorte en su lugar (mira [más abajo](#cohortes-del-red-priest-en-lugar-de-una-iglesia)) |
+| R3 | **Todos los rituales del último paso** | Un grupo de rituales de Secuencia 0 que vale **30 puntos** (mira [Rituales](#el-grupo-de-rituales-de-30-puntos)) |
+| R3b | **El ritual de historia certificado por el staff** | Un ritual de historia legendario aprobado por el staff (mira [más abajo](#el-ritual-de-historia)) |
+| R4 | **Actuación guardada para la apuesta** | **31 104 de Overflow**, que es media barra de Secuencia 1 (mira [Puestos y Usurpación](/es/magic/usurpation/#qué-es-el-overflow)). Un dios caído en su periodo de gracia paga la mitad |
+| R5 | **Suficiente tiempo en el puesto** | **14 días naturales** en la Secuencia 1 de este Sendero desde que avanzaste o llegaste por última vez. El periodo de gracia de un dios caído se salta esto |
+| R6 | **La pócima de Secuencia 0 en la mano** | Preparada con **tres Características Trascendentes de Secuencia 1 del mismo Sendero**, y nada más |
+
+### Las cuatro comprobaciones
+
+- El trono está vacío.
+- Estás asentado en este Sendero, es decir, no han pasado menos de 30 días desde que llegaste de lado (con un cambio, una transferencia o una toma).
+- No estás en una guerra por un puesto.
+- Ningún tiempo de espera del Sendero ni personal te impide reclamar.
+
+<Notice tone="info" title="No puedes beber la pócima de Secuencia 0">
+Si intentas beberla sin más, se rechaza. Solo la usa el rito de ascensión.
+</Notice>
+
+`/coi ascend board` muestra el progreso de todos en el tablón público de la carrera. `/coi ascend private` esconde tu nombre del tablón, pero sigues contando.
+
+## El grupo de rituales de 30 puntos
+
+R3 funciona como los rituales de cualquier otra Secuencia (mira el tuyo con `/ritual status`), con el objetivo más alto del juego. Tu grupo se **reparte** de entre todos los rituales posibles, no lo eliges tú. Desde la Secuencia 4, entre ellos hay entradas legendarias que valen 10 puntos cada una, como logros de desafío de Blaze and Cave ("Collect 64 nether stars", "Obtain all the items!") y estas hazañas del servidor, que se apuntan solas.
+
+| Hazaña | Cómo se consigue | Necesarias |
+|---|---|---:|
+| A seat war fought to its verdict | Lucha en una [guerra por un puesto](/es/magic/usurpation/) hasta el final, ganes o pierdas | 1 |
+| A Uniqueness defended | Conserva tu Unicidad durante un desafío pagado | 1 |
+| Devout church service | Asiste a [oficios de la iglesia](/es/magic/church-management/#oficios-de-la-iglesia) | 10 |
+| Your honorific invoked | Alguien recita entero tu [Nombre Honorífico](/es/magic/honorific-names/) | 1 |
+| An Ordeal survived | Pasa una Ordalía y conserva a tu Trascendente | 1 |
+| A pinnacle bounty | Completa una recompensa estando en la Secuencia 1 | 1 |
+| Diligence kept | Gana Actuación en 7 días distintos (todos los días tienen una Marea) | 7 |
+
+Hasta **10** de los 30 puntos pueden salir de créditos de servicio.
+
+| Crédito de servicio | Puntos |
+|---|---:|
+| Un oficio de la iglesia al que asististe | 1 |
+| Un objetivo de recompensa | 1 |
+| Un ritual de historia aprobado por el staff | 2 |
+| Una guerra por un puesto luchada | 3 |
+| Una Unicidad defendida | 3 |
+
+Puedes pedir al staff que cambie una sola entrada de tu grupo.
+
+## El ritual de historia
+
+El ritual de historia es un **requisito aparte y obligatorio** (R3b), además de los 30 puntos. Sirve para cosas que el servidor no puede medir.
+
+> Organiza un evento público, para todo el servidor, que represente el papel de tu Sendero en la novela, y haz que el servidor lo viva.
+
+Una captura de pantalla o un esfuerzo en solitario no cuentan. Tiene que ser un evento anunciado con antelación, con otros jugadores presentes y con consecuencias reales, que solo un Trascendente de *tu* Sendero podría haber organizado. Por ejemplo, el Fool podría reunir un Club del Tarot sobre la niebla gris, o el Red Priest podría declarar y luchar una guerra real y acordada entre dos iglesias.
+
+Habla con el staff **antes** de hacerlo y cuéntales qué planeas, cuándo y con quién. Te dirán si cuenta. Cuando el staff lo certifica, ese punto de la lista se pone en verde. Una reclamación declarada sin él se anula, se devuelve todo y no hay tiempo de espera.
+
+## La declaración y la vigilia
+
+Cuando todos los puntos están en verde, **declaras**. Tu apuesta se gasta, tu pócima pasa a depósito con la caducidad congelada y se avisa a todo el servidor. Se abre una ventana de **72 horas**.
+
+### ¿Quién puede disputarlo?
+
+Otro jugador de Secuencia 1 del mismo Sendero puede pagar la misma apuesta para disputártelo, pero solo si cumple esto.
+
+- Lleva 14 días en la Secuencia 1, está asentado en el Sendero, no está en una guerra por un puesto y no está en tiempo de espera para disputar.
+- Tiene el Overflow para la apuesta.
+- Ya cumple al menos **3 de estas 4 cosas**, las anclas, los 30 puntos de ritual, el ritual de historia y una pócima de Secuencia 0.
+
+Como solo hay 3 puestos de Arcángel por Sendero, como mucho puede haber 2 rivales. Si nadie lo disputa, pasas directamente al rito.
+
+### Si alguien lo disputa
+
+La puja más alta al cerrarse la ventana es la que disputa, y las demás se devuelven. Sigue una disputa de **7 días**, puntuada en War Points según la Actuación real ganada, igual que en una [guerra por un puesto](/es/magic/usurpation/#paso-3-la-guerra). Son días naturales, y no estar simplemente puntúa cero. **Los empates son para el aspirante.**
+
+| Veredicto | El que pierde paga | El que gana recibe | Después |
+|---|---|---|---|
+| **Gana el aspirante** | El rival quema la mitad de su apuesta | El aspirante pasa al rito | El rival no puede disputar la vigilia de este Sendero durante 14 días |
+| **Gana el rival** | El aspirante quema la mitad de su apuesta | **La Unicidad**, no el trono. La apuesta del rival se le devuelve entera | Nadie puede declarar en el Sendero durante 7 días. La Unicidad queda protegida 14 días. El aspirante tiene 24 horas de espera para volver a declarar |
+
+Un rival que gana **no** se convierte en dios. Tiene que recorrer todo el camino por sí mismo, incluido hacer crecer la acomodación hasta el 95 % desde cero. Una disputa perdida siempre devuelve la pócima.
+
+### Retirarse y otras salidas
+
+| Qué pasó | Apuesta | Pócima | Tiempo de espera |
+|---|---|---|---|
+| Te retiraste en menos de 15 minutos | Se devuelve entera | Se devuelve | 24 horas de espera personal para volver a declarar |
+| Te retiraste pasados 15 minutos | Se quema la mitad | Se devuelve | 24 horas de espera personal para volver a declarar |
+| Te superaron la puja, se ocupó el trono, se canceló o hubo un error | Se devuelve entera | Se devuelve | Ninguno |
+| No te conectaste en las 48 horas después de ganar | Se devuelve entera | Se devuelve | 24 horas de espera personal para volver a declarar |
+| No respondiste a la convocatoria en 7 días | Se devuelve entera | Se devuelve | Ninguno |
+
+## La convocatoria, el heraldo y el rito
+
+Ganar la vigilia te **convoca**. Tienes **24 horas** para elegir el momento antes de que el rito empiece solo, y una convocatoria sin respuesta se devuelve a los **7 días**. Respóndela con `/coi ascension begin`.
+
+Entonces el servidor recibe **10 minutos** de aviso, con una barra de jefe, una tarjeta en el chat con las coordenadas y una llamada de un minuto. Cualquiera puede mirar el sitio con `/coi ascension where`. Durante esos 10 minutos todavía puedes caminar, pero cuando empieza el rito te quedas clavado en el sitio. Si se convocan dos ritos muy seguidos, el segundo espera su turno.
+
+### Durante el rito
+
+El rito dura unos **2 minutos y medio**, y cada uno de los 22 Senderos tiene su propia escena.
+
+- **Los rivales no pueden interrumpirlo.** Eres invulnerable y no se te puede controlar del todo. Solo termina antes si te vas, si el staff lo para o si entras en un estado que ningún rito puede aguantar.
+- **No se gasta nada hasta la mitad.** Antes de eso, un rito cancelado no cuesta nada y puedes volver a responder a la convocatoria. El trono se toma a mitad del rito.
+- **Los testigos cobran.** Quédate a menos de **24 bloques** y recibes un **3 %** de tu propia barra de Actuación y 30 segundos de Regeneración.
+- **El público recita.** Cinco veces se lanza una llamada en el chat. Cada respuesta da otro **1,5 %** de tu barra. Se acepta la frase en cualquier idioma.
+
+Cuando se toma el trono, todo el servidor nota un efecto del Sendero durante unos **3 minutos**, como el Sun convirtiendo la noche en un resplandor. Nada de esto puede matarte ni quitarte nada para siempre, y nada sobrevive a un reinicio. El sitio queda marcado en el mapa para siempre.
+
+## ¿Qué recibe un dios?
+
+Un dios conserva sus habilidades de la Secuencia 9 a la 1 y gana dos más.
+
+**Deity Authority** (activa). Clic izquierdo para cambiar entre Favor, Behest y Ledger. Clic derecho para usar la elegida.
+
+- **Favor** da a un creyente de tu Sendero Actuación por valor del **5 %** de *su* barra. Tienes un **60 %** de barra por semana para repartir (se acumula hasta 2 semanas), y cada creyente puede recibir un Favor a la semana. Cuesta un 10 % de Espiritualidad y tiene 60 segundos de espera. El Favor nunca crea Overflow, War Points ni progreso de Unicidad, y nunca ayuda a que nadie reclame un trono.
+- **Behest** pide a un miembro devoto de tu iglesia que aparezca, que proclame tu nombre o que haga una peregrinación. Responder le paga un Favor. Tiene **30 minutos** para responder. Puedes tener **3** abiertas a la vez y enviar **6** al día, y a cada miembro se le puede pedir una vez cada **72 horas**. Cuesta un 10 % de Espiritualidad y tiene 5 minutos de espera. Se responde con `/coi deity answer <id>` o se rechaza con `/coi deity refuse <id>`.
+- **Ledger** es tu registro público.
+
+Rechazar o ignorar una Behest trae **Disfavor**. Durante **3 días** no recibes Favor ni Behest de ese dios, ganas un **-25 %** de Actuación y recibes **+5** de Locura una vez. No afecta a nada más.
+
+**Divine Presence** (pasiva). Los creyentes de tu Sendero a menos de **24 bloques** reciben un **10 % menos** de Locura y ganan un **15 % menos** de Cansancio.
+
+El Favor y la Presence llegan a todos los creyentes de tu Sendero, sean o no miembros de la iglesia. Ser miembro de la iglesia solo hace que te pueda llegar una Behest. Cada miembro tiene un interruptor de devoción. Desactivarlo es inmediato, pero volver a activarlo tarda 7 días.
+
+Tu [Nombre Honorífico](/es/magic/honorific-names/#qué-pasa-cuando-recitas-el-nombre-de-un-dios) se reduce a 3 líneas, y cualquiera que lo recite entero recibe la bendición de tu Sendero, aunque no estés conectado.
+
+<Notice tone="warn" title="Un dios nuevo tiene un mínimo de Locura de más o menos el 30 %">
+Un dios se mide con **30** anclas de iglesia para el [alivio del mínimo de Locura](/es/magic/church-perks/#alivio-del-mínimo-de-locura), más que las 20 que hacen falta para ascender. Un dios nuevo con 20 anclas solo baja su mínimo del 90 % hasta más o menos el 30 %. Hacer crecer la congregación lo baja más.
+</Notice>
+
+## Conservar el trono
+
+> Conéctate y no estés AFK durante 20 minutos en al menos 4 días de cualquier periodo de 30, o el trono se vacía.
+
+Los días se cuentan con la hora de Kiev. Las habilidades, los recitados y las anclas no cuentan para esto. Un reinado nuevo no puede caducar antes de que pasen sus primeros 30 días.
+
+Para ausentarte, `/coi god absence <días>` declara una ausencia de hasta **21 días**, que se puede usar una vez cada **60 días**. Esos días no cuentan en el periodo.
+
+Recibes un aviso privado cuando quedan **14 días**, y luego avisos públicos a los **7, 3 y 1**.
+
+Si caduca de todos modos, pasa esto.
+
+- Bajas a la **Secuencia 1** de ese Sendero con el **95 %** de una barra completa.
+- El trono se vacía y cualquiera que cumpla los requisitos puede reclamarlo.
+- Durante **60 días** puedes volver a ascender por **la mitad de la apuesta**, con tus 14 días de permanencia ya contados.
+
+Un dios que deja de ser Secuencia 0 en ese Sendero de cualquier otra forma, como al cambiar de Sendero, también pierde el trono.
+
+## Cohortes del Red Priest en lugar de una iglesia
+
+La cohorte de **Chain of Command** de un comandante [Red Priest](https://www.mysterria.net/en/pathways/priest) no es una iglesia, pero puede hacer dos trabajos de iglesia para los jugadores que no tienen una iglesia activa.
+
+**Alivio del mínimo de Locura.** Desde la Secuencia 4, una cohorte baja el [mínimo de Locura](/es/magic/church-perks/#alivio-del-mínimo-de-locura) por divinidad de su comandante, sus Generals y sus Soldiers.
+
+| Rango en la cohorte | Parte del alivio |
+|---|---:|
+| Commander | 85 % |
+| General | 45 % |
+| Soldier | 30 % |
+
+- Alivio = (peso de ancla de la cohorte / anclas necesarias) x la parte de tu rango, como mucho la parte de tu rango.
+- Las anclas necesarias salen de la tabla de las iglesias, usando la Secuencia **del comandante** (de 15 en la Secuencia 4 a 38 en la Secuencia 1).
+- El peso de ancla de la cohorte usa los mismos pesos por Secuencia que las iglesias, sin bonificación por Sendero y con la misma reducción en las Secuencias altas (desde 18, como mucho 34). El comandante no cuenta.
+- Un miembro solo cuenta si ha estado activo en los últimos **14 días** y no está en una iglesia activa.
+- El alivio de la cohorte y el de la iglesia **nunca se suman**. Si tienes una iglesia activa, se aplica el alivio de la iglesia.
+
+**Las anclas de la Secuencia 0.** Si no tienes un cargo de líder, colíder o Ángel en una iglesia, la lista del trono usa para R2 el peso de ancla de tu cohorte.
+
+## Comandos
+
+| Comando | Qué hace |
+|---|---|
+| `/coi ascend` | Abre el menú del Trono o responde a una convocatoria pendiente |
+| `/coi ascend status [sendero]` | La lista de 11 puntos en el chat |
+| `/coi ascend board` | El tablón público de la carrera |
+| `/coi ascend declare` | Declara tu reclamación |
+| `/coi ascend contest <sendero>` | Disputa una vigilia abierta |
+| `/coi ascend withdraw` | Retira tu apuesta |
+| `/coi ascend private` | Esconde tu nombre del tablón (sigues contando) |
+| `/coi ascension begin` | Responde a una convocatoria |
+| `/coi ascension where` | Coordenadas del rito que se está anunciando |
+| `/coi ascension notify [on\|off]` | Silencia el chat de la ceremonia (nunca la campana ni la barra de jefe) |
+| `/coi ascension status` | El rito actual y la cola |
+| `/coi ascension gods` | La lista del Panteón |
+| `/coi deity gods` | La ventana del Panteón |
+| `/coi deity ledger <sendero>` | El registro público de un trono |
+| `/coi deity answer\|refuse <id>` | Responde a una Behest o recházala |
+| `/coi god` | El estado de tu trono |
+| `/coi god absence <días>` | Declara una ausencia |
+| `/coi god thrones` | Los 22 tronos y quién los ocupa |
+| `/coi menu native` | Cambia entre las pantallas del Client Mod y los menús de cofre (se guarda por personaje) |
+
+El [Client Mod](/es/guides/client-mod/) muestra los menús del Trono y del Panteón como pantallas nativas. Sin él, todas las ventanas se abren como menús de cofre.
+
+<Figure src={pantheon} alt="La ventana Thrones of the Twenty-Two con cada Sendero marcado como No god y Empty, 0 de 22 tronos ocupados" caption="La ventana del Panteón de /coi deity gods como pantalla del Client Mod, antes de que se ocupe ningún trono." />
+
+Cuando termina la época, los 22 tronos se vacían y todos empiezan de nuevo.

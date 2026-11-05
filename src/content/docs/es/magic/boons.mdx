@@ -1,0 +1,103 @@
+---
+title: "Gracias"
+description: "Las Gracias en Mysterria, el servidor de Minecraft de LOTM: las diez Gracias de los Dioses Exteriores, cómo conseguir una ficha de Gracia y cómo subir una Gracia hasta la Secuencia 5 con sacrificios."
+sidebar:
+  order: 42
+---
+
+import {Figure} from '~/components/mdx';
+import boonShop from '~/assets/magic/boons-token-in-shop.webp';
+import altarMenu from '~/assets/magic/boons-sacrificial-altar.webp';
+
+Una Gracia es un segundo Sendero, más pequeño, que concede un Dios Exterior. La llevas junto a tu Sendero normal y te da sus propias habilidades.
+
+Las Gracias funcionan distinto de los Senderos normales.
+
+- Una Gracia va de la **Secuencia 9 a la Secuencia 5**, nunca más allá.
+- **No tiene barra de Actuación, ni pócimas, ni rituales**. Usar sus habilidades no la hace avanzar.
+- Solo avanza **sacrificando** ingredientes en un **Sacrificial Altar**.
+- Solo puedes tener **una Gracia a la vez**.
+
+## ¿Qué Gracias hay?
+
+Hay diez. La página de cada una en el sitio principal muestra sus habilidades.
+
+| Gracia (nombre en el juego) | Página del sitio principal |
+|---|---|
+| Aeon | [aeon](https://www.mysterria.net/en/pathways/aeon) |
+| Chaos Primogenitor | [chaos](https://www.mysterria.net/en/pathways/chaos) |
+| Chaos Mist | [chaosmist](https://www.mysterria.net/en/pathways/chaosmist) |
+| Condenser | [condenser](https://www.mysterria.net/en/pathways/condenser) |
+| Devouring | [devouring](https://www.mysterria.net/en/pathways/devouring) |
+| Eternal Edict | [edict](https://www.mysterria.net/en/pathways/edict) |
+| Everlasting | [everlasting](https://www.mysterria.net/en/pathways/everlasting) |
+| Patriarch | [patriarch](https://www.mysterria.net/en/pathways/patriarch) |
+| Second Law | [secondlaw](https://www.mysterria.net/en/pathways/secondlaw) |
+| Sublunary Eye | [sublunary](https://www.mysterria.net/en/pathways/sublunary) |
+
+## ¿Cómo consigo una Gracia?
+
+Haz clic derecho en una **ficha de Gracia** (Boon Token) para recibir esa Gracia en la Secuencia 9.
+
+| Fuente | Qué Gracias | Detalles |
+|---|---|---|
+| Tienda de recompensas de [Outer Gods Anchors](/es/guides/outer-gods-anchors/) (`/oga rewards`) | Las diez | 900 Puntos de Contribución cada una, como mucho 1 de cada Gracia al mes |
+| Pase de batalla, línea gratuita | Second Law | Nivel 41 del pase actual |
+| Pase de batalla, línea premium | Devouring | Nivel 37 del pase actual |
+| Recompensa para traductores | Cualquiera | Los [traductores de Weblate](https://www.mysterria.net/en/news/multilanguage-support-weblate-translator-bounties) aceptados pueden elegir una Gracia |
+
+También existen fragmentos de ficha de Gracia. Diez fragmentos se juntan en una ficha.
+
+<Figure src={boonShop} alt="La tienda /oga rewards con la descripción de la ficha de Gracia Aeon, precio 900, compradas 0/1, se rellena el día 1 a las 00:00 UTC" caption="Una ficha de Gracia en la tienda /oga rewards, con su precio y su límite mensual." contain />
+
+### ¿Y si ya tengo una Gracia?
+
+Usar una segunda ficha de Gracia abre una pantalla **Choose a Boon to Replace** y luego **Confirm Boon Replacement**. La Gracia anterior se **pierde para siempre**, con su Secuencia y su progreso de sacrificio. No puedes usar una ficha de la Gracia que ya tienes.
+
+## ¿Cómo hago avanzar mi Gracia?
+
+1. **Construye un Sacrificial Altar.** Su plano sale de un Altar Scroll que se encuentra en el [botín](/es/magic/loot/). Un plano saqueado tiene las mismas probabilidades de ser un altar de preparación o un Sacrificial Altar, y es Crude el 65 % de las veces, normal el 25 % y Grand el 10 %.
+2. **Abre el altar** y mete ingredientes Trascendentes o Características Trascendentes.
+3. **Confirma la ofrenda.** Su valor se suma a la barra de sacrificio de tu Gracia.
+4. Cuando la barra se llena, el Dios Exterior reconoce tu tributo y tu Gracia sube una Secuencia.
+
+<Figure src={altarMenu} alt="El menú del Sacrificial Altar con la descripción del progreso en 3148 de 7871, un 39 %, Secuencia objetivo 8" caption="El menú del Sacrificial Altar. Pasa el ratón por la barra de arriba para ver tu progreso." contain />
+
+### ¿Qué puedo sacrificar?
+
+Solo objetos de la Secuencia **a la que** quieres avanzar, o más fuertes. Si tu Gracia es de Secuencia 9 y vas hacia la Secuencia 8, los ingredientes de Secuencia 9 se rechazan ("This ingredient is too weak for your current advancement"). Cuentan los ingredientes y Características de **cualquier** Sendero.
+
+Cada objeto vale un valor base, más un **10 % por cada Secuencia** que sea más fuerte que tu objetivo.
+
+| Secuencia del objeto | Ingrediente | Característica Trascendente |
+|---|---|---|
+| 8 | 100 | 400 |
+| 7 | 150 | 650 |
+| 6 | 200 | 800 |
+| 5 | 250 | 1 000 |
+| 4 | 300 | 1 200 |
+| 3 | 350 | 1 500 |
+| 2 | 400 | 1 800 |
+| 1 | 450 | 2 000 |
+
+### ¿Cuántos puntos necesita cada Secuencia?
+
+| Avanzar a | Secuencia 8 | Secuencia 7 | Secuencia 6 | Secuencia 5 |
+|---|---|---|---|---|
+| Puntos necesarios | 7 871 | 13 824 | 21 073 | 33 177 |
+
+Por ejemplo, pasar de la Secuencia 9 a la 8 en un Sacrificial Altar normal lleva unos 79 ingredientes de Secuencia 8 (100 cada uno), o 48 ingredientes de Secuencia 7 (150 x 1,1 = 165 cada uno).
+
+### ¿Qué altar construyo?
+
+| Altar | Puntos | Riesgo |
+|---|---|---|
+| Crude Sacrificial Altar | x0,7 | Cuando la barra se llena hay un **15 % de probabilidad** de que el ritual falle. Todo lo que ofreciste se pierde y la barra vuelve a cero |
+| Sacrificial Altar | x1,0 | Ninguno |
+| Grand Sacrificial Altar | x1,3 | Ninguno |
+
+Los Sacrificial Altars son solo para Gracias. En ellos no se pueden preparar pócimas.
+
+:::danger[Tu Gracia no puede pasar a tu Sendero principal]
+Tu Gracia nunca puede tener una Secuencia más fuerte que tu Sendero principal. Si la barra se llena pero la nueva Secuencia de la Gracia fuera más fuerte, el avance se rechaza **y la barra vuelve a cero**. Haz avanzar antes tu Sendero principal.
+:::

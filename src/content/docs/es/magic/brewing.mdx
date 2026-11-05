@@ -1,0 +1,115 @@
+---
+title: "Preparación y pócimas"
+description: "Cómo preparar pócimas Trascendentes en Mysterria: el Caldero Mágico y los tipos de altar, recetas y páginas, ingredientes, el minijuego de preparación y la caducidad de las pócimas."
+sidebar:
+  label: Preparación y pócimas
+  order: 3
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import cauldron from '~/assets/magic/cauldron.png';
+import practiceMenu from '~/assets/magic/brewing-practice-menu.webp';
+import practiceResult from '~/assets/magic/brewing-rehearsal-result.webp';
+import minigame from '~/assets/magic/brewing-minigame.webp';
+import drinkConfirm from '~/assets/magic/brewing-drink-confirm.webp';
+
+Cada Secuencia empieza con una pócima, y la preparas tú mismo en un Caldero Mágico. La preparación funciona igual para la Secuencia 9 y para todas las pócimas siguientes.
+
+## ¿Qué necesito para preparar una pócima?
+
+- Una **receta** del Sendero y la Secuencia de la pócima, o un juego completo de sus **páginas de receta**.
+- Un **Caldero Mágico**, el altar de preparación que construyes a partir de un plano.
+- Los **ingredientes principales** y **secundarios** de la receta. Una **Característica Trascendente** del mismo Sendero y Secuencia puede sustituir a todos los ingredientes principales.
+
+Para beber algo más fuerte que la Secuencia 9 también necesitas al menos un 95 % de [Actuación](/es/magic/acting/), y tu [ritual](/es/magic/rituals/) cuenta.
+
+## El Caldero Mágico (altar de preparación)
+
+El altar tiene tres tipos, y el tipo mueve tu resultado de preparación un grado.
+
+| Altar | Efecto en el minijuego de preparación |
+|---|---|
+| **Crude Altar** | Tu resultado baja un grado (Excellent pasa a Good, Good a Poor y Poor a Failed) |
+| **Ritual Altar** | Sin cambios |
+| **Grand Altar** | Tu resultado sube un grado (Failed pasa a Poor, Poor a Good y Good a Excellent) |
+
+Los planos salen de los cofres de botín como un **Strange Scroll**, la categoría **Altar Scrolls** de [Loot Focus](/es/magic/loot/#loot-focus-garantía). Sujeta el pergamino y **haz clic derecho en un bloque** para ver la estructura, y luego **otro clic derecho** para colocarla en una zona despejada. El clic izquierdo no hace nada.
+
+<Notice tone="warn" title="Los Sacrificial Altars no preparan pócimas">
+  El **Crude Sacrificial Altar**, el **Sacrificial Altar** y el **Grand Sacrificial Altar** se parecen, pero sirven para hacer avanzar [Gracias](/es/magic/boons/) y no preparan pócimas. Mira el nombre del pergamino antes de colocarlo.
+</Notice>
+
+## Recetas y páginas de receta
+
+Puedes encontrar una **receta completa** o una receta dividida en **páginas de receta** llamadas "Recipe Page *n* (Sequence *s*)".
+
+| Página | Contiene |
+|---|---|
+| Página 1 | Los ingredientes principales |
+| Página 2 | Los ingredientes secundarios |
+| Página 3 | Los requisitos del ritual |
+
+La Secuencia 9 no tiene ritual, así que sus recetas solo tienen las páginas 1 y 2. Haz clic derecho en una página para leerla. Para convertir las páginas en una receta, pon **exactamente una de cada página** del mismo Sendero y Secuencia en una cuadrícula de fabricación, sin nada más.
+
+Las recetas pueden ser de cualquier Sendero, no solo del tuyo. Para cambiar de Sendero con una pócima, mira [Senderos](/es/magic/pathways/#puedo-cambiar-de-sendero).
+
+## Ingredientes
+
+Cada pócima tiene sus propios ingredientes principales y secundarios, y hay tres tipos.
+
+- Los ingredientes **encontrables** salen sobre todo de los cofres de botín.
+- Los ingredientes **de botín de criaturas** salen sobre todo de las [criaturas Trascendentes](/es/magic/creatures/).
+- Los ingredientes **minables** crecen en el mundo como nodos rojos brillantes. Haz clic derecho en uno para recogerlo.
+
+Los Trascendentes Salvajes y los jefes de Grieta son otras fuentes, que se explican en [Botín y Loot Focus](/es/magic/loot/#ingredientes). Con el [Client Mod](/es/guides/client-mod/), al pasar el ratón por un ingrediente ves su Sendero, su Secuencia y si es principal o secundario.
+
+## ¿Cómo preparo una pócima?
+
+Abre tu Caldero Mágico. Pon los **ingredientes principales** (o una Característica Trascendente) en las casillas rojas de la **izquierda**, los **ingredientes secundarios** en las casillas azules de la **derecha** y la **receta** en la casilla amarilla de **arriba en el centro**.
+
+<Figure src={cauldron} alt="El menú del Caldero Mágico con las casillas principales a la izquierda, las secundarias a la derecha y la casilla de la receta arriba" caption="Ingredientes principales a la izquierda, secundarios a la derecha y la receta arriba." contain />
+
+Pon los ingredientes en el mismo orden en que los pone la receta. Si algo está mal, no pasa nada y conservas tus objetos. Las copias de más de un ingrediente se te devuelven.
+
+Cuando todo coincide, empieza un **minijuego de preparación** corto, y tu nota decide el resultado.
+
+| Nota | Resultado |
+|---|---|
+| **Excellent** | Consigues la pócima |
+| **Good** | Consigues la pócima |
+| **Poor** | Un 50 % de probabilidad de conseguir la pócima. Si no, la preparación falla |
+| **Failed** | La preparación falla, con una pequeña explosión y unos segundos de Veneno |
+
+**Una preparación fallida** gasta la **receta** y los **ingredientes secundarios**. Tus ingredientes principales se funden en una **Característica Trascendente** de ese Sendero y Secuencia, que puedes usar como ingrediente principal la próxima vez.
+
+El minijuego es más difícil cuanto más fuerte es la Secuencia, desde muy fácil en la Secuencia 9 hasta lo más difícil en la Secuencia 2 y superiores. Los Trascendentes **Moon** lo tienen un paso más fácil.
+
+<Figure src={minigame} alt="El minijuego Focus your will, un menú de cofre con tres botones, uno de ellos brillando en verde" caption="Focus your will, uno de los minijuegos. Pulsa el botón que brilla antes de que se acabe el tiempo." contain />
+
+`/coi practice` te deja ensayar los minijuegos gratis, sin arriesgar nada.
+
+<Figure src={practiceMenu} alt="El menú Choose a rehearsal con seis iconos de minijuegos" caption="El menú que abre /coi practice. Elige un minijuego para ensayarlo." contain />
+
+<Figure src={practiceResult} alt="Líneas del chat que dicen Rehearsal result Good 60 percent, solo práctica, no se ha ganado ni perdido nada" caption="Un ensayo termina con tu nota en el chat." contain />
+
+## Beber la pócima
+
+Cuando bebes, una pantalla de confirmación muestra lo que te costará avanzar por la Actuación que falta, por un ritual incompleto o por un cambio de Sendero arriesgado. No pasa nada hasta que confirmas, y si cancelas te devuelven la pócima.
+
+<Figure src={drinkConfirm} alt="La pantalla Advancement Details con un botón verde Confirm, la pócima y una descripción que dice que no hay inconvenientes y que el avance es seguro" caption="La pantalla de confirmación de una primera pócima. Si no falta nada, dice que el avance es seguro." contain />
+
+Después de confirmar hay otro minijuego corto. **Excellent** da un momento de Regeneración y Velocidad, y **Good** no da nada extra. **Poor** o **Failed** añaden algo de Locura temporal (más con Failed), además de Náuseas o Ceguera durante unos segundos.
+
+Una pócima solo funciona si es **exactamente una Secuencia más fuerte** que tu Secuencia actual. Cualquier otra pócima se rechaza. Mira [Locura y mutación](/es/magic/mutation/#lo-que-cuesta-avanzar) para saber lo que puede costar avanzar.
+
+## ¿Cuánto dura una pócima?
+
+Una pócima dura **48 horas** desde que se prepara, y su descripción muestra el tiempo que le queda. Cuando caduca, se convierte en un **Artefacto Sellado** del mismo Sendero y Secuencia. Si no hay ninguno, se convierte en una **Característica Trascendente**, y si tampoco, en una **Ruined Potion**. Una pócima caducada ya no te hace avanzar.
+
+Una pócima que recibes como recompensa tiene 48 horas nuevas desde que entra por primera vez en tu inventario.
+
+## Otras formas de conseguir una pócima
+
+- Los cofres de botín a veces traen una pócima ya hecha, y la categoría **Potions** de [Loot Focus](/es/magic/loot/#loot-focus-garantía) te garantiza una.
+- Un Trascendente Sun de Secuencia 4 puede disolver una pócima o un Artefacto Sellado que lleve en la mano secundaria en su Característica Trascendente, con **Beyonder Characteristic Purification**.
+- La pócima de **Secuencia 0** se prepara con la receta de Secuencia 0 y **tres Características Trascendentes de Secuencia 1** del mismo Sendero, sin nada más. Mira [Secuencia 0](/es/magic/sequence-zero/).

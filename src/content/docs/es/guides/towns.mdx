@@ -1,0 +1,181 @@
+---
+title: "Ciudades y ventajas de ciudad"
+description: "Cómo fundar y llevar una ciudad en Mysterria: reclamar terreno, rangos, mantenimiento, impuestos, los cinco niveles de ciudad y sus costes, y las Town Perks para grandes construcciones."
+sidebar:
+    label: Ciudades y ventajas de ciudad
+    order: 31
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import towns from '~/assets/towns/towns.jpg';
+import dragon from '~/assets/towns/dragon.jpeg';
+import hall from '~/assets/towns/hall.jpg';
+import landsLevel from '~/assets/towns/lands-level-menu.webp';
+
+<Figure src={towns} alt="Una gran ciudad de jugadores de noche, iluminada con faroles, con una catedral con cúpula delante" />
+
+Una **ciudad** es un terreno protegido que compartes con tus amigos. Nadie de fuera de la ciudad puede construir, romper ni abrir cofres allí.
+
+Todos los comandos de ciudad empiezan por `/lands` (o `/land`). Si escribes solo `/lands` se abre el menú de la ciudad, donde también puedes hacer casi todo.
+
+## ¿Cómo creo una ciudad?
+
+```
+/lands create <nombre>
+```
+
+- Cuesta **32 Coppets**, que se sacan de tu [cartera](/es/guides/economy/).
+- Reclama gratis una zona de 3 por 3 chunks a tu alrededor (el chunk donde estás más uno en cada dirección).
+- El nombre debe tener de 5 a 24 letras latinas o números. Se permiten espacios.
+- Puedes ser dueño de **una** ciudad y ser de confianza en una ciudad.
+
+## ¿Cómo reclamo más terreno?
+
+```
+/lands claim       reclama el chunk donde estás
+/lands unclaim     deja de reclamarlo
+```
+
+| Qué | Coste |
+|---|---|
+| Cada chunk extra | 10 Coppets |
+| Dejar de reclamar un chunk | Te devuelven el 15 % |
+
+- Los terrenos nuevos tienen que **tocar el terreno que ya tienes**.
+- No puedes reclamar a menos de **1 chunk** de otra ciudad (3 chunks si esa ciudad pertenece a una nación), salvo que esa ciudad dé permiso a tu rango para reclamar en su frontera.
+- Una ciudad empieza con espacio para **100 chunks**, más **5 por cada miembro de confianza**. Los [niveles](#niveles-de-ciudad) más altos añaden más.
+- Por defecto **solo el Owner** puede reclamar. El Owner puede dar ese permiso a otros rangos en los ajustes de rangos.
+
+Los comandos cortos `/claim` y `/unclaim` no están disponibles para los jugadores.
+
+## Comandos básicos de ciudad
+
+| Comando | Qué hace |
+|---|---|
+| `/lands` | Abre el menú de la ciudad |
+| `/lands trust <jugador>` | Invita a un jugador. Acepta con `/lands accept` |
+| `/lands untrust <jugador>` | Quita a un jugador |
+| `/lands setrole <jugador> <rango>` | Cambia el rango de un miembro |
+| `/lands ban <jugador>` | Prohíbe a un jugador entrar en tu terreno |
+| `/lands deposit <cantidad>` | Mete dinero en el banco de la ciudad |
+| `/lands withdraw <cantidad>` | Saca dinero (solo el Owner por defecto) |
+| `/lands rename <nombre>` | Cambia el nombre de la ciudad por 10 000 Coppets, como mucho una vez al día |
+| `/lands setowner <jugador>` | Da la ciudad a otra persona por 5 000 Coppets del banco de la ciudad |
+| `/lands upkeep`, `/lands taxes` | Muestra los próximos pagos de mantenimiento e impuestos |
+| `/lands delete` | Disuelve tu ciudad |
+
+Los **mensajes de entrada y salida** se ponen en el menú de la ciudad con el objeto **Enter Message**. No existen los comandos `/lands greeting` ni `/lands farewell`.
+
+Los teletransportes de terreno (`/lands spawn`, `/lands wild`, teletransportarse a un chunk) cuestan tanto que en la práctica están desactivados. Mysterria no tiene `/home` ni `/tpa`.
+
+Para el chat de ciudad, escribe `!l`, `!land` o `!lands` delante de un mensaje.
+
+## Rangos de la ciudad
+
+Cada rango decide lo que pueden hacer sus jugadores en tu terreno. El Owner puede cambiar los permisos de cada rango en el menú de la ciudad.
+
+| Rango | Quién | Permisos por defecto |
+|---|---|---|
+| **Owner** | El fundador | Todo |
+| **Admin** | Oficiales de confianza | Construir, romper, usar contenedores y puertas, dar y quitar confianza, prohibir la entrada y asignar rangos, editar los ajustes del terreno y de los rangos. Por defecto no puede reclamar, sacar dinero ni gestionar guerras |
+| **Member** | Residentes normales | Construir, romper, cultivar, usar contenedores, ingresar dinero |
+| **Tenant** | Jugadores que alquilan una zona | Construir y usar cosas en su zona alquilada, y decidir quién más puede usarla |
+| **Nation** | Miembros de la misma nación | Usar puertas y mecanismos, entrar, coger objetos, reclamar en tu frontera |
+| **Ally** | Miembros de ciudades aliadas | Lo mismo que Nation |
+| **Untrusted** | Cualquier visitante | Entrar, coger objetos, atacar monstruos |
+
+**El PvP está desactivado** por defecto en las ciudades para todos los rangos. El Owner puede activarlo por rango, por ejemplo para una arena.
+
+Si atacas a otro jugador, quedas marcado en combate durante **20 segundos**. Si te desconectas mientras estás marcado, mueres.
+
+## ¿Cuánto cuesta mantener una ciudad?
+
+### Mantenimiento
+
+- Cada ciudad paga **3 Coppets por chunk reclamado** cada **7 días**, a las 23:00. El dinero sale del banco de la ciudad y va al banco del servidor, *The Narrator*.
+- Las ciudades nuevas no pagan nada sus **2 primeros días**.
+- Desde 2 días antes del pago, los miembros que pueden ingresar dinero reciben un aviso cada hora si al banco le falta.
+- Si el banco no puede pagar, tus chunks **no** se quitan.
+- Los [niveles](#niveles-de-ciudad) más altos bajan el mantenimiento hasta un 40 %.
+
+Las ciudades de una nación pagan impuestos a la nación en lugar de mantenimiento al servidor. Mira [Naciones y guerras](/es/guides/nations-and-wars/).
+
+### Impuestos
+
+El Owner puede cobrar a los miembros de confianza un impuesto en cada ciclo de pago, de hasta **10 Coppets** por zona. A un miembro que no puede pagar se le quita la confianza automáticamente.
+
+## Niveles de ciudad
+
+Una ciudad sube de nivel **sola** cuando cumple los requisitos, y **baja un nivel** si deja de cumplirlos, por ejemplo cuando baja el saldo del banco. Cada nivel necesita **5 jugadores de confianza** y un saldo en el **banco de la ciudad** (`/lands deposit`).
+
+<Figure src={landsLevel} alt="El menú Lands Level con dos candados, uno por cada requisito del siguiente nivel" caption="El menú Level de /lands. Cada candado es un requisito para el siguiente nivel." contain />
+
+| Nivel | Nombre | Jugadores de confianza | Banco de la ciudad | Terrenos extra | Plazas de miembro extra | Mantenimiento |
+|---|---|---|---|---|---|---|
+| 1 | **Shelter** | - | - | - | - | Completo |
+| 2 | **Hamlet** | 5 | 5 000 Coppets | +50 | +25 | -10 % |
+| 3 | **Parish** | 5 | 12 500 Coppets | +100 | +50 | -20 % |
+| 4 | **Borough** | 5 | 25 000 Coppets | +150 | +75 | -30 % |
+| 5 | **Domain** | 5 | 40 000 Coppets | +200 | +100 | -40 % |
+
+**Domain es el nivel más alto.** Una ciudad empieza con 26 plazas de miembro.
+
+Un Domain puede fundar una [nación](/es/guides/nations-and-wars/).
+
+## Por qué las ciudades importan para otros sistemas
+
+- El terreno de una ciudad es donde puedes esconder tu propia entrada al [Agora](/es/guides/agora/).
+- Las [Iglesias](/es/magic/churches/) pueden unir su tesoro a una ciudad.
+- Las ciudades grandes con construcciones impresionantes pueden ganar una [Town Perk](#town-perks).
+
+## Town Perks
+
+Una **Town Perk** es un efecto de zona permanente que el staff pone en una ciudad cuando termina un gran proyecto de construcción. No se puede comprar ni reclamar con un comando.
+
+### ¿Cómo consigo una Town Perk?
+
+1. Construye algo impresionante que encaje con la ventaja que quieres, por ejemplo una catedral, una gran biblioteca o una muralla.
+2. Abre un ticket de soporte en Discord con las coordenadas y capturas de pantalla.
+3. El staff valora la calidad de la construcción, el nivel de la ciudad y su población.
+4. Si lo aprueban, el staff pone la ventaja en una zona de tu ciudad.
+
+### ¿Qué ventajas hay?
+
+| Ventaja | Qué hace | Nivel de ciudad | Jugadores de confianza | Semidioses |
+|---|---|---|---|---|
+| **Agriculture** | Los cultivos crecen mucho más rápido | Hamlet (2) | 5 | - |
+| **Mob Protection** | Los mobs hostiles no aparecen en la zona | Borough (4) | 12 | - |
+| **Potion Effects** | Efectos duraderos como Velocidad, Prisa o Visión nocturna | Domain (5) | 18 | - |
+| **Experience Boost** | Más experiencia mientras estás en la zona | Domain (5) | 22 | - |
+| **Armor Repair** | Repara poco a poco la armadura gastada | Domain (5) | 30 | - |
+| **Acting Boost** | Actuación más rápida mientras estás en la zona | Domain (5) | 40 | 3 |
+| **Spirituality** | Recupera Espiritualidad cada cierto tiempo | Domain (5) | 45 | 5 |
+
+- Los **jugadores de confianza** son los miembros de confianza de la ciudad. Los **Semidioses** son miembros de confianza de Secuencia 4 o superior.
+- Experience Boost, Armor Repair, Acting Boost y Spirituality antes pedían los niveles de ciudad 6, 8 y 10, que ya no existen. Como ahora **Domain** es el nivel más alto, para esas ventajas deciden el número de jugadores y de Semidioses y la construcción.
+
+### ¿Qué fuerza tienen las ventajas?
+
+El staff ajusta cada ventaja para su ciudad, así que los números cambian. Estas son algunas de las ventajas activas hoy en el servidor.
+
+- **Acting Boost** da un +18 % de velocidad de Actuación en una ciudad y un +45 % en otra, a los jugadores que están en la zona.
+- **Spirituality** recupera 50 de Espiritualidad cada 20 segundos en tres ciudades, 50 cada 10 segundos en una y 30 cada 10 segundos en otra.
+- **Mob Protection** cubre un radio de 100 bloques alrededor del centro de una ciudad.
+
+Una ventaja cubre un círculo alrededor de un monumento, una caja u otra forma alrededor de un edificio, o todo el terreno de una ciudad.
+
+### Consejos para que te la aprueben
+
+La construcción debe recordar a la ventaja, igual que una estatua de dragón encaja con Mob Protection y una catedral con Spirituality. Las casas pequeñas no valen. Piensa en una maravilla del mundo que marque el paisaje. El staff lo revisa por dentro y por fuera, así que no presentes construcciones sin terminar ni cascarones vacíos.
+
+<CardGrid min={280}>
+  <Figure src={dragon} alt="Una enorme estatua de dragón construida sobre una ciudad" caption="Un dragón tan imponente que los monstruos evitan la ciudad. Es el tipo de construcción que encaja con Mob Protection." />
+  <Figure src={hall} alt="La gran nave de una catedral con ventanales altos" caption="Una catedral en el corazón de una ciudad. Es el tipo de construcción que encaja con Spirituality." />
+</CardGrid>
+
+## Páginas relacionadas
+
+<CardGrid>
+  <Card title="Naciones y guerras" text="Une ciudades, desbloquea efectos de nación y declara la guerra." icon="shield" href="/es/guides/nations-and-wars/" />
+  <Card title="Dinero y cartera" text="De dónde sale el dinero de la ciudad." icon="coin" href="/es/guides/economy/" />
+</CardGrid>

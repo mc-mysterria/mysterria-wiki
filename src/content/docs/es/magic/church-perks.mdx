@@ -1,0 +1,200 @@
+---
+title: "Ventajas y anclas de la Iglesia"
+description: "Los números detrás de las ventajas de las iglesias de Mysterria: peso de ancla, rangos, bonificaciones de Actuación y de recuperación, alivio del mínimo de Locura, bendiciones y regalos. Una guía de LOTM."
+sidebar:
+  label: Ventajas y anclas de la Iglesia
+  order: 35
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import perksChat from '~/assets/magic/church-perks-chat.webp';
+
+Las ventajas de la iglesia son las bonificaciones de Actuación, de recuperación de Locura y de apoyo que una [iglesia](/es/magic/churches/) da a sus miembros. Su fuerza depende de cuánto apoyo activo y rezador tenga la iglesia.
+
+## ¿Qué hace más fuertes o más débiles las ventajas?
+
+Las ventajas combinan todo esto a la vez, así que un solo factor flojo puede hacer mucho más pequeña la bonificación final.
+
+- El **peso de ancla** es cuánto apoyo activo y rezador tiene la iglesia, comparado con lo que necesita la Secuencia del líder.
+- La **antigüedad como miembro** importa porque los miembros nuevos empiezan en un 20 % y llegan al valor completo a los 14 días (21 días si cambiaron de iglesia).
+- La **devoción y la actividad** salen de la oración reciente y de la participación en las sedes.
+- La **red de sedes** necesita un núcleo principal activo y filiales y sedes regionales sanas. Las filiales que decaen dejan de ayudar.
+- El **liderazgo de las sedes** significa un Head Deacon y Bishops atendiendo cada sede.
+- Por **cargo**, los líderes y colíderes reciben más y los seguidores nuevos menos. Los efectos de Ángel se pausan si hay más Ángeles que huecos de Ángel.
+- Por **Sendero**, el propio Sendero de la iglesia es el que más ayuda, los Senderos vecinos un poco menos y los demás lo mínimo.
+- Los miembros más fuertes reciben efectos algo más fuertes por **su Secuencia**.
+- Una [guerra entre iglesias](/es/magic/church-management/#guerras-entre-iglesias) aceptada o una penalización de guerra cambia las ventajas.
+- Sin **núcleo principal**, todas las ventajas funcionan al 50 %.
+
+Si tus ventajas parecen flojas, `/coi church status`, `/coi church perks`, `/coi church acting`, `/coi church pathway progress`, `/coi church my-site` y `/coi church cooldowns` te muestran cómo estás.
+
+<Figure src={perksChat} alt="El resultado de /coi church perks en el chat para el líder de una iglesia nueva, con las ventajas que se le aplican y sus motivos" caption="Lo que muestra /coi church perks en el chat." contain />
+
+## Peso de ancla
+
+Cada miembro activo suma **peso de ancla** según su Secuencia.
+
+| Secuencia del miembro | Peso de ancla |
+|---|---:|
+| 0 | 12,0 |
+| 1 | 9,0 |
+| 2 | 7,0 |
+| 3 | 5,0 |
+| 4 | 3,0 |
+| 5 | 0,75 |
+| 6 | 0,60 |
+| 7 | 0,45 |
+| 8 | 0,35 |
+| 9 | 0,25 |
+| No Trascendente | 0,15 |
+
+Ese peso se multiplica después según el Sendero.
+
+| Sendero del miembro | Multiplicador |
+|---|---:|
+| El mismo que la iglesia | x1,5 |
+| Un Sendero vecino | x1,25 |
+| Cualquier otro | x1,0 |
+
+Por ejemplo, un miembro de Secuencia 4 da 4,5 si es del propio Sendero de la iglesia, 3,75 si es de un Sendero vecino y 3,0 si es de otro. Un miembro de Secuencia 9 del mismo Sendero da 0,375.
+
+### ¿Quién cuenta?
+
+- Un miembro solo cuenta si se ha conectado **y** ha rezado en los últimos **14 días**.
+- El **líder nunca cuenta** como ancla para su propia iglesia.
+- **Los colíderes tampoco cuentan** como anclas de miembro.
+
+### Límites del peso de ancla
+
+- El peso de los miembros de Secuencia 4 o superior empieza a rendir menos a partir de **18** y nunca puede pasar de **34**.
+- Cada **10** miembros activos de Secuencia 5 o inferior suman una bonificación de grupo de **+1,0**.
+- Cada sede activa puede sostener cierto peso, que depende de la Secuencia del líder. El peso por encima de tu **capacidad de sedes** total rinde cada vez menos y se detiene cerca de 1,35 veces la capacidad.
+
+| Secuencia del líder | Capacidad de la sede principal | Cada filial |
+|---|---:|---:|
+| 4 | 12 | 8 |
+| 3 | 16 | 10 |
+| 2 | 20 | 12 |
+| 1 | 24 | 14 |
+| 0 | 28 | 16 |
+
+La capacidad de una sede baja si no está lo bastante activa o si tiene un Head Deacon flojo o no lo tiene, y sube un 12 % con cada nivel de mejora. Sin núcleo principal activo, la capacidad de toda la iglesia es 6.
+
+## ¿Cuántas anclas necesita una iglesia?
+
+El apoyo completo necesita este peso de ancla efectivo, que depende de la Secuencia **del líder**. Todos los miembros se miden con la fila del líder, sea cual sea su propia Secuencia.
+
+| Secuencia del líder | Anclas para apoyo completo |
+|---|---:|
+| 4 | 15 |
+| 3 | 25 |
+| 2 | 28 |
+| 1 | 38 |
+| 0 | 30 |
+
+Son objetivos de peso, no número de miembros. Un líder de Secuencia 4 puede llegar a 15 con unos pocos miembros fuertes de su mismo Sendero o con muchos más débiles. Su sede principal solo sostiene 12 antes de rendir menos, así que le convendrá una filial o una mejora.
+
+<Notice tone="info" title="La Secuencia 0 también mira esto">
+Para reclamar un [trono](/es/magic/sequence-zero/), tu iglesia necesita **20** anclas efectivas, y tienes que ser su líder, colíder o Ángel. La iglesia de un dios en el trono se mide con **30**. Es menos que el objetivo de la Secuencia 1 a propósito. Un dios nuevo ya trae 20 anclas, así que la iglesia solo tiene que crecer un poco más para tener apoyo completo.
+</Notice>
+
+## Rangos de la iglesia
+
+| Rango | Parte del objetivo de anclas | Bonificación de Actuación x | Bonificación de recuperación x | Bendición x |
+|---|---:|---:|---:|---:|
+| 1 | menos del 25 % | 1,00 | 1,00 | 1,00 |
+| 2 | 25 % | 1,03 | 1,15 | 1,12 |
+| 3 | 45 % | 1,06 | 1,32 | 1,28 |
+| 4 | 70 % | 1,09 | 1,52 | 1,45 |
+| 5 | 95 % | 1,12 | 1,75 | 1,65 |
+
+Para un líder de Secuencia 4 (objetivo 15), el rango 2 empieza en torno a 3,75 anclas, el rango 3 en torno a 6,75, el rango 4 en torno a 10,5 y el rango 5 en torno a 14,25.
+
+### Church Progress
+
+Celebrar [oficios](/es/magic/church-management/#oficios-de-la-iglesia) acumula **Church Progress**. Cada **100** puntos de progreso cuentan como 1 ancla extra para el rango y la clasificación, hasta **12**.
+
+## Clasificación de religiones
+
+Varias iglesias pueden seguir el mismo Sendero, y la que tiene la puntuación de religión más alta lo encabeza. Una iglesia tiene un único Sendero oficial, que es el del líder.
+
+La puntuación sale del peso de ancla efectivo, el Church Progress, el rango (+8 por rango), las sedes activas (+2 cada una) y la salud actual. Mírala con `/coi church top` o `/coi church top <sendero>`.
+
+La puntuación de religión también forma el **25 %** de la Defense Score de quien ocupa un puesto en [Puestos y Usurpación](/es/magic/usurpation/#paso-2-nominación).
+
+### Apoyo a otros Senderos
+
+- Dos o más miembros activos que rezan y son del mismo Sendero forman un **grupo** y reciben una pequeña bonificación.
+- Los colíderes, encargados de sede regional y Ángeles activos de otro Sendero suman **apoyo secundario** limitado para ese Sendero (hasta un 15 %).
+- Esto nunca convierte a la iglesia en una segunda religión oficial.
+
+Mira cualquier Sendero de tu iglesia con `/coi church pathway <sendero> progress`.
+
+## Bonificación de Actuación
+
+La bonificación de Actuación de la iglesia se suma a tu Actuación. Llega hasta un **16 %** más o menos y rinde menos a partir del 14 %. Es más alta para el propio Sendero de la iglesia y para los líderes y Ángeles, y crece con el rango, la oración y la antigüedad como miembro. Mira la tuya con `/coi church acting`.
+
+## Bonificación de recuperación de Locura
+
+La bonificación de recuperación ayuda a que la Locura recuperable baje más rápido. Puede llegar a **24** (rinde menos a partir de 14, tope máximo 30) y crece con el rango. Nunca quita Locura Permanente.
+
+## Alivio del mínimo de Locura
+
+Desde la Secuencia 4, los Trascendentes tienen un mínimo de Locura por divinidad por debajo del que la recuperación no puede bajar.
+
+| Secuencia | Mínimo por divinidad |
+|---|---:|
+| 0 | 90 % |
+| 1 | 75 % |
+| 2 | 60 % |
+| 3 | 40 % |
+| 4 | 25 % |
+| 5 a 9 | 0 % |
+
+Una iglesia puede aliviar parte de ese mínimo.
+
+> Tu Locura mínima = Locura Permanente + mínimo por divinidad x (1 - alivio)
+
+El total tiene un tope del **95 %**, así que nunca llega al 100 %. La recuperación, los regalos, las bendiciones y las habilidades de curación se paran en este mínimo.
+
+El alivio es el llenado de anclas de tu iglesia (anclas efectivas divididas por el objetivo) por la parte que corresponde a tu cargo, hasta el tope de tu cargo. Los miembros normales también necesitan antigüedad, devoción y actividad reciente para llegar a su parte completa.
+
+| Cargo | Parte | Tope |
+|---|---:|---:|
+| Líder | 100 % | 100 % |
+| Colíder | 95 % | 100 % |
+| Ángel | 75 % | 90 % |
+| Head Deacon | 65 % | 80 % |
+| Bishop | 55 % | 70 % |
+| Senior Follower | 45 % | 60 % |
+| Follower | 38 % | 55 % |
+| Junior Follower | 30 % | 45 % |
+| New Follower | 20 % | 35 % |
+
+Un dios nuevo se mide con 30 anclas, no con las 20 que hacen falta para ascender. Con 20 de 30 recibe dos tercios del alivio, así que su mínimo del 90 % solo baja a más o menos el 30 % hasta que la congregación crece.
+
+Los Red Priests sin iglesia pueden recibir alivio de su [cohorte de Chain of Command](/es/magic/sequence-zero/#cohortes-del-red-priest-en-lugar-de-una-iglesia). El alivio de la cohorte y el de la iglesia nunca se suman.
+
+## Bendiciones
+
+Una bendición es una acción de apoyo rápida sobre un miembro de la iglesia. Baja la Locura recuperable y el Cansancio y da un efecto de apoyo corto. Usa `/coi church bless <jugador>` o el menú de la iglesia. No puedes bendecirte a ti mismo, y el objetivo debería estar cerca de una sede activa.
+
+| Quién bendice | Alivio de Locura | Alivio de Cansancio | Efecto de apoyo | Coste de Espiritualidad |
+|---|---:|---:|---:|---:|
+| Oficiales de sede (Head Deacons, Bishops) | 4 | 6 | 6 s | 10 |
+| Líder, colíderes y Ángeles activos | 6 | 10 | 10 s | 18 |
+
+Cada objetivo puede recibir una bendición cada **10 minutos**. Tras **2** bendiciones en 30 minutos, las siguientes sobre ese objetivo pierden fuerza (hasta el 35 %).
+
+## Regalos
+
+Los regalos son un apoyo más fuerte del líder, los colíderes y los Ángeles activos. Usa `/coi church gift <jugador> <tipo>`. Le cuestan Espiritualidad a quien los da y le suben un poco la Locura. No puedes hacerte un regalo a ti mismo.
+
+| Regalo | Efecto | Coste de Espiritualidad | Locura de quien lo da |
+|---|---|---:|---:|
+| `madness-relief` | Quita hasta 10 de Locura recuperable | 30 | +1,0 |
+| `spirituality-restore` | Recupera hasta 35 de Espiritualidad | 24 | +0,5 |
+| `tiredness-recovery` | Quita hasta 20 de Cansancio | 28 | +0,75 |
+| `sanctuary-renewal` | 20 s de Regeneración II y 120 s de Absorción I | 36 | +1,5 |
+
+El mismo regalo al mismo objetivo tiene **5 minutos** de espera. Un segundo regalo al mismo objetivo en menos de una hora es más débil (hasta el 40 %). Un regalo se rechaza si subiría la Locura de quien lo da por encima del 95 %.

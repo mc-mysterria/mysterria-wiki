@@ -1,0 +1,126 @@
+---
+title: "Unicidad"
+description: "Cómo concede Mysterria la Unicidad de cada Sendero, cómo crece la acomodación, qué hacen sus cuatro rasgos y cómo puede cambiar de manos. Una guía de Lord of the Mysteries."
+sidebar:
+  label: Unicidad
+  order: 31
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import uniquenessMenu from '~/assets/magic/uniqueness-menu.webp';
+import uniquenessCandidacy from '~/assets/magic/uniqueness-candidacy.webp';
+
+## ¿Qué es una Unicidad?
+
+Una **Unicidad** es la autoridad única de un Sendero, y solo la tiene un Trascendente a la vez. Tener la Unicidad de tu Sendero y **acomodarla** hasta el 95 % es un requisito para la [Secuencia 0](/es/magic/sequence-zero/), y por el camino despierta cuatro rasgos de bonificación.
+
+Cada uno de los 22 Senderos normales tiene exactamente una. Los Senderos Exteriores y las Gracias no tienen.
+
+## ¿Cómo abro el menú de Unicidad?
+
+Abre tu menú de personaje (`/coi menu character`, o la tecla M con el [Client Mod](/es/guides/client-mod/)) y elige **Uniqueness**. Sin el mod se abre como un menú de cofre. Sus cinco apartados son **Where you stand**, **Candidacy score**, **Participation**, **Physical manifestation** y **Usurpation**.
+
+<Figure src={uniquenessCandidacy} alt="El menú de Unicidad en el Client Mod, con las tarjetas de la puntuación de candidatura" caption="El menú de Unicidad en el Client Mod. Los números son de un personaje de prueba." />
+
+<Figure src={uniquenessMenu} alt="El apartado Where you stand del menú de Unicidad, Sun con un 64 % de acomodación y dos rasgos despiertos" caption="Where you stand, de un portador de prueba de la Unicidad Sun con un 64 % de acomodación." />
+
+## ¿Cómo se concede una Unicidad?
+
+Nadie compra ni sortea una Unicidad. Cada 2 horas el servidor puntúa a todos los Trascendentes que pueden optar a ella en el Sendero y se la concede al mejor candidato.
+
+### ¿Quién puede ser candidato?
+
+- Quien sea de **Secuencia 4 o superior** en ese Sendero
+- Con una cuenta de al menos **7 días**
+- Con al menos **10 horas** de juego
+- Con un índice de actividad de al menos **1,5**
+- Con una puntuación total de al menos **40**
+- Que no se haya retirado de la evaluación
+
+Solo puedes tener una Unicidad a la vez.
+
+### La puntuación de candidatura
+
+Cada parte se puntúa sobre 100 y luego se pondera.
+
+| Parte | Peso | Qué mide |
+|---|---:|---|
+| Secuencia | 35 % | Secuencia 1 = 100, Secuencia 2 = 90, Secuencia 3 = 80, Secuencia 4 = 60 |
+| Tiempo de juego | 25 % | Horas totales en el servidor, contadas hasta 100 |
+| Actividad | 20 % | Lo reciente y regular que juegas (índice de hasta 5,0). Baja si dejas de conectarte |
+| Actuación | 15 % | Cuánto has actuado a lo largo de todo el Sendero, desde la Secuencia 9. Avanzar nunca la baja |
+| Dedicación | 5 % | La mitad sale de los días que jugaste al menos 30 minutos (hasta 31), y la otra mitad de la duración media de tus sesiones (hasta 180 minutos) |
+
+El staff puede añadir un **ajuste manual** de -20 a +20 sobre el total ponderado. Aparece en el menú.
+
+La puntuación entera del portador actual se multiplica hasta por **x1,25** con un 100 % de acomodación, y eso hace más difícil sustituir a un portador asentado.
+
+Las Mareas diarias nunca cambian la puntuación de Unicidad.
+
+## ¿Cómo puede cambiar de manos una Unicidad?
+
+Matar al portador **no** la mueve. Estas cinco cosas sí.
+
+1. La **revisión automática** se la pasa a otro candidato que tenga al menos **6 puntos** más que el portador. Un portador nuevo está a salvo de esto durante **3 días**.
+2. Otro jugador gasta Overflow en un [desafío pagado](/es/magic/usurpation/#cómo-desafío-una-unicidad) para forzar una nueva puntuación.
+3. Un rival que gana una [vigilia de Secuencia 0](/es/magic/sequence-zero/) contra el portador se queda con la Unicidad, pero no con el trono.
+4. Si el portador se retira de la evaluación, pasa directamente al siguiente candidato.
+5. Entrar en una [Ordalía](/es/magic/ordeals/) la libera automáticamente.
+
+<Notice tone="warn" title="Un portador nuevo siempre empieza desde el 0 %">
+Cuando una Unicidad cambia de manos, la acomodación, la cuenta de muertes y el historial de crecimiento vuelven a cero.
+</Notice>
+
+## ¿Puedo no participar?
+
+Sí. Participar es lo predeterminado. Desactívalo en **Participation** con **Withdraw from evaluation**. El botón te pide confirmarlo dos veces.
+
+- Si tienes la Unicidad, pasa al siguiente candidato **al momento**.
+- Si vuelves más tarde, entras otra vez en la cola. No te devuelve la Unicidad.
+- Mientras estás retirado no te puntúan y no puedes desafiar por una Unicidad.
+
+## ¿Cómo crece la acomodación?
+
+La acomodación es lo asentada que está la Unicidad en ti, del 0 % al 100 %. Solo crece mientras la tienes, al usar tu Sendero.
+
+| Fuente | Acomodación ganada |
+|---|---|
+| Actuación ganada | +0,02 puntos por cada 100 de Actuación |
+| Espiritualidad gastada | +0,001 puntos por cada 100 de Espiritualidad |
+| Cada habilidad lanzada | +0,00005 puntos |
+
+La Actuación es con diferencia la fuente más grande. Estas cantidades se multiplican luego según tu Secuencia.
+
+| Secuencia | Multiplicador de crecimiento |
+|---|---:|
+| 1 | x1,2 |
+| 2 | x1,1 |
+| 3 | x1,0 |
+| 4 | x0,8 |
+
+### Morir cuesta acomodación
+
+Cada muerte mientras tienes una Unicidad cuesta **10 puntos porcentuales** fijos (un 80 % pasa a 70 %), te mate lo que te mate. Nunca baja del **10 %**. Una muerte que se anula, por ejemplo con un artefacto, no cuesta nada.
+
+## ¿Qué da?
+
+### Los cuatro rasgos
+
+Cada rasgo despierta con una acomodación concreta y luego crece en línea recta con la acomodación, hasta llegar a su valor completo al 100 %.
+
+| Rasgo | Despierta al | Efecto al 100 % | Valor al despertar |
+|---|---:|---|---|
+| **Spiritual Dominance** | 25 % | +50 % de regeneración de Espiritualidad | +12,5 % |
+| **Authority Amplification** | 50 % | +30 % de poder y daño de las habilidades | +15 % |
+| **Divine Resilience** | 75 % | +20 % de Espiritualidad máxima | +15 % |
+| **Acting Acceleration** | 100 % | +40 % de Actuación ganada | +40 % |
+
+No hay rasgos propios de cada Sendero en el juego.
+
+### El camino a la Secuencia 0
+
+Para reclamar un trono tienes que tener la Unicidad de tu Sendero **y** tenerla al **95 %** de acomodación o más. [Secuencia 0](/es/magic/sequence-zero/) enumera los demás requisitos.
+
+### Manifestación física
+
+Cada Unicidad tiene un objeto cosmético. Puedes sacarlo o esconderlo desde el apartado **Physical manifestation**. Está ligado a ti y nunca puede salir de tu inventario. Algunos se pueden llevar en la cabeza.
