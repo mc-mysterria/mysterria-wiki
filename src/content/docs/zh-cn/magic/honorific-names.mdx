@@ -1,0 +1,134 @@
+---
+title: "尊名"
+description: "从序列4开始，如何在 Mysterria 上编写、验证和诵念尊名，神圣回应，以及每位神的祝福。一篇《诡秘之主》指南。"
+sidebar:
+  label: 尊名
+  order: 32
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import lotm from '~/assets/magic/lotm.jpg';
+import honorificEditor from '~/assets/magic/honorific-editor.webp';
+
+<Figure src={lotm} alt="《诡秘之主》的画作，灰雾之上，一个身影端坐在王座上" />
+
+## 什么是尊名？
+
+**尊名**是一组简短的句子，其他玩家在聊天栏里诵念它，无论你身在何处都能联系到你。每个**序列4或更强**的非凡者都可以写一个。
+
+下面是一个五行的例子：
+
+> *King of the Skies*
+>
+> *Emperor of the Seas*
+>
+> *Lord of the Calamity*
+>
+> *God of the Storms*
+>
+> *The Wanderer Known to Mysterria*
+
+## 怎样设置我的尊名？
+
+打开你的角色菜单（`/coi menu character`，装了 [COI 客户端](/zh-cn/guides/client-mod/)的话按 M 键），点击尊名栏位。在你设置之前，每 30 分钟会收到一次聊天提醒，上面有一个打开编辑器的按钮。
+
+<Figure src={honorificEditor} alt="尊名编辑器，已填写三行，状态提示框显示 Complete 和 Active" caption="尊名编辑器。顶部的书显示你的尊名是否完整、是否生效。" contain />
+
+行数取决于你的序列：
+
+| 你的序列 | 行数 |
+|---|---:|
+| 4 或 3 | 5 |
+| 2 或 1 | 4 |
+| 0 | 3 |
+
+当你晋升后尊名变短时，最后一行会被保留。之后尊名会重新检查，在它的句子能描述新的你之前，可能会一直处于未生效状态。
+
+### 每行的规则
+
+每一行都必须：
+
+- 长度在 2 到 80 个字符之间。
+- 不以 `!` 或 `/` 开头。
+- 不能全是数字。
+- 没有连续的两个空格，开头和结尾也没有空格。
+- 只使用字母（拉丁字母或西里尔字母）、数字和基本标点。
+
+### 什么样的尊名才有效？
+
+有效的尊名必须清楚地指向**你**。它不需要包含你的用户名。编辑器会显示它找到了多少身份证据，你需要达到 **3** 分。一个有力的个人描述，或者几条相关的线索就足够了。算作证据的有：
+
+- 你的用户名，或者其中有意义的一部分
+- 你的城镇、教会、教会地点、关联的领地或国家
+- 你的途径，或你当前序列的名称
+- 你在当前序列拥有的一个能力
+- 公认的途径概念和官方用语
+- 经管理团队批准的个人描述
+
+匹配时会忽略大小写、标点、空格、撇号和连字符。途径、序列和能力的英文和乌克兰语名称都能被识别。
+
+编辑器会拒绝不完整的尊名、行数不对的尊名、空行或重复的行、普通的聊天用语、只有一个词的凑数句子，以及已经指向别人的尊名。被拒绝的尊名会作为草稿保留，但在它变得有效之前，诵念它不会有任何作用。
+
+## 怎样诵念别人的尊名？
+
+把对方尊名的每一行，按顺序作为普通聊天消息发出去。
+
+- 每两行之间有 **15 秒**的时间。
+- 三个词或更长的一行，即使夹在一个更长的句子里也算数。
+- 你不能诵念自己的尊名，除非通过秘偶或分身的身体。
+
+最后一行发出后：
+
+- 你进入 **15 分钟**的诵念冷却。
+- 如果尊名的主人在线，他们会看到你的坐标和一个回应提示，提示会在 **2 分钟**后失效。
+- 如果尊名的主人属于某个教会，这次诵念会算作对那个[教会](/zh-cn/magic/churches/)的一次外部祈祷，主人还可以邀请你加入教会。
+- 尊名的主人会获得传奇事迹**你的尊名被诵念**，它计入[序列0](/zh-cn/magic/sequence-zero/)。
+
+<Notice tone="info" title="小心伪装">
+偷盗者途径的“伪装”能力可以悄悄截下某个教会下一次完成的尊名呼唤或教会祝福。教会主人和天使会收到警告，只要在聊天栏里说出小偷的名字，就能阻止它。
+</Notice>
+
+## 我的尊名被诵念时能做什么？
+
+点击提示，打开**神圣回应**（Divine Response）菜单：
+
+| 按钮 | 作用 |
+|---|---|
+| **Teleport**（传送） | 打开一道传送门，把你带到诵念者身边。你们必须在同一个世界，而且在地牢里无效 |
+| **Smite**（惩击） | 用闪电劈中诵念者，造成 4 点伤害（2 颗心） |
+| **Gift Items**（赠送物品） | 把你物品栏里的一件物品送给诵念者，距离多远都可以 |
+
+使用其中任何一个，作为主人的你都会进入 **30 分钟**的冷却。在此期间其他玩家仍然可以诵念你的尊名，每位诵念者都有自己的冷却。
+
+## 诵念神的尊名会怎样？
+
+诵念一位[序列0](/zh-cn/magic/sequence-zero/)神的尊名，和平常一样会打开祂的神圣回应菜单。而且每次完整的诵念都会立刻祝福**诵念者**，即使神不在线或者没有回应也一样。
+
+- 祝福最多持续 **2 分钟**，并伴随这条途径专属的粒子和音效。
+- 每位神的祝福有 **60 分钟**的冷却，由这位神的**所有诵念者共享**。如果一小时内已经有别人诵念过，你的诵念仍然会传到神那里，但不会触发祝福。
+- 祝福只影响诵念者。它永远不会放置方块，也不会影响其他人。
+
+| 神的途径 | 祝福 |
+|---|---|
+| [占卜家途径](https://www.mysterria.net/en/pathways/fool) | 幸运 II，抗性提升 I |
+| [偷盗者途径](https://www.mysterria.net/en/pathways/error) | 幸运 I，迅捷 I |
+| [学徒途径](https://www.mysterria.net/en/pathways/door) | 迅捷 II，跳跃提升 I |
+| [歌颂者途径](https://www.mysterria.net/en/pathways/sun) | 生命恢复 II，抗火 I |
+| [观众途径](https://www.mysterria.net/en/pathways/visionary) | 夜视 I，幸运 I |
+| [水手途径](https://www.mysterria.net/en/pathways/tyrant) | 潮涌能量 I，海豚的恩惠 I |
+| [阅读者途径](https://www.mysterria.net/en/pathways/tower) | 抗性提升 II，缓降 I |
+| [秘祈人途径](https://www.mysterria.net/en/pathways/hanged) | 迅捷 II，急迫 I |
+| [猎人途径](https://www.mysterria.net/en/pathways/priest) | 生命恢复 III，力量 II，抗火（一场带有火焰和红眼的专属仪式） |
+| [刺客途径](https://www.mysterria.net/en/pathways/demoness) | 力量 I，迅捷 II |
+| [不眠者途径](https://www.mysterria.net/en/pathways/darkness) | 夜视 I，隐身 I |
+| [收尸人途径](https://www.mysterria.net/en/pathways/death) | 抗性提升 I，夜视 I |
+| [战士途径](https://www.mysterria.net/en/pathways/giant) | 力量 II，抗性提升 I |
+| [通识者途径](https://www.mysterria.net/en/pathways/paragon) | 生命恢复 II，伤害吸收 I |
+| [窥秘人途径](https://www.mysterria.net/en/pathways/hermit) | 夜视 I，急迫 I |
+| [耕种者途径](https://www.mysterria.net/en/pathways/mother) | 生命恢复 II，饱和 I |
+| [药师途径](https://www.mysterria.net/en/pathways/moon) | 生命恢复 I，力量 I |
+| [罪犯途径](https://www.mysterria.net/en/pathways/abyss) | 力量 II，夜视 I |
+| [囚犯途径](https://www.mysterria.net/en/pathways/chained) | 抗性提升 II，缓降 I |
+| [律师途径](https://www.mysterria.net/en/pathways/emperor) | 力量 II，抗火 I |
+| [仲裁人途径](https://www.mysterria.net/en/pathways/justiciar) | 抗性提升 II，力量 I |
+| [怪物途径](https://www.mysterria.net/en/pathways/fortune) | 幸运 II，迅捷 I |
