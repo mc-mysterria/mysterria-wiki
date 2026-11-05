@@ -1,0 +1,126 @@
+---
+title: "Battle Pass"
+description: "Le Battle Pass de Mysterria : quêtes quotidiennes et hebdomadaires, points par palier, et toutes les récompenses gratuites et premium, de l'argent et des Éclats d'énergie jusqu'aux Grâces et aux élytres."
+sidebar:
+    label: Battle Pass
+    order: 24
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import bpMain from '~/assets/battle-pass/battle-pass-main.webp';
+import bpRewards from '~/assets/battle-pass/battle-pass-rewards.webp';
+
+Le **Battle Pass** donne des points pour des quêtes quotidiennes et hebdomadaires, et ces points te font monter de palier. Beaucoup de paliers portent une récompense, comme de l'argent, des Éclats d'énergie, des points d'Emporium, des Acting Bottles, des clés de donjon ou l'une de deux Grâces.
+
+Ouvre-le avec `/battlepass` ou `/bp`.
+
+<Figure src={bpMain} alt="Le menu du Battle Pass avec les boutons Rewards, Premium, Quests et Info" caption="Le menu du Battle Pass." contain />
+
+## Comment marche le Battle Pass ?
+
+1. Termine des **quêtes quotidiennes** et des **quêtes hebdomadaires** pour gagner des points de Battle Pass.
+2. Quand un palier est rempli de points, tu passes au suivant.
+3. Quand tu atteins un palier de récompense, ouvre **Rewards** dans le menu du Battle Pass et **clique sur la récompense pour la récupérer**. Les récompenses ne sont pas données automatiquement.
+
+Chaque joueur a le **pass gratuit**. Le **pass premium** ajoute une seconde piste de récompenses et des quêtes en plus réservées au premium.
+
+<Figure src={bpRewards} alt="La page Rewards du Battle Pass avec l'infobulle du palier 2 qui liste 200 $ et une Acting Bottle" caption="La page des récompenses. Survole un palier pour voir ses récompenses et s'il est débloqué." contain />
+
+## Quêtes
+
+### Quêtes quotidiennes
+
+- Tu as **9 quêtes quotidiennes** à la fois, dont 4 faciles, 3 moyennes et 2 difficiles.
+- Elles se renouvellent chaque jour à **11:59, heure de Kyiv**.
+- Chacune vaut **25 à 50 points**, par exemple apprivoiser 3 loups ou atteindre le niveau d'expérience 15.
+
+### Quêtes hebdomadaires
+
+- Une nouvelle semaine de quêtes se débloque tous les **7 jours**, le samedi à 07:00, heure de Kyiv. La saison actuelle a commencé le 16 mai 2026 et compte **26 semaines**. La dernière semaine se débloque le 7 novembre 2026.
+- Les semaines précédentes restent ouvertes, et tu n'as pas besoin de finir une semaine pour commencer la suivante.
+- La plupart des quêtes hebdomadaires valent **95 points**. Les quêtes hebdomadaires réservées au premium valent **112**.
+
+## De combien de points ai-je besoin ?
+
+| Paliers | Points par palier |
+|---|---|
+| Paliers ordinaires 1 à 75 | 150 |
+| Paliers de récompense 1 à 75 | 200 |
+| Paliers ordinaires 76 à 100 | 150 |
+| Paliers de récompense 76 à 100 | 350 |
+
+Ça fait **11 750 points pour atteindre le palier 75** et **16 900 points pour atteindre le palier 100**, la fin du pass. Les paliers 76 à 100 sont des paliers bonus. Le pass premium place ses paliers de récompense sur d'autres numéros, mais il en a autant, donc les totaux sont les mêmes.
+
+## Récompenses du pass gratuit
+
+| Palier | Récompenses |
+|---|---|
+| 2 | 200 Coppets, Acting Bottle (1 000 points d'Interprétation) |
+| 9 | 200 Éclats d'énergie, 250 Coppets |
+| 17 | 300 Coppets, 500 points d'Emporium |
+| 25 | 100 Coppets, 300 Éclats d'énergie |
+| 33 | 1 000 points d'Emporium |
+| 41 | **Boon of the Second Law** (Séquence 9), 500 Coppets |
+| 49 | 3 Recipe Sheets, 1 Universal Cosmetic Token |
+| 57 | Acting Bottle (5 000 points d'Interprétation), 600 Coppets |
+| 65 | 2 Premium Keys, 500 Éclats d'énergie, 650 Coppets |
+| 75 | **Élytres**, 1 000 Coppets, 2 Simple Keys, 500 Éclats d'énergie |
+| 76 | 400 Coppets, 200 Éclats d'énergie |
+| 80 | 500 points d'Emporium, 300 Éclats d'énergie, Acting Bottle (10 000 points d'Interprétation) |
+| 84 | 600 Coppets, Acting Bottle (2 000 points d'Interprétation) |
+| 88 | 800 points d'Emporium, 500 Éclats d'énergie |
+| 92 | 600 Coppets, 200 Éclats d'énergie, Acting Bottle (10 000 points d'Interprétation) |
+| 96 | 1 000 points d'Emporium, 500 Éclats d'énergie, 1 Simple Key |
+| 100 | 2 Simple Keys, 1 000 Coppets, 2 000 points d'Emporium, 1 000 Éclats d'énergie, 1 Potion Token |
+
+## Récompenses du pass premium
+
+| Palier | Récompenses |
+|---|---|
+| 5 | 250 Coppets, 800 points d'Emporium, 1 Universal Cosmetic Token |
+| 13 | Acting Bottle (2 000 points d'Interprétation), 300 Éclats d'énergie |
+| 21 | 500 Coppets, 1 Premium Key |
+| 29 | Chat Color Package (365 jours), 500 Éclats d'énergie |
+| 37 | **Boon of the Devouring** (Séquence 9), Custom Join/Quit Message |
+| 45 | 1 Recipe Token (n'importe quelle formule jusqu'à la Séquence 4), 500 Coppets, 500 Éclats d'énergie |
+| 53 | 2 Ingredient Tokens, 2 000 points d'Emporium, 650 Coppets, 500 Éclats d'énergie |
+| 61 | 1 Premium Key, 800 Coppets |
+| 69 | 2 Ingredient Tokens, 1 200 points d'Emporium, 1 000 Éclats d'énergie |
+| 75 | **Élytres en netherite**, 1 200 Coppets, 2 Premium Keys, 3 000 Éclats d'énergie, 1 Boss Compass |
+| 78 | 500 Coppets, 500 Éclats d'énergie, 1 000 points d'Emporium |
+| 82 | Acting Bottle (2 000 points d'Interprétation), 1 Simple Key, 800 points d'Emporium, 650 Coppets |
+| 86 | 600 Coppets, 1 000 Éclats d'énergie, 1 Universal Cosmetic Token |
+| 90 | 800 Coppets, 2 000 points d'Emporium, Acting Bottle (3 000 points d'Interprétation) |
+| 94 | 1 Ingredient Token, 2 000 Éclats d'énergie, 1 000 Coppets |
+| 98 | 1 Premium Key, 3 000 points d'Emporium, 650 Coppets |
+| 100 | 2 Premium Keys, 1 500 Coppets, 2 000 Éclats d'énergie, 3 000 points d'Emporium, 1 Potion Token |
+
+## À quoi servent les récompenses ?
+
+| Récompense | Ce que c'est |
+|---|---|
+| Coppets | De l'[argent](/fr/guides/economy/), ajouté à ton `/wallet` |
+| Éclats d'énergie | Une [monnaie sous forme d'objet](/fr/guides/economy/#éclats-dénergie) pour les Ordres secrets et les Beyonders sauvages |
+| Points d'Emporium | À dépenser dans l'[Emporium brillant](/fr/guides/emporium/) |
+| Acting Bottle | Lance-la pour gagner des points d'[Interprétation](/fr/magic/acting/) pour ta Séquence actuelle |
+| Boon of the Second Law, Boon of the Devouring | Un Jeton de Grâce qui débloque cette [Grâce](/fr/magic/boons/) à la Séquence 9. Tu la fais progresser en sacrifiant des objets Beyonder |
+| Recipe Sheets | Réunis 3 ou 4 feuilles pour former une formule complète |
+| Recipe Token | S'échange contre n'importe quelle formule jusqu'à la Séquence 4 |
+| Ingredient Token | S'échange contre n'importe quel ingrédient connu |
+| Simple Key | Une nouvelle entrée en solo dans un [donjon](/fr/guides/dungeons/) |
+| Premium Key | Une nouvelle entrée pour tout un groupe dans un donjon |
+| Boss Compass | Pointe vers le [boss de monde](/fr/guides/bosses/) le plus proche, consommée à l'utilisation |
+| Universal Cosmetic Token | Applique un skin personnalisé à une arme ou un outil |
+| Chat Color Package | Des couleurs et une mise en forme dans tous les canaux de chat pendant 365 jours |
+
+## Comment obtenir le pass premium ?
+
+Le **Premium BattlePass** est vendu dans la [boutique du serveur](https://www.mysterria.net/en/store). Il débloque la piste de récompenses premium ci-dessus et les quêtes hebdomadaires réservées au premium.
+
+## Pages liées
+
+<CardGrid>
+  <Card title="Emporium brillant" text="Là où vont tes points d'Emporium." icon="star" href="/fr/guides/emporium/" />
+  <Card title="Grâces" text="Ce que font les Grâces Second Law et Devouring." icon="flame" href="/fr/magic/boons/" />
+  <Card title="Argent et portefeuille" text="Coppets, Licks, Verl d'or et Éclats d'énergie." icon="coin" href="/fr/guides/economy/" />
+</CardGrid>

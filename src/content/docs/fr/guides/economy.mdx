@@ -1,0 +1,132 @@
+---
+title: "Argent, portefeuille et Éclats d'énergie"
+description: "Comment marche l'argent sur Mysterria, le serveur Minecraft LOTM : Coppets, Licks et Verl d'or, le /wallet, la vente de minerais, et comment gagner et dépenser des Éclats d'énergie."
+sidebar:
+    label: Argent et portefeuille
+    order: 21
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import shard from '~/assets/shards/shard.png';
+import walletBalance from '~/assets/economy/wallet-balance.webp';
+import walletVault from '~/assets/economy/wallet-vault.webp';
+import walletSell from '~/assets/economy/wallet-sell-ore.webp';
+
+Mysterria a deux monnaies. L'**argent** (Coppets, Licks et Verl d'or) se trouve dans ton `/wallet` et paie les villes, l'[Agora](/fr/guides/agora/) et les échanges avec les Beyonders sauvages. Les **Éclats d'énergie** sont un objet que tu obtiens en vendant tes ingrédients Beyonder en trop aux villageois, et ils paient les niveaux d'[Ordre secret](/fr/guides/orders/) et les échanges avec les Beyonders sauvages.
+
+Les [points d'Emporium](/fr/guides/emporium/) sont un solde à part qui ne marche que dans l'Emporium brillant.
+
+## Que sont les Coppets, les Licks et les Verl d'or ?
+
+| Pièce | Valeur |
+|---|---|
+| **Coppet** | L'unité de base |
+| **Lick** | 64 Coppets |
+| **Verl d'or** | 64 Licks, soit 4 096 Coppets |
+
+Ton solde est toujours compté en Coppets. Quand un menu affiche un prix avec le signe `$`, comme un niveau de ville qui demande `$5000`, ça veut dire 5 000 Coppets.
+
+## Comment utiliser mon portefeuille ?
+
+Tape `/wallet`. Le menu du portefeuille affiche ton solde et des liens vers la boutique du serveur et le Discord. Clique sur **Balance** pour ouvrir l'écran du coffre, où tu peux :
+
+- Cliquer sur une pièce pour la retirer sous forme d'objet.
+- Cliquer sur une pièce dans ton inventaire pour la déposer sur ton solde.
+- Cliquer sur un objet à vendre de ton inventaire pour voir son prix et confirmer la vente.
+
+Le bouton **Settings** permet de choisir entre trois apparences pour le menu du portefeuille.
+
+<Figure src={walletBalance} alt="Le menu du portefeuille avec l'infobulle Balance qui affiche 1,250.75$" caption="Le menu du portefeuille. Survole Balance pour voir combien d'argent tu as." contain />
+
+<Figure src={walletVault} alt="L'écran du coffre avec l'infobulle Balance qui affiche 30.00 en réserve et des minerais du sac prêts à être vendus" caption="L'écran du coffre. Clique sur une pièce pour la retirer, ou sur un objet du sac pour le vendre." contain />
+
+<Figure src={walletSell} alt="L'écran de vente pour 8 minerais de diamant avec l'infobulle Sell qui affiche un prix de 16 Coppets" caption="Vendre du minerai. Le bouton Sell montre le prix avant que tu confirmes." contain />
+
+Les pièces physiques te permettent de payer un autre joueur de la main à la main ou de faire des échanges qui demandent une pièce. Pour casser une pièce en plus petites, tiens **une seule** pièce dans ta main principale et tape `/shatter`. Un Verl d'or devient 64 Licks, et un Lick devient 64 Coppets.
+
+## Comment gagner de l'argent ?
+
+- Vends des objets de façon anonyme aux autres joueurs dans l'[Agora](/fr/guides/agora/), le marché souterrain.
+- Récupère les paliers du [Battle Pass](/fr/guides/battle-pass/). Les paliers gratuits et premium rapportent de 100 à 1 500 Coppets chacun.
+- Vends du minerai dans le portefeuille. C'est peu, mais régulier.
+- Échange avec d'autres joueurs et participe aux événements.
+
+### Quels minerais puis-je vendre ?
+
+Seuls trois minerais ont un prix. Tout le reste se vend pour rien.
+
+| Minerai | Prix par bloc |
+|---|---|
+| Minerai de diamant (et minerai de diamant des abîmes) | 2 Coppets |
+| Minerai d'émeraude (et minerai d'émeraude des abîmes) | 3 Coppets |
+| Débris antiques | 5 Coppets |
+
+- Mine le minerai de diamant et d'émeraude avec une pioche **Toucher de soie**, pour que le minerai tombe sous forme de bloc vendable. Les débris antiques tombent toujours tels quels.
+- Tu peux vendre jusqu'à **512 Coppets par jour**. L'écran de vente affiche **Cannot sell** et ta limite restante pour la journée une fois que tu l'as atteinte.
+
+## À quoi sert l'argent ?
+
+- Fonder et faire tourner une [ville](/fr/guides/towns/), y compris les claims en plus, l'entretien et les niveaux.
+- Acheter à d'autres joueurs dans l'[Agora](/fr/guides/agora/) et y louer un étal.
+- Les échanges avec les [Beyonders sauvages](/fr/magic/wild-beyonders/), qui coûtent de l'argent, des Éclats d'énergie **et** des pièces physiques de Verl d'or.
+- Certains échanges avec les villageois (voir plus bas).
+
+### Les villageois acceptent-ils les pièces ?
+
+Seulement pour certains échanges. Les échanges de **livres enchantés** et d'**objets avec une durabilité** (outils, armes, armures) coûtent des Coppets au lieu d'émeraudes, à raison de 2 Coppets par émeraude du prix d'origine. Tous les autres échanges utilisent toujours des émeraudes.
+
+Un villageois n'échange que si son IA est désactivée. Enferme-le dans un espace de 2 sur 1 dont il ne peut pas sortir.
+
+### Y a-t-il un /shop ?
+
+Non. Achète tes blocs de construction au **Quartermaster** dans l'[Agora](/fr/guides/agora/).
+
+## Éclats d'énergie
+
+<Figure src={shard} alt="Une pile d'Éclats d'énergie avec l'infobulle de l'objet, un fragment d'énergie mystique utilisé comme monnaie pour les améliorations d'organisation" caption="Les Éclats d'énergie sont un vrai objet de ton inventaire, pas un solde de portefeuille." />
+
+Les Éclats d'énergie ne sont pas rangés dans `/wallet`. Ils se trouvent dans ton inventaire ou dans un coffre et peuvent être perdus ou volés comme n'importe quel autre objet.
+
+### Comment obtenir des Éclats d'énergie ?
+
+Vends tes ingrédients Beyonder en trop à un **villageois sans profession** ou à un **villageois simplet** :
+
+1. Porte sur toi les ingrédients que tu veux vendre.
+2. Fais un clic droit sur le villageois. Un message dans le chat propose de les acheter : *« The wandering trader offers to buy N items for X Energy Shards »*.
+3. Clique sur **[Trade All]** dans ce message, ou tape `/tradeall`.
+4. Un menu **Trade Preview** liste tout ce qu'il va acheter et la valeur de chaque pile. Clique sur une pile pour la retirer de l'échange.
+5. Clique sur **CONFIRM TRADE**. Les ingrédients sont pris et les éclats arrivent dans ton inventaire.
+
+Si tu ne portes rien qui l'intéresse, le villageois *« finds nothing of interest in your pack »*.
+
+Le villageois n'achète **que des ingrédients de Voie**, pas de formules, de potions ni d'autres objets. Les Séquences plus puissantes valent plus :
+
+| Séquence de l'ingrédient | Éclats par ingrédient (presque tous les ingrédients) |
+|---|---|
+| Séquence 9 | 10 |
+| Séquence 8 | 15 |
+| Séquence 7 | 20 |
+| Séquence 6 | 25 |
+| Séquence 5 et plus puissante | 30 |
+
+<Notice tone="warn" title="Vérifie l'aperçu">
+L'échange prend toutes les piles correspondantes de ton inventaire. Retire dans le Trade Preview tout ce que tu veux garder avant de confirmer, ou laisse-le d'abord dans un coffre.
+</Notice>
+
+Les Éclats d'énergie viennent aussi du [Battle Pass](/fr/guides/battle-pass/) (de 200 à 3 000 éclats sur beaucoup de paliers) et des événements.
+
+### À quoi servent les Éclats d'énergie ?
+
+- Les niveaux d'[Ordre secret](/fr/guides/orders/), qui coûtent 50, 200, 1 000 et 5 000 éclats pour les niveaux 1 à 4, versés dans la réserve commune de l'Ordre.
+- Les extras d'Ordre secret comme Battle Cry, les améliorations permanentes, la fondation d'une Secret Lair et ses cristaux de téléportation.
+- Les échanges avec les [Beyonders sauvages](/fr/magic/wild-beyonders/), avec l'argent et les pièces physiques de Verl d'or.
+
+Les objets **Shard of ...** de l'Emporium, comme *Shard of Boon Token*, ne sont pas des Éclats d'énergie. Ce sont des [fragments de fabrication](/fr/guides/emporium/#que-sont-les-fragments-de-lemporium-) pour une récompense précise.
+
+## Pages liées
+
+<CardGrid>
+  <Card title="Emporium brillant" text="Dépense les points d'Emporium gagnés avec les récompenses quotidiennes et les votes." icon="star" href="/fr/guides/emporium/" />
+  <Card title="Agora" text="Le marché souterrain anonyme pour les échanges entre joueurs." icon="coin" href="/fr/guides/agora/" />
+  <Card title="Battle Pass" text="Des quêtes qui rapportent de l'argent, des éclats, des points et des Grâces." icon="scroll" href="/fr/guides/battle-pass/" />
+</CardGrid>

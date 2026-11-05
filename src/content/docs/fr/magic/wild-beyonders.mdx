@@ -1,0 +1,118 @@
+---
+title: "Beyonders sauvages"
+description: "Les Beyonders sauvages sur Mysterria, le serveur Minecraft LOTM : qui est hostile, ce qu'ils vendent et à quel prix, ce qu'ils lâchent et comment les combattre."
+sidebar:
+  order: 33
+---
+
+import {Figure} from '~/components/mdx';
+import leadImage from '~/assets/heroes/wild-beyonders.webp';
+import wbTrade from '~/assets/magic/wild-beyonder-trade.webp';
+
+<Figure src={leadImage} eager alt="Un Beyonder sauvage" />
+
+Les Beyonders sauvages sont des Beyonders PNJ qui errent dans les terres sauvages, chacun avec une Voie et une Séquence de la **Séquence 9 à la Séquence 5**. Selon ta propre Voie, ils commercent avec toi ou t'attaquent à vue, et ils se battent avec de vraies capacités de Voie.
+
+## Un Beyonder sauvage va-t-il m'attaquer ?
+
+Ça dépend seulement de ta Voie par rapport à la sienne :
+
+| Tu es | Son attitude | Commerce |
+|---|---|---|
+| De la **même Voie** | Paisible, sauf si tu attaques | Prix normaux |
+| D'une **Voie voisine** (même groupe) | Paisible, sauf si tu attaques | Prix **x1,5** |
+| De **toute autre Voie** | Hostile à vue | Impossible |
+| **Pas encore Beyonder** | Hostile à vue | Impossible |
+| N'importe qui qui attaque en premier | Hostile | Impossible |
+
+Les Voies voisines sont celles du même groupe, par exemple Fool, Error et Door. La page [Voies](/fr/magic/pathways/) liste les groupes. Un clic droit sur un Beyonder sauvage hostile affiche « This Wild Beyonder is hostile toward your pathway! ».
+
+Si tu meurs ou te déconnectes, le Beyonder sauvage perd ta trace et ne te poursuit pas quand tu reviens.
+
+## Où apparaissent les Beyonders sauvages ?
+
+Ils n'ont pas d'endroits fixes. Ils apparaissent autour des joueurs qui explorent.
+
+| Règle | Valeur |
+|---|---|
+| Vérification d'apparition | Toutes les 5 minutes, **5 % de chances** par joueur en ligne |
+| Distance par rapport à toi | 64 à 256 blocs |
+| Distance par rapport au spawn du monde | Au moins 200 blocs |
+| Distance entre eux | Au moins 100 blocs |
+| Maximum en même temps | 20 sur tout le serveur (40 pendant la Wild Tide) |
+| Disparition | Au bout de 60 secondes sans joueur à moins de 50 blocs |
+
+Les jours de **Wild Tide**, il en apparaît deux fois plus et deux fois plus peuvent exister en même temps. La page [Marées quotidiennes](/fr/guides/tides/) indique quand.
+
+### Quelle est leur puissance ?
+
+| Séquence | 9 | 8 | 7 | 6 | 5 |
+|---|---|---|---|---|---|
+| Part des apparitions (environ) | 32 % | 21 % | 19 % | 18 % | 11 % |
+
+Il n'y a pas de Beyonder sauvage de Séquence 4 ou plus puissant.
+
+## Comment commercer avec un Beyonder sauvage ?
+
+Fais un clic droit sur un Beyonder sauvage paisible. La première fois que tu en rencontres un, il te salue, et le menu d'échange s'ouvre environ 10 secondes plus tard. Tu ne peux pas commercer pendant qu'il se bat.
+
+Chaque offre coûte le même nombre en argent de ton portefeuille, en **Éclats d'énergie** et en pièces de **Verl d'or**, le tout payé en une fois. Les Éclats d'énergie s'obtiennent en vendant des ingrédients aux villageois simplets et sans profession, comme l'explique [Éclats d'énergie](/fr/guides/economy/#éclats-dénergie). Le Verl d'or est la plus grosse pièce du portefeuille (voir [Économie](/fr/guides/economy/)).
+
+### Que vendent-ils ?
+
+Un Beyonder sauvage a au plus 8 offres, toutes de sa propre Voie :
+
+| Offre | Quand elle apparaît |
+|---|---|
+| Ingrédients | Toujours, avec 1 ou 2 ingrédients pour chaque Séquence de la sienne jusqu'à la 9 |
+| Une potion | 30 % de chances, seulement si le Beyonder sauvage est de Séquence 8 ou plus puissant. La potion est de sa Séquence ou plus faible |
+| Une Caractéristique Beyonder | 50 % de chances, seulement s'il est de Séquence 7 ou plus puissant. Toujours de sa propre Séquence |
+| Une formule de potion | 20 % de chances, seulement s'il est de Séquence 6 ou plus puissant. De sa propre Séquence ou jusqu'à 2 plus faibles |
+
+### Combien ça coûte ?
+
+Le prix est multiplié par 1,5 pour chaque Séquence au-dessus de la 9. Chaque nombre ci-dessous se paie en argent, **et** en Éclats d'énergie, **et** en pièces de Verl d'or :
+
+| Séquence de l'objet | Ingrédient | Potion | Formule | Caractéristique |
+|---|---|---|---|---|
+| 9 | 100 | 500 | 1 500 | 2 000 |
+| 8 | 150 | 750 | 2 250 | 3 000 |
+| 7 | 225 | 1 125 | 3 375 | 4 500 |
+| 6 | 338 | 1 688 | 5 063 | 6 750 |
+| 5 | 507 | 2 532 | 7 594 | 10 125 |
+
+<Figure src={wbTrade} alt="Un menu d'échange de Beyonder sauvage avec une Brilliance Rock à 150 Money, 150 VerlDor et 150 Energy Shards" caption="Chaque offre indique son prix en argent, en pièces de Verl d'or et en Éclats d'énergie." contain />
+
+Si tu viens d'une Voie voisine, multiplie par 1,5. Un échange échoue sans rien te prendre si tu ne peux pas payer ou si tu n'as pas de place pour l'objet.
+
+## Que gagne-t-on en en tuant un ?
+
+Seuls les Beyonders sauvages apparus naturellement donnent des récompenses. Ceux invoqués par des capacités n'en donnent pas.
+
+| Récompense | Chance |
+|---|---|
+| Caractéristique Beyonder de sa Séquence | 30 % (Séquence 9), 25 % (8), 20 % (7), 15 % (6), 10 % (5) |
+| Ingrédients | 15 % pour chaque Séquence de la sienne jusqu'à la 9 |
+| [Artefact scellé](/fr/magic/sealed-artifacts/) | 5 % (Séquence 6), 10 % (Séquence 5) |
+| Interprétation | Par la source World, plafonnée comme toute l'[Interprétation](/fr/magic/acting/) |
+
+Le tableau des primes (`/bounty`) propose parfois une **Wild Beyonder Hunt** aux joueurs de Séquence 9 à 5, qui rapporte plus d'Interprétation.
+
+## Quelles capacités de Voie marchent sur les Beyonders sauvages ?
+
+Beaucoup de méthodes d'Interprétation te demandent de chasser ou de contrôler d'autres Beyonders. Les Beyonders sauvages te permettent de le faire sans déranger de vrais joueurs. Exemples confirmés :
+
+- **Hanged Man** peut faire paître leur âme avec Graze.
+- La Replication de **Door** peut copier leurs capacités.
+- **Fool** peut les transformer en Marionettes.
+- Bloodlust de la Voie **Abyss** compte la mort d'un Beyonder sauvage.
+
+Toutes les capacités de copie ne marchent pas sur eux, alors teste avant de compter dessus.
+
+:::caution[Interprétation Abyss]
+Tuer des Beyonders sauvages ne digère **pas** la potion Abyss. L'Interprétation Abyss vient seulement de la mort de joueurs Beyonder d'une Séquence qui convient.
+:::
+
+## À quel point sont-ils dangereux en combat ?
+
+Les Beyonders sauvages se battent comme des joueurs. Ils utilisent les capacités de leur Voie avec des **temps de recharge 20 % plus courts** que ceux d'un joueur, et ils battent en retraite quand leur vie baisse. Vérifie le nom et la Voie avant de t'approcher, et combats près d'un abri avec des soins prêts. Les Séquences plus hautes frappent bien plus fort mais lâchent de meilleures récompenses.

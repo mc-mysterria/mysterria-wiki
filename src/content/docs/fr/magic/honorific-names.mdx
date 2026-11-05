@@ -1,0 +1,134 @@
+---
+title: "Noms honorifiques"
+description: "Comment écrire, faire valider et psalmodier un Nom honorifique sur Mysterria à partir de la Séquence 4, la Divine Response, et la bénédiction de chaque dieu. Un guide Lord of the Mysteries."
+sidebar:
+  label: Noms honorifiques
+  order: 32
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import lotm from '~/assets/magic/lotm.jpg';
+import honorificEditor from '~/assets/magic/honorific-editor.webp';
+
+<Figure src={lotm} alt="Illustration de Lord of the Mysteries avec une silhouette assise sur un trône au-dessus de la brume grise" />
+
+## Qu'est-ce qu'un Nom honorifique ?
+
+Un **Nom honorifique** est une courte série de lignes que les autres joueurs psalmodient dans le chat pour te joindre, où que tu sois. Chaque Beyonder de **Séquence 4 ou plus puissant** peut en écrire un.
+
+Voici un exemple en cinq lignes, écrit en anglais car le jeu ne reconnaît que les noms anglais et ukrainiens des Voies :
+
+> *King of the Skies*
+>
+> *Emperor of the Seas*
+>
+> *Lord of the Calamity*
+>
+> *God of the Storms*
+>
+> *The Wanderer Known to Mysterria*
+
+## Comment définir mon Nom honorifique ?
+
+Ouvre le menu de ton personnage (`/coi menu character`, ou la touche M avec le [Client Mod](/fr/guides/client-mod/)) et clique sur l'emplacement du Nom honorifique. Tant que tu n'en as pas défini un, tu reçois un rappel dans le chat toutes les 30 minutes avec un bouton qui ouvre l'éditeur.
+
+<Figure src={honorificEditor} alt="L'éditeur de Nom honorifique avec trois lignes remplies et une infobulle d'état qui indique Complete et Active" caption="L'éditeur de Nom honorifique. Le livre en haut indique si ton nom est complet et actif." contain />
+
+Le nombre de lignes dépend de ta Séquence :
+
+| Ta Séquence | Lignes |
+|---|---:|
+| 4 ou 3 | 5 |
+| 2 ou 1 | 4 |
+| 0 | 3 |
+
+Quand tu progresses et que le nom raccourcit, la dernière ligne est gardée. Le nom est alors vérifié de nouveau et peut rester inactif jusqu'à ce que ses lignes décrivent ta nouvelle condition.
+
+### Règles des lignes
+
+Chaque ligne doit :
+
+- Faire de 2 à 80 caractères.
+- Ne pas commencer par `!` ou `/`.
+- Ne pas être faite uniquement de chiffres.
+- N'avoir ni double espace ni espace au début ou à la fin.
+- N'utiliser que des lettres (latines ou cyrilliques), des chiffres et une ponctuation simple.
+
+### Qu'est-ce qui rend un nom valide ?
+
+Un nom valide doit désigner clairement **toi**. Il n'a pas besoin de ton pseudo. L'éditeur affiche combien d'indices d'identité il a trouvés, et il te faut un score de **3**. Un seul descripteur personnel fort ou plusieurs indices liés suffisent. Les indices qui comptent :
+
+- Ton pseudo ou une partie parlante de celui-ci
+- Ta ville, ton église, ton site d'église, ta Land liée ou ta nation
+- Ta Voie ou le titre de ta Séquence actuelle
+- Une capacité que tu as à ta Séquence actuelle
+- Des notions de Voie reconnues et des formules officielles
+- Un descripteur personnel approuvé par le staff
+
+La comparaison ignore les majuscules, la ponctuation, les espaces, les apostrophes et les traits d'union. Les noms anglais et ukrainiens des Voies, des Séquences et des capacités sont reconnus.
+
+L'éditeur refuse les noms incomplets, les mauvais nombres de lignes, les lignes vides ou répétées, les phrases de chat ordinaires, les mots de remplissage isolés et les noms qui désignent déjà quelqu'un d'autre. Un nom refusé est gardé comme brouillon, mais le psalmodier ne fait rien tant qu'il n'est pas valide.
+
+## Comment psalmodier le nom de quelqu'un ?
+
+Tape chaque ligne de son nom comme un message de chat normal, dans l'ordre.
+
+- Tu as **15 secondes** entre deux lignes.
+- Une ligne de trois mots ou plus compte même si elle se trouve dans une phrase plus longue.
+- Tu ne peux pas psalmodier ton propre nom, sauf à travers une marionnette ou un corps d'Avatar.
+
+Quand la dernière ligne arrive :
+
+- Tu entres dans un délai de psalmodie de **15 minutes**.
+- Si le propriétaire est en ligne, il voit tes coordonnées et une invitation à répondre, qui expire au bout de **2 minutes**.
+- Si le propriétaire appartient à une église, la psalmodie compte comme une prière extérieure à cette [église](/fr/magic/churches/), et le propriétaire peut t'inviter à la rejoindre.
+- Le propriétaire reçoit le haut fait légendaire **Your honorific invoked**, qui compte pour la [Séquence 0](/fr/magic/sequence-zero/).
+
+<Notice tone="info" title="Attention à Disguise">
+La capacité Disguise de la Voie Error peut intercepter en secret le prochain appel de Nom honorifique terminé ou la prochaine Church Blessing d'une église. Le propriétaire de l'église et les Anges sont prévenus et peuvent l'arrêter en disant le nom du voleur dans le chat.
+</Notice>
+
+## Que puis-je faire quand on psalmodie mon nom ?
+
+Clique sur l'invitation pour ouvrir le menu **Divine Response** :
+
+| Bouton | Ce qu'il fait |
+|---|---|
+| **Teleport** | Ouvre un portail et t'emmène jusqu'à la personne qui psalmodie. Vous devez être dans le même monde, et ça ne marche pas dans les donjons |
+| **Smite** | Frappe la personne qui psalmodie d'un éclair de 4 dégâts (2 cœurs) |
+| **Gift Items** | Envoie un objet de ton inventaire à la personne qui psalmodie, à n'importe quelle distance |
+
+Utiliser l'un d'eux lance pour toi, le propriétaire, un délai de **30 minutes**. Les autres joueurs peuvent toujours psalmodier ton nom pendant ce temps, et chacun a son propre délai.
+
+## Que se passe-t-il quand on psalmodie le nom d'un dieu ?
+
+Psalmodier le nom d'un dieu de [Séquence 0](/fr/magic/sequence-zero/) ouvre son menu Divine Response comme d'habitude. Chaque psalmodie terminée bénit aussi tout de suite la **personne qui psalmodie**, même si le dieu est hors ligne ou ne répond pas.
+
+- La bénédiction dure jusqu'à **2 minutes** et s'accompagne des particules et du son propres à la Voie.
+- La bénédiction de chaque dieu a un délai de **60 minutes** **partagé par tous ceux qui psalmodient** ce dieu. Si quelqu'un d'autre l'a psalmodié dans l'heure, ta psalmodie atteint quand même le dieu, mais aucune bénédiction ne se déclenche.
+- La bénédiction n'affecte que la personne qui psalmodie. Elle ne pose jamais de blocs et ne touche personne d'autre.
+
+| Voie du dieu | Bénédiction |
+|---|---|
+| [Fool](https://www.mysterria.net/en/pathways/fool) | Chance II, Résistance I |
+| [Error](https://www.mysterria.net/en/pathways/error) | Chance I, Vitesse I |
+| [Door](https://www.mysterria.net/en/pathways/door) | Vitesse II, Saut amélioré I |
+| [Sun](https://www.mysterria.net/en/pathways/sun) | Régénération II, Résistance au feu I |
+| [Visionary](https://www.mysterria.net/en/pathways/visionary) | Vision nocturne I, Chance I |
+| [Tyrant](https://www.mysterria.net/en/pathways/tyrant) | Force de conduit I, Grâce du dauphin I |
+| [White Tower](https://www.mysterria.net/en/pathways/tower) | Résistance II, Chute lente I |
+| [Hanged Man](https://www.mysterria.net/en/pathways/hanged) | Vitesse II, Célérité I |
+| [Red Priest](https://www.mysterria.net/en/pathways/priest) | Régénération III, Force II, Résistance au feu (un rite unique avec du feu et un Red Eye) |
+| [Demoness](https://www.mysterria.net/en/pathways/demoness) | Force I, Vitesse II |
+| [Darkness](https://www.mysterria.net/en/pathways/darkness) | Vision nocturne I, Invisibilité I |
+| [Death](https://www.mysterria.net/en/pathways/death) | Résistance I, Vision nocturne I |
+| [Twilight Giant](https://www.mysterria.net/en/pathways/giant) | Force II, Résistance I |
+| [Paragon](https://www.mysterria.net/en/pathways/paragon) | Régénération II, Absorption I |
+| [Hermit](https://www.mysterria.net/en/pathways/hermit) | Vision nocturne I, Célérité I |
+| [Mother](https://www.mysterria.net/en/pathways/mother) | Régénération II, Saturation I |
+| [Moon](https://www.mysterria.net/en/pathways/moon) | Régénération I, Force I |
+| [Abyss](https://www.mysterria.net/en/pathways/abyss) | Force II, Vision nocturne I |
+| [Chained](https://www.mysterria.net/en/pathways/chained) | Résistance II, Chute lente I |
+| [Black Emperor](https://www.mysterria.net/en/pathways/emperor) | Force II, Résistance au feu I |
+| [Justiciar](https://www.mysterria.net/en/pathways/justiciar) | Résistance II, Force I |
+| [Wheel of Fortune](https://www.mysterria.net/en/pathways/fortune) | Chance II, Vitesse I |

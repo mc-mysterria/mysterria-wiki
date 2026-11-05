@@ -1,0 +1,137 @@
+---
+title: "Donjons"
+description: "Les donjons sur Mysterria, le serveur Minecraft LOTM : les quatre donjons, la taille des groupes, les paliers de puissance et de difficulté, les temps de recharge, les Helping Cards et les classes."
+sidebar:
+  order: 36
+---
+
+import {Figure} from '~/components/mdx';
+import subspaceMenu from '~/assets/dungeons/subspace-menu.webp';
+import chooseDifficulty from '~/assets/dungeons/choose-difficulty.webp';
+import cardShop from '~/assets/dungeons/helping-card-shop.webp';
+
+![Une salle de boss de donjon](~/assets/dungeons/dungeons.png)
+
+Les donjons sont des mondes à part dans lesquels un groupe entre par une **Faille** du monde normal. Tu traverses des salles en combattant jusqu'à un boss final avec l'équipement de ta classe, et tu repars avec du butin, des Helping Cards et de l'Interprétation. Chaque joueur n'a **qu'une vie** par partie.
+
+## Quels donjons existent ?
+
+| Donjon | Taille du groupe | Puissance du donjon | Décor |
+|---|---|---|---|
+| **The Shivering Hollow** | 4 | 0 | Une caverne souterraine gelée |
+| **Embers Resurgence** | 5 | 100 | Une forteresse volcanique |
+| **Root of the Canopy** | 4 | 240 | Un labyrinthe de racines géantes |
+| **The Dust Citadel** | 3 | 450 | Une forteresse enfouie dans le désert |
+
+The Shivering Hollow et Embers Resurgence ont chacun deux entrées, les autres une seule. The Shivering Hollow est ouvert aux joueurs qui ne sont pas encore Beyonders.
+
+## Comment trouver un donjon ?
+
+Tape `/subspace`. Le menu liste chaque donjon avec les coordonnées de chaque Faille d'entrée, ta puissance comparée à celle du donjon, ainsi que tes temps de recharge et les parties à cartes qui te restent aujourd'hui.
+
+<Figure src={subspaceMenu} alt="Le menu Ventures to the Subspace avec une infobulle pour The Dust Citadel, niveau de puissance 450 et une entrée" caption="Le menu /subspace. Survole un donjon pour voir son niveau de puissance et ses entrées." contain />
+
+![Une Faille d'entrée](~/assets/dungeons/entrance.png)
+
+Une Faille est un pilier de particules scintillantes. Entre dedans avec ton groupe pour commencer.
+
+## Comment entrer dans un donjon ?
+
+1. **Forme un groupe** avec `/party` et invite tes amis. `/ready` et `/leave` gèrent la file d'attente.
+2. **Va jusqu'à la Faille** et entre dedans.
+3. **Choisis une difficulté** dans l'écran « Choose Difficulty ».
+4. **Choisis une classe** quand le donjon se charge. Si tu ne choisis pas à temps, une classe t'est attribuée.
+
+<Figure src={chooseDifficulty} alt="L'écran Choose Difficulty avec une infobulle pour Normal qui demande 450 de puissance, avec dégâts infligés et subis à x1" caption="Choose Difficulty. Survole un palier pour voir la puissance qu'il demande." contain />
+
+Si ton groupe est plus petit que la taille prévue du donjon, on te demande **Enter Understaffed?** Ce n'est permis que si ta puissance ne dépasse pas celle du donjon de plus de 150. Les joueurs trop puissants doivent venir avec un groupe complet.
+
+:::note[Vide tes mains]
+Le donjon ne démarre pas si quelqu'un du groupe porte certaines ressources (« Someone in the party is carrying resources! »). Laisse tes objets de valeur chez toi.
+:::
+
+## Qu'est-ce que la puissance de donjon ?
+
+Ta puissance dépend de ta Séquence :
+
+| Séquence | 9 | 8 | 7 | 6 | 5 |
+|---|---|---|---|---|---|
+| Puissance | 30 | 60 | 100 | 150 | 220 |
+
+| Séquence | 4 | 3 | 2 | 1 | 0 |
+|---|---|---|---|---|---|
+| Puissance | 320 | 450 | 600 | 800 | 999 |
+
+Tu ne peux entrer dans un donjon que si ta puissance est **au plus 29 points sous** celle du donjon. Être en dessous t'affaiblit aussi. Par paliers à 10, 20 et 29 points sous la puissance du donjon, les dégâts que tu infliges baissent (jusqu'à x0,4) et ceux que tu subis augmentent (jusqu'à x1,6). À la puissance du donjon ou au-dessus, il n'y a pas de pénalité.
+
+## Quels sont les paliers de difficulté ?
+
+Chaque donjon a quatre paliers. Les paliers plus durs rapportent plus d'Interprétation et de meilleures Helping Cards.
+
+| Palier | Puissance nécessaire | Dégâts infligés | Dégâts subis |
+|---|---|---|---|
+| Normal | Puissance du donjon | x1,0 | x1,0 |
+| Advanced | Puissance du donjon + 50 | x0,7 | x1,5 |
+| Master | Puissance du donjon + 150 | x0,5 | x1,8 |
+| Grandmaster | 450 (Séquence 3) ou plus | x0,3 | x2,5 |
+
+En Master et en Grandmaster, tu es aussi toujours considéré comme un peu en dessous de la puissance demandée.
+
+## À quelle fréquence puis-je faire un donjon ?
+
+| Type de partie | Fréquence | Ce que tu obtiens |
+|---|---|---|
+| **Partie avec butin** | Une fois toutes les **72 heures** par donjon | Le butin des coffres et du boss |
+| **Partie à cartes** | Jusqu'à **2 par donjon et par jour** pendant ton temps de recharge | Les coffres sont scellés. Tu reçois **1 Helping Card** à la fin |
+
+La plupart du butin tombe sous forme de **fragments** (« Shard of ... »). Fais un clic droit en tenant assez de fragments pour les combiner en vrai objet. Une formule ou une potion de Séquence 9 demande 2 fragments, et les objets plus puissants en demandent plus, jusqu'à 9 pour la Séquence 0.
+
+### À quoi servent les clés de donjon ?
+
+| Clé | Effet |
+|---|---|
+| **Simple Key** | Remet à zéro ton propre temps de recharge de butin pour un donjon |
+| **Premium Key** | Remet à zéro le temps de recharge de ton groupe (jusqu'à la taille de groupe du donjon), fait de la partie une partie avec butin et double les Helping Cards |
+
+Fais un clic droit sur une clé et choisis le donjon. Les clés viennent du Battle Pass et de la boutique.
+
+## À quoi servent les Helping Cards ?
+
+Une **Helping Card** appartient à un donjon et à un palier. Fais un clic droit dessus pour ouvrir la **Helping Card Shop** et échanger des cartes contre des récompenses. Par exemple, à Embers Resurgence en Master :
+
+<Figure src={cardShop} alt="La Helping Card Shop avec une infobulle pour l'Ingredient Exchange Token à Embers Resurgence en Master, coût 8 Helping Cards" caption="La Helping Card Shop. Survole une récompense pour voir son coût en cartes." contain />
+
+| Récompense | Cartes |
+|---|---|
+| Ingredient Token | 8 |
+| Recipe Token (Séquence 6) | 12 |
+| Potion Token (Séquence 6) | 16 |
+| Acting Bottle (10 000) | 20 |
+| Anti-Control Charm | 24 |
+| Ritual Book (Tier I) | 32 |
+
+Root of the Canopy et The Dust Citadel donnent les récompenses de leur boutique sous forme de fragments de butin au lieu d'objets entiers. Les boutiques Grandmaster d'Embers Resurgence et de Root of the Canopy vendent aussi le [Pathway Transfer Token](/fr/guides/special-items/).
+
+## Combien d'Interprétation rapportent les donjons ?
+
+Terminer un donjon donne de l'Interprétation par la source World. Les paliers plus durs en donnent plus (Advanced x1,25, Master x1,5, Grandmaster x2). L'Interprétation des donjons est plafonnée à **600 par jour** pour tous les donjons réunis, avec une remise à zéro à minuit UTC.
+
+## Quelle classe choisir ?
+
+| Classe | Dégâts magiques | Dégâts physiques | Notes |
+|---|---|---|---|
+| **Tank** | x0,3 | x0,6 | Grosse défense, attire les monstres sur lui |
+| **Mage** | x2,2 | x0,15 | Les sorts frappent fort, les mains nues ne servent à rien |
+| **Warrior** | x0,7 | x1,8 | Fort au corps à corps, meurt vite |
+| **Archer** | x0,8 | x0,7 | Les arcs et arbalètes infligent x2,2 |
+| **Support** | x1,0 | x0,8 | Forte défense magique, accès à tous les bonus |
+
+Un groupe équilibré a un Tank pour retenir les monstres, des attaquants adaptés à vos Beyonders et un Support si vous en avez un.
+
+### Quelles capacités sont interdites dans les donjons ?
+
+Ces capacités ne marchent pas dans un donjon : Nightmare, Nightmare World, Traveler's Door, Exile, Thread Hands, Threads, Paper Figurine, Pocket Space, Holy Equipment, Lockpick, Wraith Transformation, Puppet Transformation et la possession de marionnette. Certaines classes bloquent aussi certaines capacités (« Your class cannot use this ability in the dungeon! »).
+
+## Et les Failles fermées ?
+
+Une Faille peut être fermée jusqu'à ce que les joueurs l'affaiblissent ensemble. Tiens-toi près d'elle, accepte « The node is too strong. You can try to weaken it. [Try?] » et survis à la défense pendant qu'elle absorbe tes fragments. En ce moment, toutes les Failles de donjon sont ouvertes.

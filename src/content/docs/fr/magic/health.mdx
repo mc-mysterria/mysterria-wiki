@@ -1,0 +1,70 @@
+---
+title: "Santé Beyonder"
+description: "Comment marchent les points de vie Beyonder sur Mysterria : PV maximum selon la Séquence, lien entre les dégâts des sorts et les cœurs, plafonds de dégâts en PvP, soins en combat et comment voir tes vrais PV."
+sidebar:
+  label: Santé
+  order: 8
+---
+
+import {Figure} from '~/components/mdx';
+import heartsNumbers from '~/assets/magic/health-hearts-numbers.webp';
+
+Chaque Beyonder a une réserve cachée de **PV Beyonder** qui grandit à chaque Séquence, alors que tes cœurs restent les mêmes. Les sorts et les créatures Beyonder frappent cette réserve, et tes cœurs montrent quelle part il en reste.
+
+## Combien de PV a chaque Séquence ?
+
+| Séquence | PV max |
+|---|---:|
+| 9 | 50 |
+| 8 | 75 |
+| 7 | 125 |
+| 6 | 175 |
+| 5 | 225 |
+| 4 | 450 |
+| 3 | 675 |
+| 2 | 1 025 |
+| 1 | 1 375 |
+| 0 | 2 500 |
+
+Tes PV max viennent de ta Séquence **la plus puissante**. Certaines capacités les changent pendant un moment.
+
+## Quel lien avec mes cœurs ?
+
+Tes PV Beyonder et tes cœurs affichent toujours le **même pourcentage**. À 60 % de tes PV Beyonder, tu es à 60 % de tes cœurs.
+
+Les dégâts d'un sort sont retirés de tes PV Beyonder, et tes cœurs baissent de la même proportion, donc un Beyonder plus puissant perd moins de cœurs face au même sort. Prenons deux joueurs.
+
+- Le joueur A est un Beyonder Sun de Séquence 4 avec **450 PV**. Le joueur B est un Fool de Séquence 8 avec **75 PV**.
+- A touche B avec un sort de 60 dégâts. B n'a plus que 15 PV, donc **80 % de ses cœurs disparaissent** en un seul sort.
+- B touche A avec un sort de 28 dégâts. A a encore 422 PV et perd à peine plus d'un demi-cœur.
+
+## L'armure me protège-t-elle des sorts ?
+
+Non. **Les dégâts des sorts Beyonder sont des dégâts directs**, donc l'armure, les enchantements, les effets de potion et les boucliers ne les réduisent pas. La seule protection vanilla qui marche est l'**Absorption**, et elle est plafonnée à **40 % de tes PV max**.
+
+## Limites de dégâts en PvP
+
+Pour éviter les morts en un clic entre joueurs de force semblable, les dégâts des sorts en PvP ont des limites. **Par coup**, un sort peut retirer au maximum :
+
+| L'attaquant comparé à toi | Maximum par coup |
+|---|---|
+| Plus faible (numéro de Séquence plus élevé) | 20 % de tes PV max |
+| Même Séquence | 30 % |
+| Une Séquence plus puissante | 50 % |
+| Deux Séquences ou plus au-dessus | Pas de limite |
+
+Sur toute période de 2 secondes, les dégâts en rafale au-delà de 35 % de tes PV max sont réduits à 30 % de leur valeur, et rien ne dépasse 60 %. Ça ne s'applique que si l'attaquant n'a pas deux Séquences ou plus d'avance.
+
+Les bonus et réductions de dégâts cumulés restent aussi dans une fourchette, donc un coup inflige toujours entre 15 % et 250 % de ses dégâts normaux.
+
+## Se soigner pendant un combat
+
+Pendant les 15 secondes qui suivent les derniers dégâts magiques reçus, tu es **en combat magique** et les soins sont plus faibles. La régénération naturelle grâce à la nourriture ne soigne que **15 %** de la normale. Soin instantané et Régénération soignent **50 %**, et chaque soin est plafonné à **5 % de tes PV max**.
+
+## Comment voir mes vrais PV ?
+
+Ta Santé est indiquée sur l'écran de ton personnage (`/coi menu character`). Le [Client Mod](/fr/guides/client-mod/) peut aussi remplacer tes cœurs par un affichage des PV Beyonder dans les styles Hearts + Numbers, Bar, Ornate Bar ou Segments.
+
+La capacité **Body Language Analysis** d'un Spectator de Séquence 9 de la Voie [Visionary](https://www.mysterria.net/en/pathways/visionary) affiche les PV actuels et maximum d'un autre joueur.
+
+<Figure src={heartsNumbers} alt="Les cœurs et la barre d'outils avec 450 / 450 affiché au-dessus des cœurs" caption="Le style Hearts + Numbers du Client Mod affiche tes vrais PV au-dessus des cœurs." contain />

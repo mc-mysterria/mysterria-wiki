@@ -1,0 +1,135 @@
+---
+title: "Nations et guerres"
+description: "Nations et guerres de villes sur Mysterria : fonder une nation, niveaux et effets de nation, taxes, déclarer la guerre, Capture Flags, modes de guerre et ce que gagne le vainqueur."
+sidebar:
+    label: Nations et guerres
+    order: 32
+---
+
+import {Card, CardGrid, Notice} from '~/components/mdx';
+
+Les villes peuvent s'unir en une **nation**, et les villes et les nations peuvent **se faire la guerre** pour se prendre de l'argent ou du terrain. Les deux demandent d'abord une [ville](/fr/guides/towns/).
+
+## Nations
+
+Une **nation** est une union de villes sous une même bannière. Une ville en est la **capitale**.
+
+### Comment fonder une nation ?
+
+```
+/nations create <name>
+```
+
+- Ta ville doit être au [niveau 5](/fr/guides/towns/#niveaux-de-ville), **Domain**.
+- Ça coûte **20 000 Coppets**.
+- Le nom doit faire de 5 à 24 caractères, sans espaces.
+
+`/n` est la forme courte de `/nations`.
+
+### Commandes de nation
+
+| Commande | Ce qu'elle fait |
+|---|---|
+| `/nations` | Ouvrir le menu de la nation |
+| `/nations trust <town>` | Inviter une ville. Son propriétaire accepte avec `/nations accept` |
+| `/nations untrust <town>` | Retirer une ville |
+| `/nations leave` | Quitter ta nation |
+| `/nations level` | Voir la progression vers le prochain niveau de nation |
+| `/nations setcapital <town>` | Déplacer la capitale |
+| `/nations rename <name>` | Renommer pour 10 000 Coppets, au plus une fois par jour |
+| `/nations delete` | Dissoudre la nation (les villes restent) |
+
+Pour le chat de la nation, écris `!n`, `!nation` ou `!nations` devant un message.
+
+### Niveaux et effets de nation
+
+Une nation monte de niveau automatiquement, en comptant toutes ses villes ensemble.
+
+| Niveau | Nom | Villes | Joueurs de confiance uniques | Argent de toutes les villes | Effets débloqués | Actifs en même temps |
+|---|---|---|---|---|---|---|
+| 1 | **Covenant** | - | - | - | Aucun | 0 |
+| 2 | **Order** | 3 | 100 | 60 000 Coppets | Saut amélioré, Vitesse, Célérité, Grâce du dauphin | 1 |
+| 3 | **Dominion** | 5 | 200 | 120 000 Coppets | Saut amélioré II, Vitesse II, Célérité II, Grâce du dauphin II, Absorption, Vision nocturne, Chance, Force, Bonus de vie | 3 |
+
+Order ajoute aussi 50 claims et réduit l'entretien de la nation de 10 %. Dominion ajoute 100 claims et le réduit de 20 %.
+
+### Combien coûte une nation ?
+
+- Les villes d'une nation arrêtent de payer l'entretien au serveur. À la place, elles paient à la nation une taxe que la nation fixe, jusqu'à **5 Coppets par chunk** à chaque cycle. Une ville qui ne peut pas payer est retirée de la nation.
+- La nation paie au serveur un entretien de **3 Coppets par chunk** à chaque cycle. Une nation qui ne peut pas payer est **supprimée**, mais ses villes restent.
+- Les nouvelles nations ne paient aucun entretien pendant leurs 2 premiers jours.
+
+### Revendiquer près d'une nation
+
+Les villes d'une nation gardent une marge de **3 chunks**, donc les autres villes ne peuvent pas revendiquer à moins de 3 chunks d'elles. Les rôles Nation et Ally peuvent revendiquer à la frontière les uns des autres par défaut.
+
+## Guerres
+
+N'importe quelle ville ou nation peut déclarer la guerre à une autre. Le défenseur **n'a pas besoin d'accepter**. La guerre commence après **1 jour de préparation**.
+
+### Qui peut déclarer la guerre ?
+
+- La ville qui attaque doit avoir au moins **5 000 Coppets** dans sa banque.
+- Il n'y a pas de taille, de nombre de membres ou d'âge minimum, ni de règle sur l'écart de niveau. Un Domain peut déclarer la guerre à un Shelter tout neuf.
+- Une nouvelle ville ou nation reçoit un **bouclier de guerre d'1 jour**. Les villes qui viennent de finir une guerre peuvent avoir un bouclier plus long (voir [Que gagne le vainqueur ?](#que-gagne-le-vainqueur-)).
+- Dans une ville, par défaut, seul l'Owner peut gérer les guerres.
+
+### Commandes de guerre
+
+| Commande | Ce qu'elle fait |
+|---|---|
+| `/wars` | Ouvrir le menu des guerres |
+| `/wars declare <town or nation>` | Déclarer la guerre |
+| `/wars info captureflag` | Afficher la recette du Capture Flag |
+
+Les deux camps peuvent se rendre, pendant la préparation ou pendant la guerre. Se rendre est en général moins dur que perdre une guerre menée jusqu'au bout.
+
+### Comment se déroule une guerre ?
+
+Chaque guerre a un **mode de guerre** (comment elle est notée) et un **but de guerre** (ce que gagne le vainqueur). Les nouvelles guerres sont une **Skirmish** menée pour un **Raid**, sauf si un autre mode ou un autre but est choisi.
+
+| Mode | Comment on le gagne |
+|---|---|
+| **Skirmish** (par défaut) | Des points, avec 1 par mort, 5 par drapeau capturé, 3 par drapeau cassé et 5 par drapeau détruit par une explosion. Le premier camp qui atteint 5 points par joueur de la plus petite équipe (au moins **100**) gagne. Au bout de **36 heures**, le meilleur score gagne |
+| **King of the Hill** | Tiens un point neutre dans une arène pour marquer 5 points toutes les 20 secondes. Les morts ne rapportent rien. 100 points ou 30 minutes. Proposé seulement quand le staff a préparé une arène |
+| **King of the Hill (player lands)** | Chaque camp place un point sur son propre terrain et marque en tenant celui de l'ennemi. 100 points ou 30 minutes |
+
+Pendant une guerre, les ennemis peuvent entrer sur ton terrain, attaquer des joueurs et ramasser des objets, et poser ou casser des échelles, des lianes et des échafaudages. Ils ne peuvent le faire que tant qu'**au moins un défenseur est en ligne** sur le terrain envahi.
+
+Tu ne **gardes pas** ton inventaire si tu meurs pendant une guerre.
+
+### Capture Flags
+
+Un **Capture Flag** prend du terrain ennemi pendant une Skirmish.
+
+```
+  .   R   .        R = Vitre teintée en rouge
+  .   B   .        B = Balise
+  I   I   I        I = Bloc de fer
+```
+
+- Pose-le sur un terrain ennemi entre **Y 30 et Y 127**.
+- Tiens-le pendant **10 minutes** pour capturer. Le terrain capturé est **retiré** à l'ennemi.
+- Jusqu'à **3 drapeaux** peuvent être posés en même temps, avec **10 minutes** entre deux poses.
+- Casser un drapeau ennemi ou le détruire par une explosion rapporte aussi des points.
+
+### Que gagne le vainqueur ?
+
+| But | Le vainqueur reçoit | Bouclier de paix ensuite |
+|---|---|---|
+| **Raid** (par défaut) | Pendant **1 heure**, les membres du vainqueur peuvent ouvrir les conteneurs, les portes et les trappes, utiliser les mécanismes et ramasser des objets sur le terrain du perdant, et casser les blocs de construction courants (planches, bûches, pierre, pierre taillée, terre, sable, gravier, verre) pour entrer | Aucun |
+| **Skirmish** | **75 %** de la banque de la ville perdante (40 % si le perdant se rend). Aucun terrain n'est perdu | 7 jours pour les deux camps |
+| **Annex** | Tout le terrain de guerre du perdant est retiré. Le perdant reçoit le remboursement habituel pour les chunks libérés | 3 jours pour le perdant |
+| **Vassal** | La ville perdante rejoint la nation du vainqueur comme vassale aux droits limités. Seule une nation peut choisir ce but | Aucun |
+| **Independence** | Un vassal combat son suzerain pour se libérer. Si le vassal perd, il ne peut pas réessayer avant 7 jours | 7 jours pour le vainqueur |
+
+<Notice tone="warn" title="Les raids font mal">
+Pendant un Raid, les vainqueurs peuvent vider tes coffres pendant une heure, même si personne de ton terrain n'est en ligne. Garde tes objets de valeur derrière des blocs qui ne sont pas dans cette liste.
+</Notice>
+
+## Pages liées
+
+<CardGrid>
+  <Card title="Villes et avantages de ville" text="Fonder une ville, les niveaux et les coûts." icon="shield" href="/fr/guides/towns/" />
+  <Card title="Argent et portefeuille" text="D'où vient l'argent des guerres et des nations." icon="coin" href="/fr/guides/economy/" />
+</CardGrid>

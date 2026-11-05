@@ -1,0 +1,187 @@
+---
+title: "Interprétation"
+description: "Comment marche l'Interprétation (la digestion des potions) sur Mysterria : méthodes d'Interprétation, primes, Acting Bottles, plafonds par source, temps de recharge et la règle des 95 % pour ta prochaine potion LOTM."
+sidebar:
+  label: Interprétation
+  order: 5
+---
+
+import {Figure} from '~/components/mdx';
+import actingRecord from '~/assets/magic/acting-dossier.webp';
+import actingChat from '~/assets/magic/acting-cooldowns.webp';
+import bountyBoard from '~/assets/magic/bounty-board.webp';
+import bountyOffer from '~/assets/magic/bounty-offer-chat.webp';
+
+Un Beyonder **digère** une potion en interprétant le rôle que décrit sa Séquence. Sur Mysterria, tu remplis ta **barre d'Interprétation** en jouant ta Séquence comme elle est censée être jouée, et la potion suivante ne marche qu'une fois la barre presque pleine.
+
+## Pourquoi l'Interprétation compte-t-elle ?
+
+La potion suivante demande au moins **95 % d'Interprétation**. En dessous, la potion est refusée. Entre 95 % et 100 %, tu peux progresser, mais l'écart coûte de la Folie temporaire.
+
+| Interprétation | 95 % | 96 % | 97 % | 98 % | 99 % | 100 % |
+|---|---|---|---|---|---|---|
+| Folie temporaire | 30 % | 24 % | 18 % | 12 % | 6 % | 0 % |
+
+L'Interprétation augmente aussi ta [Spiritualité](/fr/magic/spirituality/) maximale, de la moitié à 0 % d'Interprétation jusqu'au maximum à 100 %.
+
+:::danger[N'insiste pas avec une potion refusée]
+Si une potion est refusée parce que ton Interprétation est trop basse, ne la rebois pas tout de suite. Un deuxième essai dans les 5 secondes lance une perte de contrôle avec seulement 10 % de chances de survie. Voir [Épreuves](/fr/magic/ordeals/).
+:::
+
+## Comment voir mon Interprétation ?
+
+L'écran de ton personnage affiche la barre. Ouvre l'icône de Voie dans ton inventaire et survole ta tête, ou tape `/coi menu character`. Avec le [Client Mod](/fr/guides/client-mod/), appuie sur **M**.
+
+`/coi acting` affiche les temps de recharge de tes méthodes d'Interprétation et ce que chaque source t'a donné par rapport à son plafond.
+
+<Figure src={actingRecord} alt="L'onglet Acting record du Dossier Beyonder du Client Mod, avec une progression d'Interprétation de 24 sur 27 648 et une barre pour la source Passive" caption="L'onglet Acting record du Dossier Beyonder du Client Mod." />
+
+<Figure src={actingChat} alt="Le résultat de /coi acting dans le chat avec l'état actuel, le bonus du Client Mod, les temps de recharge des méthodes et la source d'Interprétation Passive" caption="Ce que /coi acting affiche dans le chat." contain />
+
+## D'où vient l'Interprétation ?
+
+L'Interprétation vient de plusieurs **sources**. Chaque source a son propre **plafond**, c'est-à-dire la part de la barre qu'elle peut remplir à ta Séquence actuelle. Aucune source, sauf Stolen, ne peut remplir la barre seule, donc tu dois les combiner. Quand tu progresses, chaque source repart de zéro.
+
+| Source | Affichée comme | Ce que c'est |
+|---|---|---|
+| Méthodes d'Interprétation | Abilities | Utiliser tes capacités de la façon que demande ta Séquence |
+| Interaction entre joueurs | Interaction | Les primes PvP et le jeu du même genre avec d'autres joueurs |
+| Contenu du monde | World | Les primes PvE et de récolte, et les autres activités du monde |
+| Acting Bottles | Bottles | Des fioles d'Interprétation à lancer |
+| Passive | Passive | Un petit filet pendant que tu joues |
+| Événements | Events | Bedwars, Duels, FFA et tournois |
+| Interprétation volée | Stolen | Les pouvoirs Abyss qui volent de l'Interprétation |
+| Faveur divine | (à part) | Un cadeau du dieu de ta Voie |
+
+### Plafonds par Séquence
+
+Voici les plafonds par défaut, en pourcentage de ta barre.
+
+| Séquence | Bottles | Abilities | Interaction | World | Passive | Events | Faveur divine |
+|---|---|---|---|---|---|---|---|
+| 9 | 90 | 90 | 15 | 25 | 10 | 40 | 10 |
+| 8 | 80 | 80 | 15 | 25 | 10 | 40 | 10 |
+| 7 | 70 | 60 | 20 | 25 | 10 | 35 | 10 |
+| 6 | 55 | 70 | 20 | 30 | 10 | 30 | 15 |
+| 5 | 35 | 55 | 25 | 35 | 8 | 25 | 15 |
+| 4 | 20 | 50 | 30 | 40 | 5 | 15 | 15 |
+| 3 | 10 | 45 | 35 | 45 | 5 | 10 | 20 |
+| 2 | 8 | 45 | 30 | 50 | 5 | 20 | 20 |
+| 1 | 5 | 45 | 25 | 55 | 5 | 30 | 20 |
+
+L'Interprétation volée est plafonnée à 100 %. Au début, les fioles et les capacités remplissent l'essentiel de la barre. À partir de la Séquence 5, les fioles comptent moins et les primes et le contenu du monde comptent plus.
+
+<details>
+<summary>Plafonds selon le groupe de ta Voie (Bottles, Abilities, Interaction, World)</summary>
+
+Les Voies sont réparties en quatre groupes, et chaque groupe change certains plafonds. Passive, Events et Faveur divine restent comme ci-dessus.
+
+| Groupe | Voies |
+|---|---|
+| Combat | Tyrant, Twilight Giant, Red Priest, Hanged Man, Chained, Abyss, Death |
+| Social | Sun, Demoness, Visionary, Black Emperor, Justiciar |
+| Utilitaire | Fool, Door, Error, Hermit, White Tower, Paragon, Wheel of Fortune |
+| Soutien | Moon, Mother, Darkness |
+
+| Séquence | Combat | Social | Utilitaire | Soutien |
+|---|---|---|---|---|
+| 9 | 90 / 90 / 35 / 35 | 90 / 90 / 30 / 30 | 90 / 60 / 15 / 30 | 90 / 55 / 25 / 35 |
+| 8 | 80 / 80 / 35 / 35 | 80 / 80 / 30 / 30 | 80 / 60 / 15 / 30 | 80 / 55 / 25 / 35 |
+| 7 | 70 / 60 / 35 / 35 | 70 / 60 / 30 / 30 | 70 / 60 / 20 / 30 | 70 / 55 / 25 / 35 |
+| 6 | 55 / 70 / 35 / 35 | 55 / 70 / 30 / 30 | 55 / 60 / 20 / 30 | 55 / 55 / 25 / 35 |
+| 5 | 30 / 55 / 35 / 40 | 35 / 60 / 35 / 30 | 35 / 65 / 25 / 35 | 35 / 60 / 25 / 40 |
+| 4 | 15 / 50 / 40 / 45 | 20 / 55 / 40 / 30 | 20 / 60 / 30 / 40 | 20 / 55 / 25 / 45 |
+| 3 | 12 / 45 / 40 / 48 | 12 / 50 / 42 / 40 | 12 / 55 / 35 / 42 | 12 / 50 / 30 / 48 |
+| 2 | 10 / 45 / 35 / 52 | 10 / 48 / 38 / 45 | 10 / 52 / 30 / 48 | 10 / 48 / 28 / 52 |
+| 1 | 8 / 45 / 30 / 58 | 8 / 48 / 34 / 50 | 8 / 50 / 25 / 54 | 8 / 48 / 25 / 58 |
+
+Chaque case se lit Bottles / Abilities / Interaction / World. `/coi acting` affiche tes propres plafonds dès qu'une source t'a donné quelque chose.
+
+</details>
+
+## Méthodes d'Interprétation
+
+Lancer tes sorts ne rapporte rien en soi. Chaque capacité a une **méthode d'Interprétation**, une façon précise de l'utiliser qui correspond à ta Séquence, comme tuer un monstre avec ce sort, l'utiliser sur un autre Beyonder ou découvrir quelque chose grâce à lui. Seules les méthodes de ta Séquence **actuelle** comptent.
+
+Quand une méthode réussit, ta barre d'action l'indique et la méthode passe en **temps de recharge**. Une ligne dans le chat te prévient quand elle est de nouveau prête. La répéter au même endroit est bloqué pendant un moment, alors déplace-toi.
+
+Le temps de recharge compte le **temps de jeu actif**. Il avance deux fois moins vite quand tu es AFK et cinq fois moins vite quand tu es hors ligne.
+
+| Séquence | Interprétation par méthode | Temps de recharge (jeu actif) |
+|---|---|---|
+| 9 | 20 % | 22 min |
+| 8 | 20 % | 1 h 6 min |
+| 7 | 10 % | 3 h 9 min |
+| 6 | 10 % | 6 h 45 min |
+| 5 | 5 % | 6 h 18 min |
+| 4 | 5 % | 9 h 54 min |
+| 3 | 4 % | 10 h 48 min |
+| 2 | 4 % | 12 h 36 min |
+| 1 | 4 % | 13 h 36 min |
+
+La Séquence 5 a un temps de recharge un peu plus court que la Séquence 6, mais chaque méthode donne deux fois moins d'Interprétation. Remplir la barre prend quand même plus longtemps.
+
+Chaque capacité a son propre temps de recharge, donc une Séquence avec plusieurs capacités peut interpréter son rôle avec chacune à tour de rôle.
+
+:::note[Se répéter rapporte moins]
+Si tu gagnes de l'Interprétation Abilities, Interaction ou World de la même façon dans les 15 minutes, chaque répétition rapporte 75 % de la précédente, jusqu'à 25 %.
+:::
+
+## Primes
+
+Les primes sont des tâches personnelles qui rapportent de l'Interprétation. Ouvre-les avec `/bounty` (ou `/coi bounty`).
+
+<Figure src={bountyBoard} alt="Le tableau des primes avec trois offres et une infobulle pour une prime de pêche" caption="Le tableau des primes. Survole une offre pour voir ce qu'elle demande." contain />
+
+- Tu peux avoir jusqu'à **3** primes à la fois, en comptant les offres auxquelles tu n'as pas encore répondu.
+- Une **nouvelle offre** arrive toutes les **30 minutes**. Tu reçois un message dans le chat et tu peux l'accepter ou la refuser.
+- Chaque prime a une **date limite**, de 30 minutes à 8 heures.
+- Les primes PvE et de récolte remplissent ta source **World**. Les primes PvP remplissent **Interaction**.
+
+Les primes comprennent la chasse aux monstres près d'un lieu, la chasse aux monstres d'élite (Séquence 6 et plus puissante), les rencontres sur le terrain, la chasse aux Beyonders sauvages, tuer des monstres avec des sorts, les chasses de Lune cramoisie, sacrifier des objets à un endroit, parcourir une distance ou faire un long voyage, repérer un lieu, repérer avec une capacité, récolter des cultures, miner des minerais, récolter des ingrédients à miner, pêcher, étudier des biomes ou des ressources, obtenir des progrès, maîtriser une capacité dans différentes conditions, ainsi que les duels et défis de sorts consentis avec d'autres joueurs. L'autre joueur doit accepter le duel ou le défi de sorts.
+
+Les destinations sont tirées autour de toi, à au moins 200 blocs et au plus 250 blocs à la Séquence 9, 500 à la 8, 1 000 à la 7, 2 000 à la 6, 3 500 à la 5, 6 000 à la 4 et 7 500 à la 3. À partir de la Séquence 2, il n'y a pas de limite.
+
+Chaque prime tire une récompense de base entre 0,1 % et 5 % de ta barre, selon son type. Elle est ensuite multipliée selon ta Séquence, x2 à la Séquence 9, x1,5 à la 8, x1 à la 7, x0,8 à la 6, x0,6 à la 5, x0,45 à la 4, x0,3 à la 3, x0,2 à la 2 et x0,12 à la 1. L'offre affiche le montant réel que tu recevras.
+
+Terminer une prime compte aussi comme **crédit de rituel** à partir de la Séquence 5. Voir [Rituels](/fr/magic/rituals/#crédit-de-rituel).
+
+<Figure src={bountyOffer} alt="Une offre de prime dans le chat avec sa tâche, sa source, sa catégorie et les boutons Accept et Decline" caption="Une offre de prime dans le chat." contain />
+
+## Acting Bottles
+
+Une **Acting Bottle** contient une quantité fixe de points d'Interprétation. **Lance-la** et elle donne son Interprétation au Beyonder le plus proche dans un rayon de 5 blocs autour de l'endroit où elle atterrit, donc tu peux la lancer sur un ami. Elle compte pour la Séquence **actuelle** de la cible et pour son plafond **Bottles**.
+
+Les fioles sont moins efficaces plus ta Séquence est haute. La description de la fiole montre combien tu recevrais vraiment. Si le plafond Bottles de la cible est déjà plein, la fiole se brise pour rien, alors vérifie `/coi acting` d'abord.
+
+Tu peux en obtenir aux endroits suivants.
+
+- Le **Battle Pass** (`/bp`) et le **calendrier** des récompenses (`/calendar`).
+- L'[Emporium brillant](/fr/guides/emporium/), où deux fragments d'Acting Bottle font une fiole.
+- La boutique des **Ancres des Dieux Extérieurs** (`/oga rewards`), avec des fioles de 500, 1 000, 5 000 et 10 000 points pour 15, 28, 130 et 240 points.
+- Les **échanges de donjon**, payés avec des Helping Cards. Voir [Donjons](/fr/guides/dungeons/).
+
+## Interprétation passive
+
+Tant que tu es en ligne et **pas AFK**, tu reçois un peu d'Interprétation environ toutes les 3 minutes, jusqu'au plafond Passive (5 à 10 % de la barre). Une église peut y ajouter un bonus. Être AFK ou hors ligne ne donne aucune Interprétation passive.
+
+## Événements et Faveur divine
+
+Bedwars, Duels, FFA et les tournois versent de l'Interprétation dans la source **Events**. Rejoins-les avec `/bedwars` et `/pvpevent join`.
+
+Si ta Voie a un dieu de Séquence 0, il peut t'accorder sa **Faveur divine**. Chaque faveur vaut 5 % de ta barre, une fois par semaine et par personne, jusqu'à 10 % par Séquence aux Séquences 9 à 7, 15 % aux Séquences 6 à 4 et 20 % aux Séquences 3 à 1. Voir [Séquence 0](/fr/magic/sequence-zero/).
+
+## Qu'est-ce qui accélère ou ralentit l'Interprétation ?
+
+| Effet | Combien |
+|---|---|
+| [Client Mod](/fr/guides/client-mod/) installé | +2 % d'Interprétation de chaque source, temps de recharge des méthodes réduits de 5 % |
+| **Tide of Diligence** (une [Marée quotidienne](/fr/guides/tides/)) | Gains d'Interprétation doublés |
+| **Tide of Patience** (une Marée quotidienne) | Temps de recharge des méthodes divisés par deux |
+| Très en avance sur le serveur | Moitié moins d'Interprétation de chaque source |
+
+La dernière ligne est le **limiteur de progression**. Si tu as 3 Séquences ou plus d'avance sur le joueur actif moyen (toute personne qui a joué dans les 14 derniers jours), ou si tu es de **Séquence 2 ou plus puissant**, tu gagnes l'Interprétation deux fois moins vite.
+
+## Que se passe-t-il quand ma barre est pleine ?
+
+À partir de la **Séquence 3**, l'Interprétation que tu gagnes une fois ta barre pleine est mise de côté sous forme d'**Overflow**. L'Overflow ne compte jamais pour progresser. Il paie les défis de sièges et la course à la Séquence 0. Les fioles et la Faveur divine ne sont jamais mises de côté. Voir [Usurpation](/fr/magic/usurpation/).

@@ -1,0 +1,123 @@
+---
+title: "Ordres secrets"
+description: "Les Ordres secrets sur Mysterria, le serveur Minecraft LOTM : créer un ordre privé, le faire monter de niveau avec des Éclats d'énergie, et débloquer la réserve, l'invocation, les rituels et un repaire."
+sidebar:
+    label: Ordres secrets
+    order: 33
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import levelup from '~/assets/orders/levelup.png';
+
+Un **Ordre secret** est une petite organisation privée. Ses membres partagent un chat privé, une réserve et des pouvoirs qui grandissent à mesure que l'Ordre monte de niveau grâce aux **Éclats d'énergie**.
+
+La commande est `/o` (aussi `/org` et `/organization`). Tape `/o` pour ouvrir le menu de l'Ordre.
+
+## Qui peut créer un Ordre secret ?
+
+Créer un Ordre et le faire monter de niveau demande le rang de soutien **Shepherd Subscription** de la [boutique du serveur](https://www.mysterria.net/en/store). Tout le monde peut être invité dans un Ordre.
+
+Si l'abonnement du chef prend fin, l'Ordre redescend au niveau 0. Quand l'abonnement revient, l'Ordre **retrouve son niveau précédent**.
+
+## Commandes
+
+| Commande | Ce qu'elle fait |
+|---|---|
+| `/o` | Ouvrir le menu de l'Ordre |
+| `/o create <name>` | Créer un Ordre (demande le rang de soutien) |
+| `/o invite <player>` | Inviter un joueur (chef ou vice-chef) |
+| `/o kick <player>` | Retirer un membre (chef ou vice-chef) |
+| `/o vice set <player>`, `/o vice remove <player>` | Ajouter ou retirer un vice-chef |
+| `/o levelup` | Faire monter l'Ordre de niveau (chef, avec le rang de soutien) |
+| `/o sos` | Envoyer tes coordonnées dans le chat de l'Ordre (niveau 1 ou plus) |
+| `/o rename <name>` | Renommer l'Ordre (chef seulement) |
+| `/o info [order]` | Afficher les informations d'un Ordre |
+| `/o leave` | Quitter l'Ordre (le chef ne peut pas partir) |
+| `/o disband` | Dissoudre l'Ordre |
+| `/o confirm` | Confirmer un départ, un renvoi ou une dissolution |
+| `/oc <message>` | Envoyer un message dans le chat de l'Ordre |
+
+Pour le chat de l'Ordre, utilise `/oc <message>` ou écris `!o`, `!oc`, `!org` ou `!order` devant un message. Les messages s'affichent sous la forme `[ORG] Nom: message`.
+
+## Comment marchent les niveaux d'Ordre ?
+
+Les membres versent des **Éclats d'énergie** dans la réserve commune de l'Ordre, et le chef la dépense pour les niveaux.
+
+1. Ouvre `/o` et utilise l'objet **Your Shards**. Le clic gauche dépose 1 éclat, le clic droit en dépose 10, et Maj + clic gauche les dépose tous.
+2. Quand la réserve est assez grande, le chef utilise **Level Up** dans le menu ou tape `/o levelup`.
+
+<Figure src={levelup} alt="L'objet Your Shards dans le menu de l'Ordre, personnel 0, organisation 342, avec les commandes de dépôt" caption="Déposer des Éclats d'énergie dans la réserve de l'Ordre." />
+
+| Niveau | Nom | Membres max | Coût pour l'atteindre | Débloque |
+|---|---|---|---|---|
+| 0 | **Whisper of Mist** | 3 | - | Invitations, vice-chefs, chat de l'Ordre |
+| 1 | **Shadow of Mist** | 4 | 50 éclats | Organization Stash, `/o sos` |
+| 2 | **Gaze of Mist** | 5 | 200 éclats | Pocket Dimension |
+| 3 | **Embrace of Mist** | 6 | 1 000 éclats | Instant Summon, Growth Ritual |
+| 4 | **Heart of Mist** | 7 | 5 000 éclats | Secret Lair, Battle Cry, Global Announcement, améliorations permanentes |
+
+Obtiens des [Éclats d'énergie](/fr/guides/economy/#éclats-dénergie) en vendant tes ingrédients en trop à un villageois sans profession ou simplet, ou grâce au Battle Pass.
+
+## Capacités de l'Ordre
+
+Ouvre-les avec l'objet **Abilities** du menu `/o`.
+
+### Organization Stash (niveau 1)
+
+Un stockage partagé de 27 emplacements que chaque membre peut ouvrir. Achète des pages en plus au niveau maximum (voir les [améliorations](#améliorations-permanentes)).
+
+### Pocket Dimension (niveau 2)
+
+Un espace de réunion privé pour l'Ordre.
+
+- Le chef ou un vice-chef ouvre une session. Elle dure **10 minutes** et peut être ouverte une fois toutes les **24 heures**.
+- Les membres la rejoignent depuis le menu des capacités tant que la session est ouverte.
+- Pendant que tu es à l'intérieur, une copie de toi reste là où tu es parti. Si elle est attaquée, tu es ramené.
+
+### Instant Summon (niveau 3)
+
+Téléporte-toi jusqu'à un membre de ton Ordre en ligne.
+
+- Coûte **1,5 % à 3 %** de ton Interprétation, tiré au hasard. Tu dois être Beyonder.
+- Préparation de **5 secondes**. Bouger ou subir des dégâts l'annule.
+- Ne marche que dans la même dimension.
+- Temps de recharge de **30 minutes**.
+
+### Growth Ritual (niveau 3)
+
+Le chef ou un vice-chef donne à chaque membre **en ligne** **+20 % à 25 % de vitesse d'Interprétation** pendant **24 heures**. Il s'utilise **une fois par semaine**.
+
+### Secret Lair (niveau 4)
+
+Un monde privé et permanent pour ton Ordre.
+
+- Le chef ou un vice-chef le fonde avec 50 Éclats d'énergie, 20 blocs d'obsidienne, 5 perles de l'Ender et 3 diamants de son propre inventaire.
+- Chaque entrée utilise un **Lair Teleportation Crystal**. Fabrique-les dans le menu de la Secret Lair pour 10 Éclats d'énergie, 1 perle de l'Ender et 2 blocs d'obsidienne pleureuse chacun.
+- Il faut 30 minutes entre deux téléportations, et 30 minutes après ta sortie avant de pouvoir rentrer.
+- Si tu dépasses la limite du repaire, tu es renvoyé au centre.
+
+### Battle Cry (niveau 4)
+
+Le chef ou un vice-chef donne à chaque membre en ligne **Vitesse II, Force II et Régénération I** pendant 5 minutes. Ça coûte **50 éclats** de la réserve de l'Ordre et ça marche une fois toutes les **12 heures**.
+
+### Global Announcement (niveau 4)
+
+Le chef ou un vice-chef envoie un **message anonyme à tout le serveur** au nom de l'Ordre, une fois toutes les **24 heures**.
+
+### Améliorations permanentes
+
+Au niveau 4, le chef ou un vice-chef peut acheter des améliorations permanentes avec les éclats de la réserve de l'Ordre :
+
+| Amélioration | Coûts | Maximum |
+|---|---|---|
+| **Extra Member Slot** | 200, puis 400, puis 800 éclats | +3 membres (10 en tout) |
+| **Extra Stash Page** | 300, puis 600, puis 1 200 éclats | 4 pages |
+
+Il n'y a plus de Remote Exchange ni de Unification Ritual. Pour faire passer des objets entre membres, utilise la réserve partagée ou un [Courrier](/fr/guides/couriers/).
+
+## Pages liées
+
+<CardGrid>
+  <Card title="Éclats d'énergie" text="Comment gagner les éclats qui font tourner les Ordres." icon="coin" href="/fr/guides/economy/#éclats-dénergie" />
+  <Card title="Courriers" text="Envoie des objets à n'importe quel joueur." icon="gift" href="/fr/guides/couriers/" />
+</CardGrid>

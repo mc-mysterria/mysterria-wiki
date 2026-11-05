@@ -1,0 +1,81 @@
+---
+title: "Artefacts scellés"
+description: "Les Artefacts scellés sur Mysterria, le serveur Minecraft Lord of the Mysteries : comment en obtenir un, comment l'utiliser, les grades d'artefact et leurs inconvénients."
+sidebar:
+  order: 41
+---
+
+import {Figure} from '~/components/mdx';
+import artifactTooltip from '~/assets/magic/sealed-artifact-tooltip.webp';
+
+Un Artefact scellé est un objet qui contient une capacité Beyonder, utilisable par n'importe qui, même par un non-Beyonder ou un Beyonder d'une autre Voie. En échange, chaque artefact porte des **inconvénients** qui blessent la personne qui l'utilise.
+
+## Comment obtenir un Artefact scellé ?
+
+| Source | Comment ça marche |
+|---|---|
+| **Potion expirée** | Une potion de Séquence qui n'est pas bue dans les **48 heures** se transforme en Artefact scellé de la même Voie et de la même Séquence. La capacité qu'il contient est tirée au hasard. Si aucun artefact ne peut être fait pour elle, tu obtiens une Caractéristique Beyonder à la place, et à défaut une Ruined Potion |
+| **Fabrication Paragon** | Les Beyonders Paragon en fabriquent exprès (voir plus bas) |
+| **Beyonders sauvages** | Un [Beyonder sauvage](/fr/magic/wild-beyonders/) apparu naturellement en lâche un 5 % du temps à la Séquence 6 et 10 % à la Séquence 5 |
+| **Coffre de l'église** | Une [église](/fr/magic/churches/) peut ranger des artefacts dans son Church Vault, et les membres peuvent demander à en emprunter un |
+| **Autres joueurs** | Les artefacts sont des objets ordinaires, donc tu peux les obtenir par échange |
+
+Les potions mises en jeu dans une Usurpation n'expirent pas.
+
+### Comment la Voie Paragon fabrique-t-elle des artefacts ?
+
+Seule la [Voie Paragon](https://www.mysterria.net/en/pathways/paragon) peut fabriquer des Artefacts scellés :
+
+| Séquence | Capacité | Ce qu'elle fait |
+|---|---|---|
+| 6 | Artifact Crafting | Combine une Caractéristique Beyonder avec des ingrédients pour faire un artefact. De meilleurs matériaux donnent un meilleur résultat. Une fabrication ratée consomme la Caractéristique et tous les ingrédients |
+| 3 | Dual Artifact Crafting | Met **deux** capacités dans un même artefact, avec deux fois plus de chances de réussite de base. Le clic droit utilise la première capacité, le clic gauche la seconde |
+| 2 | Manufacturing Authority | Fabrique un artefact temporaire de n'importe quelle Voie ou Séquence, sans inconvénients, qui dure 18 minutes |
+
+## Comment utiliser un Artefact scellé ?
+
+Tiens-le en main et fais un clic droit pour utiliser sa capacité. Le clic gauche utilise la seconde capacité d'un artefact double.
+
+- **Les temps de recharge sont partagés.** Utiliser un artefact met en recharge tous les artefacts qui ont la même capacité, pas seulement celui que tu tiens.
+- **Les Beyonders paient de la Spiritualité** pour en utiliser un, comme pour leurs propres capacités. Les non-Beyonders ne paient rien.
+- **Les capacités activables coûtent de la [Folie](/fr/magic/mutation/).** Tant que la capacité activable d'un artefact est activée, tu gagnes 0,05 de Folie chaque seconde.
+
+### Quelles capacités peuvent être scellées dans un artefact ?
+
+La plupart des capacités actives. Les capacités passives, les contrats et la Deity Authority ne peuvent jamais être scellés. **Recording** de la Voie Door peut copier un sort d'un artefact que tu tiens en seconde main, mais avec deux fois moins de chances de réussite que d'habitude.
+
+## Quels sont les inconvénients ?
+
+Chaque artefact a un **grade** fixé par la Séquence de sa capacité. Plus la capacité est puissante, plus les inconvénients sont lourds :
+
+| Grade | Séquence de la capacité | Inconvénients |
+|---|---|---|
+| Grade 3 | 9 à 8 | 1 léger |
+| Grade 2 | 7 à 6 | 1 moyen |
+| Grade 1 | 5 à 4 | 1 moyen et 2 légers |
+| Grade 0 | 3 à 0 | 2 graves et 2 moyens |
+
+Le premier nombre sur la ligne **Artifact** de sa description est son grade, donc **Artifact: 2-990025** est de Grade 2. La description liste aussi ses inconvénients. Il en existe des dizaines, la plupart liés à la Voie de l'artefact.
+
+<Figure src={artifactTooltip} alt="L'infobulle d'un artefact scellé avec son identifiant, la capacité Prohibition et l'inconvénient Law Restriction" caption="L'infobulle d'un artefact indique sa capacité et liste ses inconvénients." />
+
+Les inconvénients sont de deux sortes :
+
+- Les inconvénients **ponctuels** se déclenchent **à chaque fois** que tu utilises la capacité.
+- Les inconvénients **permanents** continuent d'agir tant qu'un artefact activé est dans ton inventaire. Ils s'arrêtent quand il quitte ton inventaire.
+
+:::danger[Lis d'abord les inconvénients]
+Un artefact de Grade 0 peut être mortel pour son propre utilisateur. Vérifie la liste des inconvénients dans la description de l'objet avant d'utiliser un artefact en combat.
+:::
+
+### Comment réduire les inconvénients ?
+
+| Voie | Séquence | Capacité | Effet |
+|---|---|---|---|
+| [Twilight Giant](https://www.mysterria.net/en/pathways/giant) | 7 | Artifact Mastery | 25 % de chances d'annuler chaque inconvénient |
+| Paragon | 7 | Mastery Shield | Un bouclier personnel qui réduit ou bloque les inconvénients, selon leur danger |
+| Paragon | 3 | Arcane Scholar Complete Mastery | Immunité aux inconvénients de Grade 3, 2 et 1, résistance partielle au Grade 0 |
+| [Death](https://www.mysterria.net/en/pathways/death) | 4 | Artifact Sealing | Scelle les inconvénients d'un artefact pendant 24 heures au maximum |
+| [Tyrant](https://www.mysterria.net/en/pathways/tyrant) | 4 | Artifact Sealing | Supprime les inconvénients de tous les artefacts proches pendant 30 secondes, ou scelle leurs capacités |
+
+La capacité **Beyonder Characteristic Purification** de Séquence 4 de la [Voie Sun](https://www.mysterria.net/en/pathways/sun) peut aussi dissoudre un artefact que tu tiens en seconde main pour le rendre à sa Caractéristique Beyonder.

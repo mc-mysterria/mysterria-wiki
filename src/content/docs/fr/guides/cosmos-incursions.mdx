@@ -1,0 +1,120 @@
+---
+title: "Incursions du Cosmos"
+description: "Les Incursions du Cosmos sur Mysterria, le serveur Minecraft LOTM : quand elles commencent, couleurs des zones et règles de mort, Spirit Beacons, récompenses des villes et zones d'extraction."
+sidebar:
+  order: 37
+---
+
+import {Figure} from '~/components/mdx';
+import cosmosShop from '~/assets/cosmos/cosmos-shop.webp';
+
+Les Incursions du Cosmos sont les événements PvP du serveur, où des zones colorées s'ouvrent dans le monde et où les villes se disputent les **Spirit Beacons** qui s'y trouvent. En dehors des événements, des **zones d'extraction** permanentes te permettent de récolter des ressources pour ta ville pendant que d'autres joueurs te chassent.
+
+## Quand une Incursion commence-t-elle ?
+
+Une Incursion commence toute seule quand **25 joueurs** sont en ligne :
+
+| Règle | Valeur |
+|---|---|
+| Compte à rebours | 3 minutes après que le nombre de joueurs est atteint |
+| Durée | 30 minutes |
+| Délai | Au moins 2 heures avant la suivante |
+| Zones | 2 entre 25 et 32 joueurs en ligne, 3 entre 33 et 40, 4 à partir de 41 |
+| Taille des zones | Rayon de 150 blocs, au moins 500 blocs entre elles, au moins 50 blocs de tout claim de ville |
+
+Les zones sont délimitées par des murs de particules colorées. Le début est aussi annoncé sur Discord, et `/cosmos status` montre ce qui est en cours.
+
+## À quel point chaque zone est-elle dangereuse ?
+
+Les couleurs des zones sont attribuées dans l'ordre Verte, Jaune, Rouge, Mort. Avec 2 zones, tu as la Verte et la Jaune, avec 3 une zone Rouge s'ajoute, et une zone de Mort ne s'ouvre qu'à partir de 41 joueurs en ligne. Un écran d'accord explique les règles avant que tu entres.
+
+| Zone | Quand tu meurs | Équilibrage PvP |
+|---|---|---|
+| **Verte** | Tu gardes tous tes objets | Les dégâts sont égalisés selon les réserves de PV, la Mythical Form est bloquée, la Folie venant des autres est annulée |
+| **Jaune** | Chaque objet a **33 %** de chances de tomber | Les dégâts sont à moitié égalisés, la Mythical Form est bloquée, la Folie venant des autres est réduite de moitié |
+| **Rouge** | **Tous** les objets tombent | Aucun |
+| **Mort** | **Tous** les objets tombent, plus la pénalité de Séquence ci-dessous | Aucun |
+
+Les zones Vertes et Jaunes sont l'endroit idéal pour apprendre le PvP d'Incursion, car un Demi-dieu ne peut pas simplement y effacer un Beyonder tout neuf.
+
+### Que se passe-t-il si je meurs dans une zone de Mort ?
+
+Les Beyonders de **Séquence 4 ou plus puissants** subissent ceci à **chaque** mort dans une zone de Mort, quelle que soit la cause :
+
+- Si tu as **au moins 50 %** de ta barre d'Interprétation, tu perds ces 50 % et tu gardes ta Séquence.
+- Si tu as **moins de 50 %**, tu descends d'**une Séquence**. Tu commences la nouvelle Séquence avec 99 % de sa barre d'Interprétation, et ta Caractéristique Beyonder tombe là où tu es mort.
+- Après une pénalité, tu es protégé contre une autre pendant **20 secondes**.
+
+Les Beyonders de Séquence 5 et plus faibles ne risquent que leurs objets.
+
+:::caution[Arme un Paper Angel]
+Un **Paper Angel** protège ta Séquence. Fais un clic droit dessus pour l'armer. Il absorbe alors une pénalité de zone de Mort et il est consommé. Il vient des événements et du staff.
+:::
+
+### Qu'est-ce que le Spirit Weight ?
+
+Les Beyonders de Séquence 4 et plus puissants portent un **Spirit Weight** dans une zone. Ils brillent, donc ils ne peuvent pas se cacher, et ils subissent 1 dégât toutes les 5 secondes.
+
+### Et si je me déconnecte dans une zone ?
+
+Un corps appelé « Hollow \<ton nom\> » reste sur place pendant **5 minutes**. Si quelqu'un le tue, tu subis toutes les règles de mort.
+
+## Comment les villes gagnent-elles une Incursion ?
+
+Chaque zone a des **Spirit Beacons**. Reste à moins de 20 blocs d'une balise pour la capturer pour ta ville. Plus il y a de joueurs, plus la capture est rapide, et une balise sans personne revient lentement à son état d'origine. Les villes marquent des points en **tenant**, en **tenant sous attaque** (qui vaut double) et en **capturant** des balises. Les zones plus mortelles comptent plus (Jaune x1,25, Rouge x1,5, Mort x2).
+
+Quand l'Incursion se termine :
+
+| Récompense | Qui la reçoit |
+|---|---|
+| **+10 % de vitesse d'Interprétation pendant 3 heures** | La ville en 1re place. Gagner de nouveau à la suite ajoute +2 % par victoire, jusqu'à +6 % |
+| **+5 % de vitesse d'Interprétation pendant 2 heures** | La ville en 2e place |
+| **Ressources** (Or, Argent, Gemmes) | Partagées entre toutes les villes qui ont marqué au moins 5 % du score du vainqueur, selon leur part du combat. Les villes d'une même nation qui participent toutes reçoivent jusqu'à +30 % |
+| **Récompense MVP** | Les 3 meilleurs joueurs reçoivent de l'Interprétation et de l'argent, quelle que soit la place de leur ville |
+| Interprétation | Toutes les personnes présentes quand leur ville capture une balise |
+
+Les morts PvP dans les zones donnent aussi de l'Interprétation, plus dans les zones plus mortelles. Tuer de nouveau le même joueur ne donne aucune Interprétation pendant 20 minutes.
+
+### Est-ce que je gagne du butin en tuant des joueurs ?
+
+Tu reçois une **caisse PvP** seulement quand ta victime subit une pénalité de zone de Mort. Ça veut dire que la victime était de Séquence 4 ou plus puissante, n'avait pas de Paper Angel et n'était pas protégée par le délai de pénalité.
+
+:::caution[Ne chasse pas les faibles]
+Tuer en 10 minutes 3 joueurs qui ont 3 Séquences ou plus de moins que toi fait de toi un **Corrupted Monster** pendant 15 minutes, et ces morts abusives ne donnent aucune caisse.
+:::
+
+## Que sont les zones d'extraction ?
+
+Les zones d'extraction sont des zones PvP **permanentes** dessinées sur la carte et délimitées par des murs de particules rouge foncé. Le PvP y est toujours actif.
+
+1. **Récolte** à un **Point of Interest**, un rayon de lumière avec une ressource qui flotte. Reste à moins de 8 blocs pour récolter de l'Or, de l'Argent ou des Gemmes. Plus tu restes, plus tu récoltes vite. Les Points of Interest se déplacent toutes les 15 minutes.
+2. **Extrais** à un **point d'extraction** près du bord. Reste dans son cercle pendant 10 secondes. En sortir annule l'extraction, mais subir des dégâts ne l'annule pas. Les points d'extraction se déplacent toutes les 30 minutes.
+3. Tes ressources vont dans le **solde de ta ville** et tu es téléporté à l'extérieur en sécurité.
+
+Si tu meurs avant d'extraire, tu perds tout ce que tu portais. Les zones ont trois niveaux :
+
+| Niveau | Objets perdus à la mort | Ressources |
+|---|---|---|
+| Sûr | Aucun | Or et Argent |
+| Moyen | 33 % par objet | Or, Argent et quelques Gemmes |
+| Difficile | Tous les objets | Le plus de chaque, Gemmes comprises |
+
+Chaque zone a un budget de ressources par jour, donc les meilleurs Points of Interest s'épuisent si beaucoup de joueurs les exploitent.
+
+### Que peut acheter ma ville ?
+
+Ta ville dépense son Or, son Argent et ses Gemmes dans `/cosmos shop`. `/cosmos balance` montre ce que possède ta ville.
+
+<Figure src={cosmosShop} alt="Le menu Zone Shop de /cosmos shop avec trois rangées d'objets à vendre" caption="Le menu /cosmos shop." contain />
+
+## Quelles commandes existent ?
+
+| Commande | Ce qu'elle fait |
+|---|---|
+| `/cosmos guide` | Le guide en jeu |
+| `/cosmos status` | L'Incursion en cours et ses zones |
+| `/cosmos leaderboard` | Les scores des villes après un événement |
+| `/cosmos balance` | L'Or, l'Argent et les Gemmes de ta ville |
+| `/cosmos shop` | Dépenser les ressources de ta ville |
+
+Le `/cosmos guide` en jeu affiche encore d'anciens chiffres (des bonus de 24 heures et une règle de régression à la Séquence 6). Fie-toi plutôt aux chiffres de cette page.

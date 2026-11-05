@@ -1,0 +1,200 @@
+---
+title: "Avantages et ancres des églises"
+description: "Les chiffres derrière les avantages des églises de Mysterria : poids d'ancre, paliers, bonus d'Interprétation et de récupération, allègement du plancher de Folie, bénédictions et dons. Un guide LOTM."
+sidebar:
+  label: Avantages et ancres
+  order: 35
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import perksChat from '~/assets/magic/church-perks-chat.webp';
+
+Les avantages d'église sont les bonus d'Interprétation, de récupération de Folie et de soutien qu'une [église](/fr/magic/churches/) donne à ses membres. Leur force dépend du soutien actif et priant dont dispose l'église.
+
+## Qu'est-ce qui renforce ou affaiblit les avantages ?
+
+Les avantages combinent tous ces facteurs à la fois, donc un seul facteur faible peut rendre le bonus final bien plus petit.
+
+- Le **poids d'ancre** mesure le soutien actif et priant de l'église, comparé à ce que demande la Séquence du chef.
+- L'**ancienneté** compte, car les nouveaux membres commencent à 20 % et atteignent la pleine valeur au bout de 14 jours (21 jours après un changement d'église).
+- La **piété et l'activité** viennent des prières récentes et de la participation aux sites.
+- Le **réseau de sites** demande un noyau principal actif et des branches et QG régionaux en bonne santé. Les branches qui dépérissent n'aident plus.
+- L'**encadrement des sites** veut dire un Head Deacon et des Bishops qui couvrent chaque site.
+- Selon le **rôle**, les chefs et co-chefs reçoivent le plus et les nouveaux fidèles le moins. Les effets des Anges sont mis en pause s'il y a plus d'Anges que de places d'Ange.
+- Selon la **Voie**, la Voie de l'église aide le plus, les Voies voisines un peu moins et les autres le moins.
+- Les membres plus puissants reçoivent des effets un peu plus forts selon **leur Séquence**.
+- Une [guerre d'églises](/fr/magic/church-management/#guerres-déglises) acceptée ou une pénalité de guerre change les avantages.
+- Sans **noyau principal**, chaque avantage tourne à 50 %.
+
+Si tes avantages te semblent faibles, `/coi church status`, `/coi church perks`, `/coi church acting`, `/coi church pathway progress`, `/coi church my-site` et `/coi church cooldowns` montrent où tu en es.
+
+<Figure src={perksChat} alt="Le résultat de /coi church perks dans le chat pour le chef d'une nouvelle église, avec les avantages qui s'appliquent à toi et leurs raisons" caption="Ce que /coi church perks affiche dans le chat." contain />
+
+## Poids d'ancre
+
+Chaque membre actif ajoute du **poids d'ancre** selon sa Séquence :
+
+| Séquence du membre | Poids d'ancre |
+|---|---:|
+| 0 | 12,0 |
+| 1 | 9,0 |
+| 2 | 7,0 |
+| 3 | 5,0 |
+| 4 | 3,0 |
+| 5 | 0,75 |
+| 6 | 0,60 |
+| 7 | 0,45 |
+| 8 | 0,35 |
+| 9 | 0,25 |
+| Non-Beyonder | 0,15 |
+
+Ce poids est ensuite multiplié selon la Voie :
+
+| Voie du membre | Multiplicateur |
+|---|---:|
+| La même que l'église | x1,5 |
+| Une Voie voisine | x1,25 |
+| Toute autre | x1,0 |
+
+Par exemple, un membre de Séquence 4 donne 4,5 sur la Voie de l'église, 3,75 depuis une Voie voisine et 3,0 sinon. Un membre de Séquence 9 de la même Voie donne 0,375.
+
+### Qui compte ?
+
+- Un membre ne compte que s'il s'est connecté **et** a prié dans les **14 derniers jours**.
+- Le **chef ne compte jamais** comme ancre pour sa propre église.
+- Les **co-chefs ne comptent pas** non plus comme ancres de membre.
+
+### Limites du poids d'ancre
+
+- Le poids des membres de Séquence 4 ou plus puissants commence à diminuer à partir de **18** et ne peut jamais dépasser **34**.
+- Chaque groupe de **10** membres actifs de Séquence 5 ou plus faibles ajoute un bonus de groupe de **+1,0**.
+- Chaque site actif peut porter une certaine quantité de poids, fixée par la Séquence du chef. Le poids au-delà de ta **capacité de sites** totale diminue et s'arrête vers 1,35 fois la capacité.
+
+| Séquence du chef | Capacité du site principal | Chaque branche |
+|---|---:|---:|
+| 4 | 12 | 8 |
+| 3 | 16 | 10 |
+| 2 | 20 | 12 |
+| 1 | 24 | 14 |
+| 0 | 28 | 16 |
+
+La capacité d'un site baisse s'il n'est pas assez actif ou si son Head Deacon est faible ou absent, et elle monte de 12 % à chaque niveau d'amélioration. Sans noyau principal actif, la capacité de toute l'église est de 6.
+
+## Combien d'ancres faut-il à une église ?
+
+Le soutien complet demande ce poids d'ancre effectif, fixé par la Séquence du **chef**. Chaque membre est mesuré sur la ligne du chef, quelle que soit sa propre Séquence.
+
+| Séquence du chef | Ancres pour un soutien complet |
+|---|---:|
+| 4 | 15 |
+| 3 | 25 |
+| 2 | 28 |
+| 1 | 38 |
+| 0 | 30 |
+
+Ce sont des objectifs de poids, pas des nombres de membres. Un chef de Séquence 4 peut atteindre 15 avec quelques membres puissants de la même Voie ou avec beaucoup de membres plus faibles. Son site principal ne porte que 12 avant de diminuer, donc il voudra une branche ou une amélioration.
+
+<Notice tone="info" title="La Séquence 0 en tient compte aussi">
+Pour revendiquer un [trône](/fr/magic/sequence-zero/), ton église doit avoir **20** ancres effectives, et tu dois en être le chef, un co-chef ou un Ange. L'église d'un dieu qui siège est mesurée sur **30**. C'est plus bas que l'objectif de la Séquence 1, et c'est voulu. Un nouveau dieu apporte déjà 20 ancres, donc l'église n'a besoin de grandir qu'un peu pour un soutien complet.
+</Notice>
+
+## Paliers d'église
+
+| Palier | Part de l'objectif d'ancres | Bonus d'Interprétation x | Bonus de récupération x | Bénédiction x |
+|---|---:|---:|---:|---:|
+| 1 | moins de 25 % | 1,00 | 1,00 | 1,00 |
+| 2 | 25 % | 1,03 | 1,15 | 1,12 |
+| 3 | 45 % | 1,06 | 1,32 | 1,28 |
+| 4 | 70 % | 1,09 | 1,52 | 1,45 |
+| 5 | 95 % | 1,12 | 1,75 | 1,65 |
+
+Pour un chef de Séquence 4 (objectif 15), le palier 2 commence vers 3,75 ancres, le palier 3 vers 6,75, le palier 4 vers 10,5 et le palier 5 vers 14,25.
+
+### Church Progress
+
+Célébrer des [offices](/fr/magic/church-management/#offices-déglise) fait monter la **Church Progress**. Chaque tranche de **100** points de progression compte comme 1 ancre de plus pour le palier et le classement, jusqu'à **12**.
+
+## Classement des religions
+
+Plusieurs églises peuvent suivre la même Voie, et celle qui a le meilleur score de religion la mène. Une église a une seule Voie officielle, celle de son chef.
+
+Le score se calcule à partir du poids d'ancre effectif, de la Church Progress, du palier (+8 par palier), des sites actifs (+2 chacun) et de la santé actuelle. Consulte-le avec `/coi church top` ou `/coi church top <pathway>`.
+
+Le score de religion compte aussi pour **25 %** du Defense Score d'un détenteur de siège dans [Sièges et Usurpation](/fr/magic/usurpation/#étape-2--la-nomination).
+
+### Soutien aux autres Voies
+
+- Deux membres actifs et priants ou plus de la même Voie forment un **groupe** et reçoivent un petit bonus.
+- Les co-chefs, responsables de QG régional et Anges actifs d'une autre Voie ajoutent un **soutien secondaire** plafonné pour cette Voie (jusqu'à 15 %).
+- Ça ne fait jamais de l'église une seconde religion officielle.
+
+Vérifie n'importe quelle Voie de ton église avec `/coi church pathway <pathway> progress`.
+
+## Bonus d'Interprétation
+
+Le bonus d'Interprétation d'église s'ajoute à tes gains d'Interprétation. Il atteint environ **16 %** au maximum et diminue à partir de 14 %. Il est le plus élevé pour la Voie de l'église ainsi que pour les chefs et les Anges, et il grandit avec le palier, la prière et l'ancienneté. Vérifie le tien avec `/coi church acting`.
+
+## Bonus de récupération de Folie
+
+Le bonus de récupération aide la Folie récupérable à baisser plus vite. Il peut atteindre **24** (il diminue à partir de 14, plafond absolu à 30) et grandit avec le palier. Il ne retire jamais la Folie permanente.
+
+## Allègement du plancher de Folie
+
+À partir de la Séquence 4, les Beyonders ont un plancher de Folie de divinité sous lequel la récupération ne peut pas descendre :
+
+| Séquence | Plancher de divinité |
+|---|---:|
+| 0 | 90 % |
+| 1 | 75 % |
+| 2 | 60 % |
+| 3 | 40 % |
+| 4 | 25 % |
+| 5 à 9 | 0 % |
+
+Une église peut alléger une partie de ce plancher :
+
+> Ta Folie minimale = Folie permanente + plancher de divinité x (1 - allègement)
+
+Le total est plafonné à **95 %**, donc il n'atteint jamais 100 %. La récupération, les dons, les bénédictions et les capacités de soin s'arrêtent tous à ce plancher.
+
+L'allègement vaut le remplissage d'ancres de ton église (ancres effectives divisées par l'objectif) multiplié par la part de ton rôle, jusqu'au plafond de ton rôle. Les membres ordinaires ont aussi besoin d'ancienneté, de piété et d'une activité récente pour atteindre leur part complète.
+
+| Rôle | Part | Plafond |
+|---|---:|---:|
+| Chef | 100 % | 100 % |
+| Co-chef | 95 % | 100 % |
+| Ange | 75 % | 90 % |
+| Head Deacon | 65 % | 80 % |
+| Bishop | 55 % | 70 % |
+| Senior Follower | 45 % | 60 % |
+| Follower | 38 % | 55 % |
+| Junior Follower | 30 % | 45 % |
+| New Follower | 20 % | 35 % |
+
+Un nouveau dieu est mesuré sur 30 ancres, pas sur les 20 nécessaires pour l'ascension. À 20 sur 30, il reçoit les deux tiers de l'allègement, donc son plancher de 90 % ne descend qu'à environ 30 % jusqu'à ce que la congrégation grandisse.
+
+Les Red Priests sans église peuvent plutôt recevoir un allègement de leur [cohorte Chain of Command](/fr/magic/sequence-zero/#les-cohortes-red-priest-à-la-place-dune-église). L'allègement de cohorte et celui d'église ne se cumulent jamais.
+
+## Bénédictions
+
+Une bénédiction est une action de soutien rapide sur un membre de l'église. Elle fait baisser la Folie récupérable et la Fatigue et donne un court effet de soutien. Utilise `/coi church bless <player>` ou le menu de l'église. Tu ne peux pas te bénir toi-même, et la cible doit être près d'un site actif.
+
+| Qui bénit | Folie retirée | Fatigue retirée | Effet de soutien | Coût en Spiritualité |
+|---|---:|---:|---:|---:|
+| Responsables de site (Head Deacons, Bishops) | 4 | 6 | 6 s | 10 |
+| Chef, co-chefs, Anges actifs | 6 | 10 | 10 s | 18 |
+
+Chaque cible peut être bénie une fois toutes les **10 minutes**. Après **2** bénédictions en 30 minutes, les bénédictions suivantes sur cette cible perdent de la force (jusqu'à 35 %).
+
+## Dons
+
+Les dons sont un soutien plus fort, réservé au chef, aux co-chefs et aux Anges actifs. Utilise `/coi church gift <player> <type>`. Ils coûtent de la Spiritualité au donneur et lui ajoutent un peu de Folie. Tu ne peux pas te faire un don à toi-même.
+
+| Don | Effet | Coût en Spiritualité | Folie du donneur |
+|---|---|---:|---:|
+| `madness-relief` | Jusqu'à 10 de Folie récupérable retirée | 30 | +1,0 |
+| `spirituality-restore` | Jusqu'à 35 de Spiritualité rendue | 24 | +0,5 |
+| `tiredness-recovery` | Jusqu'à 20 de Fatigue retirée | 28 | +0,75 |
+| `sanctuary-renewal` | 20 s de Régénération II et 120 s d'Absorption I | 36 | +1,5 |
+
+Le même don à la même cible a un temps de recharge de **5 minutes**. Un deuxième don à une même cible dans l'heure est plus faible (jusqu'à 40 %). Un don est refusé s'il ferait passer le donneur au-dessus de 95 % de Folie.

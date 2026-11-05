@@ -1,0 +1,126 @@
+---
+title: "Unicité"
+description: "Comment Mysterria attribue l'Unicité de chaque Voie, comment grandit l'accommodation, ce que font ses quatre traits et comment elle peut changer de mains. Un guide Lord of the Mysteries."
+sidebar:
+  label: Unicité
+  order: 31
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import uniquenessMenu from '~/assets/magic/uniqueness-menu.webp';
+import uniquenessCandidacy from '~/assets/magic/uniqueness-candidacy.webp';
+
+## Qu'est-ce qu'une Unicité ?
+
+Une **Unicité** est l'autorité unique d'une Voie, détenue par un seul Beyonder à la fois. Détenir l'Unicité de ta Voie et l'**accommoder** à 95 % est une condition pour la [Séquence 0](/fr/magic/sequence-zero/), et en chemin elle éveille quatre traits bonus.
+
+Chacune des 22 Voies normales en a exactement une. Les Voies extérieures et les Grâces n'en ont pas.
+
+## Comment ouvrir le menu de l'Unicité ?
+
+Ouvre le menu de ton personnage (`/coi menu character`, ou la touche M avec le [Client Mod](/fr/guides/client-mod/)) et choisis **Uniqueness**. Sans le mod, il s'ouvre comme un menu en coffre. Ses cinq parties sont **Where you stand**, **Candidacy score**, **Participation**, **Physical manifestation** et **Usurpation**.
+
+<Figure src={uniquenessCandidacy} alt="Le menu de l'Unicité dans le Client Mod, avec les cartes du score de candidature" caption="Le menu de l'Unicité dans le Client Mod. Les chiffres viennent d'un personnage de test." />
+
+<Figure src={uniquenessMenu} alt="La partie Where you stand du menu de l'Unicité, Sun à 64 pour cent d'accommodation avec deux traits éveillés" caption="Where you stand, pour un détenteur de test de l'Unicité Sun à 64 % d'accommodation." />
+
+## Comment une Unicité est-elle attribuée ?
+
+Personne n'achète ni ne tire au sort une Unicité. Toutes les 2 heures, le serveur note chaque Beyonder éligible de la Voie et l'attribue au meilleur candidat.
+
+### Qui peut être candidat ?
+
+- **Séquence 4 ou plus puissante** sur cette Voie
+- un compte vieux d'au moins **7 jours**
+- au moins **10 heures** de temps de jeu
+- un indice d'activité d'au moins **1,5**
+- un score total d'au moins **40**
+- ne pas s'être retiré de l'évaluation
+
+Tu ne peux détenir qu'une seule Unicité à la fois.
+
+### Le score de candidature
+
+Chaque partie est notée sur 100, puis pondérée :
+
+| Partie | Poids | Ce qu'elle mesure |
+|---|---:|---|
+| Séquence | 35 % | Séquence 1 = 100, Séquence 2 = 90, Séquence 3 = 80, Séquence 4 = 60 |
+| Temps de jeu | 25 % | Le total d'heures sur le serveur, compté jusqu'à 100 |
+| Activité | 20 % | À quel point tu joues récemment et régulièrement (indice jusqu'à 5,0). Il baisse si tu arrêtes de te connecter |
+| Interprétation | 15 % | Jusqu'où tu as interprété ton rôle sur toute la Voie, depuis la Séquence 9. Progresser ne le fait jamais baisser |
+| Assiduité | 5 % | Pour moitié les jours où tu as joué au moins 30 minutes (jusqu'à 31), pour moitié la durée moyenne de tes sessions (jusqu'à 180 minutes) |
+
+Le staff peut ajouter un **ajustement manuel** de -20 à +20 en plus du total pondéré. Il est affiché dans le menu.
+
+Le score total du détenteur actuel est multiplié jusqu'à **x1,25** à 100 % d'accommodation, ce qui rend un détenteur bien installé plus dur à remplacer.
+
+Les Marées quotidiennes ne changent jamais le calcul des Unicités.
+
+## Comment une Unicité peut-elle changer de mains ?
+
+Tuer le détenteur ne la déplace **pas**. Ces cinq choses le font :
+
+1. La **vérification automatique** la donne à un autre candidat qui a au moins **6 points** de plus que le détenteur. Un nouveau détenteur en est protégé pendant **3 jours**.
+2. Un autre joueur dépense de l'Overflow dans un [défi payé](/fr/magic/usurpation/#comment-défier-une-unicité-) pour forcer un nouveau calcul.
+3. Un rival qui gagne une [veillée de Séquence 0](/fr/magic/sequence-zero/) contre le détenteur prend l'Unicité, mais pas le trône.
+4. Si le détenteur se retire de l'évaluation, elle passe directement au candidat suivant.
+5. Entrer dans une [Épreuve](/fr/magic/ordeals/) la libère automatiquement.
+
+<Notice tone="warn" title="Un nouveau détenteur commence toujours à 0 %">
+Quand une Unicité change de mains, l'accommodation, le compteur de morts et l'historique de croissance repartent tous à zéro.
+</Notice>
+
+## Puis-je ne pas participer ?
+
+Oui. Participer est le choix par défaut. Désactive-le dans **Participation** avec **Withdraw from evaluation**. Le bouton te demande de confirmer deux fois.
+
+- Si tu détiens l'Unicité, elle passe au candidat suivant **immédiatement**.
+- Revenir plus tard te remet dans la file. Ça ne te rend pas l'Unicité.
+- Tant que tu t'es retiré, tu n'es pas noté et tu ne peux pas défier pour une Unicité.
+
+## Comment grandit l'accommodation ?
+
+L'accommodation mesure à quel point l'Unicité s'est installée en toi, de 0 % à 100 %. Elle ne grandit que tant que tu la détiens, en utilisant ta Voie :
+
+| Source | Accommodation gagnée |
+|---|---|
+| Interprétation gagnée | +0,02 point par tranche de 100 d'Interprétation |
+| Spiritualité dépensée | +0,001 point par tranche de 100 de Spiritualité |
+| Chaque capacité lancée | +0,00005 point |
+
+L'Interprétation est de loin la plus grosse source. Ces quantités sont ensuite multipliées selon ta Séquence :
+
+| Séquence | Multiplicateur de croissance |
+|---|---:|
+| 1 | x1,2 |
+| 2 | x1,1 |
+| 3 | x1,0 |
+| 4 | x0,8 |
+
+### Mourir coûte de l'accommodation
+
+Chaque mort pendant que tu détiens une Unicité coûte **10 points de pourcentage** fixes (80 % devient 70 %), quelle que soit la cause. Elle ne descend jamais sous **10 %**. Une mort annulée, par exemple par un artefact, ne coûte rien.
+
+## Qu'est-ce qu'elle apporte ?
+
+### Les quatre traits
+
+Chaque trait s'éveille à un niveau d'accommodation précis, puis grandit en ligne droite avec l'accommodation jusqu'à sa pleine valeur à 100 %.
+
+| Trait | S'éveille à | Effet à 100 % | Valeur à l'éveil |
+|---|---:|---|---|
+| **Spiritual Dominance** | 25 % | +50 % de régénération de Spiritualité | +12,5 % |
+| **Authority Amplification** | 50 % | +30 % de puissance et de dégâts des capacités | +15 % |
+| **Divine Resilience** | 75 % | +20 % de Spiritualité maximale | +15 % |
+| **Acting Acceleration** | 100 % | +40 % de gains d'Interprétation | +40 % |
+
+Les traits propres à une Voie ne sont pas dans le jeu.
+
+### La route vers la Séquence 0
+
+Pour revendiquer un trône, tu dois détenir l'Unicité de ta Voie **et** l'avoir à **95 %** d'accommodation ou plus. [Séquence 0](/fr/magic/sequence-zero/) liste les autres conditions.
+
+### Manifestation physique
+
+Chaque Unicité a un objet cosmétique. Tu peux le sortir ou le cacher depuis la partie **Physical manifestation**. Il est lié à toi et ne peut jamais quitter ton inventaire. Certains se portent sur la tête.

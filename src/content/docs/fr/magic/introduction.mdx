@@ -1,0 +1,50 @@
+---
+title: "Comment devenir Beyonder"
+description: "Comment fonctionnent les Beyonders sur Mysterria, le serveur Minecraft Lord of the Mysteries : potions, Séquences, Interprétation, rituels et les statistiques qui te gardent en vie."
+sidebar:
+  label: Introduction
+  order: 1
+---
+
+import {Figure, CardGrid, Card, Notice} from '~/components/mdx';
+import lotm from '~/assets/magic/lotm.jpg';
+
+<Figure src={lotm} alt="Une silhouette assise sur un trône au-dessus de la brume grise" />
+
+Un **Beyonder** est un joueur qui a bu une potion Beyonder et gagné ses pouvoirs, comme dans Lord of the Mysteries (LOTM). Chaque Beyonder suit l'une des [22 Voies](/fr/magic/pathways/) et grimpe de la **Séquence 9** (la plus faible) vers la **Séquence 0** (un dieu).
+
+## Le cycle du Beyonder
+
+Chaque Séquence suit le même cycle. Ta première potion (Séquence 9) ne demande ni Interprétation ni rituel et ne coûte aucune Folie, et le [bonus de départ](/fr/general/start/#4-choisis-ton-bonus-de-départ) peut même te la faire sauter.
+
+1. **Trouve la formule** de ta prochaine potion, soit une formule complète, soit toutes ses pages de formule. Les formules viennent des coffres de butin, et la [focalisation du butin](/fr/magic/loot/#focalisation-du-butin-garantie) finit par t'en garantir une.
+2. **Rassemble les ingrédients.** Certains se trouvent dans des coffres, d'autres tombent des créatures Beyonder, d'autres encore se minent sur des gisements lumineux.
+3. **Prépare la potion** dans un Chaudron magique et réussis le court mini-jeu de préparation.
+4. **Bois-la.** Ta première potion fait de toi un Beyonder de Séquence 9 de sa Voie.
+5. **Digère-la en interprétant ton rôle.** Utilise tes capacités comme ta Séquence est censée être jouée et accomplis des primes jusqu'à ce que ta barre d'Interprétation soit remplie à au moins 95 %.
+6. **Accomplis ton rituel** pour la Séquence suivante (à partir de la Séquence 8). Tu peux le sauter, mais ça coûte de la Folie.
+7. Recommence avec la potion suivante.
+
+<CardGrid>
+  <Card title="Préparation et potions" text="Chaudrons, formules, ingrédients, le mini-jeu et l'expiration des potions." href="/fr/magic/brewing/" />
+  <Card title="Butin et focalisation" text="D'où viennent les objets Beyonder, et le compteur de garantie." href="/fr/magic/loot/" />
+  <Card title="Interprétation" text="Digérer ta potion avec des méthodes, des primes et des fioles, et les plafonds de chacune." href="/fr/magic/acting/" />
+  <Card title="Rituels" text="Le score de rituel pour chaque Séquence de 8 à 0." href="/fr/magic/rituals/" />
+</CardGrid>
+
+## Les statistiques qui te gardent en vie
+
+Chaque Beyonder a quatre jauges, toutes visibles sur l'écran de ton personnage (`/coi menu character`).
+
+| Statistique | Ce qu'elle fait | Page |
+|---|---|---|
+| **Spiritualité** | Paie tes capacités et se recharge avec le temps | [Spiritualité](/fr/magic/spirituality/) |
+| **Santé** | Tes points de vie Beyonder cachés, utilisés quand des sorts te touchent | [Santé](/fr/magic/health/) |
+| **Fatigue** | Un épuisement qui te ralentit. Le sommeil l'efface | [États](/fr/magic/conditions/) |
+| **Folie** | À quel point tu es proche de perdre le contrôle | [Folie et Mutation](/fr/magic/mutation/) |
+
+À 100 % de Folie, tu **perds le contrôle** de ton pouvoir. Les Beyonders puissants affrontent alors une [Épreuve](/fr/magic/ordeals/) et perdent des Séquences, mais les plus faibles perdent tout.
+
+## Caractéristiques Beyonder
+
+Une **Caractéristique Beyonder** est une tête colorée qui contient le pouvoir d'une Voie et d'une Séquence. Une Caractéristique de la bonne Voie et de la bonne Séquence remplace tous les ingrédients principaux de cette potion. Elle sert aussi à fabriquer des [Artefacts scellés](/fr/magic/sealed-artifacts/), et une préparation ratée en laisse une derrière elle.

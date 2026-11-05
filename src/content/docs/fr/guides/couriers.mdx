@@ -1,0 +1,65 @@
+---
+title: "Envoyer des objets aux joueurs avec les Courriers"
+description: "Comment marchent les Courriers sur Mysterria : fabriquer un Horn of Summoning, donner tes objets à ton Courrier, choisir un destinataire, et le temps de livraison, même vers des joueurs hors ligne."
+sidebar:
+    label: Courriers
+    order: 34
+---
+
+import {Card, CardGrid, Notice, Figure} from '~/components/mdx';
+import hornCraft from '~/assets/couriers/courier_horn_craft.png';
+
+Les **Courriers** sont des messagers morts-vivants qui portent des objets aux autres joueurs, où qu'ils soient et même quand ils sont hors ligne. Invoques-en un avec un **Horn of Summoning**, donne-lui tes objets et choisis le destinataire.
+
+## Comment obtenir un Horn of Summoning ?
+
+1. Trouve des **Courier Horn Shards** dans les coffres de butin du monde normal. Chaque coffre nouvellement généré a **15 %** de chances d'en contenir un.
+2. Réunis **3 fragments** et assemble-les en **L** sur un établi :
+
+<Figure src={hornCraft} alt="Trois Courier Horn Shards en forme de L dans une grille de fabrication, qui donnent un Horn of Summoning" caption="La recette du Horn of Summoning." contain />
+
+La corne n'est **pas consommée**. Tu peux invoquer un Courrier avec elle une fois toutes les **5 minutes**.
+
+## Types de Courriers
+
+Ta corne invoque toujours le meilleur Courrier auquel tu as accès.
+
+| Courrier | Objets transportés | Temps de livraison | Attend tes objets | Comment l'obtenir |
+|---|---|---|---|---|
+| **Squelette** (Bone Runner) | 1 | 5 minutes | 5 minutes | N'importe quel Horn of Summoning |
+| **Méduse** | 2 | 5 minutes | 5 minutes | Jellyfish Courier dans la [boutique](https://www.mysterria.net/en/store) |
+| **Incinerated Courier** | 2 | 3 minutes | 3 minutes | Incinerated Courier dans la [boutique](https://www.mysterria.net/en/store) |
+
+Les Courriers ne portent **que des objets à l'unité**, pas des piles. Une pile de 64 est refusée, alors divise-la d'abord. Les **boîtes de Shulker** sont refusées aussi.
+
+## Comment envoyer des objets ?
+
+1. Fais un **clic droit** avec le Horn of Summoning. Ton Courrier apparaît à côté de toi.
+2. **Lâche** chaque objet (touche `Q`) à moins de **3 blocs** du Courrier. Il prend l'objet et le confirme dans le chat.
+3. Quand le Courrier est plein (1 objet pour un Squelette, 2 pour les autres), le menu **Select Recipient** s'ouvre au bout d'environ 2 secondes.
+4. Choisis le joueur, puis clique sur **Confirm Delivery**.
+
+Le Courrier part avec tes objets. Toi et le destinataire recevez un message dans le chat quand la livraison commence et quand elle arrive.
+
+Si tu ne termines pas à temps, le Courrier disparaît après son temps d'attente (5 minutes, ou 3 pour l'Incinerated Courier) et les objets qu'il avait déjà pris te reviennent.
+
+## Où marchent les Courriers ?
+
+L'**invocation** marche dans le monde normal, le Nether, la Manipulation Pool, le Mirror Realm, la Nightmare Pool et une [Secret Lair](/fr/guides/orders/#secret-lair-niveau-4). Elle ne marche pas dans l'End.
+
+La **livraison** n'a lieu que si le destinataire est dans le **monde normal** ou le **Nether**. S'il est ailleurs, en mode spectateur ou au-dessus de Y 320, le Courrier attend et réessaie toutes les 5 secondes jusqu'à son retour.
+
+## Puis-je envoyer des objets à un joueur hors ligne ?
+
+Oui. Les objets sont gardés et livrés à la prochaine connexion du joueur, une fois le temps de livraison écoulé. Une livraison toujours en attente au bout de **30 jours** est supprimée, alors n'envoie pas d'objets aux joueurs qui ont quitté le serveur.
+
+## Les Courriers et l'Agora
+
+Laisse ton Horn of Summoning au **Courier Post** de l'[Agora](/fr/guides/agora/#courier-post) et tout ce que tu y achètes sera livré par ton Courrier. Tu peux reprendre la corne quand tu veux.
+
+## Pages liées
+
+<CardGrid>
+  <Card title="Agora" text="Fais livrer tes achats du marché." icon="coin" href="/fr/guides/agora/" />
+  <Card title="Ordres secrets" text="Partage des objets avec ton Ordre grâce à sa réserve." icon="lock" href="/fr/guides/orders/" />
+</CardGrid>
