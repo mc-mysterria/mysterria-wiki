@@ -1,0 +1,235 @@
+---
+title: "教会管理"
+description: "在这个 LOTM 服务器 Mysterria 上经营教会，包括分部、区域总部、地点身份、礼拜、金库、教会封印物库、Lands 关联和教会战争。"
+sidebar:
+  label: 教会管理
+  order: 34
+---
+
+import {Notice, Figure} from '~/components/mdx';
+import blessedSettings from '~/assets/magic/church-blessed-settings.webp';
+import coreBroken from '~/assets/magic/church-core-broken.webp';
+import vaultRecipe from '~/assets/magic/church-vault-recipe.webp';
+import vaultMenu from '~/assets/magic/church-vault-menu.webp';
+
+教会领袖和干部通过地点、礼拜、封印物库、领地关联和战争来壮大教会。创立和加入教会见[教会入门](/zh-cn/magic/churches/)。
+
+## 教会地点
+
+教会的影响力来自**地点**，每个地点都有一个已放置并处于活跃状态的教会核心。增益按你和活跃地点之间的距离计算，而不是按区块。
+
+| 地点 | 说明 |
+|---|---|
+| **主地点** | 你的总部和主锚点。由你的第一个核心建立 |
+| **分部地点** | 额外的地点，用来扩大网络和增强当地的支持 |
+| **区域总部** | 一个远方的地点，可以解锁更多分部名额 |
+
+核心丢失或不活跃的地点不算数。
+
+### 如果主核心被破坏了怎么办？
+
+<Figure src={coreBroken} alt="主教会核心被破坏时显示的聊天警告" />
+
+- 没有主核心时，**所有教会增益都只有 50%**。
+- 没有主核心 **14 天**后，教会会被视为已废弃。
+- **再过 14 天**，所有成员都会被移出，教会也会被删除。
+
+想要搬迁总部，就破坏你的主核心，然后重新放置它。
+
+## 怎样增加分部？
+
+1. 你必须是教会领袖，而且主核心已放置并处于活跃状态。
+2. 确认你有空闲的分部名额（见下表）。
+3. 再制作一个[教会核心](/zh-cn/magic/churches/#教会核心配方)，把它放在离其他所有核心至少 16 格的地方。
+4. 它会被登记为分部。在教会菜单的地点部分管理它。
+
+| 领袖的序列 | 分部名额 | 区域总部名额 |
+|---|---:|---:|
+| 4 | 0 | 0 |
+| 3 | 1 | 1 |
+| 2 | 3 | 1 |
+| 1 | 5 | 2 |
+| 0 | 8 | 3 |
+
+如果放置核心失败，可能是分部名额用完了，可能是主核心不活跃，可能是你需要先建一个区域总部，也可能是这个核心属于别人。
+
+## 区域总部
+
+每个活跃的区域总部会增加 **5 个分部名额**。想要放置一个区域总部：
+
+- 你的下一次扩张必须需要区域总部。
+- 它必须离你的主地点、分部和其他区域总部至少 **5,000 格**。
+- 它必须和你的主地点在**同一个世界**。
+- 它需要一位经理，可以是副领袖，也可以是虔诚度达到最高的天使。用 `/coi church regional-manager set <siteId> <player>` 设置。
+
+教会菜单会显示你当前的位置是否符合要求。
+
+## 经营一个地点
+
+每个地点在下面这些条件下运作得最好，有一位活跃的高序列**首席执事**，最多 **2 名主教**，还有规律的祈祷和出席。
+
+| 首席执事 | 地点效能 |
+|---|---:|
+| 序列0到4 | 100% |
+| 序列5 | 70% |
+| 序列6 | 55% |
+| 序列7 | 45% |
+| 序列8 | 35% |
+| 序列9 | 25% |
+| 普通人 | 15% |
+| 没有首席执事 | 65% |
+
+最近没有祈祷过的首席执事作用会打折扣。
+
+| 地点活跃度 | 数值 |
+|---|---|
+| 近期活跃度的统计窗口 | 7 天 |
+| 每周祈祷目标 | 12 次祈祷 |
+| 每周出席目标 | 8 人出席 |
+| 分部开始衰败 | 14 天没有真正的活动后 |
+| 复兴衰败的分部 | 20 金库和 12 灵性，并站在 12 格以内 |
+
+只要达到祈祷目标或出席目标中的一个，就算完全活跃。
+
+### 金库、奉献与升级
+
+手持一件物品，在教会菜单里对某个地点使用奉献操作（或者 `/coi church offering donate <siteId>`），就能把它加入这个地点的金库。金库用来支付地点的升级和复兴。
+
+升级从 **32 金库**开始，每一级的花费是上一级的 1.6 倍，地点最高可以升到 **5 级**。每升一级，地点的锚点容量提高 12%。
+
+如果你的教会关联了一块 Land，金库可以动用 Land 的银行（见 [Lands](#关联一块-land)）。
+
+## 教会礼拜
+
+礼拜会增加你的**教会进度**，帮助年轻的教会提升等级。
+
+| 礼拜 | 冷却 | 灵性消耗 | 祈祷强度 | 额外效果 | 基础进度 |
+|---|---:|---:|---:|---|---:|
+| 布道（Sermon） | 60 分钟 | 12 | +3.5% | 没有 | 6 |
+| 弥撒（Mass） | 180 分钟 | 16 | +4.5% | 8 秒生命恢复 I | 8 |
+| 圣餐（Communion） | 240 分钟 | 18 | +5.0% | 减轻 2 点可恢复的疯狂值 | 7 |
+| 告解（Confession） | 120 分钟 | 10 | +3.0% | 减轻 1 点可恢复的疯狂值 | 5 |
+
+- 领袖、副领袖、天使或者这个地点的首席执事都可以主持礼拜。
+- 主持者必须在地点 **24 格**以内，并且至少有一名成员出席。
+- 从教会菜单开始，或者使用 `/coi church ritual <siteId> <sermon|mass|communion|confession>`。
+- 进度 =（基础进度 + 每位参与者 0.75，最多 12 位参与者）x 地点的活跃度，活跃度最低按 25% 计算。
+
+每次出席都会计入[序列0](/zh-cn/magic/sequence-zero/)的**虔诚的教会礼拜**事迹（需要 10 次）。
+
+## 封印物库
+
+**教会封印物库**为教会存放[封印物](/zh-cn/magic/sealed-artifacts/)。成员可以借用，由管理者批准借出。
+
+### 封印物库配方
+
+<Figure src={vaultRecipe} alt="教会封印物库的合成配方，中间是一个信标" caption="中间的格子显示的是普通信标，但用教会核心也可以。" contain />
+
+| 行 | 物品 |
+|---|---|
+| 上 | 钻石块、箱子、钻石块 |
+| 中 | 箱子、信标（或教会核心）、箱子 |
+| 下 | 下界合金块、黑曜石、下界合金块 |
+
+只有教会领袖能制作它。把它放在活跃教会核心 **16 格**以内。
+
+### 借用是怎样进行的
+
+1. 管理者把手上的一件封印物存进封印物库。
+2. 成员在封印物库菜单里申请借用（`/coi church artifact request <artifactId>`）。
+3. 管理者批准或拒绝。
+4. 成员必须在借用时间结束前归还。逾期的、被召回的或被丢出的封印物，都会被拉回教会仓库，借用者下线时也一样。
+
+<Figure src={vaultMenu} alt="封印物库菜单，Vault Status 提示框显示已存放、已借出和待处理的数量" caption="/coi church vault 打开的封印物库菜单。把鼠标悬停在书上，可以看到封印物库的状态。" contain />
+
+存入封印物的玩家可以用 `/coi church artifact withdraw` 把它取回，前提是它没有被借出，也没有待处理的申请。
+
+| 封印物库数值 | 当前数值 |
+|---|---|
+| 使用封印物库的距离 | 10 格以内 |
+| 容量 | 每个教会等级、每个封印物库、每个地点等级和每个 Land 关联各 +1，最多 **12** |
+| 借用时间 | 2 小时，随等级、封印物库、地点等级和 Land 关联增加，最多 **4 小时** |
+| 远程封印物 | 一件封印物存放满 **7 天**后，每个地点可以保留一件用于远程借用 |
+
+能力无法替代核心或封印物库，非凡特性窃取和非凡特性净化也无法从教会所有的封印物中拿走非凡特性。
+
+## 关联一块 Land
+
+教会不会圈地。如果你使用[城镇](/zh-cn/guides/towns/)，可以关联一块包含你某个活跃地点的 Land：
+
+1. 在 Lands 里圈下这片区域，并把地点的核心放在里面。
+2. 在地点附近执行 `/coi church land request`（或者 `/coi church land request <siteId>`）。
+3. Land 的主人执行 `/coi church land approve <churchLeader>`。
+4. 用 `/coi church land` 确认。
+
+一个教会有 **3** 个 Land 关联名额，每圈 10 个区块再加 1 个。Land 的主人可以用 `/coi church land perk <churchLeader> <treasury|artifacts> <true|false>` 开关两项增益：
+
+- **Treasury** 让教会金库可以动用 Land 的银行。
+- **Artifacts** 稍微增加封印物库的容量和借用时间。
+
+在已圈下的 Land 里，由 Lands 的权限决定谁能破坏核心和封印物库（已接受的教会战争除外）。
+
+## 教会战争
+
+在 **Diplomacy & War** 菜单里，把其他教会标记为盟友、敌人或中立。战争会改变增益：
+
+| 情况 | 增益 |
+|---|---|
+| 你宣战了，对方还没接受 | 宣战的教会 x0.5 |
+| 已接受的战争进行期间 | x0（所有增益暂停） |
+| 胜者 | 14 天内 x1.5 |
+| 败者 | 14 天内 x0.5 |
+| 平局 | 7 天内 x0.5 |
+| 胜者的盟友 | x1.2 |
+| 败者的盟友，或平局时 | x0.8 |
+
+- 一个教会最多可以同时进行 **3** 场战争，两次宣战之间要间隔 **30 分钟**。一场战争最多持续 **72 小时**。
+- 在已接受的战争中，**序列4或更强**的敌人可以破坏你的核心和封印物库。更弱的玩家不行。
+- 破坏敌人的**主核心**会让战争以破坏者一方的胜利结束。
+
+| 战争指令 | 作用 |
+|---|---|
+| `/coi church war` | 列出战争 |
+| `/coi church war declare <leader>` | 向一个教会宣战 |
+| `/coi church war accept <leader>` | 接受宣战 |
+| `/coi church war join <attackerLeader> <defenderLeader> <attacker\|defender>` | 作为盟友加入战争 |
+| `/coi church war surrender <leader>` | 投降 |
+| `/coi church war draw <leader>` | 提出或接受平局 |
+
+## 危险警报与神圣观察
+
+领袖、副领袖、天使和首席执事可以在教会菜单的观察设置里设置警报：
+
+- **危险警报**，当某位成员（或者任何你标记为受祝福的人）的生命值降到 6 或以下，或者疯狂值达到 85% 时触发，会附上对方的准确位置，最多每 5 分钟一次。
+- **异变警报**，在有人面临失控风险时触发，还有**死亡警报**。
+- **祈祷通知**，在成员、资深成员或外人祈祷时触发。
+
+<Figure src={blessedSettings} alt="教会菜单的 Blessed Settings 页面，有一排警报和通知开关" caption="教会菜单里的 Blessed Settings。每个图标开关一种警报或通知。" contain />
+
+**神圣观察**让教会干部可以在附近观察一位成员。潜行即可停止观察。序列相同或更高的成员必须先给予许可。受信任的成员（副领袖、天使、首席执事或活跃的资深成员）可以被加入远程观察名单。
+
+## 领袖和管理者指令
+
+| 指令 | 作用 |
+|---|---|
+| `/coi church add <player>` | 邀请一位玩家（领袖和副领袖） |
+| `/coi church remove <player>` | 移出一位成员 |
+| `/coi church authority grant <player>` | 任命副领袖（最多 2 名） |
+| `/coi church authority revoke <player>` | 撤销副领袖 |
+| `/coi church angel promote <player>` | 任命天使 |
+| `/coi church angel demote <player>` | 撤销天使 |
+| `/coi church role set <player> <follower\|angel>` | 设置成员的身份 |
+| `/coi church regional-manager set <siteId> <player>` | 设置区域总部经理 |
+| `/coi church ownership handoff <player> confirm` | 把教会交给别人 |
+| `/coi church disband` | 解散教会（在 45 秒内输入教会名字确认） |
+| `/coi church bless <player>` | 祝福一位成员 |
+| `/coi church gift <player> <type>` | 给予恩惠（见[恩惠](/zh-cn/magic/church-perks/#恩惠)） |
+| `/coi church ritual <siteId> <service>` | 举办礼拜 |
+| `/coi church offering donate <siteId>` | 把手持的物品奉献给一个地点 |
+| `/coi church artifact approve\|deny\|recall <artifactId>` | 管理封印物库的借用 |
+| `/coi church artifact deposit` | 存入手持的封印物 |
+| `/coi church merge request <leader>` | 提议合并教会 |
+| `/coi church merge accept\|decline\|status\|cancel` | 回应或查看合并 |
+| `/coi church support set <prayer\|ritual\|blessing> <true\|false>` | 开关共享支持 |
+
+其中大部分在教会菜单里也有对应的按钮。

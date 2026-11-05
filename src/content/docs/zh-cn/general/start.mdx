@@ -1,0 +1,121 @@
+---
+title: "快速开始"
+description: "如何加入 Mysterria 这个《诡秘之主》Minecraft 服务器，包括服务器地址、资源包、账号验证、新手奖励和你的第一瓶魔药。"
+sidebar:
+  label: 快速开始
+  order: 1
+---
+
+import {Figure, Notice, CardGrid, Card} from '~/components/mdx';
+import banner from '~/assets/start/banner.png';
+import ipPreview from '~/assets/start/ip-preview.png';
+import generate from '~/assets/start/generate.png';
+import code from '~/assets/start/code.png';
+import pathways from '~/assets/start/pathways.png';
+import dossier from '~/assets/start/beyonder-dossier.webp';
+
+<Figure src={banner} alt="一名 Mysterria 非凡者在世界上空飞行" />
+
+Mysterria 是一个以《诡秘之主》（LOTM）为题材的 **Minecraft 服务器**。非凡者体系由服务器插件运行，所以你用普通的 Minecraft 客户端就能进入，不需要任何模组。
+
+## 1. 连接服务器
+
+| 项目 | 说明 |
+|---|---|
+| **服务器地址** | `mc.mysterria.net` |
+| **版本类型** | Java 版。基岩版可以通过 Geyser 进入，但部分自定义菜单和图标会显示错误 |
+| **游戏版本** | [玩家指南](https://www.mysterria.net/en/guide/connect)推荐使用 Minecraft Java 版 **26.2** |
+| **模组** | 不需要。可选的 [COI 客户端](/zh-cn/guides/client-mod/)会带来原生菜单和少量扮演加成 |
+
+<Figure src={ipPreview} alt="编辑服务器信息界面，服务器地址填写为 mc.mysterria.net" caption="在多人游戏中添加 mc.mysterria.net。" />
+
+1. 打开**多人游戏**，添加 `mc.mysterria.net` 并进入。
+2. Minecraft 询问时，**接受服务器资源包**。
+3. 在大厅的服务器选择器中，选择 **Mysteries**。
+4. 离开大厅前，先读一读大厅 NPC 说的话。
+
+<Notice tone="warn" title="一切看起来都像原版 Minecraft？">
+  那说明资源包没有加载。编辑服务器条目，把**服务器资源包**设为**启用**，然后重新连接。如果还是不行，请更新你的 Java 客户端。更多解决办法见主站的[问题排查指南](https://www.mysterria.net/en/guide/troubleshooting)。
+</Notice>
+
+## 2. 注册（仅限离线账号）
+
+正版 Minecraft 账号会自动登录，可以跳过这一步。
+
+离线账号第一次进入时输入 `/register <password> <password>`，之后每次进入都输入 `/login <password>`。请记住你的密码。
+
+## 3. 验证你的账号
+
+验证会把你的 Minecraft 账号和你的 Discord 账号以及 mysterria.net 个人资料绑定在一起。完成验证的玩家能进入专属的 Discord 频道，获得独特的聊天前缀和身份组，还能使用商店的全部功能。
+
+1. 在 [mysterria.net](https://www.mysterria.net/en/profile) 登录，打开你的**个人资料**。
+2. 在 **Link your Minecraft account** 下面点击 **Get a code**。
+3. 在游戏里输入 `/verify`，然后在弹出的窗口中填入 8 位验证码。你也可以直接输入 `/verify <code>`。
+
+<Figure src={generate} alt="网站个人资料中的 Link your Minecraft account 框，带有 Get a code 按钮和 /verify 指令" caption="在网站个人资料里获取验证码。" />
+
+<Figure src={code} alt="游戏内要求输入验证码的验证窗口" caption="然后在游戏里输入它。" contain />
+
+如果验证码无效，就重新生成一个，或者在 Discord 上提交工单。
+
+## 4. 选择新手奖励
+
+进入服务器后不久，会弹出一个列出全部 22 条途径的菜单。选一条途径，然后在两种新手奖励中选一种。
+
+<Figure src={pathways} alt="Choose Your Path 菜单，上面有 22 条途径的徽记" caption="新玩家看到的途径菜单。" />
+
+| | 捷径之路 | 决心之路 |
+|---|---|---|
+| **你会得到** | 立刻成为所选途径的序列9 | 再开一个箱子就能拿到保底配方 |
+| **永久代价** | 你的灵性上限**永久降低 10%**，每个序列都是如此 | 没有 |
+| **适合** | 想马上用上能力 | 想学会炼制，并保留完整潜力 |
+
+想领取决心之路，就打开 `/magic`，点击 **Loot Focus**，选择 **Recipes**，并保持 **Any Sequence**。这样你打开的下一个战利品箱会给你一份**任意途径、任意序列**的配方，所以它不一定属于你点选的途径。详见[战利品定向](/zh-cn/magic/loot/#战利品定向保底)。
+
+<Notice tone="info" title="你点选的途径并不会锁定你">
+  你喝下的第一瓶序列9魔药属于哪条途径，你就进入哪条途径。如果菜单里选的是占卜家，你喝的却是学徒魔药，那你就是学徒途径。新手奖励不能重新选择，但如果确实是新玩家的失误，管理团队有时会帮你重置。请在 Discord 上提交工单申请。
+</Notice>
+
+## 5. 炼制并喝下你的第一瓶魔药
+
+序列9需要一份**配方**、一座**魔法坩埚**（简陋祭坛、仪式祭坛或宏伟祭坛）和配方上的**材料**，然后成功完成一次炼制。它不需要扮演或仪式，也不会增加疯狂值。炼好的魔药 48 小时后会过期，所以等你准备好喝的时候再炼。
+
+<CardGrid>
+  <Card title="炼制与魔药" text="坩埚、配方、炼制小游戏，以及炼制失败的代价。" href="/zh-cn/magic/brewing/" />
+  <Card title="战利品与战利品定向" text="配方和材料从哪里来，以及保底计数。" href="/zh-cn/magic/loot/" />
+  <Card title="途径" text="全部 22 条途径、它们的序列和相邻途径。" href="/zh-cn/magic/pathways/" />
+</CardGrid>
+
+## 6. 查看你的角色
+
+你的序列、扮演、生命值、灵性和疯狂值都显示在角色界面上。打开**物品栏**，点击左上角的**途径图标**，再把鼠标悬停在角色头像上。你也可以输入 `/coi menu character`。装了 [COI 客户端](/zh-cn/guides/client-mod/)之后，物品栏里的图标会消失，改为按 **M** 打开。
+
+<Figure src={dossier} alt="COI 客户端中一名占卜家途径序列9玩家的非凡者卷宗，显示生命值、灵性、疯狂值、疲劳和扮演进度" caption="COI 客户端按 M 打开的非凡者卷宗。" />
+
+## 常用指令
+
+| 指令 | 作用 |
+|---|---|
+| `/magic` | 新手指南，包含战利品定向 |
+| `/guide`、`/faq`、`/hints` | 游戏内指南书、常见问题、提示 |
+| `/bounty` | 扮演悬赏 |
+| `/subspace` | 地牢、地牢入口和你的冷却时间 |
+| `/emporium`、`/daily`、`/vote` | 璀璨商行、每日奖励、投票 |
+| `/wallet` | 你的钱 |
+| `/lands` | 创建或管理城镇 |
+| `/msg <player>`、`/r` | 私聊 |
+
+本服**没有** `/home`、`/sethome`、`/spawn`、`/tpa`、`/rtp` 或 `/back`。完整列表见[指令](/zh-cn/general/commands/)。
+
+## 安顿之前
+
+- 没有传送指令，所以要慎重选择基地，或者加入一个城镇。
+- 世界的大部分地方都关闭了 PvP，恶意破坏违反规则。
+- 自然生成结构里的每个箱子都是非凡战利品箱，每个箱子只会给**你**一次战利品。
+- 每个纪元结束后世界会重置。第二纪元于 2026 年 5 月 1 日开启。
+
+详情见[世界与安全](/zh-cn/general/world-and-safety/)。开始游戏前，请先阅读[服务器规则](https://www.mysterria.net/en/rules)。
+
+## 需要帮助？
+
+在聊天里或 [Mysterria Discord](https://discord.com/invite/jc7GSxBWgb) 上提问。[玩家指南](https://www.mysterria.net/en/guide)解答了最常见的问题。

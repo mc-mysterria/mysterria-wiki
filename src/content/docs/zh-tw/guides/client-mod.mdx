@@ -1,0 +1,117 @@
+---
+title: "COI 客戶端"
+description: "Mysterria 可選的 coi-client Fabric 模組，帶來原生非凡者選單、HUD、手勢施法、預設按鍵，以及使用它獲得的 +2% 扮演加成。"
+sidebar:
+  label: COI 客戶端
+  order: 15
+---
+
+import {Figure} from '~/components/mdx';
+import titleScreen from '~/assets/client-mod/title-screen.webp';
+import dossier from '~/assets/start/beyonder-dossier.webp';
+import destinations from '~/assets/client-mod/dossier-destinations.webp';
+import catalogue from '~/assets/client-mod/ability-catalogue.webp';
+import uniqueness from '~/assets/magic/uniqueness-candidacy.webp';
+import mythicalForm from '~/assets/client-mod/mythical-form.webp';
+import selector from '~/assets/client-mod/ability-selector.webp';
+import characterPlate from '~/assets/client-mod/character-plate.webp';
+import hudArrange from '~/assets/client-mod/hud-arrange.webp';
+import hudSettingsAbility from '~/assets/client-mod/hud-settings-ability.webp';
+import hudSettingsElements from '~/assets/client-mod/hud-settings-elements.webp';
+
+**coi-client** 是為 Mysterria 製作的可選 Fabric 模組。它用原生介面和 HUD 元素取代箱子選單和雜亂的快捷欄提示，還會給你少量扮演加成。
+
+伺服器上的任何內容都不需要這個模組。它繪製的每個介面都有對應的箱子選單版本。如果你沒裝模組、透過 Geyser 玩基岩版、用的是過時版本，或者關掉了某項功能，看到的就是箱子選單。
+
+<Figure src={titleScreen} alt="coi-client 的標題畫面，22 條途徑的圖示環繞著標誌旋轉" />
+
+---
+
+### 獲取模組
+
+這個模組需要 Java 版的 Fabric。最新版本是 **1.2.3**，適用於 Minecraft **26.2**。可以從 [GitHub Releases](https://github.com/ikeepcalm/coi-client/releases)、[Modrinth](https://modrinth.com/mod/coi-client) 或 [CurseForge](https://www.curseforge.com/minecraft/mc-mods/coi-client) 下載。
+
+每位玩家進入伺服器幾秒後，都會收到一次關於這個模組的訊息。之後只有非凡者會收到提醒。沒裝模組的每 6 小時提醒一次，裝了模組的每 72 小時提醒一次，用來確認加成正在生效。想看到完整的成神儀式畫面，這個模組幾乎必不可少。
+
+---
+
+### 它改變了什麼
+
+裝好模組並開啟相關功能後：
+
+- 你的非凡者卷宗、能力列表、地圖可見性、萬神殿和神座介面等，都會以**原生視窗**開啟，而不是物品欄格子。
+- **非凡者卷宗**在一個面板裡顯示序列、靈性、瘋狂值、扮演進度及其來源，旁邊是你的角色模型。它的 **Destinations** 標籤頁可以開啟其他所有介面。
+- **能力選擇器和快捷鍵 HUD** 讓你按類別施法，並把能力綁定到按鍵上。快捷鍵 HUD 可以關閉。
+- **非凡者生命條**顯示你真實的非凡者生命值，而不是普通的紅心，樣式有 Hearts + Numbers、Bar、Ornate Bar 和 Segments。PvP 的傷害反饋更清楚，一條**可移動的靈性條**取代了原版的 Boss 血條。見[生命值](/zh-tw/magic/health/)。
+- 把滑鼠懸停在任何非凡材料上，就能看到它的途徑、序列，以及它是主材料還是輔助材料。
+- **資源條**取代了快捷欄裡顯示能力儲備和充能的符號條。
+- 某些途徑帶來的身體變化，例如罪犯途徑的角或刺客途徑的耳朵，會顯示成真正的外觀**特徵**。
+- **成神儀式畫面**更加豐富，**Impact Frames** 會在遊戲中最強力的攻擊命中時，加上動漫風格的定格畫面。
+- **途徑圖示從物品欄中移除**，非凡者選單改為按 **M** 開啟。
+- 登入時還會彈出當天[每日潮汐](/zh-tw/guides/tides/)的通知。此外還有視覺效果的音效、高瘋狂值時的幻覺、首次進入時的教程（可以在設定裡用 **Show Tutorial Again** 重看），以及 Discord 動態狀態。
+
+### 預設按鍵
+
+| 按鍵 | 作用 |
+|---|---|
+| **M** | 開啟非凡者選單 |
+| **K** | 能力綁定 |
+| **G** | 能力輪盤 |
+| **左 Alt**（按住） | 手勢施法 |
+| **Z、X、C、V、B、N** | 能力欄位 1 到 6 |
+
+可以在 Minecraft 的“按鍵控制”裡修改，模組有自己的分類。也有一些按鍵可以直接開啟單個介面，例如你的能力，但在你設定之前它們沒有綁定。
+
+<Figure src={dossier} alt="以原生介面顯示的非凡者卷宗" />
+
+<Figure src={destinations} alt="非凡者卷宗的 Destinations 標籤頁，從這裡可以開啟其他所有介面" />
+
+<Figure src={catalogue} alt="能力圖鑑" />
+
+<Figure src={uniqueness} alt="獨一性介面" />
+
+<Figure src={mythicalForm} alt="神話生物形態介面" />
+
+能力圖鑑列出每個法術的描述、類型、類別、靈性消耗和冷卻時間。能力選擇器只顯示每個能力的名字和類型，方便你快速選擇。
+
+<Figure src={selector} alt="能力選擇器" />
+
+角色銘牌 HUD 用一個面板取代了分開的瘋狂值條、儲備條和扮演條，面板上還會顯示你的皮膚、途徑和序列。
+
+<Figure src={characterPlate} alt="角色銘牌 HUD" contain />
+
+HUD 的每個部分都可以拖動，包括單個能力的快捷鍵，你可以把它們擺成自己想要的佈局。
+
+<Figure src={hudArrange} alt="處於 Arrange on screen 模式的 HUD，每個元素都可以拖到合適的位置" />
+
+設定介面只保留了你可能會改的選項。
+
+<Figure src={hudSettingsAbility} alt="模組的設定介面" contain />
+
+<Figure src={hudSettingsElements} alt="模組的更多設定" contain />
+
+---
+
+### 手勢施法
+
+除了快捷鍵，你還可以給能力指定一個圖形，按住**左 Alt** 畫出這個圖形來施法。一共有 **9 種圖形**，分別是圓形、V、Z、豎線向下、尖角、三角形、正方形、鉤形和弧形。
+
+---
+
+### 原生選單與 `/coi menu native`
+
+模組連線後，原生選單預設開啟。如果想換回箱子選單，比如模組暫時還畫不出某個介面，就執行這條指令。
+
+```
+/coi menu native
+```
+
+它會在模組介面和箱子選單之間切換。這個選擇儲存在伺服器上，所以換到任何客戶端都會保留。
+
+---
+
+### 忠誠加成
+
+當前版本的模組會讓所有來源的**[扮演](/zh-tw/magic/acting/)提高 2%**，並讓扮演法的**冷卻時間縮短 5%**。非常舊的版本無法和伺服器完成握手，就拿不到任何加成，所以請及時更新模組。
+
+加成生效時，`/coi acting` 會列出 COI 客戶端加成。如果還是覺得哪裡不對，可以問管理人員。他們能檢視伺服器從你的客戶端看到了什麼。

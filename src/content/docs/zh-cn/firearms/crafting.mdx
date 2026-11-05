@@ -1,0 +1,74 @@
+---
+title: "武器锻造台与枪械制作"
+description: "如何在 Mysterria 上制作武器锻造台、黄铜和枪械零件，以及丧钟和蒸汽步枪的零件从哪里掉落。用它组装每一把 LOTM 枪械。"
+sidebar:
+    label: 武器锻造台与制作
+    order: 2
+---
+
+import {Figure, Notice} from '~/components/mdx';
+import weaponsmithTable from '~/assets/firearms/weaponsmithtable.png';
+import brass from '~/assets/firearms/brass.png';
+import kleinBarrel from '~/assets/firearms/kleinbarrel.png';
+import kleinCylinder from '~/assets/firearms/kleincylinder.png';
+import kleinFrame from '~/assets/firearms/kleinframe.png';
+import kleinGrip from '~/assets/firearms/kleingrip.png';
+
+每一把枪都是在**武器锻造台**上用零件组装的。克莱恩连发枪的零件可以制作，丧钟和蒸汽步枪的零件则要在箱子里找。枪的数据见[数据表](/zh-cn/firearms/#武器数据)。
+
+## 武器锻造台
+
+在中间放一个锻造台，四边放 4 个铁块，四角放 4 个红石块来制作它。
+
+<Figure src={weaponsmithTable} alt="合成格，中间是锻造台，四边是铁块，四角是红石块，合成武器锻造台" caption="武器锻造台的配方。" contain />
+
+它可以放在任何地方。破坏它时，它会重新掉落成一个武器锻造台。
+
+## 怎样组装枪？
+
+1. 把一把枪的所有零件放进你的物品栏（放在哪个格子都可以）。
+2. **右键点击**武器锻造台。聊天栏会显示你可以组装的枪以及它需要的零件。
+3. **按住 Shift 右键点击**锻造台来组装。零件会被消耗，枪会进入你的物品栏。
+
+没有菜单。如果你带着零件但不是一整套，聊天栏会改为列出你已有的零件。
+
+<Notice tone="warn" title="一次只带一套">
+如果你带着不止一把枪的整套零件，锻造台会按这个顺序组装第一把，克莱恩连发枪、丧钟、蒸汽步枪。先把其他零件放进箱子里。
+</Notice>
+
+## 黄铜
+
+所有弹壳和步枪弹芯都要用到黄铜。
+
+3 个铜锭 + 1 个金锭可以合成 **4 个黄铜**（无序配方）。
+
+<Figure src={brass} alt="合成格，3 个铜锭和 1 个金锭合成 4 个黄铜" caption="黄铜。" contain />
+
+## 克莱恩连发枪的零件
+
+克莱恩连发枪的每个零件都在普通工作台上制作。
+
+| 零件 | 配方 |
+|---|---|
+| 连发枪枪管（Repeater Barrel） | 3 个铁锭 + 1 个青金石 |
+| 连发枪转轮（Repeater Cylinder） | 2 个铁锭 + 1 个红石粉 |
+| 连发枪枪身（Repeater Frame） | 2 个铁锭 + 1 个青金石 |
+| 连发枪握把（Repeater Grip） | 2 个铁锭 + 1 块深色橡木原木 |
+
+一把完整的枪需要 9 个铁锭、2 个青金石、1 个红石粉和 1 块深色橡木原木。
+
+<Figure src={kleinBarrel} alt="连发枪枪管的合成格" caption="连发枪枪管。" contain />
+<Figure src={kleinCylinder} alt="连发枪转轮的合成格" caption="连发枪转轮。" contain />
+<Figure src={kleinFrame} alt="连发枪枪身的合成格" caption="连发枪枪身。" contain />
+<Figure src={kleinGrip} alt="连发枪握把的合成格" caption="连发枪握把。" contain />
+
+## 丧钟和蒸汽步枪的零件
+
+这些零件**无法制作**。主世界原版结构里的箱子每次生成战利品时，都有 **25% 的几率**额外加入一个随机零件。零件从丧钟和蒸汽步枪全部 9 个零件中随机挑选，所以难免会拿到重复的。零件是普通物品，可以交易或储存。
+
+| 枪 | 需要的零件 |
+|---|---|
+| [丧钟](/zh-cn/firearms/deathknell-revolver/)（4 个零件） | 丧钟枪管、丧钟转轮、丧钟枪身、丧钟握把 |
+| [蒸汽步枪](/zh-cn/firearms/steam-rifle/)（5 个零件） | 蒸汽步枪枪管、蒸汽管组件、机械动力箱、军用步枪枪托、狙击瞄准镜 |
+
+箱子战利品和重新填充的规则见[战利品与战利品定向](/zh-cn/magic/loot/)。

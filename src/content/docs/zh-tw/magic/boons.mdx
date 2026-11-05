@@ -1,0 +1,103 @@
+---
+title: "恩賜途徑"
+description: "LOTM Minecraft 伺服器 Mysterria 上的恩賜途徑，包括十條外神恩賜途徑、如何獲得恩賜信物，以及如何透過獻祭把恩賜途徑提升到序列5。"
+sidebar:
+  order: 42
+---
+
+import {Figure} from '~/components/mdx';
+import boonShop from '~/assets/magic/boons-token-in-shop.webp';
+import altarMenu from '~/assets/magic/boons-sacrificial-altar.webp';
+
+恩賜途徑是外神賜予的第二條較小的途徑。你在普通途徑之外同時持有它，它會給你一套自己的能力。
+
+恩賜途徑和普通途徑的運作方式不同：
+
+- 恩賜途徑從**序列9到序列5**，不會更高。
+- 它**沒有扮演條，沒有魔藥，也沒有儀式**。使用它的能力不會讓它提升。
+- 它只能透過在**獻祭祭壇**上**獻祭**材料來提升。
+- 你**同一時間只能持有一條**恩賜途徑。
+
+## 有哪些恩賜途徑？
+
+一共有十條。主站上每條恩賜途徑的頁面都列出了它的能力。
+
+| 恩賜途徑（遊戲內名稱） | 主站頁面 |
+|---|---|
+| 宿命之環（Aeon） | [aeon](https://www.mysterria.net/en/pathways/aeon) |
+| 墮落母神（Chaos Primogenitor） | [chaos](https://www.mysterria.net/en/pathways/chaos) |
+| 混沌之子（Chaos Mist） | [chaosmist](https://www.mysterria.net/en/pathways/chaosmist) |
+| 超星主宰（Condenser） | [condenser](https://www.mysterria.net/en/pathways/condenser) |
+| 原初飢餓（Devouring） | [devouring](https://www.mysterria.net/en/pathways/devouring) |
+| 命運女神（Eternal Edict） | [edict](https://www.mysterria.net/en/pathways/edict) |
+| 不熄的囈語（Everlasting） | [everlasting](https://www.mysterria.net/en/pathways/everlasting) |
+| 慾望母樹（Patriarch） | [patriarch](https://www.mysterria.net/en/pathways/patriarch) |
+| 衰敗君王（Second Law） | [secondlaw](https://www.mysterria.net/en/pathways/secondlaw) |
+| 高維俯視者（Sublunary Eye） | [sublunary](https://www.mysterria.net/en/pathways/sublunary) |
+
+## 怎樣獲得恩賜途徑？
+
+右鍵點選一枚**恩賜信物**，就能獲得對應恩賜途徑的序列9。
+
+| 來源 | 哪些恩賜途徑 | 說明 |
+|---|---|---|
+| [外神錨點](/zh-tw/guides/outer-gods-anchors/)獎勵商店（`/oga rewards`） | 全部十條 | 每枚 900 貢獻點，每條恩賜途徑每月最多 1 枚 |
+| 戰鬥通行證免費線 | 衰敗君王 | 當前通行證的第 41 級 |
+| 戰鬥通行證高階線 | 原初飢餓 | 當前通行證的第 37 級 |
+| 譯者獎勵 | 任意 | 通過審核的 [Weblate 譯者](https://www.mysterria.net/en/news/multilanguage-support-weblate-translator-bounties)可以挑選一條恩賜途徑 |
+
+也有恩賜信物碎片。十塊碎片可以合成一枚信物。
+
+<Figure src={boonShop} alt="/oga rewards 商店中宿命之環（Aeon）恩賜信物的提示框，價格 900，已購買 0/1，每月 1 日 00:00 UTC 補貨" caption="/oga rewards 商店裡的一枚恩賜信物，顯示價格和每月限購。" contain />
+
+### 如果我已經有一條恩賜途徑了呢？
+
+使用第二枚恩賜信物時，會開啟 **Choose a Boon to Replace** 介面，然後是 **Confirm Boon Replacement**。舊的恩賜途徑會**永久失去**，包括它的序列和獻祭進度。你不能對已經擁有的恩賜途徑使用信物。
+
+## 怎樣提升恩賜途徑？
+
+1. **搭建一座獻祭祭壇。**它的藍圖來自[戰利品](/zh-tw/magic/loot/)中找到的祭壇卷軸。開出的藍圖是煉製祭壇還是獻祭祭壇的機率各佔一半，其中 65% 是簡陋的，25% 是普通的，10% 是宏偉的。
+2. **開啟祭壇**，放入非凡材料或非凡特性。
+3. **確認獻祭。**它的價值會加到你恩賜途徑的獻祭條上。
+4. 獻祭條滿了之後，外神會認可你的獻禮，你的恩賜途徑提升一個序列。
+
+<Figure src={altarMenu} alt="獻祭祭壇選單，進度提示框顯示 7871 中的 3148，39%，目標序列8" caption="獻祭祭壇選單。把滑鼠懸停在頂部的進度條上，可以看到你的進度。" contain />
+
+### 能獻祭什麼？
+
+只能獻祭你要提升**到的**那個序列或更強序列的物品。如果你的恩賜途徑是序列9，正在往序列8提升，那麼序列9的材料會被拒絕（"This ingredient is too weak for your current advancement"）。**任何**途徑的材料和非凡特性都算數。
+
+每件物品都有一個基礎價值，它每比你的目標序列強**一個序列，價值就增加 10%**：
+
+| 物品序列 | 材料 | 非凡特性 |
+|---|---|---|
+| 8 | 100 | 400 |
+| 7 | 150 | 650 |
+| 6 | 200 | 800 |
+| 5 | 250 | 1,000 |
+| 4 | 300 | 1,200 |
+| 3 | 350 | 1,500 |
+| 2 | 400 | 1,800 |
+| 1 | 450 | 2,000 |
+
+### 每個序列需要多少點數？
+
+| 提升到 | 序列8 | 序列7 | 序列6 | 序列5 |
+|---|---|---|---|---|
+| 所需點數 | 7,871 | 13,824 | 21,073 | 33,177 |
+
+例如，在普通的獻祭祭壇上從序列9提升到序列8，大約需要 79 份序列8材料（每份 100），或者 48 份序列7材料（每份 150 x 1.1 = 165）。
+
+### 應該搭建哪種祭壇？
+
+| 祭壇 | 點數 | 風險 |
+|---|---|---|
+| 簡陋獻祭祭壇 | x0.7 | 獻祭條滿時有 **15% 的機率**儀式失敗。你獻上的一切都會消失，獻祭條清零 |
+| 獻祭祭壇 | x1.0 | 沒有 |
+| 宏偉獻祭祭壇 | x1.3 | 沒有 |
+
+獻祭祭壇只能用於恩賜途徑，不能用來煉製魔藥。
+
+:::danger[恩賜途徑不能超過你的主途徑]
+你的恩賜途徑永遠不能比你的主途徑序列更強。如果獻祭條滿了，但恩賜途徑的新序列會更強，這次提升就會被拒絕，**獻祭條也會清零**。請先提升你的主途徑。
+:::
