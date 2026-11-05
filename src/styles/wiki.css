@@ -166,6 +166,13 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* jumping to a heading from the contents glides there, unless the reader asked for less motion */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
 html {
     scrollbar-width: thin;
     scrollbar-color: var(--arc-muted) var(--arc-surface);
@@ -831,7 +838,7 @@ starlight-menu-button button svg {
 
 .sidebar-content ul.top-level {
     display: grid;
-    gap: 22px;
+    gap: 6px;
 }
 
 .sidebar-content ul.top-level > li + li {
@@ -839,8 +846,56 @@ starlight-menu-button button svg {
 }
 
 .sidebar-content summary {
-    padding: 0 0 6px;
-    border-radius: var(--std-r-sm);
+    min-height: 38px;
+    padding: 6px 8px 6px 12px;
+    border-radius: var(--std-r-ctl);
+    transition: background-color var(--q-dur) var(--q-ease);
+}
+
+.sidebar-content summary:hover {
+    background: color-mix(in oklab, var(--arc-ink) 4%, transparent);
+}
+
+.sidebar-content summary:hover .caret {
+    color: var(--arc-ink);
+}
+
+.sidebar-content summary:focus-visible {
+    outline: none;
+    background: color-mix(in oklab, var(--arc-ink) 8%, transparent);
+}
+
+/*
+ * Opening and closing a section slides its pages in and out instead of snapping. Browsers
+ * without ::details-content (or with reduced motion) simply open and close as before.
+ */
+.sidebar-content details {
+    interpolate-size: allow-keywords;
+}
+
+.sidebar-content details::details-content {
+    block-size: 0;
+    overflow: clip;
+    opacity: 0;
+    transition:
+        block-size .26s cubic-bezier(.2, .7, .2, 1),
+        opacity .2s ease,
+        content-visibility .26s allow-discrete;
+}
+
+.sidebar-content details[open]::details-content {
+    block-size: auto;
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sidebar-content details::details-content {
+        transition: none;
+    }
+}
+
+.sidebar-content details[open] > summary {
+    margin-bottom: 4px;
 }
 
 .sidebar-content summary .large {
@@ -865,6 +920,11 @@ starlight-menu-button button svg {
 .sidebar-content ul ul {
     display: grid;
     gap: 2px;
+}
+
+/* a section's pages sit one step in from the section's own row */
+.sidebar-content details > ul {
+    padding-inline-start: 12px;
 }
 
 .sidebar-content a {
