@@ -182,14 +182,6 @@ a {
     color: var(--arc-ink);
 }
 
-/* the skip link: a std button in the accent */
-.sl-skip-link {
-    border-radius: var(--std-r-ctl);
-    background: var(--acc-solid);
-    color: var(--arc-on-acc);
-    font-weight: 600;
-}
-
 /* the faint warm glow under the bar (std-gas seam d), on every page */
 /* no isolation here: it would trap the footer's z-index under the fixed sidebar pane */
 .main-frame {
