@@ -215,6 +215,8 @@ export default defineConfig({
             // code blocks follow the main site's theme switch (<html data-theme="dark|parchment">)
             expressiveCode: {
                 themes: ['github-dark', 'github-light'],
+                // its CSS inline in the page, so code blocks are styled from the first paint
+                emitExternalStylesheet: false,
                 useStarlightDarkModeSwitch: false,
                 themeCssSelector: (theme) => (theme.type === 'dark' ? '[data-theme="dark"]' : '[data-theme="parchment"]'),
                 styleOverrides: {
