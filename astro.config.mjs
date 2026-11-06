@@ -2,7 +2,6 @@
 import {defineConfig} from 'astro/config';
 import {sidebar} from './src/lib/sidebar.mjs';
 import starlight from '@astrojs/starlight';
-import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
 import vue from '@astrojs/vue';
 
@@ -16,20 +15,6 @@ export default defineConfig({
             },
         },
     },
-    /*
-     * DOCKER_BUILD=1 drops the Vercel adapter so `astro build` emits a plain
-     * static dist/ for the self-hosted container. Left unset the adapter still
-     * applies, so the same source keeps building on Vercel - which is what lets
-     * the two run side by side while DNS moves across.
-     */
-    adapter: process.env.DOCKER_BUILD
-        ? undefined
-        : vercel({
-            webAnalytics: {
-                enabled: true,
-            },
-            maxDuration: 8,
-        }),
     site: 'https://wiki.mysterria.net',
     /*
      * Pages merged or removed in the Epoch II rewrite. A locale that still has its own copy of
@@ -236,14 +221,6 @@ export default defineConfig({
                     frames: {shadowColor: 'transparent'},
                 },
             },
-            // plugins: [pagePlugin({
-            //     navigation: [
-            //         { href: "/general/start/", label: "Quick Start" },
-            //         { href: "/magic/introduction/", label: "Introduction to Magic" },
-            //         { href: "/guides/towns/", label: "Guides" },
-            //         { href: "/misc/creator-program/", label: "Content Creator Program" }
-            //     ],
-            // })],
             description: 'Complete documentation for Mysterria Minecraft server inspired by Lord of the Mysteries',
             favicon: 'favicon.png',
             social: [
