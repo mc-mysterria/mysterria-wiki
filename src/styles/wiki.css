@@ -13,6 +13,23 @@
  * All of it is unlayered, so it wins over Starlight's layered styles without !important.
  */
 
+/*
+ * The footer's dagger (© Mysterria † mc.mysterria.net) is the only character on most pages
+ * from Commissioner's latin-ext range, so it alone made every page fetch that 39 KB face late
+ * and lay the page out again when it landed. This face is that one glyph cut from the same
+ * file (1 KB, small enough that the build inlines it in the CSS, so it costs no request).
+ * Declared after arcana.css's faces, so it is the one used.
+ */
+@font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 400 800;
+    font-stretch: 100%;
+    font-display: swap;
+    src: url('./fonts/commissioner/commissioner-dagger.woff2') format('woff2');
+    unicode-range: U+2020;
+}
+
 /* ---------- 1. the accent: Bone, as std/accents.ts SITE_ACCENT paints it on the main site ---------- */
 /* on :root only, so the reader's drawn card (painted on <html> by ThemeProvider.astro) reaches every element */
 :root {
