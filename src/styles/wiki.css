@@ -1361,13 +1361,14 @@ mobile-starlight-toc .isMobile a[aria-current="true"] {
  * of the text after the first few is skipped until it scrolls close (content-visibility), so
  * opening a page does not lay out thousands of pixels of text nobody sees yet. A skipped block
  * holds its place at the average block height until it has been drawn once, then at its real
- * one. The clip margin lets focus rings and shadows still show past a block's edge.
+ * one. The clip margin lets focus rings and shadows still show past a block's edge. Tables are
+ * left out: a table is its own sideways scroller, and Chrome loses its scroll width under it.
  * A page opened at a heading (#anchor), reloaded or reached by back/forward lays everything
  * out (Head.astro marks it wiki-full-layout), and so does one that has just jumped to a heading
  * (:target), so the (smooth) scroll there measures real heights and lands on the heading.
  */
 @media not all and (min-width: 50rem) {
-    :root:not(.wiki-full-layout) .sl-markdown-content:not(:has(:target)) > :nth-child(n + 6) {
+    :root:not(.wiki-full-layout) .sl-markdown-content:not(:has(:target)) > :nth-child(n + 6):not(table) {
         content-visibility: auto;
         contain-intrinsic-block-size: auto 130px;
         overflow-clip-margin: 24px;
