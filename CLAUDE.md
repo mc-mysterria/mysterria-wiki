@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is an Astro project using the Starlight documentation theme for the Mysterria Minecraft server documentation website. The site is built as a static site and served by an nginx container (`Dockerfile`, `nginx.conf`), in the same eight locales as the main site.
+This is an Astro project using the Starlight documentation theme for the Mysterria Minecraft server documentation website. The site is built as a static site and served by a Cloudflare Worker (static assets only), in the same eight locales as the main site. The nginx container on Coolify is the fallback.
 
 ## Development Commands
 
@@ -21,7 +21,7 @@ This is an Astro project using the Starlight documentation theme for the Mysterr
 ### Core Structure
 - **Framework**: Astro 6 with Starlight 0.38 and `@astrojs/vue` (server-rendered only)
 - **Content**: Markdown/MDX files in `src/content/docs/`
-- **Deployment**: static files in an nginx container (`Dockerfile`, `nginx.conf`)
+- **Deployment**: Cloudflare Worker `mysterria-wiki` (`wrangler.jsonc`); Coolify nginx container as fallback
 - **Site URL**: https://wiki.mysterria.net
 
 ### Key Directories
@@ -77,8 +77,13 @@ This is an Astro project using the Starlight documentation theme for the Mysterr
 - **Sitemap**: Automatic sitemap generation, with hreflang alternates
 
 ### Deployment
-- **Platform**: the Docker image (`Dockerfile`): `npm run build`, then nginx serves `dist/` with
-  the redirects and cache headers in `nginx.conf`. The host's nginx terminates TLS in front of it
+- **Platform**: Cloudflare Worker `mysterria-wiki`, static assets only. `npm run deploy` builds and runs
+  `wrangler deploy`, which also attaches the `wiki.mysterria.net/*` route (live since 2026-11-06)
+- **Redirects and headers**: `public/_redirects` and `public/_headers`. They mirror `nginx.conf`; change
+  both together, and add any new redirect to `astro.config.mjs` too
+- **Fallback**: the Docker image (`Dockerfile`, `nginx.conf`) still builds on Coolify behind the same DNS
+  record. Rollback: Cloudflare dashboard, Workers & Pages, `mysterria-wiki`, Domains & Routes, delete the
+  route (traffic returns to Coolify in seconds), then remove `routes` from `wrangler.jsonc`
 - **Domain**: wiki.mysterria.net
 
 ## Content Guidelines

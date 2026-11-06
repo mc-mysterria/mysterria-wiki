@@ -1,0 +1,13 @@
+{
+  "name": "mysterria-wiki",
+  "compatibility_date": "2026-06-01",
+  // route on the existing proxied DNS record: deleting it sends traffic back to Coolify
+  "routes": [
+    {"pattern": "wiki.mysterria.net/*", "zone_name": "mysterria.net"}
+  ],
+  // static only, no Worker script: public/_redirects and public/_headers replace nginx.conf
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}
