@@ -3,7 +3,8 @@
  * Starlight's head (title, description, canonical, hreflang alternates, Open Graph and
  * Twitter basics, sitemap link), plus what the wiki adds:
  *   - the Commissioner faces preloaded, as on the main site, so text is set in its real face
- *     from the first paint (Cyrillic too on the Ukrainian pages);
+ *     from the first paint (Cyrillic too on the Ukrainian pages, latin-ext on the Romanian ones,
+ *     the only text that needs it);
  *   - theme-color for the browser chrome (ThemeProvider.astro keeps it in step);
  *   - an x-default alternate (the English page), og:locale in Open Graph's form with its
  *     alternates, the Open Graph image and Twitter tags;
@@ -128,7 +129,7 @@ const jsonLd = JSON.stringify({'@context': 'https://schema.org', '@graph': graph
 {/* let Google show a page's pictures large in results; the 404 page stays out of the index */}
 <meta name="robots" content={isNotFound ? 'noindex, follow' : 'max-image-preview:large'}/>
 <link rel="preload" href={latin} as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href={latinExt} as="font" type="font/woff2" crossorigin/>
+{lang === 'ro' && <link rel="preload" href={latinExt} as="font" type="font/woff2" crossorigin/>}
 {lang === 'uk' && <link rel="preload" href={cyrillic} as="font" type="font/woff2" crossorigin/>}
 <link rel="alternate" hreflang="x-default" href={xDefault}/>
 <link rel="home" href={mainUrl(locale, '')} title="Mysterria"/>

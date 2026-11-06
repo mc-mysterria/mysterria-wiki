@@ -79,6 +79,21 @@ const {hasSidebar} = Astro.locals.starlightRoute;
 			--sl-sidebar-visibility: visible;
 		}
 
+		/*
+		 * Below 50rem the pane is the mobile menu. Closed, it is left out of layout entirely
+		 * (not just hidden), so the browser does not lay out the whole sidebar and the language
+		 * list on every page load, nor fetch the Cyrillic and latin-ext faces for their names.
+		 */
+		@media not all and (min-width: 50rem) {
+			.sidebar-pane {
+				display: none;
+			}
+
+			:global([aria-expanded='true']) ~ .sidebar-pane {
+				display: block;
+			}
+		}
+
 		.sidebar-content {
 			height: 100%;
 			min-height: max-content;
