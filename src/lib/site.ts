@@ -4,7 +4,6 @@
  */
 
 export const MAIN_SITE = 'https://www.mysterria.net';
-export const WIKI_SITE = 'https://wiki.mysterria.net';
 export const DISCORD_URL = 'https://discord.com/invite/jc7GSxBWgb';
 export const MAP_URL = 'https://map.mysterria.net/';
 export const COMPANION_URL = 'https://modrinth.com/mod/coi-client';
@@ -26,8 +25,6 @@ export const LOCALES = [
   {key: 'zh-tw', site: 'zh-TW', short: '繁', name: '繁體中文'},
   {key: 'zh-cn', site: 'zh-CN', short: '简', name: '简体中文'},
 ] as const;
-
-export type WikiLocale = (typeof LOCALES)[number]['key'];
 
 export const localeInfo = (locale: string | undefined) => LOCALES.find(l => l.key === locale) ?? LOCALES[0];
 

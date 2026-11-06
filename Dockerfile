@@ -7,10 +7,6 @@ COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY . .
-# Switches astro.config.mjs off the Vercel adapter so the build lands in dist/
-# as plain static files. Without it the config still targets Vercel, which is
-# what keeps the existing Vercel deploy buildable from the same source.
-ENV DOCKER_BUILD=1
 RUN npm run build
 
 FROM nginx:1.27-alpine
