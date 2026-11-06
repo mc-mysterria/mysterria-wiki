@@ -37,15 +37,34 @@ const {hasSidebar} = Astro.locals.starlightRoute;
 	/*
 	 * A table wider than the column scrolls sideways: it takes keyboard focus then, so it can
 	 * be scrolled without a pointer (WCAG 2.1.1). Tables that fit are left out of the tab order.
+	 *
+	 * Each table is checked when its size settles (a ResizeObserver: on load and when the window
+	 * resizes). A table inside a block the phone has not laid out yet (content-visibility in
+	 * wiki.css) is checked once that block is laid out: measuring it sooner would make the browser
+	 * lay the block out at once, the work the skipping saves.
 	 */
-	const markScrollable = () => {
-		for (const table of document.querySelectorAll<HTMLElement>('.sl-markdown-content table, .sequence-table')) {
-			if (table.scrollWidth > table.clientWidth + 1) table.tabIndex = 0;
-			else if (!table.hasAttribute('aria-label')) table.removeAttribute('tabindex');
+	const skipped = (table: HTMLElement) =>
+		typeof table.checkVisibility === 'function' && !table.checkVisibility({contentVisibilityAuto: true});
+	const waiting = new WeakSet<HTMLElement>();
+	const markScrollable = (table: HTMLElement) => {
+		if (skipped(table)) {
+			// measured once the block holding it is laid out
+			const block = table.closest<HTMLElement>('.sl-markdown-content > *');
+			if (!block || waiting.has(table)) return;
+			waiting.add(table);
+			block.addEventListener('contentvisibilityautostatechange', function wake(event) {
+				if ((event as Event & {skipped: boolean}).skipped) return;
+				block.removeEventListener('contentvisibilityautostatechange', wake);
+				waiting.delete(table);
+				requestAnimationFrame(() => markScrollable(table));
+			});
+			return;
 		}
+		if (table.scrollWidth > table.clientWidth + 1) table.tabIndex = 0;
+		else if (!table.hasAttribute('aria-label')) table.removeAttribute('tabindex');
 	};
-	markScrollable();
-	addEventListener('resize', markScrollable, {passive: true});
+	const sizes = new ResizeObserver(entries => entries.forEach(entry => markScrollable(entry.target as HTMLElement)));
+	for (const table of document.querySelectorAll<HTMLElement>('.sl-markdown-content table, .sequence-table')) sizes.observe(table);
 </script>
 
 <style>
