@@ -98,5 +98,4 @@ When working with content:
 - Removing or merging a page needs a redirect in both `astro.config.mjs` (redirects) and `nginx.conf` (Docker)
 - Custom styling heavily customizes the default Starlight appearance
 - The landing page is drawn by `src/components/starlight/Hero.astro` from the index pages' frontmatter
-- Remote images get their size from `src/data/remote-image-sizes.json` (`node scripts/measure-remote-images.mjs`)
 - All external links point to Mysterria ecosystem (mysterria.net, Discord, etc.)

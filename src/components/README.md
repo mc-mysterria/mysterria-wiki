@@ -95,10 +95,6 @@ import shard from '../../assets/shards/shard.png';
 
 For a remote image, give its size: `<Figure src="https://..." width={1200} height={630} alt="..." />`.
 
-## Remote images in Markdown
-
-Astro does not measure remote images such as `![...](https://...)`. `scripts/measure-remote-images.mjs` records their sizes in `src/data/remote-image-sizes.json`, and the build writes them onto the `<img>` tags so the page keeps their space while they load. Run `node scripts/measure-remote-images.mjs` after adding remote images.
-
 ## The landing page
 
 The landing page is drawn by `starlight/Hero.astro` for any page that has `hero` in its frontmatter, which means `src/content/docs/index.md` and its translations. The title, tagline and buttons come from that frontmatter. The four section cards use translated titles and the description of the page they link to. To write your own card text, add a `landing` block to the page's frontmatter:

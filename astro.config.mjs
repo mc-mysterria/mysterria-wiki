@@ -5,7 +5,6 @@ import starlight from '@astrojs/starlight';
 import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
 import vue from '@astrojs/vue';
-import rehypeImageSizes from './src/lib/rehype-image-sizes.mjs';
 
 export default defineConfig({
     output: 'static',
@@ -143,10 +142,6 @@ export default defineConfig({
         '/zh-tw/guides/daily': '/zh-tw/guides/emporium/#daily-rewards',
         '/zh-tw/guides/tperks': '/zh-tw/guides/towns/#town-perks',
         '/zh-tw/misc/creator-program': '/zh-tw/',
-    },
-    markdown: {
-        // remote images get their width and height, so they keep their room while loading
-        rehypePlugins: [rehypeImageSizes],
     },
     integrations: [
         // the main site's std components (src/components/std), rendered to HTML at build time: no client JS
