@@ -15,7 +15,7 @@ The wiki uses the main site's design system (www.mysterria.net, repo `mysteria-f
 These only work in `.mdx` pages. Import what you need at the top of the page, after the frontmatter:
 
 ```mdx
-import {Card, CardGrid, Tag, Notice, Button, SequenceTable, Figure} from '~/components/mdx';
+import {Card, CardGrid, Notice, SequenceTable, Figure} from '~/components/mdx';
 ```
 
 ### Card and CardGrid
@@ -30,14 +30,6 @@ A card is a link with a title, an optional line of text and an optional icon. Pu
 ```
 
 The icons are the std set's own icons, listed in `std/icons.ts`. Some examples are `star`, `book`, `scroll`, `flame`, `shield`, `coin`, `clock`, `user` and `globe`. Use `<CardGrid min={200}>` to allow narrower columns.
-
-### Tag
-
-A small label. The tones are `neutral` (the default), `acc`, `ok`, `warn` and `bad`. Add `solid` for the one tag that matters most in a group.
-
-```mdx
-<Tag label="Sequence 9" /> <Tag tone="ok" label="Safe" /> <Tag tone="bad" solid label="Lethal" />
-```
 
 ### Notice
 
@@ -55,15 +47,6 @@ Starlight's own asides look the same and also work in plain `.md` pages:
 :::caution[Mind the Crimson Moon]
 Beyonders lose control more easily under it.
 :::
-```
-
-### Button
-
-A button or link button. The variants are `primary` (use only one per section), `secondary` (the default), `quiet` and `link`. The sizes are `sm`, `md` and `lg`. Add `external` for links that open in a new tab.
-
-```mdx
-<Button href="/general/start/" variant="primary" iconEnd="arrow-right">Start playing</Button>
-<Button href="https://www.mysterria.net/en/pathways" variant="link" external>Pathways on the main site</Button>
 ```
 
 ### SequenceTable
@@ -88,25 +71,13 @@ Any other Markdown table automatically gets the main site's table style.
 An image with a caption. Import a local image to have it resized and sized correctly, so the page does not jump while it loads. Add `contain` to keep a small image at its own size, centred.
 
 ```mdx
-import shard from '../../assets/shards/shard.png';
+import shard from '~/assets/shards/shard.png';
 
 <Figure src={shard} alt="An energy shard" caption="An energy shard, as found in the world." contain />
 ```
 
 For a remote image, give its size: `<Figure src="https://..." width={1200} height={630} alt="..." />`.
 
-## Remote images in Markdown
-
-Astro does not measure remote images such as `![...](https://...)`. `scripts/measure-remote-images.mjs` records their sizes in `src/data/remote-image-sizes.json`, and the build writes them onto the `<img>` tags so the page keeps their space while they load. Run `node scripts/measure-remote-images.mjs` after adding remote images.
-
 ## The landing page
 
-The landing page is drawn by `starlight/Hero.astro` for any page that has `hero` in its frontmatter, which means `src/content/docs/index.md` and its translations. The title, tagline and buttons come from that frontmatter. The four section cards use translated titles and the description of the page they link to. To write your own card text, add a `landing` block to the page's frontmatter:
-
-```yaml
-landing:
-  sections:
-    - folder: magic
-      title: Magic and Pathways
-      text: Potions, Sequences and the 22 Pathways.
-```
+The landing page is drawn by `starlight/Hero.astro` for any page that has `hero` in its frontmatter, which means `src/content/docs/index.md` and its translations. The title, tagline and the primary button come from that frontmatter. Under the search box it lists the most read pages (`src/lib/popular.mjs`) and then every page, grouped as in the sidebar (`src/lib/sidebar.mjs`).
