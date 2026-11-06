@@ -64,7 +64,8 @@ This is an Astro project using the Starlight documentation theme for the Mysterr
 - See `src/components/README.md` (also the MDX usage guide)
 - **Std components**: `src/components/std/` (copied Vue components, rendered server-side, no client JS)
 - **Starlight overrides**: `src/components/starlight/` (Head, ThemeProvider, PageFrame, Header,
-  ThemeSelect, LanguageSelect, MobileMenuFooter, Hero, Search), registered in `astro.config.mjs`.
+  ThemeSelect, LanguageSelect, MobileMenuFooter, Hero, Search, and TableOfContents and
+  MobileTableOfContents wrapped in TocGate), registered in `astro.config.mjs`.
   Search reads `src/pages/search/[lang].json.ts` and Starlight's Pagefind index
 - **Footer**: `src/components/SiteFooter.astro`, the main site's footer
 - **MDX components**: `src/components/mdx/` (Card, CardGrid, Notice, SequenceTable, Figure)

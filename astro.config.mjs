@@ -237,7 +237,8 @@ export default defineConfig({
             /*
              * The main site's chrome over Starlight's: its header, footer, theme switch and
              * language menu, the landing page, and the head's SEO additions. Starlight's
-             * sidebar, table of contents and pagination stay its own (restyled in wiki.css). Search is the wiki's own (Search.astro).
+             * sidebar, table of contents and pagination stay its own (restyled in wiki.css; the two contents
+             * are wrapped by TocGate.astro so the hidden one skips its script). Search is the wiki's own (Search.astro).
              */
             components: {
                 Head: './src/components/starlight/Head.astro',
@@ -249,6 +250,8 @@ export default defineConfig({
                 MobileMenuFooter: './src/components/starlight/MobileMenuFooter.astro',
                 Hero: './src/components/starlight/Hero.astro',
                 Search: './src/components/starlight/Search.astro',
+                TableOfContents: './src/components/starlight/TableOfContents.astro',
+                MobileTableOfContents: './src/components/starlight/MobileTableOfContents.astro',
             },
 
             sidebar,

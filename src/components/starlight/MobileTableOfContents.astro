@@ -1,0 +1,10 @@
+---
+/*
+ * Starlight's "On this page" bar, wrapped so a screen that does not show it skips its script.
+ * See TocGate.astro: the bar only shows below 72rem.
+ */
+import Default from '@astrojs/starlight/components/MobileTableOfContents.astro';
+import TocGate from './TocGate.astro';
+---
+
+<TocGate media="not all and (min-width: 72rem)"><Default/></TocGate>
