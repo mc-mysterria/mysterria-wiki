@@ -1,6 +1,7 @@
 // @ts-check
 import {defineConfig} from 'astro/config';
 import {sidebar} from './src/lib/sidebar.mjs';
+import {remarkLeadFigure} from './src/lib/remark-lead-figure.mjs';
 import starlight from '@astrojs/starlight';
 import sitemap from '@astrojs/sitemap';
 import vue from '@astrojs/vue';
@@ -16,6 +17,10 @@ export default defineConfig({
         },
     },
     site: 'https://wiki.mysterria.net',
+    // a page's opening <Figure> loads first instead of lazily (src/lib/remark-lead-figure.mjs)
+    markdown: {
+        remarkPlugins: [remarkLeadFigure],
+    },
     /*
      * Pages merged or removed in the Epoch II rewrite. A locale that still has its own copy of
      * the old page keeps serving it until that translation is redone.
