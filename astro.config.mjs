@@ -149,9 +149,8 @@ export default defineConfig({
              * (see src/assets/sources/locales.json in mysteria-frontend) so a
              * reader crossing between the two sees one consistent list.
              *
-             * Only English and Ukrainian have translated pages today. For every
-             * other locale Starlight falls back to the English page and shows
-             * its built-in "content is not available in your language yet"
+             * A page missing from a locale falls back to the English page, with
+             * Starlight's built-in "content is not available in your language yet"
              * notice, which it already ships translated for all eight - the same
              * behaviour the main site's ContentLanguageNotice provides. Adding a
              * translated page is just dropping the file into src/content/docs/<locale>/.

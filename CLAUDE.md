@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is an Astro project using the Starlight documentation theme for the Mysterria Minecraft server documentation website. The site is built as a static site and deployed to Vercel, serving the same eight locales as the main site.
+This is an Astro project using the Starlight documentation theme for the Mysterria Minecraft server documentation website. The site is built as a static site and served by an nginx container (`Dockerfile`, `nginx.conf`), in the same eight locales as the main site.
 
 ## Development Commands
 
@@ -21,7 +21,7 @@ This is an Astro project using the Starlight documentation theme for the Mysterr
 ### Core Structure
 - **Framework**: Astro 6 with Starlight 0.38 and `@astrojs/vue` (server-rendered only)
 - **Content**: Markdown/MDX files in `src/content/docs/`
-- **Deployment**: Static site hosted on Vercel
+- **Deployment**: static files in an nginx container (`Dockerfile`, `nginx.conf`)
 - **Site URL**: https://wiki.mysterria.net
 
 ### Key Directories
@@ -35,11 +35,11 @@ This is an Astro project using the Starlight documentation theme for the Mysterr
 - `src/assets/` - Images and media files organized by content category
 - `src/components/` - Custom Astro components
 - `src/styles/` - Custom CSS and theming
-- `public/` - Static assets (favicon, robots.txt, custom scripts)
+- `public/` - Files served as they are (favicon, og-image, robots.txt)
 
 ### Content Management
 - **Content Config**: `src/content.config.ts` defines collection schemas
-- **Sidebar Navigation**: Auto-generated from directory structure in `astro.config.mjs`
+- **Sidebar Navigation**: an explicit list in `src/lib/sidebar.mjs` (see Development Notes)
 - **Frontmatter**: Standard Starlight frontmatter for metadata and page configuration
 - **Languages**: Eight locales - English (root), `uk`, `ro`, `de`, `es`, `fr`, `zh-tw`, `zh-cn` -
   matching mysteria-frontend's set, labels, and picker order
@@ -53,8 +53,9 @@ This is an Astro project using the Starlight documentation theme for the Mysterr
 ### Styling & Theming
 - **Design system**: the main site's (mysteria-frontend). `src/styles/arcana.css` (tokens, the
   self-hosted Commissioner face and its metric-matched fallback, dark and parchment themes) and
-  `src/components/std/std.css` + `std-gas.css` are copies; sync them from the main site rather
-  than editing them. `src/styles/wiki.css` is the wiki's own mapping of Starlight onto those tokens
+  `src/components/std/std.css` + `std-gas.css` are copies, pruned of the rules for pieces the
+  wiki never renders; sync them from the main site rather than editing them (each header says
+  how). `src/styles/wiki.css` is the wiki's own mapping of Starlight onto those tokens
 - **Theme**: `localStorage['myst-theme']` = `dark` | `parchment` on `<html data-theme>`, as on the
   main site (plus a `.mysterria.net` cookie so the choice can carry across once the main site reads it)
 - **Accent**: Bone (`#e4dccb`), the main site's accent before a Pathway card is drawn
@@ -63,22 +64,21 @@ This is an Astro project using the Starlight documentation theme for the Mysterr
 - See `src/components/README.md` (also the MDX usage guide)
 - **Std components**: `src/components/std/` (copied Vue components, rendered server-side, no client JS)
 - **Starlight overrides**: `src/components/starlight/` (Head, ThemeProvider, PageFrame, Header,
-  ThemeSelect, LanguageSelect, MobileMenuFooter, Hero), registered in `astro.config.mjs`
+  ThemeSelect, LanguageSelect, MobileMenuFooter, Hero, Search), registered in `astro.config.mjs`.
+  Search reads `src/pages/search/[lang].json.ts` and Starlight's Pagefind index
 - **Footer**: `src/components/SiteFooter.astro`, the main site's footer
-- **MDX components**: `src/components/mdx/` (Card, CardGrid, Tag, Notice, Button, SequenceTable, Figure)
+- **MDX components**: `src/components/mdx/` (Card, CardGrid, Notice, SequenceTable, Figure)
 
 ### Configuration
 - **Astro Config**: `astro.config.mjs` - Main configuration with Starlight setup
 - **TypeScript**: Strict TypeScript configuration
 - **Image Optimization**: Sharp service with unlimited input pixels
-- **Analytics**: Vercel Web Analytics enabled
-- **Sitemap**: Automatic sitemap generation
+- **Sitemap**: Automatic sitemap generation, with hreflang alternates
 
 ### Deployment
-- **Platform**: Vercel with static output
+- **Platform**: the Docker image (`Dockerfile`): `npm run build`, then nginx serves `dist/` with
+  the redirects and cache headers in `nginx.conf`. The host's nginx terminates TLS in front of it
 - **Domain**: wiki.mysterria.net
-- **Build**: Automatic builds on git push
-- **Performance**: Optimized static site generation with image processing
 
 ## Content Guidelines
 
@@ -86,7 +86,7 @@ When working with content:
 - Content should be organized by locale directory (English at the root, `uk/`, `de/`, … alongside it)
 - Follow existing frontmatter patterns for consistency
 - Images should be placed in appropriate `src/assets/` subdirectories
-- Use MDX for content requiring React-like components
+- Use MDX for pages that need the components in `src/components/mdx/`
 - A new page goes in a folder (its URL), and must also be listed in `src/lib/sidebar.mjs` in the section where it belongs. Pages not listed there do not show in the sidebar, the landing page or the quick search
 - Images: import a file from `src/assets/` with the `~/assets/...` alias and show it with `<Figure src={...} alt="..." caption="..."/>` from `~/components/mdx`. Plain Markdown images still work
 - Asides: `:::note`, `:::tip`, `:::caution` and `:::danger` work as in any Starlight site. A warning about losing items, progress or Madness is caution or danger, never tip
