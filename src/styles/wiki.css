@@ -1711,11 +1711,6 @@ mobile-starlight-toc .isMobile a[aria-current="true"] {
     }
 }
 
-/* a button inside a page's text: room above it, never pressed against the paragraph */
-.sl-markdown-content > .std-btn {
-    margin-top: 1.25rem;
-}
-
 .landing-hero__copy {
     display: grid;
     gap: 20px;
@@ -1832,17 +1827,9 @@ mobile-starlight-toc .isMobile a[aria-current="true"] {
     letter-spacing: 0;
 }
 
-/* inside the prose, the std set's links keep their own look */
-.sl-markdown-content :is(.std-card, .std-btn:not(.std-btn--link)) {
+/* inside the prose, a card (a link) keeps its own look */
+.sl-markdown-content .std-card {
     text-decoration: none;
-}
-
-.sl-markdown-content .std-btn--primary,
-.sl-markdown-content .std-btn--primary:hover {
-    color: var(--arc-on-acc);
-}
-
-.sl-markdown-content :is(.std-card, .std-btn--secondary, .std-btn--quiet) {
     color: var(--arc-ink);
 }
 
