@@ -1372,6 +1372,13 @@ mobile-starlight-toc .isMobile a[aria-current="true"] {
         contain-intrinsic-block-size: auto 130px;
         overflow-clip-margin: 24px;
     }
+
+    /* the site footer too: below the fold on any page with text, and long in every language */
+    :root:not(.wiki-full-layout) .site-footer {
+        content-visibility: auto;
+        contain-intrinsic-block-size: auto 580px;
+        overflow-clip-margin: 24px;
+    }
 }
 
 /* ---------- 3g. the end of a page: previous and next as std cards ---------- */
