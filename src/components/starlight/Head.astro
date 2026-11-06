@@ -117,6 +117,17 @@ const jsonLd = JSON.stringify({'@context': 'https://schema.org', '@graph': graph
 ---
 
 <Default/>
+{/*
+  A phone lays out a long page only near the screen (wiki.css, content-visibility). A page opened
+  at a heading (#anchor), reloaded, or reached by back/forward has to land at an exact spot, so it
+  is laid out whole from the start and the scroll there measures real heights.
+*/}
+<script is:inline>
+	(() => {
+		const nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+		if (location.hash || (nav && nav.type !== 'navigate')) document.documentElement.classList.add('wiki-full-layout');
+	})();
+</script>
 <meta name="theme-color" content="#05070a"/>
 {/*
   Pages open at once: the browser loads a wiki page in the background when a reader points at
