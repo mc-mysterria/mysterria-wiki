@@ -1,5 +1,5 @@
 ---
-title: Lord of the Mysteries Minecraft Server
+title: Player guide for the LOTM Minecraft server
 description: The Mysterria wiki for the Lord of the Mysteries (LOTM) Minecraft server. Pathways, potions, Acting, Boons, towns, the economy and High Sequences.
 template: splash
 hero:

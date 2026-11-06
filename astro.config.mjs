@@ -29,6 +29,7 @@ export default defineConfig({
         '/en/support/about': '/',
         '/promoters/application': '/',
         '/guides/archive': '/',
+        '/guides/silkroad': '/',
         '/uk/guides/archive': '/uk/',
         '/uk/guides/silkroad': '/uk/',
         '/pathways/abyss': 'https://www.mysterria.net/en/pathways/abyss',

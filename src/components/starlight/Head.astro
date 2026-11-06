@@ -5,7 +5,8 @@
  *   - the Commissioner faces preloaded, as on the main site, so text is set in its real face
  *     from the first paint (Cyrillic too on the Ukrainian pages);
  *   - theme-color for the browser chrome (ThemeProvider.astro keeps it in step);
- *   - an x-default alternate (the English page), the Open Graph image and Twitter tags;
+ *   - an x-default alternate (the English page), og:locale in Open Graph's form with its
+ *     alternates, the Open Graph image and Twitter tags;
  *   - a link back to the main site, and JSON-LD: the wiki as a WebSite published by the
  *     main site's Organization (the same @id its own JSON-LD declares), this page as a
  *     WebPage, and its BreadcrumbList (wiki home > section > page).
@@ -31,6 +32,22 @@ if (isHome) {
 		if (tag.tag === 'meta' && tag.attrs?.property === 'og:type') tag.attrs.content = 'website';
 	}
 }
+
+/*
+ * Open Graph wants language_TERRITORY (en_US, zh_TW), and Starlight writes the bare lang (en, zh-TW).
+ * Each locale's usual territory, then the other seven as og:locale:alternate.
+ */
+const OG_LOCALES: Record<string, string> = {
+	en: 'en_US', uk: 'uk_UA', ro: 'ro_RO', de: 'de_DE', es: 'es_ES', fr: 'fr_FR', 'zh-CN': 'zh_CN', 'zh-TW': 'zh_TW',
+};
+let ogLocale = OG_LOCALES[lang] ?? lang;
+for (const tag of route.head) {
+	if (tag.tag === 'meta' && tag.attrs?.property === 'og:locale') {
+		ogLocale = OG_LOCALES[String(tag.attrs.content)] ?? String(tag.attrs.content);
+		tag.attrs.content = ogLocale;
+	}
+}
+const ogAlternates = Object.values(OG_LOCALES).filter(code => code !== ogLocale);
 
 const pathWithoutLocale = locale ? Astro.url.pathname.replace(new RegExp(`^/${locale}(?=/)`), '') : Astro.url.pathname;
 const xDefault = new URL(pathWithoutLocale, site).href;
@@ -115,6 +132,7 @@ const jsonLd = JSON.stringify({'@context': 'https://schema.org', '@graph': graph
 {lang === 'uk' && <link rel="preload" href={cyrillic} as="font" type="font/woff2" crossorigin/>}
 <link rel="alternate" hreflang="x-default" href={xDefault}/>
 <link rel="home" href={mainUrl(locale, '')} title="Mysterria"/>
+{ogAlternates.map(code => <meta property="og:locale:alternate" content={code}/>)}
 <meta property="og:image" content={ogImage}/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
