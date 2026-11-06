@@ -14,8 +14,8 @@
  */
 
 /* ---------- 1. the accent: Bone, as std/accents.ts SITE_ACCENT paints it on the main site ---------- */
-:root,
-body {
+/* on :root only, so the reader's drawn card (painted on <html> by ThemeProvider.astro) reaches every element */
+:root {
     --acc: #e4dccb;
     /* accentInk.ts inkAccent()/fillAccent() of Bone, read off www.mysterria.net */
     --acc-deep: #676052;
@@ -1942,4 +1942,11 @@ mobile-starlight-toc .isMobile a[aria-current="true"] {
 .anchor-alias {
     display: block;
     scroll-margin-top: calc(var(--sl-nav-height) + var(--sl-mobile-toc-height, 0px) + 1.5rem);
+}
+
+/* moving between wiki pages fades instead of flashing a blank frame (same-origin page loads only) */
+@media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+        navigation: auto;
+    }
 }

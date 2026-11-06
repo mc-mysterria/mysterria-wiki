@@ -99,6 +99,15 @@ const jsonLd = JSON.stringify({'@context': 'https://schema.org', '@graph': graph
 
 <Default/>
 <meta name="theme-color" content="#05070a"/>
+{/*
+  Pages open at once: the browser loads a wiki page in the background when a reader points at
+  its link (prerender, so it is drawn too and the switch has no blank frame). The main site's
+  pages are fetched the same way. Search JSON and Pagefind files are left alone.
+*/}
+<script is:inline type="speculationrules" set:html={JSON.stringify({
+	prerender: [{where: {and: [{href_matches: '/*'}, {not: {href_matches: '/search/*'}}, {not: {href_matches: '/pagefind/*'}}]}, eagerness: 'moderate'}],
+	prefetch: [{where: {href_matches: 'https://www.mysterria.net/*'}, eagerness: 'moderate'}],
+})}/>
 {/* let Google show a page's pictures large in results; the 404 page stays out of the index */}
 <meta name="robots" content={isNotFound ? 'noindex, follow' : 'max-image-preview:large'}/>
 <link rel="preload" href={latin} as="font" type="font/woff2" crossorigin/>
