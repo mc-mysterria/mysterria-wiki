@@ -23,3 +23,5 @@ pnpm-debug.log*
 
 # review screenshots (local only)
 .review/
+.wrangler/
+.vercel/

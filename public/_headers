@@ -1,0 +1,23 @@
+# nginx.conf's headers. Pages get no-cache: the zone's Browser Cache TTL turns anything
+# shorter (or no header) into 4 hours, but leaves no-cache alone.
+/*
+  Supports-Loading-Mode: credentialed-prerender
+  Cache-Control: no-cache
+
+# Astro fingerprints everything under _astro/
+/_astro/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon.png
+  ! Cache-Control
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/og-image.jpg
+  ! Cache-Control
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# search data is for the page's own script, not for search results
+/search/*
+  X-Robots-Tag: noindex
+/pagefind/*
+  X-Robots-Tag: noindex
