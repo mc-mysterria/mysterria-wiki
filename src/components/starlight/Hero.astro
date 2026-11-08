@@ -17,7 +17,7 @@ import StdButton from '../std/StdButton.vue';
 import StdSectionHead from '../std/StdSectionHead.vue';
 import StdTag from '../std/StdTag.vue';
 import banner from '../../assets/brand/banner.webp';
-import {links, plainLabel, type SidebarGroup} from '../../lib/sections';
+import {flatLinks as flat, links, pageId, plainLabel, type SidebarGroup} from '../../lib/sections';
 import {POPULAR} from '../../lib/popular.mjs';
 
 const route = Astro.locals.starlightRoute;
@@ -27,22 +27,8 @@ const {title = data.title, tagline, actions = []} = data.hero || {};
 const primary = actions.find(action => action.variant === 'primary') ?? actions[0];
 
 const groups = route.sidebar.filter((entry): entry is SidebarGroup => entry.type === 'group');
-/*
- * A section's pages as one flat list. A sub-group's first page is its overview, labelled
- * "Overview" in the sidebar where the sub-group's name sits above it: here it takes that name.
- */
-const flat = (group: SidebarGroup) => group.entries.flatMap(entry => {
-	if (entry.type === 'link') return [{href: entry.href, label: plainLabel(entry.label), badge: entry.badge}];
-	const [first, ...rest] = links(entry);
-	return [
-		...(first ? [{href: first.href, label: plainLabel(entry.label), badge: first.badge}] : []),
-		...rest.map(link => ({href: link.href, label: plainLabel(link.label), badge: link.badge})),
-	];
-});
 const allLinks = groups.flatMap(group => links(group));
-/* a sidebar link's id, without the language: /uk/magic/acting/ -> magic/acting */
-const idOf = (href: string) => href.split('/').filter(Boolean).filter(part => part !== route.locale).join('/');
-const popular = POPULAR.map(id => allLinks.find(link => idOf(link.href) === id)).filter(link => link !== undefined);
+const popular = POPULAR.map(id => allLinks.find(link => pageId(link.href, route.locale) === id)).filter(link => link !== undefined);
 const placeholder = t('wiki.search.placeholder');
 ---
 

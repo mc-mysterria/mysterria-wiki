@@ -5,25 +5,28 @@
  * std menu surface with every language, its code and a tick on the current one.
  *
  * Built as a <details> disclosure of plain links instead of the main site's scripted menu,
- * so it works without JavaScript and every translation is a real link. A few lines of
+ * so it works without JavaScript and every translation is a real link (on the 404 page,
+ * each language's wiki home). A few lines of
  * script close it on Escape and on a click outside. `block` is the drawer's version:
  * the list laid out in place, no chip.
  */
 import StdIcon from '../std/StdIcon.vue';
-import {LOCALES, localeInfo, localizedPath} from '../../lib/site';
+import {LOCALES, localeInfo, localizedPath, wikiPath} from '../../lib/site';
 
 interface Props {
 	block?: boolean;
 }
 
 const {block = false} = Astro.props;
-const {locale} = Astro.locals.starlightRoute;
+const {locale, id} = Astro.locals.starlightRoute;
 const {t} = Astro.locals;
 const current = localeInfo(locale);
 const label = t('header.languageLabel');
+/* the 404 page exists once, in English: there each language leads to its own wiki home */
+const isNotFound = id === '404' || id.endsWith('/404');
 const items = LOCALES.map(l => ({
 	...l,
-	href: localizedPath(Astro.url.pathname, l.key),
+	href: isNotFound ? wikiPath(l.key) : localizedPath(Astro.url.pathname, l.key),
 	lang: l.site,
 	current: l.key === current.key,
 }));

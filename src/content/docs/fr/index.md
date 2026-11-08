@@ -7,7 +7,7 @@ hero:
   tagline: Tout ce qu'il faut savoir pour jouer sur Mysterria, le serveur Minecraft Lord of the Mysteries. De ta première potion jusqu'aux sièges des Hautes Séquences.
   actions:
     - text: Démarrage rapide
-      link: /fr/general/start
+      link: /fr/general/start/
       variant: primary
     - text: En savoir plus sur la magie
       link: /fr/magic/introduction/

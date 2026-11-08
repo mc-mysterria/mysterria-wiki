@@ -12,3 +12,4 @@ export {default as CardGrid} from './CardGrid.astro';
 export {default as Notice} from './Notice.astro';
 export {default as SequenceTable} from './SequenceTable.astro';
 export {default as Figure} from './Figure.astro';
+export {default as SectionIndex} from './SectionIndex.astro';

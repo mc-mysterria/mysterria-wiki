@@ -7,7 +7,7 @@ hero:
   tagline: Alles, was Spieler auf Mysterria brauchen, dem Lord of the Mysteries Minecraft-Server. Von deinem ersten Zaubertrank bis zu den Sitzen der Hohen Sequenzen.
   actions:
     - text: Schnellstart
-      link: /de/general/start
+      link: /de/general/start/
       variant: primary
     - text: Mehr über Magie
       link: /de/magic/introduction/

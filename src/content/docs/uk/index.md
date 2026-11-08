@@ -7,7 +7,7 @@ hero:
   tagline: Усе, що потрібно гравцям на Mysterria, Minecraft-сервері за «Володарем Таємниць». Від першого зілля до місць Високих Послідовностей.
   actions:
     - text: Швидкий старт
-      link: /uk/general/start
+      link: /uk/general/start/
       variant: primary
     - text: Більше про магію
       link: /uk/magic/introduction/

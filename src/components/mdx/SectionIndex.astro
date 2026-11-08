@@ -1,0 +1,43 @@
+---
+/*
+ * A folder's hub (/magic/, /uk/guides/ and so on): every page in the folder the hub sits in,
+ * under the sidebar's section names, in the sidebar's order and the reader's language. It is
+ * read from the sidebar, so a page added there shows here too. Links to pages not yet
+ * translated lead to Starlight's English fallback, as the sidebar's do. Drawn like the
+ * landing page's "Every page" list (components/starlight/Hero.astro).
+ */
+import StdSectionHead from '../std/StdSectionHead.vue';
+import StdTag from '../std/StdTag.vue';
+import {flatLinks, pageId, type SidebarGroup} from '../../lib/sections';
+
+const route = Astro.locals.starlightRoute;
+const folder = pageId(`/${route.id}/`, route.locale).split('/')[0];
+const inFolder = (href: string) => {
+	const id = pageId(href, route.locale);
+	return id.startsWith(`${folder}/`);
+};
+const groups = route.sidebar
+	.filter((entry): entry is SidebarGroup => entry.type === 'group')
+	.map(group => ({label: group.label, pages: flatLinks(group).filter(page => inFolder(page.href))}))
+	.filter(group => group.pages.length > 0);
+---
+
+<div class="landing-index section-index not-content" data-pagefind-ignore="all">
+	{
+		groups.map((group, i) => (
+			<section class="landing-group" aria-labelledby={`section-group-${i}`}>
+				<StdSectionHead title={group.label} count={group.pages.length} level={2} id={`section-group-${i}`}/>
+				<ul class="landing-links">
+					{group.pages.map(page => (
+						<li>
+							<a href={page.href} class="landing-link">
+								<span>{page.label}</span>
+								{page.badge && <StdTag tone="acc" label={page.badge.text}/>}
+							</a>
+						</li>
+					))}
+				</ul>
+			</section>
+		))
+	}
+</div>
