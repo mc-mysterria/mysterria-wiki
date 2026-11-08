@@ -100,6 +100,7 @@ When working with content:
 ## Development Notes
 
 - The sidebar is an explicit list in `src/lib/sidebar.mjs` (nine sections, each folded except the current one), shared with the search index in `src/pages/search/[lang].json.ts`. It is not generated from folders
+- Each content folder has a hub at its folder URL (`magic/index.mdx` -> /magic/, in every locale) that lists the folder's pages with `<SectionIndex/>`, read from the sidebar (`firearms/index.mdx` is the Firearms overview and lists its pages itself). Hubs other than Firearms are not in the sidebar. The breadcrumb JSON-LD in `Head.astro` follows the URL: wiki home > folder hub > page. A new folder needs its own hub in every locale
 - Removing or merging a page needs a redirect in both `astro.config.mjs` (redirects) and `nginx.conf` (Docker)
 - Custom styling heavily customizes the default Starlight appearance
 - The landing page is drawn by `src/components/starlight/Hero.astro` from the index pages' frontmatter

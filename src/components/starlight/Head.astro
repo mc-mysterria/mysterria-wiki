@@ -9,17 +9,19 @@
  *     alternates, the Open Graph image and Twitter tags;
  *   - a link back to the main site, and JSON-LD: the wiki as a WebSite published by the
  *     main site's Organization (the same @id its own JSON-LD declares), this page as a
- *     WebPage, and its BreadcrumbList (wiki home > section > page).
+ *     WebPage, and its BreadcrumbList, which follows the URL: wiki home > the folder's hub
+ *     (/magic/, /uk/magic/) > page. Every crumb carries its URL, as Google requires.
  */
 import Default from '@astrojs/starlight/components/Head.astro';
 import latin from '../../styles/fonts/commissioner/commissioner-latin.woff2?url';
 import latinExt from '../../styles/fonts/commissioner/commissioner-latin-ext.woff2?url';
 import cyrillic from '../../styles/fonts/commissioner/commissioner-cyrillic.woff2?url';
 import {MAIN_SITE, LOCALES, mainUrl, wikiPath} from '../../lib/site';
-import {currentSection, entryIds, links, plainLabel} from '../../lib/sections';
+import {getEntry} from 'astro:content';
+import {plainLabel} from '../../lib/sections';
 
 const route = Astro.locals.starlightRoute;
-const {entry, locale, lang, entryMeta, sidebar, id} = route;
+const {entry, locale, lang, entryMeta, id} = route;
 const site = Astro.site ?? new URL('https://wiki.mysterria.net');
 const pageUrl = new URL(Astro.url.pathname, site).href;
 const homeUrl = new URL(wikiPath(locale), site).href;
@@ -58,15 +60,19 @@ const description = entry.data.description;
 const WEBSITE_ID = `${site.origin}/#website`;
 const ORG_ID = `${MAIN_SITE}/#organization`;
 
-/* wiki home > the section (when it has a page of its own, such as Firearms) > this page */
-const crumbs: {name: string; item?: string}[] = [{name: 'Mysterria Wiki', item: homeUrl}];
-const section = currentSection(sidebar);
-if (section) {
-	// a section's own page is its folder's index (/firearms/), when it has one
-	const own = links(section).find(link => !link.isCurrent && !entryIds(link.href, undefined).at(-1)!.replace(locale ? `${locale}/` : '', '').includes('/'));
-	crumbs.push(own ? {name: section.label, item: new URL(own.href, site).href} : {name: section.label});
+/*
+ * wiki home > the folder's hub, named by its title in this language (or the English one it
+ * falls back to) > this page. A hub itself is wiki home > hub.
+ */
+const crumbs: {name: string; item: string}[] = [{name: 'Mysterria Wiki', item: homeUrl}];
+if (!isHome) {
+	const [folder, ...rest] = pathWithoutLocale.split('/').filter(Boolean);
+	if (folder && rest.length > 0) {
+		const hub = (locale && (await getEntry('docs', `${locale}/${folder}`))) || (await getEntry('docs', folder));
+		if (hub) crumbs.push({name: plainLabel(hub.data.title), item: new URL(wikiPath(locale, `/${folder}/`), site).href});
+	}
+	crumbs.push({name: plainLabel(entry.data.title), item: pageUrl});
 }
-if (!isHome) crumbs.push({name: plainLabel(entry.data.title)});
 
 const graph: Record<string, unknown>[] = [
 	{
@@ -106,7 +112,7 @@ if (!isNotFound) {
 				'@type': 'ListItem',
 				position: i + 1,
 				name: crumb.name,
-				...(crumb.item ? {item: crumb.item} : {}),
+				item: crumb.item,
 			})),
 		});
 	}
