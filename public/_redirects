@@ -1,9 +1,79 @@
 # nginx.conf's rewrites as real 301s (astro.config.mjs's redirects only write meta-refresh pages).
-# First match wins; each path is listed with and without its trailing slash.
-/pathways/:name https://www.mysterria.net/en/pathways/:name 301
-/pathways/:name/ https://www.mysterria.net/en/pathways/:name 301
-/en/pathways/:name https://www.mysterria.net/en/pathways/:name 301
-/en/pathways/:name/ https://www.mysterria.net/en/pathways/:name 301
+# Each path is listed with and without its trailing slash, and each old URL reaches its page in one hop.
+#
+# Order matters. Cloudflare checks exact paths first, but only the ones above the first line with a
+# placeholder (:name) or a splat (*). Every line after that is a pattern, and the live site does not keep
+# the patterns in file order: /en/* won over /en/pathways/:name and /en/support/about. So every exact
+# path stays in the first block, the old /en/ Pathway pages are listed one by one, and no two patterns
+# below match the same URL.
+
+# Old per-Pathway pages, now on the main site
+/en/pathways/abyss https://www.mysterria.net/en/pathways/abyss 301
+/en/pathways/abyss/ https://www.mysterria.net/en/pathways/abyss 301
+/en/pathways/chained https://www.mysterria.net/en/pathways/chained 301
+/en/pathways/chained/ https://www.mysterria.net/en/pathways/chained 301
+/en/pathways/darkness https://www.mysterria.net/en/pathways/darkness 301
+/en/pathways/darkness/ https://www.mysterria.net/en/pathways/darkness 301
+/en/pathways/death https://www.mysterria.net/en/pathways/death 301
+/en/pathways/death/ https://www.mysterria.net/en/pathways/death 301
+/en/pathways/demoness https://www.mysterria.net/en/pathways/demoness 301
+/en/pathways/demoness/ https://www.mysterria.net/en/pathways/demoness 301
+/en/pathways/door https://www.mysterria.net/en/pathways/door 301
+/en/pathways/door/ https://www.mysterria.net/en/pathways/door 301
+/en/pathways/emperor https://www.mysterria.net/en/pathways/emperor 301
+/en/pathways/emperor/ https://www.mysterria.net/en/pathways/emperor 301
+/en/pathways/error https://www.mysterria.net/en/pathways/error 301
+/en/pathways/error/ https://www.mysterria.net/en/pathways/error 301
+/en/pathways/fool https://www.mysterria.net/en/pathways/fool 301
+/en/pathways/fool/ https://www.mysterria.net/en/pathways/fool 301
+/en/pathways/fortune https://www.mysterria.net/en/pathways/fortune 301
+/en/pathways/fortune/ https://www.mysterria.net/en/pathways/fortune 301
+/en/pathways/giant https://www.mysterria.net/en/pathways/giant 301
+/en/pathways/giant/ https://www.mysterria.net/en/pathways/giant 301
+/en/pathways/hanged https://www.mysterria.net/en/pathways/hanged 301
+/en/pathways/hanged/ https://www.mysterria.net/en/pathways/hanged 301
+/en/pathways/hermit https://www.mysterria.net/en/pathways/hermit 301
+/en/pathways/hermit/ https://www.mysterria.net/en/pathways/hermit 301
+/en/pathways/justiciar https://www.mysterria.net/en/pathways/justiciar 301
+/en/pathways/justiciar/ https://www.mysterria.net/en/pathways/justiciar 301
+/en/pathways/moon https://www.mysterria.net/en/pathways/moon 301
+/en/pathways/moon/ https://www.mysterria.net/en/pathways/moon 301
+/en/pathways/mother https://www.mysterria.net/en/pathways/mother 301
+/en/pathways/mother/ https://www.mysterria.net/en/pathways/mother 301
+/en/pathways/paragon https://www.mysterria.net/en/pathways/paragon 301
+/en/pathways/paragon/ https://www.mysterria.net/en/pathways/paragon 301
+/en/pathways/priest https://www.mysterria.net/en/pathways/priest 301
+/en/pathways/priest/ https://www.mysterria.net/en/pathways/priest 301
+/en/pathways/sun https://www.mysterria.net/en/pathways/sun 301
+/en/pathways/sun/ https://www.mysterria.net/en/pathways/sun 301
+/en/pathways/tower https://www.mysterria.net/en/pathways/tower 301
+/en/pathways/tower/ https://www.mysterria.net/en/pathways/tower 301
+/en/pathways/tyrant https://www.mysterria.net/en/pathways/tyrant 301
+/en/pathways/tyrant/ https://www.mysterria.net/en/pathways/tyrant 301
+/en/pathways/visionary https://www.mysterria.net/en/pathways/visionary 301
+/en/pathways/visionary/ https://www.mysterria.net/en/pathways/visionary 301
+/en/pathways/aeon https://www.mysterria.net/en/pathways/aeon 301
+/en/pathways/aeon/ https://www.mysterria.net/en/pathways/aeon 301
+/en/pathways/chaos https://www.mysterria.net/en/pathways/chaos 301
+/en/pathways/chaos/ https://www.mysterria.net/en/pathways/chaos 301
+/en/pathways/chaosmist https://www.mysterria.net/en/pathways/chaosmist 301
+/en/pathways/chaosmist/ https://www.mysterria.net/en/pathways/chaosmist 301
+/en/pathways/condenser https://www.mysterria.net/en/pathways/condenser 301
+/en/pathways/condenser/ https://www.mysterria.net/en/pathways/condenser 301
+/en/pathways/devouring https://www.mysterria.net/en/pathways/devouring 301
+/en/pathways/devouring/ https://www.mysterria.net/en/pathways/devouring 301
+/en/pathways/edict https://www.mysterria.net/en/pathways/edict 301
+/en/pathways/edict/ https://www.mysterria.net/en/pathways/edict 301
+/en/pathways/everlasting https://www.mysterria.net/en/pathways/everlasting 301
+/en/pathways/everlasting/ https://www.mysterria.net/en/pathways/everlasting 301
+/en/pathways/patriarch https://www.mysterria.net/en/pathways/patriarch 301
+/en/pathways/patriarch/ https://www.mysterria.net/en/pathways/patriarch 301
+/en/pathways/secondlaw https://www.mysterria.net/en/pathways/secondlaw 301
+/en/pathways/secondlaw/ https://www.mysterria.net/en/pathways/secondlaw 301
+/en/pathways/sublunary https://www.mysterria.net/en/pathways/sublunary 301
+/en/pathways/sublunary/ https://www.mysterria.net/en/pathways/sublunary 301
+
+# Old pages that no longer exist
 /support/about / 301
 /support/about/ / 301
 /en/support/about / 301
@@ -24,7 +94,8 @@
 /uk/guides/silkroad/ /uk/ 301
 /en / 301
 /en/ / 301
-/en/* /:splat 301
+
+# Pages merged or removed in the Epoch II rewrite (astro.config.mjs has the same list)
 /guides/shards /guides/economy/#energy-shards 301
 /guides/shards/ /guides/economy/#energy-shards 301
 /guides/daily /guides/emporium/#daily-rewards 301
@@ -33,6 +104,20 @@
 /guides/tperks/ /guides/towns/#town-perks 301
 /misc/creator-program / 301
 /misc/creator-program/ / 301
+/en/guides/shards /guides/economy/#energy-shards 301
+/en/guides/shards/ /guides/economy/#energy-shards 301
+/en/guides/daily /guides/emporium/#daily-rewards 301
+/en/guides/daily/ /guides/emporium/#daily-rewards 301
+/en/guides/tperks /guides/towns/#town-perks 301
+/en/guides/tperks/ /guides/towns/#town-perks 301
+/en/misc/creator-program / 301
+/en/misc/creator-program/ / 301
+
+# Patterns: from here on, nothing is an exact path
+/pathways/:name https://www.mysterria.net/en/pathways/:name 301
+/pathways/:name/ https://www.mysterria.net/en/pathways/:name 301
+/uk/pathways/:name https://www.mysterria.net/uk/pathways/:name 301
+/uk/pathways/:name/ https://www.mysterria.net/uk/pathways/:name 301
 /:lang/guides/shards /:lang/guides/economy/#energy-shards 301
 /:lang/guides/shards/ /:lang/guides/economy/#energy-shards 301
 /:lang/guides/daily /:lang/guides/emporium/#daily-rewards 301
@@ -41,3 +126,5 @@
 /:lang/guides/tperks/ /:lang/guides/towns/#town-perks 301
 /:lang/misc/creator-program /:lang/ 301
 /:lang/misc/creator-program/ /:lang/ 301
+# English moved from /en/ to the root
+/en/* /:splat 301
