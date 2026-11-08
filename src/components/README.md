@@ -31,6 +31,16 @@ A card is a link with a title, an optional line of text and an optional icon. Pu
 
 The icons are the std set's own icons, listed in `std/icons.ts`. Some examples are `star`, `book`, `scroll`, `flame`, `shield`, `coin`, `clock`, `user` and `globe`. Use `<CardGrid min={200}>` to allow narrower columns.
 
+### SectionIndex
+
+The list on a folder's hub page (`magic/index.mdx` and its translations): every page in that folder, under the sidebar's section names, in the reader's language. It takes no props and is read from `src/lib/sidebar.mjs`, so it stays in step with the sidebar.
+
+```mdx
+import {SectionIndex} from '~/components/mdx';
+
+<SectionIndex/>
+```
+
 ### Notice
 
 A callout box. The tones are `info` (the default), `ok`, `warn`, `bad` and `acc`. The small label above the text defaults to Note, Tip, Caution or Danger, in the reader's language. You can change it with `kind`.

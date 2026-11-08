@@ -1624,9 +1624,15 @@ mobile-starlight-toc .isMobile a[aria-current="true"] {
     overflow-x: clip;
 }
 
-/* the sections under "Every page" sit one step below it */
-.landing .landing-group .std-sh__title {
+/* the sections under "Every page" sit one step below it, as they do on a folder's hub (/magic/) */
+.landing .landing-group .std-sh__title,
+.section-index .landing-group .std-sh__title {
     font-size: 17px;
+}
+
+/* a folder's hub: its list sits as far under the intro as its rows sit from each other */
+.sl-markdown-content .section-index {
+    margin-top: var(--arc-head-gap);
 }
 
 :root[data-has-hero] main > .content-panel:first-of-type {
