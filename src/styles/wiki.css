@@ -13,6 +13,23 @@
  * All of it is unlayered, so it wins over Starlight's layered styles without !important.
  */
 
+/*
+ * The footer's dagger (© Mysterria † mc.mysterria.net) is the only character on most pages
+ * from Commissioner's latin-ext range, so it alone made every page fetch that 39 KB face late
+ * and lay the page out again when it landed. This face is that one glyph cut from the same
+ * file (1 KB, small enough that the build inlines it in the CSS, so it costs no request).
+ * Declared after arcana.css's faces, so it is the one used.
+ */
+@font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 400 800;
+    font-stretch: 100%;
+    font-display: swap;
+    src: url('./fonts/commissioner/commissioner-dagger.woff2') format('woff2');
+    unicode-range: U+2020;
+}
+
 /* ---------- 1. the accent: Bone, as std/accents.ts SITE_ACCENT paints it on the main site ---------- */
 /* on :root only, so the reader's drawn card (painted on <html> by ThemeProvider.astro) reaches every element */
 :root {
@@ -1336,6 +1353,32 @@ mobile-starlight-toc .isMobile a[aria-current="true"] {
     .main-frame > .site-footer {
         z-index: calc(var(--sl-z-index-menu) + 1);
         margin-inline: calc(-1 * var(--sl-content-inline-start, 0px)) calc(-1 * var(--wiki-frame-end, 0px));
+    }
+}
+
+/*
+ * On a phone, the browser lays out only the part of a long page near the screen: every block
+ * of the text after the first few is skipped until it scrolls close (content-visibility), so
+ * opening a page does not lay out thousands of pixels of text nobody sees yet. A skipped block
+ * holds its place at the average block height until it has been drawn once, then at its real
+ * one. The clip margin lets focus rings and shadows still show past a block's edge. Tables are
+ * left out: a table is its own sideways scroller, and Chrome loses its scroll width under it.
+ * A page opened at a heading (#anchor), reloaded or reached by back/forward lays everything
+ * out (Head.astro marks it wiki-full-layout), and so does one that has just jumped to a heading
+ * (:target), so the (smooth) scroll there measures real heights and lands on the heading.
+ */
+@media not all and (min-width: 50rem) {
+    :root:not(.wiki-full-layout) .sl-markdown-content:not(:has(:target)) > :nth-child(n + 6):not(table) {
+        content-visibility: auto;
+        contain-intrinsic-block-size: auto 130px;
+        overflow-clip-margin: 24px;
+    }
+
+    /* the site footer too: below the fold on any page with text, and long in every language */
+    :root:not(.wiki-full-layout) .site-footer {
+        content-visibility: auto;
+        contain-intrinsic-block-size: auto 580px;
+        overflow-clip-margin: 24px;
     }
 }
 

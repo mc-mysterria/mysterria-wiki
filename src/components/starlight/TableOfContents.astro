@@ -1,0 +1,10 @@
+---
+/*
+ * Starlight's table of contents, wrapped so a screen that does not show it skips its script.
+ * See TocGate.astro: the right-hand contents only show from 72rem up.
+ */
+import Default from '@astrojs/starlight/components/TableOfContents.astro';
+import TocGate from './TocGate.astro';
+---
+
+<TocGate media="(min-width: 72rem)"><Default/></TocGate>

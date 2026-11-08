@@ -1,6 +1,7 @@
 // @ts-check
 import {defineConfig} from 'astro/config';
 import {sidebar} from './src/lib/sidebar.mjs';
+import {remarkLeadFigure} from './src/lib/remark-lead-figure.mjs';
 import starlight from '@astrojs/starlight';
 import sitemap from '@astrojs/sitemap';
 import vue from '@astrojs/vue';
@@ -16,6 +17,10 @@ export default defineConfig({
         },
     },
     site: 'https://wiki.mysterria.net',
+    // a page's opening <Figure> loads first instead of lazily (src/lib/remark-lead-figure.mjs)
+    markdown: {
+        remarkPlugins: [remarkLeadFigure],
+    },
     /*
      * Pages merged or removed in the Epoch II rewrite. A locale that still has its own copy of
      * the old page keeps serving it until that translation is redone.
@@ -210,6 +215,8 @@ export default defineConfig({
             // code blocks follow the main site's theme switch (<html data-theme="dark|parchment">)
             expressiveCode: {
                 themes: ['github-dark', 'github-light'],
+                // its CSS inline in the page, so code blocks are styled from the first paint
+                emitExternalStylesheet: false,
                 useStarlightDarkModeSwitch: false,
                 themeCssSelector: (theme) => (theme.type === 'dark' ? '[data-theme="dark"]' : '[data-theme="parchment"]'),
                 styleOverrides: {
@@ -230,7 +237,8 @@ export default defineConfig({
             /*
              * The main site's chrome over Starlight's: its header, footer, theme switch and
              * language menu, the landing page, and the head's SEO additions. Starlight's
-             * sidebar, table of contents and pagination stay its own (restyled in wiki.css). Search is the wiki's own (Search.astro).
+             * sidebar, table of contents and pagination stay its own (restyled in wiki.css; the two contents
+             * are wrapped by TocGate.astro so the hidden one skips its script). Search is the wiki's own (Search.astro).
              */
             components: {
                 Head: './src/components/starlight/Head.astro',
@@ -242,6 +250,8 @@ export default defineConfig({
                 MobileMenuFooter: './src/components/starlight/MobileMenuFooter.astro',
                 Hero: './src/components/starlight/Hero.astro',
                 Search: './src/components/starlight/Search.astro',
+                TableOfContents: './src/components/starlight/TableOfContents.astro',
+                MobileTableOfContents: './src/components/starlight/MobileTableOfContents.astro',
             },
 
             sidebar,

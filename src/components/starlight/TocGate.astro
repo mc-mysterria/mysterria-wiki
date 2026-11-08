@@ -1,0 +1,39 @@
+---
+/*
+ * Starlight renders the contents twice, the right-hand column and the "On this page" bar, and
+ * shows one of them by screen width. Each one's script still walks the whole page when it starts
+ * (one of Starlight's slowest steps on a phone), the hidden one too. Where `media` does not
+ * match, this takes the hidden copy out of the page before its script starts, and puts it back
+ * (it then starts) if the screen grows or turns so that it shows. Without JavaScript nothing is
+ * taken out.
+ */
+interface Props {
+	media: string;
+}
+
+const {media} = Astro.props;
+---
+
+<wiki-toc-gate data-media={media}><slot/></wiki-toc-gate>
+<script is:inline>
+	(() => {
+		const gate = document.currentScript.previousElementSibling;
+		const mq = matchMedia(gate.dataset.media);
+		const toc = gate.querySelector('starlight-toc, mobile-starlight-toc');
+		if (mq.matches || !toc) return;
+		const mark = document.createComment('');
+		toc.replaceWith(mark);
+		const restore = () => {
+			if (!mq.matches) return;
+			mark.replaceWith(toc);
+			mq.removeEventListener('change', restore);
+		};
+		mq.addEventListener('change', restore);
+	})();
+</script>
+
+<style>
+	wiki-toc-gate {
+		display: contents;
+	}
+</style>

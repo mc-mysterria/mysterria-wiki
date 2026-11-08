@@ -3,7 +3,9 @@
  * Starlight's head (title, description, canonical, hreflang alternates, Open Graph and
  * Twitter basics, sitemap link), plus what the wiki adds:
  *   - the Commissioner faces preloaded, as on the main site, so text is set in its real face
- *     from the first paint (Cyrillic too on the Ukrainian pages);
+ *     from the first paint (Cyrillic too on the Ukrainian pages, latin-ext on the Romanian ones,
+ *     the only text that needs it; the footer's dagger has a one-glyph face of its own, inlined
+ *     in the CSS, see wiki.css);
  *   - theme-color for the browser chrome (ThemeProvider.astro keeps it in step);
  *   - an x-default alternate (the English page), og:locale in Open Graph's form with its
  *     alternates, the Open Graph image and Twitter tags;
@@ -115,6 +117,17 @@ const jsonLd = JSON.stringify({'@context': 'https://schema.org', '@graph': graph
 ---
 
 <Default/>
+{/*
+  A phone lays out a long page only near the screen (wiki.css, content-visibility). A page opened
+  at a heading (#anchor), reloaded, or reached by back/forward has to land at an exact spot, so it
+  is laid out whole from the start and the scroll there measures real heights.
+*/}
+<script is:inline>
+	(() => {
+		const nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+		if (location.hash || (nav && nav.type !== 'navigate')) document.documentElement.classList.add('wiki-full-layout');
+	})();
+</script>
 <meta name="theme-color" content="#05070a"/>
 {/*
   Pages open at once: the browser loads a wiki page in the background when a reader points at
@@ -128,7 +141,7 @@ const jsonLd = JSON.stringify({'@context': 'https://schema.org', '@graph': graph
 {/* let Google show a page's pictures large in results; the 404 page stays out of the index */}
 <meta name="robots" content={isNotFound ? 'noindex, follow' : 'max-image-preview:large'}/>
 <link rel="preload" href={latin} as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href={latinExt} as="font" type="font/woff2" crossorigin/>
+{lang === 'ro' && <link rel="preload" href={latinExt} as="font" type="font/woff2" crossorigin/>}
 {lang === 'uk' && <link rel="preload" href={cyrillic} as="font" type="font/woff2" crossorigin/>}
 <link rel="alternate" hreflang="x-default" href={xDefault}/>
 <link rel="home" href={mainUrl(locale, '')} title="Mysterria"/>
