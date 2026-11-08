@@ -7,7 +7,7 @@ hero:
   tagline: Tot ce le trebuie jucătorilor pe Mysterria, serverul de Minecraft Lord of the Mysteries. De la primul tău elixir până la locurile Secvențelor înalte.
   actions:
     - text: Start rapid
-      link: /ro/general/start
+      link: /ro/general/start/
       variant: primary
     - text: Mai multe despre magie
       link: /ro/magic/introduction/
