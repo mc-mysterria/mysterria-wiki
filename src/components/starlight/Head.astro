@@ -36,6 +36,17 @@ if (isHome) {
 }
 
 /*
+ * The 404 page is served at any missing URL and kept out of the index, so it names no canonical and no
+ * translations (Starlight's would point at /404/ and /uk/404/, which are not pages).
+ */
+if (isNotFound) {
+	for (let i = route.head.length - 1; i >= 0; i--) {
+		const {tag, attrs} = route.head[i];
+		if (tag === 'link' && (attrs?.rel === 'canonical' || (attrs?.rel === 'alternate' && attrs?.hreflang))) route.head.splice(i, 1);
+	}
+}
+
+/*
  * Open Graph wants language_TERRITORY (en_US, zh_TW), and Starlight writes the bare lang (en, zh-TW).
  * Each locale's usual territory, then the other seven as og:locale:alternate.
  */
@@ -136,7 +147,7 @@ const jsonLd = JSON.stringify({'@context': 'https://schema.org', '@graph': graph
 <link rel="preload" href={latin} as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href={latinExt} as="font" type="font/woff2" crossorigin/>
 {lang === 'uk' && <link rel="preload" href={cyrillic} as="font" type="font/woff2" crossorigin/>}
-<link rel="alternate" hreflang="x-default" href={xDefault}/>
+{!isNotFound && <link rel="alternate" hreflang="x-default" href={xDefault}/>}
 <link rel="home" href={mainUrl(locale, '')} title="Mysterria"/>
 {ogAlternates.map(code => <meta property="og:locale:alternate" content={code}/>)}
 <meta property="og:image" content={ogImage}/>
