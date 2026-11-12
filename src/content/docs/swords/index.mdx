@@ -1,0 +1,103 @@
+---
+title: "Swords"
+description: "Mysterria Swords on the LOTM Minecraft server: six forged melee weapons with combos and weapon arts, attunement, grades, dual-wielding, sheaths and the rules for losing them."
+sidebar:
+    label: Overview
+    order: 1
+---
+
+import {Card, CardGrid} from '~/components/mdx';
+
+Mysterria has six forged melee weapons. Each has a three-step combo, its own **weapon art**, and a rig that animates your whole body while you fight. You forge them at a **Bladesmith's Table** from Notes, materials and Beyonder ingredients.
+
+## The weapons
+
+| Weapon | Type | Blueprint | Weapon art | In short |
+|---|---|---|---|---|
+| [Knight's Longsword](/swords/knights-longsword/) | Longsword | Tier I | Weapon Art | The balanced baseline |
+| [Twin Fangs](/swords/twin-fangs/) | Twin Blades | Tier I | Severing Line | Fast, brands a target, dashes through foes |
+| [Moonlit Nodachi](/swords/moonlit-nodachi/) | Nodachi | Tier II | Moonreap | Wide sweeps that also hit crowds |
+| [Jade Naginata](/swords/jade-naginata/) | Naginata | Tier II | Ashigarai | The longest reach, shoves foes away |
+| [Cathedral Greatsword](/swords/cathedral-greatsword/) | Greatsword | Tier III | Shatter | Slow, heavy, cleaves |
+| [Starless Katana](/swords/starless-katana/) | Void Katana | Void Notes | Severance / Event Horizon | Executes, from the End and a Demigod table |
+
+Every weapon deals about the same damage over time. They differ in how they deliver it: speed, reach, crowds and control.
+
+## How do I get my first sword?
+
+1. Craft a [Bladesmith's Table](/swords/crafting/#the-bladesmiths-table) and place it.
+2. Collect **Bladesmith's Notes** from structure chests and draft a **Blueprint** at the table.
+3. Carrying the Blueprint, forge the **Blade**, **Guard** and **Grip**, each from materials and one Beyonder ingredient.
+4. **Assemble** the weapon from the three parts.
+
+The [crafting page](/swords/crafting/) has every recipe and where Notes come from.
+
+## Controls
+
+| Action | How |
+|---|---|
+| Swing (the combo) | Left-click |
+| Weapon art | Sneak + right-click, or Sneak + F |
+| Off-hand strike (with a second one-handed weapon in your off-hand) | Right-click |
+| Switch the Starless Katana's art | F |
+
+**F never moves a Mysterria weapon to your off-hand.** To dual-wield, put the second weapon there through your inventory.
+
+## Combos
+
+Each weapon has a three-step chain. Click again during a step to buffer the next one; wait too long (about 0.8 seconds) and the chain starts over at step 1. The third step is the finisher and hits hardest. There are **no random critical hits**: every bonus is earned and visible.
+
+A swing lands when the blade does, on the target in front of you closest to the middle of the swing, so you can swing at the air and still hit an enemy who steps into the blade. The action bar shows the next combo step and whether your art is ready.
+
+## Weapon arts
+
+Sneak and right-click (or Sneak + F) to use your weapon's art. Arts cost **Spirituality**, have a cooldown, and only **Beyonders** can use them. Each one winds up first and shows where it will land, so the other side always has a moment to react. Once any art goes off, there are 3 seconds before you can start another one, even with a different weapon.
+
+## Attunement and grades
+
+A weapon's **grade** is a Sequence, from 9 down to 0, raised at the table with Beyonder ingredients (see [Grades](/swords/crafting/#grades)). The higher you are on your Pathway, the higher the grade you can use to its full strength:
+
+| Rating | When | Hits to kill an equal foe (Sequence 9 / 5 / 1) |
+|---|---|---|
+| Unattuned | Your Sequence is more than 2 weaker than the grade, the weapon is ungraded, or you are not a Beyonder | about 16 / 18 / 21 |
+| Attuned | Your Sequence is at most 2 weaker than the grade | about 14 / 15 / 18 |
+| Demigod grades (3 to 1) | Attuned, at those grades | about 13 / 14 / 16 |
+| Top grade (0) | Attuned, at grade 0 | about 12 / 13 / 15 |
+
+Every rating is stronger than a Sharpness V netherite sword. Mysterria weapons can't be enchanted for damage; the rating already covers it.
+
+## Two-handed weapons and dual-wielding
+
+The Twin Fangs, Nodachi, Naginata and Greatsword are **two-handed**: they refuse to swing while anything is in your off-hand. The Knight's Longsword and the Starless Katana are one-handed, so you can carry a second one-handed Mysterria weapon in your off-hand:
+
+- your main hand hits for 75%, your off-hand strike (right-click) for 45%, together about 10% more than one weapon;
+- Sneak + F uses the off-hand weapon's art.
+
+Twilight Giants with Dual Wielding keep their own, stronger off-hand.
+
+## Sheaths
+
+A weapon you carry in your hotbar but don't hold sits in its scabbard on your body: on the left hip, crossed at the small of your back, or across your back, by weapon. Taking it in hand draws it; switching away sheathes it. While you glide, swim, ride, sleep, draw a bow, raise a shield or eat, your normal player model shows instead.
+
+Players see the animated body of up to 16 other wielders within 48 blocks, the nearest first; past that they see the normal model. On a slower computer, `/swords rigs <number>` lowers your own limit and `/swords rigs off` resets it.
+
+## Losing a weapon
+
+:::danger
+Every Mysterria weapon **always drops when you die**, even where other items would be kept. Only deaths that keep your whole inventory (duels, the Nightmare world, keep-inventory worlds) keep it. Its [mastery](/swords/mastery/) goes with it.
+:::
+
+## Swords pages
+
+<CardGrid>
+  <Card title="Bladesmith's Table and Crafting" text="Notes, Blueprints, parts, minigames, grades and salvage." href="/swords/crafting/" />
+  <Card title="Paragon Forging and Resonance" text="What a Paragon's hand adds, runes, and each Pathway's art rider." href="/swords/forging/" />
+  <Card title="Mastery" text="Weapons that grow stronger the more they fight." href="/swords/mastery/" />
+  <Card title="Relics" text="Ritual-forged versions of each weapon, and how to find their rituals." href="/swords/relics/" />
+  <Card title="Knight's Longsword" text="The balanced baseline." href="/swords/knights-longsword/" />
+  <Card title="Twin Fangs" text="A sabre and a demon blade as one weapon." href="/swords/twin-fangs/" />
+  <Card title="Moonlit Nodachi" text="Sweeps, a lunging thrust and Moonreap." href="/swords/moonlit-nodachi/" />
+  <Card title="Jade Naginata" text="Reach and space." href="/swords/jade-naginata/" />
+  <Card title="Cathedral Greatsword" text="Slow, heavy and cleaving." href="/swords/cathedral-greatsword/" />
+  <Card title="Starless Katana" text="Void corruption and executions." href="/swords/starless-katana/" />
+</CardGrid>

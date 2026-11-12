@@ -1,0 +1,103 @@
+---
+title: "刀劍"
+description: "LOTM Minecraft 伺服器 Mysterria 上的 Mysterria Swords：六把鍛造的近戰武器，包括連招和武器技藝、契合、品階、雙持、劍鞘，以及遺失武器的規則。"
+sidebar:
+    label: 概覽
+    order: 1
+---
+
+import {Card, CardGrid} from '~/components/mdx';
+
+Mysterria 有六把鍛造的近戰武器。每把都有三段連招、自己的**武器技藝**，以及一套在戰鬥時讓你整個身體動起來的骨骼動畫。你在**刀匠工作台**（Bladesmith's Table）上用筆記（Notes）、材料和非凡者材料鍛造它們。
+
+## 武器一覽
+
+| 武器 | 類型 | 圖紙 | 武器技藝 | 簡介 |
+|---|---|---|---|---|
+| [Knight's Longsword](/zh-tw/swords/knights-longsword/) | 長劍 | 一階 | Weapon Art | 均衡的基準 |
+| [Twin Fangs](/zh-tw/swords/twin-fangs/) | 雙刃 | 一階 | Severing Line | 快速，給目標打上烙印，衝刺穿過敵人 |
+| [Moonlit Nodachi](/zh-tw/swords/moonlit-nodachi/) | 野太刀 | 二階 | Moonreap | 大範圍橫掃，也能打中人群 |
+| [Jade Naginata](/zh-tw/swords/jade-naginata/) | 薙刀 | 二階 | Ashigarai | 攻擊距離最遠，把敵人推開 |
+| [Cathedral Greatsword](/zh-tw/swords/cathedral-greatsword/) | 巨劍 | 三階 | Shatter | 緩慢、沉重、劈砍 |
+| [Starless Katana](/zh-tw/swords/starless-katana/) | 虛空太刀 | Void Notes | Severance / Event Horizon | 處決，來自終界和半神工作台 |
+
+每把武器在一段時間內造成的傷害大致相同。它們的區別在於輸出方式：速度、距離、群攻和控制。
+
+## 怎樣得到我的第一把劍？
+
+1. 製作一個[刀匠工作台](/zh-tw/swords/crafting/#the-bladesmiths-table)並放下。
+2. 從結構的箱子裡收集**刀匠筆記**（Bladesmith's Notes），在工作台上繪製一張**圖紙**（Blueprint）。
+3. 帶著圖紙，鍛造**劍刃**（Blade）、**護手**（Guard）和**握柄**（Grip），每個部件都需要材料和一種非凡者材料。
+4. 用這三個部件**組裝**武器。
+
+[製作頁面](/zh-tw/swords/crafting/)列出了所有配方和筆記的來源。
+
+## 操作
+
+| 動作 | 方法 |
+|---|---|
+| 揮砍（連招） | 左鍵 |
+| 武器技藝 | 潛行 + 右鍵，或潛行 + F |
+| 副手攻擊（副手拿著第二把單手武器時） | 右鍵 |
+| 切換 Starless Katana 的技藝 | F |
+
+**F 永遠不會把 Mysterria 武器移到副手。** 想要雙持，請透過物品欄把第二把武器放到副手。
+
+## 連招
+
+每把武器都有三段連招。在一段動作中再次點擊可以預輸入下一段；等得太久（大約 0.8 秒），連招會從第 1 段重新開始。第三段是終結技，傷害最高。**沒有隨機暴擊**：每一項加成都要靠自己打出來，而且看得見。
+
+揮砍在刀刃到達時命中，打中你前方最靠近揮砍中心的目標，所以就算你揮向空中，走進刀刃的敵人也會被打中。動作欄會顯示下一段連招以及你的技藝是否就緒。
+
+## 武器技藝
+
+潛行並右鍵（或潛行 + F）來使用武器的技藝。技藝消耗**靈性**，有冷卻時間，只有**非凡者**才能使用。每個技藝都會先蓄勢並顯示落點，讓對方總有片刻時間做出反應。任何技藝發動後，要過 3 秒才能開始下一個，即使換了武器也一樣。
+
+## 契合與品階
+
+武器的**品階**是一個序列，從 9 到 0，在工作台上用非凡者材料提升（見 [Grades](/zh-tw/swords/crafting/#grades)）。你在自己的途徑上越高，能發揮全部威力的品階就越高：
+
+| 等級 | 條件 | 擊殺同級對手所需命中次數（序列 9 / 5 / 1） |
+|---|---|---|
+| 未契合 | 你的序列比品階低 2 以上、武器沒有品階，或你不是非凡者 | 約 16 / 18 / 21 |
+| 契合 | 你的序列最多比品階低 2 | 約 14 / 15 / 18 |
+| 半神品階（3 到 1） | 契合，且品階在此範圍 | 約 13 / 14 / 16 |
+| 最高品階（0） | 契合，品階為 0 | 約 12 / 13 / 15 |
+
+任何等級都比鋒利 V 的獄髓劍更強。Mysterria 武器無法附魔增加傷害；等級已經包含了這部分。
+
+## 雙手武器與雙持
+
+Twin Fangs、Nodachi、Naginata 和 Greatsword 是**雙手武器**：副手拿著任何東西時都無法揮砍。Knight's Longsword 和 Starless Katana 是單手武器，所以你可以在副手再拿一把單手 Mysterria 武器：
+
+- 主手造成 75% 傷害，副手攻擊（右鍵）造成 45%，合計比單把武器多約 10%；
+- 潛行 + F 使用副手武器的技藝。
+
+擁有 Dual Wielding 的 Twilight Giant 保留他們自己更強的副手。
+
+## 劍鞘
+
+放在快捷欄但沒拿在手上的武器會收在你身上的劍鞘裡：根據武器不同，掛在左腰、交叉在後腰，或斜背在背上。拿到手上就是拔出；切換走就是收鞘。滑翔、游泳、騎乘、睡覺、拉弓、舉盾或進食時，會顯示你的普通玩家模型。
+
+玩家能看到 48 格內最多 16 名其他持有者的動畫身體，距離近的優先；超出的顯示普通模型。電腦較慢時，`/swords rigs <數字>` 可以降低你自己的上限，`/swords rigs off` 將其重設。
+
+## 遺失武器
+
+:::danger
+每把 Mysterria 武器**死亡時一定會掉落**，即使在其他物品會被保留的地方也一樣。只有保留全部物品欄的死亡（決鬥、Nightmare 世界、開啟死亡不掉落的世界）才會保留它。它的[熟練度](/zh-tw/swords/mastery/)也會隨之而去。
+:::
+
+## 刀劍頁面
+
+<CardGrid>
+  <Card title="刀匠工作台與製作" text="筆記、圖紙、部件、小遊戲、品階和拆解。" href="/zh-tw/swords/crafting/" />
+  <Card title="Paragon 鍛造與共鳴" text="Paragon 之手帶來什麼、符文，以及每條途徑的技藝附加效果。" href="/zh-tw/swords/forging/" />
+  <Card title="熟練度" text="越戰越強的武器。" href="/zh-tw/swords/mastery/" />
+  <Card title="遺物" text="每把武器的儀式鍛造版本，以及如何找到它們的儀式。" href="/zh-tw/swords/relics/" />
+  <Card title="Knight's Longsword" text="均衡的基準。" href="/zh-tw/swords/knights-longsword/" />
+  <Card title="Twin Fangs" text="一把軍刀和一把惡魔之刃合為一件武器。" href="/zh-tw/swords/twin-fangs/" />
+  <Card title="Moonlit Nodachi" text="橫掃、突刺和 Moonreap。" href="/zh-tw/swords/moonlit-nodachi/" />
+  <Card title="Jade Naginata" text="距離與空間。" href="/zh-tw/swords/jade-naginata/" />
+  <Card title="Cathedral Greatsword" text="緩慢、沉重、劈砍。" href="/zh-tw/swords/cathedral-greatsword/" />
+  <Card title="Starless Katana" text="虛空侵蝕與處決。" href="/zh-tw/swords/starless-katana/" />
+</CardGrid>
